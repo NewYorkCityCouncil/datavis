@@ -4,12 +4,44 @@
         <meta charset="utf-8">
         <title>D3 Test</title>
         <script type="text/javascript" src="d3/d3.v3.js"></script>
+        <style type="text/css">
+        div.bar {
+          display: inline-block;
+          width: 20px;
+          height: 75px;   /* We'll override this later */
+          background-color: teal;
+          margin-right: 2px;
+}
+        </style>
     </head>
     <body>
-      
         <script type="text/javascript">
+/*
+        var dataset = [ 25, 7, 5, 26, 11, 8, 25, 14, 23, 19,
+                        14, 11, 22, 29, 11, 13, 12, 17, 18, 10,
+                        24, 18, 25, 9, 3 ];
 
-          d3.select("body").append("p").text("New paragraph!");
+*/
+
+var dataset = [];                        //Initialize empty array
+for (var i = 0; i < 100; i++) {           //Loop 25 times
+    var newNumber = Math.round(Math.random() * 30);  //New random number (0-30)
+    dataset.push(newNumber);             //Add new number to array
+}
+
+        d3.select("body").selectAll("div")
+            .data(dataset)
+            .enter()
+            .append("div")
+            .attr("class", "bar")
+            .style("height", function(d) {
+      var barHeight = d * 5;  //Scale up by factor of 5
+      return barHeight + "px";
+  });
+
+console.log(dataset);
+
+
 
         </script>
     </body>
