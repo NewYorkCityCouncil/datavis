@@ -18,7 +18,8 @@
           "children":[
             {"name": "Los Angeles", "size": 500},
             {"name": "San Diego", "size": 200},
-            {"name": "Santa Barbara", "size": 100}
+            {"name": "Santa Barbara", "size": 100},
+            {"name": "Long Beach", "size": 100}
           ]
 
 
