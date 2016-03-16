@@ -12,7 +12,7 @@
             {"name": "Fresno", "size": 100},
             {"name": "Merced", "size": 100}
           ]
-          }
+        },
         {
           "name":"Southern California",
           "children":[
