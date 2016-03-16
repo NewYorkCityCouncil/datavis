@@ -1,11 +1,11 @@
 {
- "name": "unitedStates",
+ "name": "United States",
  "children": [
   {
-   "name": "california",
+   "name": "California",
    "children": [
     {
-     "name": "centralValley",
+     "name": "Central Valley",
      "children": [
       {"name": "Sacramento", "size": 3938},
       {"name": "Fresno", "size": 3812},
