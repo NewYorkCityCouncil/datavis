@@ -1,16 +1,16 @@
 {
- "name": "flare",
+ "name": "unitedStates",
  "children": [
   {
-   "name": "analytics",
+   "name": "california",
    "children": [
     {
-     "name": "cluster",
+     "name": "centralValley",
      "children": [
-      {"name": "AgglomerativeCluster", "size": 3938},
-      {"name": "CommunityStructure", "size": 3812},
-      {"name": "HierarchicalCluster", "size": 6714},
-      {"name": "MergeEdge", "size": 743}
+      {"name": "Sacramento", "size": 3938},
+      {"name": "Fresno", "size": 3812},
+      {"name": "Modesto", "size": 6714},
+      {"name": "Stockton", "size": 743}
      ]
     },
     {
