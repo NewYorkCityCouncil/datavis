@@ -13,7 +13,16 @@
             {"name": "Merced", "size": 100}
           ]
           }
+        {
+          "name":"Southern California",
+          "children":[
+            {"name": "Los Angeles", "size": 500},
+            {"name": "San Diego", "size": 200},
+            {"name": "Santa Barbara", "size": 100}
+          ]
 
+
+        }
       ]
 
 
