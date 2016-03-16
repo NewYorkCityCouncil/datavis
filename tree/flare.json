@@ -1,0 +1,35 @@
+{
+ "name": "United States",
+ "children": [
+  {
+   "name": "California",
+   "children": [
+    {
+     "name": "Central Valley",
+     "children": [
+      {"name": "Sacramento", "size": 100},
+      {"name": "Fresno", "size": 75},
+      {"name": "Modesto", "size": 75},
+      {"name": "Stockton", "size": 75}
+     ]
+    },
+    {
+     "name": "Southern California",
+     "children": [
+      {"name": "Los Angeles", "size": 500},
+      {"name": "San Diego", "size": 200},
+      {"name": "Santa Barbara", "size": 100},
+      {"name": "Long Beach", "size": 5914},
+
+     ]
+    },
+    {
+     "name": "Northern California",
+     "children": [
+      {"name": "San Francisco", "size": 200}
+      {"name": "Humbolt", "size": 50}
+      {"name": "Mendocino", "size": 100}
+     ]
+    }
+   ]
+  }
