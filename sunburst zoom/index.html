@@ -43,16 +43,15 @@ var svg = d3.select("body").append("svg")
 d3.json("flare.json", function(error, root) {
   if (error) throw error;
 
-  svg.selectAll("path")
-      .data(partition.nodes(root))
+  var path = svg.datum(root).selectAll("path")
+      .data(partition.nodes)
     .enter().append("path")
-      .attr("display", function(d) { return d.depth ? null : "none"; })
+      .attr("display", function(d) { return d.depth ? null : "none"; }) // hide inner ring
       .attr("d", arc)
+      .style("stroke", "#fff")
       .style("fill", function(d) { return color((d.children ? d : d.parent).name); })
-      .on("click", click)
-    .append("title")
-      .text(function(d) { return d.name + "\n" + formatNumber(d.value); });
-});
+      .style("fill-rule", "evenodd")
+      .each(stash);
 
 function click(d) {
   svg.transition()
