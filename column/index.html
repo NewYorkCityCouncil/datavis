@@ -92,7 +92,7 @@ d3.csv("https://data.cityofnewyork.us/resource/8qru-nyj8.csv", function (error, 
                 y1: y0 += +d[name]
             };
         });
-        d."Total Population" = d.types[d.types.length - 1].y1;
+        d.total = d.types[d.types.length - 1].y1;
     });
 
     // Sort by year
