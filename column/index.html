@@ -67,7 +67,7 @@ var svg = d3.select("body").append("svg")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 // Fetch data via SODA from the Chicago data site
-d3.csv("https://data.cityofnewyork.us/resource/9jbx-hna8.csv?$select=year,bus,paratransit,rail", function (error, data) {
+d3.csv("https://data.cityofnewyork.us/resource/9jbx-hna8.csv", function (error, data) {
     // Make sure our numbers are really numbers
     data.forEach(function (d) {
         d.year = +d.year;
