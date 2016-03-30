@@ -70,7 +70,7 @@ var svg = d3.select("body").append("svg")
 d3.csv("https://data.cityofnewyork.us/resource/8qru-nyj8.csv", function (error, data) {
     // Make sure our numbers are really numbers
     data.forEach(function (d) {
-        d.Year = +d.Year;
+        d.year = +d.year;
         d.total_population = +d.total_population;
         d.foreign_born_population = +d.foreign_born_population;
 
@@ -80,7 +80,7 @@ d3.csv("https://data.cityofnewyork.us/resource/8qru-nyj8.csv", function (error, 
 
     // Use our values to set our color bands
     color.domain(d3.keys(data[0]).filter(function (key) {
-        return key !== "Year";
+        return key !== "year";
     }));
 
     data.forEach(function (d) {
@@ -97,12 +97,12 @@ d3.csv("https://data.cityofnewyork.us/resource/8qru-nyj8.csv", function (error, 
 
     // Sort by year
     data.sort(function (a, b) {
-        return a.Year - b.Year;
+        return a.year - b.year;
     });
 
     // Our X domain is our set of years
     x.domain(data.map(function (d) {
-        return d.Year;
+        return d.year;
     }));
 
     // Our Y domain is from zero to our highest total
@@ -130,7 +130,7 @@ d3.csv("https://data.cityofnewyork.us/resource/8qru-nyj8.csv", function (error, 
         .enter().append("g")
         .attr("class", "g")
         .attr("transform", function (d) {
-        return "translate(" + x(d.Year) + ",0)";
+        return "translate(" + x(d.year) + ",0)";
     });
 
     year.selectAll("rect")
