@@ -26,7 +26,7 @@
 <script src="http://d3js.org/d3.v3.min.js"></script>
 
 <script>
-/// Set our margins
+// Set our margins
 var margin = {
     top: 20,
     right: 20,
@@ -67,10 +67,10 @@ var svg = d3.select("body").append("svg")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 // Fetch data via SODA from the Chicago data site
-d3.csv("https://data.cityofnewyork.us/resource/9jbx-hna8.csv", function (error, data) {
+d3.csv("https://data.cityofnewyork.us/resource/qtrj-g3nm.csv?$select=year,bus,paratransit,rail", function (error, data) {
     // Make sure our numbers are really numbers
     data.forEach(function (d) {
-        d.month = +d.month;
+        d.year = +d.year;
         d.bus = +d.bus;
         d.paratransit = +d.paratransit;
         d.rail = +d.rail;
@@ -80,7 +80,7 @@ d3.csv("https://data.cityofnewyork.us/resource/9jbx-hna8.csv", function (error, 
 
     // Use our values to set our color bands
     color.domain(d3.keys(data[0]).filter(function (key) {
-        return key !== "month";
+        return key !== "year";
     }));
 
     data.forEach(function (d) {
@@ -97,12 +97,12 @@ d3.csv("https://data.cityofnewyork.us/resource/9jbx-hna8.csv", function (error, 
 
     // Sort by year
     data.sort(function (a, b) {
-        return a.month - b.month;
+        return a.year - b.year;
     });
 
     // Our X domain is our set of years
     x.domain(data.map(function (d) {
-        return d.month;
+        return d.year;
     }));
 
     // Our Y domain is from zero to our highest total
@@ -123,14 +123,14 @@ d3.csv("https://data.cityofnewyork.us/resource/9jbx-hna8.csv", function (error, 
         .attr("y", 6)
         .attr("dy", ".71em")
         .style("text-anchor", "end")
-        .text("Receiving Services");
+        .text("Ridership");
 
-    var year = svg.selectAll(".month")
+    var year = svg.selectAll(".year")
         .data(data)
         .enter().append("g")
         .attr("class", "g")
         .attr("transform", function (d) {
-        return "translate(" + x(d.month) + ",0)";
+        return "translate(" + x(d.year) + ",0)";
     });
 
     year.selectAll("rect")
