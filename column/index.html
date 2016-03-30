@@ -69,9 +69,9 @@ var svg = d3.select("body").append("svg")
 // Fetch data via SODA from the NYC data site
 d3.csv("https://data.cityofnewyork.us/resource/5c4s-jwtq.csv", function (error, data) {
     // Make sure our numbers are really numbers
-    data.forEach(function (d) {
+  /* data.forEach(function (d) {
         d.Month = +d.Month;
-        d.'Total SNAP Recipients' = +d.'Total SNAP Recipients';
+        d.'Total SNAP Recipients' = +d.'Total SNAP Recipients'; */
 
     });
 
