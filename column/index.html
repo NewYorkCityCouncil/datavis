@@ -67,7 +67,7 @@ var svg = d3.select("body").append("svg")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 // Fetch data via SODA from the Chicago data site
-d3.csv("https://data.cityofnewyork.us/api/views/5c4s-jwtq/rows.csv", function (error, data) {
+d3.csv("https://data.cityofnewyork.us/api/views/5c4s-jwtq/rows.csv?$select= "Month", "Total SNAP Recipients"", function (error, data) {
     // Make sure our numbers are really numbers
     data.forEach(function (d) {
         d.Month = +d.Month;
