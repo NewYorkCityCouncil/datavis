@@ -70,17 +70,17 @@ var svg = d3.select("body").append("svg")
 d3.csv("https://data.cityofnewyork.us/resource/8qru-nyj8.csv", function (error, data) {
     // Make sure our numbers are really numbers
     data.forEach(function (d) {
-        d.year = +d.year;
-        d.bus = +d.bus;
-        d.paratransit = +d.paratransit;
-        d.rail = +d.rail;
+        d.Year = +d.Year;
+        d."Total Population" = +d."Total Population";
+        d."Foreign-Born Population" = +d."Foreign-Born Population";
+
     });
 
     console.log(data);
 
     // Use our values to set our color bands
     color.domain(d3.keys(data[0]).filter(function (key) {
-        return key !== "year";
+        return key !== "Year";
     }));
 
     data.forEach(function (d) {
@@ -97,17 +97,17 @@ d3.csv("https://data.cityofnewyork.us/resource/8qru-nyj8.csv", function (error, 
 
     // Sort by year
     data.sort(function (a, b) {
-        return a.year - b.year;
+        return a.Year - b.Year;
     });
 
     // Our X domain is our set of years
     x.domain(data.map(function (d) {
-        return d.year;
+        return d.Year;
     }));
 
     // Our Y domain is from zero to our highest total
     y.domain([0, d3.max(data, function (d) {
-        return d.total;
+        return d."Total Population";
     })]);
 
     svg.append("g")
