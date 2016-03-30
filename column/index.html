@@ -70,7 +70,7 @@ var svg = d3.select("body").append("svg")
 d3.csv("https://data.cityofnewyork.us/resource/9jbx-hna8.csv", function (error, data) {
     // Make sure our numbers are really numbers
     data.forEach(function (d) {
-        d.year = +d.year;
+        d.Month = +d.Month;
         d.bus = +d.bus;
         d.paratransit = +d.paratransit;
         d.rail = +d.rail;
@@ -80,7 +80,7 @@ d3.csv("https://data.cityofnewyork.us/resource/9jbx-hna8.csv", function (error, 
 
     // Use our values to set our color bands
     color.domain(d3.keys(data[0]).filter(function (key) {
-        return key !== "year";
+        return key !== "Month";
     }));
 
     data.forEach(function (d) {
@@ -97,12 +97,12 @@ d3.csv("https://data.cityofnewyork.us/resource/9jbx-hna8.csv", function (error, 
 
     // Sort by year
     data.sort(function (a, b) {
-        return a.year - b.year;
+        return a.Month - b.Month;
     });
 
     // Our X domain is our set of years
     x.domain(data.map(function (d) {
-        return d.year;
+        return d.Month;
     }));
 
     // Our Y domain is from zero to our highest total
@@ -123,14 +123,14 @@ d3.csv("https://data.cityofnewyork.us/resource/9jbx-hna8.csv", function (error, 
         .attr("y", 6)
         .attr("dy", ".71em")
         .style("text-anchor", "end")
-        .text("Ridership");
+        .text("Receiving Services");
 
-    var year = svg.selectAll(".year")
+    var year = svg.selectAll(".Month")
         .data(data)
         .enter().append("g")
         .attr("class", "g")
         .attr("transform", function (d) {
-        return "translate(" + x(d.year) + ",0)";
+        return "translate(" + x(d.Month) + ",0)";
     });
 
     year.selectAll("rect")
