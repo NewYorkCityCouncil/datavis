@@ -68,7 +68,9 @@ var svg = d3.select("body").append("svg")
 
 // Fetch data via SODA from the NYC data site
 d3.csv("https://data.cityofnewyork.us/resource/5c4s-jwtq.csv", function (error, data) {
-    // Make sure our numbers are really numbers
+
+		// Make sure our numbers are really numbers
+
   /* data.forEach(function (d) {
         d.Month = +d.Month;
         d.'Total SNAP Recipients' = +d.'Total SNAP Recipients'; */
@@ -79,7 +81,7 @@ d3.csv("https://data.cityofnewyork.us/resource/5c4s-jwtq.csv", function (error, 
 
     // Use our values to set our color bands
     color.domain(d3.keys(data[0]).filter(function (key) {
-        return key !== "month";
+        return key !== "Month";
     }));
 
     data.forEach(function (d) {
@@ -96,17 +98,17 @@ d3.csv("https://data.cityofnewyork.us/resource/5c4s-jwtq.csv", function (error, 
 
     // Sort by year
     data.sort(function (a, b) {
-        return a.month - b.month;
+        return a.Month - b.Month;
     });
 
     // Our X domain is our set of years
     x.domain(data.map(function (d) {
-        return d.month;
+        return d.Month;
     }));
 
     // Our Y domain is from zero to our highest total
     y.domain([0, d3.max(data, function (d) {
-        return d.total;
+        return d."Total SNAP Recipients";
     })]);
 
     svg.append("g")
@@ -129,10 +131,10 @@ d3.csv("https://data.cityofnewyork.us/resource/5c4s-jwtq.csv", function (error, 
         .enter().append("g")
         .attr("class", "g")
         .attr("transform", function (d) {
-        return "translate(" + x(d.month) + ",0)";
+        return "translate(" + x(d.Month) + ",0)";
     });
 
-    month.selectAll("rect")
+    Month.selectAll("rect")
         .data(function (d) {
         return d.types;
     })
