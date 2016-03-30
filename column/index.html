@@ -71,8 +71,8 @@ d3.csv("https://data.cityofnewyork.us/resource/8qru-nyj8.csv", function (error, 
     // Make sure our numbers are really numbers
     data.forEach(function (d) {
         d.Year = +d.Year;
-        d.total_population = +d.total_population;
-        d.foreign_born_population = +d.foreign_born_population;
+        d."Total Population" = +d."Total Population";
+        d."Foreign-Born Population" = +d."Foreign-Born Population";
 
     });
 
@@ -92,7 +92,7 @@ d3.csv("https://data.cityofnewyork.us/resource/8qru-nyj8.csv", function (error, 
                 y1: y0 += +d[name]
             };
         });
-        d.total = d.types[d.types.length - 1].y1;
+        d."Total Population" = d.types[d.types.length - 1].y1;
     });
 
     // Sort by year
@@ -107,7 +107,7 @@ d3.csv("https://data.cityofnewyork.us/resource/8qru-nyj8.csv", function (error, 
 
     // Our Y domain is from zero to our highest total
     y.domain([0, d3.max(data, function (d) {
-        return d.total_population;
+        return d."Total Population";
     })]);
 
     svg.append("g")
