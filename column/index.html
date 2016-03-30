@@ -70,8 +70,8 @@ var svg = d3.select("body").append("svg")
 d3.csv("https://data.cityofnewyork.us/api/views/5c4s-jwtq/rows.csv", function (error, data) {
     // Make sure our numbers are really numbers
     data.forEach(function (d) {
-        d.month = +d.month;
-        d.total_snap_recipients = +d.total_snap_recipients;
+        d.Month = +d.Month;
+        d."Total SNAP Recipients" = +d."Total SNAP Recipients";
 
     });
 
