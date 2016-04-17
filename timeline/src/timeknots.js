@@ -1,6 +1,8 @@
 //events - everything about dates
 //id - everything about design look feel
 //options - dont know - override defaults?
+// !=  - not equal to
+//addNow - something with events / dates / Today
 
 var TimeKnots = {
   draw: function(id, events, options){
