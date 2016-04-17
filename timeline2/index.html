@@ -19,8 +19,8 @@
 <script>
 
 var format = d3.time.format("%Y-%m-%d");
-var startDate = format.parse("2015-01-01");
-var endDate = format.parse("2015-12-31");
+var startDate = format.parse("2016-01-01");
+var endDate = format.parse("2016-07-31");
 
 var margin = {top: 100, right: 100, bottom: 100, left: 100},
     width = 960 - margin.left - margin.right,
@@ -29,7 +29,7 @@ var margin = {top: 100, right: 100, bottom: 100, left: 100},
 var x = d3.time.scale()
     .domain([startDate, endDate])
     .nice(d3.time.month)
-    .range([0, width]);
+    .range([height, 0]);
 
 var svg = d3.select("body").append("svg")
     .attr("width", width + margin.left + margin.right)
@@ -39,6 +39,6 @@ var svg = d3.select("body").append("svg")
 
 svg.append("g")
     .attr("class", "x axis")
-    .call(d3.svg.axis().scale(x).orient("bottom"));
+    .call(d3.svg.axis().scale(x).orient("left"));
 
 </script>
