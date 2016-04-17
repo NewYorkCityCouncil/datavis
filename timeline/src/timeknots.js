@@ -192,7 +192,7 @@ var TimeKnots = {
         .duration(100)
     .style("opacity", 0)});
 
-    /*Adding start and end labels
+    // Adding start and end labels
     if(cfg.showLabels != false){
       if(cfg.dateDimension){
         var format = d3.time.format(cfg.labelFormat);
@@ -203,7 +203,7 @@ var TimeKnots = {
         var startString = minValue;
         var endString = maxValue;
       }
-      */
+
       svg.append("text")
          .text(startString).style("font-size", "70%")
          .attr("x", function(d){if(cfg.horizontalLayout){return d3.max([0, (margin-this.getBBox().width/2)])} return Math.floor(this.getBBox().width/2)})
