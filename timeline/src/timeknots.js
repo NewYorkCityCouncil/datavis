@@ -197,11 +197,11 @@ var TimeKnots = {
       if(cfg.dateDimension){
         var format = d3.time.format(cfg.labelFormat);
         var startString = format(new Date(minValue));
-      //  var endString = format(new Date(maxValue));
+        var endString = format(new Date(maxValue));
       }else{
         var format = function(d){return d}; //Should I do something else?
         var startString = minValue;
-        var endString = maxValue;
+    //    var endString = maxValue;
 
           }
 
