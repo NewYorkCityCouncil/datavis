@@ -4,8 +4,7 @@ var TimeKnots = {
       width: 600,
       height: 200,
       radius: 10,
-      //lineWidth: 4,
-      lineWidth: 10,
+      lineWidth: 4,
       color: "#999",
       background: "#FFF",
       //dateFormat: "%Y/%m/%d %H:%M:%S",
@@ -15,7 +14,8 @@ var TimeKnots = {
       showLabels: true,
       // labelFormat: "%Y/%m/%d %H:%M:%S",
       labelFormat: "%B %Y",
-      addNow: false,
+      //  addNow: false,
+      addNow: true,
       seriesColor: d3.scale.category20(),
       dateDimension: true
     };
