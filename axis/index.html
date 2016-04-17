@@ -21,8 +21,12 @@ var dataset = [ 100, 200, 300, 400, 500 ];
 // scale will normalize the date to between 0 - 1 essentially
 
 var scale = d3.scale.linear();
-  .domain([100, 500]);
-  .range([10, 350]);
+      .domain([100, 500])
+      .range([10, 350]);
+
+var yAxis = d3.svg.axis()
+      .scale(xScale)
+      .orient("bottom");
 
 
 
