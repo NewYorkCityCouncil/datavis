@@ -1,3 +1,7 @@
+//events - everything about dates
+//id - everything about design look feel
+//options - dont know - override defaults?
+
 var TimeKnots = {
   draw: function(id, events, options){
     var cfg = {
