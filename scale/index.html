@@ -29,11 +29,10 @@
 								 .range([0, w]);
 // Y scale
 
-/*
+
 			var yScale = d3.scale.linear()
 								 .domain([0, d3.max(dataset, function(d) { return d[1]; })])
 								 .range([0, h]);
-*/
 
 			//Create SVG element
 			var svg = d3.select("body")
@@ -45,8 +44,9 @@
 			   .data(dataset)
 			   .enter()
 			   .append("circle")
-			   .attr("cx", function(d) {
+			  /* .attr("cx", function(d) {
 			   		return xScale(d[0]);
+        */
 			   })
 			   .attr("cy", function(d) {
 			   		return yScale(d[1]);
