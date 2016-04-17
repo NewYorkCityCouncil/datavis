@@ -202,7 +202,12 @@ var TimeKnots = {
         var format = function(d){return d}; //Should I do something else?
         var startString = minValue;
         var endString = maxValue;
-      }
+    } else {
+      var format = d3.time.format("%Y-%m-%d");
+      var startDate = format.parse("2016-01-01");
+      var endDate = format.parse("2016-06-01");
+    }
+          }
 
       svg.append("text")
          .text(startString).style("font-size", "70%")
