@@ -207,11 +207,7 @@ var TimeKnots = {
         var startString = format.parse("2016-01-01");
         var endString = format.parse("2016-06-01");
 
-        var x = d3.time.scale()
-            .domain([startString, endString])
-            .nice(d3.time.month)
-            .range([height, 0]);
-
+        
 
           }
 
