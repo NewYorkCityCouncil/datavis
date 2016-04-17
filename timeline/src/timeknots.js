@@ -10,7 +10,8 @@ var TimeKnots = {
       dateFormat: "%Y/%m/%d %H:%M:%S",
       horizontalLayout: true,
       showLabels: false,
-      labelFormat: "%Y/%m/%d %H:%M:%S",
+      // labelFormat: "%Y/%m/%d %H:%M:%S",
+      labelFormat: "%B %Y",
       addNow: false,
       seriesColor: d3.scale.category20(),
       dateDimension: true
@@ -38,6 +39,7 @@ var TimeKnots = {
     .style("-moz-border-radius", "8px 8px")
     .style("border-radius", "8px 8px");
     var svg = d3.select(id).append('svg').attr("width", cfg.width).attr("height", cfg.height);
+
     //Calculate times in terms of timestamps
     if(!cfg.dateDimension){
       var timestamps = events.map(function(d){return  d.value});//new Date(d.date).getTime()});
@@ -214,4 +216,3 @@ var TimeKnots = {
     .on("mouseout", function(){return tip.style("opacity", 0).style("top","0px").style("left","0px");});
   }
 }
-
