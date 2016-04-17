@@ -46,14 +46,17 @@ body {
  <h5>Imaginary schedule in a vertical layout</h5>
  <div id="timeline2" style="width:200px;height: 450px;"></div>
 
-   <!--THIS WEEKS AGENDA`-->
+<!--THIS WEEKS AGENDA-->
 
  <h2>This week's agenda</h2>
  <h5>Shows random meetings/free days</h5>
  <div id="timeline3" style="width:500px;height: 200px;"></div>
 </div>
 </div>
+
 <script type="text/javascript">
+
+// NON DATE DATA VARIALBE
 
 var nonDatedata = [
  {"value": 224, "name": "Player 1" },
@@ -63,7 +66,12 @@ var nonDatedata = [
  {"value": 397, "name": "Player 5" },
  {"value": 418, "name": "Player 6" }
 ];
+
+// TIMELINE NON DATE DRAW - Numeric, non date data
+
 TimeKnots.draw("#timelineNonDate", nonDatedata, {dateDimension:false, color: "teal", width:500, showLabels: true, labelFormat: "%Y"});
+
+// KURBICK FILMS VARIABLE
 
 var kurbickFilms = [{name:"Day of the Fight", date: "1951-04-26", img: "http://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Day_of_the_Fight_title.jpg/215px-Day_of_the_Fight_title.jpg"},
   {name:"The Seafarers", 	date:"1953-10-15", img: "http://upload.wikimedia.org/wikipedia/en/thumb/6/6c/Seafarers_title.jpg/225px-Seafarers_title.jpg"},
@@ -74,7 +82,11 @@ var kurbickFilms = [{name:"Day of the Fight", date: "1951-04-26", img: "http://u
   {name:"Killer's Kiss", date:	"1955-09-28", img: "http://upload.wikimedia.org/wikipedia/en/thumb/a/a6/KillersKissPoster.jpg/220px-KillersKissPoster.jpg"}
 ];
 
+// TIMELINE 1 DRAW - KURBICK FILMS
+
 TimeKnots.draw("#timeline1", kurbickFilms, {dateFormat: "%B %Y", color: "#696", width:500, showLabels: true, labelFormat: "%Y"});
+
+// MY SCHEDULE VARIABLE
 
 var mySchedule = [{name:"Preliminary Budget", date: "2016-01-1"},
   {name:"Council Analysis & Hearings", 	date:"2016-02-01"},
@@ -82,9 +94,12 @@ var mySchedule = [{name:"Preliminary Budget", date: "2016-01-1"},
   {name:"Executive Budget & Hearings", date:	"2016-04-01"},
   {name:"Adopted Budget", date:	"2016-07-01"}
 ];
+
+// TIMELINE 2 DRAW - MY SCHEDULE
+
 TimeKnots.draw("#timeline2", mySchedule, {horizontalLayout: false, radius: 20, color: "#44a", height: 450, width:200, showLabels: true, labelFormat:"%B"});
 
-
+// GENERATE RANDOM MEETING/FREE DAYS VARIABLE
 
 var agenda = new Array();
 var day = 86400000;
@@ -103,6 +118,9 @@ for(var i=-3; i<4; i++){
   var thiswidth = (i<0)?1:5;
   agenda.push({date: thisdate, name: thisname,  series: thisseries })
 }
+
+// TIMELINE 3 DRAW - WEEKS AGENDA
+
 TimeKnots.draw("#timeline3", agenda, {dateFormat: "%A", radius: 20});
 
 
