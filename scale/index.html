@@ -12,7 +12,12 @@
 	<body>
 		<script type="text/javascript">
 
-			//Width and height
+//adding margin
+
+    var margin = {top: 100, right: 100, bottom: 100, left: 100},
+        width = 960 - margin.left - margin.right,
+        height = 500 - margin.top - margin.bottom;
+//Width and height
 			var w = 600;
 			var h = 400;
 
@@ -21,7 +26,7 @@
 							[0, 12], [0, 44], [0, 67], [0, 21], [0, 88]
 						  ];
 
-			//Create scale functions
+//Create scale functions
 // X scale
 
     	var xScale = d3.scale.linear()
@@ -34,7 +39,7 @@
 								 .domain([0, d3.max(dataset, function(d) { return d[1]; })])
 								 .range([0, h]);
 
-			//Create SVG element
+//Create SVG element
 			var svg = d3.select("body")
 						.append("svg")
 						.attr("width", w)
