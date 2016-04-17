@@ -199,9 +199,14 @@ var TimeKnots = {
         var startString = format(new Date(minValue));
         var endString = format(new Date(maxValue));
       }else{
-        var format = function(d){return d}; //Should I do something else?
+      /*  var format = function(d){return d}; //Should I do something else?
         var startString = minValue;
-    //    var endString = maxValue;
+        var endString = maxValue;
+        */
+        var format = d3.time.format("%Y-%m-%d");
+        var startString = format.parse("2016-01-01");
+        var endString = format.parse("2016-06-01");
+
 
           }
 
