@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>jQuery-TimelineMe by mickaelr</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+
+    <link rel="stylesheet" type="text/css" href="prism/prism.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- conflicts with materialize not resolved yet. TODO -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css"> -->
+    <link rel="stylesheet" href="src/jquery.timelineMe.css">
+  </head>
+  <body>
+    <!-- Fix Botstrap/Foundation/Materialize... conflicts with Github pages style -->
+    <style type="text/css">
+        .page-header {
+            margin: 0;
+            border: none;
+        }
+        .project-name {
+            color: #fff;
+            font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            line-height: 1.5;
+            font-weight: bold;
+        }
+        .project-tagline {
+            color: #fff;
+            margin-top: 1rem;
+            font-size: 1.25rem;
+            line-height: 1.875rem;
+        }
+        .btn {
+            font-size: 1rem;
+            line-height: 1.5rem;
+        }
+    </style>
+    <!-- End of fix -->
+
+    <section class="page-header">
+      <h1 class="project-name">jQuery-TimelineMe</h1>
+      <h2 class="project-tagline">A flexible timeline plugin</h2>
+      <a href="https://github.com/mickaelr/jquery-timelineMe" class="btn">View on GitHub</a>
+      <a href="https://github.com/mickaelr/jquery-timelineMe/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/mickaelr/jquery-timelineMe/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+
+      <h2>
+        <a id="dateselector" class="anchor" href="#dateselector" aria-hidden="true"><span class="octicon octicon-link"></span></a>TimelineMe
+      </h2>
+
+        <p>The aim of this plugin is to easily build a timeline display for your data.</p>
+
+      <h2>
+        <a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License
+      </h2>
+
+        <p>The plugin is under MIT License</p>
+
+      <!-- START -->
+      <h2>Quickstart</h2>
+
+      <p>
+        Include jQuery and timelineMe css and js in your project:
+      </p>
+<pre><code class="language-markup">
+&lt;link rel="stylesheet" type="text/css" href="path/to/timelineMe/jquery.timelineMe.css">
+&lt;script type="text/javascript" src="path/to/jquery/jquery.min.js">&lt;/script>
+&lt;script type="text/javascript" src="path/to/timelineMe/jquery.timelineMe.js">&lt;/script>
+</code></pre>
+
+      <h2>Container options</h2>
+
+      <table class="table table-bordered table-striped">
+          <thead>
+              <tr>
+                  <th>Name</th>
+                  <th>Type</th>
+                  <th>Default</th>
+                  <th>Description</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>items</td>
+                  <td>array</td>
+                  <td>[]</td>
+                  <td>Timeline items array</td>
+              </tr>
+              <tr>
+                  <td>orientation</td>
+                  <td>string</td>
+                  <td>'vertical'</td>
+                  <td>(not implemented yet) Timeline orientation: 'vetical' | 'horizontal'</td>
+              </tr>
+              <tr>
+                  <td>scrollZones</td>
+                  <td>boolean</td>
+                  <td>true</td>
+                  <td>(in progress) Enable/disable scrolling zones</td>
+              </tr>
+              <tr>
+                  <td>scrollBar</td>
+                  <td>boolean</td>
+                  <td>true</td>
+                  <td>(in progress) Enable/disable scrollbar</td>
+              </tr>
+              <tr>
+                  <td>labelClass</td>
+                  <td>string</td>
+                  <td>undefined</td>
+                  <td>To add your own css class to timeline items' labels</td>
+              </tr>
+              <tr>
+                  <td>shortContentClass</td>
+                  <td>string</td>
+                  <td>undefined</td>
+                  <td>To add your own css class to timeline items' short content elements</td>
+              </tr>
+              <tr>
+                  <td>fullContentClass</td>
+                  <td>string</td>
+                  <td>undefined</td>
+                  <td>To add your own css class to timeline items' full content elements</td>
+              </tr>
+              <tr>
+                  <td>showMoreClass</td>
+                  <td>string</td>
+                  <td>undefined</td>
+                  <td>To add your own css class to timeline items' show more elements</td>
+              </tr>
+              <tr>
+                  <td>showLessClass</td>
+                  <td>string</td>
+                  <td>undefined</td>
+                  <td>To add your own css class to timeline items' show less elements</td>
+              </tr>
+          </tbody>
+      </table>
+
+      <h2>Items options</h2>
+
+      <table class="table table-bordered table-striped">
+          <thead>
+              <tr>
+                  <th>Name</th>
+                  <th>Type</th>
+                  <th>Default</th>
+                  <th>Description</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>type</td>
+                  <td>string</td>
+                  <td>undefined</td>
+                  <td>The item type: 'milestone' | 'smallItem' | 'bigItem'</td>
+              </tr>
+              <tr>
+                  <td>label</td>
+                  <td>string</td>
+                  <td>undefined</td>
+                  <td>Html content of item's label</td>
+              </tr>
+              <tr>
+                  <td>labelTemplate</td>
+                  <td>string</td>
+                  <td>undefined</td>
+                  <td>Path to html file containing label template</td>
+              </tr>
+              <tr>
+                  <td>shortContent</td>
+                  <td>string</td>
+                  <td>undefined</td>
+                  <td>Html content of item's short content element</td>
+              </tr>
+              <tr>
+                  <td>shortContentTemplate</td>
+                  <td>string</td>
+                  <td>undefined</td>
+                  <td>Path to html file containing short content template</td>
+              </tr>
+              <tr>
+                  <td>fullContent</td>
+                  <td>string</td>
+                  <td>undefined</td>
+                  <td>Html content of item's full content element</td>
+              </tr>
+              <tr>
+                  <td>fullContentTemplate</td>
+                  <td>string</td>
+                  <td>undefined</td>
+                  <td>Path to html file containing full content template</td>
+              </tr>
+              <tr>
+                  <td>showMore</td>
+                  <td>string</td>
+                  <td>undefined</td>
+                  <td>Html content of item's show more element</td>
+              </tr>
+              <tr>
+                  <td>showMoreTemplate</td>
+                  <td>string</td>
+                  <td>undefined</td>
+                  <td>Path to html file containing show more template</td>
+              </tr>
+              <tr>
+                  <td>showLess</td>
+                  <td>string</td>
+                  <td>undefined</td>
+                  <td>Html content of item's show less element</td>
+              </tr>
+              <tr>
+                  <td>showLessTemplate</td>
+                  <td>string</td>
+                  <td>undefined</td>
+                  <td>Path to html file containing show less template</td>
+              </tr>
+              <tr>
+                  <td>forcePosition</td>
+                  <td>string</td>
+                  <td>undefined</td>
+                  <td>To force the item position: 'left' | 'right' | 'top' | 'bottom'</td>
+              </tr>
+              <tr>
+                  <td>relativePosition</td>
+                  <td>number</td>
+                  <td>undefined</td>
+                  <td>To relatively position items (use Date.getTime() to make it work with dates)</td>
+              </tr>
+          </tbody>
+      </table>
+
+      <h2>Methods</h2>
+
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Method</th>
+                    <th>Description</th>
+                    <th>Usage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>getItem</td>
+                    <td>Return item corresponding to the passed index</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>collapse</td>
+                    <td>Show or hide content blocks: 'hide' | 'show' | 'toggle'</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+
+      <h2>Events</h2>
+
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Event</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>'timelineMe.itemHeightChanged'</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>'timelineMe.smallItem.displayfull'</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>'timelineMe.bigItem.flipped'</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+
+      <h2>Examples</h2>
+        <h3>Default</h3>
+<pre><code class="language-markup">&lt;div id="timeline-container-basic" type="text">&lt;/div></code></pre>
+<pre><code class="language-javascript">$('#timeline-container-basic').timelineMe({
+  items: [
+    {
+      type: 'milestone',
+      label: 'my label 1'
+    },
+    {
+      type: 'smallItem',
+      label: 'my label 2',
+      shortContent: 'short description',
+      fullContent: 'big description &lt;br> with more lines &lt;br> than the short one. &lt;br> &lt;div style="text-align: center;">&lt;img src="https://assets-cdn.github.com/images/modules/logos_page/Octocat.png" style="width: 50%;" />&lt;/div>',
+      showMore: 'show more',
+      showLess: 'show less'
+    },
+    {
+      type: 'bigItem',
+      label: '&lt;span style="background-color: #8DD8DD;">my label 3&lt;/span>',
+      shortContent: 'short description',
+      fullContent: 'big description &lt;br> with more lines &lt;br> than the short one. &lt;br> &lt;div style="text-align: center;">&lt;img src="https://assets-cdn.github.com/images/modules/logos_page/Octocat.png" style="width: 50%;" />&lt;/div>',
+      showMore: 'show more',
+      showLess: 'show less'
+    }
+  ]
+});</code></pre>
+        <div style="padding: 10px; border-radius: 3px; background-color: #8DD8DD">
+          <div id="timeline-container-basic"></div>
+        </div>
+
+        <h3>Force item's position</h3>
+<pre><code class="language-markup">&lt;div id="timeline-container-force-position" type="text">&lt;/div></code></pre>
+<pre><code class="language-javascript">$('#timeline-container-force-position').timelineMe({
+  items: [
+    {
+      type: 'smallItem',
+      label: 'my label 1',
+      shortContent: 'short description 1',
+      fullContent: 'big description 1',
+      showMore: 'show more',
+      showLess: 'show less'
+    },
+    {
+      type: 'smallItem',
+      label: 'my label 2',
+      shortContent: 'short description 2',
+      fullContent: 'big description 2',
+      showMore: 'show more',
+      showLess: 'show less'
+    },
+    {
+      type: 'smallItem',
+      label: 'my label 3',
+      shortContent: 'short description 3',
+      fullContent: 'big description 3',
+      showMore: 'show more',
+      showLess: 'show less',
+      forcePosition: 'right'
+    },
+    {
+      type: 'smallItem',
+      label: 'my label 4',
+      shortContent: 'short description 4',
+      fullContent: 'big description 4',
+      showMore: 'show more',
+      showLess: 'show less',
+      forcePosition: 'left'
+    }
+  ]
+});</code></pre>
+        <div style="padding: 10px; border-radius: 3px; background-color: #8DD8DD">
+          <div id="timeline-container-force-position"></div>
+        </div>
+
+        <h3>Use custom (or frameworks' classes)</h3>
+<pre><code class="language-markup">&lt;div id="timeline-container-custom-classes" type="text">&lt;/div></code></pre>
+<pre><code class="language-javascript">$('#timeline-container-custom-classes').timelineMe({
+  labelClass: 'labelclass',
+  shortContentClass: 'card-panel',
+  fullContentClass: 'card-panel',
+  showMoreClass: 'showmoreclass',
+  showLessClass: 'showlessclass',
+  items: [
+    {
+      type: 'smallItem',
+      label: 'my label 1',
+      shortContent: 'short description 1',
+      fullContent: 'big description 1',
+      showMore: '&lt;a class="custom-show-btn">&lt;i class="material-icons">add&lt;/i>&lt;/a>',
+      showLess: '&lt;a class="custom-show-btn">&lt;i class="material-icons">remove&lt;/i>&lt;/a>'
+    },
+    {
+      type: 'bigItem',
+      label: 'my label 2',
+      shortContent: 'short description 2',
+      fullContent: 'big description 2',
+      showMore: '&lt;a class="custom-show-btn">&lt;i class="material-icons">add&lt;/i>&lt;/a>',
+      showLess: '&lt;a class="custom-show-btn">&lt;i class="material-icons">remove&lt;/i>&lt;/a>'
+    }
+  ]
+});</code></pre>
+<pre><code class="language-css">.custom-show-btn {
+  position: absolute;
+  right: 20px;
+  bottom: -12px;
+  background-color: #359BCE;
+  border-radius: 50%;
+  color: #FFFFFF;
+  height: 24px;
+  width: 24px;
+}</code></pre>
+        <div style="padding: 10px; border-radius: 3px; background-color: #8DD8DD">
+          <style type="text/css">
+            .custom-show-btn {
+              position: absolute;
+              right: 20px;
+              bottom: -12px;
+              background-color: #359BCE;
+              border-radius: 50%;
+              color: #FFFFFF;
+              height: 24px;
+              width: 24px;
+            }
+          </style>
+          <div id="timeline-container-custom-classes"></div>
+        </div>
+
+        <h3>getItem method</h3>
+<pre><code class="language-markup">&lt;div id="timeline-container-get-item" type="text"></div>
+&lt;button id="timeline-get-item-button" class="btn">get item n°2&lt;/button>
+</code></pre>
+<pre><code class="language-javascript">$('#timeline-container-get-item').timelineMe({
+  items: [
+    {
+      type: 'milestone',
+      label: 'my label 1'
+    },
+    {
+      type: 'smallItem',
+      label: 'my label 2',
+      shortContent: 'short description 2'
+    },
+    {
+      type: 'bigItem',
+      label: 'my label 3',
+      shortContent: 'short description 3'
+    }
+  ]
+});
+$('#timeline-get-item-button').on('click', function() {
+  var item = $('#timeline-container-get-item').timelineMe('getItem', 2);
+  alert(
+    'type: ' + item.type + '\n' + 'label: ' + item.label + '\n' + 'shortContent: ' + item.shortContent
+  );
+});</code></pre>
+        <div style="padding: 10px; border-radius: 3px; background-color: #8DD8DD">
+          <div id="timeline-container-get-item"></div>
+          <button id="timeline-get-item-button" class="btn">get item n°2</button>
+        </div>
+
+        <h3>Label picto</h3>
+<pre><code class="language-markup">&lt;div id="timeline-container-label-picto" type="text">&lt;/div></code></pre>
+<pre><code class="language-javascript">$('#timeline-container-label-picto').timelineMe({
+          items: [
+            {
+              type: 'milestone',
+              label: 'my label 1',
+              picto: '&lt;i class="material-icons">event&lt;/i>'
+            },
+            {
+              type: 'smallItem',
+              label: 'my label 2',
+              picto: '&lt;img src="https://assets-cdn.github.com/images/modules/logos_page/Octocat.png" />',
+              shortContent: 'short description 2'
+            },
+            {
+              type: 'bigItem',
+              label: 'my label 3',
+              picto: '&lt;strong>TEXT&lt;/strong>',
+              shortContent: 'short description 3'
+            }
+          ]
+        });</code></pre>
+        <div style="padding: 10px; border-radius: 3px; background-color: #8DD8DD">
+          <div id="timeline-container-label-picto"></div>
+        </div>
+        <p>
+          To change label's picto size/background/border easily, use the SCSS file and change "$label-picto-*" files (demo will come - and if you have a better idea to handle that, I'd be glad to ear from you!).
+        </p>
+
+        <h3>collapse method</h3>
+<pre><code class="language-markup">&lt;div id="timeline-container-collapse" type="text"></div>
+&lt;button id="timeline-collapse-button" class="btn">toggle collapse&lt;/button>
+</code></pre>
+<pre><code class="language-javascript">$('#timeline-container-collapse').timelineMe({
+  items: [
+    {
+      type: 'milestone',
+      label: 'my label 1'
+    },
+    {
+      type: 'smallItem',
+      label: 'my label 2',
+      shortContent: 'short description 2'
+    },
+    {
+      type: 'bigItem',
+      label: 'my label 3',
+      shortContent: 'short description 3'
+    }
+  ]
+});
+$('#timeline-collapse-button').on('click', function() {
+  $('#timeline-container-collapse').timelineMe('collapse', 'toggle');
+});</code></pre>
+        <div style="padding: 10px; border-radius: 3px; background-color: #8DD8DD">
+          <div id="timeline-container-collapse"></div>
+          <button id="timeline-collapse-button" class="btn">toggle collapse</button>
+        </div>
+
+        <h3>Relative positioning</h3>
+<pre><code class="language-markup">&lt;div id="timeline-container-relativepos" type="text">&lt;/div></code></pre>
+<pre><code class="language-javascript">$('#timeline-container-relativepos').timelineMe({
+          items: [
+            {
+              type: 'milestone',
+              label: 'my label 1',
+              relativePosition: 15
+            },
+            {
+              type: 'smallItem',
+              label: 'my label 2',
+              relativePosition: 100,
+              shortContent: 'short description 2'
+            },
+            {
+              type: 'bigItem',
+              label: 'my label 3',
+              relativePosition: 30,
+              shortContent: 'short description 3'
+            }
+          ]
+        });</code></pre>
+        <div style="padding: 10px; border-radius: 3px; background-color: #8DD8DD">
+          <div id="timeline-container-relativepos"></div>
+        </div>
+
+        <h4>With Dates</h4>
+        <pre><code class="language-markup">&lt;div id="timeline-container-relativepos-dates" type="text">&lt;/div></code></pre>
+<pre><code class="language-javascript">var relPosDate1 = new Date(2015, 02, 05);
+        var relPosDate2 = new Date(2015, 03, 01);
+        var relPosDate3 = new Date(2015, 03, 10);
+        $('#timeline-container-relativepos-dates').timelineMe({
+          items: [
+            {
+              type: 'milestone',
+              label: relPosDate1.toDateString(),
+              relativePosition: relPosDate1.getTime()
+            },
+            {
+              type: 'smallItem',
+              label: relPosDate2.toDateString(),
+              relativePosition: relPosDate2.getTime(),
+              shortContent: 'short description 2'
+            },
+            {
+              type: 'bigItem',
+              label: relPosDate3.toDateString(),
+              relativePosition: relPosDate3.getTime(),
+              shortContent: 'short description 3'
+            }
+          ]
+        });</code></pre>
+        <div style="padding: 10px; border-radius: 3px; background-color: #8DD8DD">
+          <div id="timeline-container-relativepos-dates"></div>
+        </div>
+
+        <h3>Horizontal mode</h3>
+        <pre><code class="language-markup">&lt;div id="timeline-container-horizontal" type="text">&lt;/div></code></pre>
+
+        <h4>Default</h4>
+        <pre><code class="language-javascript">$('#timeline-container-horizontal').timelineMe({
+  orientation: 'horizontal',
+  items: [...]
+});</code></pre>
+        <div style="padding: 10px; border-radius: 3px; background-color: #8DD8DD">
+          <div id="timeline-container-horizontal"></div>
+        </div>
+
+        <h4>Scroll zones</h4>
+        <pre><code class="language-javascript">$('#timeline-container-scrollzones').timelineMe({
+  orientation: 'horizontal',
+  scrollZones: true,
+  scrollBar: false,
+  items: [...]
+});</code></pre>
+        <div style="padding: 10px; border-radius: 3px; background-color: #8DD8DD">
+          <div id="timeline-container-scrollzones"></div>
+        </div>
+
+        <h4>Scroll arrows</h4>
+        <pre><code class="language-javascript">$('#timeline-container-scrollarrows').timelineMe({
+  orientation: 'horizontal',
+  scrollArrows: true,
+  scrollBar: false,
+  items: [...]
+});</code></pre>
+        <div style="padding: 10px; border-radius: 3px; background-color: #8DD8DD">
+          <div id="timeline-container-scrollarrows"></div>
+        </div>
+
+      <h2>SASS variables</h2>
+
+      <table class="table table-bordered table-striped">
+          <thead>
+              <tr>
+                  <th>Name</th>
+                  <th>Description</th>
+                  <th>Default</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>$item-bg-color</td>
+                  <td>items background color</td>
+                  <td>#ffffff</td>
+              </tr>
+              <tr>
+                  <td>$timeline-thickness</td>
+                  <td>timeline's line thickness</td>
+                  <td>4px</td>
+              </tr>
+              <tr>
+                  <td>$timeline-color</td>
+                  <td>timeline's line color</td>
+                  <td>#555555</td>
+              </tr>
+              <tr>
+                  <td>$horizontal-item-sepa</td>
+                  <td>items separation for horizontal timeline</td>
+                  <td>10px</td>
+              </tr>
+              <tr>
+                  <td>$vertical-item-sepa</td>
+                  <td>items separation for vertical timeline</td>
+                  <td>$horizontal-item-sepa / 2</td>
+              </tr>
+              <tr>
+                  <td>$label-bg-color</td>
+                  <td>items' label's mark background color</td>
+                  <td>$item-bg-color</td>
+              </tr>
+              <tr>
+                  <td>$label-picto-size</td>
+                  <td>items' label's mark size</td>
+                  <td>$horizontal-item-sepa / 2</td>
+              </tr>
+              <tr>
+                  <td>$label-picto-border</td>
+                  <td>items' label's mark border width</td>
+                  <td>3px</td>
+              </tr>
+              <tr>
+                  <td>$label-picto-border-color</td>
+                  <td>items' label's mark border color</td>
+                  <td>$timeline-color</td>
+              </tr>
+              <tr>
+                  <td>$label-picto-sepa</td>
+                  <td>separation between item's label's mark and text</td>
+                  <td>3px</td>
+              </tr>
+              <tr>
+                  <td>$scroll-zone-width</td>
+                  <td>scroll zones width for horizontal timeline</td>
+                  <td>50px</td>
+              </tr>
+              <tr>
+                  <td>$scroll-zone-color</td>
+                  <td>scroll zones color (will be a gradient to transaprent) for horizontal timeline</td>
+                  <td>#8DD8DD</td>
+              </tr>
+              <tr>
+                  <td>$scroll-arrow-width</td>
+                  <td>scroll arrows width for horizontal timeline</td>
+                  <td>20px</td>
+              </tr>
+              <tr>
+                  <td>$scroll-arrow-color</td>
+                  <td>scroll arrows color for horizontal timeline</td>
+                  <td>#ffffff</td>
+              </tr>
+          </tbody>
+      </table>
+
+      <p>
+        WORK IN PROGRESS:<br>
+        - flipping item (bigItem) isn't working well in IE.<br>
+        - add same customization in js that the one existing in sass.<br>
+        - js unit testing
+      </p>
+      <!-- END -->
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/mickaelr/jquery-timelineMe">jQuery-TimelineMe</a> is maintained by <a href="https://github.com/mickaelr">mickaelr</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="src/jquery.timelineMe.js"></script>
+    <script type="text/javascript" src="prism/prism.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+
+        $('#timeline-container-basic').timelineMe({
+          items: [
+            {
+              type: 'milestone',
+              label: 'my label 1'
+            },
+            {
+              type: 'smallItem',
+              label: 'my label 2',
+              shortContent: 'short description',
+              fullContent: 'big description <br> with more lines <br> than the short one. <br> <div style="text-align: center;"><img src="https://assets-cdn.github.com/images/modules/logos_page/Octocat.png" style="width: 50%;" /></div>',
+              showMore: 'show more',
+              showLess: 'show less'
+            },
+            {
+              type: 'bigItem',
+              label: '<span style="background-color: #8DD8DD;">my label 3</span>',
+              shortContent: 'short description',
+              fullContent: 'big description <br> with more lines <br> than the short one. <br> <div style="text-align: center;"><img src="https://assets-cdn.github.com/images/modules/logos_page/Octocat.png" style="width: 50%;" /></div>',
+              showMore: 'show more',
+              showLess: 'show less'
+            }
+          ]
+        });
+
+        $('#timeline-container-force-position').timelineMe({
+          items: [
+            {
+              type: 'smallItem',
+              label: 'my label 1',
+              shortContent: 'short description 1',
+              fullContent: 'big description 1',
+              showMore: 'show more',
+              showLess: 'show less'
+            },
+            {
+              type: 'smallItem',
+              label: 'my label 2',
+              shortContent: 'short description 2',
+              fullContent: 'big description 2',
+              showMore: 'show more',
+              showLess: 'show less'
+            },
+            {
+              type: 'smallItem',
+              label: 'my label 3',
+              shortContent: 'short description 3',
+              fullContent: 'big description 3',
+              showMore: 'show more',
+              showLess: 'show less',
+              forcePosition: 'right'
+            },
+            {
+              type: 'smallItem',
+              label: 'my label 4',
+              shortContent: 'short description 4',
+              fullContent: 'big description 4',
+              showMore: 'show more',
+              showLess: 'show less',
+              forcePosition: 'left'
+            }
+          ]
+        });
+
+        $('#timeline-container-custom-classes').timelineMe({
+          labelClass: 'labelclass',
+          shortContentClass: 'card-panel',
+          fullContentClass: 'card-panel',
+          showMoreClass: 'showmoreclass',
+          showLessClass: 'showlessclass',
+          items: [
+            {
+              type: 'smallItem',
+              label: 'my label 1',
+              shortContent: 'short description 1',
+              fullContent: 'big description 1',
+              showMore: '<a class="custom-show-btn"><i class="material-icons">add</i></a>',
+              showLess: '<a class="custom-show-btn"><i class="material-icons">remove</i></a>'
+            },
+            {
+              type: 'bigItem',
+              label: 'my label 2',
+              shortContent: 'short description 2',
+              fullContent: 'big description 2',
+              showMore: '<a class="custom-show-btn"><i class="material-icons">add</i></a>',
+              showLess: '<a class="custom-show-btn"><i class="material-icons">remove</i></a>'
+            }
+          ]
+        });
+
+        $('#timeline-container-get-item').timelineMe({
+          items: [
+            {
+              type: 'milestone',
+              label: 'my label 1'
+            },
+            {
+              type: 'smallItem',
+              label: 'my label 2',
+              shortContent: 'short description 2'
+            },
+            {
+              type: 'bigItem',
+              label: 'my label 3',
+              shortContent: 'short description 3'
+            }
+          ]
+        });
+        $('#timeline-get-item-button').on('click', function() {
+          var item = $('#timeline-container-get-item').timelineMe('getItem', 2);
+          alert(
+            'type: ' + item.type + '\n' + 'label: ' + item.label + '\n' + 'shortContent: ' + item.shortContent
+          );
+        });
+
+        $('#timeline-container-label-picto').timelineMe({
+          items: [
+            {
+              type: 'milestone',
+              label: 'my label 1',
+              picto: '<i class="material-icons">event</i>'
+            },
+            {
+              type: 'smallItem',
+              label: 'my label 2',
+              picto: '<img src="https://assets-cdn.github.com/images/modules/logos_page/Octocat.png" />',
+              shortContent: 'short description 2'
+            },
+            {
+              type: 'bigItem',
+              label: 'my label 3',
+              picto: '<strong>TEXT</strong>',
+              shortContent: 'short description 3'
+            }
+          ]
+        });
+
+        $('#timeline-container-collapse').timelineMe({
+          items: [
+            {
+              type: 'milestone',
+              label: 'my label 1'
+            },
+            {
+              type: 'smallItem',
+              label: 'my label 2',
+              shortContent: 'short description 2'
+            },
+            {
+              type: 'bigItem',
+              label: 'my label 3',
+              shortContent: 'short description 3'
+            }
+          ]
+        });
+        $('#timeline-collapse-button').on('click', function() {
+          $('#timeline-container-collapse').timelineMe('collapse', 'toggle');
+        });
+
+        $('#timeline-container-relativepos').timelineMe({
+          items: [
+            {
+              type: 'milestone',
+              label: 'my label 1',
+              relativePosition: 15
+            },
+            {
+              type: 'smallItem',
+              label: 'my label 2',
+              relativePosition: 100,
+              shortContent: 'short description 2'
+            },
+            {
+              type: 'bigItem',
+              label: 'my label 3',
+              relativePosition: 30,
+              shortContent: 'short description 3'
+            }
+          ]
+        });
+
+        var relPosDate1 = new Date(2015, 02, 05);
+        var relPosDate2 = new Date(2015, 03, 01);
+        var relPosDate3 = new Date(2015, 03, 10);
+        $('#timeline-container-relativepos-dates').timelineMe({
+          items: [
+            {
+              type: 'milestone',
+              label: relPosDate1.toDateString(),
+              relativePosition: relPosDate1.getTime()
+            },
+            {
+              type: 'smallItem',
+              label: relPosDate2.toDateString(),
+              relativePosition: relPosDate2.getTime(),
+              shortContent: 'short description 2'
+            },
+            {
+              type: 'bigItem',
+              label: relPosDate3.toDateString(),
+              relativePosition: relPosDate3.getTime(),
+              shortContent: 'short description 3'
+            }
+          ]
+        });
+
+        $('#timeline-container-horizontal').timelineMe({
+          orientation: 'horizontal',
+          items: [
+            {
+              type: 'milestone',
+              label: 'my label 1'
+            },
+            {
+              type: 'smallItem',
+              label: 'my label 2',
+              shortContent: 'short description',
+              fullContent: 'big description <br> with more lines <br> than the short one. <br> <div style="text-align: center;"><img src="https://assets-cdn.github.com/images/modules/logos_page/Octocat.png" style="width: 50%;" /></div>',
+              showMore: 'show more',
+              showLess: 'show less'
+            },
+            {
+              type: 'smallItem',
+              label: 'my label 2bis',
+              shortContent: 'short description',
+              fullContent: 'big description <br> with more lines <br> than the short one. <br> <div style="text-align: center;"><img src="https://assets-cdn.github.com/images/modules/logos_page/Octocat.png" style="width: 50%;" /></div>',
+              showMore: 'show more',
+              showLess: 'show less',
+              forcePosition: 'top'
+            },
+            {
+              type: 'smallItem',
+              label: 'my label 2ter',
+              shortContent: 'short description',
+              fullContent: 'big description <br> with more lines <br> than the short one. <br> <div style="text-align: center;"><img src="https://assets-cdn.github.com/images/modules/logos_page/Octocat.png" style="width: 50%;" /></div>',
+              showMore: 'show more',
+              showLess: 'show less',
+              forcePosition: 'top'
+            },
+            {
+              type: 'bigItem',
+              label: '<span style="background-color: #8DD8DD;">my label 3</span>',
+              shortContent: 'short description',
+              fullContent: 'big description <br> with more lines <br> than the short one. <br> <div style="text-align: center;"><img src="https://assets-cdn.github.com/images/modules/logos_page/Octocat.png" style="width: 50%;" /></div>',
+              showMore: 'show more',
+              showLess: 'show less'
+            }
+          ]
+        });
+
+        $('#timeline-container-scrollzones').timelineMe({
+          orientation: 'horizontal',
+          scrollZones: true,
+          scrollBar: false,
+          items: [
+            {
+              type: 'milestone',
+              label: 'my label 1'
+            },
+            {
+              type: 'smallItem',
+              label: 'my label 2',
+              shortContent: 'short description',
+              fullContent: 'big description <br> with more lines <br> than the short one. <br> <div style="text-align: center;"><img src="https://assets-cdn.github.com/images/modules/logos_page/Octocat.png" style="width: 50%;" /></div>',
+              showMore: 'show more',
+              showLess: 'show less'
+            },
+            {
+              type: 'smallItem',
+              label: 'my label 2bis',
+              shortContent: 'short description',
+              fullContent: 'big description <br> with more lines <br> than the short one. <br> <div style="text-align: center;"><img src="https://assets-cdn.github.com/images/modules/logos_page/Octocat.png" style="width: 50%;" /></div>',
+              showMore: 'show more',
+              showLess: 'show less',
+              forcePosition: 'top'
+            },
+            {
+              type: 'smallItem',
+              label: 'my label 2ter',
+              shortContent: 'short description',
+              fullContent: 'big description <br> with more lines <br> than the short one. <br> <div style="text-align: center;"><img src="https://assets-cdn.github.com/images/modules/logos_page/Octocat.png" style="width: 50%;" /></div>',
+              showMore: 'show more',
+              showLess: 'show less',
+              forcePosition: 'top'
+            },
+            {
+              type: 'bigItem',
+              label: '<span style="background-color: #8DD8DD;">my label 3</span>',
+              shortContent: 'short description',
+              fullContent: 'big description <br> with more lines <br> than the short one. <br> <div style="text-align: center;"><img src="https://assets-cdn.github.com/images/modules/logos_page/Octocat.png" style="width: 50%;" /></div>',
+              showMore: 'show more',
+              showLess: 'show less'
+            }
+          ]
+        });
+
+        $('#timeline-container-scrollarrows').timelineMe({
+          orientation: 'horizontal',
+          scrollArrows: true,
+          scrollBar: false,
+          items: [
+            {
+              type: 'milestone',
+              label: 'my label 1'
+            },
+            {
+              type: 'smallItem',
+              label: 'my label 2',
+              shortContent: 'short description',
+              fullContent: 'big description <br> with more lines <br> than the short one. <br> <div style="text-align: center;"><img src="https://assets-cdn.github.com/images/modules/logos_page/Octocat.png" style="width: 50%;" /></div>',
+              showMore: 'show more',
+              showLess: 'show less'
+            },
+            {
+              type: 'smallItem',
+              label: 'my label 2bis',
+              shortContent: 'short description',
+              fullContent: 'big description <br> with more lines <br> than the short one. <br> <div style="text-align: center;"><img src="https://assets-cdn.github.com/images/modules/logos_page/Octocat.png" style="width: 50%;" /></div>',
+              showMore: 'show more',
+              showLess: 'show less',
+              forcePosition: 'top'
+            },
+            {
+              type: 'smallItem',
+              label: 'my label 2ter',
+              shortContent: 'short description',
+              fullContent: 'big description <br> with more lines <br> than the short one. <br> <div style="text-align: center;"><img src="https://assets-cdn.github.com/images/modules/logos_page/Octocat.png" style="width: 50%;" /></div>',
+              showMore: 'show more',
+              showLess: 'show less',
+              forcePosition: 'top'
+            },
+            {
+              type: 'bigItem',
+              label: '<span style="background-color: #8DD8DD;">my label 3</span>',
+              shortContent: 'short description',
+              fullContent: 'big description <br> with more lines <br> than the short one. <br> <div style="text-align: center;"><img src="https://assets-cdn.github.com/images/modules/logos_page/Octocat.png" style="width: 50%;" /></div>',
+              showMore: 'show more',
+              showLess: 'show less'
+            }
+          ]
+        });
+
+      });
+    </script>
+
+  </body>
+</html>
