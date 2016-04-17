@@ -17,7 +17,10 @@ apples sold at a roadside fruit stand each month:
 */
 
 var dataset = [ 100, 200, 300, 400, 500 ];
-var scale = d3.scale.linear();
+
+var scale = d3.scale.linear()
+        .domain([100, 500])
+        .range([10, 350]);
 
 
 
