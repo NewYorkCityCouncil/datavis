@@ -19,9 +19,26 @@ apples sold at a roadside fruit stand each month:
 var dataset = [ 100, 200, 300, 400, 500 ];
 
 var scale = d3.scale.linear()
-        .domain([100, 500])
-        .range([10, 350]);
+        .domain(0, 500)
+        .range([0, h]);
 
+//Create SVG element
+var svg = d3.select("body")
+      .append("svg")
+      .attr("width", w)
+      .attr("height", h);
+
+svg.selectAll("circle")
+      .data(dataset)
+      .enter()
+      .append("circle")
+        			   })
+      .attr("cy", function(d) {
+        	return yScale(d[1]);
+        			   })
+      .attr("r", function(d) {
+        	return Math.sqrt(h - d[1]);
+        			   });
 
 
 
