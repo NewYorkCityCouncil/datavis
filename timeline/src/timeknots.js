@@ -10,8 +10,7 @@ var TimeKnots = {
       dateFormat: "%Y/%m/%d %H:%M:%S",
       horizontalLayout: true,
       showLabels: false,
-      // labelFormat: "%Y/%m/%d %H:%M:%S",
-      labelFormat: "%B %Y",
+      labelFormat: "%Y/%m/%d %H:%M:%S",
       addNow: false,
       seriesColor: d3.scale.category20(),
       dateDimension: true
