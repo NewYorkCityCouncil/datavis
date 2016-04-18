@@ -39,7 +39,7 @@ var margin = {top: 100, right: 100, bottom: 100, left: 100},
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
-var y = d3.time.scale()
+var x = d3.time.scale()
     .domain([startDate, endDate])
     .nice(d3.time.month)
     .range([height, 0]);
@@ -52,7 +52,7 @@ var svg = d3.select("body").append("svg")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 svg.append("g")
-    .attr("class", "y axis")
+    .attr("class", "x axis")
     .call(d3.svg.axis().scale(x).orient("left"));
 
 </script>
