@@ -34,6 +34,14 @@ var format = d3.time.format("%Y-%m-%d");
 var startDate = format.parse("2016-01-12");
 var endDate = format.parse("2016-06-01");
 
+var dataset = [{name:"Preliminary Budget", date: "2016-01-05"},
+  {name:"Council Analysis & Hearings", 	date:"2016-02-10"},
+  {name:"Formal Response", 	date:"2016-04-01"},
+  {name:"Executive Budget & Hearings", date:	"2016-05-01"},
+  {name:"Adopted Budget", date:	"2016-07-31"}
+
+];
+
 var margin = {top: 100, right: 100, bottom: 100, left: 100},
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
