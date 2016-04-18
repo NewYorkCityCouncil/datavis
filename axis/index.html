@@ -60,6 +60,7 @@ var svg = d3.select("body").append("svg")
 
 var axis = d3.svg.axis()
     .scale(x)
+    .ticks(10)
     .orient("left");
 
 svg.append("g")
