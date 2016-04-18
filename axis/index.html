@@ -42,6 +42,9 @@ var dataset = [{name:"Preliminary Budget", date: "2016-01-05"},
 
 ];
 
+var x_domain = d3.extent(dataset, function(d) { return d.date; }),
+    y_domain = d3.extent(dataset, function(d) { return d.name; });
+
 var margin = {top: 100, right: 100, bottom: 100, left: 100},
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
