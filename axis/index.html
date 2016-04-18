@@ -42,8 +42,6 @@ var dataset = [{name:"Preliminary Budget", date: "2016-01-05"},
 
 ];
 
-var x_domain = d3.extent(dataset, function(d) { return d.date; }),
-    y_domain = d3.extent(dataset, function(d) { return d.name; });
 
 var margin = {top: 100, right: 100, bottom: 100, left: 100},
     width = 960 - margin.left - margin.right,
@@ -60,9 +58,13 @@ var svg = d3.select("body").append("svg")
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+var axis = d3.svg.axis()
+    .scale(x)
+    .orient("left");
+
 svg.append("g")
     .attr("class", "x axis")
-    .call(d3.svg.axis().scale(x).orient("left"));
+    .call(axis);
 
 //add Vertical Text
 /*
