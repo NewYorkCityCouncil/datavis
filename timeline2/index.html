@@ -2,8 +2,19 @@
 <meta charset="utf-8">
 <style>
 
-.axis text {
-  font: 10px sans-serif;
+<style>
+body {
+  font: 18px "Helvetica Neue";
+  font-weight:300;
+  text-rendering: optimizeLegibility;
+  margin-left: 20px;
+}
+</style>
+
+
+
+ .axis text {
+  font:  18px "Helvetica Neue";;
 }
 
 .axis path,
@@ -18,6 +29,10 @@
 <script src="//d3js.org/d3.v3.min.js"></script>
 <script>
 
+font-weight:300;
+text-rendering: optimizeLegibility;
+margin-left: 20px;
+
 var format = d3.time.format("%Y-%m-%d");
 var startDate = format.parse("2016-01-01");
 var endDate = format.parse("2016-06-01");
@@ -30,7 +45,7 @@ var x = d3.time.scale()
     .domain([startDate, endDate])
     .nice(d3.time.month)
     .range([height, 0]);
-    
+
 
 var svg = d3.select("body").append("svg")
     .attr("width", width + margin.left + margin.right)
