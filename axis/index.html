@@ -40,9 +40,8 @@ var margin = {top: 100, right: 100, bottom: 100, left: 100},
 
 var x = d3.time.scale()
     .domain([startDate, endDate])
-    .nice([d3.time.month])
+  //  .nice([d3.time.month])
     .range([height, 0]);
-
 
 var svg = d3.select("body").append("svg")
     .attr("width", width + margin.left + margin.right)
