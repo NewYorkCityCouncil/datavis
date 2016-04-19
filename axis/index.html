@@ -74,9 +74,9 @@ var svg = d3.select("body").append("svg") // creates a variable svg and adds an 
   .append("g") // adds a ‘g’ element - a container element for grouping together related graphics elements
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")"); // telling SVG Group Element that we want to move it and everything inside margins
 
-    svg.append("g")
-        .attr("class", "x axis")
-        .call(d3.svg.axis().scale(x).orient("left"));
+    svg.append("g") // adds a ‘g’ element - a container element for grouping together related graphics elements
+        .attr("class", "x axis") //
+        .call(d3.svg.axis().scale(x).orient("left")); // calling and establishing axis 
 
 //add Vertical Text
 /*
