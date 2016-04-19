@@ -75,10 +75,20 @@ var svg = d3.select("body").append("svg") // creates a variable svg and adds an 
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")"); // telling SVG Group Element that we want to move it and everything inside margins
 
     svg.append("g") // adds a ‘g’ element - a container element for grouping together related graphics elements
-        .attr("class", "x axis") //
-        .call(d3.svg.axis().scale(x).orient("left")); // calling and establishing axis 
+        .attr("class", "x axis") // assigning x axis class
+        .call(d3.svg.axis().scale(x).orient("left").ticks(5)); // calling and establishing axis see below for further. added number of ticks 
 
-//add Vertical Text
+/* .call(d3.svg.axis().scale(x).orient("left")); COULD ALSO BE WRITTEN as below
+ var xAxis= d3.svg.axis()
+    .scale(x)
+    .orient("left"));
+
+svg.append("g")
+        .call(xAxis);
+
+*/
+
+//ADDS VERTICAL TEXT
 /*
 svg.append("text")
         .attr("class", "y label")
