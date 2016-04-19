@@ -76,7 +76,7 @@ var svg = d3.select("body").append("svg") // creates a variable svg and adds an 
 
     svg.append("g") // adds a ‘g’ element - a container element for grouping together related graphics elements
         .attr("class", "x axis") // assigning x axis class
-        .call(d3.svg.axis().scale(x).orient("left").ticks(5)); // calling and establishing axis see below for further. added number of ticks 
+        .call(d3.svg.axis().scale(dataset).orient("left").ticks(5)); // calling and establishing axis see below for further. added number of ticks 
 
 /* .call(d3.svg.axis().scale(x).orient("left")); COULD ALSO BE WRITTEN as below
  var xAxis= d3.svg.axis()
