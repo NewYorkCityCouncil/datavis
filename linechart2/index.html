@@ -40,15 +40,15 @@ body {
 <script>
 
 var margin = {top: 20, right: 50, bottom: 30, left: 50},
-    width = 900 - margin.left - margin.right,
+    width = 600 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
 var parseDate = d3.time.format("%d-%b-%y").parse,
     bisectDate = d3.bisector(function(d) { return d.date; }).left,
     formatValue = d3.format(","),
     formatCurrency = function(d) { return formatValue(d); };
+	
 var x = d3.time.scale()
-	.nice(d3.time.day)
     .range([0, width]);
 
 var y = d3.scale.linear()
@@ -56,6 +56,7 @@ var y = d3.scale.linear()
 
 var xAxis = d3.svg.axis()
     .scale(x)
+	.ticks(5)
     .orient("bottom");
 
 var yAxis = d3.svg.axis()
