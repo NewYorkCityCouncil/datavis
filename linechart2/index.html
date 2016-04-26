@@ -11,7 +11,7 @@ body {
 .axis line {
   fill: none;
   stroke: #000;
-  shape-rendering: crispEdges;
+  shape-rendering: auto;
 }
 
 .x.axis path {
@@ -56,7 +56,7 @@ var y = d3.scale.linear()
 
 var xAxis = d3.svg.axis()
     .scale(x)
-	.ticks(8)
+	.ticks(10)
     .orient("bottom");
 
 var yAxis = d3.svg.axis()
