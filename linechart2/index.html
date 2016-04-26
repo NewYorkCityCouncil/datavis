@@ -49,7 +49,7 @@ var parseDate = d3.time.format("%d-%b-%y").parse,
     formatCurrency = function(d) { return formatValue(d); };
 	
 var x = d3.time.scale()
-	.nice(d3.time.month)
+	.nice(d3.time.year)
     .range([0, width]);
 
 var y = d3.scale.linear()
