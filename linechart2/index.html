@@ -64,6 +64,7 @@ var yAxis = d3.svg.axis()
     .orient("left");
 
 var line = d3.svg.line()
+	.interpolate("basis") //makes the graph line smooth
     .x(function(d) { return x(d.date); })
     .y(function(d) { return y(d.close); });
 
