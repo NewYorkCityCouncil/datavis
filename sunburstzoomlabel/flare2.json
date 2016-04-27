@@ -1,10 +1,9 @@
 {
- "name": "flare",
+ "name": "PB winners 2015",
  "children": [
   {
    "name": "Culture and Community Facilities",
    "children": [
-
       {"name": "Renovations for Jefferson Library Market", "size": 500000},
       {"name": "Mobile Food Pantry for West Side Campaign against Hunger", "size": 250000},
       {"name": "125th Street Library: ADA Ramp", "size": 500000},
@@ -19,21 +18,18 @@
       {"name": "Technology & Media Space - Rugby Library", "size": 35000},
       {"name": "Library Upgrades", "size": 200000}
 
-     ]
+      ]
     },
     {
      "name": "Housing",
      "children": [
-
        {"name": "Wilson Houses: Basketball Court Renovations", "size": 375000},
        {"name": "Senior Van - Jacob Riis Settlement House", "size": 55000},
        {"name": "Playground Upgrade at Queensbridge South", "size": 500000},
        {"name": "NYCHA Playground/Active Space Renovation", "size": 500000},
        {"name": "Green Space Landscaping & Beautification at NYCHA Developments", "size": 300000},
        {"name": "Playground Renovation at Williamsburg Houses", "size": 300000}
-
    ]
-  },
-
- ]
+ }
+]
 }
