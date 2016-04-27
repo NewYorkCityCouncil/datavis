@@ -30,6 +30,35 @@
        {"name": "Green Space Landscaping & Beautification at NYCHA Developments", "size": 300000},
        {"name": "Playground Renovation at Williamsburg Houses", "size": 300000}
    ]
- }
+ },
+      {
+        "name": "Parks and Recreation",
+        "children": [
+          {"name": "New Park for the Community", "size": 200000},
+          {"name": "Revitalization of Chelsea Waterside Park", "size": 85000},
+          {"name": "Hudson River Greenway Bike and Pedestrian Pathway Improvements", "size": 200000},
+          {"name": "Basketball Court Repair at Playground 125", "size": 500000},
+          {"name": "Grant Houses Playground Repair", "size": 450000},
+          {"name": "Public Greenhouse in Hamilton Heights", "size": 50000},
+          {"name": "Boys & Girls Harbor: Playground Renovations", "size": 275000},
+          {"name": "Outdoor Fitness Center by the Hudson River", "size": 100000},
+          {"name": "Highbridge Community Garden", "size": 200000},
+          {"name": "Spuyen Duyvil Playground Renovation", "size": 400000},
+          {"name": "Bronx Park Improvements", "size": 450000},
+          {"name": "More Trees and Green Areas in LeFrak City", "size": 150000},
+          {"name": "Better Lighting at Junction Playground", "size": 200000},
+          {"name": "Dog Run in Astoria", "size": 500000},
+          {"name": "Adult Fitness Equipment at Alley Pond Park", "size": 450000},
+          {"name": "Woodside Reforestry", "size": 200000},
+          {"name": "Construction of a reading garden with chess tables", "size": 400000},
+          {"name": "Outdoor Fitness Equipment for Sunset Park", "size": 500000},
+          {"name": "Make Union Street & 9th Street Greener", "size": 150000},
+          {"name": "New Drainage along Path in Prospect Park", "size": 200000},
+          {"name": "Emergency Call Boxes in Forest Park", "size": 140000},
+          {"name": "9/11 Memorial - Forest Park", "size": 250000},
+          {"name": "Remove asphalt in All-American park in Broad Channel to allow for creation of another baseball/softball field", "size": 175000},
+          {"name": "Improvements to 9/11 Tribute Park in Rockaway Park to include a decorative arch entry gate", "size": 300000}
+      ]
+}
 ]
 }
