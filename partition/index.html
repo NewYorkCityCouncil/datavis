@@ -1,101 +1,69 @@
 <!DOCTYPE html>
+<!--https://gist.github.com/mbostock/2e73ec84221cb9773f4c-->
 <meta charset="utf-8">
 <style>
-
 .node rect {
   fill: #ddd;
 }
-
 .node text {
   font: 10px sans-serif;
 }
-
 .node tspan:last-child {
   font-size: 9px;
   fill-opacity: 0.8;
 }
-
 .node--internal text {
   font-weight: bold;
 }
-
 .node--leaf rect {
   fill-opacity: 0.6;
 }
-
 </style>
 <svg width="960" height="4980"></svg>
 <script src="//d3js.org/d3.v4.0.0-alpha.29.min.js"></script>
 <script>
-
-var w = 1120,
-    h = 600,
-    x = d3.scale.linear().range([0, w]),
-    y = d3.scale.linear().range([0, h]);
-
-var vis = d3.select("#body").append("div")
-    .attr("class", "chart")
-    .style("width", w + "px")
-    .style("height", h + "px")
-  .append("svg:svg")
-    .attr("width", w)
-    .attr("height", h);
-
-var partition = d3.layout.partition()
-    .value(function(d) { return d.size; });
-
-d3.json("flare.json", function(root) {
-  var g = vis.selectAll("g")
-      .data(partition.nodes(root))
-    .enter().append("svg:g")
-      .attr("transform", function(d) { return "translate(" + x(d.y) + "," + y(d.x) + ")"; })
-      .on("click", click);
-
-  var kx = w / root.dx,
-      ky = h / 1;
-
-  g.append("svg:rect")
-      .attr("width", root.dy * kx)
-      .attr("height", function(d) { return d.dx * ky; })
-      .attr("class", function(d) { return d.children ? "parent" : "child"; });
-
-  g.append("svg:text")
-      .attr("transform", transform)
-      .attr("dy", ".35em")
-      .style("opacity", function(d) { return d.dx * ky > 12 ? 1 : 0; })
-      .text(function(d) { return d.name; })
-
-  d3.select(window)
-      .on("click", function() { click(root); })
-
-  function click(d) {
-    if (!d.children) return;
-
-    kx = (d.y ? w - 40 : w) / (1 - d.y);
-    ky = h / d.dx;
-    x.domain([d.y, 1]).range([d.y ? 40 : 0, w]);
-    y.domain([d.x, d.x + d.dx]);
-
-    var t = g.transition()
-        .duration(d3.event.altKey ? 7500 : 750)
-        .attr("transform", function(d) { return "translate(" + x(d.y) + "," + y(d.x) + ")"; });
-
-    t.select("rect")
-        .attr("width", d.dy * kx)
-        .attr("height", function(d) { return d.dx * ky; });
-
-    t.select("text")
-        .attr("transform", transform)
-        .style("opacity", function(d) { return d.dx * ky > 12 ? 1 : 0; });
-
-    d3.event.stopPropagation();
-  }
-
-  function transform(d) {
-    return "translate(8," + d.dx * ky / 2 + ")";
-  }
+var svg = d3.select("svg"),
+    width = +svg.attr("width"),
+    height = +svg.attr("height");
+var format = d3.format(",d");
+var color = d3.scaleCategory10();
+var stratify = d3.stratify()
+    .parentId(function(d) { return d.id.substring(0, d.id.lastIndexOf(".")); });
+var partition = d3.partition()
+    .size([height, width])
+    .padding(1)
+    .round(true);
+d3.csv("flare.csv", function(error, data) {
+  if (error) throw error;
+  var root = stratify(data)
+      .sum(function(d) { return d.value; })
+      .sort(function(a, b) { return b.height - a.height || b.value - a.value; });
+  partition(root);
+  var cell = svg
+    .selectAll(".node")
+    .data(root.descendants())
+    .enter().append("g")
+      .attr("class", function(d) { return "node" + (d.children ? " node--internal" : " node--leaf"); })
+      .attr("transform", function(d) { return "translate(" + d.y0 + "," + d.x0 + ")"; });
+  cell.append("rect")
+      .attr("id", function(d) { return "rect-" + d.id; })
+      .attr("width", function(d) { return d.y1 - d.y0; })
+      .attr("height", function(d) { return d.x1 - d.x0; })
+    .filter(function(d) { return !d.children; })
+      .style("fill", function(d) { while (d.depth > 1) d = d.parent; return color(d.id); });
+  cell.append("clipPath")
+      .attr("id", function(d) { return "clip-" + d.id; })
+    .append("use")
+      .attr("xlink:href", function(d) { return "#rect-" + d.id + ""; });
+  cell.append("text")
+      .attr("clip-path", function(d) { return "url(#clip-" + d.id + ")"; })
+      .attr("x", 4)
+    .selectAll("tspan")
+      .data(function(d) { return [d.id.substring(d.id.lastIndexOf(".") + 1), " " + format(d.value)]; })
+    .enter().append("tspan")
+      .attr("y", 13)
+      .text(function(d) { return d; });
+  cell.append("title")
+      .text(function(d) { return d.id + "\n" + format(d.value); });
 });
-
-    </script>
-  </body>
-</html>
+</script>
