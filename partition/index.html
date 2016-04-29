@@ -1,44 +1,32 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <link type="text/css" rel="stylesheet" href="style.css"/>
-    <script type="text/javascript" src="d3/d3.js"></script>
-    <script type="text/javascript" src="d3/d3.layout.js"></script>
-    <style type="text/css">
+<meta charset="utf-8">
+<style>
 
-.chart {
-  display: block;
-  margin: auto;
-  margin-top: 60px;
-  font-size: 11px;
+.node rect {
+  fill: #ddd;
 }
 
-rect {
-  stroke: #eee;
-  fill: #aaa;
-  fill-opacity: .8;
+.node text {
+  font: 10px sans-serif;
 }
 
-rect.parent {
-  cursor: pointer;
-  fill: steelblue;
+.node tspan:last-child {
+  font-size: 9px;
+  fill-opacity: 0.8;
 }
 
-text {
-  pointer-events: none;
+.node--internal text {
+  font-weight: bold;
 }
 
-    </style>
-  </head>
-  <body>
-    <div id="body">
-      <div id="footer">
-        d3.layout.partition
-        <div class="hint">click or option-click to descend or ascend</div>
-      </div>
-    </div>
-    <script type="text/javascript">
+.node--leaf rect {
+  fill-opacity: 0.6;
+}
+
+</style>
+<svg width="960" height="4980"></svg>
+<script src="//d3js.org/d3.v4.0.0-alpha.29.min.js"></script>
+<script>
 
 var w = 1120,
     h = 600,
