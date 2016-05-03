@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<!--http://www.delimited.io/blog/2014/3/3/creating-multi-series-charts-in-d3-lines-bars-area-and-streamgraphs-->
+
   <head>
     <meta charset="utf-8">
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -71,10 +73,10 @@
 
         x.domain(data.map(function (d) { return d.quarter; }));
         y.domain([
-          d3.min(seriesData, function (c) { 
+          d3.min(seriesData, function (c) {
             return d3.min(c.values, function (d) { return d.value; });
           }),
-          d3.max(seriesData, function (c) { 
+          d3.max(seriesData, function (c) {
             return d3.max(c.values, function (d) { return d.value; });
           })
         ]);
@@ -142,7 +144,7 @@
         function removePopovers () {
           $('.popover').each(function() {
             $(this).remove();
-          }); 
+          });
         }
 
         function showPopover (d) {
@@ -152,8 +154,8 @@
             container: 'body',
             trigger: 'manual',
             html : true,
-            content: function() { 
-              return "Quarter: " + d.label + 
+            content: function() {
+              return "Quarter: " + d.label +
                      "<br/>Rounds: " + d3.format(",")(d.value ? d.value: d.y1 - d.y0); }
           });
           $(this).popover('show')

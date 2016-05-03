@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<!--http://www.delimited.io/blog/2014/3/3/creating-multi-series-charts-in-d3-lines-bars-area-and-streamgraphs-->
+
   <head>
     <meta charset="utf-8">
   </head>
@@ -51,10 +53,10 @@
 
         x.domain(data.map(function (d) { return d.quarter; }));
         y.domain([
-          d3.min(seriesData, function (c) { 
+          d3.min(seriesData, function (c) {
             return d3.min(c.values, function (d) { return d.value; });
           }),
-          d3.max(seriesData, function (c) { 
+          d3.max(seriesData, function (c) {
             return d3.max(c.values, function (d) { return d.value; });
           })
         ]);
