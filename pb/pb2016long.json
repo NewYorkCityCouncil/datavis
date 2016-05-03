@@ -1,0 +1,3287 @@
+[
+  {
+    "dist": 3,
+    "category": "Youth",
+    "councildistrict": "District 03  Corey Johnson",
+    "title": "Renovate the Basketball Court at Chelsea Park",
+    "cost": "$350,000.00",
+    "description": "The basketball court is a neighborhood favorite which needs to be improved for the safety and enjoyment of the community. This project would repave the court and install new rims.",
+    "location": "West 27th Street and 10th Avenue"
+  },
+  {
+    "dist": 3,
+    "category": "Youth",
+    "councildistrict": "District 03  Corey Johnson",
+    "title": "Renovation at Gertrude Kelly Playground",
+    "cost": "$350,000.00",
+    "description": "Renovate the basketball court and adjacent sidewalk at Gertrude Kelly Playground",
+    "location": "West 17th Street between 8th and 9th Avenues"
+  },
+  {
+    "dist": 3,
+    "category": "Transit",
+    "councildistrict": "District 03  Corey Johnson",
+    "title": "More Turnstiles at C/E 50th Street Station",
+    "cost": "$135,000.00",
+    "description": "Install two additional turnstiles at the entrance/exit of the C/E 50th Street uptown platform. More turnstiles will ease congestion and reduce wait times for passengers at this entrance/exit.",
+    "location": "C/E Subway Station at 50th Street and 8th Avenue"
+  },
+  {
+    "dist": 3,
+    "category": "Transit",
+    "councildistrict": "District 03  Corey Johnson",
+    "title": "Real Time Rider Information at Bus Stops",
+    "cost": "$100,000.00",
+    "description": "Electronic Boards to display real time bus arrival information at five key bus stops, offering convenience for riders. The proposed locations will be subject to feasibility analysis by DOT.",
+    "location": "District wide"
+  },
+  {
+    "dist": 3,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 03  Corey Johnson",
+    "title": "Grounds Renovation at Elliott-Chelsea Houses",
+    "cost": "$500,000.00",
+    "description": "Add new playground fencing, renovate walkways, and revitalize garden and grassy areas. Project would be designed to budget and priority areas would be determined in conjunction with the RA leadership.",
+    "location": "425 West 25th Street"
+  },
+  {
+    "dist": 3,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 03  Corey Johnson",
+    "title": "New Fitness Equipment for Chelsea Park",
+    "cost": "$180,000.00",
+    "description": "New fitness units, including safety surfacing, seating and drinking fountains replacement.",
+    "location": "West 27th Street and 10th Avenue"
+  },
+  {
+    "dist": 3,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 03  Corey Johnson",
+    "title": "Renovation of Historic Field House",
+    "cost": "$250,000.00",
+    "description": "Restoration towards the Downing Street playground's historic field house and bathrooms to make them wheelchair accessible.",
+    "location": "1 Downing Street"
+  },
+  {
+    "dist": 3,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 03  Corey Johnson",
+    "title": "Repair/Reopen Staircase at DeWitt Clinton Park",
+    "cost": "$500,000.00",
+    "description": "The southwest entrance staircase is crumbling and has been closed for years. Repairing this entrance will make the park accessible to visitors and easier for children to enter the park on 12th Ave.",
+    "location": "West 52 Street and 11 Avenue"
+  },
+  {
+    "dist": 3,
+    "category": "Environment",
+    "councildistrict": "District 03  Corey Johnson",
+    "title": "New Trees for Council District 3",
+    "cost": "$100,000.00",
+    "description": "Plant new trees and install tree guards on blocks with few or no trees throughout District 3.",
+    "location": "District wide"
+  },
+  {
+    "dist": 3,
+    "category": "Education",
+    "councildistrict": "District 03  Corey Johnson",
+    "title": "A Green Roof for 75 Morton School",
+    "cost": "$200,000.00",
+    "description": "Build a green roof on the new middle school coming to 75 Morton Street. This would provide new physical and educational opportunities for students.",
+    "location": "75 Morton Street"
+  },
+  {
+    "dist": 3,
+    "category": "Education",
+    "councildistrict": "District 03  Corey Johnson",
+    "title": "A New Library for City Knoll School",
+    "cost": "$300,000.00",
+    "description": "Technological and construction updates to create a library space at City Knoll School. This project will help engage students and prepare them for the skills needed in the 21st century.",
+    "location": "425 West 33rd Street"
+  },
+  {
+    "dist": 3,
+    "category": "Education",
+    "councildistrict": "District 03  Corey Johnson",
+    "title": "Bathroom Upgrade - Lab MS, Lab HS & Museum High",
+    "cost": "$560,000.00",
+    "description": "Phase 2 renovations will make needed repairs to bathrooms on upper floors, addressing health and hygiene concerns for the school community.",
+    "location": "333 West 17th Street"
+  },
+  {
+    "dist": 3,
+    "category": "Education",
+    "councildistrict": "District 03  Corey Johnson",
+    "title": "Gym Renovation - Lab M.S, Lab H.S.& Museum High",
+    "cost": "$300,000.00",
+    "description": "Gym improvements with exploration to build more communal space will address broken bleachers, difficult to operate scoreboard, flooring to support aerobic activity, and create more educational space.",
+    "location": "333 West 17th Street"
+  },
+  {
+    "dist": 3,
+    "category": "Education",
+    "councildistrict": "District 03  Corey Johnson",
+    "title": "New Audio / Visual System for P.S 11",
+    "cost": "$75,000.00",
+    "description": "A new Audio/Visual System in the auditorium of P.S. 11. The school needs a working A/V system to fulfill its curriculum requirements for students.",
+    "location": "320 West 21st Street"
+  },
+  {
+    "dist": 3,
+    "category": "Arts, Culture & Community Facilities",
+    "councildistrict": "District 03  Corey Johnson",
+    "title": "Cool Muhlenberg Library. Renovate HVAC System",
+    "cost": "$500,000.00",
+    "description": "Replace the building's HVAC cooling unit to ensure that the branch can continue to serve as a cool space in the summer months, which includes serving as an official NYC Cooling Center.",
+    "location": "209 West 23rd Street"
+  },
+  {
+    "dist": 5,
+    "category": "Youth",
+    "councildistrict": "District 05  Ben Kallos",
+    "title": "Lexington Houses East & West Playground Renovation",
+    "cost": "$700,000.00",
+    "description": "Provide safety-compliant resurfacing and equipment for two community playgrounds, serving a large mix of resident families, with features that appeal to children from 6 months to 15 years old.",
+    "location": "E. 98 St. between 3rd & Lex/ Lex & Park Aves."
+  },
+  {
+    "dist": 5,
+    "category": "Seniors",
+    "councildistrict": "District 05  Ben Kallos",
+    "title": "Center @ Lenox Hill Neighborhood House Entrance",
+    "cost": "$500,000.00",
+    "description": "Automatic doors for the Center @ Lenox Hill Neighborhood House to enable ease of access and egress for senior center members, Robbins Plaza senior residents, visitors and staff.",
+    "location": "343 E 70 St, between 1st and 2nd Avenues"
+  },
+  {
+    "dist": 5,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 05  Ben Kallos",
+    "title": "Parks Greening",
+    "cost": "$1,000,000.00",
+    "description": "Install new and improve existing plantings ' trees, shrubs, flowers and grass - around perimeters and entrances of John Jay Park.",
+    "location": "John Jay Park"
+  },
+  {
+    "dist": 5,
+    "category": "Housing",
+    "councildistrict": "District 05  Ben Kallos",
+    "title": "Lexington Houses Security Upgrade",
+    "cost": "$500,000.00",
+    "description": "Purchase and install layered security system to ensure residents' safety in light of growing issues and incidents and the rise in neighborhood homeless population, which has caused security problems.",
+    "location": "East Lexington Avenue between 98-99 Streets"
+  },
+  {
+    "dist": 5,
+    "category": "Education",
+    "councildistrict": "District 05  Ben Kallos",
+    "title": "Computer Carts for 10 Schools",
+    "cost": "$350,000.00",
+    "description": "32 computers per cart for: P.S. 77, P.S. 198, P.S. 290, P.S./I.S. 217, M. 225, Eleanor Roosevelt, Urban Academy, Vanguard, Manhattan International, and Life Sciences, serving over 5000 students.",
+    "location": "NYC Schools (District wide)"
+  },
+  {
+    "dist": 5,
+    "category": "Education",
+    "councildistrict": "District 05  Ben Kallos",
+    "title": "HVAC for P.S.198 and P.S.77",
+    "cost": "$350,000.00",
+    "description": "Installing a split level air-conditioning system for the auditorium and cafeteria at P.S.198 and P.S.77.",
+    "location": "1700 3rd Avenue (Upper East Side)"
+  },
+  {
+    "dist": 5,
+    "category": "Education",
+    "councildistrict": "District 05  Ben Kallos",
+    "title": "Library Modernization for Eleanor Roosevelt H.S.",
+    "cost": "$350,000.00",
+    "description": "Create flexible learning space with access to computers, listening center, digital and print media, separate quiet and group spaces. Currently cannot support number of students and technology needs.",
+    "location": "411 East 76th Street"
+  },
+  {
+    "dist": 5,
+    "category": "Education",
+    "councildistrict": "District 05  Ben Kallos",
+    "title": "P.S. 290 Bathrooms",
+    "cost": "$225,000.00",
+    "description": "Replace toilets and sinks with age-appropriate fixtures and fittings. Remove unused urinals in boys bathrooms.",
+    "location": "311 East 82nd Street"
+  },
+  {
+    "dist": 5,
+    "category": "Education",
+    "councildistrict": "District 05  Ben Kallos",
+    "title": "Renovate Auditorium for Eleanor Roosevelt H.S.",
+    "cost": "$250,000.00",
+    "description": "Extend stage and replace seating and flooring to improve view, increase capacity, and support gym activities. Replace antiquated control board, install acoustical panels and simplify lighting system.",
+    "location": "411 East 76th Street"
+  },
+  {
+    "dist": 5,
+    "category": "Education",
+    "councildistrict": "District 05  Ben Kallos",
+    "title": "Rooftop Greenhouse at P.S. 290",
+    "cost": "$500,000.00",
+    "description": "Construction of a greenhouse as part of the green roof project at PS290. The 800sf greenhouse will provide opportunities to enhance the school's STEAM curricula & create desperately needed play space.",
+    "location": "311 East 82nd Street"
+  },
+  {
+    "dist": 5,
+    "category": "Education",
+    "councildistrict": "District 05  Ben Kallos",
+    "title": "Sound System at Julia Richman JREC Auditorium",
+    "cost": "$85,000.00",
+    "description": "This project will address the acoustical needs of the auditorium and update the sound system to correct the reverberation and an inability to hear and understand speakers.",
+    "location": "317 East 67th Street (Upper East Side)"
+  },
+  {
+    "dist": 5,
+    "category": "Education",
+    "councildistrict": "District 05  Ben Kallos",
+    "title": "STEM Green Roof for P.S./I.S. 217",
+    "cost": "$500,000.00",
+    "description": "Finalize funding to build a STEM Green Roof atop P.S. /I.S. 217. Transform 6,750 square feet of unused P.S./I.S. 217 school roof into an outdoor learning hub for science, math, nutrition and the arts.",
+    "location": "645 Main Street, Roosevelt Island"
+  },
+  {
+    "dist": 5,
+    "category": "Arts, Culture & Community Facilities",
+    "councildistrict": "District 05  Ben Kallos",
+    "title": "67th Street Library HVAC Improvements",
+    "cost": "$600,000.00",
+    "description": "Replacement or upgrade of the boiler to provide adequate heat.",
+    "location": "328 East 67th Street (Upper East Side)"
+  },
+  {
+    "dist": 5,
+    "category": "Arts, Culture & Community Facilities",
+    "councildistrict": "District 05  Ben Kallos",
+    "title": "Webster Library HVAC Improvements",
+    "cost": "$600,000.00",
+    "description": "Upgrade or replacement of air-conditioning system. This library is a designated NYC cooling center.",
+    "location": "1465 York Avenue (Upper East Side)"
+  },
+  {
+    "dist": 6,
+    "category": "Public Safety",
+    "councildistrict": "District 06  Helen Rosenthal",
+    "title": "UWS CERT Emergency Response and Education Vehicle",
+    "cost": "$40,000.00",
+    "description": "Purchase of a vehicle for UWS Community Emergency Response Team to store emergency and educational materials, and create pop-up preparedness events at street fairs, schools, and community gatherings.'",
+    "location": "Upper West Side"
+  },
+  {
+    "dist": 6,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 06  Helen Rosenthal",
+    "title": "Adult Fitness Equipment for Riverside Park",
+    "cost": "$330,000.00",
+    "description": "Installation of adult fitness equipment, including metal racks for sit-ups, pull-ups, push-ups, mats for stretching and exercise, and bars for stretching in Riverside Park.",
+    "location": "Riverside Park"
+  },
+  {
+    "dist": 6,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 06  Helen Rosenthal",
+    "title": "Picnic Tables for Riverside Park",
+    "cost": "$65,000.00",
+    "description": "Purchase and installation of picnic tables made of recycled, durable material capable of withstanding heavy use, weather conditions and permanently secured against theft.",
+    "location": "Riverside Park"
+  },
+  {
+    "dist": 6,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 06  Helen Rosenthal",
+    "title": "Restoration of Joan of Arc Plaza",
+    "cost": "$300,000.00",
+    "description": "Repairs to steps and pathways leading to and from the Joan of Arc monument, including concrete steps, resurfacing blacktop, laying cobblestone and sealing masonry around the base of the statue.",
+    "location": "Joan of Arc Park"
+  },
+  {
+    "dist": 6,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 06  Helen Rosenthal",
+    "title": "Restoration of Riverside Park Basketball Courts",
+    "cost": "$200,000.00",
+    "description": "Resurface and repair the existing basketball court to improve the recreation experience.",
+    "location": "Riverside Park at West 101st Street"
+  },
+  {
+    "dist": 6,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 06  Helen Rosenthal",
+    "title": "Riverside Park Recreation and Activity Area",
+    "cost": "$250,000.00",
+    "description": "An activity and recreation area intended for tweens and younger adults, including facilities for a number of recreation activities.",
+    "location": "Riverside Park at West 76th Street"
+  },
+  {
+    "dist": 6,
+    "category": "Housing",
+    "councildistrict": "District 06  Helen Rosenthal",
+    "title": "Playground Renovation at Wise Towers",
+    "cost": "$350,000.00",
+    "description": "Renovate the playground at Wise Towers, adding modern developmental play equipment suitable for young children and beautifying the area. (New York City Housing Authority)",
+    "location": "124 West 91st Street"
+  },
+  {
+    "dist": 6,
+    "category": "Housing",
+    "councildistrict": "District 06  Helen Rosenthal",
+    "title": "Security Cameras for Amsterdam Addition",
+    "cost": "$300,000.00",
+    "description": "Installation and updates to security cameras at Amsterdam Addition. (New York City Housing Authority)",
+    "location": "240 West 65th Street"
+  },
+  {
+    "dist": 6,
+    "category": "Education",
+    "councildistrict": "District 06  Helen Rosenthal",
+    "title": "Air Conditioning at the Performing Arts Library",
+    "cost": "$350,000.00",
+    "description": "Renovation of 40-year-old air conditioning system at the New York Public Library of Performing Arts to allow visitors to access the library during the warmer months comfortably.",
+    "location": "40 Lincoln Center Plaza"
+  },
+  {
+    "dist": 6,
+    "category": "Education",
+    "councildistrict": "District 06  Helen Rosenthal",
+    "title": "Auditorium Renovations and Upgrades at ?P.S. 166",
+    "cost": "$210,000.00",
+    "description": "Renovation of auditorium stage and installation of technological upgrades at the auditorium at P.S. 166.",
+    "location": "132 West 89th Street"
+  },
+  {
+    "dist": 6,
+    "category": "Education",
+    "councildistrict": "District 06  Helen Rosenthal",
+    "title": "Courtyard Renovation at Brandeis Campus",
+    "cost": "$300,000.00",
+    "description": "Renovation of existing concrete courtyard, including new pavement and installation of tables, to serve the high schools located at the Brandeis Campus.",
+    "location": "145 West 84th Street"
+  },
+  {
+    "dist": 6,
+    "category": "Education",
+    "councildistrict": "District 06  Helen Rosenthal",
+    "title": "Creation of Library Space at P.S. 191",
+    "cost": "$350,000.00",
+    "description": "Renovate an existing lounge space to create library space to be used by students and their families at P.S. 191.",
+    "location": "210 West 61st Street"
+  },
+  {
+    "dist": 6,
+    "category": "Education",
+    "councildistrict": "District 06  Helen Rosenthal",
+    "title": "Technology Upgrades at LaGuardia High School",
+    "cost": "$150,000.00",
+    "description": "Installation of SMART Boards, laptop carts, desktop computers, and a printing system for a department at LaGuardia High School.",
+    "location": "100 Amsterdam Avenue"
+  },
+  {
+    "dist": 6,
+    "category": "Education",
+    "councildistrict": "District 06  Helen Rosenthal",
+    "title": "Video Surveillance for P.S. 75 and M.S. 250",
+    "cost": "$225,000.00",
+    "description": "Installation of a video surveillance system to be used by the school security desk to help monitor the school's special needs population at P.S. 75 and M.S. 250.",
+    "location": "735 West End Avenue"
+  },
+  {
+    "dist": 7,
+    "category": "Streets",
+    "councildistrict": "District 07  Mark Levine",
+    "title": "Grounds Renovation",
+    "cost": "$325,000.00",
+    "description": "Replacing sidewalks in this area will help eliminate, or reduce the amount of accidents of civilians walking, allowing for a safer travel.",
+    "location": "Grant Houses"
+  },
+  {
+    "dist": 7,
+    "category": "Seniors",
+    "councildistrict": "District 07  Mark Levine",
+    "title": "Riverstone Senior Center Upgrade & Renovation",
+    "cost": "$210,000.00",
+    "description": "Grounds renovation outside the entrance would be designed to budget. Priorities such as creating attractive seating areas and enclosing the dumpster would be coordinated with RA leadership.",
+    "location": "99 Fort Washington Ave."
+  },
+  {
+    "dist": 7,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 07  Mark Levine",
+    "title": "Artificial Turf Installation",
+    "cost": "$500,000.00",
+    "description": "Install artificial turf play surface on the eastern portion of the playground in Morningside Park.",
+    "location": "Morningside Ave. (123rd St. - 124th St.)"
+  },
+  {
+    "dist": 7,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 07  Mark Levine",
+    "title": "Cherry Walk Safety Improvements",
+    "cost": "$150,000.00",
+    "description": "Address dangerous conditions for walkers and bikers along the 1.5 mile unbroken section of the Hudson River Greenway. Install reflective paint markings to illuminate and improve safety conditions.",
+    "location": "West 110th Street to West 129th Street"
+  },
+  {
+    "dist": 7,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 07  Mark Levine",
+    "title": "Green Up District 7",
+    "cost": "$300,000.00",
+    "description": "Planting 100 street trees and installing tree guards.",
+    "location": "West 125th Street to West 155th Street"
+  },
+  {
+    "dist": 7,
+    "category": "Housing",
+    "councildistrict": "District 07  Mark Levine",
+    "title": "Audubon Houses Playground Renovation",
+    "cost": "$500,000.00",
+    "description": "Renovation of recreational area for exercise, activity and relaxation.",
+    "location": "Audubon Houses"
+  },
+  {
+    "dist": 7,
+    "category": "Housing",
+    "councildistrict": "District 07  Mark Levine",
+    "title": "Augment Exterior Security Cameras",
+    "cost": "$500,000.00",
+    "description": "Augment the current 16 cameras per building added in 2015 with additional cameras to provide full security outdoors.",
+    "location": "Manhattanville Houses"
+  },
+  {
+    "dist": 7,
+    "category": "Housing",
+    "councildistrict": "District 07  Mark Levine",
+    "title": "Basketball Court Renovations",
+    "cost": "$500,000.00",
+    "description": "Resurface, replace and install new basketball court and recreational equipment.",
+    "location": "Manhattanville Houses"
+  },
+  {
+    "dist": 7,
+    "category": "Housing",
+    "councildistrict": "District 07  Mark Levine",
+    "title": "Lighting Upgrades for Recreational Areas",
+    "cost": "$500,000.00",
+    "description": "Inadequate lighting around playing fields. Gangs are exploiting two of the dark play areas while the inadequately lit paths are sites of frequent muggings. Proper lighting will enhance basic security.",
+    "location": "Manhattanville Houses"
+  },
+  {
+    "dist": 7,
+    "category": "Housing",
+    "councildistrict": "District 07  Mark Levine",
+    "title": "Playground Renovation",
+    "cost": "$500,000.00",
+    "description": "Renovate, upgrade, and install new equipment and amenities.",
+    "location": "Manhattanville Houses"
+  },
+  {
+    "dist": 7,
+    "category": "Education",
+    "councildistrict": "District 07  Mark Levine",
+    "title": "Auditorium Audio Upgrade",
+    "cost": "$125,000.00",
+    "description": "Upgrade to audio system and acoustics in the Ralph Bunche Campus auditorium which is used by three public schools, the DOE administration and the Community.",
+    "location": "425 West 123rd Street"
+  },
+  {
+    "dist": 7,
+    "category": "Education",
+    "councildistrict": "District 07  Mark Levine",
+    "title": "Electrical Upgrade to CSS",
+    "cost": "$200,000.00",
+    "description": "Upgrade electricity so that electrical equipment can be used in the classrooms in the Ralph Bunche Campus.",
+    "location": "425 West 123rd Street"
+  },
+  {
+    "dist": 7,
+    "category": "Education",
+    "councildistrict": "District 07  Mark Levine",
+    "title": "Improve Technology",
+    "cost": "$35,000.00",
+    "description": "Laptop cart for middle school students in J.H.S. 54 Booker T. Washintgon School.",
+    "location": "103 West 107th Street"
+  },
+  {
+    "dist": 7,
+    "category": "Education",
+    "councildistrict": "District 07  Mark Levine",
+    "title": "Indoor Hydroponic Farm",
+    "cost": "$250,000.00",
+    "description": "Indoor Hydroponic Farm to be used by 200 elementary school children attending Columbia Secondary School. There is a possibility it will be used by other local public schools too.",
+    "location": "425 West 123rd Street"
+  },
+  {
+    "dist": 7,
+    "category": "Education",
+    "councildistrict": "District 07  Mark Levine",
+    "title": "P.S. 28 Wright Brothers Greenhouse Project",
+    "cost": "$250,000.00",
+    "description": "Greenhouse Project Classroom Conversion with New York Sun Works will improve environmental science education in urban schools through state of the art hydroponic greenhouse science labs.",
+    "location": "475 West 155th Street"
+  },
+  {
+    "dist": 7,
+    "category": "Education",
+    "councildistrict": "District 07  Mark Levine",
+    "title": "Playground Upgrades",
+    "cost": "$400,000.00",
+    "description": "Playground upgrades (secure gating, security cameras) to the basketball court to service the students in Hamilton Grange Middle School.",
+    "location": "500 West 138th Street"
+  },
+  {
+    "dist": 7,
+    "category": "Education",
+    "councildistrict": "District 07  Mark Levine",
+    "title": "Science Lab Upgrades",
+    "cost": "$75,000.00",
+    "description": "Upgrade three existing science lab classrooms in Columbia Secondary School to align with NGSS standards that will enhance current STEM curriculum.",
+    "location": "425 West 123rd Street"
+  },
+  {
+    "dist": 7,
+    "category": "Education",
+    "councildistrict": "District 07  Mark Levine",
+    "title": "Smart Boards",
+    "cost": "$75,000.00",
+    "description": "Installation of 5-10 smart boards at Hamilton Grange Middle School.",
+    "location": "500 West 138th Street"
+  },
+  {
+    "dist": 7,
+    "category": "Education",
+    "councildistrict": "District 07  Mark Levine",
+    "title": "Technology Lab Upgrades",
+    "cost": "$35,000.00",
+    "description": "Hamilton Grange Middle School will receive either one (1) laptop cart or 10-15 desktops.",
+    "location": "500 West 138th Street"
+  },
+  {
+    "dist": 7,
+    "category": "Arts, Culture & Community Facilities",
+    "councildistrict": "District 07  Mark Levine",
+    "title": "Save Hamilton Grange! Elevator Repair",
+    "cost": "$400,000.00",
+    "description": "Restoration to the exterior of the building and water damage within the building. Replacement of the inoperable boiler, the installation of new windows and a workable HVAC system are needed.",
+    "location": "503 West 145th St."
+  },
+  {
+    "dist": 8,
+    "category": "Youth",
+    "councildistrict": "District 08  Melissa Mark-Viverito",
+    "title": "Bathroom Renovations: MS/HS 223",
+    "cost": "$250,000.00",
+    "description": "Essential restoration, upgrade, and efficiency enhancement of restroom facilities for our school - M.S./H.S. 223 The Laboratory School of Finance and Technology",
+    "location": "360 East 145th (Bronx - Mott Haven)"
+  },
+  {
+    "dist": 8,
+    "category": "Youth",
+    "councildistrict": "District 08  Melissa Mark-Viverito",
+    "title": "Mobile Robotics Lab at South Bronx Prep",
+    "cost": "$186,000.00",
+    "description": "Adding Computer Science to our curriculum. Next Generation science standards demand students apply science & math concepts to real world needs. We wish to add mobile robotic cards to achieve this end.",
+    "location": "South Bronx Preparatory 360 E.145 St (Bronx)"
+  },
+  {
+    "dist": 8,
+    "category": "Youth",
+    "councildistrict": "District 08  Melissa Mark-Viverito",
+    "title": "Technology Upgrade to FLAGS High School",
+    "cost": "$100,000.00",
+    "description": "Technology upgrade to Foreign Language Academy of Global Studies High School (FLAGS). This will enable students to better utilize their computer lab.",
+    "location": "470 Jackson Avenue (Bronx - Mott Haven)"
+  },
+  {
+    "dist": 8,
+    "category": "Youth",
+    "councildistrict": "District 08  Melissa Mark-Viverito",
+    "title": "Technology upgrades for PE, CPE, and Heritage HS",
+    "cost": "$376,200.00",
+    "description": "Technology upgrades that will impact classrooms at Park East High School, Central Park East High School and the Heritage High Schools, potentially serving approximately 1500 students daily.",
+    "location": "East Harlem High Schools"
+  },
+  {
+    "dist": 8,
+    "category": "Seniors",
+    "councildistrict": "District 08  Melissa Mark-Viverito",
+    "title": "Grounds Enhancement: Focus on Age Friendly Benches",
+    "cost": "$300,000.00",
+    "description": "Ground Beautification with a focus on Age Friendly benches. This will include new concrete, fencing and greening for Seniors at Washington Houses.",
+    "location": "Washington Houses (East Harlem)"
+  },
+  {
+    "dist": 8,
+    "category": "Seniors",
+    "councildistrict": "District 08  Melissa Mark-Viverito",
+    "title": "Grounds Renovation at Metro North",
+    "cost": "$300,000.00",
+    "description": "Grounds Renovation at Metro North with a focus on Age Friendly benches. This will include new concrete, fencing and greening for seniors at Metro North Plaza.",
+    "location": "Metro North Plaza (East Harlem)"
+  },
+  {
+    "dist": 8,
+    "category": "Seniors",
+    "councildistrict": "District 08  Melissa Mark-Viverito",
+    "title": "Grounds Renovation: Sitting Area for Seniors",
+    "cost": "$400,000.00",
+    "description": "Seniors in the Corsi Houses ask that the current open space be converted into a sitting area with greening and a shade structure to protect from the sun and rain.",
+    "location": "306 East 117th Street (East Harlem)"
+  },
+  {
+    "dist": 8,
+    "category": "Seniors",
+    "councildistrict": "District 08  Melissa Mark-Viverito",
+    "title": "Grounds Renovation: Upgrades to Gaylord White",
+    "cost": "$400,000.00",
+    "description": "Renovation to the outside entrance of Gaylord White Senior Houses. Project will replace the benches and tables and will level the ground.",
+    "location": "2029 East 104th Street (East Harlem)"
+  },
+  {
+    "dist": 8,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 08  Melissa Mark-Viverito",
+    "title": "Bright lights and fancy seating for Poor Richards",
+    "cost": "$300,000.00",
+    "description": "Poor Richards will receive new benches in addition to improved lighting to brighten up the park space.",
+    "location": "Poor Richards Playground (East Harlem)"
+  },
+  {
+    "dist": 8,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 08  Melissa Mark-Viverito",
+    "title": "Irrigation & Tom's Dog Run Upgrades",
+    "cost": "$400,000.00",
+    "description": "Keep Thomas Jefferson Park green with an irrigation system to water green spaces. Tom's Dog Run is in need of water fountains, fencing and obstacles for mental stimulation and exercise for EH dogs.",
+    "location": "Thomas Jefferson Park (East Harlem)"
+  },
+  {
+    "dist": 8,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 08  Melissa Mark-Viverito",
+    "title": "Nelson Playground Repairs",
+    "cost": "$500,000.00",
+    "description": "This project will put in a fence to separate the benches from the basketball court for the safety of those who utilize the benches. Additionally, water fountain repairs will be made to benefit all.",
+    "location": "Nelson Playground (Bronx - Highbridge)"
+  },
+  {
+    "dist": 8,
+    "category": "Housing",
+    "councildistrict": "District 08  Melissa Mark-Viverito",
+    "title": "Exterior Lighting at Millbrook Houses",
+    "cost": "$400,000.00",
+    "description": "Placement of exterior lighting throughout Millbrook houses to increase visibility and safety.",
+    "location": "Millbrook Houses (Bronx - Mott Haven)"
+  },
+  {
+    "dist": 8,
+    "category": "Housing",
+    "councildistrict": "District 08  Melissa Mark-Viverito",
+    "title": "Exterior Lighting at Mott Haven Houses",
+    "cost": "$400,000.00",
+    "description": "The placement of exterior lighting throughout Mott Haven Houses will increase visibility at night and creating a safer environment.",
+    "location": "Mott Haven Houses (Bronx - Mott Haven)"
+  },
+  {
+    "dist": 8,
+    "category": "Housing",
+    "councildistrict": "District 08  Melissa Mark-Viverito",
+    "title": "Playground Renovations at Wagner Houses",
+    "cost": "$500,000.00",
+    "description": "Renovation to existing playground at Wagner Houses. The renovation will focus on children with special needs.",
+    "location": "Wagner Houses (East Harlem)"
+  },
+  {
+    "dist": 8,
+    "category": "Housing",
+    "councildistrict": "District 08  Melissa Mark-Viverito",
+    "title": "Playground Renovations at Wilson Houses",
+    "cost": "$500,000.00",
+    "description": "Renovation to existing playground at Wilson Houses",
+    "location": "Wilson Houses (East Harlem)"
+  },
+  {
+    "dist": 8,
+    "category": "Housing",
+    "councildistrict": "District 08  Melissa Mark-Viverito",
+    "title": "Renovation to Playground at Washington Houses",
+    "cost": "$500,000.00",
+    "description": "Renovation to existing playground at Washington Houses. The renovation will focus on children with special needs.",
+    "location": "Washington Houses (East Harlem)"
+  },
+  {
+    "dist": 8,
+    "category": "Education",
+    "councildistrict": "District 08  Melissa Mark-Viverito",
+    "title": "Air Conditioning at P.S. 108",
+    "cost": "$250,000.00",
+    "description": "Air conditioning system for the school cafeteria at P.S. 108 Assemblyman Angelo Del Toro Educational Complex",
+    "location": "1615 Madison Avenue (East Harlem)"
+  },
+  {
+    "dist": 8,
+    "category": "Education",
+    "councildistrict": "District 08  Melissa Mark-Viverito",
+    "title": "Air Conditioning for P.S. 369X, P.S. 179X and 352X",
+    "cost": "$450,000.00",
+    "description": "Providing air-conditioning to a school building that has three co-located schools - P.S. 369 Young Leaders Elementary, PS. 179 School International Cultures and X352 D75",
+    "location": "468 East 140th St (Bronx-Mott Haven)"
+  },
+  {
+    "dist": 8,
+    "category": "Education",
+    "councildistrict": "District 08  Melissa Mark-Viverito",
+    "title": "Air Conditioning for P.S. 65X",
+    "cost": "$250,000.00",
+    "description": "Install air conditioning for students and faculty to make the space more usable throughout the year.",
+    "location": "677 East 141st Street, Bronx"
+  },
+  {
+    "dist": 8,
+    "category": "Education",
+    "councildistrict": "District 08  Melissa Mark-Viverito",
+    "title": "Air Conditioning for PS 49X",
+    "cost": "$250,000.00",
+    "description": "Obtaining a split system will create a safer and healthier environment for the students and faculty and make the space more usable throughout the year.",
+    "location": "383 East 139th Street (Bronx - Mott Haven)"
+  },
+  {
+    "dist": 8,
+    "category": "Education",
+    "councildistrict": "District 08  Melissa Mark-Viverito",
+    "title": "Electrical Upgrade for Schools",
+    "cost": "$75,000.00",
+    "description": "Electrical upgrades for classrooms in Central Park East II, P.S. 171 and P.S. 108. The upgrades will increase electrical capacity to support air conditioning units.",
+    "location": "Central Park East II, P.S. 171 and P.S. 108"
+  },
+  {
+    "dist": 8,
+    "category": "Education",
+    "councildistrict": "District 08  Melissa Mark-Viverito",
+    "title": "Water Fountain Upgrades: CPE II, P.S.171 & P.S.108",
+    "cost": "$75,000.00",
+    "description": "Water fountain upgrades for Central Park East II, P.S. 171 and P.S. 108",
+    "location": "19 103rd Street (East Harlem)"
+  },
+  {
+    "dist": 11,
+    "category": "Transit",
+    "councildistrict": "District 11  Andy Cohen",
+    "title": "Bus Countdown Clocks",
+    "cost": "$100,000.00",
+    "description": "Commuters often wait long lengths of time without knowing when the next bus will arrive. The installation of bus countdown clocks will alert commuters how far away the next buses are.",
+    "location": "Within District 11 (Bx1, Bx10, Bx16, Bx31)"
+  },
+  {
+    "dist": 11,
+    "category": "Streets",
+    "councildistrict": "District 11  Andy Cohen",
+    "title": "District 11 Security Cameras",
+    "cost": "$300,000.00",
+    "description": "Security Cameras for the 50th, 47th and 52nd Precincts within District 11.",
+    "location": "District- wide"
+  },
+  {
+    "dist": 11,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 11  Andy Cohen",
+    "title": "Adult Fitness Equipment at Classic Playground",
+    "cost": "$400,000.00",
+    "description": "Install fitness equipment for adults for recreational use.",
+    "location": "Van Cortlandt Park S."
+  },
+  {
+    "dist": 11,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 11  Andy Cohen",
+    "title": "Hackett Park Dog Run Improvements",
+    "cost": "$500,000.00",
+    "description": "Upgrade fencing & installation of features within dog run.",
+    "location": "Riverdale Ave. & W. 254th Street"
+  },
+  {
+    "dist": 11,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 11  Andy Cohen",
+    "title": "Seton Park Mini Skate Park",
+    "cost": "$450,000.00",
+    "description": "Construction of mini skate park for teenagers & young adults to skate in safe place.",
+    "location": "Independence Ave. & W. 235th St (SW of Park)"
+  },
+  {
+    "dist": 11,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 11  Andy Cohen",
+    "title": "Wakefield Playground/Basketball Court Renovations",
+    "cost": "$300,000.00",
+    "description": "Renovation to basketball courts, part of only recreational space in community.",
+    "location": "Carpenter Ave. Btwn E. 239 St. & E. 240 St."
+  },
+  {
+    "dist": 11,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 11  Andy Cohen",
+    "title": "Woodlawn Playground Spray Shower Renovations",
+    "cost": "$300,000.00",
+    "description": "Update cement spray shower to make it usable for local children",
+    "location": "Van Cortlandt Park East & Kepler Ave."
+  },
+  {
+    "dist": 11,
+    "category": "Education",
+    "councildistrict": "District 11  Andy Cohen",
+    "title": "District 11 Schools Technology Upgrade",
+    "cost": "$300,000.00",
+    "description": "To provide a technology upgrade for students in the district. $50,000 per school. Includes Laptop carts, smart boards, In-Tech news network program.",
+    "location": "PS 94, 340, 16, & 19, In-Tech Academy, & ISL"
+  },
+  {
+    "dist": 11,
+    "category": "Education",
+    "councildistrict": "District 11  Andy Cohen",
+    "title": "In-tech Academy Gym Lockers",
+    "cost": "$400,000.00",
+    "description": "To replace the old gym lockers at In-Tech Academy",
+    "location": "2975 Tibbet Ave."
+  },
+  {
+    "dist": 11,
+    "category": "Education",
+    "councildistrict": "District 11  Andy Cohen",
+    "title": "P.S. 280/M.S. 80 Auditorium Renovations",
+    "cost": "$275,000.00",
+    "description": "Replacement of outdated seating in the auditorium. Events and community meetings are held in the auditorium throughout the year.",
+    "location": "149 East Mosholu Parkway North"
+  },
+  {
+    "dist": 11,
+    "category": "Arts, Cultures & Community Facilities",
+    "councildistrict": "District 11  Andy Cohen",
+    "title": "Mosholu Library HVAC & Roof",
+    "cost": "$400,000.00",
+    "description": "Installation of HVAC system, including unit on roof & compressor, air handling units and ejector pump.",
+    "location": "285 E. 205th Street"
+  },
+  {
+    "dist": 11,
+    "category": "Arts, Cultures & Community Facilities",
+    "councildistrict": "District 11  Andy Cohen",
+    "title": "Spuyten Duyvil Library HVAC System",
+    "cost": "$400,000.00",
+    "description": "Installation of HVAC system, including unit on roof & compressor, air handling units and ejector pump.",
+    "location": "650 West 235th Street"
+  },
+  {
+    "dist": 15,
+    "category": "Transit",
+    "councildistrict": "District 15  Ritchie Torres",
+    "title": "Bus Countdown Clocks",
+    "cost": "$40,000.00",
+    "description": "Two bus countdown clocks which will help riders know when the next bus will be arriving.",
+    "location": "Transportation Hubs"
+  },
+  {
+    "dist": 15,
+    "category": "Streets",
+    "councildistrict": "District 15  Ritchie Torres",
+    "title": "NYPD Security Cameras",
+    "cost": "$350,000.00",
+    "description": "Install ten NYPD Security Cameras throughout District 15.",
+    "location": "TBD"
+  },
+  {
+    "dist": 15,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 15  Ritchie Torres",
+    "title": "Bronx Park East Physical Exercise Equipment",
+    "cost": "$400,000.00",
+    "description": "Construct physical exercise equipment in Bronx Park.",
+    "location": "Between Waring Avenue and Rosewood Street"
+  },
+  {
+    "dist": 15,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 15  Ritchie Torres",
+    "title": "Zimmerman Playground Basketball Court",
+    "cost": "$500,000.00",
+    "description": "Resurface basketball court in Zimmerman Playground.",
+    "location": "Zimmerman Playground"
+  },
+  {
+    "dist": 15,
+    "category": "Housing",
+    "councildistrict": "District 15  Ritchie Torres",
+    "title": "Murphy Houses Grounds Renovation",
+    "cost": "$300,000.00",
+    "description": "Renovate benches and resurface concrete in Murphy Houses.",
+    "location": "NYCHA Murphy Houses"
+  },
+  {
+    "dist": 15,
+    "category": "Education",
+    "councildistrict": "District 15  Ritchie Torres",
+    "title": "Jonas Brock Academy Science Cart",
+    "cost": "$62,000.00",
+    "description": "Purchase a mobile science cart with lab materials for the students of Jonas Bronck Academy.",
+    "location": "400 East Fordham Road"
+  },
+  {
+    "dist": 15,
+    "category": "Education",
+    "councildistrict": "District 15  Ritchie Torres",
+    "title": "Jungle Gym at P.S.54",
+    "cost": "$150,000.00",
+    "description": "Construct a jungle gym in the yard of P.S. 54.",
+    "location": "2703 Webster Avenue"
+  },
+  {
+    "dist": 15,
+    "category": "Education",
+    "councildistrict": "District 15  Ritchie Torres",
+    "title": "Mobile Laptop Carts and Smart Boards",
+    "cost": "$305,000.00",
+    "description": "Purchase seven carts with thirty laptops each, and ten interactive white boards to be used by students.",
+    "location": "M.S.391, P.S.9, I.S.254, Jonas Bronck Academy"
+  },
+  {
+    "dist": 15,
+    "category": "Education",
+    "councildistrict": "District 15  Ritchie Torres",
+    "title": "P.S. 23 Playground Renovation",
+    "cost": "$400,000.00",
+    "description": "Renovate the playground of P.S. 23, including a new jungle gym.",
+    "location": "2151 Washington Avenue"
+  },
+  {
+    "dist": 15,
+    "category": "Education",
+    "councildistrict": "District 15  Ritchie Torres",
+    "title": "TAPCO Lockers",
+    "cost": "$200,000.00",
+    "description": "Install 80 lockers to create a girl's locker room for Theater Arts Production Company School. There are currently no lockers for female students.",
+    "location": "2225 Webster Avenue"
+  },
+  {
+    "dist": 19,
+    "category": "Transit",
+    "councildistrict": "District 19  Paul Vallone",
+    "title": "Real Time Passenger Countdown Clocks",
+    "cost": "$160,000.00",
+    "description": "Project would install countdown clocks to certain bus stops along the Q12 and Q13 bus routes. The countdown is not by time, but rather by how many stops away the next bus is.",
+    "location": "Q12 and Q13 Bus Routes"
+  },
+  {
+    "dist": 19,
+    "category": "Streets",
+    "councildistrict": "District 19  Paul Vallone",
+    "title": "NYPD Security Cameras",
+    "cost": "$105,000.00",
+    "description": "Project would fund three NYPD security cameras in District 19. These security cameras would enhance crime prevention, provide a sense of security and establish surveillance in remote areas.",
+    "location": "District 19 (At NYPD discretion)"
+  },
+  {
+    "dist": 19,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 19  Paul Vallone",
+    "title": "Adult Fitness Center at Little Bay Park",
+    "cost": "$250,000.00",
+    "description": "Project would install adult fitness equipment within Little Bay Park to promote good health and appeal to people of all fitness levels. Fitness equipment would be accessible to the public.",
+    "location": "Little Bay Park (Bayside/Whitestone)"
+  },
+  {
+    "dist": 19,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 19  Paul Vallone",
+    "title": "Adult Fitness Center at MacNeil Park",
+    "cost": "$250,000.00",
+    "description": "Project would install adult fitness equipment within Little Bay Park to promote good health and appeal to people of all fitness levels. Fitness equipment would be accessible to the public.",
+    "location": "MacNeil Park (College Point)"
+  },
+  {
+    "dist": 19,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 19  Paul Vallone",
+    "title": "Basketball Court and Sidewalk Renovation",
+    "cost": "$500,000.00",
+    "description": "Project would renovate the Bay Terrace Playground basketball court, including repaving and rim/backboard replacement. Sidewalk adjacent to the basketball court would be also be reconstructed.",
+    "location": "Bay Terrace Playground (Bay Terrace)"
+  },
+  {
+    "dist": 19,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 19  Paul Vallone",
+    "title": "Basketball Court Renovation at MacNeil Park",
+    "cost": "$650,000.00",
+    "description": "Project would renovate the MacNeil Park basketball court, including repaving and rim/backboard replacement. This project would also create an additional half-court for the park.",
+    "location": "MacNeil Park (College Point)"
+  },
+  {
+    "dist": 19,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 19  Paul Vallone",
+    "title": "Basketball Court Renovation at Marie Curie Park",
+    "cost": "$350,000.00",
+    "description": "Project would renovate the Marie Curie Park basketball court, including repaving and rim/backboard replacement.",
+    "location": "Marie Curie Park (Bayside)"
+  },
+  {
+    "dist": 19,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 19  Paul Vallone",
+    "title": "Pedestrian Safety Sidewalk and Guardrail",
+    "cost": "$550,000.00",
+    "description": "Project would create concrete pedestrian sidewalk along the Northbound Whitestone Expy. Service Road between 20th Ave. and 14th Ave. Guardrail would be installed along sidewalk for pedestrian safety.",
+    "location": "Harvey Park (Whitestone/College Point)"
+  },
+  {
+    "dist": 19,
+    "category": "Education",
+    "councildistrict": "District 19  Paul Vallone",
+    "title": "Adrien Block Campus Cafeteria Upgrade",
+    "cost": "$400,000.00",
+    "description": "Project would upgrade the multi-use cafeteria shared by three schools: IS 25, World Journalism Prep School & P233. Upgrade includes new flooring, furniture, paint, sound system & food service/display.",
+    "location": "34-65 192nd Street (Flushing)"
+  },
+  {
+    "dist": 19,
+    "category": "Education",
+    "councildistrict": "District 19  Paul Vallone",
+    "title": "Bayside High School Music Educational Complex",
+    "cost": "$450,000.00",
+    "description": "Project will fund phase three of state-of-the-art music studio for Bayside High School, which has 350 students in their \"Career and Technical Education\" music production and performance program.",
+    "location": "32-24 Corporal Kennedy Street (Bayside)"
+  },
+  {
+    "dist": 19,
+    "category": "Education",
+    "councildistrict": "District 19  Paul Vallone",
+    "title": "J.H.S. 194 Auditorium Upgrade",
+    "cost": "$550,000.00",
+    "description": "Project would replace lighting, curtains, sound system, flooring, A/V system and auditorium seating. The auditorium is used for both school and community events.",
+    "location": "154-60 17th Avenue (Whitestone)"
+  },
+  {
+    "dist": 19,
+    "category": "Education",
+    "councildistrict": "District 19  Paul Vallone",
+    "title": "P.S. 159 Technology Upgrade",
+    "cost": "$105,000.00",
+    "description": "Project would allow P.S. 159 to acquire laptops for school community and student use. This upgrade will help enhance instruction and allow students greater learning opportunities.",
+    "location": "205-01 33rd Avenue (Bayside)"
+  },
+  {
+    "dist": 19,
+    "category": "Education",
+    "councildistrict": "District 19  Paul Vallone",
+    "title": "P.S. 193 Auditorium Upgrade",
+    "cost": "$500,000.00",
+    "description": "Project would replace lighting, curtains, sound system, flooring, A/V system and auditorium seating. The auditorium is used for both school and community events.",
+    "location": "152-20 11th Avenue (Whitestone)"
+  },
+  {
+    "dist": 19,
+    "category": "Education",
+    "councildistrict": "District 19  Paul Vallone",
+    "title": "P.S. 21 Playground Renovation",
+    "cost": "$400,000.00",
+    "description": "Project would renovate the P.S. 21 playground for the use of the school community. This renovation would include replacement of play equipment, safety surfaces and asphalt surfaces.",
+    "location": "147-36 26th Avenue (Flushing/College Point)"
+  },
+  {
+    "dist": 19,
+    "category": "Education",
+    "councildistrict": "District 19  Paul Vallone",
+    "title": "P.S. 79 Gymnasium Upgrade",
+    "cost": "$200,000.00",
+    "description": "Project would renovate the school recreational space by replacing wall padding, basketball hoop backboards, sound system, scoreboard and additional gymnasium equipment.",
+    "location": "147-27 15th Drive (Whitestone)"
+  },
+  {
+    "dist": 19,
+    "category": "Education",
+    "councildistrict": "District 19  Paul Vallone",
+    "title": "P.S. 98 Technology Upgrade",
+    "cost": "$70,000.00",
+    "description": "Project would allow P.S. 98 to acquire laptops for school community and student use. This upgrade will help enhance instruction and allow students greater learning opportunities.",
+    "location": "32-20 235th Street (Douglaston)"
+  },
+  {
+    "dist": 19,
+    "category": "Arts, Culture & Community Facilities",
+    "councildistrict": "District 19  Paul Vallone",
+    "title": "Wall Shelf at Douglaston/Little Neck Library",
+    "cost": "$50,000.00",
+    "description": "Project would install a wall shelf with multiple outlets and chairs for laptop/tablet users for greater efficiency and safety in computer areas of the library.",
+    "location": "249-01 Northern Blvd (Douglaston/Little Neck)"
+  },
+  {
+    "dist": 21,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 21  Julissa Ferreras-Copeland",
+    "title": "Bathroom Improvements at East Elmhurst Playground",
+    "cost": "$500,000.00",
+    "description": "This proposal is for 1/3 of the cost of new stalls, updated plumbing, improved signage for comfort station/restroom.",
+    "location": "100th Street and 25th Avenue, East Elmhurst"
+  },
+  {
+    "dist": 21,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 21  Julissa Ferreras-Copeland",
+    "title": "Bathroom Upgrade at Josephine Caminiti Playground",
+    "cost": "$500,000.00",
+    "description": "This proposal is for 1/3 of the cost of new stalls, updated plumbing, improved signage for comfort station/restroom.",
+    "location": "102nd Street and Alstyne Avenue, Corona"
+  },
+  {
+    "dist": 21,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 21  Julissa Ferreras-Copeland",
+    "title": "Brand New Pathways at Park of the Americas",
+    "cost": "$300,000.00",
+    "description": "Newly paved walkways and playing areas through the Park of the Americas.",
+    "location": "104th Street and 42nd Avenue, Corona"
+  },
+  {
+    "dist": 21,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 21  Julissa Ferreras-Copeland",
+    "title": "Improved Lighting at East Elmhurst Playground",
+    "cost": "$200,000.00",
+    "description": "East Elmhurst playground lighting upgrade will allow for a safe playing experience during the early evening hours for families.",
+    "location": "100th Street and 25th Avenue, East Elmhurst"
+  },
+  {
+    "dist": 21,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 21  Julissa Ferreras-Copeland",
+    "title": "Newly Paved Walkways Josephine Caminiti Playground",
+    "cost": "$300,000.00",
+    "description": "Newly paved walkways through the park and playing areas.",
+    "location": "102nd Street and Alstyne Avenue, Corona"
+  },
+  {
+    "dist": 21,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 21  Julissa Ferreras-Copeland",
+    "title": "Park of the Americas Bathroom Improvements",
+    "cost": "$500,000.00",
+    "description": "This proposal is for 1/3 of the cost of new stalls, updated plumbing, improved signage for comfort station/restroom.",
+    "location": "104th Street and 42nd Avenue, Corona"
+  },
+  {
+    "dist": 21,
+    "category": "Education",
+    "councildistrict": "District 21  Julissa Ferreras-Copeland",
+    "title": "New Laptops for P.S. 16Q Students",
+    "cost": "$80,000.00",
+    "description": "P.S. 16Q will have new laptops for students to use, expanding the way to educate local students. Local students will learn via interactive lessons on the laptops.",
+    "location": "41-15 104th Street, Corona"
+  },
+  {
+    "dist": 21,
+    "category": "Education",
+    "councildistrict": "District 21  Julissa Ferreras-Copeland",
+    "title": "New Smartboards for P.S. 14Q",
+    "cost": "$80,000.00",
+    "description": "P.S. 14Q will have new smart boards to teach on, expanding the way to educate local students. Local students will learn via interactive lessons on the smart boards.",
+    "location": "107-01 Otis Avenue"
+  },
+  {
+    "dist": 21,
+    "category": "Arts, Culture & Community Facilities",
+    "councildistrict": "District 21  Julissa Ferreras-Copeland",
+    "title": "New Computers & Tablets at the LeFrak City Library",
+    "cost": "$35,000.00",
+    "description": "New tablets and computers for members of the LeFrak City Library. Tablets will be available to rent for members.",
+    "location": "98-30 57th Avenue, Corona"
+  },
+  {
+    "dist": 21,
+    "category": "Arts, Culture & Community Facilities",
+    "councildistrict": "District 21  Julissa Ferreras-Copeland",
+    "title": "Technology Upgrade at the Corona Library",
+    "cost": "$35,000.00",
+    "description": "New tablets and computers for members of the Corona Library. Tablets will be available to rent for members with library cards.",
+    "location": "38-23 104th Street, Corona"
+  },
+  {
+    "dist": 22,
+    "category": "Transit",
+    "councildistrict": "District 22  Costa Constantinides",
+    "title": "Real Time Bus Countdown Clocks",
+    "cost": "$480,000.00",
+    "description": "Install 24 countdown clocks ($20,000 each) on the following bus lines: M60, Q18, Q19, Q33, Q47, Q69, Q101, Q102, Q103, and Q104 (if project wins, locations TBD by members of the community)",
+    "location": "Multiple Locations"
+  },
+  {
+    "dist": 22,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 22  Costa Constantinides",
+    "title": "Fitness Upgrade at Bulova Park",
+    "cost": "$250,000.00",
+    "description": "Upgrade the fitness equipment, which will enhance the public health benefits of the neighborhood.",
+    "location": "25th Ave. & 76th St. Jackson Heights"
+  },
+  {
+    "dist": 22,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 22  Costa Constantinides",
+    "title": "Fitness Upgrade at Whitey Ford Field",
+    "cost": "$300,000.00",
+    "description": "Upgrade the fitness equipment, which will enhance the public health benefits of the neighborhood.",
+    "location": "26th Ave. & 2nd St. Astoria"
+  },
+  {
+    "dist": 22,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 22  Costa Constantinides",
+    "title": "Handball Courts at Bulova Park",
+    "cost": "$150,000.00",
+    "description": "Repair the handball courts in Bulova Park.",
+    "location": "25th Ave. & 76th St. Jackson Heights"
+  },
+  {
+    "dist": 22,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 22  Costa Constantinides",
+    "title": "Improvements at Astoria Park Senior Pool",
+    "cost": "$300,000.00",
+    "description": "Install new safety equipment, including new ladders and railings, in the senior pool area in Astoria Park.",
+    "location": "Astoria Park"
+  },
+  {
+    "dist": 22,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 22  Costa Constantinides",
+    "title": "Picnic/Gaming Tables Installation in Astoria Park",
+    "cost": "$250,000.00",
+    "description": "Place permanent gaming/picnic tables in Astoria Park at locations to be determined by the community.",
+    "location": "Astoria Park"
+  },
+  {
+    "dist": 22,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 22  Costa Constantinides",
+    "title": "Water Fountain Project in Astoria Park",
+    "cost": "$500,000.00",
+    "description": "Repair or install new water fountains in Astoria Park.",
+    "location": "Astoria Park"
+  },
+  {
+    "dist": 22,
+    "category": "Housing",
+    "councildistrict": "District 22  Costa Constantinides",
+    "title": "Upgrade Lights at Astoria Houses Basketball Court",
+    "cost": "$500,000.00",
+    "description": "The lighting at the basketball court is very poor and in need of an upgrade.",
+    "location": "4-20 Astoria Blvd. Astoria"
+  },
+  {
+    "dist": 22,
+    "category": "Education",
+    "councildistrict": "District 22  Costa Constantinides",
+    "title": "Auditorium Upgrade at Long Island City H.S.",
+    "cost": "$490,000.00",
+    "description": "A comprehensive upgrade to the Long Island City High School auditorium including new seats, stage lighting, stage curtains, and audiovisual equipment",
+    "location": "14-30 Broadway, Long Island City"
+  },
+  {
+    "dist": 22,
+    "category": "Education",
+    "councildistrict": "District 22  Costa Constantinides",
+    "title": "Bathroom Upgrade at P.S. 122",
+    "cost": "$455,000.00",
+    "description": "Update student bathrooms at P.S. 122.",
+    "location": "21-21 Ditmars Blvd. Astoria"
+  },
+  {
+    "dist": 22,
+    "category": "Education",
+    "councildistrict": "District 22  Costa Constantinides",
+    "title": "Bathroom Upgrades'at'Long Island City H.S.",
+    "cost": "$400,000.00",
+    "description": "Provide necessary upgrades to the bathrooms at Long Island City High School",
+    "location": "14-30 Broadway, Long Island City"
+  },
+  {
+    "dist": 22,
+    "category": "Education",
+    "councildistrict": "District 22  Costa Constantinides",
+    "title": "Cafeteria Noise Pollution Mitigation at P.S. 122",
+    "cost": "$250,000.00",
+    "description": "Installing soundproofing and other updates to mitigate noise pollution in the cafeteria, which is also used for afterschool activities and special events. This will lessen health risks for children.",
+    "location": "21-21 Ditmars Blvd. Astoria"
+  },
+  {
+    "dist": 22,
+    "category": "Education",
+    "councildistrict": "District 22  Costa Constantinides",
+    "title": "Junior High School Technology Upgrades",
+    "cost": "$175,000.00",
+    "description": "New technology equipment at all of the junior high schools (IS 141, IS 235, IS 10, IS 126, and Young Women's Leadership Academy) in the district including new computers, printers, or laptops",
+    "location": "District- wide (See Description)"
+  },
+  {
+    "dist": 22,
+    "category": "Education",
+    "councildistrict": "District 22  Costa Constantinides",
+    "title": "New Computer Lab at I.S. 141",
+    "cost": "$80,000.00",
+    "description": "Build a new computer lab in an unused classroom",
+    "location": "IS 141, 37-11 21st Ave., Astoria"
+  },
+  {
+    "dist": 22,
+    "category": "Education",
+    "councildistrict": "District 22  Costa Constantinides",
+    "title": "New SMART Boards at'Long Island City H.S.",
+    "cost": "$150,000.00",
+    "description": "Provide Long Island City High School with 25 new SMART Boards for teachers to use during instruction inside classrooms",
+    "location": "14-30 Broadway, Long Island City"
+  },
+  {
+    "dist": 22,
+    "category": "Education",
+    "councildistrict": "District 22  Costa Constantinides",
+    "title": "Playground Upgrade at P.S. 171",
+    "cost": "$400,000.00",
+    "description": "Update play equipment at P.S. 171.",
+    "location": "14-14 29th Ave. Astoria"
+  },
+  {
+    "dist": 22,
+    "category": "Education",
+    "councildistrict": "District 22  Costa Constantinides",
+    "title": "Playground Upgrade at P.S. 2",
+    "cost": "$400,000.00",
+    "description": "Update play equipment at P.S. 2.",
+    "location": "75-10 21st Ave. E. Elmhurst"
+  },
+  {
+    "dist": 22,
+    "category": "Arts, Culture & Community Facilities",
+    "councildistrict": "District 22  Costa Constantinides",
+    "title": "Basement Program Room Upgrade at Astoria Library",
+    "cost": "$50,000.00",
+    "description": "The current program room in Astoria Library is suffering from structural issues (like water damage) which need repair.",
+    "location": "14-01 Astoria Blvd. Astoria"
+  },
+  {
+    "dist": 22,
+    "category": "Arts, Culture & Community Facilities",
+    "councildistrict": "District 22  Costa Constantinides",
+    "title": "Children's Room Shelves Upgrade at Astoria Library",
+    "cost": "$35,000.00",
+    "description": "Install new shelving units to Astoria Library for children's books.",
+    "location": "14-01 Astoria Blvd. Astoria"
+  },
+  {
+    "dist": 22,
+    "category": "Arts, Culture & Community Facilities",
+    "councildistrict": "District 22  Costa Constantinides",
+    "title": "Cyber Center Upgrade at Astoria Library",
+    "cost": "$500,000.00",
+    "description": "Upgrade Astoria Library's cyber center for fast and effective internet access anywhere in the library.",
+    "location": "14-01 Astoria Blvd. Astoria"
+  },
+  {
+    "dist": 23,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 23  Barry Grodenchik",
+    "title": "Vanderbilt Motor Parkway Resurfacing",
+    "cost": "$500,000.00",
+    "description": "Resurfacing section of the motor parkway with full-depth asphalt perimeter, starting at eastern end near Winchester Boulevard.",
+    "location": "Vanderbilt Motor Parkway"
+  },
+  {
+    "dist": 23,
+    "category": "Education",
+    "councildistrict": "District 23  Barry Grodenchik",
+    "title": "New Audio Visual Systems",
+    "cost": "$375,000.00",
+    "description": "New audio visual systems including all necessary technology and auxiliary items.",
+    "location": "P.S. 18Q, 26Q, 33Q, 186Q, and I.S. 109Q"
+  },
+  {
+    "dist": 23,
+    "category": "Education",
+    "councildistrict": "District 23  Barry Grodenchik",
+    "title": "New Gym Floor for Martin Van Buren High School",
+    "cost": "$100,000.00",
+    "description": "Replacement of gym floor in Martin Van Buren High School.",
+    "location": "230-17 Hillside Avenue, Queens Village"
+  },
+  {
+    "dist": 23,
+    "category": "Education",
+    "councildistrict": "District 23  Barry Grodenchik",
+    "title": "Technology Upgrades for Local Schools",
+    "cost": "$548,000.00",
+    "description": "Laptop carts and smart boards at P.S. 33Q, 178Q, I.S. 109Q, Queens High School of Teaching, Business Technology Early College High School, and P224Q at PS 205Q and P.S. /I.S. 266Q.",
+    "location": "Individual Schools are Listed in Description"
+  },
+  {
+    "dist": 23,
+    "category": "Arts, Culture & Community Facilities",
+    "councildistrict": "District 23  Barry Grodenchik",
+    "title": "Upgrades at Hollis and Queens Village Libraries",
+    "cost": "$550,000.00",
+    "description": "Facility upgrades, technology installations, and library materials.",
+    "location": "Hollis Library & Queens Village Library"
+  },
+  {
+    "dist": 26,
+    "category": "Transit",
+    "councildistrict": "District 26  Jimmy Van Bramer",
+    "title": "Dutch Kills Pedestrian Safety",
+    "cost": "$300,000.00",
+    "description": "Installation of bus bulbs on 31st St. at 36th Ave & 39th Ave. Project will construct full bus bulbs at these bus stops, which will create a seamless path from the sidewalk & subway station entrance.",
+    "location": "Dutch Kills"
+  },
+  {
+    "dist": 26,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 26  Jimmy Van Bramer",
+    "title": "BBQ Area Picnic Tables",
+    "cost": "$300,000.00",
+    "description": "BBQ areas and facilities with picnic tables and benches.",
+    "location": "Rainy Park: Vernon Blvd, 33rd Rd & 34th Ave."
+  },
+  {
+    "dist": 26,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 26  Jimmy Van Bramer",
+    "title": "Hunter's Point South Park Playground Canopy",
+    "cost": "$500,000.00",
+    "description": "Installation of a fixed structure close to the existing children's playground that will provide shade on sunny days.",
+    "location": "Center Boulevard (Long Island City)"
+  },
+  {
+    "dist": 26,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 26  Jimmy Van Bramer",
+    "title": "Median Tree Planting",
+    "cost": "$100,000.00",
+    "description": "Trees and other greenery planted on the traffic median in Long Island City.",
+    "location": "48th Avenue btw 5th St. & Vernon Blvd."
+  },
+  {
+    "dist": 26,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 26  Jimmy Van Bramer",
+    "title": "Renovation of Dutch Kills Playground",
+    "cost": "$300,000.00",
+    "description": "Renovation of the playground to include adult fitness equipment and adaptive swings.",
+    "location": "28th Street (Dutch Kills)"
+  },
+  {
+    "dist": 26,
+    "category": "Housing",
+    "councildistrict": "District 26  Jimmy Van Bramer",
+    "title": "Basketball Court Renovations",
+    "cost": "$350,000.00",
+    "description": "Replacement of three courts concrete slab will be installed. Three-quarter-inch thick plastic polymer tile that provides a floating surface to help drain water and prevent the concrete from cracking.",
+    "location": "Ravenswood and Queensbridge Houses"
+  },
+  {
+    "dist": 26,
+    "category": "Housing",
+    "councildistrict": "District 26  Jimmy Van Bramer",
+    "title": "Grounds Renovation for Queensbridge Houses",
+    "cost": "$300,000.00",
+    "description": "Replacing asphalt, fencing and greening to beautify areas within the development. (designed to budget).",
+    "location": "Queensbridge Houses"
+  },
+  {
+    "dist": 26,
+    "category": "Housing",
+    "councildistrict": "District 26  Jimmy Van Bramer",
+    "title": "Grounds Renovation for Woodside Houses",
+    "cost": "$300,000.00",
+    "description": "Replacing asphalt, fencing and greening to beautify areas within the development. (designed to budget).",
+    "location": "Woodside Houses"
+  },
+  {
+    "dist": 26,
+    "category": "Housing",
+    "councildistrict": "District 26  Jimmy Van Bramer",
+    "title": "Grounds Renovations for Ravenswood Houses",
+    "cost": "$300,000.00",
+    "description": "Replacing asphalt, fencing and greening to beautify areas within the development. (designed to budget).",
+    "location": "Ravenswood Houses"
+  },
+  {
+    "dist": 26,
+    "category": "Education",
+    "councildistrict": "District 26  Jimmy Van Bramer",
+    "title": "Auditorium Repairs for Aviation High School",
+    "cost": "$450,000.00",
+    "description": "Purchase new stage curtains and lighting for the auditorium at Aviation High School.",
+    "location": "45-30 36th St. (Sunnyside)"
+  },
+  {
+    "dist": 26,
+    "category": "Education",
+    "councildistrict": "District 26  Jimmy Van Bramer",
+    "title": "Auditorium Seating for P.S. 111",
+    "cost": "$100,000.00",
+    "description": "The auditorium is separated into three sections. The seats in the two side sections have been replaced, but the third (middle) still needs to be done.",
+    "location": "37-15 13th Street (Long Island City)"
+  },
+  {
+    "dist": 26,
+    "category": "Education",
+    "councildistrict": "District 26  Jimmy Van Bramer",
+    "title": "Auditorium Upgrade for I.S. 204 & Energy Tech H.S.",
+    "cost": "$200,000.00",
+    "description": "The auditorium is need of lighting upgrades, microphone system and audio equipment.",
+    "location": "I.S. 204 and Energy Tech H.S."
+  },
+  {
+    "dist": 26,
+    "category": "Education",
+    "councildistrict": "District 26  Jimmy Van Bramer",
+    "title": "Auditorium Upgrade for P.S. 166",
+    "cost": "$300,000.00",
+    "description": "The school is need of nine window curtains, front and back curtains on stage, soundproofing on the ceiling, stage lighting, stage floor, auditorium flooring, piano, paint and wiring for AC.",
+    "location": "33-09 35th Avenue (Long Island City)"
+  },
+  {
+    "dist": 26,
+    "category": "Education",
+    "councildistrict": "District 26  Jimmy Van Bramer",
+    "title": "Bathroom Repair",
+    "cost": "$50,000.00",
+    "description": "The bathrooms in P.S. 111 are in dire need of repair, especially the boys' bathrooms. We are requesting that 6 bathrooms. Baccalaureate needs 3 bathrooms upgraded with new stall doors and sinks.",
+    "location": "PS 111 &Baccalaureate School for Global Education"
+  },
+  {
+    "dist": 26,
+    "category": "Education",
+    "councildistrict": "District 26  Jimmy Van Bramer",
+    "title": "Playground Upgrade for P.S. 112",
+    "cost": "$500,000.00",
+    "description": "The play yard needs to be resurfaced and needs equipment such as swings and other items suitable for children in grades K-8. The Kindergarten children have a small play area and only a play tunnel.",
+    "location": "25-05 37th Avenue, Long Island City"
+  },
+  {
+    "dist": 26,
+    "category": "Education",
+    "councildistrict": "District 26  Jimmy Van Bramer",
+    "title": "Queens Atrium Educational Hub - Wi-fi Network",
+    "cost": "$75,000.00",
+    "description": "Add Internet bandwidth and deploy Wi-Fi hardware for the use of students, faculty and staff at the three public high schools in the Queens Atrium Building, an education hub.",
+    "location": "30-20 Thomson Ave. (Long Island City)"
+  },
+  {
+    "dist": 26,
+    "category": "Education",
+    "councildistrict": "District 26  Jimmy Van Bramer",
+    "title": "Special Needs Playground for P4 at Skillman",
+    "cost": "$250,000.00",
+    "description": "Install safety surfacing and customized playground equipment that would target the needs of children with autism spectrum disorders grades K-8. This includes ramps, slides, game boards & monkey bars.",
+    "location": "24-30 Skillman Ave. (Long Island City)"
+  },
+  {
+    "dist": 26,
+    "category": "Education",
+    "councildistrict": "District 26  Jimmy Van Bramer",
+    "title": "Split System (AC) for I.S. 204 & Energy Tech H.S.",
+    "cost": "$350,000.00",
+    "description": "Sharing space with Energy Tech High School, I.S. 204 is a community school, open year round for various activities. The auditorium is in need of cooling for use during the summer months.",
+    "location": "I.S. 204 and Energy Tech H.S."
+  },
+  {
+    "dist": 26,
+    "category": "Education",
+    "councildistrict": "District 26  Jimmy Van Bramer",
+    "title": "Tech Upgrades PS 150 & Academy of American Studies",
+    "cost": "$210,000.00",
+    "description": "Each school will receive six laptop carts with 30 laptops each. Access to computers in the classroom will help to enhance instruction and allow students greater learning opportunities.",
+    "location": "P.S. 150 and Academy of American Studies"
+  },
+  {
+    "dist": 26,
+    "category": "Arts, Culture & Community Facilities",
+    "councildistrict": "District 26  Jimmy Van Bramer",
+    "title": "Broadway Library Security System Upgrade",
+    "cost": "$132,000.00",
+    "description": "Installation of security system including CCTV cameras and associated equipment.",
+    "location": "42-20 Broadway (Astoria)"
+  },
+  {
+    "dist": 26,
+    "category": "Arts, Culture & Community Facilities",
+    "councildistrict": "District 26  Jimmy Van Bramer",
+    "title": "Court Square Library Security System Upgrade",
+    "cost": "$66,000.00",
+    "description": "Installation of security system including CCTV cameras and associated equipment.",
+    "location": "25-01 Jackson Avenue (Long Island City)"
+  },
+  {
+    "dist": 27,
+    "category": "Youth",
+    "councildistrict": "District 27  I. Daneek Miller",
+    "title": "New Laptops for Five Schools",
+    "cost": "$225,000.00",
+    "description": "The project will provide 250 laptops to five schools in the district: P.S. 36, P.S. 176, P.S./M.S. 147, I.S. 192, Pathways College Preparatory School",
+    "location": "Five Schools in the District"
+  },
+  {
+    "dist": 27,
+    "category": "Youth",
+    "councildistrict": "District 27  I. Daneek Miller",
+    "title": "P.S. 15 Gymnasium Upgrade",
+    "cost": "$150,000.00",
+    "description": "This project would resurface the gym floor, provide new basketball hoops, and improve the lighting, bleachers and scoreboard",
+    "location": "121-15 Lucas Street, Springfield Gardens"
+  },
+  {
+    "dist": 27,
+    "category": "Youth",
+    "councildistrict": "District 27  I. Daneek Miller",
+    "title": "P.S./M.S. 147 Gymnasium Upgrade",
+    "cost": "$150,000.00",
+    "description": "This project would resurface the gym floor, provide new basketball hoops, improve the lighting, bleachers and scoreboard",
+    "location": "P.S/M.S 147, 218-01 116 Avenue, Cambria Heights"
+  },
+  {
+    "dist": 27,
+    "category": "Youth",
+    "councildistrict": "District 27  I. Daneek Miller",
+    "title": "Smartboards for I.S 238 - Susan B. Anthony Academy",
+    "cost": "$125,000.00",
+    "description": "The project would provide 20 smartboards for the school",
+    "location": "I.S. 238, 88-15 182 Street, Hollis"
+  },
+  {
+    "dist": 27,
+    "category": "Youth",
+    "councildistrict": "District 27  I. Daneek Miller",
+    "title": "Student Bathroom Renovations at I.S. 192",
+    "cost": "$400,000.00",
+    "description": "The project would renovate eight student bathrooms in the school",
+    "location": "I.S. 192, 109-89 204 Street, St. Albans"
+  },
+  {
+    "dist": 27,
+    "category": "Youth",
+    "councildistrict": "District 27  I. Daneek Miller",
+    "title": "Technology Upgrades for P.S./M.S. 147",
+    "cost": "$70,000.00",
+    "description": "Laptops and laptop carts for P.S./M.S. 147.",
+    "location": "218-01 116 Avenue, Cambria Heights"
+  },
+  {
+    "dist": 27,
+    "category": "Youth",
+    "councildistrict": "District 27  I. Daneek Miller",
+    "title": "Tennis Court at I.S 238 - Susan B. Anthony Academy",
+    "cost": "$250,000.00",
+    "description": "The project would construct one tennis court in the school yard",
+    "location": "I.S. 238, 88-15 182 Street, Hollis"
+  },
+  {
+    "dist": 27,
+    "category": "Streets",
+    "councildistrict": "District 27  I. Daneek Miller",
+    "title": "Security Cameras in District 27",
+    "cost": "$70,000.00",
+    "description": "The project will fund two NYPD security cameras to provide safety for residents of the district.",
+    "location": "St. Albans & Jamaica"
+  },
+  {
+    "dist": 27,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 27  I. Daneek Miller",
+    "title": "Haggerty Park Greenery",
+    "cost": "$300,000.00",
+    "description": "This project will remove tree stumps and plant new trees in the park",
+    "location": "Jamaica Avenue, between 201 St. & 204 St."
+  },
+  {
+    "dist": 27,
+    "category": "Education",
+    "councildistrict": "District 27  I. Daneek Miller",
+    "title": "Adaptive Special Needs Playground Equipment",
+    "cost": "$600,000.00",
+    "description": "This project would install playgrounds with special adaptive equipment for General Education and District 75 students at two locations serving four schools in total",
+    "location": "P.S 136 & P.S/M.S 147"
+  },
+  {
+    "dist": 27,
+    "category": "Education",
+    "councildistrict": "District 27  I. Daneek Miller",
+    "title": "Conversion of School Auditorium to a \"Gymnatorium",
+    "cost": "$400,000.00",
+    "description": "The project will renovate the current auditorium to provide space for students to have indoor physical education space",
+    "location": "P.S. 36, 187-01 Foch Blvd, St. Albans"
+  },
+  {
+    "dist": 27,
+    "category": "Education",
+    "councildistrict": "District 27  I. Daneek Miller",
+    "title": "School Auditorium Multimedia Upgrade",
+    "cost": "$100,000.00",
+    "description": "The project will provide a new sound and projection system for the school auditorium.",
+    "location": "P.S. 15, 121-15 Lucas Street, St. Albans"
+  },
+  {
+    "dist": 27,
+    "category": "Education",
+    "councildistrict": "District 27  I. Daneek Miller",
+    "title": "STEM/ STEAM Mobile Science Carts for Eight Schools",
+    "cost": "$294,000.00",
+    "description": "This project will provide mobile labs to Humanities & Arts HS, Math, Science, Research & Technology HS, Institute for Health Professions HS, PS/IS 116, Pathways College Prep, IS 192, IS 8, and IS 238",
+    "location": "Eight Schools in District 27"
+  },
+  {
+    "dist": 29,
+    "category": "Transit",
+    "councildistrict": "District 29  Karen Koslowitz",
+    "title": "Bus Pads",
+    "cost": "$520,000.00",
+    "description": "Bus Pads are the concrete pavement at bus stops. New bus pads will promote safety & accessibility for a variety of bus riders at the Q23 stops at Queens Blvd and 71st Avenue.",
+    "location": "Locations to be Verified by DOT."
+  },
+  {
+    "dist": 29,
+    "category": "Transit",
+    "councildistrict": "District 29  Karen Koslowitz",
+    "title": "Bus Trackers",
+    "cost": "$160,000.00",
+    "description": "This project will implement electronic countdown clocks indicating when the next bus will arrive at multiple bus stops in the district.",
+    "location": "Q60, Q64, Q23, and Q46 (District- wide)"
+  },
+  {
+    "dist": 29,
+    "category": "Streets",
+    "councildistrict": "District 29  Karen Koslowitz",
+    "title": "A Safer Intersection at 71st Ave and Austin St",
+    "cost": "$400,000.00",
+    "description": "Installing a single curb extension at the Northeast corner of 71st Avenue and Austin Street. This would help calm traffic along both streets and improve safety for pedestrians on those streets.",
+    "location": "71st Avenue and Austin Street"
+  },
+  {
+    "dist": 29,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 29  Karen Koslowitz",
+    "title": "Adult Workout Stations in Russell Sage Playground",
+    "cost": "$250,000.00",
+    "description": "Installing fitness equipment that can be utilized by individuals or small groups. The equipment will be placed at easily accessible areas, making it hassle free to exercise.",
+    "location": "Booth St. Btwn 68 Ave. & 68 Dr."
+  },
+  {
+    "dist": 29,
+    "category": "Education",
+    "councildistrict": "District 29  Karen Koslowitz",
+    "title": "Lights, Camera, Action",
+    "cost": "$300,000.00",
+    "description": "Audio Video upgrades for each auditorium in four public schools. The audio video systems are old and broken. This project will address the out dated technology in the auditoriums within our schools.",
+    "location": "P.S. 139, P.S. 174, P.S. 175, and J.H.S. 157"
+  },
+  {
+    "dist": 29,
+    "category": "Education",
+    "councildistrict": "District 29  Karen Koslowitz",
+    "title": "More Cool at School",
+    "cost": "$800,000.00",
+    "description": "This project will fund wiring to install air conditioning systems in common areas like cafeterias and auditoriums. Large sections of these schools cannot be used comfortably during spring and summer.",
+    "location": "P.S. 196Q, J.H.S. 157, and P.S. 174"
+  },
+  {
+    "dist": 29,
+    "category": "Education",
+    "councildistrict": "District 29  Karen Koslowitz",
+    "title": "Power Up",
+    "cost": "$550,000.00",
+    "description": "Providing new computers for three schools that have outdated desktops and not enough laptops to service the students. Having new computers will educate and enhance the student's abilities.",
+    "location": "P.S. 99, P.S. 139, and J.H.S. 157"
+  },
+  {
+    "dist": 29,
+    "category": "Education",
+    "councildistrict": "District 29  Karen Koslowitz",
+    "title": "Proper Pupil Potties",
+    "cost": "$350,000.00",
+    "description": "The complete renovation of select bathrooms at three public schools which are a persistent problem. This will reduce the amount of time and money used to maintain the aging bathrooms.",
+    "location": "P.S. 144, P.S. 174, and P.S. 101"
+  },
+  {
+    "dist": 29,
+    "category": "Arts, Culture & Community Facilities",
+    "councildistrict": "District 29  Karen Koslowitz",
+    "title": "Outdoor Reading Room",
+    "cost": "$275,000.00",
+    "description": "Utilize outdoor space for a reading room and renovate the meeting room in the library. This would add reading space in a natural environment that will encourage returning visits and customer usage.",
+    "location": "Forest Hills Library"
+  },
+  {
+    "dist": 30,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 30  Elizabeth Crowley",
+    "title": "Basketball Court Renovations at Little Bush Park",
+    "cost": "$250,000.00",
+    "description": "Renovate the basketball courts for better usage and safety! This includes new backboards, basketball hoops, a sports coating and a new fence to enclose it.",
+    "location": "Nathan Weidenbaum (Little Bush) Playground"
+  },
+  {
+    "dist": 30,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 30  Elizabeth Crowley",
+    "title": "Children's Swing Area Renovation",
+    "cost": "$200,000.00",
+    "description": "Renovating the children's swing area to make it a safer environment. The children's swing sets need new metal bars, a new safety surface installation and fencing repairs.",
+    "location": "Reiff & Nathan Weidenbaum Playgrounds"
+  },
+  {
+    "dist": 30,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 30  Elizabeth Crowley",
+    "title": "Playground Beautification at Little Bush Park",
+    "cost": "$100,000.00",
+    "description": "Horticultural renovations to beautify the playground and create a noise barrier between the playground and residential homes.",
+    "location": "Nathan Weidenbaum (Little Bush) Playground"
+  },
+  {
+    "dist": 30,
+    "category": "Education",
+    "councildistrict": "District 30  Elizabeth Crowley",
+    "title": "Air Conditioning Renovation at I.S. 73",
+    "cost": "$350,000.00",
+    "description": "Purchase and install an air conditioning system to cool the auditorium in the school building.",
+    "location": "Maspeth"
+  },
+  {
+    "dist": 30,
+    "category": "Education",
+    "councildistrict": "District 30  Elizabeth Crowley",
+    "title": "Auditorium Seat Replacement",
+    "cost": "$786,750.00",
+    "description": "Create a safer experience for students by replacing and repairing the auditorium seats in our schools.",
+    "location": "P.S. 71 and P.S. 153"
+  },
+  {
+    "dist": 30,
+    "category": "Education",
+    "councildistrict": "District 30  Elizabeth Crowley",
+    "title": "Laptop Carts for Classrooms",
+    "cost": "$280,000.00",
+    "description": "Providing laptop carts for schools to make the latest technology more accessible for students in the classroom!",
+    "location": "P.S/I.S 49, P.S 87, P.S/I.S 119, P.S 153"
+  },
+  {
+    "dist": 30,
+    "category": "Education",
+    "councildistrict": "District 30  Elizabeth Crowley",
+    "title": "Operation Restroom Renovation",
+    "cost": "$420,000.00",
+    "description": "Working and updating bathrooms are essential for the health and hygiene of the students. These renovations are to bathrooms which require and have not received recent repairs or renovations.",
+    "location": "P.S./I.S. 49, P.S. 09, P.S. 88"
+  },
+  {
+    "dist": 30,
+    "category": "Education",
+    "councildistrict": "District 30  Elizabeth Crowley",
+    "title": "Smart Boards for Schools",
+    "cost": "$250,000.00",
+    "description": "Fifteen SMART Boards for each of the listed schools will allow for the integration of various technologies within the classroom to improve the learning experiences of students!",
+    "location": "Grover Cleveland H.S & P.S/IS 87"
+  },
+  {
+    "dist": 30,
+    "category": "Arts, Culture & Community Facilities",
+    "councildistrict": "District 30  Elizabeth Crowley",
+    "title": "Computers, Equipment and Furniture",
+    "cost": "$36,000.00",
+    "description": "Fulfilling a community need by adding more desktop computers along with equipment and furniture to the Ridgewood and Maspeth Public Libraries.",
+    "location": "Ridgewood Library & Maspeth Public Library"
+  },
+  {
+    "dist": 31,
+    "category": "Transit",
+    "councildistrict": "District 31  Donovan Richards",
+    "title": "Train Countdown Clocks",
+    "cost": "$150,000.00",
+    "description": "The Rockaway train stations should have countdown clocks so residents can know when the train and the bus coming.",
+    "location": "District- Wide"
+  },
+  {
+    "dist": 31,
+    "category": "Education",
+    "councildistrict": "District 31  Donovan Richards",
+    "title": "Auditorium Upgrade in P.S. 183Q",
+    "cost": "$500,000.00",
+    "description": "The auditorium is in need of stage curtains, a new projector screen, new speaks on stage and new fans to keep the auditorium cool.",
+    "location": "2-45 Beach 79th Street, Rockaway Beach"
+  },
+  {
+    "dist": 31,
+    "category": "Education",
+    "councildistrict": "District 31  Donovan Richards",
+    "title": "Classroom Upgrade in P.S. 183Q",
+    "cost": "$250,000.00",
+    "description": "The classrooms are in need of electrical outlets and approximately 35 smart boards in each of the classrooms to help our students further their educations.",
+    "location": "2-45 Beach 79th Street, Rockaway Beach"
+  },
+  {
+    "dist": 31,
+    "category": "Education",
+    "councildistrict": "District 31  Donovan Richards",
+    "title": "Designing a Track in the School Yard",
+    "cost": "$500,000.00",
+    "description": "P.S.106 is in need of a track in the school yard. A track in the school yard would not only help beautify the school but also provide an activity that would promote an healthy lifestyle for the students.",
+    "location": "180 Beach 35th St., Far Rockaway"
+  },
+  {
+    "dist": 31,
+    "category": "Education",
+    "councildistrict": "District 31  Donovan Richards",
+    "title": "Far Rockaway High School Library Upgrade",
+    "cost": "$250,000.00",
+    "description": "The Far Rockaway High School library is very important to the school. It has resources that the students can rely on. But now the library is need of new computers and also an electrical upgrade.",
+    "location": "821 Bay 25th Street, Far Rockaway"
+  },
+  {
+    "dist": 31,
+    "category": "Education",
+    "councildistrict": "District 31  Donovan Richards",
+    "title": "Gymnasium Upgrade in P.S. 183Q",
+    "cost": "$300,000.00",
+    "description": "The gymnasium is in need of basketball hoops for our kids. The gym is also in need of bleachers so the school can invite parents and the community to school activities.",
+    "location": "2-45 Beach 79th Street, Rockaway Beach"
+  },
+  {
+    "dist": 31,
+    "category": "Education",
+    "councildistrict": "District 31  Donovan Richards",
+    "title": "Locker Room Renovations",
+    "cost": "$500,000.00",
+    "description": "Far Rockaway Educational Campus is made up of other schools and is in need of a better locker room. It reminds people of a dungeon. The lighting is terrible and can be dangerous",
+    "location": "821 Bay 25th St., Far Rockaway"
+  },
+  {
+    "dist": 31,
+    "category": "Education",
+    "councildistrict": "District 31  Donovan Richards",
+    "title": "M.S 53 Technology Upgrades",
+    "cost": "$250,000.00",
+    "description": "Needs new smart boards, computers and better electricity and wiring to utilize multiple devices.",
+    "location": "10-45 Nameoke St., Far Rockaway"
+  },
+  {
+    "dist": 31,
+    "category": "Education",
+    "councildistrict": "District 31  Donovan Richards",
+    "title": "M.S.53 Technology Upgrade",
+    "cost": "$75,000.00",
+    "description": "The school is in need of 6 new smart boards to further education for students.",
+    "location": "10-45 Nameoke Street"
+  },
+  {
+    "dist": 31,
+    "category": "Education",
+    "councildistrict": "District 31  Donovan Richards",
+    "title": "New Smart Boards",
+    "cost": "$75,000.00",
+    "description": "P.S. 253 is in need of six new smart boards to further education for students",
+    "location": "1307 Central Avenue, Far Rockway"
+  },
+  {
+    "dist": 31,
+    "category": "Education",
+    "councildistrict": "District 31  Donovan Richards",
+    "title": "New Weight Room",
+    "cost": "$200,000.00",
+    "description": "The Far Rockaway High School weight room needs new equipment so students do not get injured; it also needs new lockers.",
+    "location": "821 Bay 25th St., Far Rockaway"
+  },
+  {
+    "dist": 31,
+    "category": "Education",
+    "councildistrict": "District 31  Donovan Richards",
+    "title": "P.S.106 Technology Upgrade",
+    "cost": "$75,000.00",
+    "description": "The school is in need of 6 new smart boards to further the education for students.",
+    "location": "180 Beach 35th St., Far Rockaway"
+  },
+  {
+    "dist": 31,
+    "category": "Education",
+    "councildistrict": "District 31  Donovan Richards",
+    "title": "Security Cameras",
+    "cost": "$250,000.00",
+    "description": "P.S 106 is a building that's isolated from other properties, a camera surveillance system would help ensure the safety of the school community",
+    "location": "180 Beach 35th St., Far Rockaway"
+  },
+  {
+    "dist": 31,
+    "category": "Arts, Culture & Community Facilities",
+    "councildistrict": "District 31  Donovan Richards",
+    "title": "Rockaway Institute for a Sustainable Environment",
+    "cost": "$273,732.00",
+    "description": "The project with fit out RISE, new community center for local exhibits, film screenings, lectures, public events and youth programs, with furniture and equipment.",
+    "location": "58-03 Rockaway Beach Blvd"
+  },
+  {
+    "dist": 32,
+    "category": "Transit",
+    "councildistrict": "District 32  Eric Ulrich",
+    "title": "Median Repair on Rockaway Beach Boulevard",
+    "cost": "$200,000.00",
+    "description": "Repair center medians along Rockaway Beach Boulevard between Beach 102-105 Streets",
+    "location": 0
+  },
+  {
+    "dist": 32,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 32  Eric Ulrich",
+    "title": "Badminton Courts along Shore Front Parkway",
+    "cost": "$350,000.00",
+    "description": "Installation of badminton courts for badminton or Pickle ball along Shore Front Parkway in Rockaway Beach adjacent to new boardwalk",
+    "location": 0
+  },
+  {
+    "dist": 32,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 32  Eric Ulrich",
+    "title": "Bathroom Repair at Beach 106th St",
+    "cost": "$200,000.00",
+    "description": "Winterization/upgrades to bathrooms at Beach 106th Street Parks Department facility",
+    "location": 0
+  },
+  {
+    "dist": 32,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 32  Eric Ulrich",
+    "title": "Boardwalk Amenities",
+    "cost": "$50,000.00",
+    "description": "Boardwalk amenities including mile markers, storyboards, and information boards along Rockaway Boardwalk",
+    "location": 0
+  },
+  {
+    "dist": 32,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 32  Eric Ulrich",
+    "title": "Exercise Equipment along Shore Front Parkway",
+    "cost": "$200,000.00",
+    "description": "Adult exercise equipment installed along Shore Front Parkway adjacent to new boardwalk in Rockaway Beach",
+    "location": 0
+  },
+  {
+    "dist": 32,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 32  Eric Ulrich",
+    "title": "Rock Climbing Wall at Boardwalk",
+    "cost": "$200,000.00",
+    "description": "Rock climbing wall constructed in Rockaway Beach adjacent to new boardwalk",
+    "location": 0
+  },
+  {
+    "dist": 32,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 32  Eric Ulrich",
+    "title": "Upgrades to 17th Road Park",
+    "cost": "$250,000.00",
+    "description": "equipment upgrades and amenities to 17th Road Park in Broad Channel",
+    "location": 0
+  },
+  {
+    "dist": 32,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 32  Eric Ulrich",
+    "title": "Upgrades to All-American Park/Sunset Cove",
+    "cost": "$200,000.00",
+    "description": "Upgrades to All-American Park/Sunset Cove in Broad Channel",
+    "location": 0
+  },
+  {
+    "dist": 32,
+    "category": "Education",
+    "councildistrict": "District 32  Eric Ulrich",
+    "title": "Upgrades to 5 Schools",
+    "cost": "$435,000.00",
+    "description": "P.S. 47 - Tech equipment ($45,000)  //  P.S. 317 - Tech equipment ($45,000)  //  P.S. 114 - Auditorium upgrades ($75,000)  //  Beach Channel Campus - mobile earth science lab cart RCHS ($60,000)  //  Beach Channel Campus - New exercise room with updated equipment ($150,000)  //  Scholar's Academy - Bathroom updates ($60,000)",
+    "location": 0
+  },
+  {
+    "dist": 33,
+    "category": "Transit",
+    "councildistrict": "District 33  Stephen Levin",
+    "title": "Additional Turnstiles at York St. Subway (F Train)",
+    "cost": "$250,000.00",
+    "description": "Install additional turnstiles for York Street Station in 2017 which will reduce congestion and long lines for the 9,000 weekday riders now limited to only two turnstiles.",
+    "location": "York St. Subway Station, DUMBO"
+  },
+  {
+    "dist": 33,
+    "category": "Streets",
+    "councildistrict": "District 33  Stephen Levin",
+    "title": "Pedestrian Safety Improvements - Meeker Avenue",
+    "cost": "$400,000.00",
+    "description": "Continuing safety improvements along this high-speed corridor to decrease crossing distances and improve pedestrian safety.",
+    "location": "Meeker Avenue in District 33 - Williamsburg"
+  },
+  {
+    "dist": 33,
+    "category": "Streets",
+    "councildistrict": "District 33  Stephen Levin",
+    "title": "Real Time Arrival Signage for B44 Bus Route",
+    "cost": "$300,000.00",
+    "description": "Add signage that shows real-time, updated arrival times for up to 15 bus stops along Bedford and Nostrand Avenues.",
+    "location": "Along B44 Bus Route in District 33"
+  },
+  {
+    "dist": 33,
+    "category": "Streets",
+    "councildistrict": "District 33  Stephen Levin",
+    "title": "Safer Crossings for Hoyt Street at Gowanus Houses",
+    "cost": "$400,000.00",
+    "description": "Make street crossings safer between this housing development and the nearby subway. Add pedestrian safety enhancements to this four-block stretch of Hoyt Street that has no existing crossings.",
+    "location": "Hoyt St., Butler St. to Degraw St., Gowanus"
+  },
+  {
+    "dist": 33,
+    "category": "Streets",
+    "councildistrict": "District 33  Stephen Levin",
+    "title": "Street Safety Improvements near P.S.16",
+    "cost": "$400,000.00",
+    "description": "Install a curb extension at this much-used intersection between P.S. 16 and Independence Towers. Improve other street safety features between the housing development and the local school.",
+    "location": "Corner of Bedford Ave. and Wilson St.,W'lliamsburg"
+  },
+  {
+    "dist": 33,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 33  Stephen Levin",
+    "title": "Fix Taaffe Park: Community Seating Area",
+    "cost": "$500,000.00",
+    "description": "Create a moment of peace for area residents. Support a renovated seating area where all local residents can meet under the park's historic oak trees and plan their community's future; together.",
+    "location": "390 Park Avenue, Bedford-Stuyvesant"
+  },
+  {
+    "dist": 33,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 33  Stephen Levin",
+    "title": "Make Msgr. McGolrick Park Safer",
+    "cost": "$500,000.00",
+    "description": "This project focuses on repaving some of the sidewalks along the park and replacing fencing. Current sidewalks are cracked, unsafe for children, and hazardous for wheelchair and stroller access.",
+    "location": "Driggs Avenue, Greenpoint"
+  },
+  {
+    "dist": 33,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 33  Stephen Levin",
+    "title": "Safe to Play, Green Playground at M.S. 126",
+    "cost": "$500,000.00",
+    "description": "Transform a cement lot into a safe and colorful playground with interactive play structures. Additional funding through Trust for Public Land will make this a sustainable space for kids and community.",
+    "location": "Ericsson Playground, Greenpoint"
+  },
+  {
+    "dist": 33,
+    "category": "Housing",
+    "councildistrict": "District 33  Stephen Levin",
+    "title": "Hear the Beat! Community Sound Studio",
+    "cost": "$100,000.00",
+    "description": "This project will outfit an existing computer lab as a recording studio, so youth/adults could be trained for music/audio professions. Includes upgrades to the space and all needed audio equipment.",
+    "location": "114 Taylor St., Independence Towers, W'lliamsburg"
+  },
+  {
+    "dist": 33,
+    "category": "Housing",
+    "councildistrict": "District 33  Stephen Levin",
+    "title": "NYCHA Grounds Renovations Focused on Seating",
+    "cost": "$550,000.00",
+    "description": "Gowanus & Wyckoff residents will help determine grounds improvements, to be installed at two NYCHA developments, resulting in more pleasant\n\nareas for enjoying time outdoors and talking with friends.",
+    "location": "Wyckoff Gardens and Gowanus Houses, Gowanus"
+  },
+  {
+    "dist": 33,
+    "category": "Education",
+    "councildistrict": "District 33  Stephen Levin",
+    "title": "Essential STEM Labs at I.S 318 and P.S 34",
+    "cost": "$500,000.00",
+    "description": "Let's bridge the technology gap and invest in the future for 2,000+ students at two amazing but underserved schools by funding essential STEM (Science, Tech, Engineering & Math) labs at both schools!",
+    "location": "IS 318, East Williamsburg; PS 34, Greenpoint"
+  },
+  {
+    "dist": 33,
+    "category": "Education",
+    "councildistrict": "District 33  Stephen Levin",
+    "title": "Finish the Upgrades with P.S. 261 Computer Carts",
+    "cost": "$140,000.00",
+    "description": "P.S. 261 is a K-5 school with 800 students. Their wiring was upgraded but to utilize the improvements the students need new computers; four new carts will give them what they need!",
+    "location": "314 Pacific Street, Boerum Hill"
+  },
+  {
+    "dist": 33,
+    "category": "Education",
+    "councildistrict": "District 33  Stephen Levin",
+    "title": "Let There Be Air! Juan Morel Campos School",
+    "cost": "$350,000.00",
+    "description": "Our school is used by D14, D75 and the community. We need AC in our auditorium. The auditorium gets used for many events such as performances, assemblies, and graduation and it is very hot!",
+    "location": "215 Heyward Street, Williamsburg"
+  },
+  {
+    "dist": 33,
+    "category": "Education",
+    "councildistrict": "District 33  Stephen Levin",
+    "title": "Make Our School Cool! M.S. 126",
+    "cost": "$400,000.00",
+    "description": "Our building serves 3 schools and 1200 kids and needs wiring for AC in the classrooms and Auditorium! It's hard to concentrate and be good students when you're too hot! Give them a chance to succeed!",
+    "location": "424 Leonard Street, Williamsburg"
+  },
+  {
+    "dist": 33,
+    "category": "Education",
+    "councildistrict": "District 33  Stephen Levin",
+    "title": "Sweating Should Be Fun! K293, Int'l Studies",
+    "cost": "$350,000.00",
+    "description": "The gym at this campus with 4 schools, PK-12 (with 1200 mostly Title I students) needs AC! The only large activity space in this growing school also hosts community programs and can get really hot!",
+    "location": "284 Baltic Street, Cobble Hill"
+  },
+  {
+    "dist": 34,
+    "category": "Transit",
+    "councildistrict": "District 34  Antonio Reynoso",
+    "title": "Real Time Passenger Boards",
+    "cost": "$60,000.00",
+    "description": "Real Time Passenger Information in Council District 34. DOT will choose site locations with the City Council office post budget adoption.",
+    "location": "Ridgewood, Bushwick, and Williamsburg"
+  },
+  {
+    "dist": 34,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 34  Antonio Reynoso",
+    "title": "Repaving our Bushwick Parks",
+    "cost": "$500,000.00",
+    "description": "Maria Hernandez Park and Fermi Playground can expect ground pavement, landscaping, and modern benches.",
+    "location": "Knickerbocker Avenue and Troutman Street"
+  },
+  {
+    "dist": 34,
+    "category": "Housing",
+    "councildistrict": "District 34  Antonio Reynoso",
+    "title": "Grounds Renovation at Bushwick Houses",
+    "cost": "$200,000.00",
+    "description": "This grounds renovation will focus on installing fence around an existing garden located behind the community center. It will be designed to budget and may include installing walkways and seating.",
+    "location": "50 Humboldt Street, Bushwick Houses"
+  },
+  {
+    "dist": 34,
+    "category": "Housing",
+    "councildistrict": "District 34  Antonio Reynoso",
+    "title": "Playground Upgrade at Williamsburg Houses",
+    "cost": "$350,000.00",
+    "description": "This playground will get new benches, play equipment, and a sprinkler system.",
+    "location": "176 Maujer Street - Block 1"
+  },
+  {
+    "dist": 34,
+    "category": "Education",
+    "councildistrict": "District 34  Antonio Reynoso",
+    "title": "21st Century Technology at P.S. 120 and P.S. 132",
+    "cost": "$285,000.00",
+    "description": "Includes smart boards, laptops, smart tables, a 3-D Printer, a green wall, and solar & weather panels.",
+    "location": "18 Beaver Street /320 Manhattan Avenue"
+  },
+  {
+    "dist": 34,
+    "category": "Education",
+    "councildistrict": "District 34  Antonio Reynoso",
+    "title": "A Cool Gym at P.S. 257",
+    "cost": "$250,000.00",
+    "description": "An air conditioner in the school gym, which is used throughout the school year and summer programming.",
+    "location": "60 Cook Street"
+  },
+  {
+    "dist": 34,
+    "category": "Education",
+    "councildistrict": "District 34  Antonio Reynoso",
+    "title": "Auditorium Facelift at P.S. 147",
+    "cost": "$400,000.00",
+    "description": "Includes 300 new chairs, a new stage, and re-wiring for better sound equipment.",
+    "location": "325 Bushwick Avenue"
+  },
+  {
+    "dist": 34,
+    "category": "Education",
+    "councildistrict": "District 34  Antonio Reynoso",
+    "title": "Technology Upgrades at P.S. 239 and P.S. 18",
+    "cost": "$400,000.00",
+    "description": "Includes two new laptop carts, two smart tables, a 3-D printers, six smart boards, and forty-two desktops.",
+    "location": "15-17 Weirfield Street /101 Maujer Street"
+  },
+  {
+    "dist": 34,
+    "category": "Education",
+    "councildistrict": "District 34  Antonio Reynoso",
+    "title": "Visual Arts Classroom Upgrade",
+    "cost": "$200,000.00",
+    "description": "This upgrade at MS 50/El Puente Community School calls for upgrades to lighting for accurate color work, ceiling tracks to hang 3-D art work, and new floors for an all around visual arts experience.",
+    "location": "183 S. 3rd Street"
+  },
+  {
+    "dist": 34,
+    "category": "Arts, Culture & Community Facilities",
+    "councildistrict": "District 34  Antonio Reynoso",
+    "title": "Electrify our Libraries in District 34",
+    "cost": "$360,000.00",
+    "description": "This proposal will provide four electric charging tables at each one of our libraries: Leonard Street, Bushwick Avenue and Dekalb Avenue. Residents will be able to work and re-charge from the same place.",
+    "location": "Bushwick, Leonard, and Dekalb Libraries"
+  },
+  {
+    "dist": 34,
+    "category": "Arts, Culture & Community Facilities",
+    "councildistrict": "District 34  Antonio Reynoso",
+    "title": "Upgrade to Activity Rooms",
+    "cost": "$200,000.00",
+    "description": "This proposal will upgrade the activity room in the Leonard Street Library and will include collapsible tables, folding chairs, rugs, freshly painted walls and new book bins.",
+    "location": "81 Devoe Street"
+  },
+  {
+    "dist": 34,
+    "category": "Arts, Culture & Community Facilities",
+    "councildistrict": "District 34  Antonio Reynoso",
+    "title": "Upgrade to Activity Rooms in District 34",
+    "cost": "$600,000.00",
+    "description": "This proposal will include collapsible tables, folding chairs, rugs, freshly painted walls and new book bins for all three district libraries: Leonard Street, Bushwick Avenue and DeKalb Avenue.",
+    "location": "Bushwick and Dekalb Libraries"
+  },
+  {
+    "dist": 35,
+    "category": "Transit",
+    "councildistrict": "District 35  Laurie Cumbo",
+    "title": "Real-Time Information Signs: B65 & B44 Passengers",
+    "cost": "$160,000.00",
+    "description": "Install real-time bus signs on two of the busiest lines in Brooklyn:\n\n\n\nB65: Flatbush & Dean; Flatbush & Bergen; Bergen & New York; Dean & Nostrand\n\n\n\nB44: New York & Eastern Pkwy; Nostrand & Eastern Pkwy",
+    "location": "B65 and B44 Stops"
+  },
+  {
+    "dist": 35,
+    "category": "Streets",
+    "councildistrict": "District 35  Laurie Cumbo",
+    "title": "Bump Out at Washington Avenue and Dean Street",
+    "cost": "$300,000.00",
+    "description": "Create a bump-out at the Dean Street and Washington Avenue intersection. This is in response to increased vehicular traffic on Dean Street. It will help reduce the risk of pedestrian injuries.",
+    "location": "Washington Avenue at Dean Street"
+  },
+  {
+    "dist": 35,
+    "category": "Streets",
+    "councildistrict": "District 35  Laurie Cumbo",
+    "title": "Bus Pads on Fulton Street",
+    "cost": "$220,000.00",
+    "description": "Bus pads replace the surface where buses stop and replace the pavement that gets warped with a solid concrete pad. The warped streets cause danger for bikes, the old and the young who walk there.",
+    "location": "Vanderbilt Avenue to Carlton Avenue"
+  },
+  {
+    "dist": 35,
+    "category": "Streets",
+    "councildistrict": "District 35  Laurie Cumbo",
+    "title": "President Street Bump-Outs",
+    "cost": "$300,000.00",
+    "description": "On President Street, create bump-outs to extend curbs into the street. This is a high-volume subway station with inadequate space for pedestrians. Project would decrease likelihood of injury/death.",
+    "location": "President St. and Nostrand Ave. (2/5 Stop)"
+  },
+  {
+    "dist": 35,
+    "category": "Streets",
+    "councildistrict": "District 35  Laurie Cumbo",
+    "title": "Security Cameras in Precincts 71 and 78",
+    "cost": "$210,000.00",
+    "description": "Install Argus security cameras at intersections where NYPD precincts have identified a need. Each Argus unit is a set of 2 cameras. Three units will be allocated to each of the 2 precincts.",
+    "location": "NYPD to choose place"
+  },
+  {
+    "dist": 35,
+    "category": "Streets",
+    "councildistrict": "District 35  Laurie Cumbo",
+    "title": "Security Cameras in Precincts 88 and 77",
+    "cost": "$210,000.00",
+    "description": "Install Argus security cameras at intersections where NYPD precincts have identified a need. Each Argus unit is a set of 2 cameras. Three units will be allocated to each of the 2 precincts.",
+    "location": "NYPD to Choose Place"
+  },
+  {
+    "dist": 35,
+    "category": "Housing",
+    "councildistrict": "District 35  Laurie Cumbo",
+    "title": "Basketball Court Renovation at Atlantic Terminal",
+    "cost": "$350,000.00",
+    "description": "Basketball court renovation",
+    "location": "Atlantic Terminal Housing Development"
+  },
+  {
+    "dist": 35,
+    "category": "Housing",
+    "councildistrict": "District 35  Laurie Cumbo",
+    "title": "Basketball Court Renovation at Lafayette Gardens",
+    "cost": "$350,000.00",
+    "description": "Renovation of basketball court.",
+    "location": "Lafayette Gardens Housing Development"
+  },
+  {
+    "dist": 35,
+    "category": "Housing",
+    "councildistrict": "District 35  Laurie Cumbo",
+    "title": "Basketball Court Renovation at Whitman Houses",
+    "cost": "$350,000.00",
+    "description": "Renovation of basketball court",
+    "location": "Whitman Housing Development"
+  },
+  {
+    "dist": 35,
+    "category": "Housing",
+    "councildistrict": "District 35  Laurie Cumbo",
+    "title": "Grounds Renovation",
+    "cost": "$500,000.00",
+    "description": "Project will be designed to budget in collaboration with the Resident Association leadership. Priorities to be considered will include lighting, trees, bushes, irrigation system and metal benches",
+    "location": "Atlantic Terminal Housing Development"
+  },
+  {
+    "dist": 35,
+    "category": "Housing",
+    "councildistrict": "District 35  Laurie Cumbo",
+    "title": "Grounds Renovation",
+    "cost": "$500,000.00",
+    "description": "Project will be designed to budget in collaboration with the Resident Association leadership. Priorities to be considered will include lighting, trees, bushes, irrigation system and metal benches",
+    "location": "Lafayette Gardens Housing Development Garden"
+  },
+  {
+    "dist": 35,
+    "category": "Housing",
+    "councildistrict": "District 35  Laurie Cumbo",
+    "title": "Grounds Renovation",
+    "cost": "$500,000.00",
+    "description": "Project will be designed to budget in collaboration with the Resident Association leadership. Priorities to be considered will include lighting, trees, bushes, irrigation system and metal benches",
+    "location": "Ingersoll Housing Development Garden"
+  },
+  {
+    "dist": 35,
+    "category": "Housing",
+    "councildistrict": "District 35  Laurie Cumbo",
+    "title": "HVAC System for the Willoughby Senior Center",
+    "cost": "$500,000.00",
+    "description": "HVAC system for the Willoughby Senior Center",
+    "location": "Whitman Housing Development"
+  },
+  {
+    "dist": 35,
+    "category": "Housing",
+    "councildistrict": "District 35  Laurie Cumbo",
+    "title": "Renovation of Farragut Community Center Entrance",
+    "cost": "$500,000.00",
+    "description": "Renovate the entry way to the Farragut community Center needs new walls, new paint and new floors.",
+    "location": "Farragut Housing Development"
+  },
+  {
+    "dist": 35,
+    "category": "Housing",
+    "councildistrict": "District 35  Laurie Cumbo",
+    "title": "Renovation to Willoughby Senior Center Entrance",
+    "cost": "$500,000.00",
+    "description": "Grounds Renovation for the outside. The entry way to the Willoughby Senior Center needs new walls, new paint and new floors.",
+    "location": "Whitman Housing Development"
+  },
+  {
+    "dist": 35,
+    "category": "Housing",
+    "councildistrict": "District 35  Laurie Cumbo",
+    "title": "Safety Upgrades in Farragut Housing Development",
+    "cost": "$500,000.00",
+    "description": "Design it to budget. Install Cameras in staircases and elevators.",
+    "location": "Farragut Housing Development"
+  },
+  {
+    "dist": 35,
+    "category": "Education",
+    "councildistrict": "District 35  Laurie Cumbo",
+    "title": "Learning Walls for P.S. 20",
+    "cost": "$36,500.00",
+    "description": "Install pin-able writable walls in 20 classrooms for students and teachers to actively co-create learning. 5 temporary walls already increasing learning, initiation, critical thinking and cooperation.",
+    "location": "PS 20 The Clinton Hill School 225 Adelphi Street"
+  },
+  {
+    "dist": 35,
+    "category": "Education",
+    "councildistrict": "District 35  Laurie Cumbo",
+    "title": "New Technology for High-Need Schools: PS 375 & 532",
+    "cost": "$310,000.00",
+    "description": "Creating a new computer lab at PS 375 and upgrading ancient AV technology in the auditorium at PS 532 will enable students at these two Title I schools to thrive in the 21st century.",
+    "location": "46 McKeever Pl &1025 Eastern Pkwy"
+  },
+  {
+    "dist": 35,
+    "category": "Education",
+    "councildistrict": "District 35  Laurie Cumbo",
+    "title": "Renovate Decrepit Bathrooms at PS 9 & PS 316",
+    "cost": "$300,000.00",
+    "description": "Update 6 badly deteriorated bathrooms; includes replacing broken toilets & installing hand dryers.",
+    "location": "80 Underhill Ave & 750 Classon Ave."
+  },
+  {
+    "dist": 36,
+    "category": "Streets",
+    "councildistrict": "District 36  Robert Cornegy",
+    "title": "Goodbye to Sidewalk Cracks",
+    "cost": "$85,000.00",
+    "description": "Repair cracked sidewalks around the Armstrong NYCHA developments in D36. Quincy St b/w Marcy & Tompkins Aves.; Marcy b/w Gates to Quincy; Gates b/w Marcy and Tompkins",
+    "location": "Armstrong I & II NYCHA Development"
+  },
+  {
+    "dist": 36,
+    "category": "Streets",
+    "councildistrict": "District 36  Robert Cornegy",
+    "title": "Pedestrian Safety at Marcy Ave. and Myrtle Ave.",
+    "cost": "$300,000.00",
+    "description": "Install neckdown at Marcy Avenue and Myrtle Avenue (In front of Marcy Houses and subway entrance).",
+    "location": "Bedford-Stuyvesant"
+  },
+  {
+    "dist": 36,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 36  Robert Cornegy",
+    "title": "A Top-Notch Dog Run for District 36",
+    "cost": "$650,000.00",
+    "description": "Transform the informal dog play area at Von King Park into a top notch dog run with separate vestibules and play areas for big and little dogs, new fencing, dog fountains and proper drainage.",
+    "location": "Von King Park, 670 Lafayette Avenue"
+  },
+  {
+    "dist": 36,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 36  Robert Cornegy",
+    "title": "Upgrade Brower Park Basketball Courts",
+    "cost": "$600,000.00",
+    "description": "Provide beautiful new surfaces for two of the four basketball courts in Brower Park, including new drainage, pavement and lines.",
+    "location": "Brower Park"
+  },
+  {
+    "dist": 36,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 36  Robert Cornegy",
+    "title": "Upgrade Hattie Carthan Playground Handball Courts",
+    "cost": "$400,000.00",
+    "description": "Reconstruct wall (strip down to supports and re-cement); repave underfoot surface; install new benches and new fence; prune trees.",
+    "location": "308 Monroe Street"
+  },
+  {
+    "dist": 36,
+    "category": "Housing",
+    "councildistrict": "District 36  Robert Cornegy",
+    "title": "Security Cameras for Albany Houses",
+    "cost": "$750,000.00",
+    "description": "Add new security cameras to Albany Houses. (Project will be designed to budget and may not cover fully CCTV at both Albany I and II.)",
+    "location": "Albany Houses (NYCHA)"
+  },
+  {
+    "dist": 36,
+    "category": "Housing",
+    "councildistrict": "District 36  Robert Cornegy",
+    "title": "Security Cameras for Marcy Houses Senior Buildings",
+    "cost": "$750,000.00",
+    "description": "Install security camera system to cover the two senior buildings (Marcy Avenue and Stockton Place) and other parts of Marcy Houses, as feasible. (Project will be designed to budget.)",
+    "location": "Marcy Houses (NYCHA)"
+  },
+  {
+    "dist": 36,
+    "category": "Education",
+    "councildistrict": "District 36  Robert Cornegy",
+    "title": "4 Science Carts for Bed-Stuy New Beginnings",
+    "cost": "$248,000.00",
+    "description": "Each Science Cart = $62,000",
+    "location": "82 Lewis Ave."
+  },
+  {
+    "dist": 36,
+    "category": "Education",
+    "councildistrict": "District 36  Robert Cornegy",
+    "title": "Dance Studio at P.S. 3",
+    "cost": "$200,000.00",
+    "description": "Transform a classroom into a dance studio w/ new floor, mirrors, barre & sound system.",
+    "location": "50 Jefferson Ave."
+  },
+  {
+    "dist": 36,
+    "category": "Education",
+    "councildistrict": "District 36  Robert Cornegy",
+    "title": "New Laptops for P.S. 59",
+    "cost": "$70,000.00",
+    "description": "2 laptop carts w/ 30-35 Lenovo laptops each",
+    "location": "211 Throop Avenue"
+  },
+  {
+    "dist": 36,
+    "category": "Education",
+    "councildistrict": "District 36  Robert Cornegy",
+    "title": "Smartboards for Smart Kids!",
+    "cost": "$320,000.00",
+    "description": "New smartboards for five D36 schools -- PS 289, PS 138, PS 93, PS 243 & Bedford Academy. $64K will fund 8 smartboards per school. Includes required electrical & data.",
+    "location": "PS 289, PS 138, PS 93, PS 243 & Bedford Acdmy"
+  },
+  {
+    "dist": 36,
+    "category": "Arts, Culture & Community Facilities",
+    "councildistrict": "District 36  Robert Cornegy",
+    "title": "Renovate and Upgrade Marcy Library Auditorium",
+    "cost": "$350,000.00",
+    "description": "Upgrade the multi-purpose room/ auditorium of the Marcy Branch of the Brooklyn Public Library with new electrical, lighting, flooring & shelving.",
+    "location": "617 Dekalb Avenue"
+  },
+  {
+    "dist": 38,
+    "category": "Transit",
+    "councildistrict": "District 38  Carlos Menchaca",
+    "title": "Community Board 6 Repair and Resurfacing",
+    "cost": "$250,000.00",
+    "description": "The streets are starting to wear out after years of improper care, resulting in dangerous cracks and potholes that cause accidents. White lanes have not been repainted, thus heightening the potential for accidents (for motorists and pedestrians) and irresponsible driving.",
+    "location": "Community Board 6 in Brooklyn"
+  },
+  {
+    "dist": 38,
+    "category": "Transit",
+    "councildistrict": "District 38  Carlos Menchaca",
+    "title": "Electronic \"Locator\" Sign throughout the District",
+    "cost": "$600,000.00",
+    "description": "Install electronic bus signs along the B70, B63, B35, B11, B9, B57 & B61 bus routes. The signs will be posted at busy bus stops. The signs will tell riders the location and arrival time of their bus.",
+    "location": "District-Wide"
+  },
+  {
+    "dist": 38,
+    "category": "Streets",
+    "councildistrict": "District 38  Carlos Menchaca",
+    "title": "Brooklyn Community Board 7",
+    "cost": "$250,000.00",
+    "description": "The streets are starting to wear out after years of improper care, resulting in dangerous cracks and potholes that cause accidents. White lanes have not been repainted, thus heightening the potential for accidents (for motorists and pedestrians) and irresponsible driving.",
+    "location": "Brooklyn Community Board 7"
+  },
+  {
+    "dist": 38,
+    "category": "Streets",
+    "councildistrict": "District 38  Carlos Menchaca",
+    "title": "Community Board 12 Street Repair and Resurfacing",
+    "cost": "$250,000.00",
+    "description": "The streets are starting to wear out after years of improper care, resulting in dangerous cracks and potholes that cause accidents. White lanes have not been repainted, thus heightening the potential for accidents (for motorists and pedestrians) and irresponsible driving.",
+    "location": "Brooklyn Community Board 12"
+  },
+  {
+    "dist": 38,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 38  Carlos Menchaca",
+    "title": "Sunset Park Renovation",
+    "cost": "$500,000.00",
+    "description": "Repaving, installation of 20 new benches, replacement of existing dilapidated chain-link fences, and adding in picnic tables.",
+    "location": "Sunset Park"
+  },
+  {
+    "dist": 38,
+    "category": "Housing",
+    "councildistrict": "District 38  Carlos Menchaca",
+    "title": "Basketball Court at 31 Centre Mall",
+    "cost": "$425,000.00",
+    "description": "Renovation to this basketball court will provide more recreational area for the Red Hook Community. It will include brand new basketball hoops and painted grounds.",
+    "location": "31 Centre Mall, Red Hook"
+  },
+  {
+    "dist": 38,
+    "category": "Housing",
+    "councildistrict": "District 38  Carlos Menchaca",
+    "title": "Senior Center Yard Ground Beatifications",
+    "cost": "$500,000.00",
+    "description": "Renovation of the yard behind the new senior center which will include: picnic tables, chess tables, benches, a garden, barbecue grills, tables for other board games, & a non-smoking and alcohol area.",
+    "location": "129 West 9th Street"
+  },
+  {
+    "dist": 38,
+    "category": "Environment",
+    "councildistrict": "District 38  Carlos Menchaca",
+    "title": "New Tree with Tree Guards",
+    "cost": "$260,000.00",
+    "description": "Beautify blocks across the district by planting new trees with tree guards in front of homes, businesses & parks.",
+    "location": "District-Wide"
+  },
+  {
+    "dist": 38,
+    "category": "Education",
+    "councildistrict": "District 38  Carlos Menchaca",
+    "title": "Air Conditioning Wiring",
+    "cost": "$120,000.00",
+    "description": "This project will serve P.S. 1 in Sunset Park and M.S. 88 in Windsor Terrace for the installation of wiring that will support air conditioning units throughout the schools.",
+    "location": "309 47th Street and 544 7th Avenue"
+  },
+  {
+    "dist": 38,
+    "category": "Education",
+    "councildistrict": "District 38  Carlos Menchaca",
+    "title": "Auditorium Upgrade for M.S. 88 and M.S.136",
+    "cost": "$375,000.00",
+    "description": "These auditoriums are multi-purpose, handicapped-accessible community spaces. The spaces are currently outdated and need upgrades to better serve each school's internal and local community members.",
+    "location": "M.S.88, Sunset Park Prep, I.S.136"
+  },
+  {
+    "dist": 38,
+    "category": "Education",
+    "councildistrict": "District 38  Carlos Menchaca",
+    "title": "Library Update",
+    "cost": "$450,000.00",
+    "description": "The project would involve the renovation of Middle School 88 and Sunset Park High School's library media center, currently equipped with highly outdated and non-functioning technology.",
+    "location": "M.S. 88 and Sunset Park High School"
+  },
+  {
+    "dist": 38,
+    "category": "Education",
+    "councildistrict": "District 38  Carlos Menchaca",
+    "title": "Science Upgrade for MS.821 & IS.136",
+    "cost": "$1,000,000.00",
+    "description": "The labs in both schools rooms are outdated, thus not fully functional. Teachers are trying their best to work in the labs to effectively teach STEM topics. The upgrade will include 2 labs per school",
+    "location": "M.S. 821 / I.S. 136 - 4004 4th Avenue"
+  },
+  {
+    "dist": 38,
+    "category": "Education",
+    "councildistrict": "District 38  Carlos Menchaca",
+    "title": "South Brooklyn Community H.S.& P.S.169 Upgrades",
+    "cost": "$380,000.00",
+    "description": "There are no lockers, and thus students are required to carry their belongings, books, etc., throughout the day at SBHS. P.S.169 needs renovations of bathrooms that are in a state of disrepair.",
+    "location": "173 Conover St & 4305 7th Avenue"
+  },
+  {
+    "dist": 39,
+    "category": "Transit",
+    "councildistrict": "District 39  Brad Lander",
+    "title": "Bus Clocks on B67/B69: Know When Bus Arrives!",
+    "cost": "$240,000.00",
+    "description": "Install bus countdown clocks that display real-time information about bus location at 12 B67/B69 stops. This will help mass transit users estimate wait times and make better travel decisions.",
+    "location": "McDonald, 7th and Flatbush Avenues"
+  },
+  {
+    "dist": 39,
+    "category": "Streets",
+    "councildistrict": "District 39  Brad Lander",
+    "title": "Curb Extension & Safer Crossing- Carroll Park",
+    "cost": "$150,000.00",
+    "description": "The installation of a curb extension at this very busy intersection would shorten the crossing distance and promote pedestrian safety for families and residents using Carroll Park.",
+    "location": "Intersection of Carroll and Court Streets"
+  },
+  {
+    "dist": 39,
+    "category": "Streets",
+    "councildistrict": "District 39  Brad Lander",
+    "title": "Pedestrian Safety: Curb Ext. on Columbia St.",
+    "cost": "$150,000.00",
+    "description": "The installation of a curb extension at this very busy intersection would shorten the street crossing distance and increase pedestrian safety in this growing neighborhood.",
+    "location": "Intersection of Union and Columbia Streets"
+  },
+  {
+    "dist": 39,
+    "category": "Streets",
+    "councildistrict": "District 39  Brad Lander",
+    "title": "Replace Cross-Hatch with Concrete on PPSW",
+    "cost": "$500,000.00",
+    "description": "Construct sidewalk on the southwest corner at Prospect Park Southwest and 16th Street, where there is only a painted cross-hatch, to improve pedestrian access to Prospect Park and nearby bus stops.",
+    "location": "Prospect Park Southwest and 16th Street"
+  },
+  {
+    "dist": 39,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 39  Brad Lander",
+    "title": "Brand New Dog Run: Areas for Big and Small Dogs",
+    "cost": "$135,000.00",
+    "description": "Many Kensington and Windsor Terrace dog owners do not have access to fenced-in space where their pups can exercise and socialize. Project is shared with Council Member Eugene & Borough President Adams",
+    "location": "Parade Grounds (at unused southwest corner)"
+  },
+  {
+    "dist": 39,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 39  Brad Lander",
+    "title": "New 'Lake Mess Monster,' an Aquatic Weed Harvester",
+    "cost": "$140,000.00",
+    "description": "Prospect Park needs a new aquatic weed harvester (aka 'Lake Mess Monster') to remove scum from the lake. Without it, the scum will sink and proceed to rot, causing the water to become toxic.",
+    "location": "Prospect Park Lake"
+  },
+  {
+    "dist": 39,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 39  Brad Lander",
+    "title": "Year-Round, Freeze-Resistant Drinking Fountains",
+    "cost": "$175,000.00",
+    "description": "The water fountains in Prospect Park are not available to use during the winter months. This upgrade would make 5 fountains along the Prospect Park Drive freeze-resistant and available year-round.",
+    "location": "Prospect Park, 5 Locations along the Drive"
+  },
+  {
+    "dist": 39,
+    "category": "Education",
+    "councildistrict": "District 39  Brad Lander",
+    "title": "PS 124 Dye Garden/Makerspace STEAM Enrichments",
+    "cost": "$125,000.00",
+    "description": "Create Dye Flower Garden and Makerspace for hands-on instruction in STEAM subjects. Dyes will be used in art & social studies projects; Makerspace will teach coding, modeling, 3D fabrication.",
+    "location": "PS 124, 14th St & 4th Ave, Park Slope"
+  },
+  {
+    "dist": 39,
+    "category": "Education",
+    "councildistrict": "District 39  Brad Lander",
+    "title": "Retrofit 75 Auditorium Lights for Safety",
+    "cost": "$200,000.00",
+    "description": "School and after-school groups use auditorium daily. Current lights cast shadows, making steep floor unsafe, and use expensive short-life bulbs. New LED retrofit will fix safety and cost issues.",
+    "location": "PS 282, 180 6th Avenue, Park Slope"
+  },
+  {
+    "dist": 39,
+    "category": "Education",
+    "councildistrict": "District 39  Brad Lander",
+    "title": "West Brooklyn Community HS Portable Laptop Lab",
+    "cost": "$105,000.00",
+    "description": "Three mobile carts with 25 laptops each will travel among classrooms to support instruction and foster IT skills. West Brooklyn Community HS is a transfer high school offering a second chance to high-needs students.",
+    "location": "1053 41st Street, Borough Park"
+  },
+  {
+    "dist": 39,
+    "category": "Arts, Culture & Community Facilities",
+    "councildistrict": "District 39  Brad Lander",
+    "title": "Mobile Studios\" for Artists and Orgs in Gowanus",
+    "cost": "$150,000.00",
+    "description": "Three \"mobile studios\" - small, mobile workplaces - for artists and community organizations that will enliven underused areas and engage the public on local issues like displacement and resiliency.",
+    "location": "Parks, Plazas, and Street-ends in Gowanus"
+  },
+  {
+    "dist": 39,
+    "category": "Arts, Culture & Community Facilities",
+    "councildistrict": "District 39  Brad Lander",
+    "title": "Beautify Outdoor Space at Borough Park Library",
+    "cost": "$350,000.00",
+    "description": "Renovation of the library's outdoor area to include new plantings, new furnishings, and new pavement - to provide a much needed green space. Similar to new entrance at Midwood Library.",
+    "location": "1265 43rd St, near 13th Ave"
+  },
+  {
+    "dist": 39,
+    "category": "Arts, Culture & Community Facilities",
+    "councildistrict": "District 39  Brad Lander",
+    "title": "Create Teen Space at Carroll Gardens Library",
+    "cost": "$350,000.00",
+    "description": "Revamp the library's mezzanine-level to create more space and add comfortable furniture, outlets, and new lighting - to create an inviting space for teens to use after-school and on weekends",
+    "location": "396 Clinton St, between Union and Sackett Sts"
+  },
+  {
+    "dist": 40,
+    "category": "Transit",
+    "councildistrict": "District 40  Matthieu Eugene",
+    "title": "Little Red Riding Hood Pre-K Sidewalk Extension",
+    "cost": "$300,000.00",
+    "description": "Sidewalk extensions at this corner paired with heavy-duty bollards",
+    "location": "NE corner of Rogers Ave. and Lefferts Ave."
+  },
+  {
+    "dist": 40,
+    "category": "Transit",
+    "councildistrict": "District 40  Matthieu Eugene",
+    "title": "Montessori School Sidewalk Extension",
+    "cost": "$300,000.00",
+    "description": "Sidewalk extension on the South East corner matched by a painted curb extension with flexible post barriers",
+    "location": "SE corner of Rogers Ave. and Rutland Rd."
+  },
+  {
+    "dist": 40,
+    "category": "Transit",
+    "councildistrict": "District 40  Matthieu Eugene",
+    "title": "P.S. 92 Sidewalk Extension",
+    "cost": "$300,000.00",
+    "description": "A concrete sidewalk extension, which could be matched by a painted curb extension with flexible post barriers on the North West corner.",
+    "location": "SW corner of Rogers Ave. and Winthrop St."
+  },
+  {
+    "dist": 40,
+    "category": "Transit",
+    "councildistrict": "District 40  Matthieu Eugene",
+    "title": "Real-Time Passenger Information",
+    "cost": "$20,000.00",
+    "description": "Bus display signs that are visible from a distance and inform riders when their bus will arrive",
+    "location": "Lincoln Rd Entrance; Church Ave. B35 Stop"
+  },
+  {
+    "dist": 40,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 40  Matthieu Eugene",
+    "title": "Community Barbecue Sites in Prospect Park",
+    "cost": "$80,000.00",
+    "description": "New-style municipal grills, which are similar to those at Brooklyn Bridge Park Picnic Peninsula.",
+    "location": "Lincoln Rd & E Drive; Parkside Ave & E Drive"
+  },
+  {
+    "dist": 40,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 40  Matthieu Eugene",
+    "title": "Kensington Dog Run",
+    "cost": "$135,000.00",
+    "description": "An enclosed Dog Run at the Parade Grounds",
+    "location": "Parade Grounds"
+  },
+  {
+    "dist": 40,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 40  Matthieu Eugene",
+    "title": "Replacement of 'Lake Mess Monster'",
+    "cost": "$140,000.00",
+    "description": "A vessel that would grind up duck weed and other contaminants that cause visible pollution in the Prospect Park Lake.",
+    "location": "Prospect Park Lake"
+  },
+  {
+    "dist": 40,
+    "category": "Education",
+    "councildistrict": "District 40  Matthieu Eugene",
+    "title": "Computer Lab Updates for Local Schools",
+    "cost": "$35,000.00",
+    "description": "General technology updates at P.S. 249, P.S. 245, P.S. 139, and P.S. 6",
+    "location": "PS 249, PS 245, PS 139, PS 6"
+  },
+  {
+    "dist": 40,
+    "category": "Education",
+    "councildistrict": "District 40  Matthieu Eugene",
+    "title": "Gymnasium Upgrades at Erasmus High School",
+    "cost": "$150,000.00",
+    "description": "Physical upgrades to the gymnasium",
+    "location": "911 Flatbush Avenue"
+  },
+  {
+    "dist": 40,
+    "category": "Education",
+    "councildistrict": "District 40  Matthieu Eugene",
+    "title": "Smartboards for P.S. 92",
+    "cost": "$175,000.00",
+    "description": "Twenty-nine smartboards are needed for PS 92.",
+    "location": "601 Parkside Avenue"
+  },
+  {
+    "dist": 40,
+    "category": "Education",
+    "councildistrict": "District 40  Matthieu Eugene",
+    "title": "Technology Updates for M.S. 2 Parkside Academy",
+    "cost": "$35,000.00",
+    "description": "Various technological updates at M.S. 2 Parkside Academy",
+    "location": "655 Parkside Avenue"
+  },
+  {
+    "dist": 44,
+    "category": "Youth",
+    "councildistrict": "District 44  David Greenfield",
+    "title": "Greenhouse Renovations at Murrow High School",
+    "cost": "$300,000.00",
+    "description": "Thousands of students use the greenhouse each year. This project would upgrade and improve the deteriorating greenhouse.",
+    "location": "Midwood"
+  },
+  {
+    "dist": 44,
+    "category": "Transit",
+    "councildistrict": "District 44  David Greenfield",
+    "title": "B16 Count Down Clock",
+    "cost": "$200,000.00",
+    "description": "Never miss your bus again! Electronic signs will be installed along B16 route to inform riders when the next bus is arriving.",
+    "location": "District Wide"
+  },
+  {
+    "dist": 44,
+    "category": "Transit",
+    "councildistrict": "District 44  David Greenfield",
+    "title": "Street Resurfacing",
+    "cost": "$200,000.00",
+    "description": "Repair and resurface roadways that have been identified as dangerous due to potholes, ridges and other holes.",
+    "location": "District Wide"
+  },
+  {
+    "dist": 44,
+    "category": "Sanitation",
+    "councildistrict": "District 44  David Greenfield",
+    "title": "Hauslter Truck for Community Board 14",
+    "cost": "$167,000.00",
+    "description": "The haulster is used for plowing and salt spreading in the winter and addressing illegal dumping and litter conditions.",
+    "location": "Midwood"
+  },
+  {
+    "dist": 44,
+    "category": "Public Safety",
+    "councildistrict": "District 44  David Greenfield",
+    "title": "Hatzolah Mobile Command Center",
+    "cost": "$250,000.00",
+    "description": "A vehicle based command center will be a critical part of its response infrastructure in order to help provide top-tier care for all citizens of New York City.",
+    "location": "District Wide"
+  },
+  {
+    "dist": 44,
+    "category": "Public Safety",
+    "councildistrict": "District 44  David Greenfield",
+    "title": "Safety & Security Enhancements at Mapelton Library",
+    "cost": "$200,000.00",
+    "description": "Upgrade and enhance security features at Mapelton Library",
+    "location": "Borough Park"
+  },
+  {
+    "dist": 44,
+    "category": "Public Safety",
+    "councildistrict": "District 44  David Greenfield",
+    "title": "Safety & Security Enhancements at Midwood Library",
+    "cost": "$200,000.00",
+    "description": "Upgrade and enhance security features at the newly renovated Midwood Library",
+    "location": "Midwood"
+  },
+  {
+    "dist": 44,
+    "category": "Public Safety",
+    "councildistrict": "District 44  David Greenfield",
+    "title": "Security Cameras in Bensonhurst",
+    "cost": "$200,000.00",
+    "description": "Install 8 police monitored Argus cameras to deter crime in vulnerable public areas.",
+    "location": "Bensonhurst"
+  },
+  {
+    "dist": 44,
+    "category": "Public Safety",
+    "councildistrict": "District 44  David Greenfield",
+    "title": "Van for the Auxiliary NYPD Police Squad",
+    "cost": "$70,000.00",
+    "description": "This van is a crucial addition to the 66 Precinct auxiliary squad. It will allow the team to respond quickly and efficiently to emergency calls.",
+    "location": "Borough Park"
+  },
+  {
+    "dist": 44,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 44  David Greenfield",
+    "title": "Beautify Midwood",
+    "cost": "$170,000.00",
+    "description": "Plant 100 trees throughout the Midwood area.",
+    "location": "Midwood"
+  },
+  {
+    "dist": 44,
+    "category": "Education",
+    "councildistrict": "District 44  David Greenfield",
+    "title": "Beth Jacob UPK Roof Top Jungle",
+    "cost": "$250,000.00",
+    "description": "The roof of this building will be turned into a brand new, innovate playground for all children in the UPK program.",
+    "location": "Borough Park"
+  },
+  {
+    "dist": 44,
+    "category": "Arts, Culture & Community Facilities",
+    "councildistrict": "District 44  David Greenfield",
+    "title": "OHEL",
+    "cost": "$500,000.00",
+    "description": "Ohel is a premier social services organization throughout the District. This project will supplement funding for a new, state of the art center.",
+    "location": "District Wide"
+  },
+  {
+    "dist": 44,
+    "category": "Arts, Culture & Community Facilities",
+    "councildistrict": "District 44  David Greenfield",
+    "title": "Therapuetic Center at Muishkon Division",
+    "cost": "$225,000.00",
+    "description": "The Mishkon Division services the needs of people with developmental disabilities. This project would develop a brand new therapeutic center.",
+    "location": "District Wide"
+  },
+  {
+    "dist": 45,
+    "category": "Youth",
+    "councildistrict": "District 45  Jumaane Williams",
+    "title": "Repair Gym at PS/IS 109",
+    "cost": "$75,000.00",
+    "description": "Gym floor has water damage and is warped/buckled in areas. This is not a safe condition for the 550+ students who attend the K - 8 School to experience during their indoor physical activity periods.",
+    "location": "1001 E 45th St, Brooklyn"
+  },
+  {
+    "dist": 45,
+    "category": "Youth",
+    "councildistrict": "District 45  Jumaane Williams",
+    "title": "Repair School Yard at PS/IS 109",
+    "cost": "$500,000.00",
+    "description": "The school yard is currently sinking so to properly serve the 550+ K - 8 students who attend PS/IS 109 the school yard requires repair.",
+    "location": "1001 East 45th Street, Brooklyn"
+  },
+  {
+    "dist": 45,
+    "category": "Youth",
+    "councildistrict": "District 45  Jumaane Williams",
+    "title": "Update Cafeteria at THS",
+    "cost": "$400,000.00",
+    "description": "The equipment in the Cafeteria is old and worn-out due to several water conditions and other issues. Kitchen space needs to be revamped to serve better, more nutritious, food.",
+    "location": "5800 Tilden Avenue, Brooklyn"
+  },
+  {
+    "dist": 45,
+    "category": "Youth",
+    "councildistrict": "District 45  Jumaane Williams",
+    "title": "Upgrade Field and Bathrooms at THS Track",
+    "cost": "$300,000.00",
+    "description": "600+ Students & Sports Teams find it difficult to use track due to bumps and holes; and bathrooms are not safe. This also impacts the safety of Charter Elementary School children who use field.",
+    "location": "5800 Tilden Avenue, Brooklyn"
+  },
+  {
+    "dist": 45,
+    "category": "Youth",
+    "councildistrict": "District 45  Jumaane Williams",
+    "title": "Upgrade Field Lockers at THS Campus",
+    "cost": "$250,000.00",
+    "description": "Upgrade Football Field Lockers to help promote indoor track use and make the field safer for after school learners and sports teams who use our field.",
+    "location": "5800 Tilden Avenue, Brooklyn"
+  },
+  {
+    "dist": 45,
+    "category": "Youth",
+    "councildistrict": "District 45  Jumaane Williams",
+    "title": "Vision Zero/Safe Routes to Schools ' PS 361",
+    "cost": "$300,000.00",
+    "description": "Add improvements such as raised center medians, widened sidewalks, neckdowns at intersections, to slow traffic and improve safety for 350 students, their families and staff.",
+    "location": "3109 Newkirk Ave"
+  },
+  {
+    "dist": 45,
+    "category": "Transit",
+    "councildistrict": "District 45  Jumaane Williams",
+    "title": "Vision Zero/New Bus Pads",
+    "cost": "$350,000.00",
+    "description": "Bus pads are sections of concrete pavement at bus stops. It would be installed to prevent the weight/heat of the bus from softening the asphalt which damages the street & increases need to resurface.",
+    "location": "Routes on Nostrand Avenue and Kings Highway."
+  },
+  {
+    "dist": 45,
+    "category": "Streets",
+    "councildistrict": "District 45  Jumaane Williams",
+    "title": "Fix Our Streets in Community Board 14",
+    "cost": "$500,000.00",
+    "description": "The streets within Community Board 14 are crumbling. This impacts the seniors, adults, youth and pets who live and work in this area. We are asking that 1.86 lane miles is repaired.",
+    "location": "Ave K, Ave J, Nostrand and Ocean Avenues"
+  },
+  {
+    "dist": 45,
+    "category": "Public Safety",
+    "councildistrict": "District 45  Jumaane Williams",
+    "title": "Safety Upgrade for THS Campus",
+    "cost": "$250,000.00",
+    "description": "Add Security Cameras around the school (especially in dark areas). This will increase the level of safety for over 800 students which will provide youth with a safe place to learn.",
+    "location": "5800 Tilden Ave, Brooklyn"
+  },
+  {
+    "dist": 45,
+    "category": "Public Safety",
+    "councildistrict": "District 45  Jumaane Williams",
+    "title": "Upgrade Safety Cameras at Glenwood Houses",
+    "cost": "$500,000.00",
+    "description": "Increase safety for 2,600+ residents and the neighbors who work in Glenwood Houses by upgrading the existing security system.",
+    "location": "Within and Around Glenwood Houses"
+  },
+  {
+    "dist": 45,
+    "category": "Public Safety",
+    "councildistrict": "District 45  Jumaane Williams",
+    "title": "Vision Zero/Safe Routes to Schools ' PS 208",
+    "cost": "$300,000.00",
+    "description": "Add improvements such as raised center medians, widened sidewalks, neckdowns at intersections, to slow traffic and improve safety for 440 students, their families and staff.",
+    "location": "4801 Avenue D, Brooklyn"
+  },
+  {
+    "dist": 45,
+    "category": "Education",
+    "councildistrict": "District 45  Jumaane Williams",
+    "title": "Tech Upgrade at PS 208",
+    "cost": "$100,000.00",
+    "description": "Add Laptops and Smartboards for 500 Students at PS 208",
+    "location": "4801 Avenue D"
+  },
+  {
+    "dist": 45,
+    "category": "Education",
+    "councildistrict": "District 45  Jumaane Williams",
+    "title": "Technology Upgrade for THS Campus",
+    "cost": "$250,000.00",
+    "description": "Add Laptops, Laptop carts, Smart boards, iPads and Upgrades to computer labs so that we can decrease the digital divide for 800+ High School students.",
+    "location": "5800 Tilden Avenue, Brooklyn"
+  },
+  {
+    "dist": 45,
+    "category": "Education",
+    "councildistrict": "District 45  Jumaane Williams",
+    "title": "Update THS Campus Auditorium",
+    "cost": "$100,000.00",
+    "description": "Upgrade Sound equipment, Projector and screen (adding one which comes out of the ceiling). There are 700+ students who are behind the curve using out of date technology in auditorium.",
+    "location": "5800 Tilden Avenue"
+  },
+  {
+    "dist": 45,
+    "category": "Education",
+    "councildistrict": "District 45  Jumaane Williams",
+    "title": "Upgrade PA in Gym 3 at THS Campus",
+    "cost": "$75,000.00",
+    "description": "Upgrade the Public Address System in Gym 3 for the 500+ students, community members and staff who use this gym. Increasing the ability to clearly receive audible data and positively impact safety.",
+    "location": "5800 Tilden Avenue"
+  },
+  {
+    "dist": 47,
+    "category": "Transit",
+    "councildistrict": "District 47  Mark Treyger",
+    "title": "Bus Countdown Clocks",
+    "cost": "$100,000.00",
+    "description": "Real Time Passenger Information at high traffic bus stops in District 47.",
+    "location": "District Wide"
+  },
+  {
+    "dist": 47,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 47  Mark Treyger",
+    "title": "McDonald Playground - Reconstruction",
+    "cost": "$500,000.00",
+    "description": "Funds will be used to renovate the children's play area of McDonald Playground",
+    "location": "McDonald Playground"
+  },
+  {
+    "dist": 47,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 47  Mark Treyger",
+    "title": "Playground Renovation - Scarangella Playground",
+    "cost": "$300,000.00",
+    "description": "The project will include renovations to the existing playground, spray shower, courts, paths, landscaping and sidewalks.",
+    "location": "Scarangella Playground"
+  },
+  {
+    "dist": 47,
+    "category": "Parks & Recreation",
+    "councildistrict": "District 47  Mark Treyger",
+    "title": "Surf Playground",
+    "cost": "$300,000.00",
+    "description": "The funds will be used to reconstruct two full basketball courts.",
+    "location": "Surf Playground"
+  },
+  {
+    "dist": 47,
+    "category": "Housing",
+    "councildistrict": "District 47  Mark Treyger",
+    "title": "Marlboro Houses - Security Improvements",
+    "cost": "$150,000.00",
+    "description": "Funds will be used to install additional security cameras at Marlboro Houses.",
+    "location": "Marlboro Houses"
+  },
+  {
+    "dist": 47,
+    "category": "Education",
+    "councildistrict": "District 47  Mark Treyger",
+    "title": "Technology in Elementary Schools",
+    "cost": "$200,000.00",
+    "description": "Technology upgrades in P.S. 212, P.S. 216, P.S. 97 and P.S. 188.",
+    "location": "P.S. 212, P.S. 216, P.S. 97 and P.S. 188"
+  },
+  {
+    "dist": 47,
+    "category": "Education",
+    "councildistrict": "District 47  Mark Treyger",
+    "title": "Technology in High Schools",
+    "cost": "$150,000.00",
+    "description": "Technology upgrades in Rachel Carson High School, Brooklyn Studio Secondary School, and Kingsborough Early College School.",
+    "location": "521 West Ave, 8310 21st Ave, 2630 Benson Ave"
+  },
+  {
+    "dist": 47,
+    "category": "Education",
+    "councildistrict": "District 47  Mark Treyger",
+    "title": "Technology in Middle Schools",
+    "cost": "$150,000.00",
+    "description": "Technology upgrades in I.S. 281, I.S. 228, and I.S. 239.",
+    "location": "I.S. 281, I.S. 228, and I.S. 239"
+  }
+]
