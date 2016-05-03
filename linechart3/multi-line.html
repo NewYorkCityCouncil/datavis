@@ -6,7 +6,7 @@
     <meta charset="utf-8">
   </head>
   <body>
-    <h2 style="padding-left:60px;">Total Funding Rounds in CrunchBase by Quarter</h2>
+    <h2 style="padding-left:60px;">Total Funding Rounds in CrunchBase by Year</h2>
     <script src="lib/d3.js"></script>
     <script>
       var margin = {top: 20, right: 55, bottom: 30, left: 40},
@@ -33,10 +33,10 @@
         .append("g")
           .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-      d3.csv("data/crunchbase-quarters.csv", function (error, data) {
+      d3.csv("data/felonysummons2007_2014.csv", function (error, data) {
         console.log("Inital Data", data);
 
-        var labelVar = 'quarter';
+        var labelVar = 'year';
         var varNames = d3.keys(data[0])
             .filter(function (key) { return key !== labelVar;});
 
@@ -52,7 +52,7 @@
         });
         console.log("seriesData", seriesData);
 
-        x.domain(data.map(function (d) { return d.quarter; }));
+        x.domain(data.map(function (d) { return d.year; }));
         y.domain([
           d3.min(seriesData, function (c) {
             return d3.min(c.values, function (d) { return d.value; });
