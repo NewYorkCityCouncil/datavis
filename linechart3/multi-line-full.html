@@ -19,7 +19,7 @@
     </style>
   </head>
   <body>
-    <h2 style="padding-left:60px;">Total Funding Rounds in CrunchBase by Quarter</h2>
+    <h2 style="padding-left:60px;">Total Funding Rounds in CrunchBase by Year</h2>
     <script src="lib/d3.js"></script>
     <script src="lib/jquery.js"></script>
     <script src="lib/bootstrap.js"></script>
@@ -56,9 +56,9 @@
         .append("g")
           .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-      d3.csv("data/crunchbase-quarters.csv", function (error, data) {
+      d3.csv("data/felonysummons2007_2014.csv", function (error, data) {
 
-        var labelVar = 'quarter';
+        var labelVar = 'year';
         var varNames = d3.keys(data[0]).filter(function (key) { return key !== labelVar;});
         color.domain(varNames);
 
@@ -71,7 +71,7 @@
           };
         });
 
-        x.domain(data.map(function (d) { return d.quarter; }));
+        x.domain(data.map(function (d) { return d.year; }));
         y.domain([
           d3.min(seriesData, function (c) {
             return d3.min(c.values, function (d) { return d.value; });
@@ -155,7 +155,7 @@
             trigger: 'manual',
             html : true,
             content: function() {
-              return "Quarter: " + d.label +
+              return "year: " + d.label +
                      "<br/>Rounds: " + d3.format(",")(d.value ? d.value: d.y1 - d.y0); }
           });
           $(this).popover('show')
