@@ -69,9 +69,9 @@
         .append("g")
           .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-      d3.csv("data/crunchbase-quarters.csv", function (error, data) {
+      d3.csv("data/topten_2007_2015.csv", function (error, data) {
 
-        var labelVar = 'quarter';
+        var labelVar = 'year';
         var varNames = d3.keys(data[0])
             .filter(function (key) { return key !== labelVar;});
         color.domain(varNames);
@@ -88,11 +88,11 @@
           });
         });
 
-        x.domain(data.map(function (d) { return d.quarter; }));
+        x.domain(data.map(function (d) { return d.year; }));
 
         stack(seriesArr);
 
-        y.domain([0, d3.max(seriesArr, function (c) { 
+        y.domain([0, d3.max(seriesArr, function (c) {
             return d3.max(c.values, function (d) { return d.y0 + d.y; });
           })]);
 
@@ -161,7 +161,7 @@
         function removePopovers () {
           $('.popover').each(function() {
             $(this).remove();
-          }); 
+          });
         }
 
         function showPopover (d) {
@@ -171,8 +171,8 @@
             container: 'body',
             trigger: 'manual',
             html : true,
-            content: function() { 
-              return "Quarter: " + d.label + 
+            content: function() {
+              return "year: " + d.label +
                      "<br/>Rounds: " + d3.format(",")(d.value ? d.value: d.y1 - d.y0); }
           });
           $(this).popover('show')
