@@ -4,7 +4,7 @@
     <link href="css/bootstrap.css" rel="stylesheet">
     <style>
       body {
-        font: 9px sans-serif;
+        font: 12px sans-serif;
         color: #121401;
       }
       .axis path,
@@ -25,12 +25,12 @@
     </style>
   </head>
   <body>
-    <h2 style="padding-left:60px;">Total Funding Rounds in CrunchBase by Quarter</h2>
+    <h2 style="padding-left:60px;">Summons by Type over Time (2007-2015)</h2>
     <script src="lib/d3.js"></script>
     <script src="lib/jquery.js"></script>
     <script src="lib/bootstrap.js"></script>
     <script>
-      var margin = {top: 20, right: 55, bottom: 30, left: 40},
+      var margin = {top: 20, right: 55, bottom: 30, left: 75},
           width  = 1000 - margin.left - margin.right,
           height = 500  - margin.top  - margin.bottom;
 
@@ -61,7 +61,7 @@
           .y1(function (d) { return y(d.y0 + d.y); });
 
       var color = d3.scale.ordinal()
-          .range(["#001c9c","#101b4d","#475003","#9c8305","#d3c47c"]);
+          .range(["#075385","#e93c44","#facaca","#f5e472","#6bc06f","#8caaca", "#9897a3","#b99175", "#f27171",]);
 
       var svg = d3.select("body").append("svg")
           .attr("width",  width  + margin.left + margin.right)
