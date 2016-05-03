@@ -3,77 +3,44 @@
  {
   "name": "3",
   "children": [
-    {"name":"Youth",
+    {
+      "name":"Youth",
       "children":[
-        {"name":"Renovate the Basketball Court at Chelsea Park", "size": 350000,  "description": "The basketball court is a neighborhood favorite which needs to be improved for the safety and enjoyment of the community. This project would repave the court and install new rims.",
-          "location": "West 27th Street and 10th Avenue" },
-        {"name": "Renovation at Gertrude Kelly Playground",
-        "size": 350000,
-        "description": "Renovate the basketball court and adjacent sidewalk at Gertrude Kelly Playground",
-      }
+        {"name":"Renovate the Basketball Court at Chelsea Park", "size": 350000,  "description": "The basketball court is a neighborhood favorite which needs to be improved for the safety and enjoyment of the community. This project would repave the court and install new rims.", "location": "West 27th Street and 10th Avenue"},
+        {"name": "Renovation at Gertrude Kelly Playground", "size": 350000, "description": "Renovate the basketball court and adjacent sidewalk at Gertrude Kelly Playground"}
       ]
     },
-      {"name":"Transit",
+      {
+        "name":"Transit",
         "children":[
-          {"name": "More Turnstiles at C/E 50th Street Station",
-            "size": 135000,
-            "description": "Install two additional turnstiles at the entrance/exit of the C/E 50th Street uptown platform. More turnstiles will ease congestion and reduce wait times for passengers at this entrance/exit.",
-            "location": "C/E Subway Station at 50th Street and 8th Avenue"},
-            {"name": "Real Time Rider Information at Bus Stops",
-            "size": 100000,
-            "description": "Electronic Boards to display real time bus arrival information at five key bus stops, offering convenience for riders. The proposed locations will be subject to feasibility analysis by DOT.",
-            "location": "District wide"}
+          {"name": "More Turnstiles at C/E 50th Street Station","size": 135000,"description": "Install two additional turnstiles at the entrance/exit of the C/E 50th Street uptown platform. More turnstiles will ease congestion and reduce wait times for passengers at this entrance/exit.", "location": "C/E Subway Station at 50th Street and 8th Avenue"},
+          {"name": "Real Time Rider Information at Bus Stops","size": 100000,"description": "Electronic Boards to display real time bus arrival information at five key bus stops, offering convenience for riders. The proposed locations will be subject to feasibility analysis by DOT.","location": "District wide"}
             ]
       },
-      {"name":"Parks & Recreation",
+      {
+        "name":"Parks & Recreation",
         "children":[
-          {"name": "Grounds Renovation at Elliott-Chelsea Houses",
-          "size": 500000,
-          "description": "Add new playground fencing, renovate walkways, and revitalize garden and grassy areas. Project would be designed to budget and priority areas would be determined in conjunction with the RA leadership.",
-          "location": "425 West 25th Street"},
-            {"name": "New Fitness Equipment for Chelsea Park",
-            "size": 180000,
-            "description": "New fitness units, including safety surfacing, seating and drinking fountains replacement.",
-            "location": "West 27th Street and 10th Avenue"},
-            {"name": "Renovation of Historic Field House",
-              "size": 250000,
-              "description": "Restoration towards the Downing Street playground's historic field house and bathrooms to make them wheelchair accessible.",
-              "location": "1 Downing Street"},
-              {  "name": "Repair/Reopen Staircase at DeWitt Clinton Park",
-                "size": 500000,
-                "description": "The southwest entrance staircase is crumbling and has been closed for years. Repairing this entrance will make the park accessible to visitors and easier for children to enter the park on 12th Ave.",
-                "location": "West 52 Street and 11 Avenue"}
-            ]
+          {"name": "Grounds Renovation at Elliott-Chelsea Houses","size": 500000, "description": "Add new playground fencing, renovate walkways, and revitalize garden and grassy areas. Project would be designed to budget and priority areas would be determined in conjunction with the RA leadership.", "location": "425 West 25th Street"},
+          {"name": "New Fitness Equipment for Chelsea Park", "size": 180000,"description": "New fitness units, including safety surfacing, seating and drinking fountains replacement.", "location": "West 27th Street and 10th Avenue"},
+          {"name": "Renovation of Historic Field House","size": 250000,"description": "Restoration towards the Downing Street playground's historic field house and bathrooms to make them wheelchair accessible.", "location": "1 Downing Street"},
+          {"name": "Repair/Reopen Staircase at DeWitt Clinton Park", "size": 500000, "description": "The southwest entrance staircase is crumbling and has been closed for years. Repairing this entrance will make the park accessible to visitors and easier for children to enter the park on 12th Ave.","location": "West 52 Street and 11 Avenue"}
+
+          ]
           },
-          {"name":"Environment",
+          {
+            "name":"Environment",
             "children":[
-              {"name": "New Trees for Council District 3",
-                "size": 100000,
-                "description": "Plant new trees and install tree guards on blocks with few or no trees throughout District 3.",
-                "location": "District wide"}
+              {"name": "New Trees for Council District 3","size": 100000,"description": "Plant new trees and install tree guards on blocks with few or no trees throughout District 3.","location": "District wide"}
               ]
             },
-              {"name":"Education",
+            {
+              "name":"Education",
                 "children":[
-                  {"name": "A Green Roof for 75 Morton School",
-                  "size": 200000,
-                  "description": "Build a green roof on the new middle school coming to 75 Morton Street. This would provide new physical and educational opportunities for students.",
-                  "location": "75 Morton Street"},
-                    {  "name": "A New Library for City Knoll School",
-                      "size": 300000,
-                      "description": "Technological and construction updates to create a library space at City Knoll School. This project will help engage students and prepare them for the skills needed in the 21st century.",
-                      "location": "425 West 33rd Street"},
-                    {  "name": "Bathroom Upgrade - Lab MS, Lab HS & Museum High",
-                      "size": 560000,
-                      "description": "Phase 2 renovations will make needed repairs to bathrooms on upper floors, addressing health and hygiene concerns for the school community.",
-                      "location": "333 West 17th Street"},
-                      {  "name": "Gym Renovation - Lab M.S, Lab H.S.& Museum High",
-                        "size": 300000,
-                        "description": "Gym improvements with exploration to build more communal space will address broken bleachers, difficult to operate scoreboard, flooring to support aerobic activity, and create more educational space.",
-                        "location": "333 West 17th Street"},
-                        {  "name": "New Audio / Visual System for P.S 11",
-                          "size": 75000,
-                          "description": "A new Audio/Visual System in the auditorium of P.S. 11. The school needs a working A/V system to fulfill its curriculum requirements for students.",
+                  {"name": "A Green Roof for 75 Morton School", "size": 200000,"description": "Build a green roof on the new middle school coming to 75 Morton Street. This would provide new physical and educational opportunities for students.","location": "75 Morton Street"},
+                  {"name": "A New Library for City Knoll School","size": 300000,"description": "Technological and construction updates to create a library space at City Knoll School. This project will help engage students and prepare them for the skills needed in the 21st century.", "location": "425 West 33rd Street"},
+                  {"name": "Bathroom Upgrade - Lab MS, Lab HS & Museum High","size": 560000,"description": "Phase 2 renovations will make needed repairs to bathrooms on upper floors, addressing health and hygiene concerns for the school community.", "location": "333 West 17th Street"},
+                  {"name": "Gym Renovation - Lab M.S, Lab H.S.& Museum High", "size": 300000, "description": "Gym improvements with exploration to build more communal space will address broken bleachers, difficult to operate scoreboard, flooring to support aerobic activity, and create more educational space.", "location": "333 West 17th Street"},
+                  {"name": "New Audio / Visual System for P.S 11", "size": 75000, "description": "A new Audio/Visual System in the auditorium of P.S. 11. The school needs a working A/V system to fulfill its curriculum requirements for students.",
                           "location": "320 West 21st Street"}
                     ]
                   },
