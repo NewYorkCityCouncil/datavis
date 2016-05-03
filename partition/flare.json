@@ -1,60 +1,56 @@
-
-  {
-   "name": "Culture and Community Facilities",
-   "children": [
-      {"name": "Renovations for Jefferson Library Market", "size": 500000},
-      {"name": "Mobile Food Pantry for West Side Campaign against Hunger", "size": 250000},
-      {"name": "125th Street Library: ADA Ramp", "size": 500000},
-      {"name": "Van Cortlandt Library Roof Replacement", "size": 300000},
-      {"name": "Mosholu Library Window Replacement", "size": 300000},
-      {"name": "Sunnyside Library Accessibility", "size": 50000},
-      {"name": "Woodside Library Accessibility", "size": 50000},
-      {"name": "Enhancement of Outdoor Performance Space at Roy Wilkins Park", "size": 450000},
-      {"name": "Upgrades to the Jamaica Performing Arts Center", "size": 120000},
-      {"name": "Technology for 3 Local Arts Non-Profits", "size": 90000},
-      {"name": "New OHEL Headquarters", "size": 500000},
-      {"name": "Technology & Media Space - Rugby Library", "size": 35000},
-      {"name": "Library Upgrades", "size": 200000}
-
+{"name": "PB winners 2015",
+"children": [
+ {
+  "name": "3",
+  "children": [
+    {
+      "name":"Youth",
+      "children":[
+        {"name":"Renovate the Basketball Court at Chelsea Park", "size": 350000,  "description": "The basketball court is a neighborhood favorite which needs to be improved for the safety and enjoyment of the community. This project would repave the court and install new rims.", "location": "West 27th Street and 10th Avenue"},
+        {"name": "Renovation at Gertrude Kelly Playground", "size": 350000, "description": "Renovate the basketball court and adjacent sidewalk at Gertrude Kelly Playground"}
       ]
     },
-    {
-     "name": "Housing",
-     "children": [
-       {"name": "Wilson Houses: Basketball Court Renovations", "size": 375000},
-       {"name": "Senior Van - Jacob Riis Settlement House", "size": 55000},
-       {"name": "Playground Upgrade at Queensbridge South", "size": 500000},
-       {"name": "NYCHA Playground/Active Space Renovation", "size": 500000},
-       {"name": "Green Space Landscaping & Beautification at NYCHA Developments", "size": 300000},
-       {"name": "Playground Renovation at Williamsburg Houses", "size": 300000}
-   ]
- },
       {
-        "name": "Parks and Recreation",
-        "children": [
-          {"name": "New Park for the Community", "size": 200000},
-          {"name": "Revitalization of Chelsea Waterside Park", "size": 85000},
-          {"name": "Hudson River Greenway Bike and Pedestrian Pathway Improvements", "size": 200000},
-          {"name": "Basketball Court Repair at Playground 125", "size": 500000},
-          {"name": "Grant Houses Playground Repair", "size": 450000},
-          {"name": "Public Greenhouse in Hamilton Heights", "size": 50000},
-          {"name": "Boys & Girls Harbor: Playground Renovations", "size": 275000},
-          {"name": "Outdoor Fitness Center by the Hudson River", "size": 100000},
-          {"name": "Highbridge Community Garden", "size": 200000},
-          {"name": "Spuyen Duyvil Playground Renovation", "size": 400000},
-          {"name": "Bronx Park Improvements", "size": 450000},
-          {"name": "More Trees and Green Areas in LeFrak City", "size": 150000},
-          {"name": "Better Lighting at Junction Playground", "size": 200000},
-          {"name": "Dog Run in Astoria", "size": 500000},
-          {"name": "Adult Fitness Equipment at Alley Pond Park", "size": 450000},
-          {"name": "Woodside Reforestry", "size": 200000},
-          {"name": "Construction of a reading garden with chess tables", "size": 400000},
-          {"name": "Outdoor Fitness Equipment for Sunset Park", "size": 500000},
-          {"name": "Make Union Street & 9th Street Greener", "size": 150000},
-          {"name": "New Drainage along Path in Prospect Park", "size": 200000},
-          {"name": "Emergency Call Boxes in Forest Park", "size": 140000},
-          {"name": "9/11 Memorial - Forest Park", "size": 250000},
-          {"name": "Remove asphalt in All-American park in Broad Channel to allow for creation of another baseball/softball field", "size": 175000},
-          {"name": "Improvements to 9/11 Tribute Park in Rockaway Park to include a decorative arch entry gate", "size": 300000}
-      ]
+        "name":"Transit",
+        "children":[
+          {"name": "More Turnstiles at C/E 50th Street Station","size": 135000,"description": "Install two additional turnstiles at the entrance/exit of the C/E 50th Street uptown platform. More turnstiles will ease congestion and reduce wait times for passengers at this entrance/exit.", "location": "C/E Subway Station at 50th Street and 8th Avenue"},
+          {"name": "Real Time Rider Information at Bus Stops","size": 100000,"description": "Electronic Boards to display real time bus arrival information at five key bus stops, offering convenience for riders. The proposed locations will be subject to feasibility analysis by DOT.","location": "District wide"}
+            ]
+      },
+      {
+        "name":"Parks & Recreation",
+        "children":[
+          {"name": "Grounds Renovation at Elliott-Chelsea Houses","size": 500000, "description": "Add new playground fencing, renovate walkways, and revitalize garden and grassy areas. Project would be designed to budget and priority areas would be determined in conjunction with the RA leadership.", "location": "425 West 25th Street"},
+          {"name": "New Fitness Equipment for Chelsea Park", "size": 180000,"description": "New fitness units, including safety surfacing, seating and drinking fountains replacement.", "location": "West 27th Street and 10th Avenue"},
+          {"name": "Renovation of Historic Field House","size": 250000,"description": "Restoration towards the Downing Street playground's historic field house and bathrooms to make them wheelchair accessible.", "location": "1 Downing Street"},
+          {"name": "Repair/Reopen Staircase at DeWitt Clinton Park", "size": 500000, "description": "The southwest entrance staircase is crumbling and has been closed for years. Repairing this entrance will make the park accessible to visitors and easier for children to enter the park on 12th Ave.","location": "West 52 Street and 11 Avenue"}
+
+          ]
+          },
+          {
+            "name":"Environment",
+            "children":[
+              {"name": "New Trees for Council District 3","size": 100000,"description": "Plant new trees and install tree guards on blocks with few or no trees throughout District 3.","location": "District wide"}
+              ]
+            },
+            {
+              "name":"Education",
+                "children":[
+                  {"name": "A Green Roof for 75 Morton School", "size": 200000,"description": "Build a green roof on the new middle school coming to 75 Morton Street. This would provide new physical and educational opportunities for students.","location": "75 Morton Street"},
+                  {"name": "A New Library for City Knoll School","size": 300000,"description": "Technological and construction updates to create a library space at City Knoll School. This project will help engage students and prepare them for the skills needed in the 21st century.", "location": "425 West 33rd Street"},
+                  {"name": "Bathroom Upgrade - Lab MS, Lab HS & Museum High","size": 560000,"description": "Phase 2 renovations will make needed repairs to bathrooms on upper floors, addressing health and hygiene concerns for the school community.", "location": "333 West 17th Street"},
+                  {"name": "Gym Renovation - Lab M.S, Lab H.S.& Museum High", "size": 300000, "description": "Gym improvements with exploration to build more communal space will address broken bleachers, difficult to operate scoreboard, flooring to support aerobic activity, and create more educational space.", "location": "333 West 17th Street"},
+                  {"name": "New Audio / Visual System for P.S 11", "size": 75000, "description": "A new Audio/Visual System in the auditorium of P.S. 11. The school needs a working A/V system to fulfill its curriculum requirements for students.", "location": "320 West 21st Street"}
+                    ]
+                  },
+
+              {
+                "name": "Arts Culture & Community Facilities",
+                    "children":[
+                      {"name": "Cool Muhlenberg Library. Renovate HVAC System", "size": 500000,"description": "Replace the building's HVAC cooling unit to ensure that the branch can continue to serve as a cool space in the summer months, which includes serving as an official NYC Cooling Center.", "location": "209 West 23rd Street"}
+                      ]
+                      }
+    ]
+    }
+  ]
 }
