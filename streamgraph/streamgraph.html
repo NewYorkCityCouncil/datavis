@@ -37,10 +37,10 @@
         .append("g")
           .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-      d3.csv("data/crunchbase-quarters.csv", function (error, data) {
+      d3.csv("data/topten_2007_2015.csv", function (error, data) {
         console.log("initial data", data);
 
-        var labelVar = 'quarter';
+        var labelVar = 'year';
         var varNames = d3.keys(data[0])
             .filter(function (key) { return key !== labelVar;});
 
@@ -58,12 +58,12 @@
           });
         });
 
-        x.domain(data.map(function (d) { return d.quarter; }));
+        x.domain(data.map(function (d) { return d.year; }));
 
         stack(seriesArr);
         console.log("stacked seriesArr", seriesArr);
 
-        y.domain([0, d3.max(seriesArr, function (c) { 
+        y.domain([0, d3.max(seriesArr, function (c) {
             return d3.max(c.values, function (d) { return d.y0 + d.y; });
           })]);
 
