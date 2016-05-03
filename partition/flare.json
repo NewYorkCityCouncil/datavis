@@ -1,55 +1,184 @@
-{"name": "PB winners 2015",
+{
+"name": "PB winners 2015",
 "children": [
+
  {
-  "name": "3",
+  "name": "Arts, Culture & Community Facilities",
   "children": [
     {
-      "name":"Youth",
+      "name":"District 03  Corey Johnson",
       "children":[
-        {"name":"Renovate the Basketball Court at Chelsea Park", "size": 350000,  "description": "The basketball court is a neighborhood favorite which needs to be improved for the safety and enjoyment of the community. This project would repave the court and install new rims.", "location": "West 27th Street and 10th Avenue"},
-        {"name": "Renovation at Gertrude Kelly Playground", "size": 350000, "description": "Renovate the basketball court and adjacent sidewalk at Gertrude Kelly Playground"}
-      ]
-    },
-      {
-        "name":"Transit",
-        "children":[
-          {"name": "More Turnstiles at C/E 50th Street Station","size": 135000,"description": "Install two additional turnstiles at the entrance/exit of the C/E 50th Street uptown platform. More turnstiles will ease congestion and reduce wait times for passengers at this entrance/exit.", "location": "C/E Subway Station at 50th Street and 8th Avenue"},
-          {"name": "Real Time Rider Information at Bus Stops","size": 100000,"description": "Electronic Boards to display real time bus arrival information at five key bus stops, offering convenience for riders. The proposed locations will be subject to feasibility analysis by DOT.","location": "District wide"}
-            ]
+        {"name": "Cool Muhlenberg Library. Renovate HVAC System",
+          "size": 500000,
+          "dist": 3,
+          "description": "Replace the building's HVAC cooling unit to ensure that the branch can continue to serve as a cool space in the summer months, which includes serving as an official NYC Cooling Center.",
+          "location": "209 West 23rd Street"}
+        ]
       },
       {
-        "name":"Parks & Recreation",
+        "name":"District 05  Ben Kallos",
         "children":[
-          {"name": "Grounds Renovation at Elliott-Chelsea Houses","size": 500000, "description": "Add new playground fencing, renovate walkways, and revitalize garden and grassy areas. Project would be designed to budget and priority areas would be determined in conjunction with the RA leadership.", "location": "425 West 25th Street"},
-          {"name": "New Fitness Equipment for Chelsea Park", "size": 180000,"description": "New fitness units, including safety surfacing, seating and drinking fountains replacement.", "location": "West 27th Street and 10th Avenue"},
-          {"name": "Renovation of Historic Field House","size": 250000,"description": "Restoration towards the Downing Street playground's historic field house and bathrooms to make them wheelchair accessible.", "location": "1 Downing Street"},
-          {"name": "Repair/Reopen Staircase at DeWitt Clinton Park", "size": 500000, "description": "The southwest entrance staircase is crumbling and has been closed for years. Repairing this entrance will make the park accessible to visitors and easier for children to enter the park on 12th Ave.","location": "West 52 Street and 11 Avenue"}
-
-          ]
+          {"name": "67th Street Library HVAC Improvements",
+            "size": 600000,
+            "dist": 5,
+            "description": "Replacement or upgrade of the boiler to provide adequate heat.",
+            "location": "328 East 67th Street (Upper East Side)"},
+            {"name": "Webster Library HVAC Improvements",
+              "size": 600000,
+              "dist": 5,
+              "description": "Upgrade or replacement of air-conditioning system. This library is a designated NYC cooling center.",
+              "location": "1465 York Avenue (Upper East Side)"}
+            ]
           },
           {
-            "name":"Environment",
+            "name":"District 07  Mark Levine",
             "children":[
-              {"name": "New Trees for Council District 3","size": 100000,"description": "Plant new trees and install tree guards on blocks with few or no trees throughout District 3.","location": "District wide"}
+              {"name": "Save Hamilton Grange! Elevator Repair",
+                "size": 400000,
+                "dist": 7,
+                "description": "Restoration to the exterior of the building and water damage within the building. Replacement of the inoperable boiler, the installation of new windows and a workable HVAC system are needed.",
+                "location": "503 West 145th St."}
               ]
             },
             {
-              "name":"Education",
-                "children":[
-                  {"name": "A Green Roof for 75 Morton School", "size": 200000,"description": "Build a green roof on the new middle school coming to 75 Morton Street. This would provide new physical and educational opportunities for students.","location": "75 Morton Street"},
-                  {"name": "A New Library for City Knoll School","size": 300000,"description": "Technological and construction updates to create a library space at City Knoll School. This project will help engage students and prepare them for the skills needed in the 21st century.", "location": "425 West 33rd Street"},
-                  {"name": "Bathroom Upgrade - Lab MS, Lab HS & Museum High","size": 560000,"description": "Phase 2 renovations will make needed repairs to bathrooms on upper floors, addressing health and hygiene concerns for the school community.", "location": "333 West 17th Street"},
-                  {"name": "Gym Renovation - Lab M.S, Lab H.S.& Museum High", "size": 300000, "description": "Gym improvements with exploration to build more communal space will address broken bleachers, difficult to operate scoreboard, flooring to support aerobic activity, and create more educational space.", "location": "333 West 17th Street"},
-                  {"name": "New Audio / Visual System for P.S 11", "size": 75000, "description": "A new Audio/Visual System in the auditorium of P.S. 11. The school needs a working A/V system to fulfill its curriculum requirements for students.", "location": "320 West 21st Street"}
+              "name":"District 11  Andy Cohen",
+              "children":[
+                {"name": "Mosholu Library HVAC & Roof",
+                  "size": 400000,
+                  "dist": 11,
+                  "description": "Installation of HVAC system, including unit on roof & compressor, air handling units and ejector pump.",
+                  "location": "285 E. 205th Street"},
+                  {"name": "Spuyten Duyvil Library HVAC System",
+                    "size": 400000,
+                    "dist": 11,
+                    "description": "Installation of HVAC system, including unit on roof & compressor, air handling units and ejector pump.",
+                    "location": "650 West 235th Street"}
+                  ]
+                },
+                {
+                  "name":"District 19  Paul Vallone",
+                  "children":[
+                    {"name": "Wall Shelf at Douglaston/Little Neck Library",
+                      "size": 50000,
+                      "dist": 19,
+                      "description": "Project would install a wall shelf with multiple outlets and chairs for laptop/tablet users for greater efficiency and safety in computer areas of the library.",
+                      "location": "249-01 Northern Blvd (Douglaston/Little Neck)"}
                     ]
                   },
 
-              {
-                "name": "Arts Culture & Community Facilities",
+                  {
+                    "name": "District 21  Julissa Ferreras-Copeland",
                     "children":[
-                      {"name": "Cool Muhlenberg Library. Renovate HVAC System", "size": 500000,"description": "Replace the building's HVAC cooling unit to ensure that the branch can continue to serve as a cool space in the summer months, which includes serving as an official NYC Cooling Center.", "location": "209 West 23rd Street"}
-                      ]
-                      }
+                      {"name": "New Computers & Tablets at the LeFrak City Library",
+                        "size": 35000,
+                        "dist": 21,
+                        "description": "New tablets and computers for members of the LeFrak City Library. Tablets will be available to rent for members.",
+                        "location": "98-30 57th Avenue, Corona"},
+                        {"name": "Technology Upgrade at the Corona Library",
+                          "size": 35000,
+                          "dist": 21,
+                          "description": "New tablets and computers for members of the Corona Library. Tablets will be available to rent for members with library cards.",
+                          "location": "38-23 104th Street, Corona"}
+                        ]
+                      },
+                      {
+                        "name": "District 22  Costa Constantinides",
+                        "children":[
+                          {"name": "Basement Program Room Upgrade at Astoria Library",
+                            "size": 50000,
+                            "dist": 22,
+                            "description": "The current program room in Astoria Library is suffering from structural issues (like water damage) which need repair.",
+                            "location": "14-01 Astoria Blvd. Astoria"},
+                            {"name": "Children's Room Shelves Upgrade at Astoria Library",
+                              "size": 35000,
+                              "dist": 22,
+                              "description": "Install new shelving units to Astoria Library for children's books.",
+                              "location": "14-01 Astoria Blvd. Astoria"},
+                              {"name": "Cyber Center Upgrade at Astoria Library",
+                                "size": 500000,
+                                "dist": 22,
+                                "description": "Upgrade Astoria Library's cyber center for fast and effective internet access anywhere in the library.",
+                                "location": "14-01 Astoria Blvd. Astoria"}
+                              ]
+                            },
+                            {
+                              "name":"District 23  Barry Grodenchik",
+                              "children":[
+                                {"name": "Upgrades at Hollis and Queens Village Libraries",
+                                  "size": 550000,
+                                  "dist": 23,
+                                  "description": "Facility upgrades, technology installations, and library materials.",
+                                  "location": "Hollis Library & Queens Village Library"}
+                                ]
+                              },
+                              {
+                                "name":"District 26  Jimmy Van Bramer",
+                                "children":[
+                                  {"name": "Broadway Library Security System Upgrade",
+                                    "size": 132000,
+                                    "dist": 26,
+                                    "description": "Installation of security system including CCTV cameras and associated equipment.",
+                                    "location": "42-20 Broadway (Astoria)"},
+                                    {"name": "Court Square Library Security System Upgrade",
+                                      "size": 66000,
+                                      "dist": 26,
+                                      "description": "Installation of security system including CCTV cameras and associated equipment.",
+                                      "location": "25-01 Jackson Avenue (Long Island City)"}
+                                    ]
+                                  },
+                                  {
+                                    "name":"District 29  Karen Koslowitz",
+                                    "children":[
+                                      {"name": "Outdoor Reading Room",
+                                        "size": 275000,
+                                        "dist": 29,
+                                        "description": "Utilize outdoor space for a reading room and renovate the meeting room in the library. This would add reading space in a natural environment that will encourage returning visits and customer usage.",
+                                        "location": "Forest Hills Library"}
+                                      ]
+                                    },
+                                    {
+                                      "name":"District 30  Elizabeth Crowley",
+                                      "children":[
+                                        {"name": "Computers, Equipment and Furniture",
+                                        "size": 36000,
+                                        "dist": 30,
+                                        "description": "Fulfilling a community need by adding more desktop computers along with equipment and furniture to the Ridgewood and Maspeth Public Libraries.",
+                                        "location": "Ridgewood Library & Maspeth Public Library"}
+                                        ]
+                                      },
+                                      {
+                                        "name":"District 31  Donovan Richards",
+                                        "children":[
+                                          {"name": "Rockaway Institute for a Sustainable Environment",
+                                            "size": 273732,
+                                            "dist": 31,
+                                            "description": "The project with fit out RISE, new community center for local exhibits, film screenings, lectures, public events and youth programs, with furniture and equipment.",
+                                            "location": "58-03 Rockaway Beach Blvd"}
+                                          ]
+                                        },
+                                        {
+                                          "name":"District 34  Antonio Reynoso",
+                                          "children":[
+                                            {"name": "Electrify our Libraries in District 34",
+                                              "size": 360000,
+                                              "dist": 34,
+                                              "description": "This proposal will provide four electric charging tables at each one of our libraries: Leonard Street, Bushwick Avenue and Dekalb Avenue. Residents will be able to work and re-charge from the same place.",
+                                              "location": "Bushwick, Leonard, and Dekalb Libraries"},
+                                              {  "name": "Upgrade to Activity Rooms",
+                                                "size": 200000,
+                                                "dist": 34,
+                                                "description": "This proposal will upgrade the activity room in the Leonard Street Library and will include collapsible tables, folding chairs, rugs, freshly painted walls and new book bins.",
+                                                "location": "81 Devoe Street"},
+                                                {"name": "Upgrade to Activity Rooms in District 34",
+                                                  "size": 600000,
+                                                  "dist": 34,
+                                                  "description": "This proposal will include collapsible tables, folding chairs, rugs, freshly painted walls and new book bins for all three district libraries: Leonard Street, Bushwick Avenue and DeKalb Avenue.",
+                                                  "location": "Bushwick and Dekalb Libraries"}
+                                            ]
+                                          },
+
+
+
     ]
     }
   ]
