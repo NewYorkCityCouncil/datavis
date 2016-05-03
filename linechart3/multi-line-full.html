@@ -24,7 +24,7 @@
     <script src="lib/jquery.js"></script>
     <script src="lib/bootstrap.js"></script>
     <script>
-      var margin = {top: 20, right: 55, bottom: 30, left: 100},
+      var margin = {top: 20, right: 55, bottom: 30, left: 50},
           width  = 1000 - margin.left - margin.right,
           height = 600  - margin.top  - margin.bottom;
 
@@ -94,7 +94,7 @@
             .attr("y", 6)
             .attr("dy", ".71em")
             .style("text-anchor", "end")
-            .text("Number of Rounds");
+            .text("Number of Offenses");
 
         var series = svg.selectAll(".series")
             .data(seriesData)
