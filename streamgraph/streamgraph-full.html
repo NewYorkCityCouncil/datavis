@@ -61,7 +61,7 @@
           .y1(function (d) { return y(d.y0 + d.y); });
 
       var color = d3.scale.ordinal()
-          .range(["#075385","#e93c44","#facaca","#f5e472","#6bc06f","#8caaca", "#9897a3","#b99175", "#f27171",]);
+          .range(["#075385","#e93c44","#facaca","#f5e472","#6bc06f","#8caaca", "#9897a3","#b99175", "#f27171","#92d5d4"]);
 
       var svg = d3.select("body").append("svg")
           .attr("width",  width  + margin.left + margin.right)
@@ -109,7 +109,7 @@
             .attr("y", 6)
             .attr("dy", ".71em")
             .style("text-anchor", "end")
-            .text("Number of Rounds");
+            .text("Number of Summonsses Given");
 
         var selection = svg.selectAll(".series")
           .data(seriesArr)
