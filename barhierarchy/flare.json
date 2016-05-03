@@ -40,16 +40,14 @@
                   {"name": "A New Library for City Knoll School","size": 300000,"description": "Technological and construction updates to create a library space at City Knoll School. This project will help engage students and prepare them for the skills needed in the 21st century.", "location": "425 West 33rd Street"},
                   {"name": "Bathroom Upgrade - Lab MS, Lab HS & Museum High","size": 560000,"description": "Phase 2 renovations will make needed repairs to bathrooms on upper floors, addressing health and hygiene concerns for the school community.", "location": "333 West 17th Street"},
                   {"name": "Gym Renovation - Lab M.S, Lab H.S.& Museum High", "size": 300000, "description": "Gym improvements with exploration to build more communal space will address broken bleachers, difficult to operate scoreboard, flooring to support aerobic activity, and create more educational space.", "location": "333 West 17th Street"},
-                  {"name": "New Audio / Visual System for P.S 11", "size": 75000, "description": "A new Audio/Visual System in the auditorium of P.S. 11. The school needs a working A/V system to fulfill its curriculum requirements for students.",
-                          "location": "320 West 21st Street"}
+                  {"name": "New Audio / Visual System for P.S 11", "size": 75000, "description": "A new Audio/Visual System in the auditorium of P.S. 11. The school needs a working A/V system to fulfill its curriculum requirements for students.", "location": "320 West 21st Street"}
                     ]
                   },
-                  {"name": "Arts Culture & Community Facilities",
+
+              {
+                "name": "Arts Culture & Community Facilities",
                     "children":[
-                      {  "name": "Cool Muhlenberg Library. Renovate HVAC System",
-                        "size": 500000,
-                        "description": "Replace the building's HVAC cooling unit to ensure that the branch can continue to serve as a cool space in the summer months, which includes serving as an official NYC Cooling Center.",
-                        "location": "209 West 23rd Street"}
+                      {"name": "Cool Muhlenberg Library. Renovate HVAC System", "size": 500000,"description": "Replace the building's HVAC cooling unit to ensure that the branch can continue to serve as a cool space in the summer months, which includes serving as an official NYC Cooling Center.", "location": "209 West 23rd Street"}
                       ]
                       }
     ]
