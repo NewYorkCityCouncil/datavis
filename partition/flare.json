@@ -1,7 +1,24 @@
 {
 "name": "PB winners 2015",
 "children": [
+{"name": "Education",
+  "children":[
+    {
+           "name":"District 03  Corey Johnson",
+           "children":[
+             {"name": "New Audio / Visual System for P.S 11",
+             "size": 75000,
+             "dist": 3,
+             "description": "A new Audio/Visual System in the auditorium of P.S. 11. The school needs a working A/V system to fulfill its curriculum requirements for students.",
+             "location": "320 West 21st Street",
+             "votes": 813,
+             "projectNumber": 3}
+             ]
+           }
 
+  ]
+
+},
 
  {
   "name": "Arts, Culture & Community Facilities",
