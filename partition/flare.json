@@ -3,8 +3,8 @@
 "children": [
 {"name": "Education",
   "children":[
-    {
-           "name":"District 03  Corey Johnson",
+
+           {"name":"District 03  Corey Johnson",
            "children":[
              {"name": "New Audio / Visual System for P.S 11",
              "size": 75000,
@@ -14,7 +14,26 @@
              "votes": 813,
              "projectNumber": 3}
              ]
-           }
+           },
+           {
+             "name":"District 05  Ben Kallos",
+             "children":[
+               {"name": "Rooftop Greenhouse at P.S. 290",
+                 "size": 500000,
+                 "dist": 5,
+                 "description": "Construction of a greenhouse as part of the green roof project at PS290. The 800sf greenhouse will provide opportunities to enhance the school's STEAM curricula & create desperately needed play space.",
+                 "location": "311 East 82nd Street",
+                 "votes": 802,
+                 "projectNumber": 1,},
+                 {"name": "Computer Carts for 10 Schools",
+                 "size": 350000,
+                 "dist": 5,
+                 "description": "32 computers per cart for: P.S. 77, P.S. 198, P.S. 290, P.S./I.S. 217, M. 225, Eleanor Roosevelt, Urban Academy, Vanguard, Manhattan International, and Life Sciences, serving over 5000 students.",
+                 "location": "NYC Schools (District wide)",
+                 "votes": 768,
+                 "projectNumber": 2}
+                 ]
+               }
 
   ]
 
