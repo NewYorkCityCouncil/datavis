@@ -15,8 +15,7 @@
              "projectNumber": 3}
              ]
            },
-           {
-             "name":"District 05  Ben Kallos",
+           {"name":"District 05  Ben Kallos",
              "children":[
                {"name": "Rooftop Greenhouse at P.S. 290",
                  "size": 500000,
@@ -24,7 +23,7 @@
                  "description": "Construction of a greenhouse as part of the green roof project at PS290. The 800sf greenhouse will provide opportunities to enhance the school's STEAM curricula & create desperately needed play space.",
                  "location": "311 East 82nd Street",
                  "votes": 802,
-                 "projectNumber": 1,},
+                 "projectNumber": 1},
                  {"name": "Computer Carts for 10 Schools",
                  "size": 350000,
                  "dist": 5,
