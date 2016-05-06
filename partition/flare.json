@@ -600,7 +600,65 @@
                     "votes": 1019,
                     "projectNumber": 2}
                    ]
-               }
+               },
+               {"name":"District 15  Ritchie Torres",
+                 "children":[
+                   {"name": "Bronx Park East Physical Exercise Equipment",
+                   "size": 200000,
+                   "dist": 15,
+                   "description": "Construct physical exercise equipment in Bronx Park.",
+                   "location": "Between Waring Avenue and Rosewood Street",
+                   "votes": 1165,
+                   "projectNumber": 5}
+                     ]
+                 },
+                 {"name":"District 19  Paul Vallone",
+                   "children":[
+                     {"name": "Pedestrian Safety Sidewalk and Guardrail",
+                     "size": 550000,
+                     "dist": 19,
+                     "description": "Project would create concrete pedestrian sidewalk along the Northbound Whitestone Expy. Service Road between 20th Ave. and 14th Ave. Guardrail would be installed along sidewalk for pedestrian safety.",
+                     "location": "Harvey Park (Whitestone/College Point)",
+                     "votes": 987,
+                     "projectNumber": 2}
+                       ]
+                   },
+                   {"name":"District 21  Julissa Ferreras-Copeland",
+                     "children":[
+                       {"name": "Park of the Americas Bathroom Improvements",
+                       "size": 500000,
+                       "dist": 21,
+                       "description": "This proposal is for 1/3 of the cost of new stalls, updated plumbing, improved signage for comfort station/restroom.",
+                       "location": "104th Street and 42nd Avenue, Corona",
+                       "votes": 619,
+                       "projectNumber": 3},
+                       {"name": "Brand New Pathways at Park of the Americas",
+                       "size": 300000,
+                       "dist": 21,
+                       "description": "Newly paved walkways and playing areas through the Park of the Americas.",
+                       "location": "104th Street and 42nd Avenue, Corona",
+                       "votes": 570,
+                       "projectNumber": 6}
+                         ]
+                     },
+                     {"name":"District 22  Costa Constantinides",
+                       "children":[
+                         {"name": "Water Fountain Project in Astoria Park",
+                         "size": 500000,
+                         "dist": 22,
+                         "description": "Repair or install new water fountains in Astoria Park.",
+                         "location": "Astoria Park",
+                         "votes": 709,
+                         "projectNumber": 16},
+                         {"name": "Picnic/Gaming Tables Installation in Astoria Park",
+                         "size": 250000,
+                         "dist": 22,
+                         "description": "Place permanent gaming/picnic tables in Astoria Park at locations to be determined by the community.",
+                         "location": "Astoria Park",
+                         "votes": 704,
+                         "projectNumber": 15}
+                           ]
+                       }
          ]
        },
 
