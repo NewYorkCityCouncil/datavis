@@ -544,7 +544,29 @@
 
 },
 
+{"name": "Parks & Recreation",
+  "children":[
 
+           {"name":"District 06  Helen Rosenthal",
+           "children":[
+             {"name": "Riverside Park Recreation and Activity Area",
+             "size": 250000,
+             "dist": 6,
+             "description": "An activity and recreation area intended for tweens and younger adults, including facilities for a number of recreation activities.",
+             "location": "Riverside Park at West 76th Street",
+             "votes": 773,
+             "projectNumber": 5},
+             {"name": "Picnic Tables for Riverside Park",
+             "size": 65000,
+             "dist": 6,
+             "description": "Purchase and installation of picnic tables made of recycled, durable material capable of withstanding heavy use, weather conditions and permanently secured against theft.",
+             "location": "Riverside Park",
+             "votes": 834,
+             "projectNumber": 2}
+             ]
+           }
+         ]
+       },
 
  {
   "name": "Arts, Culture & Community Facilities",
