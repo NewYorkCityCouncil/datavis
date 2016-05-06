@@ -573,9 +573,16 @@
                "description": "Planting 100 street trees and installing tree guards.",
                "location": "West 125th Street to West 155th Street",
                "votes": 449,
-               "projectNumber": 4}
-              ]
-               }
+               "projectNumber": 4},
+                  {"name": "Nelson Playground Repairs",
+                  "size": 500000,
+                  "dist": 8,
+                  "description": "This project will put in a fence to separate the benches from the basketball court for the safety of those who utilize the benches. Additionally, water fountain repairs will be made to benefit all.",
+                  "location": "Nelson Playground (Bronx - Highbridge)",
+                  "votes": 897,
+                  "projectNumber": 8}
+                 ]
+             }
          ]
        },
 
