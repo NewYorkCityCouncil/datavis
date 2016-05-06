@@ -1,37 +1,5 @@
 
-  {
-    "category": "Arts, Culture & Community Facilities",
-    "councildistrict": "District 36  Robert Cornegy",
-    "name": "Renovate and Upgrade Marcy Library Auditorium",
-    "size": 350000,
-    "dist": 36,
-    "description": "Upgrade the multi-purpose room/ auditorium of the Marcy Branch of the Brooklyn Public Library with new electrical, lighting, flooring & shelving.",
-    "location": "617 Dekalb Avenue",
-    "votes": 410,
-    "projectNumber": 1
-  },
-  {
-    "category": "Arts, Culture & Community Facilities",
-    "councildistrict": "District 39  Brad Lander",
-    "name": "Create Teen Space at Carroll Gardens Library",
-    "size": 350000,
-    "dist": 39,
-    "description": "Revamp the library's mezzanine-level to create more space and add comfortable furniture, outlets, and new lighting - to create an inviting space for teens to use after-school and on weekends",
-    "location": "396 Clinton St, between Union and Sackett Sts",
-    "votes": 1321,
-    "projectNumber": 11
-  },
-  {
-    "category": "Arts, Culture & Community Facilities",
-    "councildistrict": "District 39  Brad Lander",
-    "name": "Mobile Studios\" for Artists and Orgs in Gowanus",
-    "size": 150000,
-    "dist": 39,
-    "description": "Three \"mobile studios\" - small, mobile workplaces - for artists and community organizations that will enliven underused areas and engage the public on local issues like displacement and resiliency.",
-    "location": "Parks, Plazas, and Street-ends in Gowanus",
-    "votes": 1122,
-    "projectNumber": 13
-  },
+
   {
     "category": "Arts, Culture & Community Facilities",
     "councildistrict": "District 44  David Greenfield",
