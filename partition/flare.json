@@ -853,44 +853,185 @@
                          {"name":"District 36  Robert Cornegy",
                            "children":[
                              {"name": "Renovate and Upgrade Marcy Library Auditorium",
-                             "size": 350000,
-                             "dist": 36,
-                             "description": "Upgrade the multi-purpose room/ auditorium of the Marcy Branch of the Brooklyn Public Library with new electrical, lighting, flooring & shelving.",
-                             "location": "617 Dekalb Avenue",
-                             "votes": 410,
-                             "projectNumber": 1}
+                               "size": 350000,
+                               "dist": 36,
+                               "description": "Upgrade the multi-purpose room/ auditorium of the Marcy Branch of the Brooklyn Public Library with new electrical, lighting, flooring & shelving.",
+                               "location": "617 Dekalb Avenue",
+                               "votes": 410,
+                               "projectNumber": 1}
                              ]
                            },
                            {"name":"District 39  Brad Lander",
                              "children":[
                                {"name": "Create Teen Space at Carroll Gardens Library",
-                               "size": 350000,
-                               "dist": 39,
-                               "description": "Revamp the library's mezzanine-level to create more space and add comfortable furniture, outlets, and new lighting - to create an inviting space for teens to use after-school and on weekends",
-                               "location": "396 Clinton St, between Union and Sackett Sts",
-                               "votes": 1321,
-                               "projectNumber": 11},
-                               {"name": "Mobile Studios\" for Artists and Orgs in Gowanus",
-                               "size": 150000,
-                               "dist": 39,
-                               "description": "Three \"mobile studios\" - small, mobile workplaces - for artists and community organizations that will enliven underused areas and engage the public on local issues like displacement and resiliency.",
-                               "location": "Parks, Plazas, and Street-ends in Gowanus",
-                               "votes": 1122,
-                               "projectNumber": 13}
+                                 "size": 350000,
+                                 "dist": 39,
+                                 "description": "Revamp the library's mezzanine-level to create more space and add comfortable furniture, outlets, and new lighting - to create an inviting space for teens to use after-school and on weekends",
+                                 "location": "396 Clinton St, between Union and Sackett Sts",
+                                 "votes": 1321,
+                                 "projectNumber": 11},
+                                 {"name": "Mobile Studios\" for Artists and Orgs in Gowanus",
+                                   "size": 150000,
+                                   "dist": 39,
+                                   "description": "Three \"mobile studios\" - small, mobile workplaces - for artists and community organizations that will enliven underused areas and engage the public on local issues like displacement and resiliency.",
+                                   "location": "Parks, Plazas, and Street-ends in Gowanus",
+                                   "votes": 1122,
+                                   "projectNumber": 13}
+                                 ]
+                               },
+                               {"name":"District 44  David Greenfield",
+                                 "children":[
+                                   {"name": "OHEL",
+                                     "size": 500000,
+                                     "dist": 44,
+                                     "description": "Ohel is a premier social services organization throughout the District. This project will supplement funding for a new, state of the art center.",
+                                     "location": "District Wide",
+                                     "votes": 1012,
+                                     "projectNumber": 12}
+                                   ]
+                                 }
                                ]
                              },
-                             {"name":"District 44  David Greenfield",
-                               "children":[
-                                 {"name": "OHEL",
-                                 "size": 500000,
-                                 "dist": 44,
-                                 "description": "Ohel is a premier social services organization throughout the District. This project will supplement funding for a new, state of the art center.",
-                                 "location": "District Wide",
-                                 "votes": 1012,
-                                 "projectNumber": 12}
-                                 ]
-                               }
-  ]
-}
+     {"name": "Transit",
+       "children":[
+
+                {"name":"District 03  Corey Johnson",
+                "children":[
+                  {"name": "Real Time Rider Information at Bus Stops",
+                  "size": 100000,
+                  "dist": 3,
+                  "description": "Electronic Boards to display real time bus arrival information at five key bus stops, offering convenience for riders. The proposed locations will be subject to feasibility analysis by DOT.",
+                  "location": "District wide",
+                  "votes": 790,
+                  "projectNumber": 4}
+                  ]
+                },
+                {"name":"District 47  Mark Treyger",
+                  "children":[
+                    {"name": "Bus Countdown Clocks",
+                    "size": 100000,
+                    "dist": 11,
+                    "description": "Real Time Passenger Information at high traffic bus stops in District 47.",
+                    "location": "District Wide",
+                    "votes": 1035,
+                    "projectNumber": 1},
+                      {"name": "Bus Countdown Clocks",
+                      "size": 40000,
+                      "dist": 15,
+                      "description": "Real Time Passenger Information at high traffic bus stops in District 47.",
+                      "location": "District Wide",
+                      "votes": 1374,
+                      "projectNumber": 3}
+                      ]
+                    },
+                    {"name":"District 22  Costa Constantinides",
+                    "children":[
+                      {"name": "Real Time Bus Countdown Clocks",
+                      "size": 480000,
+                      "dist": 22,
+                      "description": "Install 24 countdown clocks ($20,000 each) on the following bus lines: M60, Q18, Q19, Q33, Q47, Q69, Q101, Q102, Q103, and Q104 (if project wins, locations TBD by members of the community)",
+                      "location": "Multiple Locations",
+                      "votes": 682,
+                      "projectNumber": 20}
+                      ]
+                    },
+                    {"name":"District 26  Jimmy Van Bramer",
+                    "children":[
+                      {"name": "Dutch Kills Pedestrian Safety",
+                      "size": 300000,
+                      "dist": 26,
+                      "description": "Installation of bus bulbs on 31st St. at 36th Ave & 39th Ave. Project will construct full bus bulbs at these bus stops, which will create a seamless path from the sidewalk & subway station entrance.",
+                      "location": "Dutch Kills",
+                      "votes": 888,
+                      "projectNumber": 17}
+                      ]
+                    },
+                    {"name":"District 34  Antonio Reynoso",
+                    "children":[
+                      {"name": "Real Time Passenger Boards",
+                      "size": 60000,
+                      "dist": 34,
+                      "description": "Real Time Passenger Information in Council District 34. DOT will choose site locations with the City Council office post budget adoption.",
+                      "location": "Ridgewood, Bushwick, and Williamsburg",
+                      "votes": 853,
+                      "projectNumber": 12}
+                      ]
+                    },
+                    {"name":"District 38  Carlos Menchaca",
+                    "children":[
+                      {"name": "Electronic  Sign Throughout the District",
+                      "size": 600000,
+                      "dist": 38,
+                      "description": "Install electronic bus signs along the B70, B63, B35, B11, B9, B57 & B61 bus routes. The signs will be posted at busy bus stops. The signs will tell riders the location and arrival time of their bus.",
+                      "location": "District-Wide",
+                      "votes": 2828,
+                      "projectNumber": 8}
+                      ]
+                    },
+                    {"name":"District 39  Brad Lander",
+                    "children":[
+                      {"name": "Bus Clocks on B67/B69: Know When Bus Arrives!",
+                      "size": 240000,
+                      "dist": 39,
+                      "description": "Install bus countdown clocks that display real-time information about bus location at 12 B67/B69 stops. This will help mass transit users estimate wait times and make better travel decisions.",
+                      "location": "McDonald, 7th and Flatbush Avenues",
+                      "votes": 1533,
+                      "projectNumber": 7}
+                      ]
+                    },
+                    {"name":"District 40  Matthieu Eugene",
+                    "children":[
+                      {"name": "P.S. 92 Sidewalk Extension",
+                      "size": 300000,
+                      "dist": 40,
+                      "description": "A concrete sidewalk extension, which could be matched by a painted curb extension with flexible post barriers on the North West corner.",
+                      "location": "SW corner of Rogers Ave. and Winthrop St.",
+                      "votes": 232,
+                      "projectNumber": 10},
+                      {"councildistrict": "District 40  Matthieu Eugene",
+                      "name": "Real-Time Passenger Information",
+                      "size": 40000,
+                      "dist": 40,
+                      "description": "Bus display signs that are visible from a distance and inform riders when their bus will arrive",
+                      "location": "Lincoln Rd Entrance; Church Ave. B35 Stop",
+                      "votes": 385,
+                      "projectNumber": 9}
+                      ]
+                    },
+                    {"name":"District 44  David Greenfield",
+                    "children":[
+                      {"name": "Street Resurfacing",
+                      "size": 200000,
+                      "dist": 44,
+                      "description": "Repair and resurface roadways that have been identified as dangerous due to potholes, ridges and other holes.",
+                      "location": "District Wide",
+                      "votes": 1334,
+                      "projectNumber": 7}
+                      ]
+                    },
+                    {"name":"District 45  Jumaane Williams",
+                    "children":[
+                      {"name": "Vision Zero/New Bus Pads",
+                      "size": 350000,
+                      "dist": 45,
+                      "description": "Bus pads are sections of concrete pavement at bus stops. It would be installed to prevent the weight/heat of the bus from softening the asphalt which damages the street & increases need to resurface.",
+                      "location": "Routes on Nostrand Avenue and Kings Highway.",
+                      "votes": 532,
+                      "projectNumber": 16}
+                      ]
+                    },
+                    {"name":"District 47  Mark Treyger",
+                    "children":[
+                      {"name": "Bus Countdown Clocks",
+                      "size": 100000,
+                      "dist": 47,
+                      "description": "Real Time Passenger Information at high traffic bus stops in District 47.",
+                      "location": "District Wide",
+                      "votes": 576,
+                      "projectNumber": 1}
+                      ]
+                    }
+
+
 ]
 }
