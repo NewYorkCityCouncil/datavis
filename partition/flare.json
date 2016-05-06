@@ -658,7 +658,119 @@
                          "votes": 704,
                          "projectNumber": 15}
                            ]
-                       }
+                       },
+                       {"name":"District 32  Eric Ulrich",
+                         "children":[
+                           {"name": "Equipment Upgrades to 17th Road Park",
+                           "size": 250000,
+                           "dist": 32,
+                           "description": "equipment upgrades and amenities to 17th Road Park in Broad Channel",
+                           "location": 0,
+                           "votes": 426,
+                           "projectNumber": 3},
+                           {"name": "Upgrades to All-American Park and Sunset Cove",
+                           "size": 200000,
+                           "dist": 32,
+                           "description": "Upgrades to All-American Park/Sunset Cove in Broad Channel",
+                           "location": 0,
+                           "votes": 443,
+                           "projectNumber": 2},
+                           {"name": "Boardwalk Amenities",
+                           "size": 50000,
+                           "dist": 32,
+                           "description": "Boardwalk amenities including mile markers, storyboards, and information boards along Rockaway Boardwalk",
+                           "location": 0,
+                           "votes": 371,
+                           "projectNumber": 4}
+                             ]
+                         },
+                         {"name":"District 33  Stephen Levin",
+                           "children":[
+                             {"name": "Make Msgr. McGolrick Park Safer",
+                             "size": 500000,
+                             "dist": 33,
+                             "description": "This project focuses on repaving some of the sidewalks along the park and replacing fencing. Current sidewalks are cracked, unsafe for children, and hazardous for wheelchair and stroller access.",
+                             "location": "Driggs Avenue, Greenpoint",
+                             "votes": 483,
+                             "projectNumber": 7}
+                               ]
+                           },
+                           {"name":"District 36  Robert Cornegy",
+                             "children":[
+                               {"name": "Upgrade Brower Park Basketball Courts",
+                               "size": 600000,
+                               "dist": 36,
+                               "description": "Provide beautiful new surfaces for two of the four basketball courts in Brower Park, including new drainage, pavement and lines.",
+                               "location": "Brower Park",
+                               "votes": 289,
+                               "projectNumber": 5}
+                                 ]
+                             },
+                             {"name":"District 38  Carlos Menchaca",
+                               "children":[
+                                 {"name": "Sunset Park Renovation",
+                                 "size": 500000,
+                                 "dist": 38,
+                                 "description": "Repaving, installation of 20 new benches, replacement of existing dilapidated chain-link fences, and adding in picnic tables.",
+                                 "location": "Sunset Park",
+                                 "votes": 3494,
+                                 "projectNumber": 1}
+                                   ]
+                               },
+                               {"name":"District 39  Brad Lander",
+                                 "children":[
+                                   {"name": "Year-Round, Freeze-Resistant Drinking Fountains",
+                                   "size": 175000,
+                                   "dist": 39,
+                                   "description": "The water fountains in Prospect Park are not available to use during the winter months. This upgrade would make 5 fountains along the Prospect Park Drive freeze-resistant and available year-round.",
+                                   "location": "Prospect Park, 5 Locations along the Drive",
+                                   "votes": 1541,
+                                   "projectNumber": 5},
+                                   {"name": "New  an Aquatic Weed Harvester",
+                                   "size": 140000,
+                                   "dist": 39,
+                                   "description": 0,
+                                   "location": 0,
+                                   "votes": 1692,
+                                   "projectNumber": 4}
+                                  ]
+                                 },
+                                 {"name":"District 40  Matthieu Eugene",
+                                   "children":[
+                                     {"name": "Replacement of Aquatic Weed Harvester",
+                                     "size": 140000,
+                                     "dist": 40,
+                                     "description": "Prospect Park needs a new aquatic weed harvester (aka 'Lake Mess Monster') to remove scum from the lake. Without it, the scum will sink and proceed to rot, causing the water to become toxic.",
+                                     "location": "Prospect Park Lake",
+                                     "votes": 440,
+                                     "projectNumber": 6},
+                                     {"name": "Kensington Dog Run",
+                                     "size": 135000,
+                                     "dist": 40,
+                                     "description": "An enclosed Dog Run at the Parade Grounds",
+                                     "location": "Parade Grounds",
+                                     "votes": 309,
+                                     "projectNumber": 5},
+                                     {"name": "Community Barbecue Sites in Prospect Park",
+                                     "size": 80000,
+                                     "dist": 40,
+                                     "description": "New-style municipal grills, which are similar to those at Brooklyn Bridge Park Picnic Peninsula.",
+                                     "location": "Lincoln Rd & E Drive; Parkside Ave & E Drive",
+                                     "votes": 522,
+                                     "projectNumber": 7}
+                                    ]
+                                   },
+                                   {"name":"District 47  Mark Treyger",
+                                     "children":[
+                                       {"name": "McDonald Playground - Reconstruction",
+                                       "size": 500000,
+                                       "dist": 47,
+                                       "description": "Funds will be used to renovate the children's play area of McDonald Playground",
+                                       "location": "McDonald Playground",
+                                       "votes": 779,
+                                       "projectNumber": 3}
+                                     ]
+                                     }
          ]
        },
 
