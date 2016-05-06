@@ -582,7 +582,25 @@
                   "votes": 897,
                   "projectNumber": 8}
                  ]
-             }
+             },
+             {"name":"District 10 Ydanis Rodriguez",
+               "children":[
+                 {"name": "Science/Media Labs for D6 STEAM Center",
+                 "size": 350000,
+                 "dist": 10,
+                 "description": 0,
+                 "location": 0,
+                 "votes": 1170,
+                 "projectNumber": 1},
+                    {"name": "Get Fit For Free",
+                    "size": 250000,
+                    "dist": 10,
+                    "description": 0,
+                    "location": 0,
+                    "votes": 1019,
+                    "projectNumber": 2}
+                   ]
+               }
          ]
        },
 
