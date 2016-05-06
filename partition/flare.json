@@ -1093,7 +1093,78 @@
                                 ]
                               }
                             ]
-                          }
+                          },
+                          {"name": "Streets",
+                            "children":[
+
+                                     {"name":"District 11  Andy Cohen",
+                                     "children":[
+                                       {"name": "District 11 Security Cameras",
+                                       "size": 300000,
+                                       "dist": 11,
+                                       "description": "Security Cameras for the 50th, 47th and 52nd Precincts within District 11.",
+                                       "location": "District- wide",
+                                       "votes": 822,
+                                       "projectNumber": 3}
+                                       ]
+                                     },
+                                     {"name":"District 19  Paul Vallone",
+                                       "children":[
+                                         {"name": "NYPD Security Cameras",
+                                         "size": 350000,
+                                         "dist": 15,
+                                         "description": "Project would fund three NYPD security cameras in District 19. These security cameras would enhance crime prevention, provide a sense of security and establish surveillance in remote areas.",
+                                         "location": "District 19 (At NYPD discretion)",
+                                         "votes": 1531,
+                                         "projectNumber": 1},
+                                        ]
+                                      },
+                                      {"name":"District 27  I. Daneek Miller",
+                                        "children":[
+                                          {"name": "Security Cameras in District 27",
+                                          "size": 70000,
+                                          "dist": 27,
+                                          "description": "The project will fund two NYPD security cameras to provide safety for residents of the district.",
+                                          "location": "St. Albans & Jamaica",
+                                          "votes": 543,
+                                          "projectNumber": 5},
+                                         ]
+                                       },
+                                       {"name":"District 29  Karen Koslowitz",
+                                         "children":[
+                                           {"name": "A Safer Intersection at 71st Ave and Austin St",
+                                           "size": 400000,
+                                           "dist": 29,
+                                           "description": "Installing a single curb extension at the Northeast corner of 71st Avenue and Austin Street. This would help calm traffic along both streets and improve safety for pedestrians on those streets.",
+                                           "location": "71st Avenue and Austin Street",
+                                           "votes": 928,
+                                           "projectNumber": 8},
+                                          ]
+                                        },
+                                        {"name":"District 39  Brad Lander",
+                                          "children":[
+                                            {"name": "Curb Extension & Safer Crossing- Carroll Park",
+                                            "size": 150000,
+                                            "dist": 39,
+                                            "description": "The installation of a curb extension at this very busy intersection would shorten the crossing distance and promote pedestrian safety for families and residents using Carroll Park.",
+                                            "location": "Intersection of Carroll and Court Streets",
+                                            "votes": 1115,
+                                            "projectNumber": 8},
+                                           ]
+                                         },
+                                         {"name":"District 45  Jumaane Williams",
+                                           "children":[
+                                             {"name": "Fix Our Streets in Community Board 14",
+                                             "size": 500000,
+                                             "dist": 45,
+                                             "description": "The streets within Community Board 14 are crumbling. This impacts the seniors, adults, youth and pets who live and work in this area. We are asking that 1.86 lane miles is repaired.",
+                                             "location": "Ave K, Ave J, Nostrand and Ocean Avenues",
+                                             "votes": 533,
+                                             "projectNumber": 15},
+                                            ]
+                                          }
+                                        ]
+                                      }
 
 ]
 }
