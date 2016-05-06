@@ -564,7 +564,18 @@
              "votes": 834,
              "projectNumber": 2}
              ]
-           }
+           },
+           {"name":"District 07  Mark Levine",
+             "children":[
+               {"name": "Green Up District 7",
+               "size": 300000,
+               "dist": 7,
+               "description": "Planting 100 street trees and installing tree guards.",
+               "location": "West 125th Street to West 155th Street",
+               "votes": 449,
+               "projectNumber": 4}
+              ]
+               }
          ]
        },
 
