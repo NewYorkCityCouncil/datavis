@@ -544,52 +544,7 @@
 
 },
 
-{"name": "Parks & Recreation",
-  "children":[
 
-           {"name":"District 06  Helen Rosenthal",
-           "children":[
-             {"name": "Riverside Park Recreation and Activity Area",
-             "size": 250000,
-             "dist": 6,
-             "description": "An activity and recreation area intended for tweens and younger adults, including facilities for a number of recreation activities.",
-             "location": "Riverside Park at West 76th Street",
-             "votes": 773,
-             "projectNumber": 5},
-             {"name": "Picnic Tables for Riverside Park",
-             "size": 65000,
-             "dist": 6,
-             "description": "Purchase and installation of picnic tables made of recycled, durable material capable of withstanding heavy use, weather conditions and permanently secured against theft.",
-             "location": "Riverside Park",
-             "votes": 834,
-             "projectNumber": 2}
-             ]
-           },
-           {"name":"District 07  Mark Levine",
-             "children":[
-               {"name": "Green Up District 7",
-               "size": 300000,
-               "dist": 7,
-               "description": "Planting 100 street trees and installing tree guards.",
-               "location": "West 125th Street to West 155th Street",
-               "votes": 449,
-               "projectNumber": 4}
-              ]
-               },
-               {
-                 "name":"District 07  Mark Levine",
-                   "children":[
-                     {"name": "Nelson Playground Repairs",
-                     "size": 500000,
-                     "dist": 8,
-                     "description": "This project will put in a fence to separate the benches from the basketball court for the safety of those who utilize the benches. Additionally, water fountain repairs will be made to benefit all.",
-                     "location": "Nelson Playground (Bronx - Highbridge)",
-                     "votes": 897,
-                     "projectNumber": 8}
-                    ]
-               }
-
-},
 
  {
   "name": "Arts, Culture & Community Facilities",
