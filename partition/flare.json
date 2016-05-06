@@ -551,15 +551,12 @@
       "name":"District 03  Corey Johnson",
       "children":[
         {"name": "Cool Muhlenberg Library. Renovate HVAC System",
-          "children":[
-            {"size": 500000,
-            "dist": 3,
-            "name": "Replace the building's HVAC cooling unit to ensure that the branch can continue to serve as a cool space in the summer months, which includes serving as an official NYC Cooling Center.",
-            "location": "209 West 23rd Street"}
+        "size": 500000,
+        "dist": 3,
+        "description": "Replace the building's HVAC cooling unit to ensure that the branch can continue to serve as a cool space in the summer months, which includes serving as an official NYC Cooling Center.",
+        "location": "209 West 23rd Street"}
           ]
-        }
-        ]
-      },
+        },
       {
         "name":"District 05  Ben Kallos",
         "children":[
