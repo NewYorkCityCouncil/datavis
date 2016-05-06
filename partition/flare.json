@@ -1032,6 +1032,68 @@
                       ]
                     }
                   ]
-                }
+                },
+                {"name": "Housing",
+                  "children":[
+
+                    {"name":"District 08  Melissa Mark-Viverito",
+                      "children":[
+                        {"name": "Playground Renovations at Wagner Houses",
+                          "size": 500000,
+                          "dist": 8,
+                          "description": "Renovation to existing playground at Wagner Houses. The renovation will focus on children with special needs.",
+                          "location": "Wagner Houses (East Harlem)",
+                          "votes": 1286,
+                          "projectNumber": 2}
+                        ]
+                      },
+                      {"name":"District 26  Jimmy Van Bramer",
+                        "children":[
+                          {"name": "Basketball Court Renovations",
+                            "size": 1050000,
+                            "dist": 26,
+                            "description": "Replacement of three courts concrete slab will be installed. Three-quarter-inch thick plastic polymer tile that provides a floating surface to help drain water and prevent the concrete from cracking.",
+                            "location": "Ravenswood and Queensbridge Houses",
+                            "votes": 891,
+                            "projectNumber": 21}
+                          ]
+                        },
+
+                        {"name":"District 33  Stephen Levin",
+                          "children":[
+                            {"name": "Hear the Beat! Community Sound Studio",
+                              "size": 100000,
+                              "dist": 33,
+                              "description": "This project will outfit an existing computer lab as a recording studio, so youth/adults could be trained for music/audio professions. Includes upgrades to the space and all needed audio equipment.",
+                              "location": "114 Taylor St., Independence Towers, W'lliamsburg",
+                              "votes": 530,
+                              "projectNumber": 10}
+                            ]
+                          },
+                          {"name":"District 34  Antonio Reynoso",
+                            "children":[
+                              {"name": "Playground Upgrade at Williamsburg Houses",
+                              "size": 350000,
+                              "dist": 34,
+                              "description": "This playground will get new benches, play equipment, and a sprinkler system.",
+                              "location": "176 Maujer Street - Block 1",
+                              "votes": 1847,
+                              "projectNumber": 6}
+                              ]
+                            },
+                            {"name":"District 35  Laurie Cumbo",
+                              "children":[
+                                {"name": "HVAC System for the Willoughby Senior Center",
+                                "size": 500000,
+                                "dist": 35,
+                                "description": "HVAC system for the Willoughby Senior Center",
+                                "location": "Whitman Housing Development",
+                                "votes": 375,
+                                "projectNumber": 15}
+                                ]
+                              }
+                            ]
+                          }
+
 ]
 }
