@@ -774,88 +774,122 @@
          ]
        },
 
- {
-  "name": "Arts, Culture & Community Facilities",
-  "children": [
-    {
-      "name":"District 03  Corey Johnson",
-      "children":[
-        {"name": "Cool Muhlenberg Library. Renovate HVAC System",
-        "size": 500000,
-        "dist": 3,
-        "description": "Replace the building's HVAC cooling unit to ensure that the branch can continue to serve as a cool space in the summer months, which includes serving as an official NYC Cooling Center.",
-        "location": "209 West 23rd Street"}
-          ]
-        },
-          {
-            "name":"District 07  Mark Levine",
-            "children":[
-              {"name": "Save Hamilton Grange! Elevator Repair",
-                "size": 400000,
-                "dist": 7,
-                "description": "Restoration to the exterior of the building and water damage within the building. Replacement of the inoperable boiler, the installation of new windows and a workable HVAC system are needed.",
-                "location": "503 West 145th St."}
-              ]
-            },
-            {
-              "name":"District 11  Andy Cohen",
-              "children":[
-                {"name": "Mosholu Library HVAC & Roof",
-                  "size": 400000,
-                  "dist": 11,
-                  "description": "Installation of HVAC system, including unit on roof & compressor, air handling units and ejector pump.",
-                  "location": "285 E. 205th Street"}
-                  ]
-                },
+       {
+         "name": "Arts, Culture & Community Facilities",
+         "children": [
+           {
+             "name":"District 03  Corey Johnson",
+             "children":[
+               {"name": "Cool Muhlenberg Library. Renovate HVAC System",
+                 "size": 500000,
+                 "dist": 3,
+                 "description": "Replace the building's HVAC cooling unit to ensure that the branch can continue to serve as a cool space in the summer months, which includes serving as an official NYC Cooling Center.",
+                 "location": "209 West 23rd Street"}
+               ]
+             },
+             {
+               "name":"District 07  Mark Levine",
+               "children":[
+                 {"name": "Save Hamilton Grange! Elevator Repair",
+                   "size": 400000,
+                   "dist": 7,
+                   "description": "Restoration to the exterior of the building and water damage within the building. Replacement of the inoperable boiler, the installation of new windows and a workable HVAC system are needed.",
+                   "location": "503 West 145th St."}
+                 ]
+               },
+               {
+                 "name":"District 11  Andy Cohen",
+                 "children":[
+                   {"name": "Mosholu Library HVAC & Roof",
+                     "size": 400000,
+                     "dist": 11,
+                     "description": "Installation of HVAC system, including unit on roof & compressor, air handling units and ejector pump.",
+                     "location": "285 E. 205th Street"}
+                   ]
+                 },
 
-                  {
-                    "name": "District 21  Julissa Ferreras-Copeland",
-                    "children":[
-                        {"name": "Technology Upgrade at the Corona Library",
-                          "size": 35000,
-                          "dist": 21,
-                          "description": "New tablets and computers for members of the Corona Library. Tablets will be available to rent for members with library cards.",
-                          "location": "38-23 104th Street, Corona"}
-                        ]
-                      },
+                 {
+                   "name": "District 21  Julissa Ferreras-Copeland",
+                   "children":[
+                     {"name": "Technology Upgrade at the Corona Library",
+                       "size": 35000,
+                       "dist": 21,
+                       "description": "New tablets and computers for members of the Corona Library. Tablets will be available to rent for members with library cards.",
+                       "location": "38-23 104th Street, Corona"}
+                     ]
+                   },
 
-                            {
-                              "name":"District 23  Barry Grodenchik",
-                              "children":[
-                                {"name": "Upgrades at Hollis and Queens Village Libraries",
-                                  "size": 550000,
-                                  "dist": 23,
-                                  "description": "Facility upgrades, technology installations, and library materials.",
-                                  "location": "Hollis Library & Queens Village Library"}
-                                ]
-                              },
+                   {
+                     "name":"District 23  Barry Grodenchik",
+                     "children":[
+                       {"name": "Upgrades at Hollis and Queens Village Libraries",
+                         "size": 550000,
+                         "dist": 23,
+                         "description": "Facility upgrades, technology installations, and library materials.",
+                         "location": "Hollis Library & Queens Village Library"}
+                       ]
+                     },
 
-                                  {
-                                    "name":"District 29  Karen Koslowitz",
-                                    "children":[
-                                      {"name": "Outdoor Reading Room",
-                                        "size": 275000,
-                                        "dist": 29,
-                                        "description": "Utilize outdoor space for a reading room and renovate the meeting room in the library. This would add reading space in a natural environment that will encourage returning visits and customer usage.",
-                                        "location": "Forest Hills Library"}
-                                      ]
-                                    },
-                                    {
-                                      "name":"District 30  Elizabeth Crowley",
-                                      "children":[
-                                        {"name": "Computers, Equipment and Furniture",
-                                        "size": 36000,
-                                        "dist": 30,
-                                        "description": "Fulfilling a community need by adding more desktop computers along with equipment and furniture to the Ridgewood and Maspeth Public Libraries.",
-                                        "location": "Ridgewood Library & Maspeth Public Library"}
-                                        ]
-                                      }
-
-
-
-
-
-
+                     {
+                       "name":"District 29  Karen Koslowitz",
+                       "children":[
+                         {"name": "Outdoor Reading Room",
+                           "size": 275000,
+                           "dist": 29,
+                           "description": "Utilize outdoor space for a reading room and renovate the meeting room in the library. This would add reading space in a natural environment that will encourage returning visits and customer usage.",
+                           "location": "Forest Hills Library"}
+                         ]
+                       },
+                       {
+                         "name":"District 30  Elizabeth Crowley",
+                         "children":[
+                           {"name": "Computers, Equipment and Furniture",
+                             "size": 36000,
+                             "dist": 30,
+                             "description": "Fulfilling a community need by adding more desktop computers along with equipment and furniture to the Ridgewood and Maspeth Public Libraries.",
+                             "location": "Ridgewood Library & Maspeth Public Library"}
+                           ]
+                         },
+                         {"name":"District 36  Robert Cornegy",
+                           "children":[
+                             {"name": "Renovate and Upgrade Marcy Library Auditorium",
+                             "size": 350000,
+                             "dist": 36,
+                             "description": "Upgrade the multi-purpose room/ auditorium of the Marcy Branch of the Brooklyn Public Library with new electrical, lighting, flooring & shelving.",
+                             "location": "617 Dekalb Avenue",
+                             "votes": 410,
+                             "projectNumber": 1}
+                             ]
+                           },
+                           {"name":"District 39  Brad Lander",
+                             "children":[
+                               {"name": "Create Teen Space at Carroll Gardens Library",
+                               "size": 350000,
+                               "dist": 39,
+                               "description": "Revamp the library's mezzanine-level to create more space and add comfortable furniture, outlets, and new lighting - to create an inviting space for teens to use after-school and on weekends",
+                               "location": "396 Clinton St, between Union and Sackett Sts",
+                               "votes": 1321,
+                               "projectNumber": 11},
+                               {"name": "Mobile Studios\" for Artists and Orgs in Gowanus",
+                               "size": 150000,
+                               "dist": 39,
+                               "description": "Three \"mobile studios\" - small, mobile workplaces - for artists and community organizations that will enliven underused areas and engage the public on local issues like displacement and resiliency.",
+                               "location": "Parks, Plazas, and Street-ends in Gowanus",
+                               "votes": 1122,
+                               "projectNumber": 13}
+                               ]
+                             },
+                             {"name":"District 44  David Greenfield",
+                               "children":[
+                                 {"name": "OHEL",
+                                 "size": 500000,
+                                 "dist": 44,
+                                 "description": "Ohel is a premier social services organization throughout the District. This project will supplement funding for a new, state of the art center.",
+                                 "location": "District Wide",
+                                 "votes": 1012,
+                                 "projectNumber": 12}
+                                 ]
+                               }
   ]
 }
 ]
