@@ -1,7 +1,5 @@
-{
-"name": "PB winners 2015",
+{"name": "PB winners 2015",
 "children": [
-
  {
   "name": "Arts, Culture & Community Facilities",
   "children": [
@@ -9,10 +7,13 @@
       "name":"District 03  Corey Johnson",
       "children":[
         {"name": "Cool Muhlenberg Library. Renovate HVAC System",
-          "size": 500000,
-          "dist": 3,
-          "description": "Replace the building's HVAC cooling unit to ensure that the branch can continue to serve as a cool space in the summer months, which includes serving as an official NYC Cooling Center.",
-          "location": "209 West 23rd Street"}
+          "children":[
+            {"size": 500000,
+            "dist": 3,
+            "description": "Replace the building's HVAC cooling unit to ensure that the branch can continue to serve as a cool space in the summer months, which includes serving as an official NYC Cooling Center.",
+            "location": "209 West 23rd Street"}
+          ]
+        }
         ]
       },
       {
@@ -164,7 +165,7 @@
                                               "dist": 34,
                                               "description": "This proposal will provide four electric charging tables at each one of our libraries: Leonard Street, Bushwick Avenue and Dekalb Avenue. Residents will be able to work and re-charge from the same place.",
                                               "location": "Bushwick, Leonard, and Dekalb Libraries"},
-                                              {  "name": "Upgrade to Activity Rooms",
+                                              {"name": "Upgrade to Activity Rooms",
                                                 "size": 200000,
                                                 "dist": 34,
                                                 "description": "This proposal will upgrade the activity room in the Leonard Street Library and will include collapsible tables, folding chairs, rugs, freshly painted walls and new book bins.",
@@ -175,7 +176,7 @@
                                                   "description": "This proposal will include collapsible tables, folding chairs, rugs, freshly painted walls and new book bins for all three district libraries: Leonard Street, Bushwick Avenue and DeKalb Avenue.",
                                                   "location": "Bushwick and Dekalb Libraries"}
                                             ]
-                                          },
+                                          }
 
 
 
