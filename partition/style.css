@@ -4,7 +4,7 @@ body {
   margin: 0;
   font-size: 18px;
   font-family: "Helvetica Neue", Helvetica;
-  font-color: grey;
+  text-color: grey;
 }
 
 #chart, #header, #footer {
