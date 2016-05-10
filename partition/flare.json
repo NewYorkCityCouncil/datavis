@@ -1,5 +1,7 @@
 
 {
+  "name": "Participatory Budget Projects",
+    "children":[
 {"name": "Education",
   "children":[
 
@@ -1285,5 +1287,5 @@
                                                                          }
                                                                   ]
                                                                 }
-
+]
 }
