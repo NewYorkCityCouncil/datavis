@@ -63,6 +63,7 @@ d3.json("flare.json", function(root) {
       .data(partition.nodes(root))
     .enter().append("svg:g")
       .attr("transform", function(d) { return "translate(" + x(d.y) + "," + y(d.x) + ")"; })
+      .attr("display", function(d) { return d.depth ? null : "none"; }); // hide inner ring
       .on("click", click);
 
   var kx = w / root.dx,
