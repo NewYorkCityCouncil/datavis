@@ -9,7 +9,7 @@
     <style type="text/css">
 
 svg {
-  font-size: 14px;
+  font: 10px sans-serif;
 }
 
 rect.background {
@@ -30,7 +30,7 @@ rect.background {
     </style>
   </head>
   <body>
-    
+
     <script type="text/javascript" src="d3/d3.js"></script>
     <script type="text/javascript" src="d3/d3.layout.js"></script>
     <script type="text/javascript">
@@ -40,7 +40,7 @@ var m = [80, 160, 0, 160], // top right bottom left
     h = 800 - m[0] - m[2], // height
     x = d3.scale.linear().range([0, w]),
     y = 25, // bar height
-    z = d3.scale.ordinal().range(["steelblue", "#aaa"]); // bar color
+    z = d3.scale.ordinal().range(["salmon", "#aaa"]); // bar color
 
 var hierarchy = d3.layout.partition()
     .value(function(d) { return d.size; });
