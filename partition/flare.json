@@ -544,356 +544,363 @@
   ]
 
 },
-
 {"name": "Parks & Recreation",
   "children":[
-
-           {"name":"District 06  Helen Rosenthal",
-           "children":[
-             {"name": "Riverside Park Recreation and Activity Area",
-             "size": 250000,
-             "dist": 6,
-             "description": "An activity and recreation area intended for tweens and younger adults, including facilities for a number of recreation activities.",
-             "location": "Riverside Park at West 76th Street",
-             "votes": 773,
-             "projectNumber": 5},
-             {"name": "Picnic Tables for Riverside Park",
-             "size": 65000,
-             "dist": 6,
-             "description": "Purchase and installation of picnic tables made of recycled, durable material capable of withstanding heavy use, weather conditions and permanently secured against theft.",
-             "location": "Riverside Park",
-             "votes": 834,
-             "projectNumber": 2}
+    {"name":"District 03  Corey Johnson",
+    "children":[
+      {"name": "New Trees for Council District 3",
+      "size": 100000,
+      "dist": 3,
+      "description": "Plant new trees and install tree guards on blocks with few or no trees throughout District 3.",
+      "location": "District wide",
+      "votes": 1083,
+      "projectNumber": 1}
+      ]
+    },
+   {"name":"District 06  Helen Rosenthal",
+   "children":[
+     {"name": "Riverside Park Recreation and Activity Area",
+     "size": 250000,
+     "dist": 6,
+     "description": "An activity and recreation area intended for tweens and younger adults, including facilities for a number of recreation activities.",
+     "location": "Riverside Park at West 76th Street",
+     "votes": 773,
+     "projectNumber": 5},
+     {"name": "Picnic Tables for Riverside Park",
+     "size": 65000,
+     "dist": 6,
+     "description": "Purchase and installation of picnic tables made of recycled, durable material capable of withstanding heavy use, weather conditions and permanently secured against theft.",
+     "location": "Riverside Park",
+     "votes": 834,
+     "projectNumber": 2}
+     ]
+   },
+   {"name":"District 07  Mark Levine",
+     "children":[
+       {"name": "Green Up District 7",
+       "size": 300000,
+       "dist": 7,
+       "description": "Planting 100 street trees and installing tree guards.",
+       "location": "West 125th Street to West 155th Street",
+       "votes": 449,
+       "projectNumber": 4},
+          {"name": "Nelson Playground Repairs",
+          "size": 500000,
+          "dist": 8,
+          "description": "This project will put in a fence to separate the benches from the basketball court for the safety of those who utilize the benches. Additionally, water fountain repairs will be made to benefit all.",
+          "location": "Nelson Playground (Bronx - Highbridge)",
+          "votes": 897,
+          "projectNumber": 8}
+         ]
+     },
+     {"name":"District 10 Ydanis Rodriguez",
+       "children":[
+         {"name": "Science/Media Labs for D6 STEAM Center",
+         "size": 350000,
+         "dist": 10,
+         "description": 0,
+         "location": 0,
+         "votes": 1170,
+         "projectNumber": 1},
+            {"name": "Get Fit For Free",
+            "size": 250000,
+            "dist": 10,
+            "description": 0,
+            "location": 0,
+            "votes": 1019,
+            "projectNumber": 2}
+           ]
+       },
+       {"name":"District 15  Ritchie Torres",
+         "children":[
+           {"name": "Bronx Park East Physical Exercise Equipment",
+           "size": 200000,
+           "dist": 15,
+           "description": "Construct physical exercise equipment in Bronx Park.",
+           "location": "Between Waring Avenue and Rosewood Street",
+           "votes": 1165,
+           "projectNumber": 5}
              ]
+         },
+         {"name":"District 19  Paul Vallone",
+           "children":[
+             {"name": "Pedestrian Safety Sidewalk and Guardrail",
+             "size": 550000,
+             "dist": 19,
+             "description": "Project would create concrete pedestrian sidewalk along the Northbound Whitestone Expy. Service Road between 20th Ave. and 14th Ave. Guardrail would be installed along sidewalk for pedestrian safety.",
+             "location": "Harvey Park (Whitestone/College Point)",
+             "votes": 987,
+             "projectNumber": 2}
+               ]
            },
-           {"name":"District 07  Mark Levine",
+           {"name":"District 21  Julissa Ferreras-Copeland",
              "children":[
-               {"name": "Green Up District 7",
+               {"name": "Park of the Americas Bathroom Improvements",
+               "size": 500000,
+               "dist": 21,
+               "description": "This proposal is for 1/3 of the cost of new stalls, updated plumbing, improved signage for comfort station/restroom.",
+               "location": "104th Street and 42nd Avenue, Corona",
+               "votes": 619,
+               "projectNumber": 3},
+               {"name": "Brand New Pathways at Park of the Americas",
                "size": 300000,
-               "dist": 7,
-               "description": "Planting 100 street trees and installing tree guards.",
-               "location": "West 125th Street to West 155th Street",
-               "votes": 449,
-               "projectNumber": 4},
-                  {"name": "Nelson Playground Repairs",
-                  "size": 500000,
-                  "dist": 8,
-                  "description": "This project will put in a fence to separate the benches from the basketball court for the safety of those who utilize the benches. Additionally, water fountain repairs will be made to benefit all.",
-                  "location": "Nelson Playground (Bronx - Highbridge)",
-                  "votes": 897,
-                  "projectNumber": 8}
+               "dist": 21,
+               "description": "Newly paved walkways and playing areas through the Park of the Americas.",
+               "location": "104th Street and 42nd Avenue, Corona",
+               "votes": 570,
+               "projectNumber": 6}
                  ]
              },
-             {"name":"District 10 Ydanis Rodriguez",
+             {"name":"District 22  Costa Constantinides",
                "children":[
-                 {"name": "Science/Media Labs for D6 STEAM Center",
-                 "size": 350000,
-                 "dist": 10,
-                 "description": 0,
-                 "location": 0,
-                 "votes": 1170,
-                 "projectNumber": 1},
-                    {"name": "Get Fit For Free",
-                    "size": 250000,
-                    "dist": 10,
-                    "description": 0,
-                    "location": 0,
-                    "votes": 1019,
-                    "projectNumber": 2}
+                 {"name": "Water Fountain Project in Astoria Park",
+                 "size": 500000,
+                 "dist": 22,
+                 "description": "Repair or install new water fountains in Astoria Park.",
+                 "location": "Astoria Park",
+                 "votes": 709,
+                 "projectNumber": 16},
+                 {"name": "Picnic/Gaming Tables Installation in Astoria Park",
+                 "size": 250000,
+                 "dist": 22,
+                 "description": "Place permanent gaming/picnic tables in Astoria Park at locations to be determined by the community.",
+                 "location": "Astoria Park",
+                 "votes": 704,
+                 "projectNumber": 15}
                    ]
                },
-               {"name":"District 15  Ritchie Torres",
+               {"name":"District 32  Eric Ulrich",
                  "children":[
-                   {"name": "Bronx Park East Physical Exercise Equipment",
+                   {"name": "Equipment Upgrades to 17th Road Park",
+                   "size": 250000,
+                   "dist": 32,
+                   "description": "equipment upgrades and amenities to 17th Road Park in Broad Channel",
+                   "location": 0,
+                   "votes": 426,
+                   "projectNumber": 3},
+                   {"name": "Upgrades to All-American Park and Sunset Cove",
                    "size": 200000,
-                   "dist": 15,
-                   "description": "Construct physical exercise equipment in Bronx Park.",
-                   "location": "Between Waring Avenue and Rosewood Street",
-                   "votes": 1165,
-                   "projectNumber": 5}
+                   "dist": 32,
+                   "description": "Upgrades to All-American Park/Sunset Cove in Broad Channel",
+                   "location": 0,
+                   "votes": 443,
+                   "projectNumber": 2},
+                   {"name": "Boardwalk Amenities",
+                   "size": 50000,
+                   "dist": 32,
+                   "description": "Boardwalk amenities including mile markers, storyboards, and information boards along Rockaway Boardwalk",
+                   "location": 0,
+                   "votes": 371,
+                   "projectNumber": 4}
                      ]
                  },
-                 {"name":"District 19  Paul Vallone",
+                 {"name":"District 33  Stephen Levin",
                    "children":[
-                     {"name": "Pedestrian Safety Sidewalk and Guardrail",
-                     "size": 550000,
-                     "dist": 19,
-                     "description": "Project would create concrete pedestrian sidewalk along the Northbound Whitestone Expy. Service Road between 20th Ave. and 14th Ave. Guardrail would be installed along sidewalk for pedestrian safety.",
-                     "location": "Harvey Park (Whitestone/College Point)",
-                     "votes": 987,
-                     "projectNumber": 2}
+                     {"name": "Make Msgr. McGolrick Park Safer",
+                     "size": 500000,
+                     "dist": 33,
+                     "description": "This project focuses on repaving some of the sidewalks along the park and replacing fencing. Current sidewalks are cracked, unsafe for children, and hazardous for wheelchair and stroller access.",
+                     "location": "Driggs Avenue, Greenpoint",
+                     "votes": 483,
+                     "projectNumber": 7}
                        ]
                    },
-                   {"name":"District 21  Julissa Ferreras-Copeland",
+                   {"name":"District 36  Robert Cornegy",
                      "children":[
-                       {"name": "Park of the Americas Bathroom Improvements",
-                       "size": 500000,
-                       "dist": 21,
-                       "description": "This proposal is for 1/3 of the cost of new stalls, updated plumbing, improved signage for comfort station/restroom.",
-                       "location": "104th Street and 42nd Avenue, Corona",
-                       "votes": 619,
-                       "projectNumber": 3},
-                       {"name": "Brand New Pathways at Park of the Americas",
-                       "size": 300000,
-                       "dist": 21,
-                       "description": "Newly paved walkways and playing areas through the Park of the Americas.",
-                       "location": "104th Street and 42nd Avenue, Corona",
-                       "votes": 570,
-                       "projectNumber": 6}
+                       {"name": "Upgrade Brower Park Basketball Courts",
+                       "size": 600000,
+                       "dist": 36,
+                       "description": "Provide beautiful new surfaces for two of the four basketball courts in Brower Park, including new drainage, pavement and lines.",
+                       "location": "Brower Park",
+                       "votes": 289,
+                       "projectNumber": 5}
                          ]
                      },
-                     {"name":"District 22  Costa Constantinides",
+                     {"name":"District 38  Carlos Menchaca",
                        "children":[
-                         {"name": "Water Fountain Project in Astoria Park",
+                         {"name": "Sunset Park Renovation",
                          "size": 500000,
-                         "dist": 22,
-                         "description": "Repair or install new water fountains in Astoria Park.",
-                         "location": "Astoria Park",
-                         "votes": 709,
-                         "projectNumber": 16},
-                         {"name": "Picnic/Gaming Tables Installation in Astoria Park",
-                         "size": 250000,
-                         "dist": 22,
-                         "description": "Place permanent gaming/picnic tables in Astoria Park at locations to be determined by the community.",
-                         "location": "Astoria Park",
-                         "votes": 704,
-                         "projectNumber": 15}
+                         "dist": 38,
+                         "description": "Repaving, installation of 20 new benches, replacement of existing dilapidated chain-link fences, and adding in picnic tables.",
+                         "location": "Sunset Park",
+                         "votes": 3494,
+                         "projectNumber": 1}
                            ]
                        },
-                       {"name":"District 32  Eric Ulrich",
+                       {"name":"District 39  Brad Lander",
                          "children":[
-                           {"name": "Equipment Upgrades to 17th Road Park",
-                           "size": 250000,
-                           "dist": 32,
-                           "description": "equipment upgrades and amenities to 17th Road Park in Broad Channel",
+                           {"name": "Year-Round, Freeze-Resistant Drinking Fountains",
+                           "size": 175000,
+                           "dist": 39,
+                           "description": "The water fountains in Prospect Park are not available to use during the winter months. This upgrade would make 5 fountains along the Prospect Park Drive freeze-resistant and available year-round.",
+                           "location": "Prospect Park, 5 Locations along the Drive",
+                           "votes": 1541,
+                           "projectNumber": 5},
+                           {"name": "New  an Aquatic Weed Harvester",
+                           "size": 140000,
+                           "dist": 39,
+                           "description": 0,
                            "location": 0,
-                           "votes": 426,
-                           "projectNumber": 3},
-                           {"name": "Upgrades to All-American Park and Sunset Cove",
-                           "size": 200000,
-                           "dist": 32,
-                           "description": "Upgrades to All-American Park/Sunset Cove in Broad Channel",
-                           "location": 0,
-                           "votes": 443,
-                           "projectNumber": 2},
-                           {"name": "Boardwalk Amenities",
-                           "size": 50000,
-                           "dist": 32,
-                           "description": "Boardwalk amenities including mile markers, storyboards, and information boards along Rockaway Boardwalk",
-                           "location": 0,
-                           "votes": 371,
+                           "votes": 1692,
                            "projectNumber": 4}
-                             ]
+                          ]
                          },
-                         {"name":"District 33  Stephen Levin",
+                         {"name":"District 40  Matthieu Eugene",
                            "children":[
-                             {"name": "Make Msgr. McGolrick Park Safer",
-                             "size": 500000,
-                             "dist": 33,
-                             "description": "This project focuses on repaving some of the sidewalks along the park and replacing fencing. Current sidewalks are cracked, unsafe for children, and hazardous for wheelchair and stroller access.",
-                             "location": "Driggs Avenue, Greenpoint",
-                             "votes": 483,
+                             {"name": "Replacement of Aquatic Weed Harvester",
+                             "size": 140000,
+                             "dist": 40,
+                             "description": "Prospect Park needs a new aquatic weed harvester (aka 'Lake Mess Monster') to remove scum from the lake. Without it, the scum will sink and proceed to rot, causing the water to become toxic.",
+                             "location": "Prospect Park Lake",
+                             "votes": 440,
+                             "projectNumber": 6},
+                             {"name": "Kensington Dog Run",
+                             "size": 135000,
+                             "dist": 40,
+                             "description": "An enclosed Dog Run at the Parade Grounds",
+                             "location": "Parade Grounds",
+                             "votes": 309,
+                             "projectNumber": 5},
+                             {"name": "Community Barbecue Sites in Prospect Park",
+                             "size": 80000,
+                             "dist": 40,
+                             "description": "New-style municipal grills, which are similar to those at Brooklyn Bridge Park Picnic Peninsula.",
+                             "location": "Lincoln Rd & E Drive; Parkside Ave & E Drive",
+                             "votes": 522,
                              "projectNumber": 7}
-                               ]
+                            ]
                            },
-                           {"name":"District 36  Robert Cornegy",
+                           {"name":"District 47  Mark Treyger",
                              "children":[
-                               {"name": "Upgrade Brower Park Basketball Courts",
-                               "size": 600000,
-                               "dist": 36,
-                               "description": "Provide beautiful new surfaces for two of the four basketball courts in Brower Park, including new drainage, pavement and lines.",
-                               "location": "Brower Park",
-                               "votes": 289,
-                               "projectNumber": 5}
-                                 ]
-                             },
-                             {"name":"District 38  Carlos Menchaca",
-                               "children":[
-                                 {"name": "Sunset Park Renovation",
-                                 "size": 500000,
-                                 "dist": 38,
-                                 "description": "Repaving, installation of 20 new benches, replacement of existing dilapidated chain-link fences, and adding in picnic tables.",
-                                 "location": "Sunset Park",
-                                 "votes": 3494,
-                                 "projectNumber": 1}
-                                   ]
-                               },
-                               {"name":"District 39  Brad Lander",
-                                 "children":[
-                                   {"name": "Year-Round, Freeze-Resistant Drinking Fountains",
-                                   "size": 175000,
-                                   "dist": 39,
-                                   "description": "The water fountains in Prospect Park are not available to use during the winter months. This upgrade would make 5 fountains along the Prospect Park Drive freeze-resistant and available year-round.",
-                                   "location": "Prospect Park, 5 Locations along the Drive",
-                                   "votes": 1541,
-                                   "projectNumber": 5},
-                                   {"name": "New  an Aquatic Weed Harvester",
-                                   "size": 140000,
-                                   "dist": 39,
-                                   "description": 0,
-                                   "location": 0,
-                                   "votes": 1692,
-                                   "projectNumber": 4}
-                                  ]
-                                 },
-                                 {"name":"District 40  Matthieu Eugene",
-                                   "children":[
-                                     {"name": "Replacement of Aquatic Weed Harvester",
-                                     "size": 140000,
-                                     "dist": 40,
-                                     "description": "Prospect Park needs a new aquatic weed harvester (aka 'Lake Mess Monster') to remove scum from the lake. Without it, the scum will sink and proceed to rot, causing the water to become toxic.",
-                                     "location": "Prospect Park Lake",
-                                     "votes": 440,
-                                     "projectNumber": 6},
-                                     {"name": "Kensington Dog Run",
-                                     "size": 135000,
-                                     "dist": 40,
-                                     "description": "An enclosed Dog Run at the Parade Grounds",
-                                     "location": "Parade Grounds",
-                                     "votes": 309,
-                                     "projectNumber": 5},
-                                     {"name": "Community Barbecue Sites in Prospect Park",
-                                     "size": 80000,
-                                     "dist": 40,
-                                     "description": "New-style municipal grills, which are similar to those at Brooklyn Bridge Park Picnic Peninsula.",
-                                     "location": "Lincoln Rd & E Drive; Parkside Ave & E Drive",
-                                     "votes": 522,
-                                     "projectNumber": 7}
-                                    ]
-                                   },
-                                   {"name":"District 47  Mark Treyger",
-                                     "children":[
-                                       {"name": "McDonald Playground - Reconstruction",
-                                       "size": 500000,
-                                       "dist": 47,
-                                       "description": "Funds will be used to renovate the children's play area of McDonald Playground",
-                                       "location": "McDonald Playground",
-                                       "votes": 779,
-                                       "projectNumber": 3}
-                                     ]
-                                     }
+                               {"name": "McDonald Playground - Reconstruction",
+                               "size": 500000,
+                               "dist": 47,
+                               "description": "Funds will be used to renovate the children's play area of McDonald Playground",
+                               "location": "McDonald Playground",
+                               "votes": 779,
+                               "projectNumber": 3}
+                             ]
+                             }
+ ]
+},
+{"name": "Arts, Culture & Community Facilities",
+   "children": [
+     {
+       "name":"District 03  Corey Johnson",
+       "children":[
+         {"name": "Cool Muhlenberg Library. Renovate HVAC System",
+           "size": 500000,
+           "dist": 3,
+           "description": "Replace the building's HVAC cooling unit to ensure that the branch can continue to serve as a cool space in the summer months, which includes serving as an official NYC Cooling Center.",
+           "location": "209 West 23rd Street"}
          ]
        },
-
        {
-         "name": "Arts, Culture & Community Facilities",
-         "children": [
+         "name":"District 07  Mark Levine",
+         "children":[
+           {"name": "Save Hamilton Grange! Elevator Repair",
+             "size": 400000,
+             "dist": 7,
+             "description": "Restoration to the exterior of the building and water damage within the building. Replacement of the inoperable boiler, the installation of new windows and a workable HVAC system are needed.",
+             "location": "503 West 145th St."}
+           ]
+         },
+         {
+           "name":"District 11  Andy Cohen",
+           "children":[
+             {"name": "Mosholu Library HVAC & Roof",
+               "size": 400000,
+               "dist": 11,
+               "description": "Installation of HVAC system, including unit on roof & compressor, air handling units and ejector pump.",
+               "location": "285 E. 205th Street"}
+             ]
+           },
+
            {
-             "name":"District 03  Corey Johnson",
+             "name": "District 21  Julissa Ferreras-Copeland",
              "children":[
-               {"name": "Cool Muhlenberg Library. Renovate HVAC System",
-                 "size": 500000,
-                 "dist": 3,
-                 "description": "Replace the building's HVAC cooling unit to ensure that the branch can continue to serve as a cool space in the summer months, which includes serving as an official NYC Cooling Center.",
-                 "location": "209 West 23rd Street"}
+               {"name": "Technology Upgrade at the Corona Library",
+                 "size": 35000,
+                 "dist": 21,
+                 "description": "New tablets and computers for members of the Corona Library. Tablets will be available to rent for members with library cards.",
+                 "location": "38-23 104th Street, Corona"}
                ]
              },
+
              {
-               "name":"District 07  Mark Levine",
+               "name":"District 23  Barry Grodenchik",
                "children":[
-                 {"name": "Save Hamilton Grange! Elevator Repair",
-                   "size": 400000,
-                   "dist": 7,
-                   "description": "Restoration to the exterior of the building and water damage within the building. Replacement of the inoperable boiler, the installation of new windows and a workable HVAC system are needed.",
-                   "location": "503 West 145th St."}
+                 {"name": "Upgrades at Hollis and Queens Village Libraries",
+                   "size": 550000,
+                   "dist": 23,
+                   "description": "Facility upgrades, technology installations, and library materials.",
+                   "location": "Hollis Library & Queens Village Library"}
                  ]
                },
+
                {
-                 "name":"District 11  Andy Cohen",
+                 "name":"District 29  Karen Koslowitz",
                  "children":[
-                   {"name": "Mosholu Library HVAC & Roof",
-                     "size": 400000,
-                     "dist": 11,
-                     "description": "Installation of HVAC system, including unit on roof & compressor, air handling units and ejector pump.",
-                     "location": "285 E. 205th Street"}
+                   {"name": "Outdoor Reading Room",
+                     "size": 275000,
+                     "dist": 29,
+                     "description": "Utilize outdoor space for a reading room and renovate the meeting room in the library. This would add reading space in a natural environment that will encourage returning visits and customer usage.",
+                     "location": "Forest Hills Library"}
                    ]
                  },
-
                  {
-                   "name": "District 21  Julissa Ferreras-Copeland",
+                   "name":"District 30  Elizabeth Crowley",
                    "children":[
-                     {"name": "Technology Upgrade at the Corona Library",
-                       "size": 35000,
-                       "dist": 21,
-                       "description": "New tablets and computers for members of the Corona Library. Tablets will be available to rent for members with library cards.",
-                       "location": "38-23 104th Street, Corona"}
+                     {"name": "Computers, Equipment and Furniture",
+                       "size": 36000,
+                       "dist": 30,
+                       "description": "Fulfilling a community need by adding more desktop computers along with equipment and furniture to the Ridgewood and Maspeth Public Libraries.",
+                       "location": "Ridgewood Library & Maspeth Public Library"}
                      ]
                    },
-
-                   {
-                     "name":"District 23  Barry Grodenchik",
+                   {"name":"District 36  Robert Cornegy",
                      "children":[
-                       {"name": "Upgrades at Hollis and Queens Village Libraries",
-                         "size": 550000,
-                         "dist": 23,
-                         "description": "Facility upgrades, technology installations, and library materials.",
-                         "location": "Hollis Library & Queens Village Library"}
+                       {"name": "Renovate and Upgrade Marcy Library Auditorium",
+                         "size": 350000,
+                         "dist": 36,
+                         "description": "Upgrade the multi-purpose room/ auditorium of the Marcy Branch of the Brooklyn Public Library with new electrical, lighting, flooring & shelving.",
+                         "location": "617 Dekalb Avenue",
+                         "votes": 410,
+                         "projectNumber": 1}
                        ]
                      },
-
-                     {
-                       "name":"District 29  Karen Koslowitz",
+                     {"name":"District 39  Brad Lander",
                        "children":[
-                         {"name": "Outdoor Reading Room",
-                           "size": 275000,
-                           "dist": 29,
-                           "description": "Utilize outdoor space for a reading room and renovate the meeting room in the library. This would add reading space in a natural environment that will encourage returning visits and customer usage.",
-                           "location": "Forest Hills Library"}
-                         ]
-                       },
-                       {
-                         "name":"District 30  Elizabeth Crowley",
-                         "children":[
-                           {"name": "Computers, Equipment and Furniture",
-                             "size": 36000,
-                             "dist": 30,
-                             "description": "Fulfilling a community need by adding more desktop computers along with equipment and furniture to the Ridgewood and Maspeth Public Libraries.",
-                             "location": "Ridgewood Library & Maspeth Public Library"}
+                         {"name": "Create Teen Space at Carroll Gardens Library",
+                           "size": 350000,
+                           "dist": 39,
+                           "description": "Revamp the library's mezzanine-level to create more space and add comfortable furniture, outlets, and new lighting - to create an inviting space for teens to use after-school and on weekends",
+                           "location": "396 Clinton St, between Union and Sackett Sts",
+                           "votes": 1321,
+                           "projectNumber": 11},
+                           {"name": "Mobile Studios\" for Artists and Orgs in Gowanus",
+                             "size": 150000,
+                             "dist": 39,
+                             "description": "Three \"mobile studios\" - small, mobile workplaces - for artists and community organizations that will enliven underused areas and engage the public on local issues like displacement and resiliency.",
+                             "location": "Parks, Plazas, and Street-ends in Gowanus",
+                             "votes": 1122,
+                             "projectNumber": 13}
                            ]
                          },
-                         {"name":"District 36  Robert Cornegy",
+                         {"name":"District 44  David Greenfield",
                            "children":[
-                             {"name": "Renovate and Upgrade Marcy Library Auditorium",
-                               "size": 350000,
-                               "dist": 36,
-                               "description": "Upgrade the multi-purpose room/ auditorium of the Marcy Branch of the Brooklyn Public Library with new electrical, lighting, flooring & shelving.",
-                               "location": "617 Dekalb Avenue",
-                               "votes": 410,
-                               "projectNumber": 1}
+                             {"name": "OHEL",
+                               "size": 500000,
+                               "dist": 44,
+                               "description": "Ohel is a premier social services organization throughout the District. This project will supplement funding for a new, state of the art center.",
+                               "location": "District Wide",
+                               "votes": 1012,
+                               "projectNumber": 12}
                              ]
-                           },
-                           {"name":"District 39  Brad Lander",
-                             "children":[
-                               {"name": "Create Teen Space at Carroll Gardens Library",
-                                 "size": 350000,
-                                 "dist": 39,
-                                 "description": "Revamp the library's mezzanine-level to create more space and add comfortable furniture, outlets, and new lighting - to create an inviting space for teens to use after-school and on weekends",
-                                 "location": "396 Clinton St, between Union and Sackett Sts",
-                                 "votes": 1321,
-                                 "projectNumber": 11},
-                                 {"name": "Mobile Studios\" for Artists and Orgs in Gowanus",
-                                   "size": 150000,
-                                   "dist": 39,
-                                   "description": "Three \"mobile studios\" - small, mobile workplaces - for artists and community organizations that will enliven underused areas and engage the public on local issues like displacement and resiliency.",
-                                   "location": "Parks, Plazas, and Street-ends in Gowanus",
-                                   "votes": 1122,
-                                   "projectNumber": 13}
-                                 ]
-                               },
-                               {"name":"District 44  David Greenfield",
-                                 "children":[
-                                   {"name": "OHEL",
-                                     "size": 500000,
-                                     "dist": 44,
-                                     "description": "Ohel is a premier social services organization throughout the District. This project will supplement funding for a new, state of the art center.",
-                                     "location": "District Wide",
-                                     "votes": 1012,
-                                     "projectNumber": 12}
-                                   ]
-                                 }
-                               ]
-                             },
-     {"name": "Transit",
+                           }
+                         ]
+},
+{"name": "Transit",
        "children":[
 
                 {"name":"District 03  Corey Johnson",
@@ -907,6 +914,41 @@
                   "projectNumber": 4}
                   ]
                 },
+                {"name":"District 29  Karen Koslowitz",
+                  "children":[
+                    {"name": "A Safer Intersection at 71st Ave and Austin St",
+                      "size": 400000,
+                      "dist": 29,
+                      "description": "Installing a single curb extension at the Northeast corner of 71st Avenue and Austin Street. This would help calm traffic along both streets and improve safety for pedestrians on those streets.",
+                      "location": "71st Avenue and Austin Street",
+                      "votes": 928,
+                      "projectNumber": 8}
+                    ]
+                  },
+                  {"name":"District 39  Brad Lander",
+                    "children":[
+                      {"name": "Curb Extension & Safer Crossing- Carroll Park",
+                        "size": 150000,
+                        "dist": 39,
+                        "description": "The installation of a curb extension at this very busy intersection would shorten the crossing distance and promote pedestrian safety for families and residents using Carroll Park.",
+                        "location": "Intersection of Carroll and Court Streets",
+                        "votes": 1115,
+                        "projectNumber": 8}
+                      ]
+                    },
+                    {"name":"District 45  Jumaane Williams",
+                      "children":[
+                        {"name": "Fix Our Streets in Community Board 14",
+                          "size": 500000,
+                          "dist": 45,
+                          "description": "The streets within Community Board 14 are crumbling. This impacts the seniors, adults, youth and pets who live and work in this area. We are asking that 1.86 lane miles is repaired.",
+                          "location": "Ave K, Ave J, Nostrand and Ocean Avenues",
+                          "votes": 533,
+                          "projectNumber": 15}
+                        ]
+                      }
+                    ]
+                  },
                 {"name":"District 47  Mark Treyger",
                   "children":[
                     {"name": "Bus Countdown Clocks",
@@ -1033,259 +1075,205 @@
                       ]
                     }
                   ]
+},
+{"name": "Housing",
+  "children":[
+
+    {"name":"District 08  Melissa Mark-Viverito",
+      "children":[
+        {"name": "Playground Renovations at Wagner Houses",
+          "size": 500000,
+          "dist": 8,
+          "description": "Renovation to existing playground at Wagner Houses. The renovation will focus on children with special needs.",
+          "location": "Wagner Houses (East Harlem)",
+          "votes": 1286,
+          "projectNumber": 2}
+        ]
+      },
+      {"name":"District 26  Jimmy Van Bramer",
+        "children":[
+          {"name": "Basketball Court Renovations",
+            "size": 1050000,
+            "dist": 26,
+            "description": "Replacement of three courts concrete slab will be installed. Three-quarter-inch thick plastic polymer tile that provides a floating surface to help drain water and prevent the concrete from cracking.",
+            "location": "Ravenswood and Queensbridge Houses",
+            "votes": 891,
+            "projectNumber": 21}
+          ]
+        },
+
+        {"name":"District 33  Stephen Levin",
+          "children":[
+            {"name": "Hear the Beat! Community Sound Studio",
+              "size": 100000,
+              "dist": 33,
+              "description": "This project will outfit an existing computer lab as a recording studio, so youth/adults could be trained for music/audio professions. Includes upgrades to the space and all needed audio equipment.",
+              "location": "114 Taylor St., Independence Towers, W'lliamsburg",
+              "votes": 530,
+              "projectNumber": 10}
+            ]
+          },
+          {"name":"District 34  Antonio Reynoso",
+            "children":[
+              {"name": "Playground Upgrade at Williamsburg Houses",
+              "size": 350000,
+              "dist": 34,
+              "description": "This playground will get new benches, play equipment, and a sprinkler system.",
+              "location": "176 Maujer Street - Block 1",
+              "votes": 1847,
+              "projectNumber": 6}
+              ]
+            },
+            {"name":"District 35  Laurie Cumbo",
+              "children":[
+                {"name": "HVAC System for the Willoughby Senior Center",
+                "size": 500000,
+                "dist": 35,
+                "description": "HVAC system for the Willoughby Senior Center",
+                "location": "Whitman Housing Development",
+                "votes": 375,
+                "projectNumber": 15}
+                ]
+              }
+            ]
+},
+{"name": "Youth",
+  "children":[
+
+           {"name":"District 08  Melissa Mark-Viverito",
+           "children":[
+             {"name": "Technology Upgrades for PE, CPE, and Heritage H.S.",
+             "size": 376200,
+             "dist": 8,
+             "description": "Technology upgrades that will impact classrooms at Park East High School, Central Park East High School and the Heritage High Schools, potentially serving approximately 1500 students daily.",
+             "location": "East Harlem High Schools",
+             "votes": 1297,
+             "projectNumber": 1},
+             {"name": "Bathroom Renovations: MS/HS 223",
+             "size": 250000,
+             "dist": 8,
+             "description": "Essential restoration, upgrade, and efficiency enhancement of restroom facilities for our school - M.S./H.S. 223 The Laboratory School of Finance and Technology",
+             "location": "360 East 145th (Bronx - Mott Haven)",
+             "votes": 778,
+             "projectNumber": 10}
+             ]
+           },
+           {"name":"District 27  I. Daneek Miller",
+             "children":[
+               {"name": "Student Bathroom Renovations at I.S. 192",
+               "size": 400000,
+               "dist": 27,
+               "description": "The project would renovate eight student bathrooms in the school",
+               "location": "I.S. 192, 109-89 204 Street, St. Albans",
+               "votes": 703,
+               "projectNumber": 11},
+                 {"name": "New Laptops for Five Schools",
+                 "size": 225000,
+                 "dist": 27,
+                 "description": "The project will provide 250 laptops to five schools in the district: P.S. 36, P.S. 176, P.S./M.S. 147, I.S. 192, Pathways College Preparatory School",
+                 "location": "Five Schools in the District",
+                 "votes": 943,
+                 "projectNumber": 12},
+                 {"name": "Smartboards for I.S 238 - Susan B. Anthony Academy",
+                 "size": 125000,
+                 "dist": 27,
+                 "description": "The project would provide 20 smartboards for the school",
+                 "location": "I.S. 238, 88-15 182 Street, Hollis",
+                 "votes": 484,
+                 "projectNumber": 6}
+                 ]
+               }
+             ]
+},
+{"name": "Public Safety",
+   "children":[
+
+            {"name":"District 06  Helen Rosenthal",
+            "children":[
+              {"name": "UWS CERT Emergency Response and Education Vehicle",
+              "size": 40000,
+              "dist": 6,
+              "description": "Purchase of a vehicle for UWS Community Emergency Response Team to store emergency and educational materials, and create pop-up preparedness events at street fairs, schools, and community gatherings.'",
+              "location": "Upper West Side",
+              "votes": 833,
+              "projectNumber": 3}
+              ]
+            },
+            {"name":"District 11  Andy Cohen",
+              "children":[
+                {"name": "District 11 Security Cameras",
+                  "size": 300000,
+                  "dist": 11,
+                  "description": "Security Cameras for the 50th, 47th and 52nd Precincts within District 11.",
+                  "location": "District- wide",
+                  "votes": 822,
+                  "projectNumber": 3}
+                ]
+              },
+              {"name":"District 19  Paul Vallone",
+                "children":[
+                  {"name": "NYPD Security Cameras",
+                    "size": 350000,
+                    "dist": 15,
+                    "description": "Project would fund three NYPD security cameras in District 19. These security cameras would enhance crime prevention, provide a sense of security and establish surveillance in remote areas.",
+                    "location": "District 19 (At NYPD discretion)",
+                    "votes": 1531,
+                    "projectNumber": 1}
+                  ]
                 },
-                {"name": "Housing",
+                {"name":"District 27  I. Daneek Miller",
                   "children":[
+                    {"name": "Security Cameras in District 27",
+                      "size": 70000,
+                      "dist": 27,
+                      "description": "The project will fund two NYPD security cameras to provide safety for residents of the district.",
+                      "location": "St. Albans & Jamaica",
+                      "votes": 543,
+                      "projectNumber": 5}
+                    ]
+                  },
+            {"name":"District 44  David Greenfield",
+              "children":[
+                {"name": "Hatzolah Mobile Command Center",
+                "size": 250000,
+                "dist": 44,
+                "description": "A vehicle based command center will be a critical part of its response infrastructure in order to help provide top-tier care for all citizens of New York City.",
+                "location": "District Wide",
+                "votes": 1269,
+                "projectNumber": 5},
+                  {"name": "Security Cameras in Bensonhurst",
+                  "size": 200000,
+                  "dist": 44,
+                  "description": "Install 8 police monitored Argus cameras to deter crime in vulnerable public areas.",
+                  "location": "Bensonhurst",
+                  "votes": 952,
+                  "projectNumber": 1},
+                  {"name": "Smartboards for I.S 238 - Susan B. Anthony Academy",
+                  "size": 125000,
+                  "dist": 27,
+                  "description": "The project would provide 20 smartboards for the school",
+                  "location": "I.S. 238, 88-15 182 Street, Hollis",
+                  "votes": 484,
+                  "projectNumber": 6}
+                  ]
+                }
+              ]
+},
+{"name": "Seniors",
+  "children":[
 
-                    {"name":"District 08  Melissa Mark-Viverito",
-                      "children":[
-                        {"name": "Playground Renovations at Wagner Houses",
-                          "size": 500000,
-                          "dist": 8,
-                          "description": "Renovation to existing playground at Wagner Houses. The renovation will focus on children with special needs.",
-                          "location": "Wagner Houses (East Harlem)",
-                          "votes": 1286,
-                          "projectNumber": 2}
-                        ]
-                      },
-                      {"name":"District 26  Jimmy Van Bramer",
-                        "children":[
-                          {"name": "Basketball Court Renovations",
-                            "size": 1050000,
-                            "dist": 26,
-                            "description": "Replacement of three courts concrete slab will be installed. Three-quarter-inch thick plastic polymer tile that provides a floating surface to help drain water and prevent the concrete from cracking.",
-                            "location": "Ravenswood and Queensbridge Houses",
-                            "votes": 891,
-                            "projectNumber": 21}
-                          ]
-                        },
-
-                        {"name":"District 33  Stephen Levin",
-                          "children":[
-                            {"name": "Hear the Beat! Community Sound Studio",
-                              "size": 100000,
-                              "dist": 33,
-                              "description": "This project will outfit an existing computer lab as a recording studio, so youth/adults could be trained for music/audio professions. Includes upgrades to the space and all needed audio equipment.",
-                              "location": "114 Taylor St., Independence Towers, W'lliamsburg",
-                              "votes": 530,
-                              "projectNumber": 10}
-                            ]
-                          },
-                          {"name":"District 34  Antonio Reynoso",
-                            "children":[
-                              {"name": "Playground Upgrade at Williamsburg Houses",
-                              "size": 350000,
-                              "dist": 34,
-                              "description": "This playground will get new benches, play equipment, and a sprinkler system.",
-                              "location": "176 Maujer Street - Block 1",
-                              "votes": 1847,
-                              "projectNumber": 6}
-                              ]
-                            },
-                            {"name":"District 35  Laurie Cumbo",
-                              "children":[
-                                {"name": "HVAC System for the Willoughby Senior Center",
-                                "size": 500000,
-                                "dist": 35,
-                                "description": "HVAC system for the Willoughby Senior Center",
-                                "location": "Whitman Housing Development",
-                                "votes": 375,
-                                "projectNumber": 15}
-                                ]
-                              }
-                            ]
-                          },
-                          {"name": "Streets",
-                            "children":[
-
-                              {"name":"District 11  Andy Cohen",
-                                "children":[
-                                  {"name": "District 11 Security Cameras",
-                                    "size": 300000,
-                                    "dist": 11,
-                                    "description": "Security Cameras for the 50th, 47th and 52nd Precincts within District 11.",
-                                    "location": "District- wide",
-                                    "votes": 822,
-                                    "projectNumber": 3}
-                                  ]
-                                },
-                                {"name":"District 19  Paul Vallone",
-                                  "children":[
-                                    {"name": "NYPD Security Cameras",
-                                      "size": 350000,
-                                      "dist": 15,
-                                      "description": "Project would fund three NYPD security cameras in District 19. These security cameras would enhance crime prevention, provide a sense of security and establish surveillance in remote areas.",
-                                      "location": "District 19 (At NYPD discretion)",
-                                      "votes": 1531,
-                                      "projectNumber": 1}
-                                    ]
-                                  },
-                                  {"name":"District 27  I. Daneek Miller",
-                                    "children":[
-                                      {"name": "Security Cameras in District 27",
-                                        "size": 70000,
-                                        "dist": 27,
-                                        "description": "The project will fund two NYPD security cameras to provide safety for residents of the district.",
-                                        "location": "St. Albans & Jamaica",
-                                        "votes": 543,
-                                        "projectNumber": 5}
-                                      ]
-                                    },
-                                    {"name":"District 29  Karen Koslowitz",
-                                      "children":[
-                                        {"name": "A Safer Intersection at 71st Ave and Austin St",
-                                          "size": 400000,
-                                          "dist": 29,
-                                          "description": "Installing a single curb extension at the Northeast corner of 71st Avenue and Austin Street. This would help calm traffic along both streets and improve safety for pedestrians on those streets.",
-                                          "location": "71st Avenue and Austin Street",
-                                          "votes": 928,
-                                          "projectNumber": 8}
-                                        ]
-                                      },
-                                      {"name":"District 39  Brad Lander",
-                                        "children":[
-                                          {"name": "Curb Extension & Safer Crossing- Carroll Park",
-                                            "size": 150000,
-                                            "dist": 39,
-                                            "description": "The installation of a curb extension at this very busy intersection would shorten the crossing distance and promote pedestrian safety for families and residents using Carroll Park.",
-                                            "location": "Intersection of Carroll and Court Streets",
-                                            "votes": 1115,
-                                            "projectNumber": 8}
-                                          ]
-                                        },
-                                        {"name":"District 45  Jumaane Williams",
-                                          "children":[
-                                            {"name": "Fix Our Streets in Community Board 14",
-                                              "size": 500000,
-                                              "dist": 45,
-                                              "description": "The streets within Community Board 14 are crumbling. This impacts the seniors, adults, youth and pets who live and work in this area. We are asking that 1.86 lane miles is repaired.",
-                                              "location": "Ave K, Ave J, Nostrand and Ocean Avenues",
-                                              "votes": 533,
-                                              "projectNumber": 15}
-                                            ]
-                                          }
-                                        ]
-                                      },
-                                      {"name": "Youth",
-                                        "children":[
-
-                                                 {"name":"District 08  Melissa Mark-Viverito",
-                                                 "children":[
-                                                   {"name": "Technology Upgrades for PE, CPE, and Heritage H.S.",
-                                                   "size": 376200,
-                                                   "dist": 8,
-                                                   "description": "Technology upgrades that will impact classrooms at Park East High School, Central Park East High School and the Heritage High Schools, potentially serving approximately 1500 students daily.",
-                                                   "location": "East Harlem High Schools",
-                                                   "votes": 1297,
-                                                   "projectNumber": 1},
-                                                   {"name": "Bathroom Renovations: MS/HS 223",
-                                                   "size": 250000,
-                                                   "dist": 8,
-                                                   "description": "Essential restoration, upgrade, and efficiency enhancement of restroom facilities for our school - M.S./H.S. 223 The Laboratory School of Finance and Technology",
-                                                   "location": "360 East 145th (Bronx - Mott Haven)",
-                                                   "votes": 778,
-                                                   "projectNumber": 10}
-                                                   ]
-                                                 },
-                                                 {"name":"District 27  I. Daneek Miller",
-                                                   "children":[
-                                                     {"name": "Student Bathroom Renovations at I.S. 192",
-                                                     "size": 400000,
-                                                     "dist": 27,
-                                                     "description": "The project would renovate eight student bathrooms in the school",
-                                                     "location": "I.S. 192, 109-89 204 Street, St. Albans",
-                                                     "votes": 703,
-                                                     "projectNumber": 11},
-                                                       {"name": "New Laptops for Five Schools",
-                                                       "size": 225000,
-                                                       "dist": 27,
-                                                       "description": "The project will provide 250 laptops to five schools in the district: P.S. 36, P.S. 176, P.S./M.S. 147, I.S. 192, Pathways College Preparatory School",
-                                                       "location": "Five Schools in the District",
-                                                       "votes": 943,
-                                                       "projectNumber": 12},
-                                                       {"name": "Smartboards for I.S 238 - Susan B. Anthony Academy",
-                                                       "size": 125000,
-                                                       "dist": 27,
-                                                       "description": "The project would provide 20 smartboards for the school",
-                                                       "location": "I.S. 238, 88-15 182 Street, Hollis",
-                                                       "votes": 484,
-                                                       "projectNumber": 6}
-                                                       ]
-                                                     }
-                                                   ]
-                                                 },
-                                                 {"name": "Public Safety",
-                                                   "children":[
-
-                                                            {"name":"District 06  Helen Rosenthal",
-                                                            "children":[
-                                                              {"name": "UWS CERT Emergency Response and Education Vehicle",
-                                                              "size": 40000,
-                                                              "dist": 6,
-                                                              "description": "Purchase of a vehicle for UWS Community Emergency Response Team to store emergency and educational materials, and create pop-up preparedness events at street fairs, schools, and community gatherings.'",
-                                                              "location": "Upper West Side",
-                                                              "votes": 833,
-                                                              "projectNumber": 3}
-                                                              ]
-                                                            },
-                                                            {"name":"District 44  David Greenfield",
-                                                              "children":[
-                                                                {"name": "Hatzolah Mobile Command Center",
-                                                                "size": 250000,
-                                                                "dist": 44,
-                                                                "description": "A vehicle based command center will be a critical part of its response infrastructure in order to help provide top-tier care for all citizens of New York City.",
-                                                                "location": "District Wide",
-                                                                "votes": 1269,
-                                                                "projectNumber": 5},
-                                                                  {"name": "Security Cameras in Bensonhurst",
-                                                                  "size": 200000,
-                                                                  "dist": 44,
-                                                                  "description": "Install 8 police monitored Argus cameras to deter crime in vulnerable public areas.",
-                                                                  "location": "Bensonhurst",
-                                                                  "votes": 952,
-                                                                  "projectNumber": 1},
-                                                                  {"name": "Smartboards for I.S 238 - Susan B. Anthony Academy",
-                                                                  "size": 125000,
-                                                                  "dist": 27,
-                                                                  "description": "The project would provide 20 smartboards for the school",
-                                                                  "location": "I.S. 238, 88-15 182 Street, Hollis",
-                                                                  "votes": 484,
-                                                                  "projectNumber": 6}
-                                                                  ]
-                                                                }
-                                                              ]
-                                                            },
-                                                            {"name": "Seniors",
-                                                              "children":[
-
-                                                                       {"name":"District 07  Mark Levine",
-                                                                       "children":[
-                                                                         {"name": "Riverstone Senior Center Upgrade & Renovation",
-                                                                         "size": 210000,
-                                                                         "dist": 7,
-                                                                         "description": "Grounds renovation outside the entrance would be designed to budget. Priorities such as creating attractive seating areas and enclosing the dumpster would be coordinated with RA leadership.",
-                                                                         "location": "99 Fort Washington Ave.",
-                                                                         "votes": 708,
-                                                                         "projectNumber": 1}
-                                                                         ]
-                                                                       }
-                                                                ]
-                                                              },
-                                                              {"name": "Environment",
-                                                                "children":[
-
-                                                                         {"name":"District 03  Corey Johnson",
-                                                                         "children":[
-                                                                           {"name": "New Trees for Council District 3",
-                                                                           "size": 100000,
-                                                                           "dist": 3,
-                                                                           "description": "Plant new trees and install tree guards on blocks with few or no trees throughout District 3.",
-                                                                           "location": "District wide",
-                                                                           "votes": 1083,
-                                                                           "projectNumber": 1}
-                                                                           ]
-                                                                         }
-                                                                  ]
-                                                                }
-]
+           {"name":"District 07  Mark Levine",
+           "children":[
+             {"name": "Riverstone Senior Center Upgrade & Renovation",
+             "size": 210000,
+             "dist": 7,
+             "description": "Grounds renovation outside the entrance would be designed to budget. Priorities such as creating attractive seating areas and enclosing the dumpster would be coordinated with RA leadership.",
+             "location": "99 Fort Washington Ave.",
+             "votes": 708,
+             "projectNumber": 1}
+             ]
+           }
+    ]
+  }
+  ]
 }
