@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <!--https://mbostock.github.io/d3/talk/20111116/bar-hierarchy.html-->
 
@@ -8,7 +9,7 @@
     <style type="text/css">
 
 svg {
-  font: 10px sans-serif;
+  font-size: 14px;
 }
 
 rect.background {
@@ -29,17 +30,20 @@ rect.background {
     </style>
   </head>
   <body>
-
+    <h2>
+      Flare code size<br>
+      hierarchical bar chart
+    </h2>
     <script type="text/javascript" src="d3/d3.js"></script>
     <script type="text/javascript" src="d3/d3.layout.js"></script>
     <script type="text/javascript">
 
-var m = [80, 160, 0, 300], // top right bottom left
+var m = [80, 160, 0, 160], // top right bottom left
     w = 1280 - m[1] - m[3], // width
     h = 800 - m[0] - m[2], // height
     x = d3.scale.linear().range([0, w]),
     y = 25, // bar height
-    z = d3.scale.ordinal().range(["salmon", "#aaa"]); // bar color
+    z = d3.scale.ordinal().range(["steelblue", "#aaa"]); // bar color
 
 var hierarchy = d3.layout.partition()
     .value(function(d) { return d.size; });
@@ -53,13 +57,6 @@ var svg = d3.select("body").append("svg:svg")
     .attr("height", h + m[0] + m[2])
   .append("svg:g")
     .attr("transform", "translate(" + m[3] + "," + m[0] + ")");
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
->>>>>>> parent of 2ed1b6a... added categeory colors
-=======
->>>>>>> parent of 2ed1b6a... added categeory colors
 
 svg.append("svg:rect")
     .attr("class", "background")
