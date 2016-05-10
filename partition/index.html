@@ -74,8 +74,9 @@ d3.json("flare.json", function(root) {
   g.append("svg:rect")
       .attr("width", root.dy * kx)
       .attr("height", function(d) { return d.dx * ky; })
-      .attr("class", function(d) { return d.children ? "parent" : "child"; });
       .style("fill", function(d) { return color((d.children ? d : d.parent).name); })
+      .attr("class", function(d) { return d.children ? "parent" : "child"; });
+
 
 
   g.append("svg:text")
