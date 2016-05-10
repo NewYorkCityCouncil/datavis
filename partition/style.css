@@ -84,7 +84,7 @@ a:hover {
 .hint {
   position: absolute;
   right: 0;
-  width: 1280px;
+  width: 500px;
   font-size: 14px;
   color: #999;
 }
