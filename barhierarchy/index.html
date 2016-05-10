@@ -35,11 +35,13 @@ rect.background {
     <script type="text/javascript">
 
 var m = [80, 160, 0, 300], // top right bottom left
-    w = 1280 - m[1] - m[3], // width
+    w = 600 - m[1] - m[3], // width
     h = 800 - m[0] - m[2], // height
     x = d3.scale.linear().range([0, w]),
     y = 25, // bar height
     z = d3.scale.ordinal().range(["salmon", "#aaa"]); // bar color
+
+var color = d3.scale.category10();
 
 var hierarchy = d3.layout.partition()
     .value(function(d) { return d.size; });
@@ -53,6 +55,7 @@ var svg = d3.select("body").append("svg:svg")
     .attr("height", h + m[0] + m[2])
   .append("svg:g")
     .attr("transform", "translate(" + m[3] + "," + m[0] + ")");
+      .style("fill", function(d) { return color((d.children ? d : d.parent).name); })
 
 svg.append("svg:rect")
     .attr("class", "background")
