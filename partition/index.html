@@ -62,6 +62,7 @@ d3.json("flare.json", function(root) {
   var g = vis.selectAll("g")
       .data(partition.nodes(root))
     .enter().append("svg:g")
+    .attr("display", function(d) { return d.depth ? null : "none"; }) // hide inner ring
       .attr("transform", function(d) { return "translate(" + x(d.y) + "," + y(d.x) + ")"; })
       .on("click", click);
 
