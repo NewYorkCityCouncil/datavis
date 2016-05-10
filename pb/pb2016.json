@@ -623,7 +623,14 @@
           "description": "This project will put in a fence to separate the benches from the basketball court for the safety of those who utilize the benches. Additionally, water fountain repairs will be made to benefit all.",
           "location": "Nelson Playground (Bronx - Highbridge)",
           "votes": 897,
-          "projectNumber": 8}
+          "projectNumber": 8},
+          {"name": "Riverstone Senior Center Upgrade & Renovation",
+          "size": 210000,
+          "dist": 7,
+          "description": "Grounds renovation outside the entrance would be designed to budget. Priorities such as creating attractive seating areas and enclosing the dumpster would be coordinated with RA leadership.",
+          "location": "99 Fort Washington Ave.",
+          "votes": 708,
+          "projectNumber": 1}
          ]
      },
      {"name":"District 10 Ydanis Rodriguez",
@@ -1217,22 +1224,7 @@
                   ]
                 }
               ]
-},
-{"name": "Seniors",
-  "children":[
+            }
 
-           {"name":"District 07  Mark Levine",
-           "children":[
-             {"name": "Riverstone Senior Center Upgrade & Renovation",
-             "size": 210000,
-             "dist": 7,
-             "description": "Grounds renovation outside the entrance would be designed to budget. Priorities such as creating attractive seating areas and enclosing the dumpster would be coordinated with RA leadership.",
-             "location": "99 Fort Washington Ave.",
-             "votes": 708,
-             "projectNumber": 1}
-             ]
-           }
-    ]
-  }
   ]
 }
