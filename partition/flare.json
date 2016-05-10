@@ -84,7 +84,21 @@
                "description": "Air conditioning system for the school cafeteria at P.S. 108 Assemblyman Angelo Del Toro Educational Complex",
                "location": "1615 Madison Avenue (East Harlem)",
                "votes": 1105,
-               "projectNumber": 3}
+               "projectNumber": 3},
+               {"name": "Technology Upgrades for PE, CPE, and Heritage H.S.",
+               "size": 376200,
+               "dist": 8,
+               "description": "Technology upgrades that will impact classrooms at Park East High School, Central Park East High School and the Heritage High Schools, potentially serving approximately 1500 students daily.",
+               "location": "East Harlem High Schools",
+               "votes": 1297,
+               "projectNumber": 1},
+               {"name": "Bathroom Renovations: MS/HS 223",
+               "size": 250000,
+               "dist": 8,
+               "description": "Essential restoration, upgrade, and efficiency enhancement of restroom facilities for our school - M.S./H.S. 223 The Laboratory School of Finance and Technology",
+               "location": "360 East 145th (Bronx - Mott Haven)",
+               "votes": 778,
+               "projectNumber": 10}
                ]
              },
              {"name":"District 10 Ydanis Rodriguez",
@@ -235,7 +249,28 @@
                                "description": "This project will provide mobile labs to Humanities & Arts HS, Math, Science, Research & Technology HS, Institute for Health Professions HS, PS/IS 116, Pathways College Prep, IS 192, IS 8, and IS 238",
                                "location": "Eight Schools in District 27",
                                "votes": 539,
-                               "projectNumber": 3}
+                               "projectNumber": 3},
+                               {"name": "Student Bathroom Renovations at I.S. 192",
+                               "size": 400000,
+                               "dist": 27,
+                               "description": "The project would renovate eight student bathrooms in the school",
+                               "location": "I.S. 192, 109-89 204 Street, St. Albans",
+                               "votes": 703,
+                               "projectNumber": 11},
+                                 {"name": "New Laptops for Five Schools",
+                                 "size": 225000,
+                                 "dist": 27,
+                                 "description": "The project will provide 250 laptops to five schools in the district: P.S. 36, P.S. 176, P.S./M.S. 147, I.S. 192, Pathways College Preparatory School",
+                                 "location": "Five Schools in the District",
+                                 "votes": 943,
+                                 "projectNumber": 12},
+                                 {"name": "Smartboards for I.S 238 - Susan B. Anthony Academy",
+                                 "size": 125000,
+                                 "dist": 27,
+                                 "description": "The project would provide 20 smartboards for the school",
+                                 "location": "I.S. 238, 88-15 182 Street, Hollis",
+                                 "votes": 484,
+                                 "projectNumber": 6}
                                ]
                              },
                              {"name":"District 29  Karen Koslowitz",
@@ -540,7 +575,7 @@
                                                            ]
                                                          }
 
-]
+                                                       ]
 },
 {"name": "Parks & Recreation",
   "children":[
@@ -1108,54 +1143,6 @@
                 ]
               }
             ]
-},
-{"name": "Youth",
-  "children":[
-
-           {"name":"District 08  Melissa Mark-Viverito",
-           "children":[
-             {"name": "Technology Upgrades for PE, CPE, and Heritage H.S.",
-             "size": 376200,
-             "dist": 8,
-             "description": "Technology upgrades that will impact classrooms at Park East High School, Central Park East High School and the Heritage High Schools, potentially serving approximately 1500 students daily.",
-             "location": "East Harlem High Schools",
-             "votes": 1297,
-             "projectNumber": 1},
-             {"name": "Bathroom Renovations: MS/HS 223",
-             "size": 250000,
-             "dist": 8,
-             "description": "Essential restoration, upgrade, and efficiency enhancement of restroom facilities for our school - M.S./H.S. 223 The Laboratory School of Finance and Technology",
-             "location": "360 East 145th (Bronx - Mott Haven)",
-             "votes": 778,
-             "projectNumber": 10}
-             ]
-           },
-           {"name":"District 27  I. Daneek Miller",
-             "children":[
-               {"name": "Student Bathroom Renovations at I.S. 192",
-               "size": 400000,
-               "dist": 27,
-               "description": "The project would renovate eight student bathrooms in the school",
-               "location": "I.S. 192, 109-89 204 Street, St. Albans",
-               "votes": 703,
-               "projectNumber": 11},
-                 {"name": "New Laptops for Five Schools",
-                 "size": 225000,
-                 "dist": 27,
-                 "description": "The project will provide 250 laptops to five schools in the district: P.S. 36, P.S. 176, P.S./M.S. 147, I.S. 192, Pathways College Preparatory School",
-                 "location": "Five Schools in the District",
-                 "votes": 943,
-                 "projectNumber": 12},
-                 {"name": "Smartboards for I.S 238 - Susan B. Anthony Academy",
-                 "size": 125000,
-                 "dist": 27,
-                 "description": "The project would provide 20 smartboards for the school",
-                 "location": "I.S. 238, 88-15 182 Street, Hollis",
-                 "votes": 484,
-                 "projectNumber": 6}
-                 ]
-               }
-             ]
 },
 {"name": "Public Safety",
    "children":[
