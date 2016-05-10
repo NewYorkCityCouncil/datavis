@@ -61,6 +61,8 @@ var partition = d3.layout.partition()
 d3.json("flare.json", function(root) {
   var g = vis.selectAll("g")
       .data(partition.nodes(root))
+      .enter().append("svg:g")
+           .attr("display", function(d) { return d.depth ? null : "none"; }); // hide inner ring      
     .enter().append("svg:g")
       .attr("transform", function(d) { return "translate(" + x(d.y) + "," + y(d.x) + ")"; })
       .on("click", click);
@@ -74,7 +76,7 @@ d3.json("flare.json", function(root) {
       .attr("height", function(d) { return d.dx * ky; })
       .style("fill", function(d) { return color((d.children ? d : d.parent).name); })
       .attr("class", function(d) { return d.children ? "parent" : "child"; });
-      .attr("display", function(d) { return d.depth ? null : "none"; }); // hide inner ring
+
 
 
 
