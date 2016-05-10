@@ -47,7 +47,8 @@ var hierarchy = d3.layout.partition()
 
 var xAxis = d3.svg.axis()
     .scale(x)
-    .orient("top");
+    .orient("top")
+    .ticks(3);
 
 var svg = d3.select("body").append("svg:svg")
     .attr("width", w + m[1] + m[3])

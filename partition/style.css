@@ -2,7 +2,8 @@ body {
   background: url(texture-noise.png);
   overflow: hidden;
   margin: 0;
-  font:16px sans-serif;
+  font-size: 16px;
+  font-family: "Helvetica Neue", Helvetica;
   text-color: grey;
 }
 
