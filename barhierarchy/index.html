@@ -55,7 +55,7 @@ var svg = d3.select("body").append("svg:svg")
     .attr("height", h + m[0] + m[2])
   .append("svg:g")
     .attr("transform", "translate(" + m[3] + "," + m[0] + ")");
-      .style("fill", function(d) { return color((d.children ? d : d.parent).name); })
+      .style("fill", function(d) { return color((d.children ? d : d.parent).name); });
 
 svg.append("svg:rect")
     .attr("class", "background")
