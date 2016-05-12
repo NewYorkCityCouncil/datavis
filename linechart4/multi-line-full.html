@@ -33,9 +33,7 @@
 
 
       var y = d3.scale.linear()
-              .domain([3000, 0])
-              .range([3000, 0]);
-      //  .rangeRound([height, 0]);
+          .rangeRound([height, 0]);
 
 
       var xAxis = d3.svg.axis()
@@ -45,6 +43,7 @@
 
       var yAxis = d3.svg.axis()
           .scale(y)
+          .ticks(4)
           .orient("left");
 
       var line = d3.svg.line()
