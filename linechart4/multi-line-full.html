@@ -78,16 +78,14 @@
         });
 
         x.domain(data.map(function (d) { return d.quarter; }));
-        y.domain([0, d3.max(values, function(d) { return d.value; })]).nice();
-/*      y.domain([
-          d3.min(seriesData, function (c) {
-            return d3.min(c.values, function (d) { return d.value; });
-          }),
+
+/      y.domain([
+          0,
           d3.max(seriesData, function (c) {
             return d3.max(c.values, function (d) { return d.value; });
           })
         ]);
-*/
+
         svg.append("g")
             .attr("class", "x axis")
             .attr("transform", "translate(0," + height + ")")
