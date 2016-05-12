@@ -25,7 +25,7 @@
     <script src="lib/bootstrap.js"></script>
     <script>
       var margin = {top: 20, right: 55, bottom: 30, left: 75},
-          width  = 1000 - margin.left - margin.right,
+          width  = 600 - margin.left - margin.right,
           height = 600  - margin.top  - margin.bottom;
 
       var x = d3.scale.ordinal()
@@ -43,7 +43,7 @@
 
       var yAxis = d3.svg.axis()
           .scale(y)
-          .ticks(4)
+    //      .ticks(4)
           .orient("left");
 
       var line = d3.svg.line()
@@ -78,6 +78,8 @@
         });
 
         x.domain(data.map(function (d) { return d.quarter; }));
+
+//Y AXIS - change first value in domain to set minimun
 
         y.domain([0,
           d3.max(seriesData, function (c)
