@@ -45,9 +45,6 @@
           .scale(y)
           .orient("left");
 
-
-
-
       var line = d3.svg.line()
           .interpolate("cardinal")
           .x(function (d) { return x(d.label) + x.rangeBand() / 2; })
@@ -67,6 +64,7 @@
 
         var labelVar = 'quarter';
         var varNames = d3.keys(data[0]).filter(function (key) { return key !== labelVar;});
+
         color.domain(varNames);
 
         var seriesData = varNames.map(function (name) {
@@ -88,7 +86,7 @@
             return d3.max(c.values, function (d) { return d.value; });
           })
         ]);
-*/
+
         svg.append("g")
             .attr("class", "x axis")
             .attr("transform", "translate(0," + height + ")")
