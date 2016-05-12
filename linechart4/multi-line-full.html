@@ -33,7 +33,9 @@
 
 
       var y = d3.scale.linear()
-        .rangeRound([height, 0]);
+              .domain([0,3000])
+              .range([0,3000]);
+      //  .rangeRound([height, 0]);
 
 
       var xAxis = d3.svg.axis()
