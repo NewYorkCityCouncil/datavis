@@ -34,7 +34,7 @@
 
       var y = d3.scale.linear()
           .rangeRound([height, 0])
-          .domain([100,3000]);
+
 
 
 
@@ -45,13 +45,15 @@
 
       var yAxis = d3.svg.axis()
           .scale(y)
-          .orient("left");
+          .orient("left")
+          .domain([0, maxValue]);;
 
 
       var line = d3.svg.line()
           .interpolate("cardinal")
           .x(function (d) { return x(d.label) + x.rangeBand() / 2; })
-          .y(function (d) { return y(d.value); });
+          .y(function (d) { return y(d.value); })
+          .forceY([0,100]);
 
       var color = d3.scale.ordinal()
           .range(["#101b4d","#ff4500","#475003","#9c8305","#d3c47c"]);
