@@ -30,6 +30,7 @@
 
       var x = d3.scale.ordinal()
           .rangeRoundBands([0, width], .1);
+            .domain([0, 3500]);
 
       var y = d3.scale.linear()
           .rangeRound([height, 0]);
