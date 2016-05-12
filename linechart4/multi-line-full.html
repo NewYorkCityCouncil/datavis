@@ -58,7 +58,7 @@
 
       d3.csv("data/doc_violence_total.csv", function (error, data) {
 
-        var labelVar = 'date';
+        var labelVar = 'quarter';
         var varNames = d3.keys(data[0]).filter(function (key) { return key !== labelVar;});
         color.domain(varNames);
 
@@ -71,7 +71,7 @@
           };
         });
 
-        x.domain(data.map(function (d) { return d.quater; }));
+        x.domain(data.map(function (d) { return d.quarter; }));
         y.domain([
           d3.min(seriesData, function (c) {
             return d3.min(c.values, function (d) { return d.value; });
@@ -155,7 +155,7 @@
             trigger: 'manual',
             html : true,
             content: function() {
-              return "date: " + d.label +
+              return "quarter: " + d.label +
                      "<br/>Rounds: " + d3.format(",")(d.value ? d.value: d.y1 - d.y0); }
           });
           $(this).popover('show')
