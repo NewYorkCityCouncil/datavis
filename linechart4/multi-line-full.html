@@ -71,7 +71,7 @@
           };
         });
 
-        x.domain(data.map(function (d) { return d.year; }));
+        x.domain(data.map(function (d) { return d.date; }));
         y.domain([
           d3.min(seriesData, function (c) {
             return d3.min(c.values, function (d) { return d.value; });
