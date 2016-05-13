@@ -62,7 +62,7 @@
         .append("g")
           .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-      d3.csv("data/doc_violence_total.csv", function (error, data) {
+      d3.csv("data/DOCInmateStaffViolenceFY15FY16.csv", function (error, data) {
 
         var labelVar = 'quarter';
         var varNames = d3.keys(data[0]).filter(function (key) { return key !== labelVar;});
