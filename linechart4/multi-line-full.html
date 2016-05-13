@@ -101,7 +101,7 @@
             .attr("y", 6)
             .attr("dy", ".71em")
             .style("text-anchor", "end")
-            .text("Number of Offenses");
+            .text("Number of Violent Incidents");
 
         var series = svg.selectAll(".series")
             .data(seriesData)
@@ -164,8 +164,8 @@
             trigger: 'manual',
             html : true,
             content: function() {
-              return "quarter: " + d.label +
-                     "<br/>Rounds: " + d3.format(",")(d.value ? d.value: d.y1 - d.y0); }
+              return "Time Frame: " + d.label +
+                     "<br/>Violent Incidents: " + d3.format(",")(d.value ? d.value: d.y1 - d.y0); }
           });
           $(this).popover('show')
         }
