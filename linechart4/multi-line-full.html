@@ -128,11 +128,12 @@
            .on("mouseover", function (d) { showPopover.call(this, d); })
            .on("mouseout",  function (d) { removePopovers(); })
 
+// lEGEND Start
         var legend = svg.selectAll(".legend")
             .data(varNames.slice().reverse())
           .enter().append("g")
             .attr("class", "legend")
-            .attr("transform", function (d, i) { return "translate(55," + i * 20 + ")"; });
+            .attr("transform", function (d, i) { return "translate(55," + i * -20 + ")"; }); //translate(<x> [<y>])
 
         legend.append("rect")
             .attr("x", width - 10)
@@ -147,6 +148,7 @@
             .attr("dy", ".35em")
             .style("text-anchor", "end")
             .text(function (d) { return d; });
+//LEGEND end
 
         function removePopovers () {
           $('.popover').each(function() {
