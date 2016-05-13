@@ -62,7 +62,7 @@
           .y1(function (d) { return y(d.y0 + d.y); });
 
       var color = d3.scale.ordinal()
-          .range(["#101b4d","#ff4500","#475003","#9c8305","#d3c47c"]);
+          .range(["#475003","#9c8305","#d3c47c"]);
 
       var svg = d3.select("body").append("svg")
           .attr("width",  width  + margin.left + margin.right)
