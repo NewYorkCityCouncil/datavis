@@ -4,7 +4,7 @@
     <link href="css/bootstrap.css" rel="stylesheet">
     <style>
       body {
-        font: 9px sans-serif;
+        font:11px sans-serif;
         color: #121401;
       }
       .axis path,
@@ -32,8 +32,8 @@
     <script src="lib/bootstrap.js"></script>
     <script>
       var margin = {top: 20, right: 55, bottom: 30, left: 40},
-          width  = 1000 - margin.left - margin.right,
-          height = 500  - margin.top  - margin.bottom;
+          width  = 700 - margin.left - margin.right,
+          height = 400  - margin.top  - margin.bottom;
 
       var x = d3.scale.ordinal()
           .rangeRoundBands([0, width], .1);
@@ -62,7 +62,7 @@
           .y1(function (d) { return y(d.y0 + d.y); });
 
       var color = d3.scale.ordinal()
-          .range(["#001c9c","#101b4d","#475003","#9c8305","#d3c47c"]);
+          .range(["#101b4d","#ff4500","#475003","#9c8305","#d3c47c"]);
 
       var svg = d3.select("body").append("svg")
           .attr("width",  width  + margin.left + margin.right)
@@ -93,9 +93,13 @@
 
         stack(seriesArr);
 
-        y.domain([0, d3.max(seriesArr, function (c) {
-            return d3.max(c.values, function (d) { return d.y0 + d.y; });
-          })]);
+//Y AXIS - change first value in domain to set minimun
+        y.domain([1000,
+          d3.max(seriesData, function (c)
+          {return d3.max
+            (c.values, function (d) { return d.value; });
+          })
+        ]);
 
         svg.append("g")
             .attr("class", "x axis")
@@ -145,6 +149,7 @@
             .attr("class", "legend")
             .attr("transform", function (d, i) { return "translate(55," + i * 20 + ")"; });
 
+// lEGEND Start
         legend.append("rect")
             .attr("x", width - 10)
             .attr("width", 10)
@@ -158,6 +163,7 @@
             .attr("dy", ".35em")
             .style("text-anchor", "end")
             .text(function (d) { return d; });
+//LEGEND end
 
         function removePopovers () {
           $('.popover').each(function() {
@@ -173,8 +179,8 @@
             trigger: 'manual',
             html : true,
             content: function() {
-              return "Quarter: " + d.label +
-                     "<br/>Rounds: " + d3.format(",")(d.value ? d.value: d.y1 - d.y0); }
+              return "Time Frame: " + d.label +
+                     "<br/>Violent Incidents: " + d3.format(",")(d.value ? d.value: d.y1 - d.y0); }
           });
           $(this).popover('show')
         }
