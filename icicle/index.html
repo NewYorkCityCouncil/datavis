@@ -3,7 +3,10 @@
 <!--ICICLE-->
 <meta charset="utf-8">
 <style>
-
+body {
+  font: 11px sans-serif;
+  color: #121401;
+}
 .node {
   fill: #ddd;
   stroke: #fff;
@@ -11,6 +14,7 @@
 
 .label {
   font: 9px sans-serif;
+  color: #121401;
   text-anchor: middle;
 }
 
@@ -50,14 +54,7 @@ var vis = d3.select("body").append("svg")
 var partition = d3.layout.partition()
     .value(function(d) { return d.size; }
 
-
-
 );
-
-
-
-
-
 
 
 d3.json("flare.json", function(json) {
