@@ -4,7 +4,7 @@
     <link href="css/bootstrap.css" rel="stylesheet">
     <style>
       body {
-        font: 9px sans-serif;
+        font: 11px sans-serif;
         color: #121401;
       }
       .axis path,
@@ -17,7 +17,8 @@
     </style>
   </head>
   <body>
-    <h2 style="padding-left:60px;">New York Police Department New Hire Ethnicity</h2>
+    <h3 style="padding-left:30px;">New York City Police Department New Hire's Enthicity</h3>
+    <h4 style="padding-left:30px;">2015</h4>
     <script src="lib/d3.js"></script>
     <script src="lib/jquery.js"></script>
     <script src="lib/bootstrap.js"></script>
@@ -84,7 +85,7 @@
             .attr("y", 6)
             .attr("dy", ".71em")
             .style("text-anchor", "end")
-            .text("Number of Rounds");
+            .text("Enthicity Percentage");
 
         var selection = svg.selectAll(".series")
             .data(data)
@@ -138,7 +139,7 @@
             html : true,
             content: function() {
               return "ethnicity: " + d.label +
-                     "<br/>Rounds: " + d3.format(",")(d.value ? d.value: d.y1 - d.y0); }
+                     "<br/>Percent: " + d3.format(",")(d.value ? d.value: d.y1 - d.y0); }
           });
           $(this).popover('show')
         }
