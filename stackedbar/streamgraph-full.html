@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-<!--http://www.delimited.io/blog/2014/3/3/creating-multi-series-charts-in-d3-lines-bars-area-and-streamgraphs-->
-<!-- GITHUB https://github.com/sghall/d3-multi-series-charts -->
   <head>
     <meta charset="utf-8">
     <link href="css/bootstrap.css" rel="stylesheet">
     <style>
       body {
-        font:11px sans-serif;
+        font: 9px sans-serif;
         color: #121401;
       }
       .axis path,
@@ -27,15 +25,14 @@
     </style>
   </head>
   <body>
-    <h3 style="padding-left:30px;">New York City Department of Corrections Inmate and Staff Violence</h3>
-    <h4 style="padding-left:30px;">July 2015-March 2016</h4>
+    <h2 style="padding-left:60px;">Total Funding Rounds in CrunchBase by Quarter</h2>
     <script src="lib/d3.js"></script>
     <script src="lib/jquery.js"></script>
     <script src="lib/bootstrap.js"></script>
     <script>
       var margin = {top: 20, right: 55, bottom: 30, left: 40},
-          width  = 700 - margin.left - margin.right,
-          height = 400  - margin.top  - margin.bottom;
+          width  = 1000 - margin.left - margin.right,
+          height = 500  - margin.top  - margin.bottom;
 
       var x = d3.scale.ordinal()
           .rangeRoundBands([0, width], .1);
@@ -52,7 +49,7 @@
           .orient("left");
 
       var stack = d3.layout.stack()
-          .offset("zero")
+          .offset("wiggle")
           .values(function (d) { return d.values; })
           .x(function (d) { return x(d.label) + x.rangeBand() / 2; })
           .y(function (d) { return d.value; });
@@ -64,7 +61,7 @@
           .y1(function (d) { return y(d.y0 + d.y); });
 
       var color = d3.scale.ordinal()
-          .range(["#475003","#9c8305","#d3c47c"]);
+          .range(["#001c9c","#101b4d","#475003","#9c8305","#d3c47c"]);
 
       var svg = d3.select("body").append("svg")
           .attr("width",  width  + margin.left + margin.right)
@@ -72,7 +69,7 @@
         .append("g")
           .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-      d3.csv("data/DOCAgeViolenceFY16.csv", function (error, data) {
+      d3.csv("data/crunchbase-quarters.csv", function (error, data) {
 
         var labelVar = 'quarter';
         var varNames = d3.keys(data[0])
@@ -95,10 +92,9 @@
 
         stack(seriesArr);
 
-//Y AXIS - change first value in domain to set minimun
-        y.domain([0, d3.max(seriesArr, function (c) {
-        return d3.max(c.values, function (d) { return d.y0 + d.y; });
-        })]);
+        y.domain([0, d3.max(seriesArr, function (c) { 
+            return d3.max(c.values, function (d) { return d.y0 + d.y; });
+          })]);
 
         svg.append("g")
             .attr("class", "x axis")
@@ -148,7 +144,6 @@
             .attr("class", "legend")
             .attr("transform", function (d, i) { return "translate(55," + i * 20 + ")"; });
 
-// lEGEND Start
         legend.append("rect")
             .attr("x", width - 10)
             .attr("width", 10)
@@ -162,12 +157,11 @@
             .attr("dy", ".35em")
             .style("text-anchor", "end")
             .text(function (d) { return d; });
-//LEGEND end
 
         function removePopovers () {
           $('.popover').each(function() {
             $(this).remove();
-          });
+          }); 
         }
 
         function showPopover (d) {
@@ -177,9 +171,9 @@
             container: 'body',
             trigger: 'manual',
             html : true,
-            content: function() {
-              return "Time Frame: " + d.label +
-                     "<br/>Violent Incidents: " + d3.format(",")(d.value ? d.value: d.y1 - d.y0); }
+            content: function() { 
+              return "Quarter: " + d.label + 
+                     "<br/>Rounds: " + d3.format(",")(d.value ? d.value: d.y1 - d.y0); }
           });
           $(this).popover('show')
         }
