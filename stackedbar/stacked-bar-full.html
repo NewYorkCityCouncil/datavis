@@ -49,15 +49,15 @@
         .append("g")
           .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-      d3.csv("data/crunchbase-quarters.csv", function (error, data) {
+      d3.csv("data/nypddemographics.csv", function (error, data) {
 
-        var labelVar = 'quarter';
+        var labelVar = 'ethnicity';
         var varNames = d3.keys(data[0]).filter(function (key) { return key !== labelVar;});
         color.domain(varNames);
 
         data.forEach(function (d) {
           var y0 = 0;
-          d.mapping = varNames.map(function (name) { 
+          d.mapping = varNames.map(function (name) {
             return {
               name: name,
               label: d[labelVar],
@@ -68,7 +68,7 @@
           d.total = d.mapping[d.mapping.length - 1].y1;
         });
 
-        x.domain(data.map(function (d) { return d.quarter; }));
+        x.domain(data.map(function (d) { return d.ethnicity; }));
         y.domain([0, d3.max(data, function (d) { return d.total; })]);
 
         svg.append("g")
@@ -90,7 +90,7 @@
             .data(data)
           .enter().append("g")
             .attr("class", "series")
-            .attr("transform", function (d) { return "translate(" + x(d.quarter) + ",0)"; });
+            .attr("transform", function (d) { return "translate(" + x(d.ethnicity) + ",0)"; });
 
         selection.selectAll("rect")
           .data(function (d) { return d.mapping; })
@@ -126,7 +126,7 @@
         function removePopovers () {
           $('.popover').each(function() {
             $(this).remove();
-          }); 
+          });
         }
 
         function showPopover (d) {
@@ -136,8 +136,8 @@
             container: 'body',
             trigger: 'manual',
             html : true,
-            content: function() { 
-              return "Quarter: " + d.label + 
+            content: function() {
+              return "ethnicity: " + d.label +
                      "<br/>Rounds: " + d3.format(",")(d.value ? d.value: d.y1 - d.y0); }
           });
           $(this).popover('show')
