@@ -23,7 +23,7 @@
     <script src="lib/bootstrap.js"></script>
     <script>
       var margin = {top: 20, right: 55, bottom: 30, left: 40},
-          width  = 1000 - margin.left - margin.right,
+          width  = 700 - margin.left - margin.right,
           height = 500  - margin.top  - margin.bottom;
 
       var x = d3.scale.ordinal()
@@ -41,7 +41,7 @@
           .orient("left");
 
       var color = d3.scale.ordinal()
-          .range(["#001c9c","#101b4d","#475003","#9c8305","#d3c47c"]);
+          .range(["#f26f6a","#ffcc5d","#f1f6e2","#809898"]);
 
       var svg = d3.select("body").append("svg")
           .attr("width",  width  + margin.left + margin.right)
