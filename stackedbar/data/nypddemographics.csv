@@ -1,6 +1,3 @@
-ethnicity,NYPD,City-wide
-White,46.01,33.31
-Black ,17.01,22.77
-Hispanic,26.05,28.58
-Asian,10.85,12.61
-Other ,0.08,2.74
+ethnicity,White,Black ,Hispanic,Asian,Other 
+NYPD,46.0,17.0,26.1,10.9,0.1
+City-wide,33.3,22.8,28.6,12.6,2.7
