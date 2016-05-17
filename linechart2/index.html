@@ -39,10 +39,15 @@ body {
 <script src="//d3js.org/d3.v3.min.js"></script>
 <script>
 
-var margin = {top: 20, right: 50, bottom: 30, left: 50},
+var margin = {top: 30, right: 10, bottom: 30, left: 10}
+  , width = parseInt(d3.select('#chart').style('width'), 10)
+  , width = width - margin.left - margin.right
+  , barHeight = 20
+  , percent = d3.format('%');
+  /*
     width = 700 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
-
+*/
 var parseDate = d3.time.format("%d-%b-%y").parse,
     bisectDate = d3.bisector(function(d) { return d.date; }).left,
     formatValue = d3.format(","),
@@ -58,6 +63,7 @@ var y = d3.scale.linear()
 var xAxis = d3.svg.axis()
     .scale(x)
 	//.ticks(10)
+    .tickFormat(percent);
     .orient("bottom");
 
 var yAxis = d3.svg.axis()
@@ -70,17 +76,11 @@ var line = d3.svg.line()
     .y(function(d) { return y(d.close); });
 
 var svg = d3.select("body").append("svg")
-.attr("width", '100%')
-    .attr("height", '100%')
-    .attr('viewBox','0 0 '+Math.min(width,height)+' '+Math.min(width,height))
-    .attr('preserveAspectRatio','xMinYMin')
-    .append("g")
-    .attr("transform", "translate(" + Math.min(width,height) / 2 + "," + Math.min(width,height) / 2 + ")");
-/*    .attr("width", width + margin.left + margin.right)
+ .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-*/
+
 d3.tsv("data.tsv", function(error, data) {
   if (error) throw error;
 
