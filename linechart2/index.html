@@ -39,15 +39,10 @@ body {
 <script src="//d3js.org/d3.v3.min.js"></script>
 <script>
 
-var margin = {top: 30, right: 10, bottom: 30, left: 10}
-  , width = parseInt(d3.select('#chart').style('width'), 10)
-  , width = width - margin.left - margin.right
-  , barHeight = 20
-  , percent = d3.format('%');
-  /*
+var margin = {top: 30, right: 10, bottom: 30, left: 10},
     width = 700 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
-*/
+
 
 var parseDate = d3.time.format("%d-%b-%y").parse,
     bisectDate = d3.bisector(function(d) { return d.date; }).left,
