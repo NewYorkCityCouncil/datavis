@@ -133,7 +133,7 @@
             .data(varNames.slice().reverse())
           .enter().append("g")
             .attr("class", "legend")
-                .attr("transform", function (d, i) { return "translate(55, 100)"; }); //translate(<x> [<y>]) - moves legend
+                .attr("transform", function (d, i) { return "translate(55, " + i * 5 + ")"; }); //translate(<x> [<y>]) - moves legend
 
         legend.append("rect")
             .attr("x", width - 10)
