@@ -48,6 +48,7 @@ var margin = {top: 30, right: 10, bottom: 30, left: 10}
     width = 700 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 */
+
 var parseDate = d3.time.format("%d-%b-%y").parse,
     bisectDate = d3.bisector(function(d) { return d.date; }).left,
     formatValue = d3.format(","),
@@ -75,11 +76,48 @@ var line = d3.svg.line()
     .x(function(d) { return x(d.date); })
     .y(function(d) { return y(d.close); });
 
+
 var svg = d3.select("body").append("svg")
  .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+//RESIZE WHEN THE WINDOW RESIZES
+d3.select(window).on('resize', resize);
+
+function resize() {
+    // update width
+    width = parseInt(d3.select('#chart').style('width'), 10);
+    width = width - margin.left - margin.right;
+
+    // resize the chart
+    x.range([0, width]);
+    d3.select(chart.node().parentNode)
+        .style('height', (y.rangeExtent()[1] + margin.top + margin.bottom) + 'px')
+        .style('width', (width + margin.left + margin.right) + 'px');
+
+    chart.selectAll('rect.background')
+        .attr('width', width);
+
+    chart.selectAll('rect.percent')
+        .attr('width', function(d) { return x(d.percent); });
+
+    // update median ticks
+    var median = d3.median(chart.selectAll('.bar').data(),
+        function(d) { return d.percent; });
+
+    chart.selectAll('line.median')
+        .attr('x1', x(median))
+        .attr('x2', x(median));
+
+
+    // update axes
+    chart.select('.x.axis.top').call(xAxis.orient('top'));
+    chart.select('.x.axis.bottom').call(xAxis.orient('bottom'));
+
+}
+// END-RESIZE WHEN THE WINDOW RESIZES
 
 d3.tsv("data.tsv", function(error, data) {
   if (error) throw error;
