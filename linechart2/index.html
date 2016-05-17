@@ -4,7 +4,7 @@
 <style>
 
 body {
-  font: 10px sans-serif;
+  font: 14px sans-serif;
 }
 
 .axis path,
@@ -40,9 +40,9 @@ body {
 <script>
 
 var margin = {top: 30, right: 10, bottom: 30, left: 10},
-    width = 600 - margin.left - margin.right,
-    height = 000 - margin.top - margin.bottom;
-
+    width = 700 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+*/
 
 var parseDate = d3.time.format("%d-%b-%y").parse,
     bisectDate = d3.bisector(function(d) { return d.date; }).left,
