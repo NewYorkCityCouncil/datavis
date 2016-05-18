@@ -16,6 +16,11 @@
         stroke-width: 2px;
         shape-rendering: crispEdges;
       }
+      #chart {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
     </style>
   </head>
   <body>
@@ -25,12 +30,14 @@
     <script src="lib/bootstrap.js"></script>
     <script>
 
-    var margin = {top: 20, right: 20, bottom: 30, left: 60},
-    ww = document.getElementById("chart").clientWidth,
-    width = ww - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+    // Define margins RESPONSIVE
+        var margin = {top: 20, right: 80, bottom: 30, left: 50},
+        width = parseInt(d3.select("#chart").style("width")) - margin.left - margin.right,
+        height = parseInt(d3.select("#chart").style("height")) - margin.top - margin.bottom;
 
-      /* var margin = {top: 20, right: 55, bottom: 30, left: 75},
+
+/*
+    var margin = {top: 20, right: 55, bottom: 30, left: 75},
           width  = 600 - margin.left - margin.right,
           height = 300  - margin.top  - margin.bottom;
 */
@@ -62,27 +69,20 @@
       var color = d3.scale.ordinal()
           .range(["#101b4d","#ff4500","#475003","#9c8305","#d3c47c"]);
 
-      var svg = d3.select('.chart-container').append("svg")
-          .attr("width", '100%')
-          .attr("height", '100%')
-          .attr('viewBox','0 0 '+Math.min(width,height)+' '+Math.min(width,height))
-          .attr('preserveAspectRatio','xMinYMin')
-          .append("g")
-          .attr("transform", "translate(" + Math.min(width,height) / 2 + "," + Math.min(width,height) / 2 + ")");
-
-//RESPONSIVE
-          var svg = d3.select("#chart").append("svg")
-              .attr("width", width + margin.left + margin.right)
-              .attr("height", height + margin.top + margin.bottom)
-              .append("g")
-              .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-//END - RESPONSIVE
-
+/*
       var svg = d3.select("body").append("svg")
           .attr("width",  width  + margin.left + margin.right)
           .attr("height", height + margin.top  + margin.bottom)
         .append("g")
           .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+*/
+
+      // Define svg canvas
+              var svg = d3.select("#chart")
+                          .attr("width", width + margin.left + margin.right)
+                          .attr("height", height + margin.top + margin.bottom)
+                          .append("g")
+                          .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
       d3.csv("data/doc_violence_total.csv", function (error, data) {
 
