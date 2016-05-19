@@ -10,18 +10,18 @@
     <body>
 
 
-<canvas id="myChart" width="400" max-height="400"></canvas>
+<canvas id="myChart" width=auto max-height="400"></canvas>
 <script>
 
 Chart.defaults.global.responsive = true
-Chart.defaults.global.maintainAspectRatio = true
+//Chart.defaults.global.maintainAspectRatio = true
 
 var ctx = document.getElementById("myChart");
 
 var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: ["Consumption Of Alcohol On Streets","Public Urination","Unlawful Possession Of Marijuana","Oper M/V In Viol Safety Rules","Disorderly Conduct Pl 240.20 01 0v","Unlawfully In Parks/After Hours","Trespass","Sign Park Fail To Comply With","Violate/Fail To Comply With Fire Commissioner","Disorderly Conduct Disorderly Conduct PL 240.20 01 0V"],
+        labels: ["Open Container of Alcohol","Public Urination","Marijuana Possession","For Hire Vehicle Safety","Disorderly Conduct - Obstructing Traffic","In Park After Hours","Trespassing","Disobey Park Signs","Violating Fire Safety Standards","Disorderly Conduct - Fighting"],
         datasets: [{
             label: '# Summonses 2015',
             backgroundColor: "rgba(255,99,132,0.2)",
