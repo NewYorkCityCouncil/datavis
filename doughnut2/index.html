@@ -10,26 +10,26 @@
     <body>
 
 
-<canvas id="myChart" width=auto max-height="400"></canvas>
+<canvas id="doughnut2" width=auto max-height="400"></canvas>
 <script>
 
 Chart.defaults.global.responsive = true
-//Chart.defaults.global.maintainAspectRatio = true
+Chart.defaults.global.maintainAspectRatio = true
 
-var ctx = document.getElementById("myChart");
+var ctx = document.getElementById("doughnut2");
 
 var myChart = new Chart(ctx, {
     type: 'doughnut',
     data: {
-        labels: ["Dismissed","Guilty","Open Warrant"],
+        labels: ["Education","Parks & Recreation","Open Arts, Culture & Community","Transit","Housing","Public Safety","Seniors"],
         datasets: [{
-            label: 'Results of Summons',
+            label: 'Type of Projects Funded 2016',
             backgroundColor:["#5e5f61", "#0f0352", "#c8350a"],
             borderColor: "#eeeeee",
             borderWidth: 1,
             hoverBackgroundColor: "#9E9E9E",
             hoverBorderColor: "#eeeeee",
-            data: [65,21,14]
+            data: [19659700,7170000,3546000,3460000,2500000,1210000,210000]
         }]
     }
 
