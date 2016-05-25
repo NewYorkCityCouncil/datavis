@@ -14,15 +14,15 @@
 <script>
 
 Chart.defaults.global.responsive = true
-Chart.defaults.global.tooltips.callbacks.title = "My random string: <%= value %>"
-//Chart.defaults.global.maintainAspectRatio = true
+Chart.defaults.global.maintainAspectRatio = true
+
 
 var ctx = document.getElementById("doughnut");
 
 var myChart = new Chart(ctx, {
     type: 'doughnut',
     data: {
-        labels: ["Dismissed","Guilty","Open Warrant"],
+        labels: ["Dismissed: 65%","Guilty: 21%","Open Warrant: 14%"],
         datasets: [{
             label: 'Results of Summons',
             backgroundColor:["#5e5f61", "#0f0352", "#c8350a"],
@@ -32,7 +32,20 @@ var myChart = new Chart(ctx, {
             hoverBorderColor: "#eeeeee",
             data: [65,21,14]
         }]
-    }
+},
+    options: {
+            tooltips: {
+                enabled: true,
+                mode: 'single',
+                callbacks: {
+                    label: function(tooltipItems, data) {
+                        return tooltipItems.xLabel + '%';
+                    }
+                }
+            }
+          }
+
+
 
 });
 </script>
