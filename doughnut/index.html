@@ -10,14 +10,14 @@
     <body>
 
 
-<canvas id="myChart" width=auto max-height="400"></canvas>
+<canvas id="doughnut" width=auto max-height="400"></canvas>
 <script>
 
 Chart.defaults.global.responsive = true
-Chart.defaults.global.tooltips.return="test"
+Chart.defaults.global.tooltips.callbacks.title=function(tooltipItems, data) {test}
 //Chart.defaults.global.maintainAspectRatio = true
 
-var ctx = document.getElementById("myChart");
+var ctx = document.getElementById("doughnut");
 
 var myChart = new Chart(ctx, {
     type: 'doughnut',
