@@ -89,6 +89,7 @@ var myChart = new Chart(ctx, {
         yAxes: [{
           display: true,
           ticks: {
+            beginAtZero: true,
             callback: function(value) {
               return '$' + value.toLocaleString('en-US');
             }
