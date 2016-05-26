@@ -22,7 +22,7 @@ var ctx = document.getElementById("doughnut");
 var myChart = new Chart(ctx, {
     type: 'doughnut',
     data: {
-        labels: ["Dismissed: 65%","Guilty: 21%","Open Warrant: 14%"],
+        labels: ["Dismissed","Guilty","Open Warrant"],
         datasets: [{
             label: 'Results of Summons',
             backgroundColor:["#5e5f61", "#0f0352", "#c8350a"],
@@ -32,9 +32,17 @@ var myChart = new Chart(ctx, {
             hoverBorderColor: "#eeeeee",
             data: [65,21,14]
         }]
-}
-
-
+    }
+        ,
+    options: {
+      tooltips: {
+          callbacks: {
+            label: function(tooltipItem, data) {
+              return data.labels[tooltipItem.index] + ': ' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] + '%';
+            },
+          }
+      }
+    }
 
 });
 </script>
