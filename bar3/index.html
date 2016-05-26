@@ -81,28 +81,38 @@ var myChart = new Chart(ctx, {
         }]
 
     },
+    jamie: {
+      firstName: "jamie",
+      lastName: "burkart",
+      address: {
+        city: 'NYC',
+        state: "NY"
+      },
+      neighbors: [
+
+      ]
+    },
     options: {
       scales:{
-          xAxes: [{
-            display: true
+        xAxes: [{
+          display: true
         }],
-          yAxes: [{
-                      display: true,
-                      ticks: {
-
-                      }
-
-                  }]
-
+        yAxes: [{
+          display: true,
+          ticks: {
+            callback: function(value) {
+              return '$' + value.toLocaleString('en-US');
+            }
+          }
+        }]
       },
       tooltips: {
-          callbacks: {
-            label: function(tooltipItem, data) {
-              return '$' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US');
-            },
-          }
+        callbacks: {
+          label: function(tooltipItem, data) {
+            return '$' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US');
+          },
+        }
       }
-
     }
 
 });
