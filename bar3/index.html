@@ -37,15 +37,14 @@ var myChart = new Chart(ctx, {
 
     },
     options: {
-      categoryPercentage: 1,
-      barPercentage: 1,
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero:true
-                }
-            }]
-        }
+      tooltips: {
+          mode: 'label',
+          callbacks: {
+            label: function(tooltipItem, data) {
+              return data.labels[tooltipItem.index] + ': $' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US');
+            },
+          }
+      }
     }
 
 });
