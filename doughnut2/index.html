@@ -15,13 +15,15 @@
 
 Chart.defaults.global.responsive = true
 Chart.defaults.global.maintainAspectRatio = true
+Chart.defaults.global.legend.display= true
+Chart.defaults.global.tooltips.label = 'single'
 
 var ctx = document.getElementById("doughnut2");
 
 var myChart = new Chart(ctx, {
     type: 'doughnut',
     data: {
-        labels: ["Education","Parks & Recreation","Open Arts, Culture & Community","Transit","Housing","Public Safety","Seniors"],
+        labels: ["Education","Parks & Recreation:$7,170,000 ","Open Arts, Culture & Community:$3,546,000 ","Transit:$3,460,000","Housing: $2,500,000","Public Safety: $1,210,000","Seniors: $210,000"],
         datasets: [{
             label: 'Type of Projects Funded 2016',
             backgroundColor:["#03A9F4","#3F51B5", "#9C27B0","#4CAF50","#CDDC39", "#FFEB3B", "#FFC107", "#F44336","#8BC34A","#CDDC39","#FFEB3B", "#FFC107","#FF9800","#FF5722","#795548","#607D8B","#F44336", "#E91E63", "#9C27B0", "#673AB7", "#3F51B5", "#2196F3", "#03A9F4", "#00BCD4", "#0f0352"],
@@ -32,6 +34,24 @@ var myChart = new Chart(ctx, {
             data: [19659700,7170000,3546000,3460000,2500000,1210000,210000]
         }]
     }
+
+    ,
+    options: {
+
+      tooltips: {
+          enabled: true,
+          mode: 'single',
+          return: 'test'
+/*
+  callbacks: {
+            beforeLabel: function(tooltipItems, data) {
+                  return '$'  + tooltipItems.yLabel;}
+
+          }
+          */
+      }
+          }
+
 
 });
 </script>
