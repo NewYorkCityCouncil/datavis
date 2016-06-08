@@ -748,6 +748,13 @@ var myChart = new Chart(ctx, {
 
     },
  options: {
+   tooltips: {
+       callbacks: {
+         label: function(tooltipItem, data) {
+           return data.labels[tooltipItem.index] + ': ' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] + '%';
+         },
+       }
+   },
         scales: {
             yAxes: [{
                 stacked: true,
