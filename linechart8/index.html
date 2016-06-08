@@ -22,15 +22,16 @@ Chart.defaults.global.maintainAspectRatio = true
 var ctx = document.getElementById("stackedbar5");
 
 var myChart = new Chart(ctx, {
-    type: 'bar',
-
+    type: 'line',
+    fill: false,
     data: {
         labels: ["FY 2013 Adopted Budget","FY 2014 Adopted Budget",	"FY 2015 Adopted Budget", "FY 2016 Adopted Budget"],
         datasets: [
           {
             label: 'Department of Education',
+            fill: false,
             backgroundColor:"#B2FF59",
-            borderColor: "#eeeeee",
+            borderColor: "#B2FF59",
             borderWidth: 0,
             hoverBackgroundColor: "#B2FF59",
             hoverBorderColor: "#eeeeee",
@@ -38,8 +39,9 @@ var myChart = new Chart(ctx, {
         },
         {
           label: 'Miscellaneous',
+          fill: false,
           backgroundColor: "#607D8B",
-          borderColor: "#eeeeee",
+          borderColor: "#607D8B",
           borderWidth: 0,
           hoverBackgroundColor: "#607D8B",
           hoverBorderColor: "#eeeeee",
@@ -47,8 +49,9 @@ var myChart = new Chart(ctx, {
       },
       {
         label: 'Department of Social Services',
+        fill: false,
         backgroundColor:"#FFD740",
-        borderColor: "#eeeeee",
+        borderColor: "#FFD740",
         borderWidth: 0,
         hoverBackgroundColor: "#FFD740",
         hoverBorderColor: "#eeeeee",
@@ -56,8 +59,9 @@ var myChart = new Chart(ctx, {
     },
     {
       label: 'Pension Contributions',
+      fill: false,
       backgroundColor:"#B0BEC5",
-      borderColor: "#eeeeee",
+      borderColor: "#B0BEC5",
       borderWidth: 0,
       hoverBackgroundColor: "#B0BEC5",
       hoverBorderColor: "#eeeeee",
@@ -65,8 +69,9 @@ var myChart = new Chart(ctx, {
   },
   {
     label: 'Police Department',
+    fill: false,
     backgroundColor:"#18FFFF",
-    borderColor: "#eeeeee",
+    borderColor: "#18FFFF",
     borderWidth: 0,
     hoverBackgroundColor: "#18FFFF",
     hoverBorderColor: "#eeeeee",
@@ -74,8 +79,9 @@ var myChart = new Chart(ctx, {
 },
 {
   label: 'Admin. for Children Services',
+  fill: false,
   backgroundColor:"#7C4DFF",
-  borderColor: "#eeeeee",
+  borderColor: "#7C4DFF",
   borderWidth: 0,
   hoverBackgroundColor: "#7C4DFF",
   hoverBorderColor: "#eeeeee",
@@ -83,8 +89,9 @@ var myChart = new Chart(ctx, {
 },
 {
   label: 'Debt Service',
+  fill: false,
   backgroundColor:"#455A64",
-  borderColor: "#eeeeee",
+  borderColor: "#455A64",
   borderWidth: 0,
   hoverBackgroundColor: "#455A64",
   hoverBorderColor: "#eeeeee",
@@ -92,8 +99,9 @@ var myChart = new Chart(ctx, {
 },
 {
   label: 'Fire Department',
+  fill: false,
   backgroundColor:"#FF5252",
-  borderColor: "#eeeeee",
+  borderColor: "#FF5252",
   borderWidth: 0,
   hoverBackgroundColor: "#FF5252",
   hoverBorderColor: "#eeeeee",
@@ -101,8 +109,9 @@ var myChart = new Chart(ctx, {
 },
 {
   label: 'Department of Sanitation',
+  fill: false,
   backgroundColor:"#FF9800",
-  borderColor: "#eeeeee",
+  borderColor: "#FF9800",
   borderWidth: 0,
   hoverBackgroundColor: "#FF9800",
   hoverBorderColor: "#eeeeee",
@@ -110,8 +119,9 @@ var myChart = new Chart(ctx, {
 },
 {
   label: 'Department of Health & Mental Hygiene',
+  fill: false,
   backgroundColor:"#40C4FF",
-  borderColor: "#eeeeee",
+  borderColor: "#40C4FF",
   borderWidth: 0,
   hoverBackgroundColor: "#40C4FF",
   hoverBorderColor: "#eeeeee",
@@ -119,8 +129,9 @@ var myChart = new Chart(ctx, {
 },
 {
   label: 'Department of Environmental Protection',
+  fill: false,
   backgroundColor:"#E040FB",
-  borderColor: "#eeeeee",
+  borderColor: "#E040FB",
   borderWidth: 0,
   hoverBackgroundColor: "#E040FB",
   hoverBorderColor: "#eeeeee",
@@ -128,8 +139,9 @@ var myChart = new Chart(ctx, {
 },
 {
   label: 'Department of Correction',
+  fill: false,
   backgroundColor:"#FF3D00",
-  borderColor: "#eeeeee",
+  borderColor: "#FF3D00",
   borderWidth: 0,
   hoverBackgroundColor: "#FF3D00",
   hoverBorderColor: "#eeeeee",
@@ -149,19 +161,7 @@ var myChart = new Chart(ctx, {
 				return datasetLabel + ': ' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] + '%';
       }
     }
-  },
-
-        scales: {
-            yAxes: [{
-                stacked: true,
-                ticks: {
-                    beginAtZero:true
-                }
-            }],
-            xAxes: [{
-                stacked: true
-            }]
-        }
+  }
 
     }
 
