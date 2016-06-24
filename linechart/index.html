@@ -1,4 +1,3 @@
-h
 <!DOCTYPE html>
 <meta charset="utf-8">
 <style>
@@ -97,7 +96,7 @@ d3.csv("https://data.cityofnewyork.us/resource/k46n-sa2m.csv", function (error, 
   var ibm = data.filter(function(d) {
     return d.symbol == 'IBM';
 
-		
+
   });
 	*/
 	var msft=new Array;
@@ -113,20 +112,20 @@ d3.csv("https://data.cityofnewyork.us/resource/k46n-sa2m.csv", function (error, 
 		  }
 		  else {
 			  // date is valid
-				msft.push(point);    
+				msft.push(point);
 		  }
 		}
 		else {
 		  // not a date
 		}
-				
+
 	});
 	var values=new Array;
   data.forEach(function (d) {
 		var point = new Object;
 		point.date = new Date(Date.parse(d["Date of Census"]));
 		point.price = +d["Total Individuals in Shelter"];
-		point.symbol = "Individuals";		
+		point.symbol = "Individuals";
 		if ( Object.prototype.toString.call(point.date) === "[object Date]" ) {
 		  // it is a date
 		  if ( isNaN( point.date.getTime() ) ) {  // d.valueOf() could also work
@@ -134,20 +133,20 @@ d3.csv("https://data.cityofnewyork.us/resource/k46n-sa2m.csv", function (error, 
 		  }
 		  else {
 				// date is valid
-				values.push(point);    
+				values.push(point);
 		  }
 		}
 		else {
 		  // not a date
 		}
-		
+
 	});
 	var ibm=new Array;
   data.forEach(function (d) {
 		var point = new Object;
 		point.date = new Date(Date.parse(d["Date of Census"]));
 		point.price = +d["Total Adults in Shelter"];
-		point.symbol = "Adults";		
+		point.symbol = "Adults";
 
 		if ( Object.prototype.toString.call(point.date) === "[object Date]" ) {
 		  // it is a date
@@ -156,19 +155,19 @@ d3.csv("https://data.cityofnewyork.us/resource/k46n-sa2m.csv", function (error, 
 		  }
 		  else {
 				// date is valid
-				ibm.push(point);    
+				ibm.push(point);
 		  }
 		}
 		else {
 		  // not a date
 		}
-		
+
 	});
 	console.log(msft);
 	msft.reverse();
 	values.reverse();
 	ibm.reverse();
-	
+
 
   // Compute the minimum and maximum date, and the maximum price.
   x.domain([values[0].date, values[values.length - 1].date]);
@@ -180,7 +179,7 @@ d3.csv("https://data.cityofnewyork.us/resource/k46n-sa2m.csv", function (error, 
       .attr("height", "100%")
       .attr("viewBox", "0 0 "+(width + margin.left + margin.right)+" "+ (height + margin.top + margin.bottom))
       .attr("style", "max-width: "+(width + margin.left + margin.right)+"px")
-  
+
       .attr("preserveAspectRatio", "xMidYMid")
     .append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
@@ -288,7 +287,7 @@ d3.csv("https://data.cityofnewyork.us/resource/k46n-sa2m.csv", function (error, 
         .attr("y", 9)
         .attr("dy", "6.6em")
         .style("text-anchor", "end")
-        .style('fill', '#b4b3b1')        
+        .style('fill', '#b4b3b1')
         .text( (values[0].date.getMonth()+1) + "/" + values[0].date.getDate() + "/" + values[0].date.getFullYear() + " - "+ (values[values.length - 1].date.getMonth()+1) + "/" + values[values.length - 1].date.getDate() + "/" + values[values.length - 1].date.getFullYear() );
 
 
