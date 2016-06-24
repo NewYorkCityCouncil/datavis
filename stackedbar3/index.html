@@ -50,7 +50,11 @@ var myChart = new Chart(ctx, {
         yAxes: [{
           stacked: true,
           ticks: {
-            beginAtZero:true
+            beginAtZero:true,
+            max: 100,
+            callback: function(value) {
+              return value.toLocaleString('en-US')+'%';
+            }
           }
         }],
         xAxes: [{
@@ -61,12 +65,10 @@ var myChart = new Chart(ctx, {
     tooltips: {
       callbacks: {
         label: function(tooltipItem, data) {
-          return '$' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US');
+            return data.labels[tooltipItem.index] + ': ' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] + '%';
         },
       }
     }
-  }
-
 });
 </script>
     </body>
