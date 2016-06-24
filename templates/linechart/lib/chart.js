@@ -21,6 +21,14 @@
   var color = d3.scale.ordinal()
       .range(["#001c9c","#101b4d","#475003","#9c8305","#d3c47c"]);
 
+  var svg = d3.select('.chart-container').append("svg")
+      .attr("width", '100%')
+      .attr("height", '100%')
+      .attr('viewBox','0 0 '+Math.min(width,height)+' '+Math.min(width,height))
+      .attr('preserveAspectRatio','xMinYMin')
+      .append("g")
+      .attr("transform", "translate(" + Math.min(width,height) / 2 + "," + Math.min(width,height) / 2 + ")");
+
   var svg = d3.select("#chart").append("svg")
       .attr("id", "thesvg")
       .attr("viewBox", "0 0 1000 500")
@@ -63,7 +71,7 @@
     stack.offset(offset)
     stack(seriesArr);
 
-    y.domain([0, d3.max(seriesArr, function (c) { 
+    y.domain([0, d3.max(seriesArr, function (c) {
         return d3.max(c.values, function (d) { return d.y0 + d.y; });
       })]);
 
@@ -119,10 +127,10 @@
 
     x.domain(data.map(function (d) { return d.quarter; }));
     y.domain([
-      d3.min(seriesData, function (c) { 
+      d3.min(seriesData, function (c) {
         return d3.min(c.values, function (d) { return d.value; });
       }),
-      d3.max(seriesData, function (c) { 
+      d3.max(seriesData, function (c) {
         return d3.max(c.values, function (d) { return d.value; });
       })
     ]);
@@ -178,7 +186,7 @@
 
     data.forEach(function (d) {
       var y0 = 0;
-      d.mapping = varNames.map(function (name) { 
+      d.mapping = varNames.map(function (name) {
         return {
           name: name,
           label: d[labelVar],
@@ -274,7 +282,7 @@
   function removePopovers () {
     $('.popover').each(function() {
       $(this).remove();
-    }); 
+    });
   }
 
   function showPopover (d) {
@@ -284,8 +292,8 @@
       container: 'body',
       trigger: 'manual',
       html : true,
-      content: function() { 
-        return "Quarter: " + d.label + 
+      content: function() {
+        return "Quarter: " + d.label +
                "<br/>Rounds: " + d3.format(",")(d.value ? d.value: d.y1 - d.y0); }
     });
     $(this).popover('show')
@@ -301,9 +309,3 @@
   window.VIZ = VIZ;
 
 }())
-
-
-
-
-
-
