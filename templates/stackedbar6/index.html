@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>NYC Budget Over Time</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
+
+    </head>
+    <body>
+
+
+<canvas id="stackedbar5" width=auto max-height="4
+00"></canvas>
+<script>
+
+Chart.defaults.global.responsive = true
+Chart.defaults.global.tooltips.backgroundColor="grey"
+Chart.defaults.global.maintainAspectRatio = true
+
+
+var ctx = document.getElementById("stackedbar5");
+
+var myChart = new Chart(ctx, {
+    type: 'bar',
+
+    data: {
+        labels: ["FY 2013 Adopted Budget","FY 2014 Adopted Budget",	"FY 2015 Adopted Budget", "FY 2016 Adopted Budget"],
+        datasets: [
+          {
+            label: 'Department of Education',
+            backgroundColor:"#B2FF59",
+            borderColor: "#eeeeee",
+            borderWidth: 0,
+            hoverBackgroundColor: "#B2FF59",
+            hoverBorderColor: "#eeeeee",
+            data: [28.12,27.78,27.01,27.29]
+        },
+        {
+          label: 'Miscellaneous',
+          backgroundColor: "#607D8B",
+          borderColor: "#eeeeee",
+          borderWidth: 0,
+          hoverBackgroundColor: "#607D8B",
+          hoverBorderColor: "#eeeeee",
+          data: [9.70,10.76,12.60,13.85]
+      },
+      {
+        label: 'Department of Social Services',
+        backgroundColor:"#FFD740",
+        borderColor: "#eeeeee",
+        borderWidth: 0,
+        hoverBackgroundColor: "#FFD740",
+        hoverBorderColor: "#eeeeee",
+        data: [13.23,13.22,12.69,12.19]
+    },
+    {
+      label: 'Pension Contributions',
+      backgroundColor:"#B0BEC5",
+      borderColor: "#eeeeee",
+      borderWidth: 0,
+      hoverBackgroundColor: "#B0BEC5",
+      hoverBorderColor: "#eeeeee",
+      data: [11.50,11.63,11.19,10.90]
+  },
+  {
+    label: 'Police Department',
+    backgroundColor:"#18FFFF",
+    borderColor: "#eeeeee",
+    borderWidth: 0,
+    hoverBackgroundColor: "#18FFFF",
+    hoverBorderColor: "#eeeeee",
+    data: [6.68,6.65,6.26,6.31]
+},
+{
+  label: 'Admin. for Children Services',
+  backgroundColor:"#7C4DFF",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#7C4DFF",
+  hoverBorderColor: "#eeeeee",
+  data: [4.03,3.89,3.78,3.67]
+},
+{
+  label: 'Debt Service',
+  backgroundColor:"#455A64",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#455A64",
+  hoverBorderColor: "#eeeeee",
+  data: [4.03,3.89,3.78,3.67]
+},
+{
+  label: 'Fire Department',
+  backgroundColor:"#FF5252",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#FF5252",
+  hoverBorderColor: "#eeeeee",
+  data: [2.55,2.48,2.32,2.28]
+},
+{
+  label: 'Department of Sanitation',
+  backgroundColor:"#FF9800",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#FF9800",
+  hoverBorderColor: "#eeeeee",
+  data: [1.93,2.00,1.94,1.95]
+},
+{
+  label: 'Department of Health & Mental Hygiene',
+  backgroundColor:"#40C4FF",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#40C4FF",
+  hoverBorderColor: "#eeeeee",
+  data: [2.25,1.92,1.82,1.68]
+},
+{
+  label: 'Department of Environmental Protection',
+  backgroundColor:"#E040FB",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#E040FB",
+  hoverBorderColor: "#eeeeee",
+  data: [1.62,1.57,1.52,1.56]
+},
+{
+  label: 'Department of Correction',
+  backgroundColor:"#FF3D00",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#FF3D00",
+  hoverBorderColor: "#eeeeee",
+  data: [1.50,1.49,1.43,1.52]
+}
+
+
+
+      ]
+
+    },
+ options: {
+   tooltips: {
+     callbacks: {
+       label: function(tooltipItem, data) {
+					var datasetLabel = data.datasets[tooltipItem.datasetIndex].label || '';
+				return datasetLabel + ': ' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] + '%';
+      }
+    }
+  },
+
+        scales: {
+            yAxes: [{
+                stacked: true,
+                ticks: {
+                    beginAtZero:true
+                }
+            }],
+            xAxes: [{
+                stacked: true
+            }]
+        }
+
+    }
+
+});
+</script>
+    </body>
+</html>
