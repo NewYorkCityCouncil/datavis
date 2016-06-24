@@ -77,7 +77,11 @@ var myChart = new Chart(ctx, {
             yAxes: [{
                 stacked: true,
                 ticks: {
-                    beginAtZero:true
+                    beginAtZero:true,
+                    max: 100,
+                    callback: function(value) {
+                      return value.toLocaleString('en-US')+'%';
+                    }
                 }
             }],
             xAxes: [{
