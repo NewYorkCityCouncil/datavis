@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<!-- http://bl.ocks.org/markfink/6240098 --> 
+</head><body><header>
+  <aside>August 15, 2013</aside>
+</header>
+
+<h1>Treemap (d3 / DIV)</h1>
+
+<p id="chart">
+
+<p>Basically this is a shameless rip off from http://bl.ocks.org/mbostock/4063582 </p>
+<p>I added a piece of code to transform the flat CSV data into the hierarchical structure necessary for treemaps and a little bit more data.</p>
+
+<style>
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: auto;
+  position: relative;
+  width: 960px;
+}
+
+form {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.node {
+  border: solid 1px white;
+  font: 10px sans-serif;
+  line-height: 12px;
+  overflow: hidden;
+  position: absolute;
+  text-indent: 2px;
+}
+
+</style>
+<form>
+  <label><input type="radio" name="mode" value="size" checked> Size</label>
+  <label><input type="radio" name="mode" value="count"> Count</label>
+</form>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
+
+var margin = {top: 40, right: 10, bottom: 10, left: 10},
+    width = 960 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+
+var color = d3.scale.category20c();
+
+var treemap = d3.layout.treemap()
+    .size([width, height])
+    .sticky(true)
+    .value(function(d) { return d.size; });
+
+var div = d3.select("body").append("div")
+    .style("position", "relative")
+    .style("width", (width + margin.left + margin.right) + "px")
+    .style("height", (height + margin.top + margin.bottom) + "px")
+    .style("left", margin.left + "px")
+    .style("top", margin.top + "px");
+
+
+d3.csv("metrics_half.csv", function(data) {
+  // convert csv data into flare.json format
+  function level(nodes) {
+    return d3.nest()
+      .key(function(d) {
+        // console.log('key for: ' + JSON.stringify(d));
+        if (d.filename.indexOf('/') === -1) return d.filename;
+        else return d.filename.substr(0, d.filename.indexOf('/'));
+      })
+      .rollup(function(v) {
+          // console.log('rollup: ' + JSON.stringify(v));
+          // leaf
+          if (v.length === 1 && v[0].filename.indexOf('/') === -1) {
+            // return {'value': parseInt(v[0].sloc)};
+            return {'size': parseInt(v[0].sloc)};
+          }
+          // node
+          v.map(function(d) { d.filename = d.filename.substring(d.filename.indexOf('/')+1); return d; });
+          return {'children': level(v)};
+      })
+      .entries(nodes)
+      .map(function(d) {
+        d.values['name'] = d.key;
+        return d.values;
+      });
+  };
+
+  var root = {'name': 'firefox', 'children': level(data)};
+
+// d3.json("flare.json", function(error, root) {
+  var node = div.datum(root).selectAll(".node")
+      .data(treemap.nodes)
+    .enter().append("div")
+      .attr("class", "node")
+      .call(position)
+      .style("background", function(d) { return d.children ? color(d.name) : null; })
+      .text(function(d) { return d.children ? null : d.name; });
+
+  d3.selectAll("input").on("change", function change() {
+    var value = this.value === "count"
+        ? function() { return 1; }
+        : function(d) { return d.size; };
+
+    node
+        .data(treemap.value(value).nodes)
+      .transition()
+        .duration(1500)
+        .call(position);
+  });
+});
+
+function position() {
+  this.style("left", function(d) { return d.x + "px"; })
+      .style("top", function(d) { return d.y + "px"; })
+      .style("width", function(d) { return Math.max(0, d.dx - 1) + "px"; })
+      .style("height", function(d) { return Math.max(0, d.dy - 1) + "px"; });
+}
+
+</script>
