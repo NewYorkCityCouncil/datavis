@@ -1,68 +1,133 @@
 <!DOCTYPE html>
 <!-- http://mbostock.github.io/d3/talk/20111018/treemap.html -->
-<meta charset="utf-8">
-<title>Zoomable Treemap</title>
-<link rel="stylesheet" type="text/css" href="style.css" />
-<script src="http://d3js.org/d3.v2.js"></script>
-<script src="http://code.jquery.com/jquery-1.7.1.js"></script>
 
-<p id="chart">
-<p id="rawdata">
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <link type="text/css" rel="stylesheet" href="style.css"/>
+    <script type="text/javascript" src="d3/d3.js"></script>
+    <script type="text/javascript" src="d3/d3.layout.js"></script>
+    <style type="text/css">
 
-<script src="treemap.js"></script>
-<script>
-	function reSortRoot(root,value_key) {
-		//console.log("Calling");
-		for (var key in root) {
-			if (key == "key") {
-				root.name = root.key;
-				delete root.key;
-			}
-			if (key == "values") {
-				root.children = [];
-				for (item in root.values) {
-					root.children.push(reSortRoot(root.values[item],value_key));
-				}
-				delete root.values;
-			}
-			if (key == value_key) {
-				root.value = parseFloat(root[value_key]);
-				delete root[value_key];
-			}
-		}
-		return root;
-	}
+.chart {
+  display: block;
+  margin: auto;
+  margin-top: 40px;
+}
 
-	$( document ).ready(function() {
-		// You can comment out the whole csv section if you just have a JSON file.
-    // loadJSONFile('data/portaldata.json');
+text {
+  font-size: 11px;
+}
 
-    	d3.csv("UK_Home_Office_Air_Travel_Data_2011.csv", function(csv_data){
+rect {
+  fill: none;
+}
 
-			// Add, remove or change the key values to change the hierarchy.
-      var nested_data = d3.nest()
-       				.key(function(d)  { return d.Destination; })
-       				.key(function(d)  { return d.Supplier_name; })
-              .key(function(d)  { return d.Ticket_class_description; })
-				      .entries(csv_data);
+    </style>
+  </head>
+  <body>
+    <div id="body">
+      <div id="footer">
+        d3.layout.treemap
+        <div class="hint">click or option-click to descend or ascend</div>
+        <div><select>
+          <option value="size">Size</option>
+          <option value="count">Count</option>
+        </select></div>
+      </div>
+    </div>
+    <script type="text/javascript">
 
-			// Creat the root node for the treemap
-			var root = {};
+var w = 1280 - 80,
+    h = 800 - 180,
+    x = d3.scale.linear().range([0, w]),
+    y = d3.scale.linear().range([0, h]),
+    color = d3.scale.category20c(),
+    root,
+    node;
 
-			// Add the data to the tree
-			root.key = "Data";
-			root.values = nested_data;
+var treemap = d3.layout.treemap()
+    .round(false)
+    .size([w, h])
+    .sticky(true)
+    .value(function(d) { return d.size; });
 
-			// Change the key names and children values from .next and add values for a chosen column to define the size of the blocks
-			root = reSortRoot(root,"Paid_fare");
+var svg = d3.select("#body").append("div")
+    .attr("class", "chart")
+    .style("width", w + "px")
+    .style("height", h + "px")
+  .append("svg:svg")
+    .attr("width", w)
+    .attr("height", h)
+  .append("svg:g")
+    .attr("transform", "translate(.5,.5)");
 
-			// DEBUG
-// 			$("#rawdata").html(JSON.stringify(root));
+d3.json("flare.json", function(data) {
+  node = root = data;
 
-			loadData(root);
+  var nodes = treemap.nodes(root)
+      .filter(function(d) { return !d.children; });
 
-		});
+  var cell = svg.selectAll("g")
+      .data(nodes)
+    .enter().append("svg:g")
+      .attr("class", "cell")
+      .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; })
+      .on("click", function(d) { return zoom(node == d.parent ? root : d.parent); });
 
+  cell.append("svg:rect")
+      .attr("width", function(d) { return d.dx - 1; })
+      .attr("height", function(d) { return d.dy - 1; })
+      .style("fill", function(d) { return color(d.parent.name); });
 
-	});
-</script>
+  cell.append("svg:text")
+      .attr("x", function(d) { return d.dx / 2; })
+      .attr("y", function(d) { return d.dy / 2; })
+      .attr("dy", ".35em")
+      .attr("text-anchor", "middle")
+      .text(function(d) { return d.name; })
+      .style("opacity", function(d) { d.w = this.getComputedTextLength(); return d.dx > d.w ? 1 : 0; });
+
+  d3.select(window).on("click", function() { zoom(root); });
+
+  d3.select("select").on("change", function() {
+    treemap.value(this.value == "size" ? size : count).nodes(root);
+    zoom(node);
+  });
+});
+
+function size(d) {
+  return d.size;
+}
+
+function count(d) {
+  return 1;
+}
+
+function zoom(d) {
+  var kx = w / d.dx, ky = h / d.dy;
+  x.domain([d.x, d.x + d.dx]);
+  y.domain([d.y, d.y + d.dy]);
+
+  var t = svg.selectAll("g.cell").transition()
+      .duration(d3.event.altKey ? 7500 : 750)
+      .attr("transform", function(d) { return "translate(" + x(d.x) + "," + y(d.y) + ")"; });
+
+  t.select("rect")
+      .attr("width", function(d) { return kx * d.dx - 1; })
+      .attr("height", function(d) { return ky * d.dy - 1; })
+
+  t.select("text")
+      .attr("x", function(d) { return kx * d.dx / 2; })
+      .attr("y", function(d) { return ky * d.dy / 2; })
+      .style("opacity", function(d) { return kx * d.dx > d.w ? 1 : 0; });
+
+  node = d;
+  d3.event.stopPropagation();
+}
+
+    </script>
+  </body>
+</html>
+
