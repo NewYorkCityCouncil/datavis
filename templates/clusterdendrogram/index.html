@@ -42,7 +42,7 @@ var svg = d3.select("body").append("svg")
   .append("g")
     .attr("transform", "translate(" + radius + "," + radius + ")");
 
-d3.json("flare2.json", function(error, root) {
+d3.json("flarebudget.json", function(error, root) {
   if (error) throw error;
 
   var nodes = cluster.nodes(root);
