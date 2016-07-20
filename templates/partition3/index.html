@@ -56,7 +56,7 @@ var vis = d3.select("#body").append("div")
 var partition = d3.layout.partition()
     .value(function(d) { return d.size; });
 
-d3.json("flarepb.json", function(root) {
+d3.json("flarebudget.json", function(root) {
   var g = vis.selectAll("g")
       .data(partition.nodes(root))
     .enter().append("svg:g")
