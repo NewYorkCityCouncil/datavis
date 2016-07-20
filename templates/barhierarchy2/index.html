@@ -69,7 +69,7 @@ svg.append("svg:g")
   .append("svg:line")
     .attr("y1", "100%");
 
-d3.json("flarepb.json", function(root) {
+d3.json("flarebudget.json", function(root) {
   hierarchy.nodes(root);
   x.domain([0, root.value]).nice();
   down(root, 0);
