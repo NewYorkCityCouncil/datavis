@@ -39,8 +39,6 @@ var m = [80, 160, 0, 300], // top right bottom left
     y = 25, // bar height
     z = d3.scale.ordinal().range(["steelblue", "#aaa"]); // bar color
     
-var color = d3.scale.category10();
-
 var hierarchy = d3.layout.partition()
     .value(function(d) { return d.size; });
 
@@ -214,9 +212,7 @@ function bar(d) {
   bar.append("svg:rect")
       .attr("width", function(d) { return x(d.value); })
       .attr("height", y);
-      .style("fill", function(d) { return color((d.children ? d : d.parent).name); })
-      .attr("class", function(d) { return d.children ? "parent" : "child"; });
-
+      
   return bar;
 }
 
