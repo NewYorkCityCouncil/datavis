@@ -1,0 +1,12 @@
+
+*.shp
+
+mapping/corpcounselopinionpoint.shp
+
+*.dbf
+
+mapping/corpcounselopinionpoint.geojson
+
+mapping/corpcounselopinionpoint.dbf
+
+*.geojson
