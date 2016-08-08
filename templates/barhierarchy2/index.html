@@ -37,7 +37,7 @@ var m = [80, 160, 0, 300], // top right bottom left
     h = 800 - m[0] - m[2], // height
     x = d3.scale.linear().range([0, w]),
     y = 25, // bar height
-    z = d3.scale.ordinal().range([, "#FF4081", "#E040FB",  "18FFFF", "#64FFDA", "#69F0AE", "#B2FF59", "#EEFF41", "#40C4FF", "#FFFF00","#FF5252", "#FFD740", "#FFAB40", "#FF6E40"]); // bar color
+    z = d3.scale.ordinal().range([, "#FF4081", "#E040FB"]); // bar color
     
 var hierarchy = d3.layout.partition()
     .value(function(d) { return d.size; });
@@ -92,7 +92,7 @@ function down(d, i) {
 
   // Have the text fade-in, even though the bars are visible.
   // Color the bars as parents; they will fade to children if appropriate.
-  enter.select("text").style("fill-opacity", z(true));
+  enter.select("text").style("fill-opacity", 1e-6);
   enter.select("rect").style("fill", z(true));
 
   // Update the x-scale domain.
