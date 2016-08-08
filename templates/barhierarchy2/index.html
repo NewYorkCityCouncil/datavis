@@ -37,7 +37,7 @@ var m = [80, 160, 0, 300], // top right bottom left
     h = 800 - m[0] - m[2], // height
     x = d3.scale.linear().range([0, w]),
     y = 25, // bar height
-    z = d3.scale.ordinal().range(["steelblue", "#aaa"]); // bar color
+    z = d3.scale.ordinal().range([, "#FF4081", "#E040FB",  "18FFFF", "#64FFDA", "#69F0AE", "#B2FF59", "#EEFF41", "#40C4FF", "#FFFF00","#FF5252", "#FFD740", "#FFAB40", "#FF6E40"]); // bar color
     
 var hierarchy = d3.layout.partition()
     .value(function(d) { return d.size; });
