@@ -222,7 +222,7 @@ function drawLegend() {
 
   // Dimensions of legend item: width, height, spacing, radius of rounded rect.
 
-  /* HIDING LEGEND
+ 
   var li = {
     w: 75, h: 30, s: 3, r: 3
   };
@@ -262,7 +262,7 @@ function toggleLegend() {
   }
 }
 
-*/
+
 
 // Take a 2-column CSV and transform it into a hierarchical structure suitable
 // for a partition layout. The first column is a sequence of step names, from
