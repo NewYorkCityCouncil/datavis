@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Participatory Budgeting Spending Per District 2016</title>
+        <title>NYC Budget by Type FY2017</title>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
 
@@ -17,13 +17,15 @@ Chart.defaults.global.responsive = true
 Chart.defaults.global.legend.display= false
 Chart.defaults.global.maintainAspectRatio = true
 
+
+
 Chart.defaults.scale = {
 		display: true,
 		position: "left",
 
 		// grid line settings
 		gridLines: {
-			display: true,
+			display: false,
 			color: "rgba(0, 0, 0, 0.1)",
 			lineWidth: 1,
 			drawBorder: true,
@@ -72,7 +74,7 @@ var myChart = new Chart(ctx, {
         labels: ["Personnel ","Fringe Benefits","Contractual Services","Social Services","Other Services and Charges","Fixed and Misc Charges","Debt Service","Supplies and Materials","Amounts to be Scheduled"],
         datasets: [{
             label: 'Types of Spending in FY 2017 Budget',
-            backgroundColor:["#FFFF8D","#FFE57F","#FFD180","#FF9E80","#FF8A80","#FF80AB","#F5F5F5","#F4FF81","#EA80FC","#D7CCC8","#CFD8DC","#CCFF90","#B9F6CA","#B388FF","#A7FFEB","#8C9EFF","#84FFFF","#82B1FF","#80D8FF"],
+            backgroundColor:["#FFFF8D","#FFD180","#FF80AB","#F4FF81","#D7CCC8","#B388FF","#8C9EFF","#82B1FF"],
             borderColor: "#eeeeee",
             borderWidth: 1,
             hoverBackgroundColor: "#9E9E9E",
@@ -84,15 +86,18 @@ var myChart = new Chart(ctx, {
     options: {
       scales:{
         xAxes: [{
-          display: true
-        }],
-        yAxes: [{
           display: true,
           ticks: {
             beginAtZero: true,
             callback: function(value) {
               return '$' + value.toLocaleString('en-US');
             }
+          }
+        }],
+        yAxes: [{
+          display: true,
+          ticks: {
+            beginAtZero: true,
           }
         }]
       },
