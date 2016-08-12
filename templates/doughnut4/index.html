@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Adopted Budget FY 2016 - Top Ten Agencies for Spending</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
+
+    </head>
+    <body>
+
+
+<canvas id="doughnut3" width=auto max-height="400"></canvas>
+<script>
+
+Chart.defaults.global.responsive = true
+Chart.defaults.global.maintainAspectRatio = true
+
+
+var ctx = document.getElementById("doughnut3");
+
+var myChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        labels: ["Department of Education","Miscellaneous","Department of Social Services","Pension Contributions","Police Department","Admin for Children's Services","Debt Service","Fire Department","Department of Sanitation","Department of Correction","Department of Health and Mental Hygiene","Department of Environmental Protect.","Department of Citywide Admin Service","Department of Homeless Services","City University of New York","Department of Transportation","Housing Preservation and Development","Department of Youth & Community Dev","Department of Design & Construction","Department of Info Tech & Telecomm","Department of Parks and Recreation","Library","District Attorney","Department for The Aging","Department of Finance","Department of Small Business Services","Law Department","Department of Buildings","Board of Elections","Mayoralty","Equal Employment Practices Commission","Department of Probation","Office of The Comptroller","NYC Taxi and Limousine Commission","City Council","Office of Admin Trials & Hearings","Department of Consumer Affairs","Department of City Planning","Department of Investigation","Borough Presidents","Office of Prosecution Special Narcotics","Office of Payroll Administration","Community Boards","Department of Emergency Management","Civilian Complaint Review Board","Campaign Finance Board","Commission On Human Rights","Business Integrity Commission","Office of The Actuary","Department of Records & Information Services","Independent Budget Office","Landmarks Preservation Comm.","City Clerk","Public Administrator","Public Advocate","Board of Correction","Office of Collective Bargaining","Conflicts of Interest Board","Civil Service Commission","Department of Veterans' Services"],
+        datasets: [{
+            label: 'FY16 Adopted Budget',
+            backgroundColor:["#B2FF59", "#607D8B", "#FFD740","#B0BEC5","#18FFFF", "#7C4DFF","#455A64", "#FF5252","#FF9800", "#40C4FF", "#E040FB","#FF3D00"],
+            borderColor: "#eeeeee",
+            borderWidth: 1,
+            hoverBackgroundColor: "#9E9E9E",
+            hoverBorderColor: "#eeeeee",
+            data: [27.28598506,13.84728056,12.1887043,10.90378993,6.31319318,3.672538281,3.654532409,2.751377342,1.951696744,1.729275241,1.681576795,1.561163359,1.473566128,1.34616078,1.236916772,1.09595204,0.937764598,0.819980024,0.702613064,0.688784001,0.566251538,0.44551277,0.393572213,0.386101358,0.331285235,0.326319378,0.232364456,0.19231113,0.174667782,0.152112963,0.127524937,0.118971679,0.116897665,0.085765162,0.075997902,0.054494574,0.051435566,0.04746372,0.038604503,0.032019145,0.026701726,0.02194316,0.021268412,0.01995993,0.018776339,0.018034448,0.01285585,0.009272917,0.009111263,0.008056204,0.007293814,0.007151958,0.007151752,0.005269727,0.004202892,0.003159983,0.003131941,0.002786064,0.001347334,0]
+        }]
+    }
+        ,
+    options: {
+      tooltips: {
+          callbacks: {
+            label: function(tooltipItem, data) {
+              return data.labels[tooltipItem.index] + ': ' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] + '%';
+            },
+          }
+      }
+    }
+
+});
+</script>
+    </body>
+</html>
