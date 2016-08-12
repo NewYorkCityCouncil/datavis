@@ -15,7 +15,7 @@
 
 Chart.defaults.global.responsive = true
 Chart.defaults.global.maintainAspectRatio = true
-
+Chart.defaults.global.legend.display = false
 
 var ctx = document.getElementById("doughnut3");
 
@@ -25,12 +25,12 @@ var myChart = new Chart(ctx, {
         labels: ["Department of Education","Miscellaneous","Department of Social Services","Pension Contributions","Police Department","Admin for Children's Services","Debt Service","Fire Department","Department of Sanitation","Department of Correction","Department of Health and Mental Hygiene","Department of Environmental Protect.","Department of Citywide Admin Service","Department of Homeless Services","City University of New York","Department of Transportation","Housing Preservation and Development","Department of Youth & Community Dev","Department of Design & Construction","Department of Info Tech & Telecomm","Department of Parks and Recreation","Library","District Attorney","Department for The Aging","Department of Finance","Department of Small Business Services","Law Department","Department of Buildings","Board of Elections","Mayoralty","Equal Employment Practices Commission","Department of Probation","Office of The Comptroller","NYC Taxi and Limousine Commission","City Council","Office of Admin Trials & Hearings","Department of Consumer Affairs","Department of City Planning","Department of Investigation","Borough Presidents","Office of Prosecution Special Narcotics","Office of Payroll Administration","Community Boards","Department of Emergency Management","Civilian Complaint Review Board","Campaign Finance Board","Commission On Human Rights","Business Integrity Commission","Office of The Actuary","Department of Records & Information Services","Independent Budget Office","Landmarks Preservation Comm.","City Clerk","Public Administrator","Public Advocate","Board of Correction","Office of Collective Bargaining","Conflicts of Interest Board","Civil Service Commission","Department of Veterans' Services"],
         datasets: [{
             label: 'FY16 Adopted Budget',
-            backgroundColor:["#2979FF", "#FF1744", "#FFEA00", "#D500F9","#00E676","#FF9100", "#F50057", "#651FFF", "#3D5AFE", "#00B0FF", "#00E5FF", "#1DE9B6", "#76FF03", "#C6FF00", "#FFC400", "#FF3D00", "#8D6E63", "#78909C", "#2979FF", "#FF1744", "#FFEA00", "#D500F9","#00E676","#FF9100", "#F50057", "#651FFF", "#3D5AFE", "#00B0FF", "#00E5FF", "#1DE9B6", "#76FF03", "#C6FF00", "#FFC400", "#FF3D00", "#8D6E63", "#78909C"],
+            backgroundColor:["#80D8FF","#82B1FF","#84FFFF","#8C9EFF","#A7FFEB","#B388FF","#B9F6CA","#CCFF90","#CFD8DC","#D7CCC8","#EA80FC","#F4FF81","#F5F5F5","#FF80AB","#FF8A80","#FF9E80","#FFD180","#FFE57F","#FFFF8D", "#80D8FF","#82B1FF","#84FFFF","#8C9EFF","#A7FFEB","#B388FF","#B9F6CA","#CCFF90","#CFD8DC","#D7CCC8","#EA80FC","#F4FF81","#F5F5F5","#FF80AB","#FF8A80","#FF9E80","#FFD180","#FFE57F","#FFFF8D", "#80D8FF","#82B1FF","#84FFFF","#8C9EFF","#A7FFEB","#B388FF","#B9F6CA","#CCFF90","#CFD8DC","#D7CCC8","#EA80FC","#F4FF81","#F5F5F5","#FF80AB","#FF8A80","#FF9E80","#FFD180","#FFE57F","#FFFF8D", "#80D8FF","#82B1FF","#84FFFF","#8C9EFF","#A7FFEB","#B388FF","#B9F6CA","#CCFF90","#CFD8DC","#D7CCC8","#EA80FC","#F4FF81","#F5F5F5","#FF80AB","#FF8A80","#FF9E80","#FFD180","#FFE57F","#FFFF8D"],
             borderColor: "#eeeeee",
             borderWidth: 1,
             hoverBackgroundColor: "#9E9E9E",
             hoverBorderColor: "#eeeeee",
-            data: [27.28598506,13.84728056,12.1887043,10.90378993,6.31319318,3.672538281,3.654532409,2.751377342,1.951696744,1.729275241,1.681576795,1.561163359,1.473566128,1.34616078,1.236916772,1.09595204,0.937764598,0.819980024,0.702613064,0.688784001,0.566251538,0.44551277,0.393572213,0.386101358,0.331285235,0.326319378,0.232364456,0.19231113,0.174667782,0.152112963,0.127524937,0.118971679,0.116897665,0.085765162,0.075997902,0.054494574,0.051435566,0.04746372,0.038604503,0.032019145,0.026701726,0.02194316,0.021268412,0.01995993,0.018776339,0.018034448,0.01285585,0.009272917,0.009111263,0.008056204,0.007293814,0.007151958,0.007151752,0.005269727,0.004202892,0.003159983,0.003131941,0.002786064,0.001347334,0]
+            data: [27.286,13.847,12.189,10.904,6.313,3.673,3.655,2.751,1.952,1.729,1.682,1.561,1.474,1.346,1.237,1.096,0.938,0.820,0.703,0.689,0.566,0.446,0.394,0.386,0.331,0.326,0.232,0.192,0.175,0.152,0.128,0.119,0.117,0.086,0.076,0.054,0.051,0.047,0.039,0.032,0.027,0.022,0.021,0.020,0.019,0.018,0.013,0.009,0.009,0.008,0.007,0.007,0.007,0.005,0.004,0.003,0.003,0.003,0.001,0.000]
         }]
     }
         ,
