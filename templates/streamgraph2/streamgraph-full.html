@@ -69,7 +69,7 @@
         .append("g")
           .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-      d3.csv("data/topten_2007_2015.csv", function (error, data) {
+      d3.csv("data/budget_2002_2016.csv", function (error, data) {
 
         var labelVar = 'year';
         var varNames = d3.keys(data[0])
