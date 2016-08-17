@@ -25,7 +25,7 @@
     </style>
   </head>
   <body>
-    <h2 style="padding-left:60px;">Top 10 Summons by Type over Time (2007-2015)</h2>
+    <h2 style="padding-left:60px;">Agency Spending (FY 2002-2017)</h2>
     <script src="lib/d3.js"></script>
     <script src="lib/jquery.js"></script>
     <script src="lib/bootstrap.js"></script>
@@ -109,7 +109,7 @@
             .attr("y", 6)
             .attr("dy", ".71em")
             .style("text-anchor", "end")
-            .text("Number of Summonsses Given");
+            .text("$ Spent");
 
         var selection = svg.selectAll(".series")
           .data(seriesArr)
@@ -173,7 +173,7 @@
             html : true,
             content: function() {
               return "year: " + d.label +
-                     "<br/>Summonsses: " + d3.format(",")(d.value ? d.value: d.y1 - d.y0); }
+                     "<br/>Agency Spending: " + d3.format(",")(d.value ? d.value: d.y1 - d.y0); }
           });
           $(this).popover('show')
         }
