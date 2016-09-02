@@ -49,7 +49,9 @@
     </h4>
 
 
-    <button class="dropdown button" type="button" data-toggle="example-dropdown-1">Agency</button>     <button class="dropdown button" type="button" data-toggle="example-dropdown-2">Use Type</button>
+    <button class="dropdown button" type="button" data-toggle="example-dropdown-1">Agency</button> <!--  Creates Agency button - doesnt make it work though -->
+    <button class="dropdown button" type="button" data-toggle="example-dropdown-2">Use Type</button> <!-- Creates Use Type button - doesnt make it work though -->
+
 
     <div class="dropdown-pane" id="example-dropdown-1" data-dropdown data-hover="true" data-hover-pane="true">
       <ul class="menu vertical">
@@ -59,6 +61,8 @@
         <li><a href="#">Item 1A</a></li>
       </ul>
     </div>
+
+
     <div class="dropdown-pane" id="example-dropdown-2" data-dropdown data-hover="true" data-hover-pane="true">
       <ul class="menu vertical">
         <li><a href="#">Item 2A</a></li>
@@ -120,27 +124,27 @@
           let x = 14442947100 / (maxSize*maxSize);
 
           budgetSummary.aspects.rows.forEach(function(row){
-            let agencySlug = slugify(row.key[0]); // make Classes (0) tidy
-            let classSlug = slugify(row.key[1]); // make Agency (1) tidy
+            let agencySlug = slugify(row.key[0]); // make Classes (0) tidy and create new variable for Agency
+            let classSlug = slugify(row.key[1]); // make Agency (1) tidy and create new variable for Class
 
             let size = Math.sqrt(row.value / x); // size of blocks determined by equation with budget amount
             if(size < 1) {
               size = 1;
             }
-            $('.js-blocks-selected').append( '<div style="width:'+size+'px; height:'+size+'px;" class="block button success '+agencySlug+' '+classSlug+'" data-amount="'+row.value+'" data-amount-desc="'+(94442947100-row.value)+'"></div>'); //If filter items selected, show budget item blocks filled in
-            $('.js-blocks').append( '<div style="width:'+size+'px; height:'+size+'px;" class="block button success hollow '+agencySlug+' '+classSlug+'" data-amount="'+row.value+'" data-amount-desc="'+(94442947100-row.value)+'"></div>'); // For filter items not selected, show hollow budget item blocks
+            $('.js-blocks-selected').append( '<div style="width:'+size+'px; height:'+size+'px;" class="block button success '+agencySlug+' '+classSlug+'" data-amount="'+row.value+'" data-amount-desc="'+(94442947100-row.value)+'"></div>'); //If filter items selected, show budget item blocks filled in with Agency name and Class name
+            $('.js-blocks').append( '<div style="width:'+size+'px; height:'+size+'px;" class="block button success hollow '+agencySlug+' '+classSlug+'" data-amount="'+row.value+'" data-amount-desc="'+(94442947100-row.value)+'"></div>'); // For filter items not selected, show hollow budget item blocks with Agency name and Class name
           });
 
           for (var agencyName in budgetSummary.agencies) {
             if (budgetSummary.agencies.hasOwnProperty(agencyName)) {
               $('.js-agency-controls').append( '<div class="button hollow" data-filter=".'+slugify(agencyName)+'">'+agencyName+'</div> ');
-            }
+            } // Create hollow buttons for each agency for filtering
           }
 
           for (var className in budgetSummary.classes) {
             if (budgetSummary.classes.hasOwnProperty(className)) {
               $('.js-use-controls').append( '<div class="button hollow" data-filter=".'+slugify(className)+'">'+className+'</div> ');
-            }
+            } // Create hollow buttons for each budget class for filtering
           }
 
 
