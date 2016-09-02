@@ -100,6 +100,7 @@
     <script src="https://unpkg.com/isotope-layout@3.0/dist/isotope.pkgd.min.js"></script>
     <script src="./packery-mode.pkgd.min.js"></script>
 
+    <!-- Pulls in data from summary.js -->
     <script src="./summary.js"></script>
 
 
@@ -119,15 +120,15 @@
           let x = 14442947100 / (maxSize*maxSize);
 
           budgetSummary.aspects.rows.forEach(function(row){
-            let agencySlug = slugify(row.key[0]);
-            let classSlug = slugify(row.key[1]);
+            let agencySlug = slugify(row.key[0]); // make Classes (0) tidy
+            let classSlug = slugify(row.key[1]); // make Agency (1) tidy
 
-            let size = Math.sqrt(row.value / x);
+            let size = Math.sqrt(row.value / x); // size of blocks determined by equation with budget amount
             if(size < 1) {
               size = 1;
             }
-            $('.js-blocks-selected').append( '<div style="width:'+size+'px; height:'+size+'px;" class="block button success '+agencySlug+' '+classSlug+'" data-amount="'+row.value+'" data-amount-desc="'+(94442947100-row.value)+'"></div>');
-            $('.js-blocks').append( '<div style="width:'+size+'px; height:'+size+'px;" class="block button success hollow '+agencySlug+' '+classSlug+'" data-amount="'+row.value+'" data-amount-desc="'+(94442947100-row.value)+'"></div>');
+            $('.js-blocks-selected').append( '<div style="width:'+size+'px; height:'+size+'px;" class="block button success '+agencySlug+' '+classSlug+'" data-amount="'+row.value+'" data-amount-desc="'+(94442947100-row.value)+'"></div>'); //If filter items selected, show budget item blocks filled in
+            $('.js-blocks').append( '<div style="width:'+size+'px; height:'+size+'px;" class="block button success hollow '+agencySlug+' '+classSlug+'" data-amount="'+row.value+'" data-amount-desc="'+(94442947100-row.value)+'"></div>'); // For filter items not selected, show hollow budget item blocks
           });
 
           for (var agencyName in budgetSummary.agencies) {
