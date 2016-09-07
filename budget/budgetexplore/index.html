@@ -1,4 +1,4 @@
-<!doctype html>
+ <!doctype html>
 <html class="no-js"  lang="en-US">
   <head>
     <meta charset="utf-8">
@@ -139,6 +139,7 @@
           var agencySlug = slugify(row.key[0]); // make Classes (0) tidy and create new variable for Agency
           var classSlug = slugify(row.key[1]); // make Agency (1) tidy and create new variable for Class
 
+          //Drawing blocks
           var size = Math.sqrt(row.value / x); // size of blocks determined by equation with budget amount
           if(size < 1) {
             size = 1;
@@ -148,11 +149,18 @@
         });
 
 
+
+        //Drawing buttons 
         for (var agencyName in budgetSummary.agencies) {
-          if (budgetSummary.agencies.hasOwnProperty(agencyName)) { //If there are unique Agency values
-            $('.js-agency-controls').append( '<div class="button dropdown" data-filter=".'+slugify(agencyName)+'">'+agencyName+'</div> ');
-          } // Create buttons for each Agency for filtering - Foundation determines button type, Isotope determines filtering
+          if (budgetSummary.agencies.hasOwnProperty(agencyName)) { //Compatibility
+             $('.js-agency-controls').append( '<div class="dropdown button" type="button" data-toggle="agency-dropdown" data-filter=".'+slugify(agencyName)+'">'+agencyName+'</div> ');
+           } // Create buttons for each Agency for filtering - Foundation determines button type, Isotope determines filtering
         }
+
+        <!--  Creates Agency button - doesnt make it work though  - from Foundation-->
+
+
+
 
         for (var className in budgetSummary.classes) {
           if (budgetSummary.classes.hasOwnProperty(className)) {
