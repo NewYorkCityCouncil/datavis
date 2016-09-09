@@ -41,6 +41,9 @@
       #example-dropdown-1 {
 
       }
+      .controls .menu {
+        text-transform: uppercase;
+      }
 
     </style>
   </head>
@@ -59,16 +62,14 @@
     </h4>
 
 
-    <button class="dropdown button" type="button" data-toggle="agency-dropdown">Agency</button> <!--  Creates Agency button - doesnt make it work though  - from Foundation-->
+  <!--  <button class="dropdown button" type="button" data-toggle="agency-dropdown">Agency</button> --><!--  Creates Agency button - doesnt make it work though  - from Foundation-->
     <button class="dropdown button" type="button" data-toggle="type-dropdown">Use Type</button> <!-- Creates Use Type button - doesnt make it work though -->
 
 
     <div class="dropdown-pane agency-dropdown" id="agency-dropdown" data-dropdown data-hover="true" data-hover-pane="true">
       <ul class="menu vertical agency-dropdown__menu"> <!-- Populates Agency dropdown menue with items below -->
-        <li><a href="#">Item 1A</a></li>
-        <li><a href="#">Item 1A</a></li>
-        <li><a href="#">Item 1A</a></li>
-        <li><a href="#">Item 1A</a></li>
+        <!--<li><a href="#">Item 1A</a></li> -->
+
       </ul>
     </div>
 
@@ -150,17 +151,13 @@
 
 
 
-        //Drawing buttons 
+        //Drawing buttons
+        $('.js-agency-controls').append( '<button class="dropdown button" type="button" data-toggle="agency-dropdown">Agency</button> ');
         for (var agencyName in budgetSummary.agencies) {
           if (budgetSummary.agencies.hasOwnProperty(agencyName)) { //Compatibility
-             $('.js-agency-controls').append( '<div class="dropdown button" type="button" data-toggle="agency-dropdown" data-filter=".'+slugify(agencyName)+'">'+agencyName+'</div> ');
+             $('.dropdown-pane').append( '<ul class="menu vertical agency-dropdown__menu"><li data-filter=".'+slugify(agencyName)+'">'+agencyName+'</li></ul>');
            } // Create buttons for each Agency for filtering - Foundation determines button type, Isotope determines filtering
         }
-
-        <!--  Creates Agency button - doesnt make it work though  - from Foundation-->
-
-
-
 
         for (var className in budgetSummary.classes) {
           if (budgetSummary.classes.hasOwnProperty(className)) {
@@ -190,7 +187,7 @@
 
 
         // bind filter button click
-        $('.controls').on( 'click', '.button', function() {
+        $('#agency-dropdown').on( 'click', 'li', function() {
           $('.js-grid-selected').removeClass('hide');
 
           var filterValue = $( this ).attr('data-filter');
@@ -201,13 +198,15 @@
         });
 
         // change is-checked class on buttons
-        $('.controls').each( function( i, buttonGroup ) {
+        $('#agency-dropdown').each( function( i, buttonGroup ) {
           var $buttonGroup = $( buttonGroup );
-          $buttonGroup.on( 'click', '.button', function() {
-            $buttonGroup.find('.button').addClass('hollow');
+          $buttonGroup.on( 'click', 'li', function() {
+            $buttonGroup.find('li').addClass('hollow');
             $( this ).removeClass('hollow');
           });
         });
+
+
 
         jQuery(document).foundation();
 
