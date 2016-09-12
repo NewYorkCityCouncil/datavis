@@ -62,26 +62,28 @@
     </h4>
 
 
-  <!--  <button class="dropdown button" type="button" data-toggle="agency-dropdown">Agency</button> --><!--  Creates Agency button - doesnt make it work though  - from Foundation-->
-    <button class="dropdown button" type="button" data-toggle="type-dropdown">Use Type</button> <!-- Creates Use Type button - doesnt make it work though -->
+<!-- <button class="dropdown button" type="button" data-toggle="agency-dropdown">Agency</button>--> <!--  Creates Agency button - doesnt make it work though  - from Foundation-->
 
 
-    <div class="dropdown-pane agency-dropdown" id="agency-dropdown" data-dropdown data-hover="true" data-hover-pane="true">
-      <ul class="menu vertical agency-dropdown__menu"> <!-- Populates Agency dropdown menue with items below -->
-        <!--<li><a href="#">Item 1A</a></li> -->
 
+  <div class="dropdown-pane agency-dropdown" id="agency-dropdown" data-dropdown data-hover="true" data-hover-pane="true">
+  <!--  <ul class="dropdown menu agency-dropdown__menu" data-dropdown-menu> --><!-- Populates Agency dropdown menue with items below -->
+<!--      <li><a href="#">Item 1A</a></li>-->
+    <!--</ul> -->
+  </div>
+
+
+  <!--  <button class="dropdown button" type="button" data-toggle="type-dropdown">Use Type</button> --><!-- Creates Use Type button - doesnt make it work though -->
+<!--  <div class="dropdown-pane type-dropdown" id="type-dropdown" data-dropdown data-hover="true" data-hover-pane="true"> -->
+<!--      <ul class="menu vertical type-dropdown__menu"> Populates Use Type dropdown menue with items below -->
+<!--        <li><a href="#">Item 2A</a></li>
+        <li><a href="#">Item 2A</a></li>
+        <li><a href="#">Item 2A</a></li>
+        <li><a href="#">Item 2A</a></li>
       </ul>
-    </div>
+    </div> -->
 
 
-    <div class="dropdown-pane type-dropdown" id="type-dropdown" data-dropdown data-hover="true" data-hover-pane="true">
-      <ul class="menu vertical type-dropdown__menu"> <!-- Populates Use Type dropdown menue with items below -->
-        <li><a href="#">Item 2A</a></li>
-        <li><a href="#">Item 2A</a></li>
-        <li><a href="#">Item 2A</a></li>
-        <li><a href="#">Item 2A</a></li>
-      </ul>
-    </div>
 
     <!-- Outline of page -->
     <p>
@@ -140,7 +142,7 @@
           var agencySlug = slugify(row.key[0]); // make Classes (0) tidy and create new variable for Agency
           var classSlug = slugify(row.key[1]); // make Agency (1) tidy and create new variable for Class
 
-          //Drawing blocks
+          //Drawing BLOCKS of BUDGET ITEMS
           var size = Math.sqrt(row.value / x); // size of blocks determined by equation with budget amount
           if(size < 1) {
             size = 1;
@@ -151,11 +153,11 @@
 
 
 
-        //Drawing buttons
+        //Drawing BUTTONS and DROPDOWN for FILTERING
         $('.js-agency-controls').append( '<button class="dropdown button" type="button" data-toggle="agency-dropdown">Agency</button> ');
         for (var agencyName in budgetSummary.agencies) {
           if (budgetSummary.agencies.hasOwnProperty(agencyName)) { //Compatibility
-             $('.dropdown-pane').append( '<ul class="menu vertical agency-dropdown__menu"><li data-filter=".'+slugify(agencyName)+'">'+agencyName+'</li></ul>');
+             $('.dropdown-pane').append( '<ul class="dropdown menu agency-dropdown__menu" data-dropdown-menu><li class="button hollow" type="button" data-filter=".'+slugify(agencyName)+'">'+agencyName+'</li></ul>');
            } // Create buttons for each Agency for filtering - Foundation determines button type, Isotope determines filtering
         }
 
