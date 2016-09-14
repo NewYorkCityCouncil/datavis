@@ -45,6 +45,7 @@
         text-transform: uppercase;
       }
 
+
     </style>
   </head>
   <body>
@@ -73,16 +74,16 @@
   </div>
 
 
-  <!--  <button class="dropdown button" type="button" data-toggle="type-dropdown">Use Type</button> --><!-- Creates Use Type button - doesnt make it work though -->
-<!--  <div class="dropdown-pane type-dropdown" id="type-dropdown" data-dropdown data-hover="true" data-hover-pane="true"> -->
-<!--      <ul class="menu vertical type-dropdown__menu"> Populates Use Type dropdown menue with items below -->
-<!--        <li><a href="#">Item 2A</a></li>
+<!-- <button class="dropdown button" type="button" data-toggle="type-dropdown">Use Type</button> --><!-- Creates Use Type button - doesnt make it work though -->
+
+<!-- <div class="dropdown-pane type-dropdown" id="type-dropdown" data-dropdown data-hover="true" data-hover-pane="true">
+   <ul class="menu vertical type-dropdown__menu"> Populates Use Type dropdown menue with items below -->
+<!--     <li><a href="#">Item 2A</a></li>
         <li><a href="#">Item 2A</a></li>
         <li><a href="#">Item 2A</a></li>
         <li><a href="#">Item 2A</a></li>
       </ul>
-    </div> -->
-
+ </div> -->
 
 
     <!-- Outline of page -->
@@ -147,8 +148,8 @@
           if(size < 1) {
             size = 1;
           }
-          $('.js-blocks-selected').append( '<div style="width:'+size+'px; height:'+size+'px;" class="block button success '+agencySlug+' '+classSlug+'" data-amount="'+row.value+'" data-amount-desc="'+(-1*row.value)+'"></div>'); //If filter items selected above, show budget item blocks filled in with Agency name and Class name
-          $('.js-blocks').append( '<div style="width:'+size+'px; height:'+size+'px;" class="block button success hollow '+agencySlug+' '+classSlug+'" data-amount="'+row.value+'" data-amount-desc="'+(-1*row.value)+'"></div>'); // For filter items not selected above, show hollow budget item blocks with Agency name and Class name
+          $('.js-blocks-selected').append( '<div style="width:'+size+'px; height:'+size+'px;" class="block button success '+agencySlug+' '+classSlug+'" data-amount="'+row.value+'" data-amount-desc="'+(-1*row.value)+'"></div>'); //If filter items selected above, show budget item blocks filled in
+          $('.js-blocks').append( '<div style="width:'+size+'px; height:'+size+'px;" class="block button success hollow '+agencySlug+' '+classSlug+'" data-amount="'+row.value+'" data-amount-desc="'+(-1*row.value)+'"></div>'); // For filter items not selected above, show hollow budget items
         });
 
 
@@ -163,7 +164,7 @@
 
         for (var className in budgetSummary.classes) {
           if (budgetSummary.classes.hasOwnProperty(className)) {
-            $('.js-use-controls').append( '<div class="button hollow" data-filter=".'+slugify(className)+'">'+className+'</div> ');
+            $('.js-use-controls').append( '<div class="button hollow" type="button" data-filter=".'+slugify(className)+'">'+className+'</div> ');
           } // Create hollow buttons for each budget class for filtering
         }
 
@@ -188,7 +189,7 @@
         $grid.isotope({ sortBy: 'amount' });
 
 
-        // bind filter button click
+        // bind filter DROPDOWN click
         $('#agency-dropdown').on( 'click', 'li', function() {
           $('.js-grid-selected').removeClass('hide');
 
@@ -199,7 +200,18 @@
           $grid.isotope({ filter: ':not('+filterValue+')' });
         });
 
-        // change is-checked class on buttons
+        // bind filter BUTTON click
+        $('.controls').on( 'click', '.button', function() {
+          $('.js-grid-selected').removeClass('hide');
+
+          var filterValueB = $( this ).attr('data-filter');
+          // use filterFn if matches value
+          // filterValue = filterFns[ filterValue ] || filterValue;
+          $gridSelected.isotope({ filter: filterValueB });
+          $grid.isotope({ filter: ':not('+filterValueB+')' });
+        });
+
+        // change is-checked class on DROPDOWN
         $('#agency-dropdown').each( function( i, buttonGroup ) {
           var $buttonGroup = $( buttonGroup );
           $buttonGroup.on( 'click', 'li', function() {
@@ -208,7 +220,14 @@
           });
         });
 
-
+        // change is-checked class on BUTTONS
+        $('.controls').each( function( i, buttonGroup ) {
+          var $buttonGroup = $( buttonGroup );
+          $buttonGroup.on( 'click', '.button', function() {
+            $buttonGroup.find('.button').addClass('hollow');
+            $( this ).removeClass('hollow');
+          });
+        });
 
         jQuery(document).foundation();
 
