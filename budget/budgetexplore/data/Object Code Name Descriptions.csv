@@ -1,0 +1,270 @@
+Object Code Number,Object Code Name,Description of Code Name
+1,FULL YEAR POSITIONS,Full time personnel
+4,FULL TIME UNIFORMED PERSONNEL,Full time uniformed personnel
+5,FULL TIME PEDAGOGICAL PRSONNEL,Full time pedagogical personnel
+9,REGULAR GROSS HOLDING CODE,Regular gross holding
+21,PART-TIME POSITIONS,Part-time positions
+22,SEASONAL POSITIONS,Seasonal positions
+31,UNSALARIED,Unsalaried
+35,CUSTODIAL ALLOWANCES,Custodial Allowances
+39,HEALTH CLUB REIMBURSEMENT,Health club reimbursement
+40,EDUC AND LICENCE DIFFERENTIAL,"A payment above base pay, based on education or license"
+41,ASSIGNMENT DIFFERENTIAL,"A payment above base pay, based on performing specific or unique tasks"
+42,LONGEVITY DIFFERENTIAL,"A payment above base pay, based on years of service"
+43,SHIFT DIFFERENTIAL,Extra compensation received for hours worked  are outside 8AM-5PM (or typical working hours)
+44,SALARY DIFF IN EXCESS MAXIMUM,Salary differential in excess maximum
+45,HOLIDAY PAY,Holiday pay
+46,TERMINAL LEAVE,Terminal leave or remainder of leave payments
+47,OVERTIME,Overtime pay
+48,OVERTIME UNIFORM FORCES,Overtime pay for uniformed forces
+49,BACKPAY - PRIOR YEARS,Backpay - Prior Years
+50,PMTS TO BENEFIC DECSD EMPLOYES,Payments to beneficiaries of deceased employees
+51,SALARY ADJUSTMENTS,Salary adjustments
+52,SEVERANCE PAYMENT,Severance payment
+53,AMOUNT TO BE SCHEDULED-PS,Personal services amounts still to be budgeted
+54,SALARY REVIEW ADJUSTMENTS,Salary review adjustments
+55,SALARY ADJUSTMENTS LABOR RSRVE,Salary adjustments labor reserve
+56,EARLY RET.TERMINAL LEAVE......,Early retirement terminal leave
+57,BONUS PAYMENTS,Bonus Payments
+58,NON-PENSIONABLE-PREPARATION PD,Non-pensionable-preparation PD
+60,INT ON DEF WAGES/LATE WAGE ADJ,Interest on deffered wages and late wages adjustment
+61,SUPPER MONEY,Supper money
+62,HEALTH INSURANCE PLAN CITY EMP,Health insurance plan for City employees
+63,DISABILITY BENEFITS INSURANCE,Disability benefits insurance
+64,ALLOWANCE FOR UNIFORMS,Allowance for uniforms
+65,SOCIAL SECURITY CONTRIBUTIONS,Social security contributions
+66,UNEMPLOYMENT INSURANCE,Unemployment insurance
+67,SUPPLEMENTAL EMPLOYEE WELF BEN,Supplemental employee welfare benefit
+68,FACULTY WELFARE BENEFITS,Faculty welfare benefits
+70,ACTUARIAL PENSION COSTS,Pension actuary costs to ensure solvency of retirement plans
+71,NON-ACTUARIAL PENSION COSTS,Non-actuarial pension costs
+72,CONTINGENT RESERVE FUND,Contingent Reserve Fund
+75,SUPPLEMENTAL PENSION FUND,Supplemental pension fund
+76,CULTURAL INSTITUT PENSION FUND,Cultural Institution Pension Fund
+77,TEACH RET SYS PENS FND RES #2,Teacher retirement system pension fund reserve #7
+79,TEACH RET SYS CONTINGNT RES SY,Teacher retirement system contingent reserve system
+80,TIAA-COLLEGE RET EQUITY FUND,TIAA (Teachers Insurance and Annuity Association) college retirement equity fund
+81,ANNUITY CONTRIBUTIONS,Annuity contributions
+82,POLICE ACTUARIAL PENSION FUND,Police actuarial pension fund
+83,FIRE ACTUARIAL PENSION FUND,Fire actuarial pension fund
+84,BOARD OF EDUCATION RETIRE. SYS,Board of Education Retirement System
+85,AWARDS/EXPENSES-WORKMENS COMP,Workers comp awards and expenses
+86,WORKMAN'S COMPENSATION OTHER,Workman's compensation other
+89,FRINGE BENEFITS-OTHER,Fringe benefits other
+90,UNRECOVERABLE PAYROLL EXPENSE,Unrecoverable payroll expense
+91,PARAPROFESSIONAL PER SESSION,"Paraprofessional (teacher aide, educational asisstant, etc) payment"
+94,ADDITIONAL PENSION ACCRUAL,Additional pension coverage based on years of service
+95,PAYROLL REFUND,Payroll refund
+99,ADD GROSS(& FRINGES) HOLD CODE,Additional gross pay
+100,Supplies and Materials General,Charge to this account all supplies not specifically classified in any of the other supply accounts.
+101,Printing Supplies,Charge to this account all printing and printing related costs that are not contractual in nature.
+105,Automotive Supplies and Materials,"Charge to this account all expenditures for items and substances solely or primarily used in connection with the operation and maintenance of automotive equipment. Examples of automotive supplies includes tires, SP.ark plugs, filters, motor oil, etc."
+106,Motor Vehicle Fuel,"Charge to this account all gasoline or alternative fuels related to operation of a motor vehicle. Included in this account are costs associated with the operation of automobiles, motorcycles, scooters, helicopters, trucks, buses, boats, and other vehicles that are motor propelled."
+107,Medical Surgical and Laboratory Supplies,"Charge to this account the cost of items the nature of which indicates that they are solely or primarily used in rendering medical, hospital, surgical, laboratory and veterinary services."
+109,Fuel Oil,"Charge to this account the cost of fuel oils which are consumed in the ordinary heating, lighting, cooking, and power operations in buildings, etc.,excluding natural gas and electric services purchased from utilities (see object 423 - Heat, Light, and Power)."
+110,Food and Forage Supplies,Charge to this account the cost of all provisions used for human and animal consumption.
+117,Postage,"Charge to this account payments for postal services in various forms, i.e., stamps, metered postage, postal cards, stamped value of stamped envelopes, registered mail, special delivery, overnight mail, and parcel post."
+130,Instructional Supplies,"Charge to this account all supplies used in the. direct instruction of children. This code includes, but is not limited to, such items as classroom supplies (chalk, crayons, maps, etc.), and other general instructional supplies (games, athletic supplies, library supplies not otherwise charged to object 338 and home economics supplies not otherwise charged to object 110)."
+132,Expenditures Relative to Commissaries,Charge to this account purchases of supplies for the commissaries in the various City prison and shelter facilities.
+133,Expenditures Relative to Manufacturing Industries,Charge to this account the purchase of raw materials which will be used in the manufacture of various goods by City prison inmates.
+169,Maintenance  Supplies,"Charge to this account materials used in repair, replacement and maintenance of heating, plumbing and refrigeration systems; small tools and machine parts; lumber, glass and paint for building maintenance; electrical supplies and other items such as unlubricated metal sheets and bars."
+170,Cleaning Supplies,"Charge to this account the purchase of custodial supplies (i.e., cleaning agents, waxes, polishes, sealers, sweeping compounds, sponges, disinfectants, mops, brooms, etc.)."
+199,Data Processing Supplies,"Charge to this account all supplies associated with the operation of personal computers, printers, and data processing equipment (i.e., computer diskettes, computer books and manuals, printing ribbons, computer software, etc.)."
+300,Equipment General,Charge to this account all equipment not specifically classified in any of the other equipment accounts
+302,Telecommunications Equipment,"Charge to this account the cost of purchasing telecommunications equipment; including telephones, answering machines, paging devices, fax machines, etc."
+304,Motor Vehicle Equipment,"Charge to this account the cost of engines, bodies and chassis when purchased as complete individual units, whether used for replacement or assembly purposes. Such items may be distinguished from purchases of material and parts because they comprise the major individual cost of the completed machine"
+305,Motor Vehicles,"Charge to this account the cost of all standard make and specially designed automobiles, buses, trucks and motorcycles, etc. of a self-propelling nature."
+307,Medical Surgical and Laboratory Equipment,"Charge to this account the cost of machinery, apparatus, surgical instruments and appliances, and other equipment especially designed for use by professional medical persons in the treatment of patients or laboratory work at medical institutions or laboratories."
+314,Office Furniture,"Charge to this account the cost of all metal and wood office furniture (i.e., desks, chairs, tables, bookcases, file cabinets)."
+315,Office Equipment,"Charge to this account the cost of office equipment (i.e., typewriters, calculators, fans, lamps, pencil sharpeners)."
+319,Security Equipment,"Charge to this account all payments associated with the purchase or rental of security equipment, guard dogs, burglar and fire alarms and armored cars"
+330,Instructional Equipment,"Charge to this account the purchase of classroom and instructional furniture, audiovisual equipment, and athletic equipment."
+332,Purchases of Data Processing Equipment,"Charge to this account the cost of personal computers, video display terminals, printers, etc."
+337,Books Other,"Charge to this account the purchase of all textbooks and workbooks; also, periodicals, magazines, subscriptions, newspapers,  etc. for other than library  purposes."
+338,Library Books,"Charge to this account the purchase of all books, periodicals, magazines, etc. which are used for library purposes."
+400,Contractual Expenditures General,Charge to this account all contractual expenditures not otherwise classified under a specific contractual expenditures account.
+402,Telephone and Other Communications,"Charge to this account the rental cost covering telephone systems, cellular phone systems, mobile phone systems, fax machines, dictagraphs, voice mail, answering machine services, paging devices, computer modems and other telephone equipment."
+403,Office Services ,"1) The cost of authorized membership dues and fees in technical associations and organizations; notary, recording, registration and searching fees. 2) Rentals of safe-deposit boxes, post office boxes, and water coolers which, due to their distinctive office service nature; are classified hereunder. 3) Inspection fees covering the cost of similar services with respect to buildings, structures, etc."
+404,TRAVELING EXPENSES,Traveling expenses
+406,PROFESSIONAL SVCS CONTRACTUAL,Professional services contractual payments
+407,Maintenance and Repairs - Motor Vehicle Equipment,Charge to this account all expenditures for repair of motor vehicle equipment performed by City employees.
+408,MAINTENANCE REPAIRS - GENERAL,Maintenance and repairs
+412,Rentals Miscellaneous Equipment,Charge to this account all rental expenditures not otherwise classified under a specific rental  code.
+413,Rentals Data Processing Equipment,Charge to this account the cost of rental of data processing equipment.
+414,Rentals Land.Buildings and Structures,"Charge to this account rental of land, buildings, stores. and offices etc. Where the rental charge includes miscellaneous items such as light, heat and power, water, repairs and janitor services, etc., these items are to be included in this account."
+415,PRINTING CONTRACTS,"All contractual printing and printing related costs other than printing supplies including stationary, forms, bulletins, manuals, pamphlets, etc."
+417,Advertising,"Charge to this account all expenditures associated with advertising for such purposes as personnel recruitment, financial notices, legal notices, purchase and sale notices, examination notices and all other associated advertising items (see object 465  Obligatory  County Expenditures)."
+419,SECURITY SERVICES,Payments associated with the employment of non-city employed security guards and correction officers.
+423,Heat Light and Power,"Charge to this account expenditures for heat. light and power services purchased from a utility company. Include in this account all costs for heat, light, and power (electric, natural gas, steam) purchased for buildings and structures, as well as street and park lighting (see object 109 - Fuel Oil)."
+427,Data Processing Services,Charge to this account all data processing services performed by other City agencies.
+431,Leasing of Miscellaneous Equipment,Charge to this account all equipment leasing expenditures not otherwise classified under a specific leasing code.
+432,Leasing of Pata Processjng Equipment,"Charge to this account the cost of leasing of data processing equipment, personal computers and printers, and the servicing thereof, if part of the lease agreement (if not, see object 613 - Data Processing Equipment Maintenance - Contractual)."
+451,Local Travel Expenditures - General,"Charge to this account all authorized expenditures for in-City meal, transportation, and incidental expenses incurred for general business meetings."
+452,Local Travel Expenditures - Special,"Charge to this account all authorized expenditures for in-City meal, transportation, registration, and incidental expenses incurred for education, training, professional/industry conferences and retreats."
+453,Non Local Travel Expenditures - General,"Charge to this account all authorized expenditures for out-of_ City meal, transportation, lodging, and incidental expenses incurred for general business meetings."
+454,Non Local Travel Expenditures - Special,"Charge to this account all authorized expenditures for out-of_ City meal, transportation, lodging, registration, and incidental expenses incurred for education, training, professional/industry conferences  and retreats."
+456,Higher Education - Student Assistance,Charge to this account payments used for matching funds for federally-funded student assistance.
+460,Special Expenditures,Charge to this account all special expenditures relative to elected officials and other criminaljustice activities.
+464,Court Costs During Phased Takeover by State of New York,Charge to this account City share of court costs during phased takeover by State of New York.
+465,Obligatory County Expenditures,Charge to this account mandatory county charges which are to be borne by the City of New York pursuant to State statutes. Examples of such charges follows: 1) Stenographer Fees - Fees paid for outside stenographic services and for the purchase of trial minutes for defendant's cases on appeal where defendant is unable to pay for same. 2) Expenditures for services of temporary stenographers to Grand Jury and to County Courts taking the place of regular stenographers. 3) Services of Experts - Services rendered by experts testifying in criminal actions. 4) Psychiatric Services - Services rendered to examine persons committed to institutions. 5) Printing - Printing of minutes on appeal procedures. 6) Fees and expenditures for Material Witnesses. 7) Services of Referees - Referees appointed by Court to examine accounts and inventories filed by committees representing incompetent persons.  8) Services of Guardians - Expenditures for guardians of infants'  property ordered paid by the Court 9) Payments to State Hospitals and Institutions - Amounts charged to New York City for commitment of the criminally insane to State institutions. 10) Acting Prison Guards - Appointed by sheriff of county under the law on his declaration of an existing emergency. 11) Bar Association - Expenditures in connection with disbarment proceedings. 12) Visiting County Judges - Allowances paid to upstate county judges assigned to New York City counties where local court calendars are crowded. 13) Advertising - Costs of juror and sheriff notices. 14) Premiums on Bonds - Costs of premiums on insurance bonds for certain officials.
+470,Payments to State Division of Youth,Charge to this account payments made to the New York State Division of Youth for all incarceration costs incurred by the detention of New York City juvenile offenders and juvenile delinquents in New York State facilities.
+473,Snow Removal Services,Charge to this account all costs associated with snow removal.
+485,TUITION EXPENSES - BOE ONLY,Tuition Expenses - BOE (Board of Education) only
+490,SPECIAL SERVICES,Special services
+493,Financial Assistance - College Students,Charge to this account payments under various programs for aid to conege students.
+494,Payments  for  Students Attending Community Colleges Outside the City,Charge to this account payments for students who are New York City residents attending community colleges outside the City.
+496,Allowances to Participants,Charge to this account allowances to participants such as stipends for participants in programs.
+499,Other Expenditures - General,This account cannot be charged directly. This is to be used as a holding account only.
+500,Social Services - General,Charge to this account all social service payments to providers not otherwise classified under a specific social services object code.
+502,Children's  Charitable Institutions,"Charge to this account payments made through agreements with other City agencies to providers for per diem maintenance and miscellaneous payments for children in a variety of foster care placements. Also included in this account is an allocation for adoption fees and costs incidental to adoption procedures, such as legal fees."
+503,CHILD WELFARE SERVICES,"Contracts with voluntary child care agencies providing services to families with children deemed at risk of foster care placement. Services include family counseling, intensive case management, drug treatment and housing subsidies. Other services include training of child social workers, adoption counseling and enhanced services for hospitalized children who are or may become wards of CWA. This also includes payments to providers for the care and maintenance of 1) non-foster care handicapped children in need of special education and treatment facilities, and 2) disabled or handicapped foster children."
+504,Direct foster Care of Children,"Charge to this account payments to providers relating to children in the direct care of the Child Welfare Administration, whether in Foster Boarding Home or Congregate Care settings. This includes board payments to foster parents, as well as payments for medical expenditures, client-related expenditures, expenditures associated with operating congregate care facilities, and miscellaneous expenditures to meet the children's needs while they are being processed in field offices."
+505,Subsidized Adoption,Charge to this account all monthly subsidy payments made to eligible families who adopt hard to place children.
+509,Non-Grant Charges,"Charge to this account payments to providers made for services that are subsidiary to the Public Assistance program, but separate from the base grant. These services include eviction prevention programs, residential drug and aicohol treatment programs, funds for burial assistance and medical examinations for public assistance applicants and recipients to determine eligibility or disability"
+510,Homeless Family Services,"Charge to this account payments made through agreements with other City agencies to providers for all expenditures incurred while providing resources such as food, security, medical services and other miscellaneous support items to homeless families residing in emergency or transitional settings."
+511,AIDS Services,"Charge to this account payments made through agreements with other City agencies to providers for housing, counseling, testing, education, social services and other miscellaneous items relevant to serving persons with AIDS and HIV illness."
+512,Employment Services,"Charge to this account payments made through agreements with other City agencies to providers for assisting Public Assistance recipients in finding employment and reducing their welfare dependency through job placement, job training, work experience programs, provision of children's day care and other related services."
+513,Home Energy Assistance Program,"Charge to this account all direct payments made under the ""Home Energy Assistance Program"" to eligible households for the purpose of meeting energy  and related  bills."
+514,Aid to Dependent Children,"Charge to this account all direct payments made to or for the benefit of persons certified by the Department of Social Services as eligible for Aid to Dependent Children (ADC), as defined by the Social Welfare Law."
+515,Payments for Tuberculosis Treatment,"Charge to this account all payments made to hospitals for the prevention, care, support and treatment of tuberculosis."
+516,Payments for Home Relief,"Charge to this account all payments made to or for the benefit of persons certified by the Department of Social Services as eligible for Home Relief, as defined by the Social Welfare Law."
+518,Medical Assistance,"Charge to this account all payments to providers made for hospitalization, lab fees, dental work, and all other medical assistance needed by those persons found eligible for such relief."
+519,Children's Voluntary Agency Medicaid,Charge to this account all payments to providers made in the form of per diem rates set by New York State for Medicaid eligible children in voluntary agency placements.
+532,Mental  Health Services  - Health  & Hospitals Corporation,Charge to this account all payments to Health & Hospitals Corporation made while providing inpatient and outpatient community mental health services.
+543,Special   Educational   Facilities  for   Institutionalized and Foster Care,"Charge to this account payments to educational facilities for the benefit of foster care children and the institutionalized, whose placements primarily preclude attendance in New York City schools, as well as having special educational needs requiring enhanced services."
+552,Day Care of Children,"Charge to this account payments made through agreements with other City agencies to providers for the day care services for children where the parents or guardians are unavailable or unable to care for the child during the day or a portion of the day, as well as payments made for rent and utility costs at directly based sites, centrally purchased insurance costs, program related audits and infrastructure upkeep of day care centers."
+571,Donations to Patients. Inmates and Discharged Prisoners,"Charge to this account all allowances for clothing, etc., and cash donations given to patients, inmates and discharged prisoners at the various institutions. Also include in this account donations of meal money to suspects in custody of the police."
+600,Contractual Services - General,Charge to this account all expenditures that are personal services or technical in nature not otherwise classified under a specific contractual services account.
+602,Telecommunications Maintenance - Contractual,"1)  Expenditures for telephone installation charges; service and maintenance of telecommunication equipment and systems (voice and data), i.e., telephone systems, cellular phone systems, mobile phone systems, fax machines, dictagraphs, voice mail, answering machine services, paging devices, computer modems and other telephone equipment. 2)The cost of rentals of time from broadcasting companies for communication activities."
+607,Maintenance and Repairs - Motor Vehicle Equipment - Contractual,Charge to this account all expenditures for repair of motor vehicle equipment perfonned by other than City employees.
+608,Maintenance and Repairs  General - Contractual,Charge to this account all maintenance and repair expenditures not otherwise classified under a specific maintenance and repair code.
+612,Office Equipment Maintenance  Contractual,"Charge to this account all expenditures for the maintenance and repair of all office equipment, i.e.: calculators, office furniture, photocopying machines, typewriting machines, etc."
+613,Data Processing Equipment Maintenance - Contractual,Charge to this account all expenditures for the maintenance and repair of all data processing equipment.
+615,Printing Services - Contractual,"Charge to this account all contractual printing and printing related costs other than printing supplies (see object 101 - Printing Supplies) including stationery, fonns, bulletins, manuals, pamphlets, etc."
+616,Community Consultants - Contractual,Charge to this account contracts with community based not_ for-profit organizations providing technical assistance to low and middle income clientele.
+617,PAYMENTS TO COUNTERPARTIES,Expenditures associated with the support of the City's financing program. This includes all payments to counterparties of interest rate exchange agreements.
+618,Financing Costs - Contractual,"Charge to this account expenditures associated with the support of the City's financing program. This includes all payments to financial advisors, board and disclosure counsel, fees paid to credit-rating agencies, and all other  costs."
+619,Security Services - Contractual,Charge to this account all payments associated with the employment of non-city employed security guards and correction officers.
+620,WASTE DISPOSAL,Payments made to handle the private exporting of municipal waste on behalf of the City of New York Department of Sanitation.
+622,Temporary Services - Contractual,"Charge to this account all payments, fees, and commissions associated with outside services for receptionist, secretarial, stenographic, typing, clerical, keypunch, messengers (including Wildcat Service Corp.), court reporting and transcribing, handy persons, etc., and any other services of a temporary nature (excluding professional services)."
+624,Cleaning Services - Contractual,"Charge to this account the cost of cleaning services provided by outside contractors for rubbish removal, janitorial services, waxing and washing floors, window cleaning, cleaning of curtains, rugs, drapes, disinfecting and exterminating."
+626,Investment Costs - Contractual,"Charge to this account all expenditures associated with the support of the City's investment program. This includes all payments, fees and commissions to investment advisors, managers and custodians, and consultants for the various retirement system pension funds."
+629,In-Rem Maintenance Costs  Contractual,"Charge to this account the cost of contracts entered into with handypersons, building superintendents, and other workers to perform maintenance work for In-Rem property management programs."
+633,Transportation Services - Contractual,"Charge to this account all authorized expenditures for the transportation of pupils, the elderly, the disabled, inmates, and any car service contracts. Includes moving expenses, and the unpacking, trucking, assembling, and dismantling of voting machines."
+640,Social Services - General - Contractual,Charge to this account all social service payments to providers not otherwise classified under a specific social services object code.
+641,Protective Services for Adults - Contractual,"Charge to this account payments to providers for services related to the care and maintenance of adults who are at risk of neglect, abuse or exploitation and are unable to protect themselves due to either mental or physical disability."
+642,Children's Charitable Institutions - Contractual,"Charge to this account payments to providers for per diem maintenance and miscellaneous payments for children in a variety of foster care placements. These placements are purchased on a contractual basis by the Child Welfare Administration from voluntary child care agencies. Also included in this code is an allocation for adoption fees and costs incidental to adoption procedures, such as legal fees."
+643,Child Welfare Services - Contractual,"Charges to this account include contracts with voluntary child care agencies providing services to families with children deemed at risk of foster care placement. Services include family counseling, intensive case management, and drug treatment. Other services chargeable to this code include training of child social workers, and adoption counseling. This code also includes payments to providers for the care and maintenance of 1) non-foster care handicapped children in need of special education and treatment facilities, and 2) disabled or handicapped foster children whose problems preclude placement with the voluntary agencies."
+647,Home Care Services - Contractual,"Charge to this account payments to providers for personal home care services to elderly and disabled individuals. Also charge the costs of insurance, auditing and other costs associated with companies that deliver these services."
+648,Homemaking Services - Contractual,"Charge to this account payments to providers for personal homemaking services primarily to families, that may include aged, blind and disabled adults in order to strengthen and safeguard their functioning in their own homes. Services also include the teaching of independent living skills so clients may eventually function without the benefit of this service and the care of ctiildren in their own homes due to illness, incapacity or absence of parents or guardians."
+649,Non-Grant Charges - Contractual,"Charge to this account payments to providers made for services that are subsidiary to the Public Assistance program, but separate from the base grant. These services include eviction prevention programs, residential drug and alcohol treatment programs, funds for burial assistance and medical examinations for public assistance applicants and recipients to determine eligibility or  disability."
+650,Homeless Family Services - Contractual,"Charge to this account payments to providers for all expenditures incurred while providing resources such as food, security, medical services and other miscellaneous support items to homeless families residing in emergency or transitional settings."
+651,AIDS Services - Contractual,"Charge to this account payments to providers for housing, counseling, testing, education, social services and other miscellaneous items relevant to serving persons with AIDS and HIV illness."
+652,Day Care of Children - Contractual,"Charge to this account payments to providers for day care services for children where the parents or guardians are unavailable or unable to care for the child during the day or a portion of the day, as well as payments made for rent and utility costs at directly based sites, centrally purchased insurance costs, program related audits and infrastructure upkeep of day care centers."
+653,Head St.art - Contractual ,"Charge to this account payments to providers relating to the Head Start Program, which provide comprehensive health.nutritional, educational, social and other services to eligible preschool children. In addition to the direct provision of day care services, this code may accommodate centrally purchased insurance costs, pension costs, program related audits and infrastructure upkeep of day care centers."
+655,Mental Hygiene Services - Contractual,"Charge to this account all payments to providers made to fulfill voluntary contractual services for outpatient and inpatient clinics, as well as psychiatric evaluation diagnosis and treatment services."
+657,Hospitals Contracts - Contractual,Charge to this account all expenditures incurred while fulfilling contractual obligations with Montefiore and St. Vincent's hospitals to provide health care for prisoners. 
+658,Veterinary Services - Contractual,"Charge to this account all expenditures incurred while fulfilling contractual obligations for the care, support and treatment provided by the Center for Animal Control."
+659,Homeless Individual Services - Contractual,"Charge to this account all payments to providers made for services to homeless individuals including emergency housing, outreach,food, counseling, medical services and other support services."
+660,Economic Development - Contractual,Charge to this account all p.ayments made for economic development related services.
+662,Employment Services - Contractual,"Charge to this account payments to providers for assisting Public Assistance recipients in finding employment and reducing their welfare dependency through job placement, job training, work experience programs, provision of children's day care and other  related services."
+665,Legal Aid Society - Contractual,"Charge to this account all payments incurred by or in association with the Legal Aid Society. Such payments shall include but not be limited to the maintenance of the Legal Aid Society, Emergency Felony Case Processing Programming, and the Special Narcotics Case Program."
+667,Payments to Cultural  Institutions - Contractual,Charge to this account payments made by Cultural Institutions to various cultural contractors.
+668,Bus  Transportation  for  Reimbursable  Programs - Contractual,"Charge to this account all payments for bus transportation provided for Federal, State or other funded programs."
+669,Transportation of Pupils - Contractual,Charge to this account payments made by the Board of Education to the New York City Transit Authority or to private bus lines under contract for the transportation of pupils to and from public and non-public schools.
+670,Payments to Contract Schools and Corporate Schools for Handi capped Children - Contractual,Charge to this account all payments to contract schools for services to handicapped children where the Board of Education does not have adequate facilities.
+671,Training Program for City Employees - Contractual,Charge to this account all expenditures in connection with the training of City employees in the performance of their duties by other than City employees.
+672,CHARTER SCHOOLS,Payments made to charter schools under contract with the Department of Education.
+676,Maintenance and Operation of Infrastructure - Contractual,"Include all expenditures for maintenance, operation, repairs, replacements and alterations to all property, including but not limited to parks and recreational facilities, buildings, outdoor lighting and traffic signal equipment."
+678,Payments to Delegate Agencies - Contractual,"Charge to this account payments under the Federal Government's Economic Opportunity Program for programs such  as Head Start, Medicare, etc."
+681,"Professional  Services  -  Accounting,  Auditing and Actuarial Services - Contractual","Charge to this account all payments for professional accounting, auditing or actuarial services performed by other than City employees."
+682,Professional Services - Legal Services - Contractual,Charge to this account all payments for professional legal services performed by other than City employees {except Legal Aid).
+683,Professional  Services  -  Engineering  and Architectural Services - Contractual,Charge to this account all payments for. professional engineering or architectural services performed by other than City employees.
+684,Professional Services - Computer Services - Contractual,Charge to this account all payments for professional computer related  services performed by other than City employees.
+685,Professional  Services  -  Direct  Educational  Services to Students,Charge to this account all payments for professional educational related services performed by other than City employees.
+686,Professional Services - Other - Contractual,"Charge to this account all payments for all other professional services such as management analysis, special studies and other advisory services, etc., performed by other than City employees that are not otherwise classified under a specific professional service code."
+688,Bank Charges - Public Assistance Accounts - Contractual,"Charge to this account the cost of contracts entered into with banks for check writing fees, stop payment fees, reimbursement to vendor fees, and any other fees associated with the cost of maintaining accounts."
+689,Professional  Services-  Curriculum  and Professional Development,Charge to this account payments to providers for indirect services and services to staff such as professional and cur_riculum development.
+695,Educational  and  Recreational  Expenditures  for Youth  Programs  - ContractuI,Charge to this account payments to providers for educational and recreational activities for youth programs.
+700,Fixed Charges - General,Charge to this account all charges not otherwise classified under a specific fixed charges object code.
+701,Taxes and Licenses,"Charge to this account all payments made for real estate taxes and assessments, water taxes, automobile registration fees, and other miscellaneous licenses and fees pertinent to City business."
+702,Payments to Staten Island Rapid Transit Operating Authority,Charge to this account all operating assistance payments made in connection with the operation of the Staten Island Rapid Transit System.
+703,Advance To State of New York For CUNY Senior College Expenditures,Charge to this account reimbursable payments made by the City for the funding of State education at the Senior College level. These payments encompass all spending and facets deemed as necessary college expenditures.
+704,Payments for Surety Bonds and Insurance Premiums,"Charge to this account premium payments for surety bonds and other insurance policies,"
+706,Prompt Payments Interest,This account cannot be charged directly. Late vendor payments for certain payment voucher types and specified objects automatically generate interest payments which are coded to this account.
+707,Crime Prevention Injury Award,"Charge to this account awards made to persons other than peace officers for the death of or injury to, which was caused while such person was engaged on streets or on a City-owned and publicly-operated transit facility in attempting to prevent the commission of a crime against the person or property of another, preserve the peace or prevent public disturbances."
+708,Awards to Widows  or Other Dependents of the New York City Uniformed Forces Killedin the Performance of Duty,"Charge to this account awards made to widows or dependents of police officers, firefighters, etc. killed in the performance of duty."
+709,Awards to Beneficjarjes  of City  Employees Other Than Uniformed Forces Killed in the Performance of Duty,Charge to this account awards made to beneficiaries of City employees other than uniformed forces killed in the performance of duties.
+713,MCT MOBILITY TAX,Metropolitan commuter transportation mobility tax
+714,Payments to Health and Hospitals Corporation,"Charge to this account lump sum payments to Health and Hospitals Corporation (HHC) for hospital care services, and various expenditures applicable to HHC operations including Job Training Partnership Act expenditures, employee fringe benefits, debt service and water charges."
+715,Payments to Cultural Institutions,Charge to this account payments made by the City to subsidize various cultural institutions.
+716,Payments to Libraries,Charge to this account payments made by the City to subsidize the libraries.
+718,Payments for Special Schooling - Handicapped Children,Charge to this account payments made to other school districts and institutions for the special schooling of handicapped children.
+719,Judgments and Claims,"Charge to this account all payments made to claimants, other than City employees, as settlement of claims before suit, or for judgments rendered on account of personal injuries, property damage or those arising out of legal disputes with the City, and no fault automobile accidents caused by the City or its employees while engaged in performing official duties.."
+720,MISCELLANEOUS AWARDS,Miscellaneous awards
+724,Job Training Partnership Act - Wages,"Charge to this account all payments made to those persons who are eligible and participate in the summer youth program, as well as those who are eligible for stipends under the job training program."
+725,Job Training Partnership Act - Fringes,"Charge to this account all payments for fringe benefits, i.e. worker's compensation, social security, etc., for those who are eligible and participate in the summer youth and job training programs."
+730,Tuition Payments for  Out-of-City  Foster Care,Charge to this account tuition payments for New York City resident pupils under foster care in locations outside of New York City.
+731,Health Service Charges for Out-of-City  Care,"Charge to this account payments for speech, psychological, welfare, and health costs for New York City pupils attending non-public schools outside of New York City."
+732,Miscellaneous Awards,"Charge to this account payments made to City employees for suggestions and other awards, as well as those miscellaneous awards not otherwise classified under a specific object code."
+735,Payments for Cultural Programs/Services,Charge to this account all expenditures incurred while fulfilling contractual obligations for cultural programs and services.
+736,Payments for Water/Sewer Usage,Charge to this account all payments made for New York City water and sewer usage.
+740,PAYMENTS TO PROPERTY OWNERS,Payments to property owners
+741,PAYMENTS TO CONTRACTORS,Payments to contractors
+745,IRT RELIEF/LIRR GRADE CROSSNGS,Interborough Rapid Transit Company (NYC Subway) reilef and Long Island Rail Road LIRR grade crossings
+758,Federal Section 8 Rent Subsidy,"Charge to this account subsidy payments made to owners of multiple dwellings and/or individual tenants in order to reduce housing rentals, as provided in Section 8 of the Housing Assistance Program and similar programs."
+760,Reduced Fares for the Elderly,Charge to this account all payments made to the Transit Authority and private bus companies in connection with the reduced fares for the elderly program.
+762,Subsidy to Private  Bus  Companies,Charge to this account subsidies paid to private bus companies.
+763,Payments to the Metropolitan Transportation Authority for Maintenance of Stations,Charge to this account all payments made to the Metropolitan Transportation Authority for maintenance of stations.
+767,TA Operating Assistance - 18b,Charge to this account all payments made to the Transit Authority to fulfill obligations and terms of the Operating Assistance Match as required by State Finance Section 18b.
+770,Payments to New York City Housing Authority,Charge to this account subsidy payments made to the New York City Housing Authority for operational needs in the housing projects.
+771,Payments to Military and Other Units,Charge to this account all payments made for the purchase of flags and other veteran related items and activities.
+772,New  York  City  Transit  Authority  -  Reduced  Fares for Schoolchildren,Charge to this account payments made to the New York City Transit Authority for transportation of pupils to and from public and non-public schools in carriers operated by the Transit Authority. Payment in this code represents the difference between the total cost of transportation and the amount the pupil pays toward the total cost.
+773,Private   Bus   Companies   -  Reduced   Fares for Schoolchjldren,Charge to this account payments made to private bus lines for transportation of pupils to and from public and non-public schools in carriers operated by private transportation companies. Payment in this code represents the difference between the total cost of transportation and the amount the pupil pays toward the total cost.
+776,Payments to Metropoljtan Transportation Authority,Charge to this account payments made to the Metropolitan Transportation Authority to fulfill terms of the Commuter Railroad Operating Assistance Match.
+778,PAYMNTS PRIVATE BUS COMPANIES,Payments to private bus companies
+780,Campaign Finances,Charge to this account all payments made to those persons enrolled inthe campaign finance program and who are running for City-wide public office.
+782,Unallocated Contingency Reserve,Funds are appropriated to this account as a reserve for unanticipated revenue shortfalls or expenditure overruns during the course of the fiscal year. This account cannot be charged directly.
+790,TRANSFERS TO OTHER FUNDS,Transfers to other funds
+791,Tuition Payments to Other School Districts,Charge to this account payments made by the Board of Education to other school systems for tuition costs of pupils who are legal residents of New York  City.
+793,Payments  to Fashion Institute  of Technology,Charge to this account payments made by the Board of Education as sponsoring agent on behalf of the Fashion  Institute  of Technology.
+794,Training Program for City Employees,Charge to this account all expenditures in connection with the training of City employees in the performance of their duties by City employees.
+796,PMTS DEPUTY STATE COMPTROLLER,Payments to Deputy State Comptroller
+797,SALES TAX  REVENUES ALLOCATED TO FCB,Sales tax revenues allocated to Financial Control Board
+810,Interest on Bonds - General,"Charge to this account amounts transferred to the Debt Service Fund for the payment of interest on general obligation bonds for purposes other than those in accounts #811,#812, #813 and #814."
+830,Interest on Notes - Funded Debt,Charge to this account amounts transferred to the Debt Service Fund for the payment of interest on short-term obligations issued within the 2 1/2 percent tax limitation.
+850,Redemption of General Obligation Bonds - General,"Charge to this account amounts transferred to the Debt Service Fund to redeem general obligation bonds issued for purposes other than those specified in accounts #848, #849, #852 and #854."
+870,Blended Component Units,Charge to this account amounts required to pay lease payments to blended component units.
+999,Other Than Personal Services Holding Code,For default purposes only.
+10E,AUTOMOTIVE SUPPLIES & MATERIAL,Automotice supplies and materials
+10F,MOTOR VEHICLE FUEL,Motor vehicle fuel
+10X,SUPPLIES + MATERIALS - GENERAL,Supplies and materials
+11X,FOOD & FORAGE SUPPLIES,Food and forage supplies
+40B,TELEPHONE & OTHER COMMUNICATNS,Telephone and other communications
+40G,MAINT & REP OF MOTOR VEH EQUIP,Maintenance and repair of motor vehicle equipment
+40X,CONTRACTUAL SERVICES-GENERAL,All expenditures that are personal services or technical not otherwise classified under a specific contractual services account.
+41B,RENTALS OF MISC.EQUIP,Rental of miscellaneous equipment
+41D,RENTALS - LAND BLDGS & STRUCTS,"Rental of land, buildings and structures"
+42C,HEAT LIGHT & POWER,"Heat, light, and power"
+42G,DATA PROCESSING SERVICES,Data processing services
+46X,SPECIAL EXPENSE,Special expense
+50D,DIRECT FOSTER CARE OF CHILDREN,Direct foster care of children
+50I,NON-GRANT CHARGES,Non-grant charges
+50X,SOCIAL SERVICES - GENERAL,Social services
+51A,AIDS SERVICES,"Payments to providers providing housing, counseling, testing, education, social services and other miscellaneous items relevant to serving persons with AIDS and HIV illness."
+51B,EMPLOYMENT SERVICES,"Assistance in finding employment through job placement, job training, work experience programs, provision of children's day care and other related services."
+51D,AID TO DEPENDENT CHILDREN-FAMILY ASSIST.,Income support aid to families with children
+51F,PAYMENTS FOR HOME RELIEF-SAFETY NET,Payments for home relief - safety net
+51X,HOMELESS FAMILY SERVICES,"Payments to providers for resources such as food, security, medical services and other miscellaneous support items to homeless families residing in emergency or transitional settings."
+53B,MENTAL HEALTH SERVICES HHC,Mental health services Health and Hospitals Corporation
+55B,DAY CARE OF CHILDREN,"Payments to providers made for the day care services for children where the parents or guardians are unavailable or unable to care for the child during the day or a portion of the day, as well as payments made for rent and utility costs at directly based sites, centrally purchased insurance costs, program related audits and infrastructure upkeep of day care centers."
+79D,TRAINING CITY EMPLOYEES,Training City employees
+X41,PY ASSIGNMENT DIFFERENTIAL,"A payment above base pay, based on performing specific or unique tasks"
+X42,PY LONGEVITY DIFFERENTIAL,"A payment above base pay, based on years of service"
+X43,PY SHIFT DIFFERENTIAL,Extra compensation received for hours worked  are outside 8AM-5PM (or typical working hours)
+X45,PY HOLIDAY PAY,Holiday pay
+X46,PY TERMINAL LEAVE,Terminal leave or remainder of leave payments
+X47,PY OVERTIME,Overtime pay
+X56,PY EARLY RET. TERMINAL LEAVE..,Early retirement terminal leave
+X57,BONUS- NONPENSIONABLE,Bonus Payments Nonpensionable
+(blank),,
