@@ -2,9 +2,9 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Adopted Budget FY 2017 - Agencies' Spending</title>
+        <title>Adopted Budget FY 2016 - Top Ten Agencies for Spending</title>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
 
     </head>
     <body>
@@ -16,16 +16,85 @@
 Chart.defaults.global.responsive = true
 Chart.defaults.global.maintainAspectRatio = true
 Chart.defaults.global.legend.display = false
+Chart.defaults.global.tooltips.bodyFontSize = 16
 
-var ctx = document.getElementById("doughnut4");
+
+
+
+var ctx = document.getElementById("doughnut3");
 
 var myChart = new Chart(ctx, {
     type: 'doughnut',
     data: {
-        labels: ["Department of Education","Miscellaneous (Health Insurance, Social Security, Reserves, Payments to MTA) ","Pension Contributions","Department of Social Services","Police Department","Debt Service","Admin For Children's Services","Fire Department","Department of Sanitation","Department of Health and Mental Hygiene","Department of Environmental Protection","Department of Correction","Department of Homeless Services","Housing Preservation and Development","Department of Citywide Admin Service","City University of New York","Department of Transportation","Department of Youth and Community Development","Department of Info Technology and Telecommunications","Department of Parks and Recreation","Department of Design and Construction","Libraries","District Attorney","Health and Hospitals Corp","Department For the Aging","Department of Finance","Department of Small Business Services","Law Department","Department of Cultural Affairs","Department of Buildings","Mayoralty","Board of Elections","Financial Information Service Agency","Office of the Comptroller","Department of Probation","NYC Taxi and Limousine Commission","City Council","Department of Emergency Management","Department of Investigation","Department of City Planning","Department of Consumer Affairs","Office of Admin Trials and Hearings","Borough Presidents","Office of Prosecution Spec Narcotics","Community Boards","Office of Payroll Administration","Civilian Complaint Review Board","Campaign Finance Board","Commission on Human Rights","Business Integrity Commission","Department of Records and Information Services","Office of the Actuary","Independent Budget Office","Landmarks Preservation Comm.","City Clerk","Office of Administrative Tax Appeals","Public Administrators","Department of Veterans' Services","Public Advocate","Board of Correction","Conflicts of Interest Board","Office of Collective Bargaining","Civil Service Commission","Equal Employment Practices Commission"],
+        labels: [
+                "Department of Education",
+                "Miscellaneous (Health Insurance, Social Security, Reserves, Payments to MTA) ",
+                "Pension Contributions",
+                "Department of Social Services",
+                "Police Department",
+                "Debt Service",
+                "Admin For Children's Services",
+                "Fire Department",
+                "Department of Sanitation",
+                "Department of Health and Mental Hygiene",
+                "Department of Environmental Protection",
+                "Department of Correction",
+                "Department of Homeless Services",
+                "Housing Preservation and Development",
+                "Department of Citywide Admin Service",
+                "City University of New York",
+                "Department of Transportation",
+                "Department of Youth and Community Development",
+                "Department of Info Technology and Telecommunications",
+                "Department of Parks and Recreation",
+                "Department of Design and Construction",
+                "Libraries",
+                "District Attorney",
+                "Health and Hospitals Corp",
+                "Department For the Aging",
+                "Department of Finance",
+                "Department of Small Business Services",
+                "Law Department",
+                "Department of Cultural Affairs",
+                "Department of Buildings",
+                "Mayoralty",
+                "Board of Elections",
+                "Financial Information Service Agency",
+                "Office of the Comptroller",
+                "Department of Probation",
+                "NYC Taxi and Limousine Commission",
+                "City Council",
+                "Department of Emergency Management",
+                "Department of Investigation",
+                "Department of City Planning",
+                "Department of Consumer Affairs",
+                "Office of Admin Trials and Hearings",
+                "Borough Presidents",
+                "Office of Prosecution Spec Narcotics",
+                "Community Boards",
+                "Office of Payroll Administration",
+                "Civilian Complaint Review Board",
+                "Campaign Finance Board",
+                "Commission on Human Rights",
+                "Business Integrity Commission",
+                "Department of Records and Information Services",
+                "Office of the Actuary",
+                "Independent Budget Office",
+                "Landmarks Preservation Comm.",
+                "City Clerk",
+                "Office of Administrative Tax Appeals",
+                "Public Administrators",
+                "Department of Veterans' Services",
+                "Public Advocate",
+                "Board of Correction",
+                "Conflicts of Interest Board",
+                "Office of Collective Bargaining",
+                "Civil Service Commission",
+                "Equal Employment Practices Commission"
+                ],
         datasets: [{
-            label: 'FY17 Adopted Budget',
-            backgroundColor:["#80D8FF","#82B1FF","#84FFFF","#8C9EFF","#A7FFEB","#B388FF","#B9F6CA","#CCFF90","#CFD8DC","#D7CCC8","#EA80FC","#F4FF81","#F5F5F5","#FF80AB","#FF8A80","#FF9E80","#FFD180","#FFE57F","#FFFF8D", "#80D8FF","#82B1FF","#84FFFF","#8C9EFF","#A7FFEB","#B388FF","#B9F6CA","#CCFF90","#CFD8DC","#D7CCC8","#EA80FC","#F4FF81","#F5F5F5","#FF80AB","#FF8A80","#FF9E80","#FFD180","#FFE57F","#FFFF8D", "#80D8FF","#82B1FF","#84FFFF","#8C9EFF","#A7FFEB","#B388FF","#B9F6CA","#CCFF90","#CFD8DC","#D7CCC8","#EA80FC","#F4FF81","#F5F5F5","#FF80AB","#FF8A80","#FF9E80","#FFD180","#FFE57F","#FFFF8D", "#80D8FF","#82B1FF","#84FFFF","#8C9EFF","#A7FFEB","#B388FF","#B9F6CA","#CCFF90","#CFD8DC","#D7CCC8","#EA80FC","#F4FF81","#F5F5F5","#FF80AB","#FF8A80","#FF9E80","#FFD180","#FFE57F","#FFFF8D"],
+            label: 'FY16 Adopted Budget',
+            backgroundColor:["#d05d4e","#E07B3B","#EF9929","#FFB716","#C0B332","#82B04E","#43AC6A","#7CBC50","#B6CB37","#EFDB1D","#AFAF4B","#6F8278","#2f56a6","#4960BB","#6469D0","#7E73E5","#8A65CA","#9657AE","#A24993","#A1597D","#A16968","#A07952","#d05d4e","#E07B3B","#EF9929","#FFB716","#C0B332","#82B04E","#43AC6A","#7CBC50","#B6CB37","#EFDB1D","#AFAF4B","#6F8278","#2f56a6","#4960BB","#6469D0","#7E73E5","#8A65CA","#9657AE","#A24993","#A1597D","#A16968","#A07952"],
             borderColor: "#eeeeee",
             borderWidth: 1,
             hoverBackgroundColor: "#9E9E9E",
