@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Capital Budget FY2017</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
+
+    </head>
+    <body>
+
+
+<canvas id="doughnut6" width=auto max-height="400"></canvas>
+<script>
+
+Chart.defaults.global.responsive = true
+Chart.defaults.global.maintainAspectRatio = true
+Chart.defaults.global.legend.display = false
+Chart.defaults.global.tooltips.bodyFontSize = 14
+
+
+
+
+var ctx = document.getElementById("doughnut6");
+
+var myChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        labels: [
+          "Education",
+          "Water and Sewers",
+          "Transportation",
+          "Parks and Recreation",
+          "Technology",
+          "Housing and Buildings",
+          "Economic Development",
+          "Public Safety",
+          "Health",
+          "Fire and Criminal Justice Services",
+          "Cultural Affairs",
+          "Sanitation and Solid Waste",
+          "Libraries",
+          "Courts and Legal Services",
+          "Public Buildigns",
+          "Higher Education",
+          "Social Services & Children's Services",
+          "Human Resources Administration",
+          "Property",
+          "Aging",
+                ],
+        datasets: [{
+            label: 'FY17 Adopted Budget',
+            backgroundColor:["#43AC6A","#4960BB","#6469D0","#6F8278","#7CBC50","#7E73E5","#82B04E","#8A65CA","#9657AE","#A07952","#A1597D","#A16968","#A24993","#AFAF4B","#B6CB37","#C0B332","#d05d4e","#E07B3B","#EF9929","#EFDB1D","#FFB716"],
+            borderColor: "#eeeeee",
+            borderWidth: 1,
+            hoverBackgroundColor: "#9E9E9E",
+            hoverBorderColor: "#eeeeee",
+            data: [23.015,20.478,20.410,5.481,5.159,4.766,4.667,2.832,2.649,2.106,1.940,1.334,1.218,1.210,1.170,0.847,0.438,0.189,0.047,0.043]
+            }]
+    },
+    options: {
+      tooltips: {
+          callbacks: {
+            label: function(tooltipItem, data) {
+              return data.labels[tooltipItem.index] + ': ' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] + '%';
+            },
+          }
+      }
+    }
+
+});
+</script>
+    </body>
+</html>

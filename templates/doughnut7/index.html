@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Revenue Budget FY2017</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
+
+    </head>
+    <body>
+
+
+<canvas id="doughnut7" width=auto max-height="400"></canvas>
+<script>
+
+Chart.defaults.global.responsive = true
+Chart.defaults.global.maintainAspectRatio = true
+Chart.defaults.global.legend.display = false
+Chart.defaults.global.tooltips.bodyFontSize = 14
+
+
+
+
+var ctx = document.getElementById("doughnut7");
+
+var myChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        labels: [
+          "Taxes",
+          "State Categorical Grants (Social Services, Education, City Universtiy, Health, Other)",
+          "Federal Grants (Community Dev, Social Services, Education, other)",
+          "Misc",
+          "Other Categorical Grants",
+          "Transfers from Capital Budget",
+          "Disallowances Against Categorical Grants",
+          "Less: Intra-City Revenue"
+                ],
+        datasets: [{
+            label: 'FY17 Adopted Budget',
+            backgroundColor:["#A24993","#7E73E5","#2f56a6","#d05d4e","#EFDB1D","#FFB716","#43AC6A","#A07952"],
+            borderColor: "#eeeeee",
+            borderWidth: 1,
+            hoverBackgroundColor: "#9E9E9E",
+            hoverBorderColor: "#eeeeee",
+            data: [66.544,16.650,9.344,7.802,1.040,0.786,0.018,2.148]
+            }]
+    },
+    options: {
+      tooltips: {
+          callbacks: {
+            label: function(tooltipItem, data) {
+              return data.labels[tooltipItem.index] + ': ' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] + '%';
+            },
+          }
+      }
+    }
+
+});
+</script>
+    </body>
+</html>
