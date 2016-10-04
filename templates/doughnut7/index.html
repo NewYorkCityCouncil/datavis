@@ -10,13 +10,15 @@
     <body>
 
 
-<canvas id="doughnut7" width=auto max-height="400"></canvas>
+<canvas id="doughnut7" width="400" height="400"></canvas>
 <script>
 
 Chart.defaults.global.responsive = true
 Chart.defaults.global.maintainAspectRatio = true
 Chart.defaults.global.legend.display = false
-Chart.defaults.global.tooltips.bodyFontSize = 14
+Chart.defaults.global.tooltips.bodyFontSize = 12
+Chart.defaults.global.tooltips.fontFamily = 'open sans'
+
 
 
 
@@ -28,22 +30,22 @@ var myChart = new Chart(ctx, {
     data: {
         labels: [
           "Taxes",
-          "State Categorical Grants (Social Services, Education, City Universtiy, Health, Other)",
-          "Federal Grants (Community Dev, Social Services, Education, other)",
+          "State Grants",
+          "Federal Grants",
           "Misc",
+          "Less: Intra-City Revenue",
           "Other Categorical Grants",
           "Transfers from Capital Budget",
-          "Disallowances Against Categorical Grants",
-          "Less: Intra-City Revenue"
+          "Disallowances Against Categorical Grants"
                 ],
         datasets: [{
             label: 'FY17 Adopted Budget',
-            backgroundColor:["#A24993","#7E73E5","#2f56a6","#d05d4e","#EFDB1D","#FFB716","#43AC6A","#A07952"],
+            backgroundColor:["#e6e6e6","#12b886","#e6e6e6","#12b886","#e6e6e6","#e6e6e6","#12b886"],
             borderColor: "#eeeeee",
             borderWidth: 1,
             hoverBackgroundColor: "#9E9E9E",
             hoverBorderColor: "#eeeeee",
-            data: [66.544,16.650,9.344,7.802,1.040,0.786,0.018,2.148]
+            data: [66.544,16.650,9.344,7.802,2.148,1.040,0.786,0.018]
             }]
     },
     options: {

@@ -10,13 +10,14 @@
     <body>
 
 
-<canvas id="doughnut6" width=auto max-height="400"></canvas>
+<canvas id="doughnut6" width="400" height="400"></canvas>
 <script>
 
 Chart.defaults.global.responsive = true
 Chart.defaults.global.maintainAspectRatio = true
 Chart.defaults.global.legend.display = false
-Chart.defaults.global.tooltips.bodyFontSize = 14
+Chart.defaults.global.tooltips.bodyFontSize = 12
+Chart.defaults.global.tooltips.fontFamily = 'open sans'
 
 
 
@@ -50,7 +51,7 @@ var myChart = new Chart(ctx, {
                 ],
         datasets: [{
             label: 'FY17 Adopted Budget',
-            backgroundColor:["#43AC6A","#4960BB","#6469D0","#6F8278","#7CBC50","#7E73E5","#82B04E","#8A65CA","#9657AE","#A07952","#A1597D","#A16968","#A24993","#AFAF4B","#B6CB37","#C0B332","#d05d4e","#E07B3B","#EF9929","#EFDB1D","#FFB716"],
+            backgroundColor:["#82c91e","#be4bdb","#82c91e","#be4bdb","#82c91e","#be4bdb","#82c91e","#be4bdb","#82c91e","#be4bdb","#82c91e","#be4bdb","#82c91e","#be4bdb","#82c91e","#be4bdb","#82c91e","#be4bdb","#82c91e","#be4bdb","#82c91e","#be4bdb","#82c91e","#be4bdb",],
             borderColor: "#eeeeee",
             borderWidth: 1,
             hoverBackgroundColor: "#9E9E9E",
