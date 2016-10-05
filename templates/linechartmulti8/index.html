@@ -30,9 +30,8 @@ Chart.defaults.global.legend = false
 function resetZoom() {
   window.myLine.resetZoom()
 }
-var ctx = document.getElementById("linechart8");
 
-var myChart = new Chart(ctx, {
+var config =  {
     type: 'line',
     fill: false,
     data: {
@@ -275,7 +274,7 @@ var myChart = new Chart(ctx, {
     options: {
 
       responsive:true,
-      
+
 
       tooltips: {
         callbacks: {
@@ -287,9 +286,9 @@ var myChart = new Chart(ctx, {
       },
       scales: {
         xAxes: [{
-          scaleLabel: {
-          //	display: true,
-            labelString: 'Year'
+         scaleLabel: {
+          	display: true,
+          //  labelString: 'Year'
           },
           ticks: {
             maxRotation: 0,
@@ -297,7 +296,7 @@ var myChart = new Chart(ctx, {
         }],
         yAxes: [{
           scaleLabel: {
-            display: false,
+            display: true,
             labelString: 'value'
           },
           stacked: false,
@@ -309,10 +308,14 @@ var myChart = new Chart(ctx, {
           }
         }]
       },
+      pan: {
+          enabled: true,
+          mode: 'x'
+      },
       zoom: {
           enabled: true,
           drag: true,
-          mode: 'xy',
+          mode: 'x',
           limits: {
               max: 5,
               min: 0.5
@@ -320,7 +323,7 @@ var myChart = new Chart(ctx, {
       }
 
     }
-  });
+  };
   window.onload = function() {
     var ctx = document.getElementById("linechart8").getContext("2d");
     window.myLine = new Chart(ctx, config);
