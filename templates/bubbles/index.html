@@ -1,0 +1,2715 @@
+<!doctype html>
+<meta charset="utf-8">
+
+<!-- load D3js -->
+<script src="https://d3plus.org/js/d3.js"></script>
+
+<!-- load D3plus after D3js -->
+<script src="https://d3plus.org/js/d3plus.js"></script>
+
+<!-- create container element for visualization -->
+<div id="viz"></div>
+
+<script>
+
+  // sample data array
+  var sample_data = [
+  {
+    "value": 2002000,
+    "name": "A Greener NYC",
+    "group": "Council Wide"
+  },
+  {
+    "value": 1070000,
+    "name": "Access Health",
+    "group": "Council Wide"
+  },
+  {
+    "value": 1180000,
+    "name": "Access to Critical Services for Seniors",
+    "group": "Council Wide"
+  },
+  {
+    "value": 930000,
+    "name": "Access to Food and Nutritional Education",
+    "group": "Council Wide"
+  },
+  {
+    "value": 6000000,
+    "name": "Adult Literacy Initiative",
+    "group": "Council Wide"
+  },
+  {
+    "value": 5425000,
+    "name": "Afterschool Enrichment Initiative",
+    "group": "Council Wide"
+  },
+  {
+    "value": 110000,
+    "name": "Aging",
+    "group": "Barron"
+  },
+  {
+    "value": 110000,
+    "name": "Aging",
+    "group": "Borelli"
+  },
+  {
+    "value": 110000,
+    "name": "Aging",
+    "group": "Cabrera"
+  },
+  {
+    "value": 110000,
+    "name": "Aging",
+    "group": "CD28"
+  },
+  {
+    "value": 110000,
+    "name": "Aging",
+    "group": "Chin"
+  },
+  {
+    "value": 110000,
+    "name": "Aging",
+    "group": "Cohen"
+  },
+  {
+    "value": 110000,
+    "name": "Aging",
+    "group": "Constantinides"
+  },
+  {
+    "value": 110000,
+    "name": "Aging",
+    "group": "Cornegy"
+  },
+  {
+    "value": 110000,
+    "name": "Aging",
+    "group": "Crowley"
+  },
+  {
+    "value": 110000,
+    "name": "Aging",
+    "group": "Cumbo"
+  },
+  {
+    "value": 110000,
+    "name": "Aging",
+    "group": "Deutsch"
+  },
+  {
+    "value": 110000,
+    "name": "Aging",
+    "group": "Dickens"
+  },
+  {
+    "value": 110000,
+    "name": "Aging",
+    "group": "Dromm"
+  },
+  {
+    "value": 110000,
+    "name": "Aging",
+    "group": "Espinal"
+  },
+  {
+    "value": 110000,
+    "name": "Aging",
+    "group": "Eugene"
+  },
+  {
+    "value": 110000,
+    "name": "Aging",
+    "group": "Ferreras-Copeland"
+  },
+  {
+    "value": 110000,
+    "name": "Aging",
+    "group": "Garodnick"
+  },
+  {
+    "value": 110000,
+    "name": "Aging",
+    "group": "Gentile"
+  },
+  {
+    "value": 110000,
+    "name": "Aging",
+    "group": "Gibson"
+  },
+  {
+    "value": 110000,
+    "name": "Aging",
+    "group": "Greenfield"
+  },
+  {
+    "value": 110000,
+    "name": "Aging",
+    "group": "Grodenchik"
+  },
+  {
+    "value": 110000,
+    "name": "Aging",
+    "group": "Johnson"
+  },
+  {
+    "value": 110000,
+    "name": "Aging",
+    "group": "Kallos"
+  },
+  {
+    "value": 110000,
+    "name": "Aging",
+    "group": "King"
+  },
+  {
+    "value": 110000,
+    "name": "Aging",
+    "group": "Koo"
+  },
+  {
+    "value": 110000,
+    "name": "Aging",
+    "group": "Koslowitz"
+  },
+  {
+    "value": 110000,
+    "name": "Aging",
+    "group": "Lancman"
+  },
+  {
+    "value": 110000,
+    "name": "Aging",
+    "group": "Lander"
+  },
+  {
+    "value": 110000,
+    "name": "Aging",
+    "group": "Levin"
+  },
+  {
+    "value": 110000,
+    "name": "Aging",
+    "group": "Levine"
+  },
+  {
+    "value": 110000,
+    "name": "Aging",
+    "group": "Maisel"
+  },
+  {
+    "value": 110000,
+    "name": "Aging",
+    "group": "Mark-Viverito"
+  },
+  {
+    "value": 110000,
+    "name": "Aging",
+    "group": "Matteo"
+  },
+  {
+    "value": 110000,
+    "name": "Aging",
+    "group": "Mealy"
+  },
+  {
+    "value": 110000,
+    "name": "Aging",
+    "group": "Menchaca"
+  },
+  {
+    "value": 110000,
+    "name": "Aging",
+    "group": "Mendez"
+  },
+  {
+    "value": 110000,
+    "name": "Aging",
+    "group": "Miller"
+  },
+  {
+    "value": 110000,
+    "name": "Aging",
+    "group": "Palma"
+  },
+  {
+    "value": 110000,
+    "name": "Aging",
+    "group": "Reynoso"
+  },
+  {
+    "value": 110000,
+    "name": "Aging",
+    "group": "Richards"
+  },
+  {
+    "value": 110000,
+    "name": "Aging",
+    "group": "Rodriguez"
+  },
+  {
+    "value": 110000,
+    "name": "Aging",
+    "group": "Rose"
+  },
+  {
+    "value": 110000,
+    "name": "Aging",
+    "group": "Rosenthal"
+  },
+  {
+    "value": 110000,
+    "name": "Aging",
+    "group": "Salamanca"
+  },
+  {
+    "value": 110000,
+    "name": "Aging",
+    "group": "Torres"
+  },
+  {
+    "value": 110000,
+    "name": "Aging",
+    "group": "Treyger"
+  },
+  {
+    "value": 110000,
+    "name": "Aging",
+    "group": "Ulrich"
+  },
+  {
+    "value": 110000,
+    "name": "Aging",
+    "group": "Vacca"
+  },
+  {
+    "value": 110000,
+    "name": "Aging",
+    "group": "Vallone"
+  },
+  {
+    "value": 110000,
+    "name": "Aging",
+    "group": "Van Bramer"
+  },
+  {
+    "value": 110000,
+    "name": "Aging",
+    "group": "Williams"
+  },
+  {
+    "value": 5632000,
+    "name": "Alternatives to Incarceration (ATI's)",
+    "group": "Council Wide"
+  },
+  {
+    "value": 5650000,
+    "name": "Anti-Eviction and Housing Court Resources",
+    "group": "Council Wide"
+  },
+  {
+    "value": 720000,
+    "name": "Anti-Gun Violence - Art a Catalyst for Change",
+    "group": "Council Wide"
+  },
+  {
+    "value": 250000,
+    "name": "Anti-Gun Violence - Youth Programs",
+    "group": "Council Wide"
+  },
+  {
+    "value": 75000,
+    "name": "Anti-Poverty",
+    "group": "Barron"
+  },
+  {
+    "value": 25000,
+    "name": "Anti-Poverty",
+    "group": "Borelli"
+  },
+  {
+    "value": 100000,
+    "name": "Anti-Poverty",
+    "group": "Cabrera"
+  },
+  {
+    "value": 50000,
+    "name": "Anti-Poverty",
+    "group": "CD28"
+  },
+  {
+    "value": 50000,
+    "name": "Anti-Poverty",
+    "group": "Chin"
+  },
+  {
+    "value": 50000,
+    "name": "Anti-Poverty",
+    "group": "Cohen"
+  },
+  {
+    "value": 50000,
+    "name": "Anti-Poverty",
+    "group": "Constantinides"
+  },
+  {
+    "value": 75000,
+    "name": "Anti-Poverty",
+    "group": "Cornegy"
+  },
+  {
+    "value": 25000,
+    "name": "Anti-Poverty",
+    "group": "Crowley"
+  },
+  {
+    "value": 50000,
+    "name": "Anti-Poverty",
+    "group": "Cumbo"
+  },
+  {
+    "value": 50000,
+    "name": "Anti-Poverty",
+    "group": "Deutsch"
+  },
+  {
+    "value": 75000,
+    "name": "Anti-Poverty",
+    "group": "Dickens"
+  },
+  {
+    "value": 50000,
+    "name": "Anti-Poverty",
+    "group": "Dromm"
+  },
+  {
+    "value": 75000,
+    "name": "Anti-Poverty",
+    "group": "Espinal"
+  },
+  {
+    "value": 50000,
+    "name": "Anti-Poverty",
+    "group": "Eugene"
+  },
+  {
+    "value": 50000,
+    "name": "Anti-Poverty",
+    "group": "Ferreras-Copeland"
+  },
+  {
+    "value": 25000,
+    "name": "Anti-Poverty",
+    "group": "Garodnick"
+  },
+  {
+    "value": 50000,
+    "name": "Anti-Poverty",
+    "group": "Gentile"
+  },
+  {
+    "value": 100000,
+    "name": "Anti-Poverty",
+    "group": "Gibson"
+  },
+  {
+    "value": 75000,
+    "name": "Anti-Poverty",
+    "group": "Greenfield"
+  },
+  {
+    "value": 25000,
+    "name": "Anti-Poverty",
+    "group": "Grodenchik"
+  },
+  {
+    "value": 25000,
+    "name": "Anti-Poverty",
+    "group": "Johnson"
+  },
+  {
+    "value": 25000,
+    "name": "Anti-Poverty",
+    "group": "Kallos"
+  },
+  {
+    "value": 50000,
+    "name": "Anti-Poverty",
+    "group": "King"
+  },
+  {
+    "value": 50000,
+    "name": "Anti-Poverty",
+    "group": "Koo"
+  },
+  {
+    "value": 25000,
+    "name": "Anti-Poverty",
+    "group": "Koslowitz"
+  },
+  {
+    "value": 50000,
+    "name": "Anti-Poverty",
+    "group": "Lancman"
+  },
+  {
+    "value": 50000,
+    "name": "Anti-Poverty",
+    "group": "Lander"
+  },
+  {
+    "value": 75000,
+    "name": "Anti-Poverty",
+    "group": "Levin"
+  },
+  {
+    "value": 75000,
+    "name": "Anti-Poverty",
+    "group": "Levine"
+  },
+  {
+    "value": 25000,
+    "name": "Anti-Poverty",
+    "group": "Maisel"
+  },
+  {
+    "value": 100000,
+    "name": "Anti-Poverty",
+    "group": "Mark-Viverito"
+  },
+  {
+    "value": 25000,
+    "name": "Anti-Poverty",
+    "group": "Matteo"
+  },
+  {
+    "value": 75000,
+    "name": "Anti-Poverty",
+    "group": "Mealy"
+  },
+  {
+    "value": 75000,
+    "name": "Anti-Poverty",
+    "group": "Menchaca"
+  },
+  {
+    "value": 50000,
+    "name": "Anti-Poverty",
+    "group": "Mendez"
+  },
+  {
+    "value": 50000,
+    "name": "Anti-Poverty",
+    "group": "Miller"
+  },
+  {
+    "value": 75000,
+    "name": "Anti-Poverty",
+    "group": "Palma"
+  },
+  {
+    "value": 75000,
+    "name": "Anti-Poverty",
+    "group": "Reynoso"
+  },
+  {
+    "value": 50000,
+    "name": "Anti-Poverty",
+    "group": "Richards"
+  },
+  {
+    "value": 75000,
+    "name": "Anti-Poverty",
+    "group": "Rodriguez"
+  },
+  {
+    "value": 50000,
+    "name": "Anti-Poverty",
+    "group": "Rose"
+  },
+  {
+    "value": 25000,
+    "name": "Anti-Poverty",
+    "group": "Rosenthal"
+  },
+  {
+    "value": 100000,
+    "name": "Anti-Poverty",
+    "group": "Salamanca"
+  },
+  {
+    "value": 100000,
+    "name": "Anti-Poverty",
+    "group": "Torres"
+  },
+  {
+    "value": 50000,
+    "name": "Anti-Poverty",
+    "group": "Treyger"
+  },
+  {
+    "value": 25000,
+    "name": "Anti-Poverty",
+    "group": "Ulrich"
+  },
+  {
+    "value": 50000,
+    "name": "Anti-Poverty",
+    "group": "Vacca"
+  },
+  {
+    "value": 25000,
+    "name": "Anti-Poverty",
+    "group": "Vallone"
+  },
+  {
+    "value": 50000,
+    "name": "Anti-Poverty",
+    "group": "Van Bramer"
+  },
+  {
+    "value": 50000,
+    "name": "Anti-Poverty",
+    "group": "Williams"
+  },
+  {
+    "value": 3315386,
+    "name": "Autism Awareness",
+    "group": "Council Wide"
+  },
+  {
+    "value": 1400000,
+    "name": "Bail Fund",
+    "group": "Council Wide"
+  },
+  {
+    "value": 350000,
+    "name": "Beating Hearts",
+    "group": "Council Wide"
+  },
+  {
+    "value": 1200000,
+    "name": "Big Brothers and Big Sisters of New York City",
+    "group": "Council Wide"
+  },
+  {
+    "value": 340000,
+    "name": "Boro",
+    "group": "Bronx Delegation"
+  },
+  {
+    "value": 620000,
+    "name": "Boro",
+    "group": "Brooklyn Delegation"
+  },
+  {
+    "value": 380000,
+    "name": "Boro",
+    "group": "Manhattan Delegation"
+  },
+  {
+    "value": 540000,
+    "name": "Boro",
+    "group": "Queens Delegation"
+  },
+  {
+    "value": 120000,
+    "name": "Boro",
+    "group": "Staten Island Delegation"
+  },
+  {
+    "value": 1129774,
+    "name": "Borough Presidents' Discretionary Funding Restoration",
+    "group": "Council Wide"
+  },
+  {
+    "value": 1150000,
+    "name": "Bridge to Tomorrow",
+    "group": "Council Wide"
+  },
+  {
+    "value": 100000,
+    "name": "Brooklyn Borough President PS Enhancment",
+    "group": "Council Wide"
+  },
+  {
+    "value": 790500,
+    "name": "Cancer Services",
+    "group": "Council Wide"
+  },
+  {
+    "value": 500000,
+    "name": "Center for Court Innovation",
+    "group": "Council Wide"
+  },
+  {
+    "value": 3000000,
+    "name": "Child Care Vouchers",
+    "group": "Council Wide"
+  },
+  {
+    "value": 646000,
+    "name": "Child Health and Wellness",
+    "group": "Council Wide"
+  },
+  {
+    "value": 500000,
+    "name": "Child Mind Institute",
+    "group": "Council Wide"
+  },
+  {
+    "value": 1000000,
+    "name": "Children and Families in NYC Homeless System",
+    "group": "Council Wide"
+  },
+  {
+    "value": 1002000,
+    "name": "Children Under Five",
+    "group": "Council Wide"
+  },
+  {
+    "value": 150000,
+    "name": "City Clerk PS Enhancement",
+    "group": "Council Wide"
+  },
+  {
+    "value": 15375000,
+    "name": "City Council Merit-Based Scholarships",
+    "group": "Council Wide"
+  },
+  {
+    "value": 2792000,
+    "name": "City's First Readers",
+    "group": "Council Wide"
+  },
+  {
+    "value": 820000,
+    "name": "Citywide Homeless Prevention Fund",
+    "group": "Council Wide"
+  },
+  {
+    "value": 500000,
+    "name": "Civic Education in New York City Schools",
+    "group": "Council Wide"
+  },
+  {
+    "value": 1965000,
+    "name": "Coalition Theaters of Color",
+    "group": "Council Wide"
+  },
+  {
+    "value": 2500000,
+    "name": "Communities of Color Nonprofit Stabilization Fund",
+    "group": "Council Wide"
+  },
+  {
+    "value": 3651000,
+    "name": "Community Housing Preservation Strategies",
+    "group": "Council Wide"
+  },
+  {
+    "value": 1225000,
+    "name": "Community Schools",
+    "group": "Council Wide"
+  },
+  {
+    "value": 8000000,
+    "name": "COMPASS",
+    "group": "Council Wide"
+  },
+  {
+    "value": 400000,
+    "name": "Contraceptive Fund",
+    "group": "Council Wide"
+  },
+  {
+    "value": 1900000,
+    "name": "Court-Involved Youth Mental Health Initiative",
+    "group": "Council Wide"
+  },
+  {
+    "value": 1400000,
+    "name": "Create New Technology Incubators",
+    "group": "Council Wide"
+  },
+  {
+    "value": 400000,
+    "name": "Creative Arts Team",
+    "group": "Council Wide"
+  },
+  {
+    "value": 11175534,
+    "name": "Crisis Management System",
+    "group": "Council Wide"
+  },
+  {
+    "value": 220000,
+    "name": "Cultural After-School Adventure (CASA)",
+    "group": "Barron"
+  },
+  {
+    "value": 220000,
+    "name": "Cultural After-School Adventure (CASA)",
+    "group": "Borelli"
+  },
+  {
+    "value": 160000,
+    "name": "Cultural After-School Adventure (CASA)",
+    "group": "Cabrera"
+  },
+  {
+    "value": 220000,
+    "name": "Cultural After-School Adventure (CASA)",
+    "group": "CD28"
+  },
+  {
+    "value": 220000,
+    "name": "Cultural After-School Adventure (CASA)",
+    "group": "Chin"
+  },
+  {
+    "value": 160000,
+    "name": "Cultural After-School Adventure (CASA)",
+    "group": "Cohen"
+  },
+  {
+    "value": 220000,
+    "name": "Cultural After-School Adventure (CASA)",
+    "group": "Constantinides"
+  },
+  {
+    "value": 220000,
+    "name": "Cultural After-School Adventure (CASA)",
+    "group": "Cornegy"
+  },
+  {
+    "value": 220000,
+    "name": "Cultural After-School Adventure (CASA)",
+    "group": "Crowley"
+  },
+  {
+    "value": 220000,
+    "name": "Cultural After-School Adventure (CASA)",
+    "group": "Cumbo"
+  },
+  {
+    "value": 220000,
+    "name": "Cultural After-School Adventure (CASA)",
+    "group": "Deutsch"
+  },
+  {
+    "value": 220000,
+    "name": "Cultural After-School Adventure (CASA)",
+    "group": "Dickens"
+  },
+  {
+    "value": 220000,
+    "name": "Cultural After-School Adventure (CASA)",
+    "group": "Dromm"
+  },
+  {
+    "value": 160000,
+    "name": "Cultural After-School Adventure (CASA)",
+    "group": "Espinal"
+  },
+  {
+    "value": 160000,
+    "name": "Cultural After-School Adventure (CASA)",
+    "group": "Eugene"
+  },
+  {
+    "value": 220000,
+    "name": "Cultural After-School Adventure (CASA)",
+    "group": "Ferreras-Copeland"
+  },
+  {
+    "value": 220000,
+    "name": "Cultural After-School Adventure (CASA)",
+    "group": "Gentile"
+  },
+  {
+    "value": 220000,
+    "name": "Cultural After-School Adventure (CASA)",
+    "group": "Gibson"
+  },
+  {
+    "value": 160000,
+    "name": "Cultural After-School Adventure (CASA)",
+    "group": "Greenfield"
+  },
+  {
+    "value": 220000,
+    "name": "Cultural After-School Adventure (CASA)",
+    "group": "Grodenchik"
+  },
+  {
+    "value": 160000,
+    "name": "Cultural After-School Adventure (CASA)",
+    "group": "Johnson"
+  },
+  {
+    "value": 160000,
+    "name": "Cultural After-School Adventure (CASA)",
+    "group": "Kallos"
+  },
+  {
+    "value": 220000,
+    "name": "Cultural After-School Adventure (CASA)",
+    "group": "King"
+  },
+  {
+    "value": 220000,
+    "name": "Cultural After-School Adventure (CASA)",
+    "group": "Koo"
+  },
+  {
+    "value": 220000,
+    "name": "Cultural After-School Adventure (CASA)",
+    "group": "Koslowitz"
+  },
+  {
+    "value": 220000,
+    "name": "Cultural After-School Adventure (CASA)",
+    "group": "Lancman"
+  },
+  {
+    "value": 220000,
+    "name": "Cultural After-School Adventure (CASA)",
+    "group": "Lander"
+  },
+  {
+    "value": 220000,
+    "name": "Cultural After-School Adventure (CASA)",
+    "group": "Levin"
+  },
+  {
+    "value": 160000,
+    "name": "Cultural After-School Adventure (CASA)",
+    "group": "Levine"
+  },
+  {
+    "value": 180000,
+    "name": "Cultural After-School Adventure (CASA)",
+    "group": "Maisel"
+  },
+  {
+    "value": 160000,
+    "name": "Cultural After-School Adventure (CASA)",
+    "group": "Mark-Viverito"
+  },
+  {
+    "value": 220000,
+    "name": "Cultural After-School Adventure (CASA)",
+    "group": "Matteo"
+  },
+  {
+    "value": 160000,
+    "name": "Cultural After-School Adventure (CASA)",
+    "group": "Mealy"
+  },
+  {
+    "value": 220000,
+    "name": "Cultural After-School Adventure (CASA)",
+    "group": "Menchaca"
+  },
+  {
+    "value": 120000,
+    "name": "Cultural After-School Adventure (CASA)",
+    "group": "Mendez"
+  },
+  {
+    "value": 220000,
+    "name": "Cultural After-School Adventure (CASA)",
+    "group": "Miller"
+  },
+  {
+    "value": 160000,
+    "name": "Cultural After-School Adventure (CASA)",
+    "group": "Palma"
+  },
+  {
+    "value": 220000,
+    "name": "Cultural After-School Adventure (CASA)",
+    "group": "Reynoso"
+  },
+  {
+    "value": 220000,
+    "name": "Cultural After-School Adventure (CASA)",
+    "group": "Richards"
+  },
+  {
+    "value": 220000,
+    "name": "Cultural After-School Adventure (CASA)",
+    "group": "Rodriguez"
+  },
+  {
+    "value": 220000,
+    "name": "Cultural After-School Adventure (CASA)",
+    "group": "Rose"
+  },
+  {
+    "value": 180000,
+    "name": "Cultural After-School Adventure (CASA)",
+    "group": "Rosenthal"
+  },
+  {
+    "value": 220000,
+    "name": "Cultural After-School Adventure (CASA)",
+    "group": "Salamanca"
+  },
+  {
+    "value": 220000,
+    "name": "Cultural After-School Adventure (CASA)",
+    "group": "Torres"
+  },
+  {
+    "value": 140000,
+    "name": "Cultural After-School Adventure (CASA)",
+    "group": "Treyger"
+  },
+  {
+    "value": 220000,
+    "name": "Cultural After-School Adventure (CASA)",
+    "group": "Vacca"
+  },
+  {
+    "value": 220000,
+    "name": "Cultural After-School Adventure (CASA)",
+    "group": "Vallone"
+  },
+  {
+    "value": 160000,
+    "name": "Cultural After-School Adventure (CASA)",
+    "group": "Van Bramer"
+  },
+  {
+    "value": 220000,
+    "name": "Cultural After-School Adventure (CASA)",
+    "group": "Williams"
+  },
+  {
+    "value": 1420000,
+    "name": "Cultural After-School Adventure (CASA)",
+    "group": "Council Wide"
+  },
+  {
+    "value": 5010000,
+    "name": "Cultural Immigrant Initiative",
+    "group": "Council Wide"
+  },
+  {
+    "value": 2000000,
+    "name": "CUNY Citizenship NOW! Program",
+    "group": "Council Wide"
+  },
+  {
+    "value": 2140000,
+    "name": "CUNY Research Institutes",
+    "group": "Council Wide"
+  },
+  {
+    "value": 50000,
+    "name": "CUNY Technical Apprenticeship Program",
+    "group": "Council Wide"
+  },
+  {
+    "value": 570000,
+    "name": "Day Laborer Workforce Initiative",
+    "group": "Council Wide"
+  },
+  {
+    "value": 2139390,
+    "name": "Developmental, Psychological and Behavioral Health Services",
+    "group": "Council Wide"
+  },
+  {
+    "value": 660000,
+    "name": "DFTA Core Enhancement Services",
+    "group": "Council Wide"
+  },
+  {
+    "value": 20000,
+    "name": "Digital Inclusion and Literacy Initiative",
+    "group": "Barron"
+  },
+  {
+    "value": 20000,
+    "name": "Digital Inclusion and Literacy Initiative",
+    "group": "Cabrera"
+  },
+  {
+    "value": 20000,
+    "name": "Digital Inclusion and Literacy Initiative",
+    "group": "CD28"
+  },
+  {
+    "value": 20000,
+    "name": "Digital Inclusion and Literacy Initiative",
+    "group": "Chin"
+  },
+  {
+    "value": 20000,
+    "name": "Digital Inclusion and Literacy Initiative",
+    "group": "Cohen"
+  },
+  {
+    "value": 20000,
+    "name": "Digital Inclusion and Literacy Initiative",
+    "group": "Constantinides"
+  },
+  {
+    "value": 20000,
+    "name": "Digital Inclusion and Literacy Initiative",
+    "group": "Cornegy"
+  },
+  {
+    "value": 20000,
+    "name": "Digital Inclusion and Literacy Initiative",
+    "group": "Crowley"
+  },
+  {
+    "value": 20000,
+    "name": "Digital Inclusion and Literacy Initiative",
+    "group": "Cumbo"
+  },
+  {
+    "value": 40000,
+    "name": "Digital Inclusion and Literacy Initiative",
+    "group": "Dickens"
+  },
+  {
+    "value": 20000,
+    "name": "Digital Inclusion and Literacy Initiative",
+    "group": "Dromm"
+  },
+  {
+    "value": 20000,
+    "name": "Digital Inclusion and Literacy Initiative",
+    "group": "Eugene"
+  },
+  {
+    "value": 40000,
+    "name": "Digital Inclusion and Literacy Initiative",
+    "group": "Ferreras-Copeland"
+  },
+  {
+    "value": 20000,
+    "name": "Digital Inclusion and Literacy Initiative",
+    "group": "Garodnick"
+  },
+  {
+    "value": 20000,
+    "name": "Digital Inclusion and Literacy Initiative",
+    "group": "Gentile"
+  },
+  {
+    "value": 20000,
+    "name": "Digital Inclusion and Literacy Initiative",
+    "group": "Gibson"
+  },
+  {
+    "value": 20000,
+    "name": "Digital Inclusion and Literacy Initiative",
+    "group": "Greenfield"
+  },
+  {
+    "value": 40000,
+    "name": "Digital Inclusion and Literacy Initiative",
+    "group": "Grodenchik"
+  },
+  {
+    "value": 20000,
+    "name": "Digital Inclusion and Literacy Initiative",
+    "group": "Johnson"
+  },
+  {
+    "value": 20000,
+    "name": "Digital Inclusion and Literacy Initiative",
+    "group": "Kallos"
+  },
+  {
+    "value": 40000,
+    "name": "Digital Inclusion and Literacy Initiative",
+    "group": "King"
+  },
+  {
+    "value": 20000,
+    "name": "Digital Inclusion and Literacy Initiative",
+    "group": "Koo"
+  },
+  {
+    "value": 20000,
+    "name": "Digital Inclusion and Literacy Initiative",
+    "group": "Koslowitz"
+  },
+  {
+    "value": 40000,
+    "name": "Digital Inclusion and Literacy Initiative",
+    "group": "Lancman"
+  },
+  {
+    "value": 20000,
+    "name": "Digital Inclusion and Literacy Initiative",
+    "group": "Lander"
+  },
+  {
+    "value": 40000,
+    "name": "Digital Inclusion and Literacy Initiative",
+    "group": "Levin"
+  },
+  {
+    "value": 20000,
+    "name": "Digital Inclusion and Literacy Initiative",
+    "group": "Levine"
+  },
+  {
+    "value": 20000,
+    "name": "Digital Inclusion and Literacy Initiative",
+    "group": "Mark-Viverito"
+  },
+  {
+    "value": 20000,
+    "name": "Digital Inclusion and Literacy Initiative",
+    "group": "Matteo"
+  },
+  {
+    "value": 20000,
+    "name": "Digital Inclusion and Literacy Initiative",
+    "group": "Menchaca"
+  },
+  {
+    "value": 20000,
+    "name": "Digital Inclusion and Literacy Initiative",
+    "group": "Mendez"
+  },
+  {
+    "value": 20000,
+    "name": "Digital Inclusion and Literacy Initiative",
+    "group": "Miller"
+  },
+  {
+    "value": 40000,
+    "name": "Digital Inclusion and Literacy Initiative",
+    "group": "Palma"
+  },
+  {
+    "value": 20000,
+    "name": "Digital Inclusion and Literacy Initiative",
+    "group": "Reynoso"
+  },
+  {
+    "value": 20000,
+    "name": "Digital Inclusion and Literacy Initiative",
+    "group": "Richards"
+  },
+  {
+    "value": 40000,
+    "name": "Digital Inclusion and Literacy Initiative",
+    "group": "Rodriguez"
+  },
+  {
+    "value": 20000,
+    "name": "Digital Inclusion and Literacy Initiative",
+    "group": "Rose"
+  },
+  {
+    "value": 20000,
+    "name": "Digital Inclusion and Literacy Initiative",
+    "group": "Rosenthal"
+  },
+  {
+    "value": 20000,
+    "name": "Digital Inclusion and Literacy Initiative",
+    "group": "Salamanca"
+  },
+  {
+    "value": 20000,
+    "name": "Digital Inclusion and Literacy Initiative",
+    "group": "Torres"
+  },
+  {
+    "value": 20000,
+    "name": "Digital Inclusion and Literacy Initiative",
+    "group": "Treyger"
+  },
+  {
+    "value": 20000,
+    "name": "Digital Inclusion and Literacy Initiative",
+    "group": "Ulrich"
+  },
+  {
+    "value": 40000,
+    "name": "Digital Inclusion and Literacy Initiative",
+    "group": "Vacca"
+  },
+  {
+    "value": 20000,
+    "name": "Digital Inclusion and Literacy Initiative",
+    "group": "Vallone"
+  },
+  {
+    "value": 20000,
+    "name": "Digital Inclusion and Literacy Initiative",
+    "group": "Van Bramer"
+  },
+  {
+    "value": 20000,
+    "name": "Digital Inclusion and Literacy Initiative",
+    "group": "Williams"
+  },
+  {
+    "value": 940000,
+    "name": "Digital Inclusion and Literacy Initiative",
+    "group": "Council Wide"
+  },
+  {
+    "value": 9355069,
+    "name": "Discretionary Child Care",
+    "group": "Council Wide"
+  },
+  {
+    "value": 6305000,
+    "name": "Domestic Violence and Empowerment (DoVE) Initiative",
+    "group": "Council Wide"
+  },
+  {
+    "value": 1585000,
+    "name": "Dropout Prevention and Intervention Initiative",
+    "group": "Council Wide"
+  },
+  {
+    "value": 2975000,
+    "name": "Educational Programs for Students",
+    "group": "Council Wide"
+  },
+  {
+    "value": 335000,
+    "name": "Elder Abuse Enhancement",
+    "group": "Council Wide"
+  },
+  {
+    "value": 5595000,
+    "name": "Ending the Epidemic",
+    "group": "Council Wide"
+  },
+  {
+    "value": 450000,
+    "name": "Financial Empowerment for NYC's Renters",
+    "group": "Council Wide"
+  },
+  {
+    "value": 725000,
+    "name": "Food Access and Benefits",
+    "group": "Council Wide"
+  },
+  {
+    "value": 4000000,
+    "name": "Food Pantries",
+    "group": "Council Wide"
+  },
+  {
+    "value": 1000000,
+    "name": "Foreclosure Buyback Initiative",
+    "group": "Council Wide"
+  },
+  {
+    "value": 500000,
+    "name": "Foster Youth Transitional Care",
+    "group": "Council Wide"
+  },
+  {
+    "value": 500000,
+    "name": "Gender Equity Liaisons",
+    "group": "Council Wide"
+  },
+  {
+    "value": 1827000,
+    "name": "Geriatric Mental Health",
+    "group": "Council Wide"
+  },
+  {
+    "value": 260000,
+    "name": "Ghetto Film School Accelerator Program Model",
+    "group": "Council Wide"
+  },
+  {
+    "value": 120000,
+    "name": "Green Jobs Corps Program",
+    "group": "Council Wide"
+  },
+  {
+    "value": 100000,
+    "name": "hackNY",
+    "group": "Council Wide"
+  },
+  {
+    "value": 35490,
+    "name": "Healthy Aging Initiative",
+    "group": "Barron"
+  },
+  {
+    "value": 35490,
+    "name": "Healthy Aging Initiative",
+    "group": "Borelli"
+  },
+  {
+    "value": 35490,
+    "name": "Healthy Aging Initiative",
+    "group": "CD28"
+  },
+  {
+    "value": 35490,
+    "name": "Healthy Aging Initiative",
+    "group": "Chin"
+  },
+  {
+    "value": 35490,
+    "name": "Healthy Aging Initiative",
+    "group": "Crowley"
+  },
+  {
+    "value": 35490,
+    "name": "Healthy Aging Initiative",
+    "group": "Cumbo"
+  },
+  {
+    "value": 35490,
+    "name": "Healthy Aging Initiative",
+    "group": "Deutsch"
+  },
+  {
+    "value": 35490,
+    "name": "Healthy Aging Initiative",
+    "group": "Dromm"
+  },
+  {
+    "value": 35490,
+    "name": "Healthy Aging Initiative",
+    "group": "Ferreras-Copeland"
+  },
+  {
+    "value": 35490,
+    "name": "Healthy Aging Initiative",
+    "group": "Gentile"
+  },
+  {
+    "value": 35490,
+    "name": "Healthy Aging Initiative",
+    "group": "Grodenchik"
+  },
+  {
+    "value": 35490,
+    "name": "Healthy Aging Initiative",
+    "group": "Johnson"
+  },
+  {
+    "value": 35490,
+    "name": "Healthy Aging Initiative",
+    "group": "Kallos"
+  },
+  {
+    "value": 35490,
+    "name": "Healthy Aging Initiative",
+    "group": "Koo"
+  },
+  {
+    "value": 35490,
+    "name": "Healthy Aging Initiative",
+    "group": "Koslowitz"
+  },
+  {
+    "value": 35490,
+    "name": "Healthy Aging Initiative",
+    "group": "Lancman"
+  },
+  {
+    "value": 35490,
+    "name": "Healthy Aging Initiative",
+    "group": "Lander"
+  },
+  {
+    "value": 35490,
+    "name": "Healthy Aging Initiative",
+    "group": "Mark-Viverito"
+  },
+  {
+    "value": 35490,
+    "name": "Healthy Aging Initiative",
+    "group": "Matteo"
+  },
+  {
+    "value": 35490,
+    "name": "Healthy Aging Initiative",
+    "group": "Menchaca"
+  },
+  {
+    "value": 35490,
+    "name": "Healthy Aging Initiative",
+    "group": "Mendez"
+  },
+  {
+    "value": 35490,
+    "name": "Healthy Aging Initiative",
+    "group": "Richards"
+  },
+  {
+    "value": 35490,
+    "name": "Healthy Aging Initiative",
+    "group": "Rodriguez"
+  },
+  {
+    "value": 35490,
+    "name": "Healthy Aging Initiative",
+    "group": "Rose"
+  },
+  {
+    "value": 35490,
+    "name": "Healthy Aging Initiative",
+    "group": "Rosenthal"
+  },
+  {
+    "value": 35490,
+    "name": "Healthy Aging Initiative",
+    "group": "Torres"
+  },
+  {
+    "value": 35490,
+    "name": "Healthy Aging Initiative",
+    "group": "Ulrich"
+  },
+  {
+    "value": 35490,
+    "name": "Healthy Aging Initiative",
+    "group": "Vacca"
+  },
+  {
+    "value": 35490,
+    "name": "Healthy Aging Initiative",
+    "group": "Vallone"
+  },
+  {
+    "value": 35490,
+    "name": "Healthy Aging Initiative",
+    "group": "Williams"
+  },
+  {
+    "value": 745300,
+    "name": "Healthy Aging Initiative",
+    "group": "Council Wide"
+  },
+  {
+    "value": 1560000,
+    "name": "HIV/AIDS Faith Based Initiative",
+    "group": "Council Wide"
+  },
+  {
+    "value": 2500000,
+    "name": "Holocaust Survivors",
+    "group": "Council Wide"
+  },
+  {
+    "value": 300000,
+    "name": "Homeless Prevention Services for Veterans",
+    "group": "Council Wide"
+  },
+  {
+    "value": 300000,
+    "name": "Housing Information Project",
+    "group": "Council Wide"
+  },
+  {
+    "value": 750000,
+    "name": "HPD Alternative Enforcement Program (AEP)",
+    "group": "Council Wide"
+  },
+  {
+    "value": 1500000,
+    "name": "HPD Home Loan Program",
+    "group": "Council Wide"
+  },
+  {
+    "value": 1500000,
+    "name": "Immigrant Health Initiative",
+    "group": "Council Wide"
+  },
+  {
+    "value": 2600000,
+    "name": "Immigrant Opportunities Initiative",
+    "group": "Council Wide"
+  },
+  {
+    "value": 407811,
+    "name": "Information and Referral Services",
+    "group": "Council Wide"
+  },
+  {
+    "value": 250000,
+    "name": "Initiative for Immigrant Survivors of Domestic Violence",
+    "group": "Council Wide"
+  },
+  {
+    "value": 1348000,
+    "name": "Initiative to Combat Sexual Assault",
+    "group": "Council Wide"
+  },
+  {
+    "value": 245000,
+    "name": "Jill Chaifetz Helpline",
+    "group": "Council Wide"
+  },
+  {
+    "value": 150000,
+    "name": "Job Placement for Veterans",
+    "group": "Council Wide"
+  },
+  {
+    "value": 8106000,
+    "name": "Job Training and Placement Initiative",
+    "group": "Council Wide"
+  },
+  {
+    "value": 300000,
+    "name": "Joseph S. Murphy Institute Center for Worker Education",
+    "group": "Council Wide"
+  },
+  {
+    "value": 485000,
+    "name": "Legal Information for Families (LIFT)",
+    "group": "Council Wide"
+  },
+  {
+    "value": 5000000,
+    "name": "Legal Services for Low-Income New Yorkers",
+    "group": "Council Wide"
+  },
+  {
+    "value": 2405000,
+    "name": "Legal Services for the Working Poor",
+    "group": "Council Wide"
+  },
+  {
+    "value": 350000,
+    "name": "Legal Services for Veterans",
+    "group": "Council Wide"
+  },
+  {
+    "value": 165000,
+    "name": "LGBT Inclusive Curriculum",
+    "group": "Council Wide"
+  },
+  {
+    "value": 1500000,
+    "name": "LGBT Senior Services in Every Borough",
+    "group": "Council Wide"
+  },
+  {
+    "value": 1000000,
+    "name": "LGBTQ Youth Mental Health",
+    "group": "Council Wide"
+  },
+  {
+    "value": 400000,
+    "name": "Local",
+    "group": "Barron"
+  },
+  {
+    "value": 400000,
+    "name": "Local",
+    "group": "Borelli"
+  },
+  {
+    "value": 400000,
+    "name": "Local",
+    "group": "Cabrera"
+  },
+  {
+    "value": 400000,
+    "name": "Local",
+    "group": "CD28"
+  },
+  {
+    "value": 400000,
+    "name": "Local",
+    "group": "Chin"
+  },
+  {
+    "value": 400000,
+    "name": "Local",
+    "group": "Cohen"
+  },
+  {
+    "value": 400000,
+    "name": "Local",
+    "group": "Constantinides"
+  },
+  {
+    "value": 400000,
+    "name": "Local",
+    "group": "Cornegy"
+  },
+  {
+    "value": 400000,
+    "name": "Local",
+    "group": "Crowley"
+  },
+  {
+    "value": 400000,
+    "name": "Local",
+    "group": "Cumbo"
+  },
+  {
+    "value": 400000,
+    "name": "Local",
+    "group": "Deutsch"
+  },
+  {
+    "value": 400000,
+    "name": "Local",
+    "group": "Dickens"
+  },
+  {
+    "value": 400000,
+    "name": "Local",
+    "group": "Dromm"
+  },
+  {
+    "value": 400000,
+    "name": "Local",
+    "group": "Espinal"
+  },
+  {
+    "value": 400000,
+    "name": "Local",
+    "group": "Eugene"
+  },
+  {
+    "value": 400000,
+    "name": "Local",
+    "group": "Ferreras-Copeland"
+  },
+  {
+    "value": 400000,
+    "name": "Local",
+    "group": "Garodnick"
+  },
+  {
+    "value": 400000,
+    "name": "Local",
+    "group": "Gentile"
+  },
+  {
+    "value": 400000,
+    "name": "Local",
+    "group": "Gibson"
+  },
+  {
+    "value": 400000,
+    "name": "Local",
+    "group": "Greenfield"
+  },
+  {
+    "value": 400000,
+    "name": "Local",
+    "group": "Grodenchik"
+  },
+  {
+    "value": 400000,
+    "name": "Local",
+    "group": "Johnson"
+  },
+  {
+    "value": 400000,
+    "name": "Local",
+    "group": "Kallos"
+  },
+  {
+    "value": 400000,
+    "name": "Local",
+    "group": "King"
+  },
+  {
+    "value": 400000,
+    "name": "Local",
+    "group": "Koo"
+  },
+  {
+    "value": 400000,
+    "name": "Local",
+    "group": "Koslowitz"
+  },
+  {
+    "value": 400000,
+    "name": "Local",
+    "group": "Lancman"
+  },
+  {
+    "value": 400000,
+    "name": "Local",
+    "group": "Lander"
+  },
+  {
+    "value": 400000,
+    "name": "Local",
+    "group": "Levin"
+  },
+  {
+    "value": 400000,
+    "name": "Local",
+    "group": "Levine"
+  },
+  {
+    "value": 400000,
+    "name": "Local",
+    "group": "Maisel"
+  },
+  {
+    "value": 400000,
+    "name": "Local",
+    "group": "Mark-Viverito"
+  },
+  {
+    "value": 400000,
+    "name": "Local",
+    "group": "Matteo"
+  },
+  {
+    "value": 400000,
+    "name": "Local",
+    "group": "Mealy"
+  },
+  {
+    "value": 400000,
+    "name": "Local",
+    "group": "Menchaca"
+  },
+  {
+    "value": 400000,
+    "name": "Local",
+    "group": "Mendez"
+  },
+  {
+    "value": 400000,
+    "name": "Local",
+    "group": "Miller"
+  },
+  {
+    "value": 400000,
+    "name": "Local",
+    "group": "Palma"
+  },
+  {
+    "value": 400000,
+    "name": "Local",
+    "group": "Reynoso"
+  },
+  {
+    "value": 400000,
+    "name": "Local",
+    "group": "Richards"
+  },
+  {
+    "value": 400000,
+    "name": "Local",
+    "group": "Rodriguez"
+  },
+  {
+    "value": 400000,
+    "name": "Local",
+    "group": "Rose"
+  },
+  {
+    "value": 400000,
+    "name": "Local",
+    "group": "Rosenthal"
+  },
+  {
+    "value": 400000,
+    "name": "Local",
+    "group": "Salamanca"
+  },
+  {
+    "value": 16138500,
+    "name": "Local",
+    "group": "Speaker"
+  },
+  {
+    "value": 400000,
+    "name": "Local",
+    "group": "Torres"
+  },
+  {
+    "value": 400000,
+    "name": "Local",
+    "group": "Treyger"
+  },
+  {
+    "value": 400000,
+    "name": "Local",
+    "group": "Ulrich"
+  },
+  {
+    "value": 400000,
+    "name": "Local",
+    "group": "Vacca"
+  },
+  {
+    "value": 400000,
+    "name": "Local",
+    "group": "Vallone"
+  },
+  {
+    "value": 400000,
+    "name": "Local",
+    "group": "Van Bramer"
+  },
+  {
+    "value": 400000,
+    "name": "Local",
+    "group": "Williams"
+  },
+  {
+    "value": 750000,
+    "name": "Made in NYC",
+    "group": "Council Wide"
+  },
+  {
+    "value": 1192818,
+    "name": "Maternal and Child Health Services",
+    "group": "Council Wide"
+  },
+  {
+    "value": 500000,
+    "name": "Medicaid Redesign Transition",
+    "group": "Council Wide"
+  },
+  {
+    "value": 190000,
+    "name": "Mental Health Services for Veterans",
+    "group": "Council Wide"
+  },
+  {
+    "value": 1093000,
+    "name": "Mental Health Services for Vulnerbale Populations",
+    "group": "Council Wide"
+  },
+  {
+    "value": 1000000,
+    "name": "Mortgage Foreclosure Prevention Program",
+    "group": "Council Wide"
+  },
+  {
+    "value": 600000,
+    "name": "MWBE Leadership Associations",
+    "group": "Council Wide"
+  },
+  {
+    "value": 3850000,
+    "name": "Naturally Occurring Retirement Communities (NORCs)",
+    "group": "Council Wide"
+  },
+  {
+    "value": 22000,
+    "name": "Neighborhood Development Grant Initiative",
+    "group": "Barron"
+  },
+  {
+    "value": 22000,
+    "name": "Neighborhood Development Grant Initiative",
+    "group": "Borelli"
+  },
+  {
+    "value": 22000,
+    "name": "Neighborhood Development Grant Initiative",
+    "group": "CD28"
+  },
+  {
+    "value": 22000,
+    "name": "Neighborhood Development Grant Initiative",
+    "group": "Chin"
+  },
+  {
+    "value": 22000,
+    "name": "Neighborhood Development Grant Initiative",
+    "group": "Constantinides"
+  },
+  {
+    "value": 22000,
+    "name": "Neighborhood Development Grant Initiative",
+    "group": "Crowley"
+  },
+  {
+    "value": 22000,
+    "name": "Neighborhood Development Grant Initiative",
+    "group": "Cumbo"
+  },
+  {
+    "value": 22000,
+    "name": "Neighborhood Development Grant Initiative",
+    "group": "Deutsch"
+  },
+  {
+    "value": 22000,
+    "name": "Neighborhood Development Grant Initiative",
+    "group": "Dickens"
+  },
+  {
+    "value": 22000,
+    "name": "Neighborhood Development Grant Initiative",
+    "group": "Dromm"
+  },
+  {
+    "value": 22000,
+    "name": "Neighborhood Development Grant Initiative",
+    "group": "Eugene"
+  },
+  {
+    "value": 22000,
+    "name": "Neighborhood Development Grant Initiative",
+    "group": "Ferreras-Copeland"
+  },
+  {
+    "value": 22000,
+    "name": "Neighborhood Development Grant Initiative",
+    "group": "Gentile"
+  },
+  {
+    "value": 22000,
+    "name": "Neighborhood Development Grant Initiative",
+    "group": "Greenfield"
+  },
+  {
+    "value": 22000,
+    "name": "Neighborhood Development Grant Initiative",
+    "group": "Grodenchik"
+  },
+  {
+    "value": 22000,
+    "name": "Neighborhood Development Grant Initiative",
+    "group": "Kallos"
+  },
+  {
+    "value": 22000,
+    "name": "Neighborhood Development Grant Initiative",
+    "group": "Koo"
+  },
+  {
+    "value": 22000,
+    "name": "Neighborhood Development Grant Initiative",
+    "group": "Koslowitz"
+  },
+  {
+    "value": 22000,
+    "name": "Neighborhood Development Grant Initiative",
+    "group": "Lancman"
+  },
+  {
+    "value": 22000,
+    "name": "Neighborhood Development Grant Initiative",
+    "group": "Levin"
+  },
+  {
+    "value": 22000,
+    "name": "Neighborhood Development Grant Initiative",
+    "group": "Maisel"
+  },
+  {
+    "value": 22000,
+    "name": "Neighborhood Development Grant Initiative",
+    "group": "Mark-Viverito"
+  },
+  {
+    "value": 22000,
+    "name": "Neighborhood Development Grant Initiative",
+    "group": "Matteo"
+  },
+  {
+    "value": 22000,
+    "name": "Neighborhood Development Grant Initiative",
+    "group": "Mealy"
+  },
+  {
+    "value": 22000,
+    "name": "Neighborhood Development Grant Initiative",
+    "group": "Menchaca"
+  },
+  {
+    "value": 22000,
+    "name": "Neighborhood Development Grant Initiative",
+    "group": "Mendez"
+  },
+  {
+    "value": 22000,
+    "name": "Neighborhood Development Grant Initiative",
+    "group": "Richards"
+  },
+  {
+    "value": 22000,
+    "name": "Neighborhood Development Grant Initiative",
+    "group": "Rodriguez"
+  },
+  {
+    "value": 22000,
+    "name": "Neighborhood Development Grant Initiative",
+    "group": "Rose"
+  },
+  {
+    "value": 22000,
+    "name": "Neighborhood Development Grant Initiative",
+    "group": "Salamanca"
+  },
+  {
+    "value": 22000,
+    "name": "Neighborhood Development Grant Initiative",
+    "group": "Torres"
+  },
+  {
+    "value": 22000,
+    "name": "Neighborhood Development Grant Initiative",
+    "group": "Treyger"
+  },
+  {
+    "value": 22000,
+    "name": "Neighborhood Development Grant Initiative",
+    "group": "Ulrich"
+  },
+  {
+    "value": 22000,
+    "name": "Neighborhood Development Grant Initiative",
+    "group": "Vacca"
+  },
+  {
+    "value": 22000,
+    "name": "Neighborhood Development Grant Initiative",
+    "group": "Vallone"
+  },
+  {
+    "value": 22000,
+    "name": "Neighborhood Development Grant Initiative",
+    "group": "Williams"
+  },
+  {
+    "value": 483000,
+    "name": "Neighborhood Development Grant Initiative",
+    "group": "Council Wide"
+  },
+  {
+    "value": 6230000,
+    "name": "New York Immigrant Family Unity Project",
+    "group": "Council Wide"
+  },
+  {
+    "value": 700000,
+    "name": "New York Immigrant Population",
+    "group": "Council Wide"
+  },
+  {
+    "value": 2000000,
+    "name": "Nurse Family Partnership",
+    "group": "Council Wide"
+  },
+  {
+    "value": 7800000,
+    "name": "NYC Cleanup",
+    "group": "Council Wide"
+  },
+  {
+    "value": 2540000,
+    "name": "Parks Equity Initiative",
+    "group": "Council Wide"
+  },
+  {
+    "value": 9553205,
+    "name": "Parks Maintenance",
+    "group": "Council Wide"
+  },
+  {
+    "value": 1925000,
+    "name": "Physical Education and Fitness",
+    "group": "Council Wide"
+  },
+  {
+    "value": 250000,
+    "name": "Post-Arrest Diversion Program for Young Adults",
+    "group": "Council Wide"
+  },
+  {
+    "value": 250000,
+    "name": "Power Action Change Empowerment (PACE) Initiative for Young Adults",
+    "group": "Council Wide"
+  },
+  {
+    "value": 250000,
+    "name": "Prevent Sexual Assault (PSA) Initiative for Young Adults",
+    "group": "Council Wide"
+  },
+  {
+    "value": 750000,
+    "name": "Prisoners' Rights Project",
+    "group": "Council Wide"
+  },
+  {
+    "value": 260000,
+    "name": "Reproductive and Sexual Health Services",
+    "group": "Council Wide"
+  },
+  {
+    "value": 1300000,
+    "name": "Restorative Justice Program",
+    "group": "Council Wide"
+  },
+  {
+    "value": 1500000,
+    "name": "Senior Centers for Immigrant Populations",
+    "group": "Council Wide"
+  },
+  {
+    "value": 3578000,
+    "name": "Senior Centers, Programs, and Enhancements",
+    "group": "Council Wide"
+  },
+  {
+    "value": 1288855,
+    "name": "Small Business Outreach and Assistance Program",
+    "group": "Council Wide"
+  },
+  {
+    "value": 950000,
+    "name": "Social Adult Day Care Enhancement",
+    "group": "Council Wide"
+  },
+  {
+    "value": 600000,
+    "name": "Social Justice Postgraduate Fellowship Program",
+    "group": "Council Wide"
+  },
+  {
+    "value": 5380000,
+    "name": "Speaker's Initiative",
+    "group": "Speaker"
+  },
+  {
+    "value": 1200000,
+    "name": "Sports Training and Rolemodels for Success (STARS) Initiative",
+    "group": "Council Wide"
+  },
+  {
+    "value": 2000000,
+    "name": "Stabilizing NYC",
+    "group": "Council Wide"
+  },
+  {
+    "value": 250000,
+    "name": "Step In and Stop It Initiative to Address Bystander Intervention",
+    "group": "Council Wide"
+  },
+  {
+    "value": 400000,
+    "name": "Student Voter Registration Day",
+    "group": "Council Wide"
+  },
+  {
+    "value": 2020000,
+    "name": "SU-CASA",
+    "group": "Council Wide"
+  },
+  {
+    "value": 12744500,
+    "name": "Support for Educators",
+    "group": "Council Wide"
+  },
+  {
+    "value": 750000,
+    "name": "Support for Victims of Human Trafficking",
+    "group": "Council Wide"
+  },
+  {
+    "value": 40000,
+    "name": "Support Our Seniors",
+    "group": "Barron"
+  },
+  {
+    "value": 40000,
+    "name": "Support Our Seniors",
+    "group": "Borelli"
+  },
+  {
+    "value": 40000,
+    "name": "Support Our Seniors",
+    "group": "CD28"
+  },
+  {
+    "value": 40000,
+    "name": "Support Our Seniors",
+    "group": "Chin"
+  },
+  {
+    "value": 40000,
+    "name": "Support Our Seniors",
+    "group": "Crowley"
+  },
+  {
+    "value": 40000,
+    "name": "Support Our Seniors",
+    "group": "Cumbo"
+  },
+  {
+    "value": 40000,
+    "name": "Support Our Seniors",
+    "group": "Deutsch"
+  },
+  {
+    "value": 40000,
+    "name": "Support Our Seniors",
+    "group": "Dromm"
+  },
+  {
+    "value": 40000,
+    "name": "Support Our Seniors",
+    "group": "Ferreras-Copeland"
+  },
+  {
+    "value": 40000,
+    "name": "Support Our Seniors",
+    "group": "Gentile"
+  },
+  {
+    "value": 40000,
+    "name": "Support Our Seniors",
+    "group": "Grodenchik"
+  },
+  {
+    "value": 40000,
+    "name": "Support Our Seniors",
+    "group": "Johnson"
+  },
+  {
+    "value": 40000,
+    "name": "Support Our Seniors",
+    "group": "Kallos"
+  },
+  {
+    "value": 40000,
+    "name": "Support Our Seniors",
+    "group": "Koo"
+  },
+  {
+    "value": 40000,
+    "name": "Support Our Seniors",
+    "group": "Koslowitz"
+  },
+  {
+    "value": 40000,
+    "name": "Support Our Seniors",
+    "group": "Lancman"
+  },
+  {
+    "value": 40000,
+    "name": "Support Our Seniors",
+    "group": "Lander"
+  },
+  {
+    "value": 30000,
+    "name": "Support Our Seniors",
+    "group": "Mark-Viverito"
+  },
+  {
+    "value": 40000,
+    "name": "Support Our Seniors",
+    "group": "Matteo"
+  },
+  {
+    "value": 40000,
+    "name": "Support Our Seniors",
+    "group": "Menchaca"
+  },
+  {
+    "value": 40000,
+    "name": "Support Our Seniors",
+    "group": "Mendez"
+  },
+  {
+    "value": 40000,
+    "name": "Support Our Seniors",
+    "group": "Richards"
+  },
+  {
+    "value": 40000,
+    "name": "Support Our Seniors",
+    "group": "Rodriguez"
+  },
+  {
+    "value": 40000,
+    "name": "Support Our Seniors",
+    "group": "Rose"
+  },
+  {
+    "value": 40000,
+    "name": "Support Our Seniors",
+    "group": "Rosenthal"
+  },
+  {
+    "value": 15000,
+    "name": "Support Our Seniors",
+    "group": "Torres"
+  },
+  {
+    "value": 40000,
+    "name": "Support Our Seniors",
+    "group": "Ulrich"
+  },
+  {
+    "value": 40000,
+    "name": "Support Our Seniors",
+    "group": "Vacca"
+  },
+  {
+    "value": 40000,
+    "name": "Support Our Seniors",
+    "group": "Vallone"
+  },
+  {
+    "value": 40000,
+    "name": "Support Our Seniors",
+    "group": "Williams"
+  },
+  {
+    "value": 875000,
+    "name": "Support Our Seniors",
+    "group": "Council Wide"
+  },
+  {
+    "value": 1950000,
+    "name": "Supportive Alternatives to Violent Encounters (SAVE)",
+    "group": "Council Wide"
+  },
+  {
+    "value": 250000,
+    "name": "Transgender Specific Healthcare Training",
+    "group": "Council Wide"
+  },
+  {
+    "value": 500000,
+    "name": "Unaccompanied Minors and Families",
+    "group": "Council Wide"
+  },
+  {
+    "value": 3500000,
+    "name": "Urban Advantage",
+    "group": "Council Wide"
+  },
+  {
+    "value": 350000,
+    "name": "Veterans Community Development",
+    "group": "Council Wide"
+  },
+  {
+    "value": 1423658,
+    "name": "Viral Hepatitis Prevention",
+    "group": "Council Wide"
+  },
+  {
+    "value": 175000,
+    "name": "Warrant Reduction Events",
+    "group": "Council Wide"
+  },
+  {
+    "value": 600000,
+    "name": "Work-Based Learning Internships",
+    "group": "Council Wide"
+  },
+  {
+    "value": 2248000,
+    "name": "Worker Cooperative Business Development Initiative",
+    "group": "Council Wide"
+  },
+  {
+    "value": 11000000,
+    "name": "Year-Round Employment Program (Work, Learn, Grow)",
+    "group": "Council Wide"
+  },
+  {
+    "value": 825000,
+    "name": "Young Women's Leadership Development",
+    "group": "Council Wide"
+  },
+  {
+    "value": 150000,
+    "name": "Youth",
+    "group": "Barron"
+  },
+  {
+    "value": 150000,
+    "name": "Youth",
+    "group": "Borelli"
+  },
+  {
+    "value": 150000,
+    "name": "Youth",
+    "group": "Cabrera"
+  },
+  {
+    "value": 150000,
+    "name": "Youth",
+    "group": "CD28"
+  },
+  {
+    "value": 150000,
+    "name": "Youth",
+    "group": "Chin"
+  },
+  {
+    "value": 150000,
+    "name": "Youth",
+    "group": "Cohen"
+  },
+  {
+    "value": 150000,
+    "name": "Youth",
+    "group": "Constantinides"
+  },
+  {
+    "value": 150000,
+    "name": "Youth",
+    "group": "Cornegy"
+  },
+  {
+    "value": 150000,
+    "name": "Youth",
+    "group": "Crowley"
+  },
+  {
+    "value": 150000,
+    "name": "Youth",
+    "group": "Cumbo"
+  },
+  {
+    "value": 150000,
+    "name": "Youth",
+    "group": "Deutsch"
+  },
+  {
+    "value": 150000,
+    "name": "Youth",
+    "group": "Dickens"
+  },
+  {
+    "value": 150000,
+    "name": "Youth",
+    "group": "Dromm"
+  },
+  {
+    "value": 150000,
+    "name": "Youth",
+    "group": "Espinal"
+  },
+  {
+    "value": 150000,
+    "name": "Youth",
+    "group": "Eugene"
+  },
+  {
+    "value": 150000,
+    "name": "Youth",
+    "group": "Ferreras-Copeland"
+  },
+  {
+    "value": 150000,
+    "name": "Youth",
+    "group": "Garodnick"
+  },
+  {
+    "value": 150000,
+    "name": "Youth",
+    "group": "Gentile"
+  },
+  {
+    "value": 150000,
+    "name": "Youth",
+    "group": "Gibson"
+  },
+  {
+    "value": 150000,
+    "name": "Youth",
+    "group": "Greenfield"
+  },
+  {
+    "value": 150000,
+    "name": "Youth",
+    "group": "Grodenchik"
+  },
+  {
+    "value": 150000,
+    "name": "Youth",
+    "group": "Johnson"
+  },
+  {
+    "value": 150000,
+    "name": "Youth",
+    "group": "Kallos"
+  },
+  {
+    "value": 150000,
+    "name": "Youth",
+    "group": "King"
+  },
+  {
+    "value": 150000,
+    "name": "Youth",
+    "group": "Koo"
+  },
+  {
+    "value": 150000,
+    "name": "Youth",
+    "group": "Koslowitz"
+  },
+  {
+    "value": 150000,
+    "name": "Youth",
+    "group": "Lancman"
+  },
+  {
+    "value": 150000,
+    "name": "Youth",
+    "group": "Lander"
+  },
+  {
+    "value": 150000,
+    "name": "Youth",
+    "group": "Levin"
+  },
+  {
+    "value": 150000,
+    "name": "Youth",
+    "group": "Levine"
+  },
+  {
+    "value": 150000,
+    "name": "Youth",
+    "group": "Maisel"
+  },
+  {
+    "value": 150000,
+    "name": "Youth",
+    "group": "Mark-Viverito"
+  },
+  {
+    "value": 150000,
+    "name": "Youth",
+    "group": "Matteo"
+  },
+  {
+    "value": 150000,
+    "name": "Youth",
+    "group": "Mealy"
+  },
+  {
+    "value": 150000,
+    "name": "Youth",
+    "group": "Menchaca"
+  },
+  {
+    "value": 150000,
+    "name": "Youth",
+    "group": "Mendez"
+  },
+  {
+    "value": 150000,
+    "name": "Youth",
+    "group": "Miller"
+  },
+  {
+    "value": 150000,
+    "name": "Youth",
+    "group": "Palma"
+  },
+  {
+    "value": 150000,
+    "name": "Youth",
+    "group": "Reynoso"
+  },
+  {
+    "value": 150000,
+    "name": "Youth",
+    "group": "Richards"
+  },
+  {
+    "value": 150000,
+    "name": "Youth",
+    "group": "Rodriguez"
+  },
+  {
+    "value": 150000,
+    "name": "Youth",
+    "group": "Rose"
+  },
+  {
+    "value": 150000,
+    "name": "Youth",
+    "group": "Rosenthal"
+  },
+  {
+    "value": 150000,
+    "name": "Youth",
+    "group": "Salamanca"
+  },
+  {
+    "value": 150000,
+    "name": "Youth",
+    "group": "Torres"
+  },
+  {
+    "value": 150000,
+    "name": "Youth",
+    "group": "Treyger"
+  },
+  {
+    "value": 150000,
+    "name": "Youth",
+    "group": "Ulrich"
+  },
+  {
+    "value": 150000,
+    "name": "Youth",
+    "group": "Vacca"
+  },
+  {
+    "value": 150000,
+    "name": "Youth",
+    "group": "Vallone"
+  },
+  {
+    "value": 150000,
+    "name": "Youth",
+    "group": "Van Bramer"
+  },
+  {
+    "value": 150000,
+    "name": "Youth",
+    "group": "Williams"
+  },
+  {
+    "value": 500000,
+    "name": "Youth Health Initiative",
+    "group": "Council Wide"
+  },
+  {
+    "value": 2100000,
+    "name": "YouthBuild Project Initiative",
+    "group": "Council Wide"
+  }
+]
+
+  // instantiate d3plus
+  var visualization = d3plus.viz()
+    .container("#viz")     // container DIV to hold the visualization
+    .data(sample_data)     // data to use with the visualization
+    .type("bubbles")       // visualization type
+    .id(["group", "name"]) // nesting keys
+    .depth(1)              // 0-based depth
+    .size("value")         // key name to size bubbles
+    .color("group")        // color by each group
+    .draw()                // finally, draw the visualization!
+
+</script>
