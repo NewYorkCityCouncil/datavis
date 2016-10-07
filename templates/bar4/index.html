@@ -10,7 +10,7 @@
     <body>
 
 
-<canvas id="bar3" width=auto max-height="400"></canvas>
+<canvas id="bar3" width="400" height="500"></canvas>
 <script>
 
 Chart.defaults.global.responsive = true
@@ -46,9 +46,9 @@ Chart.defaults.scale = {
 
 		// label settings
 		ticks: {
-			beginAtZero: false,
-			minRotation: 0,
-			maxRotation: 90,
+
+	//		minRotation: 0,
+		//	maxRotation: 90,
 			mirror: false,
 			padding: 10,
 			reverse: false,
@@ -103,7 +103,11 @@ var myChart = new Chart(ctx, {
     options: {
       scales:{
         xAxes: [{
-          display: true
+          display: true,
+          ticks:{
+          minRotation: 90,
+    	    maxRotation: 90
+          }
         }],
         yAxes: [{
           display: true,
