@@ -48,7 +48,7 @@ Chart.defaults.scale = {
 		ticks: {
 			beginAtZero: false,
 			minRotation: 0,
-			maxRotation: 50,
+			maxRotation: 90,
 			mirror: false,
 			padding: 10,
 			reverse: false,
@@ -110,7 +110,7 @@ var myChart = new Chart(ctx, {
           ticks: {
             beginAtZero: true,
             callback: function(value) {
-              return '$' + value.toLocaleString('en-US');
+              return '$' + (value/1000000).toLocaleString() + 'M';
             }
           }
         }]
