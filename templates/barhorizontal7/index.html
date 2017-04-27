@@ -10,7 +10,7 @@
     <body>
 
 
-<canvas id="barhorizontal7" width=auto max-height="400"></canvas>
+<canvas id="barhorizontal7" width="100" max-height="1000"></canvas>
 <script>
 
 Chart.defaults.global.responsive = true
@@ -66,85 +66,62 @@ Chart.defaults.scale = {
 
 // Chart.defaults.global.defaultFontSize = 10
 
-var ctx = document.getElementById("barhorizontal6");
+var ctx = document.getElementById("barhorizontal7");
 
 var myChart = new Chart(ctx, {
     type: 'horizontalBar',
     data: {
         labels: [
           "District 03, Corey Johnson",
-          "District 03, Corey Johnson",
-          "District 05, Ben Kallos",
           "District 05, Ben Kallos",
           "District 06, Helen Rosenthal",
-          "District 06, Helen Rosenthal",
-          "District 07, Mark Levine",
           "District 07, Mark Levine",
           "District 08, Melissa Mark-Viverito",
-          "District 08, Melissa Mark-Viverito",
-          "District 10, Ydanis Rodriguez",
           "District 10, Ydanis Rodriguez",
           "District 11, Andy Cohen",
-          "District 11, Andy Cohen",
-          "District 15, Ritchie Torres",
           "District 15, Ritchie Torres",
           "District 16, Vanessa Gibson",
-          "District 16, Vanessa Gibson",
-          "District 17, Rafael Salamanca",
           "District 17, Rafael Salamanca",
           "District 19, Paul Vallone",
-          "District 19, Paul Vallone",
-          "District 21, Julissa Ferreras-Copeland",
           "District 21, Julissa Ferreras-Copeland",
           "District 22, Costa Constantinides",
-          "District 22, Costa Constantinides",
-          "District 23, Barry Grodenchik",
           "District 23, Barry Grodenchik",
           "District 26, Jimmy Van Bramer",
-          "District 26, Jimmy Van Bramer",
-          "District 27, I. Daneek Miller",
           "District 27, I. Daneek Miller",
           "District 29, Karen Koslowitz",
-          "District 29, Karen Koslowitz",
-          "District 30, Elizabeth Crowley",
           "District 30, Elizabeth Crowley",
           "District 31, Donovan Richards",
-          "District 31, Donovan Richards",
-          "Distrcit 32, Eric Ulrich",
           "Distrcit 32, Eric Ulrich",
           "District 33, Stephen Levin",
-          "District 33, Stephen Levin",
-          "District 34, Antonio Reynoso",
           "District 34, Antonio Reynoso",
           "District 35, Laurie Cumbo",
-          "District 35, Laurie Cumbo",
-          "District 36, Robert Cornegy",
           "District 36, Robert Cornegy",
           "District 38, Carlos Menchaca",
-          "District 38, Carlos Menchaca",
           "District 39, Brad Lander",
-          "District 39, Brad Lander",
-          "District 40, Matthieu Eugene",
-          "District 40, Matthieu Eugene",
-          "District 44, David Greenfield",
-          "District 44, David Greenfield",
-          "District 45, Jumaane Williams",
-          "District 45, Jumaane Williams",
-          "District 47, Mark Treyger",
-          "District 47, Mark Treyger",
-          "District 49, Deborah Rose",
-          "District 49, Deborah Rose",
           "District 39, Brad Lander- Programming ",
-          "District 39, Brad Lander- Programming"
+          "District 40, Matthieu Eugene",
+          "District 44, David Greenfield",
+          "District 45, Jumaane Williams",
+          "District 47, Mark Treyger",
+          "District 49, Deborah Rose",
                 ],
         datasets: [{
-            label: 'Participatory Budgeting Voters 2016 v 2017',
-            backgroundColor:["#BE4BDB","#228AE6"],
+            label: '2016',
+            backgroundColor:"#BE4BDB",
             borderColor: "#eeeeee",
             borderWidth: 1,
             hoverBackgroundColor: "#9E9E9E",
             hoverBorderColor: "#eeeeee",
-            data: [2072,3518,1996,2421,2167,3111,1870,1875,4006,4309,2274,3529,1750,2237,2919,3899,0,1456,0,1005,4503,6214,1873,2840,1710,3617,1112,2012,3508,5125,1722,1872,1449,2502,2486,2407,3329,4799,916,1274,1554,3789,5970,6576,1660,2743,684,2624,6320,8121,3100,7156,984,1876,2363,4379,1918,1416,1475,3010,0,1088,2997,4887]
+            data: [2072,1996,2167,1870,4006,2274,1750,2919,0,0,4503,1873,1710,1112,3508,1722,1449,2486,3329,916,1554,5970,1660,684,6320,3100,2997,984,2363,1918,1475,0]
+        },
+        {
+            label: '2017',
+            backgroundColor:"#04d418",
+            borderColor: "#eeeeee",
+            borderWidth: 1,
+            hoverBackgroundColor: "#9E9E9E",
+            hoverBorderColor: "#eeeeee",
+            data: [3518,2421,3111,1875,4309,3529,2237,3899,1456,1005,6214,2840,3617,2012,5125,1872,2502,2407,4799,1274,3789,6576,2743,2624,8121,7156,4887,1876,4379,1416,3010,1088]
         }]
     },
     options: {
@@ -188,7 +165,7 @@ var myChart = new Chart(ctx, {
 				},
 				label: function(tooltipItem, data) {
 					var datasetLabel = data.datasets[tooltipItem.datasetIndex].label || '';
-					return '$' + tooltipItem.xLabel.toLocaleString('en-US')+' Per Capita';
+					return tooltipItem.xLabel.toLocaleString('en-US')+' voters';
 				}
         }
       }
