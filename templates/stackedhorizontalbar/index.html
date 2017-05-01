@@ -3,15 +3,20 @@
     <head>
         <meta charset="utf-8" />
         <title>Participatory Budgeting 2017 and 2016</title>
-        <!--https://jsfiddle.net/b7gnron7/4/--> 
+        <!--source https://jsfiddle.net/b7gnron7/4/-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 
     </head>
     <body>
 
 
-<canvas id="stackedhorizontalbar"></canvas>
+<canvas id="stackedhorizontalbar" width="100" max-height="1000"></canvas>
 <script>
+
+Chart.defaults.global.responsive = true
+Chart.defaults.global.legend.display= true
+Chart.defaults.global.maintainAspectRatio = true
+
 Chart.defaults.groupableHBar = Chart.helpers.clone(Chart.defaults.horizontalBar);
 
 Chart.controllers.groupableHBar = Chart.controllers.horizontalBar.extend({
@@ -24,7 +29,7 @@ Chart.controllers.groupableHBar = Chart.controllers.horizontalBar.extend({
         topTick -= me.chart.isCombo ? (ruler.tickHeight / 2) : 0;
         var stackIndex = this.getMeta().stackIndex;
 
-        if (yScale.options.stacked) {
+     if (yScale.options.stacked) {
             if(ruler.datasetCount>1) {
                 var spBar=ruler.categorySpacing/ruler.datasetCount;
                 var h=me.calculateBarHeight(ruler);
@@ -32,6 +37,7 @@ Chart.controllers.groupableHBar = Chart.controllers.horizontalBar.extend({
                 return topTick + (((ruler.categoryHeight - h) / 2)+ruler.categorySpacing-spBar/2)+(h+spBar)*stackIndex;
             }
             return topTick + (ruler.categoryHeight / 2) + ruler.categorySpacing;
+
         }
 
         return topTick +
@@ -118,7 +124,7 @@ var data = {
           ],
   datasets: [
     {
-      label: '2016',
+      label: '2016 Ballots (all paper)',
       backgroundColor:"#BE4BDB",
       borderColor: "#eeeeee",
       borderWidth: 1,
@@ -130,38 +136,38 @@ var data = {
       yAxisID: 'y-axis-0'
     },
     {
-      label: '2017 Paper',
+      label: '2017 Paper Ballots',
       backgroundColor:"#1a1b8d",
       borderColor: "#eeeeee",
       borderWidth: 1,
       hoverBackgroundColor: "#9E9E9E",
       hoverBorderColor: "#eeeeee",
-      data: [1914,508,905,1084,3591,2722,1558,3812,1333,841,4654,2730,2133,1033,4048,1695,1484,2081,4407,0,1212,5772,1241,1648,7050,2505,801,2,846,2922,482],
+      data: [1914,508,905,1084,3591,2722,1558,3812,1333,841,4654,2730,2133,1033,4048,1695,1484,2081,4407,0,1212,5772,1241,1648,7050,2505,2479,801,2,846,2922,482],
       stack: 2,
       xAxisID: 'x-axis-1',
       yAxisID: 'y-axis-0'
     },
     {
-      label: '2017 Digtal',
+      label: '2017 Digtal Ballots',
       backgroundColor:"#04d418",
       borderColor: "#eeeeee",
       borderWidth: 1,
       hoverBackgroundColor: "#9E9E9E",
       hoverBorderColor: "#eeeeee",
-      data: [1604,1913,2206,791,718,807,679,87,123,164,1560,110,1484,979,1077,177,1018,326,392,0,2577,804,1502,976,1071,4651,1075,279,570,88,606],
+      data: [1604,1913,2206,791,718,807,679,87,123,164,1560,110,1484,979,1077,177,1018,326,392,0,2577,804,1502,976,1071,4651,2408,1075,279,570,88,606],
       stack: 2,
       xAxisID: 'x-axis-1',
       yAxisID: 'y-axis-0'
 
     },
     {
-      label: '2017 Invalid',
+      label: '2017 Invalid Ballots',
       backgroundColor:"#fa60a1",
       borderColor: "#eeeeee",
       borderWidth: 1,
       hoverBackgroundColor: "#9E9E9E",
       hoverBorderColor: "#eeeeee",
-      data: [50,5,14,54,142,109,52,520,99,43,61,151,65,23,105,32,33,36,187,0,32,100,63,32,241,41,31,0,9,31,22],
+      data: [50,5,14,54,142,109,52,520,99,43,61,151,65,23,105,32,33,36,187,0,32,100,63,32,241,41,102,31,0,9,31,22],
       stack: 2,
       xAxisID: 'x-axis-1',
       yAxisID: 'y-axis-0'
@@ -201,7 +207,7 @@ new Chart(ctx, {
         },
         id: 'x-axis-1',
         gridLines: {
-          display: true,
+          display: false,
           drawTicks: true,
         },
         display: false
