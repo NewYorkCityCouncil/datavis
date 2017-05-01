@@ -112,21 +112,46 @@ var myChart = new Chart(ctx, {
             borderWidth: 1,
             hoverBackgroundColor: "#9E9E9E",
             hoverBorderColor: "#eeeeee",
-            data: [2072,1996,2167,1870,4006,2274,1750,2919,0,0,4503,1873,1710,1112,3508,1722,1449,2486,3329,916,1554,5970,1660,684,6320,3100,2997,984,2363,1918,1475,0]
+            data: [2072,1996,2167,1870,4006,2274,1750,2919,0,0,4503,1873,1710,1112,3508,1722,1449,2486,3329,916,1554,5970,1660,684,6320,3100,2997,984,2363,1918,1475,0],
+            stack: 1
         },
         {
-            label: '2017',
+            label: '2017 Digtal',
             backgroundColor:"#04d418",
             borderColor: "#eeeeee",
             borderWidth: 1,
             hoverBackgroundColor: "#9E9E9E",
             hoverBorderColor: "#eeeeee",
-            data: [3518,2421,3111,1875,4309,3529,2237,3899,1456,1005,6214,2840,3617,2012,5125,1872,2502,2407,4799,1274,3789,6576,2743,2624,8121,7156,4887,1876,4379,1416,3010,1088]
-        }]
+            data: [1604,1913,2206,791,718,807,679,87,123,164,1560,110,1484,979,1077,177,1018,326,392,0,2577,804,1502,976,1071,4651,1075,279,570,88,606],
+            stack: 2
+        },
+        {
+          label: '2017 Invalid',
+          backgroundColor:"#fa60a1",
+          borderColor: "#eeeeee",
+          borderWidth: 1,
+          hoverBackgroundColor: "#9E9E9E",
+          hoverBorderColor: "#eeeeee",
+          data: [50,5,14,54,142,109,52,520,99,43,61,151,65,23,105,32,33,36,187,0,32,100,63,32,241,41,31,0,9,31,22],
+          stack: 2
+        },
+        {
+          label: '2017 Paper',
+          backgroundColor:"#1a1b8d",
+          borderColor: "#eeeeee",
+          borderWidth: 1,
+          hoverBackgroundColor: "#9E9E9E",
+          hoverBorderColor: "#eeeeee",
+          data: [1914,508,905,1084,3591,2722,1558,3812,1333,841,4654,2730,2133,1033,4048,1695,1484,2081,4407,0,1212,5772,1241,1648,7050,2505,801,2,846,2922,482],
+          stack: 2
+        },
+
+      ]
     },
     options: {
       scales:{
         xAxes: [{
+          stacked: true,
           display: true,
           ticks: {
             beginAtZero: true,
@@ -136,7 +161,6 @@ var myChart = new Chart(ctx, {
           }
         }],
         yAxes: [{
-          stacked: true,
           display: true,
           ticks: {
             beginAtZero: true,
