@@ -3,7 +3,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Bail Set for Non - Felonies</title>
+        <title>Bail Set at Arraignment</title>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
 
@@ -24,11 +24,7 @@ var ctx = document.getElementById("doughnut14");
 var myChart = new Chart(ctx, {
     type: 'doughnut',
     data: {
-        labels: ["Over $7,500 (1%)",
-                  "$2,501-$7,500 (8%)",
-                  "$1,001-$2,500 (20%)",
-                  "$501-$1,000 (35%)",
-                  "$500 or less (36%)"],
+        labels: ["Bail Made at Arraignment 28%", "Bail Not Made at Arraignment 72%"],
         datasets: [{
             label: 'Bail Set for Non-Felonies in NYC 2015',
             backgroundColor:["#169193","#3adb76","#f7c44f","#f78547","#f25252","#1bb0ce"],
@@ -36,7 +32,7 @@ var myChart = new Chart(ctx, {
             borderWidth: 1,
             hoverBackgroundColor: "#9E9E9E",
             hoverBorderColor: "#eeeeee",
-            data: [175,1396,3490,6108,6282]
+            data: [14114, 37128]
         }]
     }
     ,
