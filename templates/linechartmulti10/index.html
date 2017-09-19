@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Stop and Frisk 2002-2016</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
+        <script src="../zoomtest/node_modules/chart.js/dist/Chart.js"></script>
+        <script src="../zoomtest/node_modules/hammerjs/hammer.min.js"></script>
+        <script src="../zoomtest/Chart.Zoom.js"></script>
+        <style>
+          canvas {
+              -moz-user-select: none;
+              -webkit-user-select: none;
+              -ms-user-select: none;
+          }
+      	</style>
+    </head>
+    <body>
+
+<button onclick="resetZoom()">Reset Zoom</button>
+<canvas id="linechart9" width=auto max-height="400"></canvas>
+<script>
+
+//Chart.defaults.global.responsive = true
+//Chart.defaults.global.tooltips.backgroundColor="grey"
+//Chart.defaults.global.maintainAspectRatio = true
+Chart.defaults.global.legend = true
+
+function resetZoom() {
+  window.myLine.resetZoom()
+}
+
+var config =  {
+    type: 'line',
+    fill: false,
+    data: {
+        labels: ["2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016"],
+        datasets: [
+                    {
+                    label: "Stops",
+                    fill: false,
+                    backgroundColor: "#BE4BDB",
+                    borderColor: "#BE4BDB",
+                    borderWidth: 1,
+                    pointHoverBackgroundColor: "#BE4BDB",
+                    pointHoverBorderColor: "#BE4BDB",
+                    pointHoverBorderWidth: 2,
+                    data: [97296,160851,313523,398191,506491,472096,540302,581168,601285,685724,532911,191851,45787,22565,12404]
+                    },
+
+          ]
+        },
+    options: {
+
+      responsive:true,
+
+
+      tooltips: {
+        callbacks: {
+          label: function(tooltipItem, data) {
+            var datasetLabel = data.datasets[tooltipItem.datasetIndex].label || '';
+            return datasetLabel + ': ' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US');
+          }
+        }
+      },
+      scales: {
+        xAxes: [{
+         scaleLabel: {
+          	display: true,
+          //  labelString: 'Year'
+          },
+          ticks: {
+            maxRotation: 0,
+          }
+        }],
+        yAxes: [{
+          scaleLabel: {
+            display: false,
+            labelString: 'value'
+          },
+          stacked: false,
+          ticks: {
+            beginAtZero:true,
+            callback: function(value) {
+              return '$' + value.toLocaleString('en-US');
+            }
+          }
+        }]
+      },
+      pan: {
+          enabled: true,
+          mode: 'xy'
+      },
+      zoom: {
+          enabled: true,
+          drag: true,
+          mode: 'x',
+          limits: {
+              max: 5,
+              min: 0.5
+          }
+      }
+
+    }
+  };
+  window.onload = function() {
+    var ctx = document.getElementById("linechart9").getContext("2d");
+    window.myLine = new Chart(ctx, config);
+
+  };
+</script>
+    </body>
+</html>

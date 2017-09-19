@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Materialize + Angular Search and Filter Responsive Table with pagination</title>
+
+
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body>
+
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Community Media</title>
+
+
+    <!-- include material design icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+</head>
+<body>
+
+<!-- page content and controls will be here -->
+
+<div class="container" ng-app="myApp" ng-controller="volunteersCtrl">
+    <div class="row">
+        <div class="col s12">
+            <h4>Community Media</h4>
+            <!-- used for searching the current list -->
+<div class="row">
+        <div style="min-width: 150px" class="input-field col s2 nopad">
+
+            <select ng-model="selected" ng-change="hasChanged()" ng-options="item.title for item in fieldTable">
+            </select>
+        </div>
+ <div class="input-field col s8 nopad">
+   <input type="text" ng-model="search" class="form-control" placeholder="Search news outlets..." />
+   </div>
+    </div>
+
+    <div id="email-list" class="modal">
+    <div class="modal-content">
+    	<div class="row">	<b ng-repeat="d in names | filter:filters">{{d.email}}{{$last ? '' : ', '}}</b></div>
+    	</div></div>
+
+  <!-- Email Community  -->
+<!--  <a ng-href="mailto:{{d.email}}{{$last ? '' : ', '}}" class="waves-effect waves-light btn margin-bottom-1em"><i class="material-icons left">email</i>Email All {{community.field}} News Outlets({{(names | filter:filters).length}})--></a>
+ <a href="#email-list" class="modal-trigger waves-effect waves-light btn margin-bottom-1em">View List of Email Addresses ({{(names | filter:filters).length}})</a>
+<br>
+
+<!-- table that shows volunteer record list -->
+<div style="width: 130px;" class="input-field col s2"><label for="resultlimit"> Results per page: </label></div>
+
+                   <div style="min-width: 50px;" class="input-field col s1 ">
+
+    <select name="resultlimit" ng-model="resultlimit" ng-init="resultlimit=5">
+    	<option value="1">1</option>
+      <option value="3">3</option>
+      <option value="5">5</option>
+      <option value="10">10</option>
+       <option value="20">20</option>
+      <option value="100">100</option>
+    </select>
+        </div>   <div class="sorter"><h6 style="display: inline-block;">Order by: </h6>
+      <a  ng-class="{'activetab waves-effect waves-light' : predicate == 'community',  'disabled': predicate != 'community'}" ng-click="predicate = 'community'; reverse=!reverse" class="btn">community
+       <i ng-show="predicate == 'community' && !reverse" class="material-icons right">expand_more</i>
+        <i ng-show="predicate == 'community' && reverse" class="material-icons right">expand_less</i></a>
+
+      <a  ng-class="{'activetab waves-effect waves-light' : predicate == 'language',  'disabled': predicate != 'language'}" ng-click="predicate = 'language'; reverse=!reverse" class="btn">language
+      	<i ng-show="predicate == 'language' && !reverse" class="material-icons right">expand_more</i>
+        <i ng-show="predicate == 'language' && reverse" class="material-icons right">expand_less</i></a>
+
+        <a ng-class="{'activetab waves-effect waves-light' : predicate == 'borough',  'disabled': predicate != 'borough'}" ng-click="predicate = 'borough'; reverse=!reverse" class="btn">borough
+         <i ng-show="predicate == 'borough' && !reverse" class="material-icons right">expand_more</i>
+          <i ng-show="predicate == 'borough' && reverse" class="material-icons right">expand_less</i></a>
+
+
+        <a ng-class="{'activetab waves-effect waves-light' : predicate == 'phone',  'disabled': predicate != 'phone'}" ng-click="predicate = 'phone'; reverse=!reverse" class="btn">phone
+        	<i ng-show="predicate == 'phone' && !reverse" class="material-icons right">expand_more</i>
+         <i ng-show="predicate == 'phone' && reverse" class="material-icons right">expand_less</i></a>
+
+       <a  ng-class="{'activetab waves-effect waves-light' : predicate == 'website',  'disabled': predicate != 'website'}" ng-click="predicate = 'website'; reverse=!reverse" class="btn">website
+       	<i ng-show="predicate == 'website' && !reverse" class="material-icons right">expand_more</i>
+         <i ng-show="predicate == 'website' && reverse" class="material-icons right">expand_less</i></a>
+
+       <a ng-class="{'activetab waves-effect waves-light' : predicate == 'editor',  'disabled': predicate != 'editor'}" ng-click="predicate = 'editor'; reverse=!reverse" class="btn">editor
+       	<i ng-show="predicate == 'editor' && !reverse" class="material-icons right">expand_more</i>
+         <i ng-show="predicate == 'editor' && reverse" class="material-icons right">expand_less</i></a>
+
+        <a ng-class="{'activetab waves-effect waves-light' : predicate == 'address',  'disabled': predicate != 'address'}" ng-click="predicate = 'address'; reverse=!reverse" class="btn">address
+        	<i ng-show="predicate == 'address' && !reverse" class="material-icons right">expand_more</i>
+         <i ng-show="predicate == 'address' && reverse" class="material-icons right">expand_less</i></a>
+
+        <a ng-class="{'activetab waves-effect waves-light' : predicate == 'zip',  'disabled': predicate != 'zip'}" ng-click="predicate = 'zip'; reverse=!reverse" class="btn">zip<i ng-show="predicate == 'zip' && !reverse" class="material-icons right">expand_more</i>
+         <i ng-show="predicate == 'zip' && reverse" class="material-icons zip">expand_less</i></a>
+
+        <a ng-class="{'activetab waves-effect waves-light' : predicate == 'circulation',  'disabled': predicate != 'circulation'}" ng-click="predicate = 'circulation'; reverse=!reverse" class="btn">circulation
+        	<i ng-show="predicate == 'circulation' && !reverse" class="material-icons right">expand_more</i>
+         <i ng-show="predicate == 'circulation' && reverse" class="material-icons right">expand_less</i></a>
+
+         <a ng-class="{'activetab waves-effect waves-light' : predicate == 'geographic',  'disabled': predicate != 'geographic'}" ng-click="predicate = 'geographic'; reverse=!reverse" class="btn">geographic
+           <i ng-show="predicate == 'geographic' && !reverse" class="material-icons right">expand_more</i>
+          <i ng-show="predicate == 'geographic' && reverse" class="material-icons right">expand_less</i></a>
+
+         <a ng-class="{'activetab waves-effect waves-light' : predicate == 'frequency',  'disabled': predicate != 'frequency'}" ng-click="predicate = 'frequency'; reverse=!reverse" class="btn">frequency
+           <i ng-show="predicate == 'frequency' && !reverse" class="material-icons right">expand_more</i>
+          <i ng-show="predicate == 'frequency' && reverse" class="material-icons right">expand_less</i></a>
+
+         </div>
+        <div class="divider">
+        <hr /></div>
+      <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)"></dir-pagination-controls>
+
+
+<table class="table hoverable bordered">
+
+    <thead>
+        <tr>
+            <th ng-class="{'activetab waves-effect waves-light' : predicate == 'id'}" ng-click="predicate = 'id'; reverse=!reverse">ID
+            	<i ng-show="predicate == 'id' && !reverse" class="material-icons right">expand_more</i>
+            	<i ng-show="predicate == 'id' && reverse" class="material-icons right">expand_less</i>
+            	</th>
+
+              <th ng-class="{'activetab waves-effect waves-light' : predicate == 'community'}"  ng-click="predicate = 'community'; reverse=!reverse">community
+              	<i ng-show="predicate == 'community' && !reverse" class="material-icons right">expand_more</i>
+              	<i ng-show="predicate == 'community' && reverse" class="material-icons right">expand_less</i>
+              	</th>
+              <th ng-class="{'activetab waves-effect waves-light' : predicate == 'language'}" ng-click="predicate = 'language'; reverse=!reverse">language
+               	<i ng-show="predicate == 'language' && !reverse" class="material-icons right">expand_more</i>
+              	<i ng-show="predicate == 'language' && reverse" class="material-icons right">expand_less</i></th>
+
+              <th ng-class="{'activetab waves-effect waves-light' : predicate == 'borough'}" ng-click="predicate = 'borough'; reverse=!reverse">borough
+               	<i ng-show="predicate == 'borough' && !reverse" class="material-icons right">expand_more</i>
+              	<i ng-show="predicate == 'borough' && reverse" class="material-icons right">expand_less</i></th>
+
+            <th ng-class="{'activetab waves-effect waves-light' : predicate == 'name'}"  ng-click="predicate = 'name'; reverse=!reverse">Name
+            	<i ng-show="predicate == 'name' && !reverse" class="material-icons right">expand_more</i>
+            	<i ng-show="predicate == 'name' && reverse" class="material-icons right">expand_less</i>
+            	</th>
+            <th ng-class="{'activetab waves-effect waves-light' : predicate == 'email'}" ng-click="predicate = 'email'; reverse=!reverse">email
+             	<i ng-show="predicate == 'email' && !reverse" class="material-icons right">expand_more</i>
+            	<i ng-show="predicate == 'email' && reverse" class="material-icons right">expand_less</i></th>
+
+            <th ng-class="{'activetab waves-effect waves-light' : predicate == 'phone'}" ng-click="predicate = 'phone'; reverse=!reverse" >phone
+            		<i ng-show="predicate == 'phone' && !reverse" class="material-icons right">expand_more</i>
+            	<i ng-show="predicate == 'phone' && reverse" class="material-icons right">expand_less</i></th>
+
+            <th ng-class="{'activetab waves-effect waves-light' : predicate == 'website'}" ng-click="predicate = 'website'; reverse=!reverse">Website
+            	            		<i ng-show="predicate == 'website' && !reverse" class="material-icons right">expand_more</i>
+            	<i ng-show="predicate == 'website' && reverse" class="material-icons right">expand_less</i></th>
+
+            <th ng-class="{'activetab waves-effect waves-light' : predicate == 'editor'}" ng-click="predicate = 'editor'; reverse=!reverse">editor
+            	<i ng-show="predicate == 'unix' && !reverse" class="material-icons right">expand_more</i>
+            	<i ng-show="predicate == 'unix' && reverse" class="material-icons right">expand_less</i></th>
+
+            <th ng-class="{'activetab waves-effect waves-light' : predicate == 'address'}" ng-click="predicate = 'address'; reverse=!reverse">address
+            	<i ng-show="predicate == 'unix' && !reverse" class="material-icons right">expand_more</i>
+            	<i ng-show="predicate == 'unix' && reverse" class="material-icons right">expand_less</i></th>
+
+            <th ng-class="{'activetab waves-effect waves-light' : predicate == 'zip'}" ng-click="predicate = 'zip'; reverse=!reverse">zip
+            	<i ng-show="predicate == 'unix' && !reverse" class="material-icons right">expand_more</i>
+            	<i ng-show="predicate == 'unix' && reverse" class="material-icons right">expand_less</i></th>
+
+            <th ng-class="{'activetab waves-effect waves-light' : predicate == 'circulation'}" ng-click="predicate = 'circulation'; reverse=!reverse">circulation
+            	<i ng-show="predicate == 'unix' && !reverse" class="material-icons right">expand_more</i>
+            	<i ng-show="predicate == 'unix' && reverse" class="material-icons right">expand_less</i></th>
+
+            <th ng-class="{'activetab waves-effect waves-light' : predicate == 'geographic'}" ng-click="predicate = 'geographic'; reverse=!reverse">geographic
+            	<i ng-show="predicate == 'unix' && !reverse" class="material-icons right">expand_more</i>
+            	<i ng-show="predicate == 'unix' && reverse" class="material-icons right">expand_less</i></th>
+
+              <th ng-class="{'activetab waves-effect waves-light' : predicate == 'frequency'}" ng-click="predicate = 'frequency'; reverse=!reverse">frequency
+              	<i ng-show="predicate == 'unix' && !reverse" class="material-icons right">expand_more</i>
+              	<i ng-show="predicate == 'unix' && reverse" class="material-icons right">expand_less</i></th>
+
+
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr dir-paginate="d in names | filter:search | filter:filters | orderBy:predicate:reverse | itemsPerPage: resultlimit ">
+            <td>{{ d.id }}</td>
+            <td>{{ d.community }}</td>
+            <td>{{ d.language }}</td>
+            <td>{{ d.borough }}</td>
+            <td>{{ d.name }}</td>
+            <td class="breakEmail"><a href="mailto:{{ d.email }}" target="_blank">{{ d.email }}</a></td>
+            <td>{{ d.phone | tel }}</td>
+            <td><a href="{{ d.website }}" target="_blank">{{ d.website}}</a></td>
+            <td>{{ d.editor }}</td>
+            <td>{{ d.address }}</td>
+            <td>{{ d.zip }}</td>
+            <td>{{ d.circulation }}</td>
+            <td>{{ d.geographic }}</td>
+            <td>{{ d.frequency }}</td>
+
+
+        </tr>
+    </tbody>
+</table>
+      <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)"></dir-pagination-controls>
+
+
+
+
+
+
+
+
+<!-- modal for for creating NEW VOLUNTEER -->
+
+<form name="volunteerForm" id="modal-volunteer-form" class="modal">
+    <div class="modal-content">
+        <h4 id="modal-volunteer-title">Create New Volunteer Record</h4>
+        <div class="row">
+            <div class="input-field col s12">
+                <input name="name" ng-model="name" type="text" ng-minlength="5" ng-pattern="/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u" id="form-name" placeholder="Type name here..." required />
+                <label for="name">Name</label>
+            </div>
+
+            <div class="input-field col s12">
+                <input ng-model="email" type="email" placeholder="Type email here..." required>
+                <label for="email">Email Address</label>
+            </div>
+            <div class="input-field col s12">
+                <input ng-model="phone" required   pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$" ng-minlength="10" phone-input type="tel" id="form-phone" placeholder="Type phone number here..."  />
+                <label for="phone">Phone Number</label>
+            </div>
+
+            <div style="    margin-top: -10px; min-width: 150px" class="input-field col s2">
+    <label for="community"> community: </label><br>
+    <select name="community" ng-model="community" ng-init="community='community'">
+      <option value="African">African</option>
+      <option value="African-American">African-American</option>
+      <option value="Albanian">Albanian</option>
+       <option value="Arab">Arab</option>
+      <option value="Bangladeshi">Bangladeshi</option>
+      <option value="Brazilian">Brazilian</option>
+      <option value="Caribbean">Caribbean</option>
+      <option value="Chinese">Chinese</option>
+       <option value="Community">Community</option>
+      <option value="Estonian">Estonian</option>
+      <option value="Filipino">Filipino</option>
+      <option value="French">French</option>
+      <option value="Greek">Greek</option>
+       <option value="Haitian">Haitian</option>
+      <option value="Indian">Indian</option>
+      <option value="Irish">Irish</option>
+      <option value="Israeli">Israeli</option>
+      <option value="Japanese">Japanese</option>
+       <option value="Jewish">Jewish</option>
+      <option value="Jewish Russian">Jewish Russian</option>
+      <option value="Korean">Korean</option>
+      <option value="Latino">Latino</option>
+      <option value="Multi-Ethnic">Multi-Ethnic</option>
+       <option value="Native American">Native American</option>
+      <option value="Nepali">Nepali</option>
+      <option value="Pakistani">Pakistani</option>
+      <option value="Polish">Polish</option>
+      <option value="Romanian">Romanian</option>
+       <option value="Russian">Russian</option>
+      <option value="Serbian">Serbian</option>
+      <option value="South Asian">South Asian</option>
+      <option value="Sri Lankan">Sri Lankan</option>
+      <option value="Swedish">Swedish</option>
+       <option value="Thai">Thai</option>
+      <option value="Turkish">Turkish</option>
+        <option value="Youth">Youth</option>
+    </select>
+        </div>
+
+
+
+
+
+            <div class="input-field col nopad s12">
+                <a ng-class="{'disabled': volunteerForm.$invalid}" id="btn-create-volunteer" class="waves-effect waves-light btn customAction" ng-click="volunteerForm.$valid && createVolunteer()"><i class="material-icons left">add</i>Create</a>
+
+                <a ng-class="{'disabled': volunteerForm.$invalid}" id="btn-update-volunteer" class="waves-effect waves-light btn customAction" ng-click="volunteerForm.$valid && updateVolunteer()"><i class="material-icons left">edit</i>Save Changes</a>
+
+                <a class="modal-action modal-close waves-effect waves-light btn customAction"><i class="material-icons left">close</i>Close</a>
+            </div>
+        </div>
+    </div>
+</form> <!--	END MODAL -->
+
+<!-- floating button for creating volunteer  -->
+<!--
+<div class="fixed-action-btn" style="bottom:45px; right:24px;">
+    <a class="waves-effect waves-light btn modal-trigger btn-floating btn-large red" href="#modal-volunteer-form" ng-click="showCreateForm()"><i class="large material-icons">add</i></a
+</div>
+-->
+<!-- END BUTTON -->
+
+
+        </div> <!-- end col s12 -->
+    </div> <!-- end row -->
+</div> <!-- end container -->
+
+
+
+<!-- include jquery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+<!-- material design js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+
+<!-- include angular js -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+
+
+</body>
+</html>
+
+    <script src="js/index.js"></script>
+
+</body>
+</html>
