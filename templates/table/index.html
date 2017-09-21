@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+  font-family: sans-serif;
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+  font-family: sans-serif;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+  font-family: sans-serif;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  color: #ffffff;
+  background-color: #2F56A6;
+}
+
+h1 {
+
+  font-family: sans-serif;
+}
+</style>
+</head>
+<body>
+
+<h1>Community Media Glossary</h1>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for English.." title="Type in a word">
+
+<table id="myTable">
+  <tr class="header">
+    <th style="width:11.111%;">Name</th>
+    <th style="width:11.111%;">Definition</th>
+    <th style="width:11.111%;">Chinese</th>
+    <th style="width:11.111%;">Spanish</th>
+    <th style="width:11.111%;">Korean</th>
+    <th style="width:11.111%;">French</th>
+    <th style="width:11.111%;">Urdu</th>
+    <th style="width:11.111%;">Arabic</th>
+    <th style="width:11.111%;">Russian</th>
+  </tr>
+  <tr>
+    <td>Administrative Code </td>
+    <td>The City’s main source of statutory law, more detailed than the Charter</td>
+    <td>行政法典</td>
+    <td>Código administrativo</td>
+    <td>행정 코드</td>
+    <td>Code administratif</td>
+    <td>انتظامی کوڈ</td>
+    <td> الرمز الإداري</td>
+    <td>Административный кодекс</td>
+  </tr>
+  <tr><td>Administrative Warrant </td>	<td></td>	<td>行政授權</td>	<td>Orden Administrativa (de arresto) </td>	<td>행정 영장</td>	<td>Mandat administratif</td>	<td>انتظامی وارینٹ</td>	<td> أمر إداري</td>	<td>Административный ордер</td></tr>
+<tr><td>Adopt </td>	<td>when the Council votes to turn a bill into a law</td>	<td>通過</td>	<td>Adoptar Proyecto de ley (el Concejo vota hacer ley un proyecto legislativo)</td>	<td>채택하다</td>	<td>Adopter</td>	<td>اپنانا یا منظوری</td>	<td> تبنى</td>	<td> Принять</td></tr>
+<tr><td>Adopted </td>	<td></td>	<td>通過</td>	<td>Adoptado </td>	<td>채택 된</td>	<td>Adopté</td>	<td>منظور کرنا</td>	<td>   اعتمد</td>	<td>Принятый</td></tr>
+<tr><td>Advisory Committee </td>	<td>Ensure certain aspects of PB are carried out efficiently and effectively</td>	<td>諮詢委員會</td>	<td>Comité Directivo</td>	<td>자문위원회</td>	<td>Comité consultatif</td>	<td>مشاورتی کمیٹی</td>	<td></td>	<td>Консультативный комитет</td></tr>
+<tr><td>Agencies </td>	<td>the entities that enforce the laws adopted by the Council and promulgate rules to assist in such enforcement</td>	<td>機構</td>	<td>Agencias municipales</td>	<td>도시 기관</td>	<td>Agences de La ville</td>	<td>شہری ایجنسیاں</td>	<td>  وكالات المدينة</td>	<td>Городские агентства</td></tr>
+<tr><td>Agenda</td>	<td>a list, plan, outline, or the like, of things to be done, matters to be acted or voted upon</td>	<td>議程</td>	<td>agenda</td>	<td>의사일정</td>	<td>Ordre du jour</td>	<td>ایجنڈا</td>	<td></td>	<td>Повестка дня</td></tr>
+<tr><td>Aging requirement </td>	<td>the state law requirement that a proposed bill be placed on the Council Members’ desks at least seven calendar days, excluding Sundays, before the Stated meeting at which the bill will be voted on</td>	<td>時效要求</td>	<td>Requisito de envejecimiento</td>	<td>시효 조건 or 시효 기간</td>	<td>Exigence de vieillissement</td>	<td>عمر کی حد</td>	<td>  متطلبات الشيخوخة</td>	<td></td></tr>
+<tr><td>Allocation </td>	<td>A sum of money within an appropriation that is set aside for a specific purpose.</td>	<td>分配</td>	<td>Asignación </td>	<td>배당 or 배당액</td>	<td>allocation</td>	<td>مختص کرنا</td>	<td> توزيع</td>	<td>распределение</td></tr>
+<tr><td>Amendment </td>	<td>changing the text of an existing bill or law.</td>	<td>修訂</td>	<td>Enmienda</td>	<td>개정 or 수정 조항</td>	<td>Amendement</td>	<td>ترمیم</td>	<td>   تعديل</td>	<td>поправка</td></tr>
+<tr><td>Appropriation </td>	<td>The amount of money identified in the budget for expenditure by an agency, generally divided into a number of smaller “units of appropriation.”</td>	<td>撥款</td>	<td>Apropiación </td>	<td>할당금</td>	<td>appropriation de capitale</td>	<td>مختص کرنا یا اختصاص</td>	<td>  استيلاء</td>	<td>ассигнование</td></tr>
+<tr><td>Asylum </td>	<td>Protection or safe place given to someone who has left a country orplace for politcal reasons</td>	<td>避難</td>	<td>Asilo </td>	<td>피신처; 도피처; 보호 시설</td>	<td>Asile</td>	<td>پناہ </td>	<td>  اللجوء</td>	<td>убежище</td></tr>
+<tr><td>Baseline </td>	<td>Funding included in the Executive Budget. </td>	<td>永久經費</td>	<td>Financiación garantizada (should confirm Spanish translation) </td>	<td>예산집행에 포함된 자금</td>	<td>Données de réference</td>	<td>بنیادی حد</td>	<td>خط الاساس</td>	<td>Средства, включенные в исполнительный бюджет</td></tr>
+<tr><td>Bill/Legislation</td>	<td>a piece of legislation before it is adopted into law</td>	<td>法案 </td>	<td>Legislación </td>	<td>법안</td>	<td>projet de loi</td>	<td>قانون سازی</td>	<td> تشريع</td>	<td>Законопроект</td></tr>
+<tr><td>Briefing</td>	<td>Information that is given to someone just before they do something, or a meeting where this happens</td>	<td>簡報</td>	<td>sesión informativa</td>	<td>요약 보고</td>	<td>Réunion d’information</td>	<td>بریفنگ</td>	<td></td>	<td>брифинг</td></tr>
+<tr><td>Budget </td>	<td>Financial plan that lists expected expenses and income for during a particular period</td>	<td>預算</td>	<td>Presupuesto </td>	<td> 예산</td>	<td>Budget</td>	<td>بجٹ</td>	<td>  ميزانية</td>	<td>бюджет</td></tr>
+<tr><td>Budget Cap </td>	<td>The difference produced when planned spending exceeds planned revenues in a given fiscal year</td>	<td>預算短缺</td>	<td>Limite del Presupuesto </td>	<td>예산 한도</td>	<td>Plafond budgétaire</td>	<td>بجٹ کی حد</td>	<td>  سقف الميزانية</td>	<td>Предел бюджета</td></tr>
+<tr><td>Budget Delegate </td>	<td>Volunteers who turn ideas into project proposals for the vote.</td>	<td>預算委託</td>	<td>Delegados de Presupuesto </td>	<td>예산 대리자 or 예산 대표</td>	<td>Délégué budgétaire</td>	<td>رضاکار جو خیالات کو ایوان میں ووٹ کےلئے  منصوبے کی شکل دیتے ہیں </td>	<td></td>	<td>Бюджета по программам делегат</td></tr>
+<tr><td>Budget Modification </td>	<td>A change in an amount in any portion of the Adopted Expense or Review budgets during the fiscal year.</td>	<td>預算修改</td>	<td>Modificación del Presupuesto </td>	<td>예산 수정</td>	<td>modification du budget</td>	<td>بجٹ میں ترمیم</td>	<td> تعديل الميزانية</td>	<td>Изменение бюджета</td></tr>
+<tr><td>Budget Surplus </td>	<td>The difference produced when planned revenues exceed planned spending in a given fiscal year.</td>	<td>預算盈餘</td>	<td>Exceso del Presupuesto </td>	<td>예산 여분</td>	<td>Excédent budgétaire</td>	<td>اضافی بجٹ</td>	<td> فائض الميزانية</td>	<td>Бюджетный профицит</td></tr>
+<tr><td>Capital Appropriation </td>	<td>The amount of money allocated to a specific budget line in the Capital Budget</td>	<td>資金撥款</td>	<td>Asignación de capital </td>	<td>자본 배분</td>	<td>appropriation de capitale</td>	<td>مالی اختصاص</td>	<td> مخصصات رأس المال</td>	<td>Капитальные ассигнования</td></tr>
+<tr><td>Capital Commitments </td>	<td>Awarded contracts for capital budget spending, frequently for a multiyear period, that have been registered with the City Comptroller.</td>	<td>承諾資金</td>	<td>Compromisos de Capital </td>	<td>자본 약속</td>	<td>engagements de capitale</td>	<td>سرمائے کی فراہمی کا وعدہ</td>	<td> التزامات رأس المال</td>	<td>Обязательства по капиталу</td></tr>
+<tr><td>Charter </td>	<td>a body of local law that is like the City’s Constitution, laying out broad powers and principles</td>	<td>章程</td>	<td>Carta de leyes</td>	<td>헌장</td>	<td>Charte des lois locales</td>	<td>مقامی ضابطے یا قوانین</td>	<td> ميثاق</td>	<td>Хартия, свод местных законов, своего рода конституции города</td></tr>
+<tr><td>City Council </td>	<td>The legislative body of a city</td>	<td>市議會</td>	<td>Concejo Municipal  </td>	<td>뉴욕시의회</td>	<td>Conseil municipal</td>	<td>شہری کونسل یا سٹی کونسل</td>	<td> مجلس المدينة</td>	<td>Городской совет</td></tr>
+<tr><td>City Council Speaker </td>	<td>Council Member elected by its members to lead the legislative body</td>	<td>市議長</td>	<td>Presidente del Concejo Municipal </td>	<td>시의회 의장</td>	<td>Président(e) du Conseil municipal</td>	<td>شہری کونسل یا سٹی کونسل کا اسپیکر</td>	<td> رئيس مجلس المدينة</td>	<td>Спикер Горсовета</td></tr>
+<tr><td>Committee </td>	<td>a body of Council Members who conduct oversight hearings and vote on bills in specific subject matter areas; the Council has 35 committees</td>	<td>委員會</td>	<td>Comité de concejales que conducen audiencias y votan sobre Proyectos de ley en áreas temáticas específicas</td>	<td>위원회</td>	<td>Comité</td>	<td>کمیٹی</td>	<td>  لجنة</td>	<td>Комитет</td></tr>
+<tr><td>Committee Chair </td>	<td>the council member who is in charge of a particular committee and sets the agenda, thus serving as a gatekeeper in terms of whether or not bills will be heard</td>	<td>委員會主席</td>	<td>Presidente del Comité</td>	<td>위원회 위원장</td>	<td>Président du comité</td>	<td>کمیٹی کے صدر</td>	<td> رئيس اللجنة</td>	<td>Председатель комитета</td></tr>
+<tr><td>Committee Counsel</td>	<td>the attorney in the Legislative Division who is an expert in the area of law relevant to a particular committee and who staffs the committee. The committee counsel drafts legislation, conducts hearings, and meets with stakeholders</td>	<td>委員會律師</td>	<td>Asesor Jurídico del Comité</td>	<td>위원회 법률 고문</td>	<td>Conseil du comité</td>	<td>کمیٹی کے مشیر</td>	<td> المستشار القانوني للجنة</td>	<td>Юридический советник комитета</td></tr>
+<tr><td>Committee Report </td>	<td>a report prepared by the Legislative Division in anticipation of a committee hearing that summarizes the hearing topic or legislation being considered by the Council Members. </td>	<td>委員會報告</td>	<td>Informe del Comité</td>	<td>위원회 보고서</td>	<td>Rapport du Comité</td>	<td>کمیٹی رپورٹ</td>	<td> تقرير اللجنة</td>	<td>Отчет Комитета</td></tr>
+<tr><td>Comprehensive Immigration Reform </td>	<td>Complete correction of immigration policy</td>	<td>綜合移民改革</td>	<td>Reforma Migratoria </td>	<td>광범위한 이민 개혁</td>	<td>Réforme intégrale de l'immigration</td>	<td>جامع امیگریشن اصلاح</td>	<td>إصلاح شامل للهجرة</td>	<td>Комплексная иммиграционная реформа</td></tr>
+<tr><td>Comptroller </td>	<td>Financial officer</td>	<td>主計長</td>	<td>Contralor de la Ciudad </td>	<td>도시 감사원장</td>	<td>Contrôleur</td>	<td>کمپوٹرولر</td>	<td>مراقب مالي</td>	<td>Ревизор</td></tr>
+<tr><td>Conviction </td>	<td>Found guilty of a crime</td>	<td>定罪</td>	<td>Condena </td>	<td>신념</td>	<td>Condamnation</td>	<td>جرم کا ثابت ہونا یا عدالت کی جانب سے مجرم قرار دیا جانا</td>	<td> قناعة</td>	<td>объявлен виновным</td></tr>
+<tr><td>Council </td>	<td>the law-making entity in the City</td>	<td>市議會</td>	<td>Concejo Municipal</td>	<td>시의회</td>	<td>Conseil</td>	<td>کونسل یا شہری ایوان</td>	<td> مجلس</td>	<td>совет</td></tr>
+<tr><td>Council District </td>	<td>one of 51 parts of the City whose residents elect one of the Council Members to represent their interests in the Council</td>	<td>市議區</td>	<td>Distrito del concejo</td>	<td>시의회 지역구</td>	<td>District du conseil</td>	<td>کونسل ڈسٹرکٹ</td>	<td> منطقة المجلس</td>	<td>Округ Горсовета</td></tr>
+<tr><td>Council Member </td>	<td>an official elected by the voting residents of a Council district to represent the district’s interests in the Council</td>	<td>市議員</td>	<td>Concejal, Miembro del Concejo</td>	<td>시의원</td>	<td>Membre du Conseil/conseiller</td>	<td>کونسل کے رکن</td>	<td>عضو المجلس</td>	<td>Член Горсовета</td></tr>
+<tr><td>Debt Limit </td>	<td>A limit on long term borrowing imposed by the state Constitution and Local Finance Law.</td>	<td>借債限額</td>	<td>Límite de Deuda </td>	<td>부채한도</td>	<td>Limite de la dette</td>	<td>قرض کی حد</td>	<td>حد الدين</td>	<td>Лимит долга</td></tr>
+<tr><td>Debt Service </td>	<td>Funds included in the Expense Budget for the payment of the principal and interest on long-term and short-term debt.</td>	<td>債務服務</td>	<td>Servicio de Deuda </td>	<td>채무 변제 서비스</td>	<td>Service de la dette</td>	<td>قرض کی ادائگی</td>	<td> خدمة الدين</td>	<td></td></tr>
+<tr><td>Deferred Action for Childhood Arrivals (DACA) </td>	<td></td>	<td>童年抵美延緩遞解出境行動</td>	<td>Consideración de Acción Diferida Para Los Llegados en la Infancia</td>	<td>유년기 도착 지연 조치 (DACA)</td>	<td>Action différée pour les arrivées d´enfants</td>	<td>بچپن میں انے والے افراد کے خلاف کارروائی کا التوا</td>	<td>الاجراءات الؤجلة للوصول لمرحلة الطفولة</td>	<td>Программа, защищающая права нелегальных иммигрантов, приехавших в США в детском возрасте</td></tr>
+<tr><td>Discretionary </td>	<td>Included because “Schedule C” is the Council’s discretionary budget. </td>	<td>選擇性撥款</td>	<td>Discrecional </td>	<td>커뮤니티 지원금</td>	<td>Facultatif</td>	<td>اختیاری</td>	<td>متوفر</td>	<td>дискреционный</td></tr>
+<tr><td>District Committee </td>	<td>Provides oversight and planning throughout PB process.</td>	<td>區委</td>	<td>Comité del Districto</td>	<td>지방위원회 or 지구위원회</td>	<td>Comité de District</td>	<td>ڈسٹرکٹ کمیٹی</td>	<td></td>	<td>Районный Комитет</td></tr>
+<tr><td>Effective date </td>	<td>the language at the end of a local law that states when the law becomes enforceable.</td>	<td>生效日期</td>	<td>Fecha de vigencia</td>	<td>효력 발생일</td>	<td>Date d'entrée en vigeur </td>	<td>مؤثر تاریخ</td>	<td>تاريخ النفاذ</td>	<td>Дата вступления в силу</td></tr>
+<tr><td>Enacted </td>	<td>Make a bill or other proposal into law</td>	<td>頒布法律</td>	<td>Promulgada </td>	<td>제정 된</td>	<td>Decreté</td>	<td>نافذ کیا</td>	<td>صدار</td>	<td>принятый</td></tr>
+<tr><td>Executive Budget </td>	<td>A revised budget proposal for the upcoming year and a complete financial plan for the next three years. The Council holds budget hearings and begins negotiations with the mayor.</td>	<td>行政預算</td>	<td>Presupuesto Ejecutivo </td>	<td>예산집행</td>	<td>Budget exécutif</td>	<td>ایگزیکٹو بجٹ</td>	<td>الميزانية التنفيذية</td>	<td>Исполнительный бюджет</td></tr>
+<tr><td>Executive Order </td>	<td>A rule or order issued by the president to an executive brans of government having the force of law </td>	<td>行政命令</td>	<td>Orden Ejecutiva </td>	<td>행정 명령</td>	<td>Ordre exécutif</td>	<td>ایگزیکٹو آرڈر</td>	<td>أمر تنفيذي</td>	<td>Исполнительный указ</td></tr>
+<tr><td>Federal Immigration Authorities </td>	<td></td>	<td>聯邦移民局</td>	<td>Autoridades Federales de Inmigración </td>	<td>연방 이민국</td>	<td>Autorités fédérales d'immigration</td>	<td>وفاقی امیگریشن حکام</td>	<td>سلطات الهجرة الاتحادية</td>	<td>Федеральные иммиграционные власти</td></tr>
+<tr><td>Felony </td>	<td>A crime regarded as more serious than a misdemeanor</td>	<td>重罪</td>	<td>Delito Mayor </td>	<td> 중죄</td>	<td>Crime</td>	<td>جرم</td>	<td>جناية</td>	<td>Тяжелое преступление</td></tr>
+<tr><td>Fiscal impact statement </td>	<td>a statement prepared by the Council’s Finance Division that estimates how much a proposed local law or budget modification will cost</td>	<td>財政影響報告</td>	<td>Declaración de Impacto Fiscal</td>	<td>재정 영향 보고서</td>	<td>Déclaration d'impact fiscal</td>	<td>مالیاتی امور کا بیان</td>	<td>بيان الأثر المالي</td>	<td>Отчет о финансовом воздействии</td></tr>
+<tr><td>Fiscal Year </td>	<td> An accounting period of 12 months, which in New York City begins on July 1 and ends the following June 30. By convention, each fiscal year is named for the calendar year in which it ends (fiscal year 2013 begins July 2012 and ends in June 2013).</td>	<td>財政年度</td>	<td>Año fiscal </td>	<td>회계 연도</td>	<td>Année fiscale</td>	<td>مالی سال</td>	<td>السنة المالية</td>	<td>Отчетный год</td></tr>
+<tr><td>Hearing </td>	<td>a meeting to discuss an oversight topic and/or bills during which the public can testify.</td>	<td>聽證會</td>	<td>Audiencia</td>	<td>청문회</td>	<td>Audition</td>	<td>سماعت</td>	<td>استماع</td>	<td>Контрольное совещание</td></tr>
+<tr><td>ICE Raids </td>	<td>Immigration enforcement roundups of immigrants</td>	<td>美國移民和海關執法局突襲</td>	<td>Redada de ICE </td>	<td>이민세관단속국의 습격</td>	<td>Raids d'immigration</td>	<td>امیگریشن حکام کے چھاپے</td>	<td>غارات إنفاذ الهجرة</td>	<td>Рейды Иммиграционно-Таможенной службы</td></tr>
+<tr><td>Immigration Court </td>	<td></td>	<td>移民法院</td>	<td>Corte de Inmigración  </td>	<td>이민법원</td>	<td>Tribunal d’immigration</td>	<td>امیگریشن کورٹ</td>	<td>محكمة الهجرة</td>	<td>Иммиграционный суд</td></tr>
+<tr><td>Immigration Detainer </td>	<td>An order by immigration officers authorizing the continued detention of a person in custody</td>	<td>移民拘留者</td>	<td>Orden de Retención de Inmigración </td>	<td>이민 수감자</td>	<td>Détention d'immigration</td>	<td>تارکین وطن کا زیر حراست لیا جانا</td>	<td> معتقل الهجرة</td>	<td>Требование иммиграционных властей удерживать заключенных в тюрьмах до выяснения их статуса</td></tr>
+<tr><td>Immigration Detention </td>	<td>The action of detaining someone or the action of being detained</td>	<td>移民拘留所</td>	<td>Detención de inmigración </td>	<td>이민구치소</td>	<td>Détention de l’immigration</td>	<td>تارک وطن کی گرفتاری</td>	<td> احتجاز المهاجرين</td>	<td>Заключение в иммиграционную тюрму</td></tr>
+<tr><td>Implementation </td>	<td>the process of putting a law or policy into effect</td>	<td>實施</td>	<td>Implementación</td>	<td>이행</td>	<td>Exécution</td>	<td>عمل درآمد</td>	<td> التنفيذ</td>	<td>Осуществление</td></tr>
+<tr><td>Initiative </td>	<td>An proposal to achieve a goal or solve a problem</td>	<td>計劃/項目</td>	<td>Iniciativa </td>	<td>프로그램</td>	<td>Initiative</td>	<td>پہل کرنا</td>	<td> مبادرة</td>	<td>Инициативы</td></tr>
+<tr><td>Introduced </td>	<td>To present formally</td>	<td>提案/提出</td>	<td>Introducción </td>	<td>소개 된</td>	<td>Introduit</td>	<td>متعارف کرانا</td>	<td>قدمت</td>	<td>Внесен на рассмотрение</td></tr>
+<tr><td>Introduction </td>	<td>the starting point where a bill is presented publicly for the first time at a meeting of the Council and referred to the appropriate committee.</td>	<td>倡議</td>	<td>Introducción</td>	<td>입문서</td>	<td>Introduction</td>	<td>تعارف</td>	<td> المقدمة</td>	<td>Внесение на рассмотрение</td></tr>
+<tr><td>Judicial Warrant </td>	<td>Official document approved by a judge or court that gives police permission to do certain things</td>	<td>法庭調查令</td>	<td>Orden Judicial (de arresto) </td>	<td>영장 or 사법부 영장</td>	<td>Mandat judiciaire</td>	<td>جیوڈیشل وارنٹ یا   عدالتی وارنٹ</td>	<td> مذكرة قضائية</td>	<td>Судебный ордер</td></tr>
+<tr><td>Know Your Rights </td>	<td></td>	<td>知道你的權利</td>	<td>Conozca sus Derechos </td>	<td>귀하의 권리를 아십시오.</td>	<td>Connaissez vos droits</td>	<td>اپنے حقوق جانو</td>	<td> اعرف حقوقك</td>	<td>Знайте свои прива</td></tr>
+<tr><td>Landmark</td>	<td>a building or other place that is of outstanding historical, aesthetic, or cultural importance, often declared as such and given a special status (landmark designation) ordaining its preservation, by some authorizing organization</td>	<td>里程碑</td>	<td>Hito histórico</td>	<td>경계표</td>	<td>Point de repère</td>	<td>تاریخی</td>	<td></td>	<td>Достопримечательность</td></tr>
+<tr><td>Law </td>	<td>an enforceable requirement contained in the City’s Administrative Code or Charter</td>	<td>法律</td>	<td>Ley</td>	<td>법</td>	<td>Loi</td>	<td>قانون</td>	<td> القانون</td>	<td>Закон</td></tr>
+<tr><td>Law Enforcement </td>	<td>Ensuring the laws of an area are being obeyed</td>	<td>執法</td>	<td>Agentes del Orden Publico </td>	<td>법집행기관</td>	<td>Application de la loi</td>	<td>قانون کا نفاذ</td>	<td>تطبيق القانون</td>	<td>Правоохранительные органы</td></tr>
+<tr><td>Lawful Permanent Resident (green card holder) </td>	<td>green card holder</td>	<td>合法永久居民</td>	<td>Residente Permanente (tarjeta verde) </td>	<td>합법적 인 영주권자  </td>	<td>Résident Permanent légal</td>	<td>قانونی طور پر مستقل رہائشی</td>	<td> مقيم مصرح له قانونيا</td>	<td>Законный постоянный житель (обладатель грин-карты)</td></tr>
+<tr><td>Lay it over </td>	<td>to table or postpone a bill for a future hearing</td>	<td>法案放置</td>	<td>posponer un proyecto de ley para una audiencia future</td>	<td>연기하다</td>	<td>Présenter</td>	<td>ملتوی کرنا</td>	<td> تأجيل</td>	<td>Отложить</td></tr>
+<tr><td>Legal Screening </td>	<td>evaluation of legal documents and status</td>	<td>法律篩選</td>	<td>Evaluacion Legal </td>	<td>법적 평가</td>	<td>Sélection légale</td>	<td>قانونی اسکریننگ</td>	<td> الفحص القانوني</td>	<td>Правовая проверка</td></tr>
+<tr><td>Legislative process in its simplest form </td>	<td>a bill is drafted, a Council member introduces it at a Stated Meeting, a committee hearing is held, the bill is aged, the bill is voted out of the committee, more than half of the Council Members vote to adopt the bill, the Mayor signs it into law. </td>	<td>最簡單的立法程序</td>	<td>Proceso legislativo en su forma más simple</td>	<td>가장 간단한 형태의 입법 절차</td>	<td>Processus législatif dans sa forme la plus simple</td>	<td>سب سے آسان شکل میں قانون سازی </td>	<td> العملية التشريعية في أبسط أشكالها</td>	<td>Законодательный процесс в простейшей форме</td></tr>
+<tr><td>Local law </td>	<td>an adopted bill</td>	<td>本地法律</td>	<td>Ley local</td>	<td>현지 법</td>	<td>Législation locale </td>	<td>مقامی قانون</td>	<td>القانون المحلي</td>	<td>Местное законодательство</td></tr>
+<tr><td>Local Law Enforcement </td>	<td>application of local laws</td>	<td>地方執法</td>	<td>Agentes del Orden Publico local </td>	<td>현지 법집행기관  </td>	<td>Application de la loi locale </td>	<td>مقامی قانون نافذ کرنے والا</td>	<td> إنفاذ القانون المحلي</td>	<td>Местные правоохранительные органы</td></tr>
+<tr><td>Mayor </td>	<td>the person in charge of executing, or implementing, the laws adopted by the Council</td>	<td>市長</td>	<td>Alcalde(sa)</td>	<td>시장 </td>	<td>Maire</td>	<td>میئر</td>	<td>عمدة المدينة </td>	<td>Мэр</td></tr>
+<tr><td>Mayor’s Office of Immigrant Affairs (MOIA) </td>	<td></td>	<td>市長移民事務辦公室</td>	<td>Oficina del Alcalde de Asuntos de Inmigrantes </td>	<td>시장의 이민부 (MOIA)</td>	<td>Bureau municipal des affaires des immigrants</td>	<td>میئر کا دفتر برائے امور تارکین وطن</td>	"<td>مكتب العمدة لشؤن الهجرة</tr>
+<tr></tr>
+<tr></td>"	<td>Управление мэра по делам иммигрантов</td></tr>
+<tr><td>Message of necessity </td>	<td>a way to avoid the aging requirement, when issued by the mayor and followed by a two-thirds vote of the Council</td>	<td>必要信息</td>	<td>Mensaje de necesidad</td>	<td>필요성있는 메시지</td>	<td>Message de nécessité</td>	<td>میئر اور سٹی کونسل کی جانب سے عمر سے متعلق قانون میں ترمیم کی منظوری</td>	<td> رسالة للضرورة</td>	<td>Сообщение о необходимости</td></tr>
+<tr><td>Misdemeanor </td>	<td>A minor wrongdoing; a non-indictable offence</td>	<td>輕罪</td>	<td>Delito Menor </td>	<td>경범죄</td>	<td>Délit mineur</td>	<td>غلطی</td>	<td> جنحة</td>	<td>Легкое правонарушение</td></tr>
+<tr><td>Modified Budget</td>	<td>The Adopted Expense or Revenue Budgets are modified when revenue projections change or expenditures are reallocated during a fiscal year.</td>	<td>修改預算</td>	<td>Presupuesto Modificado </td>	<td>수정 된 예산</td>	<td>Budget modifié</td>	<td>ترمیم شدہ بجٹ</td>	<td> الميزانية المعدلة</td>	<td>Изменения бюджета по программам</td></tr>
+<tr><td>Notary Public </td>	<td>An official who has the leagl authority to say that documenbts are correctly signed or truthful</td>	<td>公證人</td>	<td>Notario Publico </td>	<td>공증인</td>	<td>Notaire </td>	<td>نوٹری پبلک</td>	<td> كاتب العدل</td>	<td>Нотариус</td></tr>
+<tr><td>Notice to Appear </td>	<td></td>	<td>出庭通知</td>	<td>Notificación/Aviso de Fecha de Audencia </td>	<td>출두 통지서</td>	<td>Citation à comparaître</td>	<td>پیشی کا نوٹس</td>	<td>رسالة للحضور</td>	<td>Уведомление о явке</td></tr>
+<tr><td>Office of Refugee Resettlement (ORR) </td>	<td></td>	<td>難民安置辦公室</td>	<td>Oficina de Reubicación para Refugiados </td>	<td>난민 정착국 (ORR)</td>	<td>Bureau de relocalisation des réfugiés</td>	<td>پناہ گزین کی بحالی کا دفتر</td>	<td>مكتب إعادة توطين اللاجئين (ORR)</td>	<td>Управление по переселению беженцев</td></tr>
+<tr><td>Oversight Hearing </td>	<td>Formal public audience to review issues, policy, etc.</td>	<td>監督聽證會</td>	<td>Audencia de Vigilancia </td>	<td>청문회</td>	<td>Audition de surveillance</td>	<td>نگرانی کی سماعت</td>	<td>  جلسة الاستماع</td>	<td>Внутреннего надзора слушания</td></tr>
+<tr><td>Participatory Budgeting </td>	<td>A democratic process in which community members directly decide how to spend part of a public budget</td>	<td>參與式預算</td>	<td>Presupuesto Participativo </td>	<td>시민 참여 예산</td>	<td>Budget participatif</td>	<td>شراکت داری پر مبنی بجٹ سازی</td>	<td></td>	<td>Ориентированного участия</td></tr>
+<tr><td>Passed </td>	<td>Approved by vote</td>	<td>通過</td>	<td>Aprobada </td>	<td>통과되다</td>	<td>Approuvé</td>	<td>منظور یا  منظورشدہ</td>	<td> مرت</td>	<td>Принятые</td></tr>
+<tr><td>Power of Attorney </td>	<td>Alegal document in which you give another person to right to acto for you especially in financial or legal matters</td>	<td>授權書</td>	<td>Poder/Contrato de Mandato </td>	<td>위임장  </td>	<td>Procuration</td>	<td>قانونی اجازت نامہ</td>	<td> تفويض</td>	<td>Доверенность</td></tr>
+<tr><td>Preliminary Budget </td>	<td>Proposed operating and capital expenditures, and forecast of revenues for the upcoming fiscal year, plus three subsequent years. The Council holds budget hearings with city agencies and the public. </td>	<td>初步預算</td>	<td>Presupuesto Preliminar </td>	<td>예비 예산</td>	<td>Budget préliminaire</td>	<td>ابتدائی بجٹ</td>	<td>  الميزانية الأولية</td>	<td>Предварительный бюджет по программам</td></tr>
+<tr><td>Promulgation of rules </td>	<td>when agencies create and publish additional rules and procedures to help enforce legislation adopted by the Council</td>	<td>頒佈規則</td>	<td>Promulgación de normas</td>	<td>규칙의 공포</td>	<td>Promulgation de règles</td>	<td>قواعد و ضوابط</td>	<td> نشر القواعد</td>	<td>Опубликование правил</td></tr>
+<tr><td>Proposed </td>	<td></td>	<td>提出</td>	<td>Propuesto </td>	<td>제안된</td>	<td>Proposé</td>	<td>مجوزہ</td>	<td> المقترح</td>	<td>Предлагаемые</td></tr>
+<tr><td>Quorum</td>	<td>the minimum number of members of an assembly that must be present at any of its meetings to make the proceedings of that meeting valid.</td>	<td>法定人數</td>	<td>el quórum</td>	<td>정족수</td>	<td>Quorum</td>	<td>  کورم یا ایوان میں ممبران کی کم تعداد</td>	<td></td>	<td>Кворум</td></tr>
+<tr><td>Referendum </td>	<td>a special process in which City residents cast votes on local legislation</td>	<td>公投</td>	<td>Referéndum</td>	<td>국민 투표</td>	<td>Référendum</td>	<td>استصواب رائے </td>	<td> استفتاء</td>	<td>Референдум</td></tr>
+<tr><td>Refugee </td>	<td>a person who has been forced to leave his country to escape persecution or violence</td>	<td>難民</td>	<td>Refugiado </td>	<td>난민  OR  피난민</td>	<td>Réfugié</td>	<td>پناہ گزین</td>	<td> لاجئ</td>	<td>Беженцы</td></tr>
+<tr><td>Removal/Deporation Proceeding </td>	<td></td>	<td>處於遣返或遞解出境的程序中</td>	<td>Procedimiento de Deportación </td>	<td>강제송환 절차</td>	<td>Procédures de Déportation</td>	<td>ملک بدری / ملک بدری کے لئے کارروائی</td>	<td>عملية الترحيل ، اجراءات الترحيل</td>	<td>Процесс по поводу депортации</td></tr>
+<tr><td>Resolution </td>	<td>a nonbinding declaration calling on a city agency or the state or federal government to do something</td>	<td>决議案</td>	<td>Resolución</td>	<td>결의안</td>	<td>Résolution</td>	<td>قرارداد</td>	<td>  القرار</td>	<td>Резолюции</td></tr>
+<tr><td>Revenue </td>	<td></td>	<td>財政收入</td>	<td>Ingresos </td>	<td>세입</td>	<td>Recettes</td>	<td>آمدنی</td>	<td>إيرادات</td>	<td>Доход</td></tr>
+<tr><td>Rules of the City of New York </td>	<td>regulations promulgated by City agencies</td>	<td>紐約市規則</td>	<td>Reglamento de la Ciudad de Nueva York</td>	<td>뉴욕시 규칙</td>	<td>Règles de la ville de New York</td>	<td>نیویارک شہر کے قوانین</td>	<td>قواعد مدينة نيويورك</td>	<td>Правила города Нью-Йорка</td></tr>
+<tr><td>Secure Communities</td>	<td>an American deportation program that relies on partnership among federal, state, and local law enforcement agencies. </td>	<td>安全社區</td>	<td>Comunidades Seguras </td>	<td>지역사회 보호  OR  시큐어 커뮤니티</td>	<td>Communautés en sécurité</td>	<td>محفوظ کمیونٹی  یا محفوظ  برادری</td>	<td> المجتمعات الآمنة</td>	<td>Обеспечение безопасности общин</td></tr>
+<tr><td>Session </td>	<td>each four-year period that Council Members serve; each member can only serve two terms in a row</td>	<td>期限</td>	<td>Sesión</td>	<td>세션 or 기간</td>	<td>Session</td>	<td>اجلاس</td>	<td>جلسة</td>	<td>Сессии</td></tr>
+<tr><td>Speaker </td>	<td>a Council Member who is selected by the Council to lead that body</td>	<td>市議長</td>	<td>Vocero(a), presidente(a)</td>	<td>시의회 의장</td>	<td>Intervenant</td>	<td>اسپیکر</td>	<td>المتحدث</td>	<td>Спикер Горсовета</td></tr>
+<tr><td>Speaker slip</td>	<td>any individual who wishes to address the City Council must fill out a speaker form located at the sergeant-at-arms desk prior to the hearing. Please include the speaker’s name, address, telephone number, the number(s) or the subject agenda item(s), and mark if in favor or opposed</td>	<td>發言人記錄</td>	<td>Formulario de orador</td>	<td>연사 형식</td>	<td>Billet d'intervenant</td>	<td>کسی بھی شہری کی جانب سے اسپیکر سے رابطے کےلئے مخصوص فارم</td>	<td></td>	<td>Форма, которую должен заполнить любой человек, желающий выступить в Горсовете</td></tr>
+<tr><td>State of the City Address </td>	<td></td>	<td>市咨文</td>	<td>Discurso sobre el Estado de la Ciudad </td>	<td>시정연설</td>	<td>Adresse de l'état de la ville</td>	<td>اسٹیٹ اف دی سٹی خطاب یا اسپیکر کا شہریوں سے سالانہ خطاب</td>	<td>البيان السنوي للمدينة</td>	<td>Обращение мэра к жителям города</td></tr>
+<tr><td>Stated meeting </td>	<td>a regular meeting of the full Council in which Council Members come together at City Hall to vote on bills and take other actions</td>	<td>會議舉行</td>	<td>Reunión declarada del concejo</td>	<td>명시된 회의</td>	<td>Réunion de Conseil en complet</td>	<td>کونسل کا اجلاس جس میں ممبران قانون سازی میں حصہ لیتے ہیں</td>	<td>الاجتماع المعلن</td>	<td>Полное Совещание Совета</td></tr>
+<tr><td>Summons </td>	<td>An order to appear before a magistrate or the document containing such an order</td>	<td>傳票</td>	<td>Orden de comparecencia; citación </td>	<td>소환장</td>	<td>Citation</td>	<td>پیشی  کیلئے عدالتی حکمنامہ</td>	<td></td>	<td>Приказ о явке в суд</td></tr>
+<tr><td>Sunset clause / expiration date </td>	<td>a clause in a bill that sets a certain date or period of time when a bill, a provision or a pilot program will end</td>	<td>日期條款/截止日期 </td>	<td>Cláusula de vencimiento  / fecha de vencimiento</td>	<td> 만료일</td>	<td>Clause de date d'expiration</td>	<td>قانون کے ختم ہونے کی تاریخ  سے متعلق شق</td>	<td>تاريخ إنتهاء الصلاحية</td>	<td>Дата истечения срока действия оговорки</td></tr>
+<tr><td>Temporary Protected Status (TPS) </td>	<td></td>	<td>臨時保護狀態</td>	<td>Status de Protección Temporal </td>	<td>임시보호상태 (TPS)</td>	<td>Statut de protection temporaire (TPS)</td>	<td>عارضی محفوظ حیثیت</td>	<td>حالة الحماية المؤقتة  </td>	<td>Временный защищенный статус</td></tr>
+<tr><td>Testimony</td>	<td>a formal written or spoken statement</td>	<td>證詞</td>	<td>testimonio</td>	<td>증언</td>	<td>Témoignage</td>	<td>بیان</td>	<td></td>	<td>Свидетельские показания</td></tr>
+<tr><td>U.S. Citizen </td>	<td>A legal recognized national of a state or commonwealth</td>	<td>美國公民</td>	<td>Ciudadano Estadunidense/Americano </td>	<td>미국 시민</td>	<td>Citoyen américain</td>	<td>امریکی شہری</td>	<td>مواطن أمريكي</td>	<td>Гражданин США</td></tr>
+<tr><td>Undocumented </td>	<td>immigrant without legal immigration papers</td>	<td>無証 （無身份）</td>	<td>Indocumentado </td>	<td>서류 미비자</td>	<td>Immigrant sans-papiers</td>	<td>غیر قانونی طور پر مقیم</td>	<td>غير موثقة</td>	<td>Иммигрант без документов</td></tr>
+<tr><td>Unit of Appropriation</td>	<td>An agency’s operating budget is divided into a number of units of appropriation. These units of appropriation are further divided into personal service and other personal OTPS expenditures. </td>	<td>撥款單位</td>	<td>Unidad de Asignación de Créditos </td>	<td>세출 단위  </td>	<td>Unité d'Appropriation</td>	<td>اختصاصی یونٹ</td>	<td>وحدة الاعتمادات</td>	<td></td></tr>
+<tr><td>Veto </td>	<td>an action by the Mayor to disapprove an adopted bill; a vote of at least two thirds of Council Members can override a mayoral veto</td>	<td>否決</td>	<td>Veto</td>	<td>거부권</td>	<td>Veto</td>	<td>ویٹو </td>	<td>حق النقض</td>	<td>Право вето</td></tr>
+<tr><td>Vote</td>	<td>a formal expression of preference for a proposed resolution of an issue</td>	<td>投票</td>	<td>voto</td>	<td>투표</td>	<td>Voter</td>	<td>ووٹ</td>	<td></td>	<td>Голосование</td></tr>
+<tr><td>Witness </td>	<td>a person who testifies at a hearing</td>	<td>證人</td>	<td>Testigo</td>	<td>증인</td>	<td>Témoin</td>	<td> گواہ</td>	<td>الشاهد </td>	<td>Свидетель</td></tr>
+<tr><td>Zoning</td>	<td>the establishment by local governments of districts that are restricted to various types of manufacturing, commercial, or residential use</td>	<td>分區</td>	<td>Zonificación</td>	<td>지구제</td>	<td>Zonage</td>	<td>  زوننگ  یا کسی بھی علاقے میں زمین کا مخصوص مقاصد کے لئے استعمال</td>	<td></td>	<td>Зонирование</td></tr>
+</table>
+
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
+
+</body>
+</html>
