@@ -75,7 +75,12 @@ height: 100%;
     padding-left: 7px;
 
 }
+.card .card-subtitle {
 
+    font-size: 14px;
+    padding-left: 7px;
+
+}
 .card .card-content p{
   color: #1E1E1E;
   font-size: 13px;
@@ -89,6 +94,8 @@ height: 100%;
 .card-row {
   margin-bottom: 4px;
     margin-top: 4px;
+    margin-left: 4px;
+    margin-bottom: 4px;
 }
 .card-action i {
     vertical-align: text-bottom;
