@@ -33,7 +33,7 @@ function renderCards(data) {
   var html = '';
   $.each(data, function(key, value) {
 
-    html += '<div class="col s12 m6 5"><div class="card"><div class="card__meta"><span class="card-title grey-text text-darken-4">' + value.title + '</span><p class="card-subtitle grey-text text-darken-2">' + value.description + '</p></div></div></div>';
+    html += '<div class="col s12 m6 5"><div class="card"><div class="card__meta"><span class="card-title grey-text text-darken-4">' + value.title + '</span><p class="card-subtitle grey-text text-darken-2">' + value.description + value.Chinese'</p></div></div></div>';
 
     html += '</div>';
   });
