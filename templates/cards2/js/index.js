@@ -33,7 +33,7 @@ function renderCards(data) {
   var html = '';
   $.each(data, function(key, value) {
 
-    html += '<div class="col s12 m6 l4"><div class="card"><div class="card-content white-text"><div class="card__meta"></div><span class="card-title grey-text text-darken-4">' + value.title + '</span><p class="card-subtitle grey-text text-darken-2">' + value.description '</p></div><div class="card-action"><a href="#" class="card-action-right"><i class="material-icons">&nbsp;room</i>FIND</a> </div></div>';
+    html += '<div class="col s12 m6 l4"><div class="card"><div class="card-content white-text"><span class="card__date__day">23</span><span class="card__date__month">Mai</span><div class="card__meta"><i class="small material-icons">room</i>' + value.city + '</div><span class="card-title grey-text text-darken-4">' + value.title + '</span><p class="card-subtitle grey-text text-darken-2">' + value.description  + '</p><span class="card-title grey-text text-darken-4">' + " Chinese: "+ value.Chinese +  '</span><i class="small material-icons">label</i>&nbsp;' + value.styles + '</div><div class="card-action"><a href="#"><i class="material-icons">&nbsp;language</i>VISIT WEB</a><a href="#" class="card-action-right"><i class="material-icons">&nbsp;room</i>FIND</a> </div></div>';
 
     html += '</div>';
   });
@@ -1938,7 +1938,7 @@ function applyEventTypeFilter(data){
   var result = [];
       $('input[name="event-type-filter"]:checked').each(function() {
          console.log(this.value);
-         var filtered = filterByAttr("event_type", this.value, data);
+         var filtered = filterByAttr("title", this.value, data);
         result = mergeJSONObjectsRemovingDuplicates(result,filtered);
       });
   return result;

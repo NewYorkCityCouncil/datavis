@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Open Space Capital Funding - Melissa Mark-Viverito</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
+
+    </head>
+    <body>
+
+
+<canvas id="linechart6" width=auto max-height="400"></canvas>
+<script>
+
+Chart.defaults.global.responsive = true
+Chart.defaults.global.tooltips.backgroundColor="grey"
+Chart.defaults.global.maintainAspectRatio = true
+Chart.defaults.global.legend = false
+
+var ctx = document.getElementById("linechart6");
+
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ["2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018"],
+        datasets: [{
+            label: 'Open Space Capital Funding',
+            fill: false,
+            lineTension: .5,
+            backgroundColor:"#82C91E",
+            borderColor: "#82C91E",
+            borderWidth: 3,
+            borderCapStyle: 'butt',
+            borderDash: [],
+            borderDashOffset: 0.0,
+            borderJoinStyle: 'miter',
+            pointBorderColor: "#2F56A6",
+            pointBackgroundColor: "#2F56A6",
+            pointBorderWidth: 5,
+            pointHoverRadius: 10,
+            pointHoverBackgroundColor: "#82C91E",
+            pointHoverBorderColor: "#82C91E",
+            pointHoverBorderWidth: 2,
+            pointRadius: 3,
+            pointHitRadius: 10,
+            hoverBackgroundColor: "#9E9E9E",
+            hoverBorderColor: "#eeeeee",
+            data: [5850000,4540000,9381000,7359000,5980000,4831890,10217000,5060642,18090773,29396500,23648000,55324000]
+        }]
+
+    },
+    options: {
+      tooltips: {
+        callbacks: {
+          label: function(tooltipItem, data) {
+            var datasetLabel = data.datasets[tooltipItem.datasetIndex].label || '';
+            return datasetLabel + ': ' + '$' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US') ;
+          }
+        }
+      },
+      scales: {
+        yAxes: [{
+          stacked: false,
+          ticks: {
+            beginAtZero:true,
+            callback: function(value) {
+              return '$' + value.toLocaleString('en-US') ;
+            }
+          }
+        }]
+      }
+
+    }
+
+});
+</script>
+    </body>
+</html>
