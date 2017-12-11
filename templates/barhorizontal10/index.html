@@ -69,7 +69,7 @@ Chart.defaults.scale = {
 var ctx = document.getElementById("barhorizontal10");
 
 var myChart = new Chart(ctx, {
-    type: 'horizontalBar',
+    type: 'bar',
     data: {
         labels: [
           "Taxes",
@@ -115,6 +115,9 @@ var myChart = new Chart(ctx, {
           display: true,
           ticks: {
             beginAtZero: true,
+            callback: function(value) {
+              return '$'+value.toLocaleString('en-US')+'M';
+            }
           }
         }]
       },
@@ -130,8 +133,8 @@ var myChart = new Chart(ctx, {
 					var title = '';
 
 					if (tooltipItems.length > 0) {
-						if (tooltipItems[0].yLabel) {
-							title = tooltipItems[0].yLabel;
+						if (tooltipItems[0].xLabel) {
+							title = tooltipItems[0].xLabel;
 						} else if (data.labels.length > 0 && tooltipItems[0].index < data.labels.length) {
 							title = data.labels[tooltipItems[0].index];
 						}
@@ -141,7 +144,7 @@ var myChart = new Chart(ctx, {
 				},
 				label: function(tooltipItem, data) {
 					var datasetLabel = data.datasets[tooltipItem.datasetIndex].label || '';
-					return '$'+tooltipItem.xLabel.toLocaleString('en-US')+' Million';
+					return '$'+tooltipItem.yLabel.toLocaleString('en-US')+' Million';
 				}
         }
       }
