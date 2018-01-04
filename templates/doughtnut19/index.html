@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Justin Brannan District Priorities</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
+
+    </head>
+    <body>
+
+
+<canvas id="doughnut19" width=auto height="250"></canvas>
+<script>
+
+Chart.defaults.global.responsive = true
+Chart.defaults.global.maintainAspectRatio = true
+Chart.defaults.global.legend.display= false
+
+var ctx = document.getElementById("doughnut19");
+
+var myChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        labels: ["Public Transportation",
+                "Public Schools",
+                "Public Safety and Quality of Life",
+                "Homelessness",
+                "Protectiong New Immigrants",
+                "Opiod and Herion Epidemic",
+                "Income Inequality",
+                "Ending the illegal conversion of single- and two-family homes",
+                "Seniors",
+                "Fairness in Property Tax System",
+                "Affordable Housing",
+                "Police Accountability",
+                "Parks",
+                "Sanitation",
+                "Animal Rights",
+                "Environmental Sustainability - Reducing waste & emissions",
+                "Bike and Pedestrian Infrastructure",
+                "Reduced toll on the Verrazano Bridge for Brooklyn residents",
+                "Private School Assistance",
+                "Mental Health and Nyc Thrive",
+                "Fighting racism and islamophobia",
+                "Empty Storefronts",
+                "Close Rikers",
+                "Access-A-Ride",
+                "Workforce Development",
+                "Worker Coops",
+                "Urban Farming",
+                "Upzone Bay Ridge and build more housing",
+                "Traffic Lights on Dahlgreen Place",
+                "Trade Schools",
+                "Supermarkets",
+                "Stop Bottle Deposit Regulations",
+                "Special Education",
+                "Remove Preferred Lease",
+                "Quality of Life",
+                "Public Service",
+                "Protecting LGBTQ residents",
+                "Parking",
+                "Noticing the Bath Beach exists",
+                "Keeping the Army at Ft Hamilton",
+                "Immigration",
+                "Group homes in Bay Ridge for autistic adults",
+                "Enviorment",
+                "Domestic Violence",
+                "Cross walk on Shore Road somewhere between 99th and 95th Streets",
+                "Community Centers",
+                "Climage Change and Flood Mitigation",
+                "Citibike",
+                "Bullying",
+                "Building a better internet infrastructure in bay ridge.",
+                "After School Programs"
+          ],
+        datasets: [{
+            label: 'Type of Projects Funded',
+            backgroundColor:["#BE4BDB","#CC76E2","#DBA2EA","#EACDF1","#EDD6F3"],
+            borderColor: "#eeeeee",
+            borderWidth: 1,
+            hoverBackgroundColor: "#9E9E9E",
+            hoverBorderColor: "#eeeeee",
+            data: [7457000,6800000,6375000,3635000]
+        }]
+    }
+    ,
+    options: {
+      tooltips: {
+          callbacks: {
+            label: function(tooltipItem, data) {
+              return data.labels[tooltipItem.index] + ': '+ '$' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US');
+            },
+          }
+      }
+    }
+
+
+});
+</script>
+    </body>
+</html>
