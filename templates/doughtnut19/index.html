@@ -76,13 +76,13 @@ var myChart = new Chart(ctx, {
                 "After School Programs"
           ],
         datasets: [{
-            label: 'Type of Projects Funded',
-            backgroundColor:["#BE4BDB","#CC76E2","#DBA2EA","#EACDF1","#EDD6F3"],
+            label: 'Survey Priorities',
+            backgroundColor:["#228AE6","#12B886","#82C91E","#F59F00","#A07952","#D05D4E","#BE4BDB","#228AE6","#12B886","#82C91E","#F59F00","#A07952","#D05D4E","#BE4BDB","#228AE6","#12B886","#82C91E","#F59F00","#A07952","#D05D4E","#BE4BDB","#228AE6","#12B886","#82C91E","#F59F00","#A07952","#D05D4E","#BE4BDB","#228AE6","#12B886","#82C91E","#F59F00","#A07952","#D05D4E","#BE4BDB","#228AE6","#12B886","#82C91E","#F59F00","#A07952","#D05D4E","#BE4BDB","#228AE6","#12B886","#82C91E","#F59F00","#A07952","#D05D4E","#BE4BDB","#228AE6","#12B886","#82C91E","#F59F00","#A07952","#D05D4E","#BE4BDB",],
             borderColor: "#eeeeee",
             borderWidth: 1,
             hoverBackgroundColor: "#9E9E9E",
             hoverBorderColor: "#eeeeee",
-            data: [7457000,6800000,6375000,3635000]
+            data: [16.33,13.41,11.66,10.44,9.27,7.99,7.64,7.23,6.30,4.90,0.70,0.35,0.35,0.29,0.29,0.23,0.23,0.12,0.12,0.12,0.12,0.12,0.12,0.12,0.06,0.06,0.06,0.06,0.06,0.06,0.06,0.06,0.06,0.06,0.06,0.06,0.06,0.06,0.06,0.06,0.06,0.06,0.06,0.06,0.06,0.06,0.06,0.06,0.06,0.06,0.06]
         }]
     }
     ,
@@ -90,7 +90,7 @@ var myChart = new Chart(ctx, {
       tooltips: {
           callbacks: {
             label: function(tooltipItem, data) {
-              return data.labels[tooltipItem.index] + ': '+ '$' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US');
+              return data.labels[tooltipItem.index] + ': '+ data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+'%';
             },
           }
       }
