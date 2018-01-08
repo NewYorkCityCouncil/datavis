@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Quality of Life Issues</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
+
+    </head>
+    <body>
+
+
+<canvas id="barhorizontal12" max-width="100" height="900"></canvas>
+<script>
+
+Chart.defaults.global.responsive = true
+Chart.defaults.global.legend.display= false
+Chart.defaults.global.maintainAspectRatio = false
+
+
+
+Chart.defaults.scale = {
+		display: true,
+		position: "left",
+
+		// grid line settings
+		gridLines: {
+			display: false,
+			color: "rgba(0, 0, 0, 0.1)",
+			lineWidth: 1,
+			drawBorder: true,
+			drawOnChartArea: true,
+			drawTicks: true,
+			tickMarkLength: 10,
+			zeroLineWidth: 1,
+			zeroLineColor: "rgba(0,0,0,0.25)",
+			offsetGridLines: false
+		},
+
+		// scale label
+		scaleLabel: {
+			// actual label
+			labelString: '',
+
+			// display property
+			display: false
+		},
+
+		// label settings
+		ticks: {
+			beginAtZero: true,
+      minRotation: 0,
+			maxRotation: 50,
+			mirror: false,
+			padding: 10,
+			reverse: false,
+			display: true,
+			autoSkip: false,
+			autoSkipPadding: 0,
+			labelOffset: 0,
+			callback: function(value) {
+				return '' + value;
+			}
+		}
+	};
+
+// Chart.defaults.global.defaultFontSize = 10
+
+var ctx = document.getElementById("barhorizontal12");
+
+var myChart = new Chart(ctx, {
+    type: 'horizontalBar',
+    data: {
+        labels: [
+          "Improvements to our parks and public spaces",
+          "Motor vehicle traffic and speeding",
+          "Public Safety",
+          "Access to arts and cultural programming",
+          "Lack of street parking",
+          "More bike lanes",
+          "Construction noise and traffic",
+          "vagrancy",
+          "Trash/Litter (see above)",
+          "Trash collection on private streets",
+          "Trash and dog feces",
+          "Too many empty store fronts encourage loitering",
+          "The subway. Hands down.",
+          "The streets are so dirty",
+          "the smell coming from the water treatment plant",
+          "The fact I can't get proper internet access",
+          "The automobile auction that opened without the neighborhood’s knowledge is an absolute nightmare for this neighborhood. Dangerous",
+          "Street light on 7040-colonial road -71 street",
+          "Stopping broken windows policing",
+          "stop stereo typing Ethnics ect.",
+          "Spotty garbage collection and combating littering",
+          "SPEEDING VEHICLES",
+          "Sidewalks always have garbage strewn around. Would like a cleaner neighborhood.",
+          "Sanitation - Streets",
+          "sabotaging political campaigns",
+          "Reliable trains",
+          "Recycling containers",
+          "public transportation and traffic/congestion!",
+          "public spaces.",
+          "Price of tolls. Rent prices are also out of control",
+          "Please get Citibikes here",
+          "Parks and rec centers for seniors and kids (see above)",
+          "parks",
+          "parking on side walks",
+          "Panhandling is ridiculous on 86th. Beat cops would help",
+          "Overdevelopment",
+          "Over aggressive ticketing",
+          "or larger super markets like traders joes. Smaller ones like unionmarket. organic food is more expensive",
+          "Not just more bike lanes but SAFE bike lanes. I’m terrified to even ride from 74th and 4th to the waterfront. Also",
+          "noisy",
+          "Nneighbourhood alerts ...police patrol ..",
+          "my neighborhood *feels* like a Trump district. If you are not a white man",
+          "More trash cans",
+          "More police patrols",
+          "More money/investment in Bay Ridge/Fort Hamilton libraries.",
+          "mentally ill & wanna-be toughs damaging value/quality of life along 5th Ave in the lower 70s blocks",
+          "loiterers",
+          "littering and graffiti",
+          "Littering and dog poop",
+          "Litter everywhere :(",
+          "litter",
+          "likewise in the opposite direction to Coney Island. Imagine that!",
+          "lewdness and loitering along New Utrecht Ave after dark",
+          "larger garbage cans.",
+          "Keeping the sidewalks clean. They’re very dirty",
+          "keeping our Muslim neighbors safe",
+          "It would be amazing to find more organic stores in the area",
+          "it would be amazing if the waterfront running/bike path could continue to red hook and beyond",
+          "it can be a very uncomfortable place to live day to day.",
+          "Inconsistent subway service",
+          "Immigrant safety; stopping hate crimes",
+          "Illegal home conversions",
+          "Honking cars in residential areas!",
+          "Honestly",
+          "Homeless sleeping in front of houses. Specifically near 62nd street by the train",
+          "High quality youth programs that build citizens and stewards of the community.",
+          "Graffiti",
+          "Garbage and trash issue",
+          "Freedoms",
+          "Fixing pot holes",
+          "Fixing our broken transit system. MODERNIZING SIGNAL SYSTEM!",
+          "Expansion of citibike to bay ridge",
+          "Everybody in Bay Ridge thinks that they're Mario Andretti",
+          "Environment",
+          "drunks",
+          "DOUBLE PARKING",
+          "Do something with the lights on 92nd St at the bridge",
+          "Cut down on double parkers",
+          "Crack down on the double parking on 5th Ave.",
+          "Community events that all of bay ridge’s diverse constituencies feel comfortable and excited to attend.",
+          "coming up with more community gardens.",
+          "Cleanliness of the neighborhood",
+          "Cleanliness and repair of sidewalks and streets in public areas",
+          "Cleaner streets",
+          "Clean up neighborhood/Lack of Street Sanitation/Trash bins",
+          "Car-free drop-off zones at public schools",
+          "Bottle collectors",
+          "Bay Ridge's running team and I use the Promenade a lot - the lighting is poor. I think we would feel safer",
+          "And Owls Head Dog run needs improvement.",
+          "and disrepair. New businesses come and go fast because we are not attracting the right kinds of businesses for our nabe.",
+          "Affordable housing for long time residents in the neighborhood",
+          "Affordable housing"
+        ],
+        datasets: [{
+            label: 'Quality of Life Issues',
+            backgroundColor:["#228AE6","#12B886","#82C91E","#F59F00","#A07952","#D05D4E","#BE4BDB","#228AE6","#12B886","#82C91E","#F59F00","#A07952","#D05D4E","#BE4BDB","#228AE6","#12B886","#82C91E","#F59F00","#A07952","#D05D4E","#BE4BDB","#228AE6","#12B886","#82C91E","#F59F00","#A07952","#D05D4E","#BE4BDB","#228AE6","#12B886","#82C91E","#F59F00","#A07952","#D05D4E","#BE4BDB","#228AE6","#12B886","#82C91E","#F59F00","#A07952","#D05D4E","#BE4BDB","#228AE6","#12B886","#82C91E","#F59F00","#A07952"],
+            borderColor: "#eeeeee",
+            borderWidth: 1,
+            hoverBackgroundColor: "#9E9E9E",
+            hoverBorderColor: "#eeeeee",
+            data: [20.8,17.6,16.4,14.0,13.6,5.5,4.9,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1]
+        }]
+    },
+    options: {
+      scales:{
+        xAxes: [{
+          display: true,
+          ticks: {
+            beginAtZero: true,
+            callback: function(value) {
+              return value.toLocaleString('en-US')+ '%';
+            }
+          }
+        }],
+        yAxes: [{
+          display: true,
+          ticks: {
+            beginAtZero: true,
+          }
+        }]
+      },
+      tooltips: {
+        callbacks: {
+/*
+          label: function(tooltipItem, data) {
+            return '$' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US');
+          },
+          */
+          title: function(tooltipItems, data) {
+					// Pick first xLabel for now
+					var title = '';
+
+					if (tooltipItems.length > 0) {
+						if (tooltipItems[0].yLabel) {
+							title = tooltipItems[0].yLabel;
+						} else if (data.labels.length > 0 && tooltipItems[0].index < data.labels.length) {
+							title = data.labels[tooltipItems[0].index];
+						}
+					}
+
+					return title;
+				},
+				label: function(tooltipItem, data) {
+					var datasetLabel = data.datasets[tooltipItem.datasetIndex].label || '';
+					return tooltipItem.xLabel.toLocaleString('en-US')+'%';
+				}
+        }
+      }
+    }
+
+});
+</script>
+    </body>
+</html>
