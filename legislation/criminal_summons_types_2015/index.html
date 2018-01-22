@@ -37,10 +37,22 @@ var myChart = new Chart(ctx, {
     options: {
         scales: {
             yAxes: [{
-                ticks: {
-                    beginAtZero:true
+              display: true,
+              ticks: {
+                beginAtZero: true,
+                callback: function(value) {
+                  return value.toLocaleString('en-US');
                 }
+
+              }
             }]
+        },
+        tooltips: {
+          callbacks: {
+            label: function(tooltipItem, data) {
+              return  data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US') +' Criminal Summons';
+            },
+          }
         }
     }
 
