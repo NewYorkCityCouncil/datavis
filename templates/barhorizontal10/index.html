@@ -143,12 +143,36 @@ var myChart = new Chart(ctx, {
 					return title;
 				},
 				label: function(tooltipItem, data) {
-					var datasetLabel = data.datasets[tooltipItem.datasetIndex].label || '';
+          //$ AMOUNT
+          var datasetLabel = data.datasets[tooltipItem.datasetIndex].label || '';
 					return '$'+tooltipItem.yLabel.toLocaleString('en-US')+' Million';
-				}
+				},
+        afterLabel: function(tooltipItem, data) {
+          var dataset = data['datasets'][0];
+          var percent = Math.round((dataset['data'][tooltipItem['index']] / dataset["_meta"][0]['total']) * 100)
+          return '(' + percent + '%)';
+        }
+
+          /*
+          //PERCENTAGE - get the concerned dataset
+          var dataset = data.datasets[tooltipItem.datasetIndex];
+          //PERCENTAGE - calculate the total of this data set
+          var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+          return previousValue + currentValue;
+          });
+          //PERCENTAGE - get the current items value
+          var currentValue = dataset.data[tooltipItem.index];
+          //PERCENTAGE - calculate the precentage based on the total and current item, also this does a rough rounding to give a whole number
+          var precentage = Math.floor(((currentValue/total) * 100)+0.5);
+          return precentage + "%";
+          */
+
+
+      }
+
         }
       }
-    }
+
 
 });
 </script>
