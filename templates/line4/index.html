@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>National Real GDP, Percent Growth</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
+
+    </head>
+    <body>
+
+
+<canvas id="line4" width=auto max-height="400"></canvas>
+<script>
+
+Chart.defaults.global.responsive = true
+Chart.defaults.global.tooltips.backgroundColor="grey"
+Chart.defaults.global.maintainAspectRatio = true
+Chart.defaults.global.legend = false
+
+var ctx = document.getElementById("line4");
+
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ["2008","2009","2010","2011","2012","2013","2014","2015","2016","2017"],
+        datasets: [{
+            label: 'National GDP Change',
+            fill: false,
+            lineTension: .5,
+            backgroundColor:"#228AE6",
+            borderColor: "#228AE6",
+            borderWidth: 3,
+            borderCapStyle: 'butt',
+            borderDash: [],
+            borderDashOffset: 0.0,
+            borderJoinStyle: 'miter',
+            pointBorderColor: "#23417D",
+            pointBackgroundColor: "#23417D",
+            pointBorderWidth: 5,
+            pointHoverRadius: 10,
+            pointHoverBackgroundColor: "#228AE6",
+            pointHoverBorderColor: "#228AE6",
+            pointHoverBorderWidth: 2,
+            pointRadius: 3,
+            pointHitRadius: 10,
+            hoverBackgroundColor: "#9E9E9E",
+            hoverBorderColor: "#eeeeee",
+            data: [-0.3,-2.8,2.5,1.6,2.2,1.7,2.6,2.9,1.5,2.3]
+        }]
+
+    },
+    options: {
+      tooltips: {
+        callbacks: {
+          label: function(tooltipItem, data) {
+            var datasetLabel = data.datasets[tooltipItem.datasetIndex].label || '';
+            return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ '%'  ;
+          }
+        }
+      },
+      scales: {
+        yAxes: [{
+          stacked: false,
+          ticks: {
+            beginAtZero:true,
+            callback: function(value) {
+              return value.toLocaleString('en-US')+'%' ;
+            }
+          }
+        }]
+      }
+
+    }
+
+});
+</script>
+    </body>
+</html>
