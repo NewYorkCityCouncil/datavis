@@ -102,7 +102,7 @@ var myChart = new Chart(ctx, {
           ticks: {
             beginAtZero: true,
             callback: function(value) {
-              return '$'+value.toLocaleString('en-US');
+              return value.toLocaleString('en-US');
             }
           }
         }],
@@ -110,6 +110,8 @@ var myChart = new Chart(ctx, {
           display: true,
           ticks: {
             beginAtZero: true,
+            callback: function(value) {
+              return '$'+value.toLocaleString('en-US');
           }
         }]
       },
@@ -136,7 +138,6 @@ var myChart = new Chart(ctx, {
 				},
 				label: function(tooltipItem, data) {
 					var datasetLabel = data.datasets[tooltipItem.datasetIndex].label || '';
-					return '$'+tooltipItem.xLabel.toLocaleString('en-US');
 				}
         }
       }

@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>FY19 Revenues in Preliminary Budget</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
+
+    </head>
+    <body>
+
+
+<canvas id="doughnut21" width=auto height="250"></canvas>
+<script>
+
+Chart.defaults.global.responsive = true
+Chart.defaults.global.maintainAspectRatio = true
+Chart.defaults.global.legend.display= false
+
+var ctx = document.getElementById("doughnut21");
+
+var myChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        labels: ["City Taxes",
+                "State Aid",
+                "Federal Aid",
+                "Other"
+          ],
+        datasets: [{
+            label: 'FY19 Revenues in Preliminary Budget',
+            backgroundColor:["#228AE6","#12B886","#82C91E","#F59F00","#A07952","#D05D4E","#BE4BDB","#228AE6","#12B886","#82C91E","#F59F00","#A07952","#D05D4E","#BE4BDB","#228AE6","#12B886","#82C91E","#F59F00","#A07952","#D05D4E","#BE4BDB","#228AE6","#12B886","#82C91E","#F59F00","#A07952","#D05D4E","#BE4BDB","#228AE6","#12B886","#82C91E","#F59F00","#A07952","#D05D4E","#BE4BDB","#228AE6","#12B886","#82C91E","#F59F00","#A07952","#D05D4E","#BE4BDB","#228AE6","#12B886","#82C91E","#F59F00","#A07952","#D05D4E","#BE4BDB","#228AE6","#12B886","#82C91E","#F59F00","#A07952","#D05D4E","#BE4BDB","#228AE6","#12B886","#82C91E","#F59F00","#A07952","#D05D4E","#BE4BDB","#228AE6","#12B886","#82C91E","#F59F00","#A07952","#D05D4E","#BE4BDB","#228AE6","#12B886","#82C91E","#F59F00","#A07952","#D05D4E","#BE4BDB","#228AE6","#12B886","#82C91E","#F59F00","#A07952","#D05D4E","#BE4BDB","#228AE6","#12B886","#82C91E","#F59F00","#A07952","#D05D4E","#BE4BDB","#228AE6","#12B886","#82C91E","#F59F00","#A07952","#D05D4E","#BE4BDB","#228AE6","#12B886","#82C91E","#F59F00","#A07952","#D05D4E","#BE4BDB","#228AE6","#12B886","#82C91E","#F59F00","#A07952","#D05D4E","#BE4BDB"],
+            borderColor: "#eeeeee",
+            borderWidth: 1,
+            hoverBackgroundColor: "#9E9E9E",
+            hoverBorderColor: "#eeeeee",
+            data: [59999,14968,7219,6480]
+        }]
+    }
+    ,
+    options: {
+      tooltips: {
+          callbacks: {
+            label: function(tooltipItem, data) {
+              return data.labels[tooltipItem.index] + ': '+ data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+'%';
+            },
+          }
+      }
+    }
+
+
+});
+</script>
+    </body>
+</html>
