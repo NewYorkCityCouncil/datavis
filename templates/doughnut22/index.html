@@ -3,7 +3,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>FY19 Revenues in Preliminary Budget</title>
+        <title>FY19 Taxes in Preliminary Budget</title>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
 
@@ -11,31 +11,32 @@
     <body>
 
 
-<canvas id="doughnut21" width=auto height="250"></canvas>
+<canvas id="doughnut22" width=auto height="250"></canvas>
 <script>
 
 Chart.defaults.global.responsive = true
 Chart.defaults.global.maintainAspectRatio = true
 Chart.defaults.global.legend.display= false
 
-var ctx = document.getElementById("doughnut21");
+var ctx = document.getElementById("doughnut22");
 
 var myChart = new Chart(ctx, {
     type: 'doughnut',
     data: {
-        labels: ["City Taxes",
-                "State Aid",
-                "Federal Aid",
+        labels: ["Property",
+                "Income",
+                "Sales",
+                "Business Taxes",
                 "Other"
           ],
         datasets: [{
-            label: 'FY19 Revenues in Preliminary Budget',
+            label: 'FY19 Taxes in Preliminary Budget',
             backgroundColor:["#BE4BDB","#F59F00","#228AE6","#82C91E"],
             borderColor: "#eeeeee",
             borderWidth: 1,
             hoverBackgroundColor: "#9E9E9E",
             hoverBorderColor: "#eeeeee",
-            data: [60,15,7.2,6.5]
+            data: [27.7,12.2,7.9,6,6.3]
         }]
     }
     ,
