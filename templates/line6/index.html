@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>National Unemployment</title>
+        <title>City Real GDP, Percent Growth</title>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
 
@@ -10,7 +10,7 @@
     <body>
 
 
-<canvas id="line5" width=auto max-height="400"></canvas>
+<canvas id="line6" width=auto max-height="400"></canvas>
 <script>
 
 Chart.defaults.global.responsive = true
@@ -18,18 +18,18 @@ Chart.defaults.global.tooltips.backgroundColor="grey"
 Chart.defaults.global.maintainAspectRatio = true
 Chart.defaults.global.legend = false
 
-var ctx = document.getElementById("line5");
+var ctx = document.getElementById("line6");
 
 var myChart = new Chart(ctx, {
     type: 'line',
     data: {
-        labels: ["2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017"],
+        labels: ["2008","2009","2010","2011","2012","2013","2014","2015","2016","2017"],
         datasets: [{
-            label: 'National Unemployment',
+            label: 'City GDP Change',
             fill: false,
             lineTension: .5,
-            backgroundColor:"#BE4BDB",
-            borderColor: "#BE4BDB",
+            backgroundColor:"#228AE6",
+            borderColor: "#228AE6",
             borderWidth: 3,
             borderCapStyle: 'butt',
             borderDash: [],
@@ -39,14 +39,14 @@ var myChart = new Chart(ctx, {
             pointBackgroundColor: "#23417D",
             pointBorderWidth: 5,
             pointHoverRadius: 6,
-            pointHoverBackgroundColor: "#BE4BDB",
-            pointHoverBorderColor: "#BE4BDB",
+            pointHoverBackgroundColor: "#228AE6",
+            pointHoverBorderColor: "#228AE6",
             pointHoverBorderWidth: 2,
             pointRadius: 3,
             pointHitRadius: 4,
             hoverBackgroundColor: "#9E9E9E",
             hoverBorderColor: "#eeeeee",
-            data: [4.6,5.8,9.3,9.6,8.9,8.1,7.4,6.2,5.3,4.9,4.4]
+            data: [-4,-1,6,1,3,0,4,3,1,1.8]
         }]
 
     },
