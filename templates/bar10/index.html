@@ -109,11 +109,11 @@ var myChart = new Chart(ctx, {
               "FY 2015",
               "FY 2016",
               "FY 2017",
-              "FY 2018",
-              "FY 2019",
-              "FY 2020",
-              "FY 2021",
-              "FY 2022"
+              "FY 2018 Plan",
+              "FY 2019 Plan",
+              "FY 2020 Plan",
+              "FY 2021 Plan",
+              "FY 2022 Plan"
       ]
     },
     options: {
@@ -130,7 +130,7 @@ var myChart = new Chart(ctx, {
           ticks: {
             beginAtZero: true,
             callback: function(value) {
-              return '$'+value.toLocaleString('en-US')+ 'billion';
+              return '$'+value.toLocaleString('en-US')+ ' Billion';
             }
           }
         }]
@@ -138,7 +138,7 @@ var myChart = new Chart(ctx, {
       tooltips: {
         callbacks: {
           label: function(tooltipItem, data) {
-            return '$'+ data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ 'billion';
+            return '$'+ data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ ' Billion';
           },
         }
       }
