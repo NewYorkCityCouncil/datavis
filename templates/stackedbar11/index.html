@@ -58,11 +58,10 @@ var myChart = new Chart(ctx, {
    tooltips: {
      callbacks: {
        label: function(tooltipItem, data) {
-					var datasetLabel = data.datasets[tooltipItem.datasetIndex].label || '';
-				return datasetLabel + ': ' + '$' data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] + ' Million';
-      }
-    }
-  },
+         return '$'+ data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ ' Million';
+       }
+     }
+   },
 
         scales: {
             yAxes: [{
