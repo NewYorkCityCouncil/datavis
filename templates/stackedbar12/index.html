@@ -14,7 +14,52 @@
 <script>
 
 Chart.defaults.global.responsive = true
+Chart.defaults.global.legend.display= true
 Chart.defaults.global.maintainAspectRatio = true
+
+Chart.defaults.scale = {
+		display: true,
+		position: "left",
+
+		// grid line settings
+		gridLines: {
+			display: true,
+			color: "rgba(0, 0, 0, 0.1)",
+			lineWidth: 1,
+			drawBorder: true,
+			drawOnChartArea: true,
+			drawTicks: true,
+			tickMarkLength: 10,
+			zeroLineWidth: 1,
+			zeroLineColor: "rgba(0,0,0,0.25)",
+			offsetGridLines: false
+		},
+
+		// scale label
+		scaleLabel: {
+			// actual label
+			labelString: '',
+
+			// display property
+			display: false
+		},
+
+		// label settings
+		ticks: {
+      minRotation: 0,
+		  maxRotation: 90,
+			mirror: false,
+			padding: 10,
+			reverse: false,
+			display: true,
+			autoSkip: false,
+			autoSkipPadding: 0,
+			labelOffset: 0,
+			callback: function(value) {
+				return '' + value;
+			}
+		}
+	};
 
 
 var ctx = document.getElementById("stackedbar12");
@@ -34,113 +79,50 @@ var myChart = new Chart(ctx, {
               ],
         datasets: [
           {
-            label: 'Personal Services',
-            backgroundColor:"#B2FF59",
+            label: 'Education',
+            backgroundColor:"#12B886",
             borderColor: "#eeeeee",
             borderWidth: 0,
-            hoverBackgroundColor: "#B2FF59",
+            hoverBackgroundColor: "#12B886",
             hoverBorderColor: "#eeeeee",
-            data: [28.12,27.78,27.01,27.29]
-        },
-        {
-          label: 'Other Than Personal Services',
-          backgroundColor: "#607D8B",
-          borderColor: "#eeeeee",
-          borderWidth: 0,
-          hoverBackgroundColor: "#607D8B",
-          hoverBorderColor: "#eeeeee",
-          data: [9.70,10.76,12.60,13.85]
-      },
-      {
-        label: 'Department of Social Services',
-        backgroundColor:"#FFD740",
-        borderColor: "#eeeeee",
-        borderWidth: 0,
-        hoverBackgroundColor: "#FFD740",
-        hoverBorderColor: "#eeeeee",
-        data: [13.23,13.22,12.69,12.19]
-    },
-    {
-      label: 'Pension Contributions',
-      backgroundColor:"#B0BEC5",
-      borderColor: "#eeeeee",
-      borderWidth: 0,
-      hoverBackgroundColor: "#B0BEC5",
-      hoverBorderColor: "#eeeeee",
-      data: [11.50,11.63,11.19,10.90]
-  },
-  {
-    label: 'Police Department',
-    backgroundColor:"#18FFFF",
-    borderColor: "#eeeeee",
-    borderWidth: 0,
-    hoverBackgroundColor: "#18FFFF",
-    hoverBorderColor: "#eeeeee",
-    data: [6.68,6.65,6.26,6.31]
-},
-{
-  label: 'Admin. for Children Services',
-  backgroundColor:"#7C4DFF",
-  borderColor: "#eeeeee",
-  borderWidth: 0,
-  hoverBackgroundColor: "#7C4DFF",
-  hoverBorderColor: "#eeeeee",
-  data: [4.03,3.89,3.78,3.67]
-},
-{
-  label: 'Debt Service',
-  backgroundColor:"#455A64",
-  borderColor: "#eeeeee",
-  borderWidth: 0,
-  hoverBackgroundColor: "#455A64",
-  hoverBorderColor: "#eeeeee",
-  data: [4.03,3.89,3.78,3.67]
-},
-{
-  label: 'Fire Department',
-  backgroundColor:"#FF5252",
-  borderColor: "#eeeeee",
-  borderWidth: 0,
-  hoverBackgroundColor: "#FF5252",
-  hoverBorderColor: "#eeeeee",
-  data: [2.55,2.48,2.32,2.28]
-},
-{
-  label: 'Department of Sanitation',
-  backgroundColor:"#FF9800",
-  borderColor: "#eeeeee",
-  borderWidth: 0,
-  hoverBackgroundColor: "#FF9800",
-  hoverBorderColor: "#eeeeee",
-  data: [1.93,2.00,1.94,1.95]
-},
-{
-  label: 'Department of Health & Mental Hygiene',
-  backgroundColor:"#40C4FF",
-  borderColor: "#eeeeee",
-  borderWidth: 0,
-  hoverBackgroundColor: "#40C4FF",
-  hoverBorderColor: "#eeeeee",
-  data: [2.25,1.92,1.82,1.68]
-},
-{
-  label: 'Department of Environmental Protection',
-  backgroundColor:"#E040FB",
-  borderColor: "#eeeeee",
-  borderWidth: 0,
-  hoverBackgroundColor: "#E040FB",
-  hoverBorderColor: "#eeeeee",
-  data: [1.62,1.57,1.52,1.56]
-},
-{
-  label: 'Department of Correction',
-  backgroundColor:"#FF3D00",
-  borderColor: "#eeeeee",
-  borderWidth: 0,
-  hoverBackgroundColor: "#FF3D00",
-  hoverBorderColor: "#eeeeee",
-  data: [1.50,1.49,1.43,1.52]
-}
+            data: [27.27,28.24,31.23,30.56,30.91,30.69,30.64]
+          },
+          {
+            label: 'Health and Social Services',
+            backgroundColor: "#F59F00",
+            borderColor: "#eeeeee",
+            borderWidth: 0,
+            hoverBackgroundColor: "#F59F00",
+            hoverBorderColor: "#eeeeee",
+            data: [36.25,35.78,33.46,31.09,28.35,26.66,25.74]
+          },
+          {
+            label: 'Public Safety and Justice',
+            backgroundColor:"#228AE6",
+            borderColor: "#eeeeee",
+            borderWidth: 0,
+            hoverBackgroundColor: "#228AE6",
+            hoverBorderColor: "#eeeeee",
+            data: [12.6,14.25,15.26,13.09,12.12,12.33,11.82]
+          },
+          {
+            label: 'Pensions and Miscellaneous',
+            backgroundColor:"#A07952",
+            borderColor: "#eeeeee",
+            borderWidth: 0,
+            hoverBackgroundColor: "#A07952",
+            hoverBorderColor: "#eeeeee",
+            data: [15.47,14.18,12.71,18.75,21.36,22.79,24.15]
+          },
+          {
+            label: 'All Other',
+            backgroundColor:"#CACACA",
+            borderColor: "#eeeeee",
+            borderWidth: 0,
+            hoverBackgroundColor: "#CACACA",
+            hoverBorderColor: "#eeeeee",
+            data: [8.4,7.54,7.34,6.51,7.26,7.54,7.65]
+          }
 
 
 
@@ -161,7 +143,11 @@ var myChart = new Chart(ctx, {
             yAxes: [{
                 stacked: true,
                 ticks: {
-                    beginAtZero:true
+                    beginAtZero:false,
+                    max: 100,
+                    callback: function(value) {
+                      return value.toLocaleString('en-US')+ ' %';
+                    }
                 }
             }],
             xAxes: [{
