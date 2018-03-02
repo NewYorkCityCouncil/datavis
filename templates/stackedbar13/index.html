@@ -10,7 +10,7 @@
     <body>
 
 
-<canvas id="stackedbar12" max-width="400" max="400"></canvas>
+<canvas id="stackedbar13" max-width="400" max="400"></canvas>
 <script>
 
 Chart.defaults.global.responsive = true
@@ -62,7 +62,7 @@ Chart.defaults.scale = {
 	};
 
 
-var ctx = document.getElementById("stackedbar12");
+var ctx = document.getElementById("stackedbar13");
 
 var myChart = new Chart(ctx, {
     type: 'bar',
@@ -82,21 +82,21 @@ var myChart = new Chart(ctx, {
         datasets: [
           {
             label: 'Baseline Addition',
-            backgroundColor:"#23417D",
+            backgroundColor:"#BE4BDB",
             borderColor: "#eeeeee",
             borderWidth: 0,
-            hoverBackgroundColor: "#23417D",
+            hoverBackgroundColor: "#CACACA",
             hoverBorderColor: "#eeeeee",
-            data: [44525,41388,41388,164558,464447,464447,423059,423059,169900]
+            data: [44.525,41.388,41.388,164.558,464.447,464.447,423.059,423.059,169.9]
           },
           {
             label: 'One-time Funding Addition',
-            backgroundColor: "#2F56A6",
+            backgroundColor: "#F59F00",
             borderColor: "#eeeeee",
             borderWidth: 0,
-            hoverBackgroundColor: "#2F56A6",
+            hoverBackgroundColor: "#CACACA",
             hoverBorderColor: "#eeeeee",
-            data: [0,92294,169988,308998,0,0,0,0,0]
+            data: [0,92.294,169.988,308.998,0,0,0,0,0]
           }
       ]
 
@@ -106,7 +106,7 @@ var myChart = new Chart(ctx, {
      callbacks: {
        label: function(tooltipItem, data) {
 					var datasetLabel = data.datasets[tooltipItem.datasetIndex].label || '';
-				return datasetLabel + ': ' + '$'+ data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] + ' Thousand';
+				return datasetLabel + ': ' + '$'+ data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US') + ' Million';
       }
     }
   },
@@ -115,10 +115,9 @@ var myChart = new Chart(ctx, {
             yAxes: [{
                 stacked: true,
                 ticks: {
-                    beginAtZero:false,
-                    max: 100,
+                    beginAtZero:true,
                     callback: function(value) {
-                      return '$'+value.toLocaleString('en-US')+ ' Thousand';
+                      return '$'+value.toLocaleString('en-US')+ ' Million';
                     }
                 }
             }],
