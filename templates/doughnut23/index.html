@@ -16,7 +16,7 @@
 
 Chart.defaults.global.responsive = true
 Chart.defaults.global.maintainAspectRatio = true
-Chart.defaults.global.legend.display= false
+Chart.defaults.global.legend.display= true
 
 var ctx = document.getElementById("doughnut23");
 
@@ -24,12 +24,12 @@ var myChart = new Chart(ctx, {
     type: 'doughnut',
     data: {
         labels: [
-          "Education",
-          "Public Safety",
-          "Administration & Operations (Other)",
-          "Health & Human Services",
-          "Public Works",
-          "Cultural & Parks"
+          "Education: 139,404 Jobs",
+          "Public Safety: 82,192 Jobs",
+          "Administration & Operations (Other): 37,151 Jobs",
+          "Health & Human Services: 23,796 Jobs",
+          "Public Works: 16,484 Jobs",
+          "Cultural & Parks: 4,380 Jobs"
           ],
         datasets: [{
             label: 'Fiscal 2019 FT Headcount',
@@ -46,7 +46,7 @@ var myChart = new Chart(ctx, {
       tooltips: {
           callbacks: {
             label: function(tooltipItem, data) {
-              return data.labels[tooltipItem.index] + ': '+ '$'+data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+' billion';
+              return data.labels[tooltipItem.index] /* + ': '+data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+' positions'*/;
             },
           }
       }
