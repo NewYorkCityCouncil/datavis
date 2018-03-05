@@ -16,18 +16,18 @@
 
 Chart.defaults.global.responsive = true
 Chart.defaults.global.maintainAspectRatio = true
-Chart.defaults.global.legend.display= false
+Chart.defaults.global.legend.display= true
 
 var ctx = document.getElementById("doughnut22");
 
 var myChart = new Chart(ctx, {
     type: 'doughnut',
     data: {
-        labels: ["Property",
-                "Income",
-                "Sales",
-                "Business Taxes",
-                "Other"
+        labels: ["Property: $27.7 Billion",
+                "Income: $12.2 Billion",
+                "Sales: $7.9 Billion",
+                "Business Taxes: $6 Billion",
+                "Other: $6.3 Billion"
           ],
         datasets: [{
             label: 'FY19 Taxes in Preliminary Budget',
@@ -44,7 +44,7 @@ var myChart = new Chart(ctx, {
       tooltips: {
           callbacks: {
             label: function(tooltipItem, data) {
-              return data.labels[tooltipItem.index] + ': '+ '$'+data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+' billion';
+              return data.labels[tooltipItem.index]/* + ': '+ '$'+data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+' billion'*/;
             },
           }
       }
