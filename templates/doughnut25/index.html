@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Response Types: Cases Created Jan - Sept 2018</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
+
+    </head>
+    <body>
+
+
+<canvas id="doughnut24" width=auto height="250"></canvas>
+<script>
+
+Chart.defaults.global.responsive = true
+Chart.defaults.global.maintainAspectRatio = true
+Chart.defaults.global.legend.display= false
+
+var ctx = document.getElementById("doughnut24");
+
+var myChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        labels: ["Did Not Observe","Fixed","Ambiguous","No Action Taken","No Violation","Ongoing","Violations Issued","Wrong Agency"
+          ],
+        datasets: [{
+            label: 'Response Types: Cases Created Jan - Sept 2018',
+            backgroundColor:["#228AE6","#3895E8","#4EA1EB","#64ADED","#7AB8F0","#90C4F2","#A6D0F5","#BCDBF7","#D2E7FA","#E8F3FC"],
+            borderColor: "#eeeeee",
+            borderWidth: 1,
+            hoverBackgroundColor: "#9E9E9E",
+            hoverBorderColor: "#eeeeee",
+            data: [29.6,24.8,11.5,11.3,10.4,5.9,5.6,0.9]
+        }]
+    }
+    ,
+    options: {
+      tooltips: {
+          callbacks: {
+            label: function(tooltipItem, data) {
+              return data.labels[tooltipItem.index] + ': '+data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+' %';
+            },
+          }
+      }
+    }
+
+
+});
+</script>
+    </body>
+</html>
