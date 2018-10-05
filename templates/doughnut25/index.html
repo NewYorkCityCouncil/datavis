@@ -27,7 +27,7 @@ var myChart = new Chart(ctx, {
           ],
         datasets: [{
             label: 'Response Types: Cases Created Jan - Sept 2018',
-            backgroundColor:["#228AE6","#3895E8","#4EA1EB","#64ADED","#7AB8F0","#90C4F2","#A6D0F5","#BCDBF7","#D2E7FA","#E8F3FC"],
+            backgroundColor:["#BE4BDB","#C661DF","#CE78E4","#D68EE8","#DEA5ED","#E6BBF1","#EED2F6","#F6E8FA"],
             borderColor: "#eeeeee",
             borderWidth: 1,
             hoverBackgroundColor: "#9E9E9E",
@@ -40,7 +40,7 @@ var myChart = new Chart(ctx, {
       tooltips: {
           callbacks: {
             label: function(tooltipItem, data) {
-              return data.labels[tooltipItem.index] + ': '+data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+' %';
+              return data.labels[tooltipItem.index] + ': '+data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+'%';
             },
           }
       }
