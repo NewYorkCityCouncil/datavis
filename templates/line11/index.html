@@ -4,7 +4,9 @@
         <meta charset="utf-8" />
         <title>Delays Per Month Sept 2015 - Sept 2018</title>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js'></script>
+     <script src='https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.5/chartjs-plugin-annotation.js'></script>
+     <script src='https://cdn.rawgit.com/chartjs/Chart.js/master/samples/utils.js'></script>
 
     </head>
     <body>
@@ -27,25 +29,11 @@ var myChart = new Chart(ctx, {
         datasets: [{
             label: 'Delays Per Month Sept 2015 - Sept 2018',
             fill: false,
-            lineTension: .5,
-            backgroundColor:"#82C91E",
+            backgroundColor: "#82C91E",
             borderColor: "#82C91E",
-            borderWidth: 3,
-            borderCapStyle: 'butt',
-            borderDash: [],
-            borderDashOffset: 0.0,
-            borderJoinStyle: 'miter',
-            pointBorderColor: "#82C91E",
-            pointBackgroundColor: "#82C91E",
-            pointBorderWidth: 5,
-            pointHoverRadius: 6,
-            pointHoverBackgroundColor: "#82C91E",
-            pointHoverBorderColor: "#82C91E",
-            pointHoverBorderWidth: 2,
-            pointRadius: 3,
-            pointHitRadius: 4,
+            borderWidth: 0,
             hoverBackgroundColor: "#82C91E",
-            hoverBorderColor: "#82C91E",
+            hoverBorderColor: "#eeeeee",
             data: [438,384,352,343,458,371,301,334,360,333,489,384,398,440,440,434,475,512,476,385,482,516,452,469,509,491,468,530,512,418,606]
         }]
 
@@ -65,14 +53,12 @@ var myChart = new Chart(ctx, {
           ticks: {
             beginAtZero: true,
             callback: function(value) {
-              return value.toLocaleString('en-US');
+              return value.toLocaleString('en-US')+ ' delays';
             }
           }
         }],
         xAxes: [{
-          ticks:{
-              maxTicksLimit: 6
-          }
+          drawTicks: true,
         }]
       },
       annotation: {
@@ -86,6 +72,54 @@ var myChart = new Chart(ctx, {
              xMin: "Sep 2015",
              xMax: "Jun 2016",
              yMin: 0,
+             yMax: 700,
+             backgroundColor: "rgba(230, 230, 230, 0.5)",
+             borderColor: "rgb(230, 230, 230)",
+             borderWidth: 1,
+             onClick: function(e) {
+               console.log("Box", e.type, this);
+             }
+           },
+           {
+             drawTime: "beforeDatasetsDraw",
+             type: "box",
+             xScaleID: "x-axis-0",
+             yScaleID: "y-axis-0",
+             xMin: "Sep 2016",
+             xMax: "Jun 2017",
+             yMin: 0,
+             yMax: 700,
+             backgroundColor: "rgba(230, 230, 230, 0.5)",
+             borderColor: "rgb(230, 230, 230)",
+             borderWidth: 1,
+             onClick: function(e) {
+               console.log("Box", e.type, this);
+             }
+           },
+           {
+             drawTime: "beforeDatasetsDraw",
+             type: "box",
+             xScaleID: "x-axis-0",
+             yScaleID: "y-axis-0",
+             xMin: "Sep 2017",
+             xMax: "Jun 2018",
+             yMin: 0,
+             yMax: 700,
+             backgroundColor: "rgba(230, 230, 230, 0.5)",
+             borderColor: "rgb(230, 230, 230)",
+             borderWidth: 1,
+             onClick: function(e) {
+               console.log("Box", e.type, this);
+             }
+           }
+           /*{
+             drawTime: "beforeDatasetsDraw",
+             type: "box",
+             xScaleID: "x-axis-0",
+             yScaleID: "y-axis-0",
+             xMin: "Sep 2018",
+             xMax: "Oct 2018",
+             yMin: 0,
              yMax: 450,
              backgroundColor: "rgba(230, 230, 230, 0.5)",
              borderColor: "rgb(230, 230, 230)",
@@ -93,9 +127,10 @@ var myChart = new Chart(ctx, {
              onClick: function(e) {
                console.log("Box", e.type, this);
              }
-           }]
+           }*/
+           ]
          }
-
+       }
 });
 </script>
     </body>
