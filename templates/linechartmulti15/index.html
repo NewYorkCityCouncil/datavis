@@ -15,9 +15,9 @@
 <canvas id="linechart14" width=auto max-height="400"></canvas>
 <script>
 
-Chart.defaults.global.responsive = true
-Chart.defaults.global.tooltips.backgroundColor="grey"
-Chart.defaults.global.maintainAspectRatio = true
+Chart.defaults.global.responsive = true,
+Chart.defaults.global.tooltips.backgroundColor="grey",
+Chart.defaults.global.maintainAspectRatio = true,
 Chart.defaults.global.legend = false
 
 
@@ -30,52 +30,52 @@ var myChart = new Chart(ctx, {
         labels: ["Sep 2015","Oct 2015","Nov 2015","Dec 2015","Jan 2016","Feb 2016","Mar 2016","Apr 2016","May 2016","Jun 2016","Sep 2016","Oct 2016","Nov 2016","Dec 2016","Jan 2017","Feb 2017","Mar 2017","Apr 2017","May 2017","Jun 2017","Sep 2017","Oct 2017","Nov 2017","Dec 2017","Jan 2018","Feb 2018","Mar 2018","Apr 2018","May 2018","Jun 2018","Sep 2018","Oct 2018"],
         datasets: [
             {
-              label: "Heavy Traffic",
+              label: "Bus Breakdowns",
               fill: false,
-              backgroundColor: "#82C91E",
-              borderColor: "#82C91E",
+              backgroundColor: "#BE4BDB",
+              borderColor: "#BE4BDB",
               borderWidth: 0,
-              hoverBackgroundColor: "#82C91E",
+              hoverBackgroundColor: "#BE4BDB",
               hoverBorderColor: "#eeeeee",
-              data: [298,229,214,215,233,185,177,195,200,273,341,236,244,285,271,240,281,343,300,265,353,356,310,297,285,297,293,328,310,274,439,379]
+              data: [77,66,56,52,90,83,58,60,61,112,103,86,78,89,92,92,88,92,88,78,79,91,98,92,118,105,83,106,101,85,112,108]
             },
             {
-              label: "Heavy Traffic Trend",
+              label: "Bus Breakdowns Trend",
               fill: false,
               pointRadius: 1,
-              backgroundColor: "#DFF1C6",
-              borderColor: "#DFF1C6",
+              backgroundColor: "#DEA5ED",
+              borderColor: "#DEA5ED",
               borderWidth: 0,
-              hoverBackgroundColor: "#DFF1C6",
+              hoverBackgroundColor: "#DEA5ED",
               hoverBorderColor: "#eeeeee",
               lineTension: 0,
-              data: [211,214,218,222,226,230,234,238,242,246,257,261,265,269,273,277,280,284,288,292,304,308,312,315,319,323,327,331,335,339,350,354]
+              data: [68,69,71,72,73,74,75,76,77,78,81,82,83,84,85,86,87,88,89,90,93,94,95,96,97,98,99,100,101,103,106,107]
             },
             {
-              label: "Heavy Traffic Trend StDev",
+              label: "Expected Delay Times",
               fill: false,
               pointRadius: 1,
-              backgroundColor: "#DFF1C6",
-              borderColor: "#DFF1C6",
+              backgroundColor: "#DEA5ED",
+              borderColor: "#DEA5ED",
               borderWidth: 0,
-              hoverBackgroundColor: "#DFF1C6",
+              hoverBackgroundColor: "#DEA5ED",
               hoverBorderColor: "#eeeeee",
               borderDash: [10,5],
               lineTension: 0,
-              data: [271,275,279,283,287,291,295,299,302,306,318,322,326,330,334,338,341,345,349,353,365,368,372,376,380,384,388,392,396,399,411,415]
+              data: [84,85,86,87,88,89,90,91,92,93,96,97,99,100,101,102,103,104,105,106,109,110,111,112,113,114,115,116,117,118,121,122]
             },
             {
-              label: "Heavy Traffic Trend -StDev",
+              label: "Expected Delay Times",
               fill: false,
               pointRadius: 1,
-              backgroundColor: "#DFF1C6",
-              borderColor: "#DFF1C6",
+              backgroundColor: "#DEA5ED",
+              borderColor: "#DEA5ED",
               borderWidth: 0,
-              hoverBackgroundColor: "#DFF1C6",
+              hoverBackgroundColor: "#DEA5ED",
               hoverBorderColor: "#eeeeee",
               borderDash: [10,5],
               lineTension: 0,
-              data: [150,154,158,161,165,169,173,177,181,185,197,200,204,208,212,216,220,224,227,231,243,247,251,255,259,263,266,270,274,278,290,293]
+              data: [53,54,55,56,57,58,59,60,61,62,65,66,67,68,69,71,71,73,74,75,78,79,80,81,82,83,84,85,86,87,90,91]
             }
 
           ]
@@ -94,6 +94,7 @@ var myChart = new Chart(ctx, {
           stacked: false,
           ticks: {
             beginAtZero:true,
+            max: 140,
             callback: function(value) {
               return + value.toLocaleString('en-US') + ' Delays';
             }
@@ -114,7 +115,7 @@ var myChart = new Chart(ctx, {
             xMin: "Sep 2015",
             xMax: "Jun 2016",
             yMin: 0,
-            yMax: 450,
+            yMax: 160,
             backgroundColor: "rgba(230, 230, 230, 0.5)",
             borderColor: "rgb(230, 230, 230)",
             borderWidth: 1,
@@ -130,7 +131,7 @@ var myChart = new Chart(ctx, {
             xMin: "Sep 2016",
             xMax: "Jun 2017",
             yMin: 0,
-            yMax: 450,
+            yMax: 150,
             backgroundColor: "rgba(230, 230, 230, 0.5)",
             borderColor: "rgb(230, 230, 230)",
             borderWidth: 1,
@@ -146,7 +147,7 @@ var myChart = new Chart(ctx, {
             xMin: "Sep 2017",
             xMax: "Jun 2018",
             yMin: 0,
-            yMax: 450,
+            yMax: 150,
             backgroundColor: "rgba(230, 230, 230, 0.5)",
             borderColor: "rgb(230, 230, 230)",
             borderWidth: 1,
@@ -162,7 +163,7 @@ var myChart = new Chart(ctx, {
             xMin: "Sep 2018",
             xMax: "Oct 2018",
             yMin: 0,
-            yMax: 450,
+            yMax: 150,
             backgroundColor: "rgba(230, 230, 230, 0.5)",
             borderColor: "rgb(230, 230, 230)",
             borderWidth: 1,
