@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Traffic and Preventable Causing Delays Sept 2015-Sept 20218</title>
+
+      <!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>-->
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.5/chartjs-plugin-annotation.js'></script>
+        <script src='https://cdn.rawgit.com/chartjs/Chart.js/master/samples/utils.js'></script>
+    </head>
+    <body>
+
+
+<canvas id="linechart14" width=auto max-height="400"></canvas>
+<script>
+
+Chart.defaults.global.responsive = true
+Chart.defaults.global.tooltips.backgroundColor="grey"
+Chart.defaults.global.maintainAspectRatio = true
+Chart.defaults.global.legend = false
+
+
+var ctx = document.getElementById("linechart14");
+
+var myChart = new Chart(ctx, {
+    type: 'line',
+    fill: true,
+    data: {
+        labels: ["Sep 2015","Oct 2015","Nov 2015","Dec 2015","Jan 2016","Feb 2016","Mar 2016","Apr 2016","May 2016","Jun 2016","Sep 2016","Oct 2016","Nov 2016","Dec 2016","Jan 2017","Feb 2017","Mar 2017","Apr 2017","May 2017","Jun 2017","Sep 2017","Oct 2017","Nov 2017","Dec 2017","Jan 2018","Feb 2018","Mar 2018","Apr 2018","May 2018","Jun 2018","Sep 2018"],
+        datasets: [
+
+          {
+            label: "Preventable",
+            fill: false,
+            backgroundColor: "#BE4BDB",
+            borderColor: "#BE4BDB",
+            borderWidth: 0,
+            hoverBackgroundColor: "#BE4BDB",
+            hoverBorderColor: "#eeeeee",
+            data: [77,66,56,52,90,83,58,60,61,112,103,86,78,89,92,92,88,92,88,78,79,91,98,92,118,105,83,106,101,85,114]
+          },
+            {
+              label: "Heavy Traffic",
+              fill: false,
+              backgroundColor: "#82C91E",
+              borderColor: "#82C91E",
+              borderWidth: 0,
+              hoverBackgroundColor: "#82C91E",
+              hoverBorderColor: "#eeeeee",
+              data: [298,229,214,215,233,185,177,195,200,273,341,236,244,285,271,240,281,343,300,265,353,356,310,297,285,297,293,328,310,274,428]
+            }
+
+          ]
+        },
+    options: {
+      tooltips: {
+        callbacks: {
+          label: function(tooltipItem, data) {
+            var datasetLabel = data.datasets[tooltipItem.datasetIndex].label || '';
+            return datasetLabel + ': ' +data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US') + ' Delays';
+          }
+        }
+      },
+      scales: {
+        yAxes: [{
+          stacked: true,
+          ticks: {
+            beginAtZero:true,
+            callback: function(value) {
+              return + value.toLocaleString('en-US') + ' Delays';
+            }
+          }
+        }],
+        xAxes:[{
+          drawTicks: true,
+        }]
+      },
+      annotation: {
+        events: ["click"],
+        annotations: [
+          {
+            drawTime: "beforeDatasetsDraw",
+            type: "box",
+            xScaleID: "x-axis-0",
+            yScaleID: "y-axis-0",
+            xMin: "Sep 2015",
+            xMax: "Jun 2016",
+            yMin: 0,
+            yMax: 600,
+            backgroundColor: "rgba(101, 33, 171, 0.5)",
+            borderColor: "rgb(101, 33, 171)",
+            borderWidth: 1,
+            onClick: function(e) {
+              console.log("Box", e.type, this);
+            }
+          }
+        ]
+      }
+
+    }
+  });
+</script>
+    </body>
+</html>
