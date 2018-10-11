@@ -2,10 +2,10 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Traffic and Preventable Causing Delays Sept 2015-Sept 20218</title>
+        <title>Bus Breakdown Delays Sept 2015-Sept 20218</title>
 
-      <!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>-->
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js'></script>
+  <!--   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>-->
+           <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js'></script>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.5/chartjs-plugin-annotation.js'></script>
         <script src='https://cdn.rawgit.com/chartjs/Chart.js/master/samples/utils.js'></script>
     </head>
@@ -27,19 +27,8 @@ var myChart = new Chart(ctx, {
     type: 'line',
     fill: true,
     data: {
-        labels: ["Sep 2015","Oct 2015","Nov 2015","Dec 2015","Jan 2016","Feb 2016","Mar 2016","Apr 2016","May 2016","Jun 2016","Sep 2016","Oct 2016","Nov 2016","Dec 2016","Jan 2017","Feb 2017","Mar 2017","Apr 2017","May 2017","Jun 2017","Sep 2017","Oct 2017","Nov 2017","Dec 2017","Jan 2018","Feb 2018","Mar 2018","Apr 2018","May 2018","Jun 2018","Sep 2018"],
+        labels: ["Sep 2015","Oct 2015","Nov 2015","Dec 2015","Jan 2016","Feb 2016","Mar 2016","Apr 2016","May 2016","Jun 2016","Sep 2016","Oct 2016","Nov 2016","Dec 2016","Jan 2017","Feb 2017","Mar 2017","Apr 2017","May 2017","Jun 2017","Sep 2017","Oct 2017","Nov 2017","Dec 2017","Jan 2018","Feb 2018","Mar 2018","Apr 2018","May 2018","Jun 2018","Sep 2018","Oct 2018"],
         datasets: [
-
-          {
-            label: "Preventable",
-            fill: false,
-            backgroundColor: "#BE4BDB",
-            borderColor: "#BE4BDB",
-            borderWidth: 0,
-            hoverBackgroundColor: "#BE4BDB",
-            hoverBorderColor: "#eeeeee",
-            data: [77,66,56,52,90,83,58,60,61,112,103,86,78,89,92,92,88,92,88,78,79,91,98,92,118,105,83,106,101,85,114]
-          },
             {
               label: "Heavy Traffic",
               fill: false,
@@ -48,7 +37,45 @@ var myChart = new Chart(ctx, {
               borderWidth: 0,
               hoverBackgroundColor: "#82C91E",
               hoverBorderColor: "#eeeeee",
-              data: [298,229,214,215,233,185,177,195,200,273,341,236,244,285,271,240,281,343,300,265,353,356,310,297,285,297,293,328,310,274,428]
+              data: [298,229,214,215,233,185,177,195,200,273,341,236,244,285,271,240,281,343,300,265,353,356,310,297,285,297,293,328,310,274,439,379]
+            },
+            {
+              label: "Heavy Traffic Trend",
+              fill: false,
+              pointRadius: 1,
+              backgroundColor: "#DFF1C6",
+              borderColor: "#DFF1C6",
+              borderWidth: 0,
+              hoverBackgroundColor: "#DFF1C6",
+              hoverBorderColor: "#eeeeee",
+              lineTension: 0,
+              data: [211,214,218,222,226,230,234,238,242,246,257,261,265,269,273,277,280,284,288,292,304,308,312,315,319,323,327,331,335,339,350,354]
+            },
+            {
+              label: "Heavy Traffic Trend StDev",
+              fill: false,
+              pointRadius: 1,
+              backgroundColor: "#DFF1C6",
+              borderColor: "#DFF1C6",
+              borderWidth: 0,
+              hoverBackgroundColor: "#DFF1C6",
+              hoverBorderColor: "#eeeeee",
+              borderDash: [10,5],
+              lineTension: 0,
+              data: [271,275,279,283,287,291,295,299,302,306,318,322,326,330,334,338,341,345,349,353,365,368,372,376,380,384,388,392,396,399,411,415]
+            },
+            {
+              label: "Heavy Traffic Trend -StDev",
+              fill: false,
+              pointRadius: 1,
+              backgroundColor: "#DFF1C6",
+              borderColor: "#DFF1C6",
+              borderWidth: 0,
+              hoverBackgroundColor: "#DFF1C6",
+              hoverBorderColor: "#eeeeee",
+              borderDash: [10,5],
+              lineTension: 0,
+              data: [150,154,158,161,165,169,173,177,181,185,197,200,204,208,212,216,220,224,227,231,243,247,251,255,259,263,266,270,274,278,290,293]
             }
 
           ]
@@ -64,7 +91,7 @@ var myChart = new Chart(ctx, {
       },
       scales: {
         yAxes: [{
-          stacked: true,
+          stacked: false,
           ticks: {
             beginAtZero:true,
             callback: function(value) {
@@ -76,7 +103,7 @@ var myChart = new Chart(ctx, {
           drawTicks: true,
         }]
       },
-      annotation: {
+     annotation: {
         events: ["click"],
         annotations: [
           {
@@ -87,14 +114,63 @@ var myChart = new Chart(ctx, {
             xMin: "Sep 2015",
             xMax: "Jun 2016",
             yMin: 0,
-            yMax: 600,
-            backgroundColor: "rgba(101, 33, 171, 0.5)",
-            borderColor: "rgb(101, 33, 171)",
+            yMax: 450,
+            backgroundColor: "rgba(230, 230, 230, 0.5)",
+            borderColor: "rgb(230, 230, 230)",
             borderWidth: 1,
             onClick: function(e) {
               console.log("Box", e.type, this);
             }
-          }
+          },
+          {
+            drawTime: "beforeDatasetsDraw",
+            type: "box",
+            xScaleID: "x-axis-0",
+            yScaleID: "y-axis-0",
+            xMin: "Sep 2016",
+            xMax: "Jun 2017",
+            yMin: 0,
+            yMax: 450,
+            backgroundColor: "rgba(230, 230, 230, 0.5)",
+            borderColor: "rgb(230, 230, 230)",
+            borderWidth: 1,
+            onClick: function(e) {
+              console.log("Box", e.type, this);
+            }
+          },
+          {
+            drawTime: "beforeDatasetsDraw",
+            type: "box",
+            xScaleID: "x-axis-0",
+            yScaleID: "y-axis-0",
+            xMin: "Sep 2017",
+            xMax: "Jun 2018",
+            yMin: 0,
+            yMax: 450,
+            backgroundColor: "rgba(230, 230, 230, 0.5)",
+            borderColor: "rgb(230, 230, 230)",
+            borderWidth: 1,
+            onClick: function(e) {
+              console.log("Box", e.type, this);
+            }
+          },
+          {
+            drawTime: "beforeDatasetsDraw",
+            type: "box",
+            xScaleID: "x-axis-0",
+            yScaleID: "y-axis-0",
+            xMin: "Sep 2018",
+            xMax: "Oct 2018",
+            yMin: 0,
+            yMax: 450,
+            backgroundColor: "rgba(230, 230, 230, 0.5)",
+            borderColor: "rgb(230, 230, 230)",
+            borderWidth: 1,
+            onClick: function(e) {
+              console.log("Box", e.type, this);
+            }
+          },
+
         ]
       }
 
