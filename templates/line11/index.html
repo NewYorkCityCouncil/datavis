@@ -74,9 +74,27 @@ var myChart = new Chart(ctx, {
               maxTicksLimit: 6
           }
         }]
-      }
-
-    }
+      },
+      annotation: {
+         events: ["click"],
+         annotations: [
+           {
+             drawTime: "beforeDatasetsDraw",
+             type: "box",
+             xScaleID: "x-axis-0",
+             yScaleID: "y-axis-0",
+             xMin: "Sep 2015",
+             xMax: "Jun 2016",
+             yMin: 0,
+             yMax: 450,
+             backgroundColor: "rgba(230, 230, 230, 0.5)",
+             borderColor: "rgb(230, 230, 230)",
+             borderWidth: 1,
+             onClick: function(e) {
+               console.log("Box", e.type, this);
+             }
+           }]
+         }
 
 });
 </script>
