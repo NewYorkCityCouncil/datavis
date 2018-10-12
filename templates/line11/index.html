@@ -25,7 +25,7 @@ var ctx = document.getElementById("line11");
 var myChart = new Chart(ctx, {
     type: 'line',
     data: {
-        labels: ["Sep 2015","Oct 2015","Nov 2015","Dec 2015","Jan 2016","Feb 2016","Mar 2016","Apr 2016","May 2016","Jun 2016","Sep 2016","Oct 2016","Nov 2016","Dec 2016","Jan 2017","Feb 2017","Mar 2017","Apr 2017","May 2017","Jun 2017","Sep 2017","Oct 2017","Nov 2017","Dec 2017","Jan 2018","Feb 2018","Mar 2018","Apr 2018","May 2018","Jun 2018","Sep 2018"],
+        labels: [0,30,61,91,122,153,182,213,243,274,366,396,427,457,488,519,547,578,608,639,731,761,792,822,853,884,912,943,973,1004,1096],
         datasets: [{
             label: 'Delays Per Month Sept 2015 - Sept 2018',
             fill: false,
@@ -59,6 +59,43 @@ var myChart = new Chart(ctx, {
         }],
         xAxes: [{
           drawTicks: true,
+          ticks: {
+            callback: function(value) {
+              if (value === 0) return 'Sep 2015';
+              else if (value === 30) return 'Oct 2015';
+              else if (value === 61) return 'Nov 2015';
+              else if (value === 91) return 'Dec 2015';
+              else if (value === 122) return 'Jan 2016';
+              else if (value === 153) return 'Feb 2016';
+              else if (value === 182) return 'Mar 2016';
+              else if (value === 213) return 'Apr 2016';
+              else if (value === 243) return 'May 2016';
+              else if (value === 274) return 'Jun 2016';
+              else if (value === 366) return 'Sep 2016';
+              else if (value === 396) return 'Oct 2016';
+              else if (value === 427) return 'Nov 2016';
+              else if (value === 457) return 'Dec 2016';
+              else if (value === 488) return 'Jan 2017';
+              else if (value === 519) return 'Feb 2017';
+              else if (value === 547) return 'Mar 2017';
+              else if (value === 578) return 'Apr 2017';
+              else if (value === 608) return 'May 2017';
+              else if (value === 639) return 'Jun 2017';
+              else if (value === 731) return 'Sep 2017';
+              else if (value === 761) return 'Oct 2017';
+              else if (value === 792) return 'Nov 2017';
+              else if (value === 822) return 'Dec 2017';
+              else if (value === 853) return 'Jan 2018';
+              else if (value === 884) return 'Feb 2018';
+              else if (value === 912) return 'Mar 2018';
+              else if (value === 943) return 'Apr 2018';
+              else if (value === 973) return 'May 2018';
+              else if (value === 1004) return 'Jun 2018';
+              else if (value === 1096) return 'Sep 2018';
+              else
+                return '';
+            }
+          }
         }]
       },
       annotation: {
