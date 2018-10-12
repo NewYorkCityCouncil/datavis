@@ -7,8 +7,7 @@
         <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js'></script>
      <script src='https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.5/chartjs-plugin-annotation.js'></script>
      <script src='https://cdn.rawgit.com/chartjs/Chart.js/master/samples/utils.js'></script>
-     <script src="https://newyorkcitycouncil.github.io/datavis/templates/Chart.Scatter-master/Chart.Core.js"></script>
-     <script src="https://newyorkcitycouncil.github.io/datavis/templates/Chart.Scatter-master/Chart.Scatter.js"></script>
+
     </head>
     <body>
 
@@ -26,7 +25,7 @@ var ctx = document.getElementById("line11");
 var myChart = new Chart(ctx, {
     type: 'line',
     data: {
-//    labels: ["Sep 2015","Oct 2015","Nov 2015","Dec 2015","Jan 2016","Feb 2016","Mar 2016","Apr 2016","May 2016","Jun 2016","Sep 2016","Oct 2016","Nov 2016","Dec 2016","Jan 2017","Feb 2017","Mar 2017","Apr 2017","May 2017","Jun 2017","Sep 2017","Oct 2017","Nov 2017","Dec 2017","Jan 2018","Feb 2018","Mar 2018","Apr 2018","May 2018","Jun 2018","Sep 2018"],
+  labels: ["Sep 2015","Oct 2015","Nov 2015","Dec 2015","Jan 2016","Feb 2016","Mar 2016","Apr 2016","May 2016","Jun 2016","Sep 2016","Oct 2016","Nov 2016","Dec 2016","Jan 2017","Feb 2017","Mar 2017","Apr 2017","May 2017","Jun 2017","Sep 2017","Oct 2017","Nov 2017","Dec 2017","Jan 2018","Feb 2018","Mar 2018","Apr 2018","May 2018","Jun 2018","Sep 2018"],
         datasets: [{
             label: 'Delays Per Month Sept 2015 - Sept 2018',
             fill: false,
@@ -35,8 +34,8 @@ var myChart = new Chart(ctx, {
             borderWidth: 0,
             hoverBackgroundColor: "#82C91E",
             hoverBorderColor: "#eeeeee",
-           data: [{x:0,y:438},{x:30,y:384},{x:61,y:352},{x:91,y:343},{x:122,y:458},{x:153,y:371},{x:182,y:301},{x:213,y:334},{x:243,y:360},{x:274,y:333},{x:366,y:489},{x:396,y:384},{x:427,y:398},{x:457,y:440},{x:488,y:440},{x:519,y:434},{x:547,y:475},{x:578,y:512},{x:608,y:476},{x:639,y:385},{x:731,y:482},{x:761,y:516},{x:792,y:452},{x:822,y:469},{x:853,y:509},{x:884,y:491},{x:912,y:468},{x:943,y:530},{x:973,y:512},{x:1004,y:418},{x:1096,y:623}]
-          //  data: [438,384,352,343,458,371,301,334,360,333,489,384,398,440,440,434,475,512,476,385,482,516,452,469,509,491,468,530,512,418,623]
+        //   data: [{x:0,y:438},{x:30,y:384},{x:61,y:352},{x:91,y:343},{x:122,y:458},{x:153,y:371},{x:182,y:301},{x:213,y:334},{x:243,y:360},{x:274,y:333},{x:366,y:489},{x:396,y:384},{x:427,y:398},{x:457,y:440},{x:488,y:440},{x:519,y:434},{x:547,y:475},{x:578,y:512},{x:608,y:476},{x:639,y:385},{x:731,y:482},{x:761,y:516},{x:792,y:452},{x:822,y:469},{x:853,y:509},{x:884,y:491},{x:912,y:468},{x:943,y:530},{x:973,y:512},{x:1004,y:418},{x:1096,y:623}]
+           data: [438,384,352,343,458,371,301,334,360,333,489,384,398,440,440,434,475,512,476,385,482,516,452,469,509,491,468,530,512,418,623]
         }]
 
     },
