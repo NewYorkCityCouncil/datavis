@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+	<script src="Chart.Core.js"></script>
+	<script src="Chart.Scatter.js"></script>
+</head>
+<body>
+	<canvas id="header-canvas" width="640" height="480"></canvas>
+	<div id="legend"></div>
+
+	<script>
+		function getRandomInt(min, max) {
+			return Math.floor(Math.random() * (max - min + 1)) + min;
+		}
+
+		var data = [], data2 = [], ii = 0;
+
+		for (ii = 0; ii < 12; ii++) {
+
+			data.push({
+				x: Date.parse("2016-02-15T03:00:00+03:00") + ii * 24 * 3600000,
+				y: undefined //getRandomInt(0, 100)
+			});
+
+			data2.push({
+				x: Date.parse("2016-02-15T03:00:00+03:00") + ii * 24 * 3600000,
+				y: getRandomInt(0, 100)
+			});
+		}
+
+		var ctx = document.getElementById("header-canvas").getContext("2d");
+		var myChart = new Chart(ctx).Scatter([{ label: "dataset 1", data: data }, { label: "dataset 2", data: data2 }], {
+			showScale: true,
+			scaleShowLabels: true,
+			scaleShowHorizontalLines: true,
+			scaleShowVerticalLines: false,
+			scaleLineWidth: 1,
+			scaleLineColor: "red",
+			scaleGridLineColor: "#999",
+			scaleLabel: "<%=value%>°C",
+			scaleDateFormat: "mm/yyyy",
+			scaleTimeFormat: "HH:MM",
+			scaleDateTimeFormat: "HH:MM",
+			scaleGridLineWidth: 1,
+			useUtc: true,
+			pointDot: false,
+			scaleType: 'date',
+			animation: false,
+
+			scaleOverride: false,
+			scaleSteps: 3,
+			scaleStepWidth: 50,
+			scaleStartValue: 0,
+
+			xScaleOverride: false,
+			xScaleSteps: 10,
+
+			// Number - The value jump in the hard coded x scale
+			xScaleStepWidth: 3600000 * 24 * 14,
+
+			// Number - The x scale starting value
+			xScaleStartValue: Date.parse("2016-02-15T03:00:00+03:00")
+		});
+
+		document.getElementById("legend").innerHTML = myChart.generateLegend();
+
+		setInterval(function () {
+
+			var arg = Date.parse("2016-02-15T03:00:00+03:00") + ii * 24 * 3600000;
+
+//			myChart.datasets[0].removePoint(0);
+//			myChart.datasets[1].removePoint(0);
+
+			myChart.datasets[0].addPoint(arg, getRandomInt(0, 100));
+			myChart.datasets[1].addPoint(arg, getRandomInt(0, 100));
+			myChart.update(), ii++;
+
+		}, 1000);
+	</script>
+</body>
+</html>
