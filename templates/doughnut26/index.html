@@ -11,27 +11,27 @@
     <body>
 
 
-<canvas id="doughnut24" width=auto height="250"></canvas>
+<canvas id="doughnut26" width=auto height="250"></canvas>
 <script>
 
 Chart.defaults.global.responsive = true
 Chart.defaults.global.maintainAspectRatio = true
 Chart.defaults.global.legend.display= true
 
-var ctx = document.getElementById("doughnut24");
+var ctx = document.getElementById("doughnut26");
 
 var myChart = new Chart(ctx, {
     type: 'doughnut',
     data: {
-        labels: ["Special Ed AM","General Ed AM","Pre-K/EI","Special Ed PM","General Ed PM"],
+        labels: ["Special Ed AM Run","General Ed AM Run","Pre-K/EI","Special Ed PM Run","General Ed PM Run","Other"],
         datasets: [{
             label: 'When Are School Buses Delayed Sept 2015-Sept 2018',
-            backgroundColor:["#82C91E","#228AE6","#F59F00","#12B886","#2F56A6"],
+            backgroundColor:["#82C91E","#228AE6","#F59F00","#12B886","#2F56A6","#CACACA"],
             borderColor: "#eeeeee",
             borderWidth: 1,
             hoverBackgroundColor: "#9E9E9E",
             hoverBorderColor: "#eeeeee",
-            data: [58.4,13.0,12.8,12.7,3.1]
+            data: [143606,31948,31457,31246,7593,2250]
         }]
     }
     ,
