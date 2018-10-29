@@ -17,7 +17,7 @@ Chart.defaults.global.responsive = true
 Chart.defaults.global.legend.display = true
 Chart.defaults.global.legend.labels.padding = 20
 Chart.defaults.global.maintainAspectRatio = true
-
+/*
 Chart.defaults.scale = {
 		display: true,
 		position: "left",
@@ -59,10 +59,11 @@ Chart.defaults.scale = {
 			callback: function(value) {
 				return '' + value;
 			}
+
 		}
 	};
 
-
+*/
 var ctx = document.getElementById("stackedbar15");
 
 var myChart = new Chart(ctx, {
@@ -74,13 +75,13 @@ var myChart = new Chart(ctx, {
               ],
         datasets: [
           {
-            label: 'Tanks Inspected',
+            label: 'Tanks without Sediment',
             backgroundColor:"#228AE6",
             borderColor: "#eeeeee",
             borderWidth: 0,
-            hoverBackgroundColor: "#CACACA",
+            hoverBackgroundColor: "#666666",
             hoverBorderColor: "#eeeeee",
-            data: [5950,4793,1296,237,156,117,107,13]
+            data: [5946,4792,1291,52,154,114,86,12]
           },
           {
             label: 'Tanks with Sediment',
@@ -108,11 +109,11 @@ var myChart = new Chart(ctx, {
             yAxes: [{
                 stacked: true,
                 ticks: {
-                    beginAtZero:true,
-                    callback: function(value) {
-                      return +value.toLocaleString('en-US')+ 'Tanks';
+                        function(value) {
+                          return + value.toLocaleString('en-US')+ " Tanks";
+                        }
                     }
-                }
+
             }],
             xAxes: [{
                 stacked: true
