@@ -76,7 +76,7 @@ p {
   }
 }
 .picture-item--h2 {
-  height: 50%;
+  height: 500px;
   /* 2x the height + 1 gutter */
 }
 
