@@ -76,7 +76,7 @@ p {
   }
 }
 .picture-item--h2 {
-  height: 464px;
+  height: 50%;
   /* 2x the height + 1 gutter */
 }
 
@@ -100,6 +100,7 @@ p {
   width: 100%;
   padding: 0 2em 1em 1em;
   margin: 0;
+
 }
 
 .picture-item__title {
