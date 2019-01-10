@@ -16,7 +16,7 @@
 
 Chart.defaults.global.responsive = true
 Chart.defaults.global.maintainAspectRatio = true
-Chart.defaults.global.legend.display= true
+Chart.defaults.global.legend.display= false
 
 var ctx = document.getElementById("doughnut26");
 
@@ -26,7 +26,7 @@ var myChart = new Chart(ctx, {
         labels: ["Bronx","Brooklyn","Queens","Manhattan","Staten Island"],
         datasets: [{
             label: 'Residential Eviction by Borough, 2018',
-            backgroundColor:["#82C91E","#228AE6","#F59F00","#12B886","#2F56A6","#CACACA"],
+            backgroundColor:["#82C91E","#228AE6","#F59F00","#12B886","#2F56A6"],
             borderColor: "#eeeeee",
             borderWidth: 1,
             hoverBackgroundColor: "#9E9E9E",
