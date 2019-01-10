@@ -124,7 +124,7 @@ var myChart = new Chart(ctx, {
           ticks: {
             min: 0.0,
             callback: function(value) {
-              return + value + ' Evictions Per Unit';
+              return + value + ' %';
             }
           }
         }]
@@ -132,7 +132,7 @@ var myChart = new Chart(ctx, {
       tooltips: {
         callbacks: {
           label: function(tooltipItem, data) {
-            return + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ ' Evictions Per Unit';
+            return + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ ' %';
           },
         }
       }
