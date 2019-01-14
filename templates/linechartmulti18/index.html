@@ -84,12 +84,15 @@ var myChart = new Chart(ctx, {
           ticks: {
             beginAtZero:true,
             callback: function(value) {
-              return value.toLocaleString('en-US') + ' Requests';
+              if (value == 0) {
+                return (value).toLocaleString('en-US') + ' requests';
+              } else {
+                return (value/1000000).toLocaleString('en-US') + " million" + ' requests';
+              }
             }
           }
         }]
       }
-
     }
   });
 </script>
