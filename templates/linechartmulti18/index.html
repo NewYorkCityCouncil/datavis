@@ -16,7 +16,7 @@
 Chart.defaults.global.responsive = true
 Chart.defaults.global.tooltips.backgroundColor="grey"
 Chart.defaults.global.maintainAspectRatio = true
-Chart.defaults.global.legend = true
+Chart.defaults.global.legend = false
 
 
 var ctx = document.getElementById("linechart18");
@@ -88,7 +88,11 @@ var myChart = new Chart(ctx, {
             }
           }
         }]
-      }
+      },
+
+    legend: {
+      display: true
+    }
 
     }
   });
