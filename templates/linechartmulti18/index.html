@@ -85,9 +85,9 @@ var myChart = new Chart(ctx, {
             beginAtZero:true,
             callback: function(value) {
               if (value == 0) {
-                return (value).toLocaleString('en-US') + ' requests';
+                return (value).toLocaleString('en-US') + ' Requests';
               } else {
-                return (value/1000000).toLocaleString('en-US') + " million" + ' requests';
+                return (value/1000000).toLocaleString('en-US') + " Million" + ' Requests';
               }
             }
           }
