@@ -124,7 +124,7 @@ var myChart = new Chart(ctx, {
           ticks: {
             min: 0.0,
             callback: function(value) {
-              return + value + ' %';
+              return + parseFloat(Math.round(value * 100) / 100).toFixed(2) + ' %';
             }
           }
         }]
