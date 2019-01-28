@@ -26,7 +26,7 @@ Chart.defaults.scale = {
 
 		// grid line settings
 		gridLines: {
-			display: false,
+			display: true,
 			color: "rgba(0, 0, 0, 0.1)",
 			lineWidth: 1,
 			drawBorder: true,
@@ -48,9 +48,10 @@ Chart.defaults.scale = {
 		},
 
 		// label settings
+
 		ticks: {
 			beginAtZero: true,
-      minRotation: 0,
+     minRotation: 0,
 			maxRotation: 50,
 			mirror: false,
 			padding: 10,
@@ -63,6 +64,7 @@ Chart.defaults.scale = {
 				return '' + value;
 			}
 		}
+
 	};
 
 // Chart.defaults.global.defaultFontSize = 10
