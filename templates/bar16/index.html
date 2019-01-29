@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Top 311 Agency Responders 2018</title>
+        <title>New York City Budget: FY 2015 - FY 2022</title>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
 
@@ -10,7 +10,7 @@
     <body>
 
 
-<canvas id="bar15" max-width="400" height="400"></canvas>
+<canvas id="bar9" max-width="400" height="400"></canvas>
 <script>
 
 Chart.defaults.global.responsive = true
@@ -63,20 +63,47 @@ Chart.defaults.scale = {
 
 // Chart.defaults.global.defaultFontSize = 10
 
-var ctx = document.getElementById("bar15");
+var ctx = document.getElementById("bar9");
 
 var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
       datasets: [
+/*
+        {
+          label: 'Poverty Rate Citywide',
+          fill: false,
+          lineTension: .5,
+          backgroundColor:"#23417D",
+          borderColor: "#23417D",
+          borderWidth: 3,
+          borderCapStyle: 'butt',
+          borderDash: [],
+          borderDashOffset: 0.0,
+          borderJoinStyle: 'miter',
+          pointBorderColor: "#23417D",
+          pointBackgroundColor: "#23417D",
+          pointBorderWidth: 0,
+          pointHoverRadius: 0,
+          pointHoverBackgroundColor: "#BE4BDB",
+          pointHoverBorderColor: "#BE4BDB",
+          pointHoverBorderWidth: 0,
+          pointRadius: 3,
+          pointHitRadius: 0,
+          hoverBackgroundColor: "#9E9E9E",
+          hoverBorderColor: "#eeeeee",
+          data: [20.3,20.3,20.3,20.3,20.3],
+          type: 'line'
+        },
+        */
           {
-            label: 'Top 311 Agency Responders 2018',
+            label: 'Top Volume Agencies 2018',
             backgroundColor:["#82C91E","#12B886","#228AE6","#2F56A6","#F59F00","#D05D4E","#BE4BDB","#228AE6","#12B886","#82C91E"],
             borderColor: "#eeeeee",
             borderWidth: 0,
             hoverBackgroundColor: "#9E9E9E",
             hoverBorderColor: "#eeeeee",
-            data: [269669,265576,131717,81975,75247,38219,34480,23895,11733,8479]
+            data: [751497,594121,399428,289103,192468,92958,84070,53339,48390,20636]
           }],
       labels: [
               "NYPD","HPD","DSNY","DOT","DEP","DOB","DPR","DOF","DOHMH","TLC"
@@ -85,14 +112,18 @@ var myChart = new Chart(ctx, {
     options: {
       scales:{
         xAxes: [{
-          display: true,
+          display: true
+          //ticks:{
+          //minRotation: 90,
+    	    //maxRotation: 90
+
         }],
         yAxes: [{
           display: true,
           ticks: {
-            min: 0.0,
+            beginAtZero: true,
             callback: function(value) {
-              return ''+value.toLocaleString('en-US') + ' ';
+              return ''+value.toLocaleString('en-US');
             }
           }
         }]
@@ -100,7 +131,7 @@ var myChart = new Chart(ctx, {
       tooltips: {
         callbacks: {
           label: function(tooltipItem, data) {
-            return + ''+data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ ' Requests';
+            return ''+ data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ ' Requests';
           },
         }
       }
