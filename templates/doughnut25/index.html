@@ -23,16 +23,16 @@ var ctx = document.getElementById("doughnut24");
 var myChart = new Chart(ctx, {
     type: 'doughnut',
     data: {
-        labels: ["Did Not Observe","Fixed","Ambiguous","No Action Taken","No Violation","Ongoing","Violations Issued","Wrong Agency"
+        labels: ["Did Not Observe","Fixed","No Action Taken","Ambiguous","Other","Duplicate","Ongoing","Violations Issued","Wrong Agency"
           ],
         datasets: [{
-            label: 'Response Types: Cases Created Jan - Sept 2018',
-            backgroundColor:["#228AE6","#82C91E","#BE4BDB","#D05D4E","#F59F00","#A07952","#12B886","#2F56A6"],
+            label: 'Response Types 2018',
+            backgroundColor:["#228AE6","#82C91E","#BE4BDB","#D05D4E","#F59F00","#A07952","#12B886","#2F56A6","#666666"],
             borderColor: "#eeeeee",
             borderWidth: 1,
             hoverBackgroundColor: "#9E9E9E",
             hoverBorderColor: "#eeeeee",
-            data: [29.6,24.8,11.5,11.3,10.4,5.9,5.6,0.9]
+            data: [24,21,19,12,8,6,6,5,1]
         }]
     }
     ,
