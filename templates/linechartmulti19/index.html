@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>311 Requests By Method</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
+
+    </head>
+    <body>
+
+
+<canvas id="linechart18" width=auto max-height="400"></canvas>
+<script>
+
+Chart.defaults.global.responsive = true
+Chart.defaults.global.tooltips.backgroundColor="grey"
+Chart.defaults.global.maintainAspectRatio = true
+// Chart.defaults.global.legend = false
+
+
+var ctx = document.getElementById("linechart18");
+
+var myChart = new Chart(ctx, {
+    type: 'line',
+    fill: false,
+    data: {
+        labels: ["2011","2012","2013","2014","2015","2016","2017","2018"],
+        datasets: [
+            {
+              label: "Altice",
+              fill: false,
+              backgroundColor: "#82C91E",
+              borderColor: "#82C91E",
+              borderWidth: 0,
+              hoverBackgroundColor: "#82C91E",
+              hoverBorderColor: "#eeeeee",
+              data: [308,259,156,164,121,395,646,315]
+            },
+            {
+              label: "RCN",
+              fill: false,
+              backgroundColor: "#BE4BDB",
+              borderColor: "#BE4BDB",
+              borderWidth: 0,
+              hoverBackgroundColor: "#BE4BDB",
+              hoverBorderColor: "#eeeeee",
+              data: [74,49,28,46,37,48,57,21]
+            },
+            {
+              label: "Verizon",
+              fill: false,
+              backgroundColor: "#228AE6",
+              borderColor: "#228AE6",
+              borderWidth: 0,
+              hoverBackgroundColor: "#228AE6",
+              hoverBorderColor: "#eeeeee",
+              data: [69,85,76,139,269,683,1393,396]
+            },
+            {
+              label: "Spectrum",
+              fill: false,
+              backgroundColor: "#F59F00",
+              borderColor: "#F59F00",
+              borderWidth: 0,
+              hoverBackgroundColor: "#F59F00",
+              hoverBorderColor: "#eeeeee",
+              data: [918,979,844,795,469,730,1083,327]
+            }
+          ]
+        },
+    options: {
+      tooltips: {
+        callbacks: {
+          label: function(tooltipItem, data) {
+            var datasetLabel = data.datasets[tooltipItem.datasetIndex].label || '';
+            return datasetLabel + ': ' +data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US') + ' Complaints';
+          }
+        }
+      },
+      scales: {
+        yAxes: [{
+          stacked: false,
+          ticks: {
+            beginAtZero:true,
+            callback: function(value) {
+              if (value == 0) {
+                return (value).toLocaleString('en-US') + ' Complaints';
+              } else {
+                return value.toLocaleString('en-US') + ' Complaints';
+              }
+            }
+          }
+        }]
+      }
+    }
+  });
+</script>
+    </body>
+</html>
