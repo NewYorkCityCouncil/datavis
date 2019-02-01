@@ -23,7 +23,8 @@ var ctx = document.getElementById("doughnut24");
 var myChart = new Chart(ctx, {
     type: 'doughnut',
     data: {
-        labels: ["Did Not Observe","Fixed","No Action Taken","Ambiguous","Other","Duplicate","Ongoing","Violations Issued","Wrong Agency"
+        labels: [
+          "Did Not Observe","Fixed","No Action Taken","Ambiguous","Ongoing","Duplicate","Violations Issued","Wrong Agency","Other"
           ],
         datasets: [{
             label: 'Response Types 2018',
@@ -32,7 +33,7 @@ var myChart = new Chart(ctx, {
             borderWidth: 1,
             hoverBackgroundColor: "#9E9E9E",
             hoverBorderColor: "#eeeeee",
-            data: [24,21,19,12,8,6,6,5,1]
+            data: [24.8,21.5,18.7,17.3,6.2,5.5,4.8,0.8,0.4]
         }]
     }
     ,
