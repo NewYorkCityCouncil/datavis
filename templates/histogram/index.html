@@ -162,7 +162,8 @@ var myBarChart = Chart.Bar(canvas, {
         ticks: {
         autoSkip: true,
         maxTicksLimit: 20,
-      }],
+      }
+    }],
       yAxes: [{
         display: true,
         ticks: {
@@ -174,7 +175,7 @@ var myBarChart = Chart.Bar(canvas, {
       }]
     },
     tooltips: {
-      callbacks: {,
+      callbacks: {
         label: function(tooltipItem, data) {
           return +  data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ ' Cases';
         },
