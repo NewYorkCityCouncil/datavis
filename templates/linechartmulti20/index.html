@@ -94,7 +94,7 @@ var myChart = new Chart(ctx, {
         callbacks: {
           label: function(tooltipItem, data) {
             var datasetLabel = data.datasets[tooltipItem.datasetIndex].label || '';
-            return datasetLabel + ': '+'$' +data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US') + ' Difference Between Cost/Charge';
+            return datasetLabel + ': '+'$' +data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US') + ' Max Profit';
           }
         }
       },
@@ -104,11 +104,7 @@ var myChart = new Chart(ctx, {
           ticks: {
             beginAtZero:true,
             callback: function(value) {
-              if (value == 0) {
-                return (value).toLocaleString('en-US')  +'$ '+ ' Difference Between Cost/Charge';
-              } else {
-                return value.toLocaleString('en-US') +'$ '+ ' Difference Between Cost/Charge';
-              }
+              return '$' + value.toLocaleString('en-US') + ' Million';
             }
           }
         }]
