@@ -75,21 +75,21 @@ var myChart = new Chart(ctx, {
         labels: ["Bronx","Brooklyn","Manhattan","Queens","Staten Island"
         ],
         datasets: [{
-            label: 'Lead Litigation',
+            label: 'Lead Litigation Rate',
             backgroundColor: ["#F59F00","#12B886","#82C91E","#228AE6","#2F56A6","#D05D4E","#BE4BDB","#228AE6","#12B886","#82C91E"],
             borderColor: "#eeeeee",
             borderWidth: 1,
             hoverBackgroundColor: "#9E9E9E",
             hoverBorderColor: "#eeeeee",
-            data: [1958,1233,921,232,14]
+            data: [3.58, 1.19, 0.97, 0.27, 0.08]
         }]
     },
     options: {
       title:{
-        display: false,
+        display: true,
         padding: 20,
         position: 'bottom',
-        text: 'HPD Lead Court Cases'
+        text: 'Rate of HPD Lead Litigation Cases per 1,000 units'
       },
       scales:{
         xAxes: [{
@@ -130,7 +130,7 @@ var myChart = new Chart(ctx, {
 				},
 				label: function(tooltipItem, data) {
 					var datasetLabel = data.datasets[tooltipItem.datasetIndex].label || '';
-					return tooltipItem.xLabel.toLocaleString('en-US')+' HPD Lead Court Cases';
+					return tooltipItem.xLabel.toLocaleString('en-US')+' Lead Cases per 1,000 units';
 				}
         }
       }
