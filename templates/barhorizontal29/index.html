@@ -131,7 +131,7 @@ var myChart = new Chart(ctx, {
 				},
 				label: function(tooltipItem, data) {
 					var datasetLabel = data.datasets[tooltipItem.datasetIndex].label || '';
-					return tooltipItem.xLabel.toLocaleString('en-US')+'Resolutions';
+					return tooltipItem.xLabel.toLocaleString('en-US')+' Complaints';
 				}
         }
       }
