@@ -73,7 +73,7 @@ var ctx = document.getElementById("barhorizontal27");
 var myChart = new Chart(ctx, {
     type: 'horizontalBar',
     data: {
-        labels: ["No Action","Fixed","Ticket","Report"
+        labels: ["No Action","Fixed","Ticket/Summons","Report/Arrest"
         ],
         datasets: [{
             label: 'Lead Litigation Rate',
@@ -82,7 +82,7 @@ var myChart = new Chart(ctx, {
             borderWidth: 1,
             hoverBackgroundColor: "#9E9E9E",
             hoverBorderColor: "#eeeeee",
-            data: [621,184,119,2]
+            data: [2165,619,353,5]
         }]
     },
     options: {
@@ -90,7 +90,7 @@ var myChart = new Chart(ctx, {
         display: true,
         padding: 20,
         position: 'bottom',
-        text: 'Responses to 311 "Complaints Regarding Parking Permit Improper Use"'
+        text: 'Responses to 311 Complaints Regarding "Parking Permit Improper Use"'
       },
       scales:{
         xAxes: [{
@@ -131,7 +131,7 @@ var myChart = new Chart(ctx, {
 				},
 				label: function(tooltipItem, data) {
 					var datasetLabel = data.datasets[tooltipItem.datasetIndex].label || '';
-					return tooltipItem.xLabel.toLocaleString('en-US')+' Lead Cases per 1,000 units';
+					return tooltipItem.xLabel.toLocaleString('en-US')+'Resolutions';
 				}
         }
       }
