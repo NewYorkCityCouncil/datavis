@@ -39,7 +39,7 @@ var myChart = new Chart(ctx, {
       tooltips: {
           callbacks: {
             label: function(tooltipItem, data) {
-              return data.labels[tooltipItem.index] + ': '+data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+'% of Greenhouse Gas Emissions';
+              return data.labels[tooltipItem.index] + ': '+data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+'%';
             },
           }
       }
