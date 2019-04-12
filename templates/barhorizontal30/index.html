@@ -68,21 +68,21 @@ Chart.defaults.scale = {
 
 // Chart.defaults.global.defaultFontSize = 10
 
-var ctx = document.getElementById("barhorizontal27");
+var ctx = document.getElementById("barhorizontal30");
 
 var myChart = new Chart(ctx, {
     type: 'horizontalBar',
     data: {
-        labels: ["DCAS","Storage","Assembly","Residential","Business","Education","Factory","Institutional","Mercantile","House of Worship","Senior Care Facility","Hotel","Hospital"
+        labels: ["Hospital","Senior Care Facility","Mercantile","Assembly","DCAS","Hotel","Business","Education","Institutional","Residential","Factory","House of Worship","Storage"
         ],
         datasets: [{
             label: 'Use and Greenhouse Gas Emissions',
-            backgroundColor: ["#F59F00","#12B886","#82C91E","#228AE6","#2F56A6","#D05D4E","#BE4BDB","#228AE6","#12B886","#82C91E"],
+            backgroundColor: ["#F59F00","#12B886","#82C91E","#666666","#228AE6","#2F56A6","#D05D4E","#CACACA","#A07952","#23417D","#E6E6E6","#222222","#BE4BDB",],
             borderColor: "#eeeeee",
             borderWidth: 1,
             hoverBackgroundColor: "#9E9E9E",
             hoverBorderColor: "#eeeeee",
-            data: [0.0076,0.0060,0.0028,0.0076,0.0053,0.0068,0.0056,0.0041,0.0054,0.0078,0.0035,0.0086,0.0073,0.0153]
+            data: [0.0153,0.0086,0.0078,0.0076,0.0076,0.0073,0.0068,0.0056,0.0054,0.0053,0.0041,0.0035,0.0028]
         }]
     },
     options: {
