@@ -23,7 +23,7 @@ var ctx = document.getElementById("doughnut31");
 var myChart = new Chart(ctx, {
     type: 'doughnut',
     data: {
-        labels: ["Residential","Business","Other","Institutional","Hospital","Hotel","City Owned Buildings (DCAS)","Education","Mercantile","Storage","Assembly","Factory","Senior Care Facility","House of Worship"],
+        labels: ["Residential","Business","Institutional","Education","Hospital","City Owned Buildings (DCAS)","Hotel","Mercantile","Storage","Assembly","Factory","Senior Care Facility","Other","House of Worship"],
         datasets: [{
             label: 'Greenhouse Gas Emissions by Building Use Type',
             backgroundColor:["#23417D","#D05D4E","#FFFFFF","#A07952","#F59F00","#2F56A6","#228AE6","#CACACA","#82C91E","#BE4BDB","#666666","#E6E6E6","#12B886","#222222"],
@@ -31,7 +31,7 @@ var myChart = new Chart(ctx, {
             borderWidth: 1,
             hoverBackgroundColor: "#9E9E9E",
             hoverBorderColor: "#eeeeee",
-            data: [38,21,12,11,5,3,2,2,2,1,1,1,1,0]
+            data: [41,22,11,6,6,4,3,2,1,1,1,1,1,0]
         }]
     }
     ,
