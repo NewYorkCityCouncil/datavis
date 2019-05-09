@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Stop, Question & Frisk Incidents by Race, 2018</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
+
+    </head>
+    <body>
+
+
+<canvas id="doughnut26" width=auto height="250"></canvas>
+<script>
+
+Chart.defaults.global.responsive = true
+Chart.defaults.global.maintainAspectRatio = true
+Chart.defaults.global.legend.display= false
+
+var ctx = document.getElementById("doughnut26");
+
+var myChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        labels: ["Black","Hispanic","White","Asian","Other", "Amerindian"],
+        datasets: [{
+            label: 'Stop, Question & Frisk By Race, 2018',
+            backgroundColor:["#2ed7fd","#2ed7fd","#fdab49","#BE4BDB","#12B886", "D05D4E"],
+            borderColor: "#eeeeee",
+            borderWidth: 1,
+            hoverBackgroundColor: "#9E9E9E",
+            hoverBorderColor: "#eeeeee",
+            data: [56.69513081,30.78670058,9.75654070,2.00763081,0.60864826,0.14534884]
+        }]
+    }
+    ,
+    options: {
+      tooltips: {
+          callbacks: {
+            label: function(tooltipItem, data) {
+              return data.labels[tooltipItem.index] + ': '+data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+'% of SQF Incidents';
+            },
+          }
+      }
+    }
+
+
+});
+</script>
+    </body>
+</html>
