@@ -63,15 +63,15 @@ var ctx = document.getElementById("barhorizontal32");
 var myChart = new Chart(ctx, {
     type: 'horizontalBar',
     data: {
-        labels: ["Hispanic (Black)","Hispanic (White)","Black","Amerindian","Asian","White","Other"],
+        labels: ["Hispanic (Black)","Hispanic (White)","Black","Amerindian","Asian","White"],
         datasets: [{
             label: 'Rate of Arrest (Arrest/Population), 2018',
-            backgroundColor:["#2e70fd","#02b4dc","#2ed7fd","#BE4BDB","#fdab49","#12B886", "#D05D4E"],
+            backgroundColor:["#2e70fd","#02b4dc","#2ed7fd","#BE4BDB","#fdab49","#12B886"],
             borderColor: "#eeeeee",
             borderWidth: 1,
             hoverBackgroundColor: "#9E9E9E",
             hoverBorderColor: "#eeeeee",
-            data: [27.5736, 14.3946, 14.0518, 4.4736, 2.2642, 2.0724, 0.758580377]
+            data: [27.5736, 14.3946, 14.0518, 4.4736, 2.2642, 2.0724]
         }]
     },
     options: {
