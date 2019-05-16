@@ -1,5 +1,5 @@
 
-    
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -42,7 +42,7 @@ var myChart = new Chart(ctx, {
               borderWidth: 0,
               hoverBackgroundColor: "#D05D4E",
               hoverBorderColor: "#eeeeee",
-              data: [103308,108617,105810,101114,97524,94188,92819,95776,94720,91535,94422, 89134,86543] 
+              data: [103308,108617,105810,101114,97524,94188,92819,95776,94720,91535,94422, 89134,86543]
           },
             {
               label: "Misdemeanors",
@@ -103,7 +103,11 @@ var myChart = new Chart(ctx, {
             callback: function(value) {
               return  value.toLocaleString('en-US') ;
             }
-          }
+          },
+          scaleLabel: {
+            display: true,
+            labelString: 'Number of Police Actions'
+      }
         }]
       }
     }
@@ -111,4 +115,3 @@ var myChart = new Chart(ctx, {
 </script>
     </body>
 </html>
-
