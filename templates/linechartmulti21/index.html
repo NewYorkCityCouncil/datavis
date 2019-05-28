@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>311 Requests By Method</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
+
+    </head>
+    <body>
+
+
+<canvas id="linechart18" width=auto max-height="400"></canvas>
+<script>
+
+Chart.defaults.global.responsive = true
+Chart.defaults.global.tooltips.backgroundColor="grey"
+Chart.defaults.global.maintainAspectRatio = true
+// Chart.defaults.global.legend = false
+
+
+var ctx = document.getElementById("linechart18");
+
+var myChart = new Chart(ctx, {
+    type: 'line',
+    fill: false,
+    data: {
+        labels: ["1978","1980","1982","1984","1986","1988","1990","1992","1994","1996","1998","2000","2002","2004","2006","2008","2010","2012","2014","2016"],
+        datasets: [
+            {
+              label: "National Average",
+              fill: false,
+              backgroundColor: "#82C91E",
+              borderColor: "#82C91E",
+              borderWidth: 0,
+              hoverBackgroundColor: "#82C91E",
+              hoverBorderColor: "#eeeeee",
+              data: [73.36,73.61,74.36,74.56,74.61,74.77,75.21,75.62,75.62,76.03,76.58,76.64,76.94,77.49,77.69,78.04,78.54,78.74,78.84,78.69]
+            },
+            {
+              label: "Heart Island Average",
+              fill: false,
+              backgroundColor: "#BE4BDB",
+              borderColor: "#BE4BDB",
+              borderWidth: 0,
+              hoverBackgroundColor: "#BE4BDB",
+              hoverBorderColor: "#eeeeee",
+              data: [60,63,60,58.5,56,52,52,55,55,60,60,62,62,63,65,63,64,65,65,65]
+            }
+          ]
+        },
+    options: {
+      tooltips: {
+        callbacks: {
+          label: function(tooltipItem, data) {
+            var datasetLabel = data.datasets[tooltipItem.datasetIndex].label || '';
+            return datasetLabel + ': '+'$' +data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US') + ' Max Profit';
+          }
+        }
+      },
+      scales: {
+        yAxes: [{
+          stacked: false,
+          ticks: {
+            beginAtZero:true,
+            callback: function(value) {
+              return '$' + value.toLocaleString('en-US');
+            }
+          }
+        }]
+      }
+    }
+  });
+</script>
+    </body>
+</html>
