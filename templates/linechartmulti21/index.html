@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>311 Requests By Method</title>
+        <title>Age of People Burried at Heart Island</title>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
 
@@ -10,7 +10,7 @@
     <body>
 
 
-<canvas id="linechart18" width=auto max-height="400"></canvas>
+<canvas id="linechart18" width=auto max-height="500"></canvas>
 <script>
 
 Chart.defaults.global.responsive = true
@@ -54,7 +54,7 @@ var myChart = new Chart(ctx, {
         callbacks: {
           label: function(tooltipItem, data) {
             var datasetLabel = data.datasets[tooltipItem.datasetIndex].label || '';
-            return datasetLabel + ': '+'$' +data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US') + ' Max Profit';
+            return datasetLabel + ': '+'' +data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US') + ' Years Old';
           }
         }
       },
@@ -62,9 +62,9 @@ var myChart = new Chart(ctx, {
         yAxes: [{
           stacked: false,
           ticks: {
-            beginAtZero:true,
+            beginAtZero:false,
             callback: function(value) {
-              return '$' + value.toLocaleString('en-US');
+              return '' + value.toLocaleString('en-US')+ ' Years Old';
             }
           }
         }]
