@@ -10,7 +10,7 @@
     <body>
 
 
-<canvas id="linechart18" width=auto max-height="400"></canvas>
+<canvas id="linechart22" width=auto max-height="400"></canvas>
 <script>
 
 Chart.defaults.global.responsive = true
@@ -19,7 +19,7 @@ Chart.defaults.global.maintainAspectRatio = true
 //Chart.defaults.global.legend = false
 
 
-var ctx = document.getElementById("linechart18");
+var ctx = document.getElementById("linechart22");
 
 var myChart = new Chart(ctx, {
     type: 'line',
@@ -74,7 +74,7 @@ var myChart = new Chart(ctx, {
         callbacks: {
           label: function(tooltipItem, data) {
             var datasetLabel = data.datasets[tooltipItem.datasetIndex].label || '';
-            return datasetLabel + ': '+'' +data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US') + ' Years Old';
+            return datasetLabel + ': '+'' +data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US') + ' Deaths';
           }
         }
       },
@@ -84,7 +84,7 @@ var myChart = new Chart(ctx, {
           ticks: {
             beginAtZero:false,
             callback: function(value) {
-              return '' + value.toLocaleString('en-US')+ ' Years Old';
+              return '' + value.toLocaleString('en-US')+ ' Deaths';
             }
           }
         }]
