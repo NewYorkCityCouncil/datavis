@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>ADA Accessibility Status of Station Platforms, 2019</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
+
+    </head>
+    <body>
+
+
+<canvas id="doughnut40" width=auto height="200"></canvas>
+<script>
+Chart.defaults.global.responsive = true
+Chart.defaults.global.maintainAspectRatio = true
+Chart.defaults.global.legend.display= false
+var ctx = document.getElementById("doughnut40");
+var myChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        labels: ["Full Accessibility","Partial Accessibility","In Construction","No ADA - No Funding Plans","No ADA - Under Consideration"],
+        datasets: [{
+            label: 'ADA Accessibility Status of Station Platforms, 2019',
+            backgroundColor:["#228AE6","#82C91E","#BE4BDB","#666666","#D05D4E"],
+            borderColor: "#eeeeee",
+            borderWidth: 1,
+            hoverBackgroundColor: "#9E9E9E",
+            hoverBorderColor: "#eeeeee",
+            data: [23.076923,1.417004,4.858300,48.380567,22.267206]
+        }]
+    }
+    ,
+    options: {
+      tooltips: {
+          callbacks: {
+            label: function(tooltipItem, data) {
+              return data.labels[tooltipItem.index] + ': '+data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+'% of Platforms';
+            },
+          }
+      }
+    }
+});
+</script>
+    </body>
+</html>
