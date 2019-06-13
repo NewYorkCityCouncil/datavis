@@ -10,7 +10,7 @@
     <body>
 
 
-<canvas id="doughnut40" width=auto height=auto></canvas>
+<canvas id="doughnut40" width=auto height=300></canvas>
 <script>
 Chart.defaults.global.title = true
 Chart.defaults.global.responsive = true
@@ -18,9 +18,9 @@ Chart.defaults.global.maintainAspectRatio = true
 Chart.defaults.global.tooltips.backgroundColor="grey"
 Chart.defaults.global.legend.display = true
 Chart.defaults.global.legend.position = "bottom"
-Chart.defaults.global.legendfullWidth = true
+Chart.defaults.global.legendfullWidth = false
 Chart.Legend.prototype.afterFit = function() {
-    this.height = this.height + 0;
+    this.height = this.height + 50;
 };
 
 var ctx = document.getElementById("doughnut40");
