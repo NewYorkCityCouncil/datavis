@@ -10,12 +10,18 @@
     <body>
 
 
-<canvas id="doughnut40" width=500 height="500"></canvas>
+<canvas id="doughnut40" width=400 height=400></canvas>
 <script>
+Chart.defaults.global.title = true
 Chart.defaults.global.responsive = true
 Chart.defaults.global.maintainAspectRatio = true
-Chart.defaults.global.legend.display= true
-Chart.defaults.global.legend.position= "bottom"
+Chart.defaults.global.tooltips.backgroundColor="grey"
+Chart.defaults.global.legend.display = true
+Chart.defaults.global.legend.position = "bottom"
+Chart.defaults.global.legendfullWidth = true
+Chart.Legend.prototype.afterFit = function() {
+    this.height = this.height + 0;
+};
 
 var ctx = document.getElementById("doughnut40");
 var myChart = new Chart(ctx, {
@@ -42,9 +48,16 @@ var myChart = new Chart(ctx, {
           }
       },
       legend: {
-        onClick: null
-    },
-    responsive: false
+        onClick: null,
+        labels: {
+                fontSize: 15,
+                fontFamily: "Open Sans",
+                boxWidth: 25,
+                fontStyle: "bold",
+                padding: 15
+                
+            } 
+    }
     }
 });
 </script>
