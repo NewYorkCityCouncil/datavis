@@ -10,11 +10,13 @@
     <body>
 
 
-<canvas id="doughnut40" width=auto height="200"></canvas>
+<canvas id="doughnut40" width=500 height="500"></canvas>
 <script>
 Chart.defaults.global.responsive = true
 Chart.defaults.global.maintainAspectRatio = true
-Chart.defaults.global.legend.display= false
+Chart.defaults.global.legend.display= true
+Chart.defaults.global.legend.position= "bottom"
+
 var ctx = document.getElementById("doughnut40");
 var myChart = new Chart(ctx, {
     type: 'doughnut',
@@ -38,7 +40,11 @@ var myChart = new Chart(ctx, {
               return data.labels[tooltipItem.index] + ': '+data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+'% of Platforms';
             },
           }
-      }
+      },
+      legend: {
+        onClick: null
+    },
+    responsive: false
     }
 });
 </script>
