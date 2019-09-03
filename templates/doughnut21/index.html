@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>FY19 Revenues in Preliminary Budget</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
+
+    </head>
+    <body>
+
+
+<canvas id="doughnut21" width=auto height="250"></canvas>
+<script>
+
+Chart.defaults.global.responsive = true
+Chart.defaults.global.maintainAspectRatio = true
+Chart.defaults.global.legend.display= true
+var theHelp = Chart.helpers;
+
+var ctx = document.getElementById("doughnut21");
+
+var myPieChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        labels: ["City Taxes: $60 Billion",
+                "State Aid: $15 Billion",
+                "Federal Aid: $7.2 Billion",
+                "Other: $6.5 Billion"
+          ],
+        datasets: [{
+            label: 'FY19 Revenues in Preliminary Budget',
+            backgroundColor:["#2F56A6","#BE4BDB","#82C91E","#F59F00"],
+            fill: true,
+            borderColor: "#eeeeee",
+            borderWidth: 1,
+            hoverBackgroundColor: "#9E9E9E",
+            hoverBorderColor: "#eeeeee",
+            data: [60,15,7.2,6.5]
+        }]
+    }
+    ,
+    options: {
+
+      tooltips: {
+          callbacks: {
+            label: function(tooltipItem, data) {
+              return data.labels[tooltipItem.index] /*+ ': '+ '$'+data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')*/;
+            },
+          }
+      },
+
+      legend: {
+        display: true,
+
+/*
+        // generateLabels changes from chart to chart,  check the source,
+        // this one is from the doughut :
+        // https://github.com/chartjs/Chart.js/blob/master/src/controllers/controller.doughnut.js#L42
+
+      labels: {
+        generateLabels: function(chart) {
+          var data = chart.data;
+          if (data.labels.length && data.datasets.length) {
+            return data.labels.map(function(label, i) {
+              var meta = chart.getDatasetMeta(0);
+              var ds = data.datasets[0];
+              var arc = meta.data[i];
+              var custom = arc && arc.custom || {};
+              var getValueAtIndexOrDefault = theHelp.getValueAtIndexOrDefault;
+              var arcOpts = chart.options.elements.arc;
+              var fill = custom.backgroundColor ? custom.backgroundColor : getValueAtIndexOrDefault(ds.backgroundColor, i, arcOpts.backgroundColor);
+              var stroke = custom.borderColor ? custom.borderColor : getValueAtIndexOrDefault(ds.borderColor, i, arcOpts.borderColor);
+              var bw = custom.borderWidth ? custom.borderWidth : getValueAtIndexOrDefault(ds.borderWidth, i, arcOpts.borderWidth);
+                return {
+                // And finally :
+                text: ds.data[i] + "% of the time " + label,
+                fillStyle: fill,
+                strokeStyle: stroke,
+                lineWidth: bw,
+                hidden: isNaN(ds.data[i]) || meta.data[i].hidden,
+                index: i
+              };
+            });
+          }
+          return [];
+        }
+      }
+      */
+      }
+    }
+});
+    console.log(myPieChart.generateLegend());
+
+
+
+    //Plugin from githubExample:
+    //https://github.com/chartjs/Chart.js/blob/master/samples/data_labelling.html
+
+
+    Chart.plugins.register({
+      afterDatasetsDraw: function(chart) {
+        var ctx = chart.ctx;
+        chart.data.datasets.forEach(function(dataset, i) {
+          var meta = chart.getDatasetMeta(i);
+          if (!meta.hidden) {
+            meta.data.forEach(function(element, index) {
+              // Draw the text in black, with the specified font
+              ctx.fillStyle = 'rgb(0, 0, 0)';
+              var fontSize = 16;
+              var fontStyle = 'normal';
+              var fontFamily = 'Helvetica Neue';
+              ctx.font = Chart.helpers.fontString(fontSize, fontStyle, fontFamily);
+              // Just naively convert to string for now
+              var dataString = dataset.data[index].toString();
+              // Make sure alignment settings are correct
+              ctx.textAlign = 'center';
+              ctx.textBaseline = 'middle';
+              var padding = 5;
+              var position = element.tooltipPosition();
+              ctx.fillText(dataString, position.x, position.y - (fontSize / 2) - padding);
+            });
+          }
+        });
+      }
+    });
+
+
+</script>
+    </body>
+</html>

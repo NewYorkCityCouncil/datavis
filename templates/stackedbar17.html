@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>MTA Elevator Complaints, 2018 </title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
+
+    </head>
+    <body>
+
+
+<canvas id="stackedbar17" width="70" height="80"></canvas>
+<script>
+Chart.defaults.global.responsive = true
+Chart.defaults.global.tooltips.backgroundColor="grey"
+Chart.defaults.global.maintainAspectRatio = true
+var ctx = document.getElementById("stackedbar17");
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ["Top Elevator Complaints"],
+        datasets: [
+          {
+            label: 'Improper Function / Needs Repair / Damaged',
+          backgroundColor:"#228AE6",
+          borderColor: "#E6E6E6",
+          borderWidth: 1,
+          hoverBackgroundColor: "#228AE6",
+          hoverBorderColor: "#ffffff",
+          data: [69.114471]
+        },
+        {
+          label: 'All Others',
+        backgroundColor:"#BE4BDB",
+    borderColor: "#eeeeee",
+    borderWidth: 1,
+    hoverBackgroundColor: "#BE4BDB",
+    hoverBorderColor: "#eeeeee",
+        data: [9.935205]
+      },
+      {
+        label: 'Litter / Garbage / Debris ',
+        backgroundColor: "#82C91E",
+        borderColor: "#E6E6E6",
+        borderWidth: 1,
+        hoverBackgroundColor: "#82C91E",
+        hoverBorderColor: "#ffffff",
+        data: [6.695464]
+    },
+    {
+        label: 'Leaking / Wet',
+        backgroundColor: "#D05D4E",
+        borderColor: "#E6E6E6",
+        borderWidth: 1,
+        hoverBackgroundColor: "#D05D4E",
+        hoverBorderColor: "#ffffff",
+        data: [6.479482]
+    },
+    {
+      label: 'Add More / Not Enough',
+          backgroundColor: "#F59F00",
+        borderColor: "#E6E6E6",
+        borderWidth: 1,
+        hoverBackgroundColor: "#F59F00",
+        hoverBorderColor: "#ffffff",
+          data: [4.967603]
+  },
+{
+    label: 'Smoke / Fumes / Smell / Odor',
+        backgroundColor:"#A07952",
+          borderColor: "#E6E6E6",
+          borderWidth: 1,
+          hoverBackgroundColor: "#A07952",
+          hoverBorderColor: "#ffffff",
+        data: [2.807775]
+},
+
+      ]
+    },
+ options: {
+        scales: {
+            yAxes: [{
+                stacked: true,
+             
+                ticks: {
+                    beginAtZero:true,
+                    max: 100,
+                    callback: function(value) {
+                      return value.toLocaleString('en-US')+'%';
+                    }
+                }
+            }],
+            xAxes: [{
+                stacked: true,
+                ticks: {
+                    display:true,
+                    beginAtZero:true
+                    
+                    
+                },
+                gridLines: {
+                drawOnChartArea: false
+            },
+            
+            }]
+        },
+        legend: {
+            display: true,
+            position: 'bottom',
+            padding: 10
+         },
+        title:{
+        display: true,
+        padding: 30,
+        position: 'top',
+        text: 'MTA Elevator Complaints, 2018'
+      },
+      tooltips: {
+            callbacks: {
+                label: function(tooltipItem, data) {
+                    var label = data.datasets[tooltipItem.datasetIndex].label || '';
+                    if (label) {
+                        label += ': ';
+                    }
+                    label += Math.round(tooltipItem.yLabel * 100) / 100 +'%'
+                    return label;
+                }
+            }
+        }
+        
+    }
+});
+</script>
+    </body>
+</html>
+
+

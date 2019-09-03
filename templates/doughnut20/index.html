@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Justin Brannan District Priorities 2</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
+
+    </head>
+    <body>
+
+
+<canvas id="doughnut20" width=auto height="250"></canvas>
+<script>
+
+Chart.defaults.global.responsive = true
+Chart.defaults.global.maintainAspectRatio = true
+Chart.defaults.global.legend.display= false
+
+var ctx = document.getElementById("doughnut20");
+
+var myChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        labels: ["Fixing our broken public transportation system",
+                  "Investing in our public schools",
+                  "Improving public safety and our quality of life",
+                  "Finding solutions to the homelessness crisis",
+                  "Protecting new immigrant communities",
+                  "Tackling the opioid and heroin epidemic",
+                  "Fighting income inequality",
+                  "Ending the illegal conversion of single- and two-family homes",
+                  "Supporting seniors and improving senior services",
+                  "Adjusting our property tax system so homeowners are treated fairly",
+                  "Affordable housing",
+                  "Reduced toll on the Verrazano Bridge for Brooklyn residents.",
+                  "Fighting racism and islamophobia",
+                  "Working with levels of government to keep illegal immigrants and human smuggling out.",
+                  "Working towards a sustainable Bay Ridge through partnerships with for-profit businesses in solar installation",
+                  "workforce development",
+                  "we can also organize and look to ourselves).",
+                  "urban farming",
+                  "Upzone Bay Ridge and build more housing",
+                  "Traffic + Ped Safety",
+                  "trade schools",
+                  "these are all priorities & your attention toward each is appreciated but those I've checked are issues which your neighbors really can only look to you for (amongst our elected officials for",
+                  "There are incentives built into the property tax system for commercial landlords to keep storefronts vacant. These should be removed.",
+                  "The link between domestic violence and homelessness",
+                  "suicide",
+                  "strict laws enforced for any animal abuse period. Also",
+                  "stopt bottle deposit regulations",
+                  "Stemming drug sales in the neighborhood",
+                  "smaller class sizes. the local high school has over 4000 students",
+                  "Sanitation; lack of pick-up when a holiday.",
+                  "Sanitation and environmental protection. That waste water treatment plant stinks",
+                  "Rent stabilization",
+                  "Rent control!",
+                  "Remove Preferred Lease",
+                  "Reducing NYC's greenhouse gas emissions",
+                  "Reduce car crashes in the neighborhood. Install bollards on 4th Ave like at Bay Ridge Pkway. It’s scary being a pedestrian in this neighborhood with all the fast and wreckless drivers.",
+                  "Public umbilical cord blood collection & banking",
+                  "Public trash cans",
+                  "public service",
+                  "Protecting LGBTQ residents",
+                  "protecting and expanding green spaces",
+                  "Preserving rent stabilized units and protecting tenants",
+                  "Police brutality and ending broken windows. Close Rikers now. Build affordable housing. Continue funding mental health and Nyc Thrive",
+                  "Police accountability",
+                  "Parking and congestion",
+                  "park community groups and funding",
+                  "Our supermarkets are terrible. Attracting quality businesses to fill empty storefronts. Can we get Citibike? What’s up with the lack of food and parking by the pier? Fishermen at the pier are gross. Third Avenue is a maze of double Parker’s by day and a race track for suped up cars at night. We hear fights at 4 am each week. Why aren’t the cops patrolling?",
+                  "Opiod and herion epidenic is very important.",
+                  "Noticing the Bath Beach exists",
+                  "new and better parks!",
+                  "Neighborhood trash/litter- we need more trash cans and bins all over Bay Ridge. It is disgusting the way the people treat the neighborhood",
+                  "Neighborhood quality of life concerns.Promotion of healthy community",
+                  "More traffic lights!!! Dahlgren place !!!!!",
+                  "More police presence in subway stations and in major publuc areas in the city",
+                  "More police patrol make areas safe again to walk especially at night.",
+                  "Mental health needs more attention especially could reduce some homelessness",
+                  "Making it more affordable for brooklynites to purchase a home. We are being priced out!",
+                  "Making improvements to biking and walking in Bayridge",
+                  "make it more affortable for people to rent Apartments",
+                  "Keeping the Army at Ft Hamilton",
+                  "Join the council's Parks committee",
+                  "increasing cameras to monitor the streets",
+                  "Improving Shore Road parks and renovating Vinland Playground",
+                  "Improving police accountability and ending unlawful surveillance in our community.",
+                  "Improving access a ride",
+                  "Improvements to Access-A-Ride",
+                  "I’vre noticed the R train has improved a lot. Thanks.",
+                  "I know you are all for public school however those of us who choose private schools should get some attention also",
+                  "Housing affordability",
+                  "Holding the NYPD to account",
+                  "Helping Catholic Schools too!",
+                  "Having after school programming. Keep kids away from drugs",
+                  "Group homes in Bay Ridge for autistic adults. There are countless autistic youngsters who grew up in our community and who are coming of age. They shouldn't have to live in other communities. They should be near their mom and dad and adult siblings.",
+                  "for police to learn that animals can not be tethered",
+                  "Fact is",
+                  "Environmental Sustainability - Reducing waste & emissions",
+                  "Enviorment",
+                  "Education focusing on Special Education",
+                  "Divest fossil fuels from our public pension funds. Reign in rogue cops. More worker coops so jobs cannot be outsourced. A community center! Your going to beat Quaglione by 2K so good luck Justin!",
+                  "desegregating schools & have equity in funding",
+                  "Cross walk on Shore Road somewhere between 99th and 95th Streets",
+                  "Combating police misconduct",
+                  "close Rikers",
+                  "climate change. What more can the city be doing? Flood mitigation for sure but also how about divesting city pension funds from fossil fuel companies.",
+                  "Cleanliness of the neighborhood",
+                  "Cleaning our parks",
+                  "Can we do something about all the non- NY license plates - go to any public school and see people picking up children with plates from all over the US except NY thanks and so glad you won!",
+                  "BULLYING In any Manner",
+                  "Building a better internet infrastructure in bay ridge.",
+                  "BIKE LANES",
+                  "Being able to get a response from our police precint when calling with quality of life requests. Tenant rights and protection.",
+                  "Bay Ridge Uncensored hate group harassment of members in the community",
+                  "bay ridge over time has increased in younger families with kids",
+                  "as you've taught us by example",
+                  "Animal welfare",
+                  "ANIMAL RIGHTS AND THE DISABLED",
+                  "Animal rights and addressing animal abuse situations",
+                  "All of the above",
+                  "Affordable housing!!!!!decriminalization of Marajuana"
+          ],
+        datasets: [{
+            label: 'Survey Priorities',
+            backgroundColor:["#228AE6","#12B886","#82C91E","#F59F00","#A07952","#D05D4E","#BE4BDB","#228AE6","#12B886","#82C91E","#F59F00","#A07952","#D05D4E","#BE4BDB","#228AE6","#12B886","#82C91E","#F59F00","#A07952","#D05D4E","#BE4BDB","#228AE6","#12B886","#82C91E","#F59F00","#A07952","#D05D4E","#BE4BDB","#228AE6","#12B886","#82C91E","#F59F00","#A07952","#D05D4E","#BE4BDB","#228AE6","#12B886","#82C91E","#F59F00","#A07952","#D05D4E","#BE4BDB","#228AE6","#12B886","#82C91E","#F59F00","#A07952","#D05D4E","#BE4BDB","#228AE6","#12B886","#82C91E","#F59F00","#A07952","#D05D4E","#BE4BDB","#228AE6","#12B886","#82C91E","#F59F00","#A07952","#D05D4E","#BE4BDB","#228AE6","#12B886","#82C91E","#F59F00","#A07952","#D05D4E","#BE4BDB","#228AE6","#12B886","#82C91E","#F59F00","#A07952","#D05D4E","#BE4BDB","#228AE6","#12B886","#82C91E","#F59F00","#A07952","#D05D4E","#BE4BDB","#228AE6","#12B886","#82C91E","#F59F00","#A07952","#D05D4E","#BE4BDB","#228AE6","#12B886","#82C91E","#F59F00","#A07952","#D05D4E","#BE4BDB","#228AE6","#12B886","#82C91E","#F59F00","#A07952","#D05D4E","#BE4BDB","#228AE6","#12B886","#82C91E","#F59F00","#A07952","#D05D4E","#BE4BDB"],
+            borderColor: "#eeeeee",
+            borderWidth: 1,
+            hoverBackgroundColor: "#9E9E9E",
+            hoverBorderColor: "#eeeeee",
+            data: [16.3,13.3,11.4,10.3,9.3,7.9,7.6,7.2,6.3,4.9,0.2,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1]
+        }]
+    }
+    ,
+    options: {
+      tooltips: {
+          callbacks: {
+            label: function(tooltipItem, data) {
+              return data.labels[tooltipItem.index] + ': '+ data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+'%';
+            },
+          }
+      }
+    }
+
+
+});
+</script>
+    </body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>311 Requests By Method</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
+
+    </head>
+    <body>
+
+
+<canvas id="linechart18" width=auto max-height="400"></canvas>
+<script>
+
+Chart.defaults.global.responsive = true
+Chart.defaults.global.tooltips.backgroundColor="grey"
+Chart.defaults.global.maintainAspectRatio = true
+// Chart.defaults.global.legend = false
+
+
+var ctx = document.getElementById("linechart18");
+
+var myChart = new Chart(ctx, {
+    type: 'line',
+    fill: false,
+    data: {
+        labels: ["2009","2010","2011","2012","2013","2014","2015","2016"],
+        datasets: [
+            {
+              label: "Bellevue Hospital Center",
+              fill: false,
+              backgroundColor: "#82C91E",
+              borderColor: "#82C91E",
+              borderWidth: 0,
+              hoverBackgroundColor: "#82C91E",
+              hoverBorderColor: "#eeeeee",
+              data: [1495,1513,1508.59,-512,4327.48,4422.37,4551.41,4615.3]
+            },
+            {
+              label: "Coney Island Hospital",
+              fill: false,
+              backgroundColor: "#BE4BDB",
+              borderColor: "#BE4BDB",
+              borderWidth: 0,
+              hoverBackgroundColor: "#BE4BDB",
+              hoverBorderColor: "#eeeeee",
+              data: [2285,2289,1850.06,-2135.11,4718.97,4518.06,4886.31,5047.06]
+            },
+            {
+              label: "Jacobi Medical Center",
+              fill: false,
+              backgroundColor: "#228AE6",
+              borderColor: "#228AE6",
+              borderWidth: 0,
+              hoverBackgroundColor: "#228AE6",
+              hoverBorderColor: "#eeeeee",
+              data: [1193,1172,1433.43,1159.78,3810.29,3855.93,3875,3958.41]
+            },
+            {
+              label: "Mount Sinai Hospital",
+              fill: false,
+              backgroundColor: "#F59F00",
+              borderColor: "#F59F00",
+              borderWidth: 0,
+              hoverBackgroundColor: "#F59F00",
+              hoverBorderColor: "#eeeeee",
+              data: [5499,6240,8421.38,7830.59,9896.75,10341.25,10748.21,11517.08]
+            },
+            {
+              label: "New York Presbyterian Hospital - Columbia Presbyterian Center",
+              fill: false,
+              backgroundColor: "#D05D4E",
+              borderColor: "#D05D4E",
+              borderWidth: 0,
+              hoverBackgroundColor: "#F59F00",
+              hoverBorderColor: "#eeeeee",
+              data: [8715,9406,10591.77,11636.2,13579.25,14930.9,16146.07,16597.77]
+            },
+            {
+              label: "New York Presbyterian Hospital - New York Weill Cornell Center",
+              fill: false,
+              backgroundColor: "#12B886",
+              borderColor: "#12B886",
+              borderWidth: 0,
+              hoverBackgroundColor: "#F59F00",
+              hoverBorderColor: "#eeeeee",
+              data: [6504,7233,7918.78,8595.58,10123.49,11206.33,14863.16,16995.14]
+            }
+          ]
+        },
+    options: {
+      tooltips: {
+        callbacks: {
+          label: function(tooltipItem, data) {
+            var datasetLabel = data.datasets[tooltipItem.datasetIndex].label || '';
+            return datasetLabel + ': '+'$' +data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US') + ' Max Profit';
+          }
+        }
+      },
+      scales: {
+        yAxes: [{
+          stacked: false,
+          ticks: {
+            beginAtZero:true,
+            callback: function(value) {
+              return '$' + value.toLocaleString('en-US');
+            }
+          }
+        }]
+      }
+    }
+  });
+</script>
+    </body>
+</html>

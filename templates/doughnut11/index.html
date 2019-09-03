@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Participatory Budget Funded Project Types</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
+
+    </head>
+    <body>
+
+
+<canvas id="doughnut2" width=auto height="250"></canvas>
+<script>
+
+Chart.defaults.global.responsive = true
+Chart.defaults.global.maintainAspectRatio = true
+//Chart.defaults.global.legend.display= true
+
+var ctx = document.getElementById("doughnut2");
+
+var myChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        labels: ["Education 59.7%","Arts, Culture & Community 9%","Parks & Recreation 8.2%","Transit 6.7%","Housing 6%","Public Safety 5.2%","Streets 2.2%","Environment 1.5%","Youth 1.5%"],
+        datasets: [{
+            label: 'Type of Projects Funded 2017',
+            backgroundColor:["#228AE6","#F59F00","#2F56A6","#CACACA","#12B886", "#BE4BDB","#A07952","#82C91E","#D05D4E",],
+            borderColor: "#eeeeee",
+            borderWidth: 1,
+            hoverBackgroundColor: "#9E9E9E",
+            hoverBorderColor: "#eeeeee",
+            data: [80,12,11,9,8,7,3,2,2]
+        }]
+    }
+    ,
+    options: {
+      tooltips: {
+          callbacks: {
+            label: function(tooltipItem, data) {
+              return data.labels[tooltipItem.index] + ': '+ data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+' Projects' ;
+            },
+          }
+      }
+    }
+
+
+});
+</script>
+    </body>
+</html>

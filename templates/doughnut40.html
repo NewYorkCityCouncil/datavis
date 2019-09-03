@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>ADA Accessibility Status of Station Platforms, 2019</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
+
+    </head>
+    <body>
+
+
+<canvas id="doughnut40" width=auto height=300></canvas>
+<script>
+Chart.defaults.global.title = true
+Chart.defaults.global.responsive = true
+Chart.defaults.global.maintainAspectRatio = true
+Chart.defaults.global.tooltips.backgroundColor="grey"
+Chart.defaults.global.legend.display = true
+Chart.defaults.global.legend.position = "bottom"
+Chart.defaults.global.legendfullWidth = false
+Chart.Legend.prototype.afterFit = function() {
+    this.height = this.height + 50;
+};
+
+var ctx = document.getElementById("doughnut40");
+var myChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        labels: ["Full Accessibility","Partial Accessibility","Construction in Progress","No ADA - No Funding Plans","No ADA - Under Consideration"],
+        datasets: [{
+            label: 'ADA Accessibility Status of Station Platforms, 2019',
+            backgroundColor:["#228AE6","#82C91E","#BE4BDB","#666666","#D05D4E"],
+            borderColor: "#eeeeee",
+            borderWidth: 1,
+            hoverBackgroundColor: "#9E9E9E",
+            hoverBorderColor: "#eeeeee",
+            data: [23.1,1.4,4.8,48.4,22.3]
+        }]
+    }
+    ,
+    options: {
+      tooltips: {
+          callbacks: {
+            label: function(tooltipItem, data) {
+              return data.labels[tooltipItem.index] + ': '+data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+'% of Stations';
+            },
+          }
+      },
+      legend: {
+        onClick: null,
+        labels: {
+                fontSize: 15,
+                fontFamily: "Open Sans",
+                boxWidth: 25,
+                fontStyle: "normal",
+                padding: 15,
+                fontColor: "#222222"
+                
+            } 
+    }
+    }
+});
+</script>
+    </body>
+</html>

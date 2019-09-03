@@ -1,0 +1,241 @@
+ <!doctype html>
+<html class="no-js"  lang="en-US">
+  <head>
+    <meta charset="utf-8">
+
+    <!-- Force IE to use the latest rendering engine available -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Mobile Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link rel="shortcut icon" href="http://labs.council.nyc/budget/wp-content/themes/wp-nycc/favicon.ico" />
+    <link rel='stylesheet' id='dashicons-css'  href='http://labs.council.nyc/budget/wp-includes/css/dashicons.min.css?ver=4.5.3' type='text/css' media='all' />
+    <link rel='stylesheet' id='site-css-css'  href='http://labs.council.nyc/budget/wp-content/themes/wp-nycc/assets/css/app.min.css?ver=4.5.3' type='text/css' media='all' />
+
+    <style>
+      /*
+        budget-explore styles
+      */
+      body {
+        background-color: white;
+      }
+
+      .block {
+        display: inline-block;
+        height: 44px;
+        width: 44px;
+        margin: 3px;
+        background-color: #2f56a6;
+        min-height: 0px;
+        min-width: 0px;
+        padding: 0;
+      }
+
+      .controls .button {
+        text-transform: uppercase;
+      }
+
+      #example-dropdown-1 {
+
+      }
+      .controls .menu {
+        text-transform: uppercase;
+      }
+      .button.hollow.succes.contractual-services {
+        background-color: #FF69B4
+
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <h1 class="image-overlay-text header-xxlarge not-all-classes-are-used">
+      The Budget Process
+    </h1>
+    <p class="image-overlay-text header-medium sans-serif">
+      New York City runs on billions of dollars. How public funds are distributed affects our city's operations, services, construction, and so much more.
+    </p>
+
+
+    <h4 class="widget-title">
+      Search the Budget
+    </h4>
+
+
+<!-- <button class="dropdown button" type="button" data-toggle="agency-dropdown">Agency</button>--> <!--  Creates Agency button - doesnt make it work though  - from Foundation-->
+
+
+
+  <div class="dropdown-pane agency-dropdown" id="agency-dropdown" data-dropdown data-hover="true" data-hover-pane="true">
+  <!--  <ul class="dropdown menu agency-dropdown__menu" data-dropdown-menu> --><!-- Populates Agency dropdown menue with items below -->
+<!--      <li><a href="#">Item 1A</a></li>-->
+    <!--</ul> -->
+  </div>
+
+
+<!-- <button class="dropdown button" type="button" data-toggle="type-dropdown">Use Type</button> --><!-- Creates Use Type button - doesnt make it work though -->
+
+<!-- <div class="dropdown-pane type-dropdown" id="type-dropdown" data-dropdown data-hover="true" data-hover-pane="true">
+   <ul class="menu vertical type-dropdown__menu"> Populates Use Type dropdown menue with items below -->
+<!--     <li><a href="#">Item 2A</a></li>
+        <li><a href="#">Item 2A</a></li>
+        <li><a href="#">Item 2A</a></li>
+        <li><a href="#">Item 2A</a></li>
+      </ul>
+ </div> -->
+
+
+    <!-- Outline of page -->
+    <p>
+      <h2>560 Blocks</h2>
+      <div class="controls"> <!-- Selector buttons for filtering go here -->
+        <h3>
+          Agencies
+        </h3>
+        <div class="js-agency-controls">  <!-- Selector buttons for agencies go here -->
+        </div>
+        <h3>
+          Uses
+        </h3>
+        <div class="js-use-controls"> <!-- Selector buttons for use types go here -->
+        </div>
+
+      </div>
+
+      <div class="js-blocks-selected hide js-grid-selected ">  <!-- Results of the budget items selected with the Selector buttons go here -->
+      </div>
+      <div class="js-blocks js-grid"> <!-- Results of the budget items not selected with the Selector buttons go here -->
+      </div>
+
+    </p>
+
+    <div style="height: 200px"></div>
+
+    <script type='text/javascript' src='http://labs.council.nyc/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+    <script type='text/javascript' src='http://labs.council.nyc/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+    <script type='text/javascript' src='http://labs.council.nyc/wp-content/themes/wp-nycc/assets/js/foundation.min.js?ver=6.2'></script>
+
+    <script src="https://unpkg.com/isotope-layout@3.0/dist/isotope.pkgd.min.js"></script>
+    <script src="./packery-mode.pkgd.min.js"></script>
+
+    <!-- Pulls in data from summary.js -->
+    <script src="./summary.js"></script>
+
+
+    <script>
+      function slugify(text){
+        return text.toString().toLowerCase()
+          .replace(/\s+/g, '-')           // Replace spaces with -
+          .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
+          .replace(/\-\-+/g, '-')         // Replace multiple - with single -
+          .replace(/^-+/, '')             // Trim - from start of text
+          .replace(/-+$/, '');            // Trim - from end of text
+      }
+
+      jQuery( document ).ready(function() {
+        var n = budgetSummary.aspects.rows.length;
+        var $ = jQuery;
+        var maxSize = 175;
+        var x = 14442947100 / (maxSize*maxSize);
+
+        budgetSummary.aspects.rows.forEach(function(row){
+          var agencySlug = slugify(row.key[0]); // make Classes (0) tidy and create new variable for Agency
+          var classSlug = slugify(row.key[1]); // make Agency (1) tidy and create new variable for Class
+
+          //Drawing BLOCKS of BUDGET ITEMS
+          var size = Math.sqrt(row.value / x); // size of blocks determined by equation with budget amount
+          if(size < 1) {
+            size = 1;
+          }
+          $('.js-blocks-selected').append( '<div style="width:'+size+'px; height:'+size+'px;" class="block button success '+agencySlug+' '+classSlug+'" data-amount="'+row.value+'" data-amount-desc="'+(-1*row.value)+'"></div>'); //If filter items selected above, show budget item blocks filled in
+          $('.js-blocks').append( '<div style="width:'+size+'px; height:'+size+'px;" class="block button success hollow '+agencySlug+' '+classSlug+'" data-amount="'+row.value+'" data-amount-desc="'+(-1*row.value)+'"></div>'); // For filter items not selected above, show hollow budget items
+        });
+
+
+
+        //Drawing BUTTONS and DROPDOWN for FILTERING
+        $('.js-agency-controls').append( '<button class="dropdown button" type="button" data-toggle="agency-dropdown">Agency</button> ');
+        for (var agencyName in budgetSummary.agencies) {
+          if (budgetSummary.agencies.hasOwnProperty(agencyName)) { //Compatibility
+             $('.dropdown-pane').append( '<ul class="dropdown menu agency-dropdown__menu" data-dropdown-menu><li class="button hollow" type="button" data-filter=".'+slugify(agencyName)+'">'+agencyName+'</li></ul>');
+           } // Create buttons for each Agency for filtering - Foundation determines button type, Isotope determines filtering
+        }
+
+        for (var className in budgetSummary.classes) {
+          if (budgetSummary.classes.hasOwnProperty(className)) {
+            $('.js-use-controls').append( '<div class="button hollow" type="button" data-filter=".'+slugify(className)+'">'+className+'</div> ');
+          } // Create hollow buttons for each budget class for filtering
+        }
+
+
+        // init Isotope
+
+        var isotopeOptions = {
+          itemSelector: '.block',
+          layoutMode: 'packery',
+          getSortData: {
+            amount: '[data-amount-desc] parseInt'
+          }
+        };
+
+        var $gridSelected = $('.js-grid-selected');
+        $gridSelected.isotope(isotopeOptions);
+        $gridSelected.isotope({ sortBy: 'amount' });
+
+
+        var $grid = $('.js-grid');
+        $grid.isotope(isotopeOptions);
+        $grid.isotope({ sortBy: 'amount' });
+
+
+        // bind filter DROPDOWN click
+        $('#agency-dropdown').on( 'click', 'li', function() {
+          $('.js-grid-selected').removeClass('hide');
+
+          var filterValue = $( this ).attr('data-filter');
+          // use filterFn if matches value
+          // filterValue = filterFns[ filterValue ] || filterValue;
+          $gridSelected.isotope({ filter: filterValue });
+          $grid.isotope({ filter: ':not('+filterValue+')' });
+        });
+
+        // bind filter BUTTON click
+        $('.controls').on( 'click', '.button', function() {
+          $('.js-grid-selected').removeClass('hide');
+
+          var filterValueB = $( this ).attr('data-filter');
+          // use filterFn if matches value
+          // filterValue = filterFns[ filterValue ] || filterValue;
+          $gridSelected.isotope({ filter: filterValueB });
+          $grid.isotope({ filter: ':not('+filterValueB+')' });
+        });
+
+        // change is-checked class on DROPDOWN
+        $('#agency-dropdown').each( function( i, buttonGroup ) {
+          var $buttonGroup = $( buttonGroup );
+          $buttonGroup.on( 'click', 'li', function() {
+            $buttonGroup.find('li').addClass('hollow');
+            $( this ).removeClass('hollow');
+          });
+        });
+
+        // change is-checked class on BUTTONS
+        $('.controls').each( function( i, buttonGroup ) {
+          var $buttonGroup = $( buttonGroup );
+          $buttonGroup.on( 'click', '.button', function() {
+            $buttonGroup.find('.button').addClass('hollow');
+            $( this ).removeClass('hollow');
+          });
+        });
+
+        jQuery(document).foundation();
+
+      });
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>NYC Budget by Type FY2017</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
+
+    </head>
+    <body>
+
+
+<canvas id="barhorizontal2" width=auto max-height="400"></canvas>
+<script>
+
+Chart.defaults.global.responsive = true
+Chart.defaults.global.legend.display= false
+Chart.defaults.global.maintainAspectRatio = true
+
+
+
+Chart.defaults.scale = {
+		display: true,
+		position: "left",
+
+		// grid line settings
+		gridLines: {
+			display: false,
+			color: "rgba(0, 0, 0, 0.1)",
+			lineWidth: 1,
+			drawBorder: true,
+			drawOnChartArea: true,
+			drawTicks: true,
+			tickMarkLength: 10,
+			zeroLineWidth: 1,
+			zeroLineColor: "rgba(0,0,0,0.25)",
+			offsetGridLines: false
+		},
+
+		// scale label
+		scaleLabel: {
+			// actual label
+			labelString: '',
+
+			// display property
+			display: false
+		},
+
+		// label settings
+		ticks: {
+			beginAtZero: false,
+			minRotation: 0,
+			maxRotation: 50,
+			mirror: false,
+			padding: 10,
+			reverse: false,
+			display: true,
+			autoSkip: false,
+			autoSkipPadding: 0,
+			labelOffset: 0,
+			callback: function(value) {
+				return '' + value;
+			}
+		}
+	};
+
+// Chart.defaults.global.defaultFontSize = 10
+
+var ctx = document.getElementById("barhorizontal2");
+
+var myChart = new Chart(ctx, {
+    type: 'horizontalBar',
+    data: {
+        labels: [
+                  "Education",
+                  "Social Services & Children's Services",
+                  "Public Safety",
+                  "Fire and Criminal Justice Services",
+                  "Housing and Buildings",
+                  "Health",
+                  "Sanitation and Solid Waste",
+                  "Governmental Operations",
+                  "Water and Sewers",
+                  "Higher Education",
+                  "Transportation",
+                  "Youth Services",
+                  "Technology",
+                  "Parks and Recreation",
+                  "Design and Construction",
+                  "Finance",
+                  "Libraries",
+                  "Aging",
+                  "Economic Development",
+                  "Elected Officials",
+                  "Cultural Affairs",
+                  "Land Use",
+                  "Oversight and Investigation",
+                  "Consumer Affairs",
+                  "Courts and Legal Services",
+                  "Civil Rights",
+                  "Veterans",
+                  "Civil Service and Labor",
+                  "Standards and Ethics"
+                ],
+        datasets: [{
+            label: 'Types of Spending in FY 2017 Budget',
+            backgroundColor:["#d05d4e","#E07B3B","#EF9929","#FFB716","#C0B332","#82B04E","#43AC6A","#7CBC50","#B6CB37","#EFDB1D","#AFAF4B","#6F8278","#2f56a6","#4960BB","#6469D0","#7E73E5","#8A65CA","#9657AE","#A24993","#A1597D","#A16968","#A07952","#d05d4e","#E07B3B","#EF9929","#FFB716","#C0B332","#82B04E","#43AC6A","#7CBC50","#B6CB37","#EFDB1D","#AFAF4B","#6F8278","#2f56a6","#4960BB","#6469D0","#7E73E5","#8A65CA","#9657AE","#A24993","#A1597D","#A16968","#A07952"],
+            borderColor: "#eeeeee",
+            borderWidth: 1,
+            hoverBackgroundColor: "#9E9E9E",
+            hoverBorderColor: "#eeeeee",
+            data: [22221407407,9935098199,5539622673,3500775026,2741944591,1868329029,1686025223,1685328755,1450100597,1054957409,1016874016,727487333,626672290,506375457,478731799,405406183,365103827,330888838,236366512,232351795,181774411,52584395,46705582,40598082,39537383,12574328,3843222,3507019,2561120]
+        }]
+    },
+    options: {
+      scales:{
+        xAxes: [{
+          display: true,
+          ticks: {
+            beginAtZero: true,
+            callback: function(value) {
+              return '$' + value.toLocaleString('en-US');
+            }
+          }
+        }],
+        yAxes: [{
+          display: true,
+          ticks: {
+            beginAtZero: true,
+          }
+        }]
+      },
+      tooltips: {
+        callbacks: {
+          label: function(tooltipItem, data) {
+            return '$' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US');
+          },
+        }
+      }
+    }
+
+});
+</script>
+    </body>
+</html>

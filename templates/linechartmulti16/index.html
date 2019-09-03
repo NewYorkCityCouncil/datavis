@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Bus Breakdown Delays Sept 2015-Sept 20218</title>
+
+  <!--   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>-->
+           <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.5/chartjs-plugin-annotation.js'></script>
+        <script src='https://cdn.rawgit.com/chartjs/Chart.js/master/samples/utils.js'></script>
+    </head>
+    <body>
+
+
+<canvas id="linechart14" width=auto max-height="400"></canvas>
+<script>
+
+Chart.defaults.global.responsive = true,
+Chart.defaults.global.tooltips.backgroundColor="grey",
+Chart.defaults.global.maintainAspectRatio = true,
+Chart.defaults.global.legend = false
+
+
+var ctx = document.getElementById("linechart14");
+
+var myChart = new Chart(ctx, {
+    type: 'line',
+    fill: true,
+    data: {
+        labels: ["Sep 2015","Oct 2015","Nov 2015","Dec 2015","Jan 2016","Feb 2016","Mar 2016","Apr 2016","May 2016","Jun 2016","Sep 2016","Oct 2016","Nov 2016","Dec 2016","Jan 2017","Feb 2017","Mar 2017","Apr 2017","May 2017","Jun 2017","Sep 2017","Oct 2017","Nov 2017","Dec 2017","Jan 2018","Feb 2018","Mar 2018","Apr 2018","May 2018","Jun 2018","Sep 2018"],
+        datasets: [
+            {
+              label: "Problematic Route",
+              fill: false,
+              pointBackgroundColor: ['red', "#BE4BDB", "#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB",'red',"#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB",'red',"#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB",'red'],
+              pointBorderColor:['red', "#BE4BDB", "#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB",'red',"#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB",'red',"#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB",'red'],
+              backgroundColor: "#BE4BDB",
+              borderColor: "#BE4BDB",
+              borderWidth: 0,
+              hoverBackgroundColor: "#BE4BDB",
+              hoverBorderColor: "#eeeeee",
+              data: [14,11,2,3,7,12,5,3,3,3,21,15,8,4,5,4,2,1,1,0,9,10,6,4,3,2,2,2,2,0,14]
+            },
+            {
+              label: "Problematic Route Trend",
+              fill: false,
+              pointRadius: 1,
+              backgroundColor: "#DEA5ED",
+              borderColor: "#DEA5ED",
+              borderWidth: 0,
+              hoverBackgroundColor: "#DEA5ED",
+              hoverBorderColor: "#eeeeee",
+              lineTension: 0,
+              data: [7,7,7,7,7,7,7,7,7,7,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,5]
+            }
+            /*,
+            {
+              label: "Expected Delay Times",
+              fill: false,
+              pointRadius: 1,
+              backgroundColor: "#DEA5ED",
+              borderColor: "#DEA5ED",
+              borderWidth: 0,
+              hoverBackgroundColor: "#DEA5ED",
+              hoverBorderColor: "#eeeeee",
+              borderDash: [10,5],
+              lineTension: 0,
+              data: [79,80,81,82,83,84,85,86,87,89,92,93,94,95,96,97,98,99,100,101,105,106,107,108,109,110,111,112,113,114,118]
+            },
+            {
+              label: "Expected Delay Times",
+              fill: false,
+              pointRadius: 1,
+              backgroundColor: "#DEA5ED",
+              borderColor: "#DEA5ED",
+              borderWidth: 0,
+              hoverBackgroundColor: "#DEA5ED",
+              hoverBorderColor: "#eeeeee",
+              borderDash: [10,5],
+              lineTension: 0,
+              data: [44,45,46,47,48,50,51,52,53,54,57,58,59,60,61,62,63,65,66,67,70,71,72,73,74,75,76,77,78,80,83]
+            }*/
+
+          ]
+        },
+    options: {
+      tooltips: {
+        callbacks: {
+          label: function(tooltipItem, data) {
+            var datasetLabel = data.datasets[tooltipItem.datasetIndex].label || '';
+            return datasetLabel + ': ' +data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US') + ' Delays';
+          }
+        }
+      },
+      scales: {
+        yAxes: [{
+          stacked: false,
+          ticks: {
+            beginAtZero:true,
+            max: 25,
+            callback: function(value) {
+              return + value.toLocaleString('en-US') + ' Delays';
+            }
+          }
+        }],
+        xAxes:[{
+          drawTicks: true,
+        }]
+      },
+     annotation: {
+        events: ["click"],
+        annotations: [
+          {
+            drawTime: "beforeDatasetsDraw",
+            type: "box",
+            xScaleID: "x-axis-0",
+            yScaleID: "y-axis-0",
+            xMin: "Sep 2015",
+            xMax: "Jun 2016",
+            yMin: 0,
+            yMax: 25,
+            backgroundColor: "rgba(230, 230, 230, 0.5)",
+            borderColor: "rgb(230, 230, 230)",
+            borderWidth: 1,
+            onClick: function(e) {
+              console.log("Box", e.type, this);
+            }
+          },
+          {
+            drawTime: "beforeDatasetsDraw",
+            type: "box",
+            xScaleID: "x-axis-0",
+            yScaleID: "y-axis-0",
+            xMin: "Sep 2016",
+            xMax: "Jun 2017",
+            yMin: 0,
+            yMax: 25,
+            backgroundColor: "rgba(230, 230, 230, 0.5)",
+            borderColor: "rgb(230, 230, 230)",
+            borderWidth: 1,
+            onClick: function(e) {
+              console.log("Box", e.type, this);
+            }
+          },
+          {
+            drawTime: "beforeDatasetsDraw",
+            type: "box",
+            xScaleID: "x-axis-0",
+            yScaleID: "y-axis-0",
+            xMin: "Sep 2017",
+            xMax: "Jun 2018",
+            yMin: 0,
+            yMax: 25,
+            backgroundColor: "rgba(230, 230, 230, 0.5)",
+            borderColor: "rgb(230, 230, 230)",
+            borderWidth: 1,
+            onClick: function(e) {
+              console.log("Box", e.type, this);
+            }
+          },
+          {
+            drawTime: "beforeDatasetsDraw",
+            type: "box",
+            xScaleID: "x-axis-0",
+            yScaleID: "y-axis-0",
+            xMin: "Sep 2018",
+            xMax: "Oct 2018",
+            yMin: 0,
+            yMax: 25,
+            backgroundColor: "rgba(230, 230, 230, 0.5)",
+            borderColor: "rgb(230, 230, 230)",
+            borderWidth: 1,
+            onClick: function(e) {
+              console.log("Box", e.type, this);
+            }
+          },
+
+        ]
+      }
+
+    }
+  });
+</script>
+    </body>
+</html>

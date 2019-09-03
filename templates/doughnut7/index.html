@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Adopted Revenue Budget FY2017</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
+
+    </head>
+    <body>
+
+
+<canvas id="doughnut7" width="400" height="400"></canvas>
+<script>
+
+Chart.defaults.global.responsive = true
+Chart.defaults.global.maintainAspectRatio = true
+Chart.defaults.global.legend.display = false
+Chart.defaults.global.tooltips.bodyFontSize = 12
+Chart.defaults.global.tooltips.fontFamily = 'open sans'
+
+
+
+
+
+var ctx = document.getElementById("doughnut7");
+
+var myChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        labels: [
+          "Property Tax",
+          "State Grants",
+          "Income Tax",
+          "Federal Grants",
+          "Sales Tax",
+          "Corp Tax",
+          "Unincorporated Business Tax",
+          "Real Property Transfer Tax",
+          "Water and Sewer Charges",
+          "Other Tax",
+          "Mortgage Recording Tax",
+          "Charges for Services",
+          "Fines and Forfeitures",
+          "Other Categorical Grants",
+          "Commercial Occupancy Tax",
+          "Tax Audit Revenues Tax",
+          "Licenses, Franchises, etc",
+          "Transfers from Capital Budget",
+          "Hotel Tax",
+          "Miscellaneous",
+          "Utility Tax",
+          "Rental Income",
+          "Interest Income",
+          "Cigarette Tax",
+                ],
+        datasets: [{
+            label: 'FY17 Adopted Budget',
+            backgroundColor:["#BE4BDB","#FFE952","#BE4BDB","#FFF293","#BE4BDB","#C661DF","#C661DF","#C661DF","#CE78E4","#CE78E4","#CE78E4","#D68EE8","#D68EE8","#D68EE8","#DEA5ED","#DEA5ED","#DEA5ED","#E6BBF1","#E6BBF1","#E6BBF1","#EED2F6","#EED2F6","#EED2F6","#F6E8FA"],
+            borderColor: "#eeeeee",
+            borderWidth: 1,
+            hoverBackgroundColor: "#9E9E9E",
+            hoverBorderColor: "#eeeeee",
+            data: [29.252,16.647,13.667,9.342,8.664,4.808,2.508,1.897,1.737,1.390,1.321,1.184,1.102,1.039,0.980,0.869,0.799,0.786,0.659,0.493,0.464,0.264,0.075,0.052]
+            }]
+    },
+    options: {
+      tooltips: {
+          callbacks: {
+            label: function(tooltipItem, data) {
+              return data.labels[tooltipItem.index] + ': ' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] + '%';
+            },
+          }
+      }
+    }
+
+});
+</script>
+    </body>
+</html>

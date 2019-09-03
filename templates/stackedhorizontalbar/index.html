@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Participatory Budgeting 2017 and 2016</title>
+        <!--source https://jsfiddle.net/b7gnron7/4/-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+    </head>
+    <body>
+
+
+<canvas id="stackedhorizontalbar" width="100" max-height="1000"></canvas>
+<script>
+
+Chart.defaults.global.responsive = true
+Chart.defaults.global.legend.display= true
+Chart.defaults.global.maintainAspectRatio = true
+
+Chart.defaults.groupableHBar = Chart.helpers.clone(Chart.defaults.horizontalBar);
+
+Chart.controllers.groupableHBar = Chart.controllers.horizontalBar.extend({
+    calculateBarY: function(index, datasetIndex, ruler) {
+        var me = this;
+        var meta = me.getMeta();
+        var yScale = me.getScaleForId(meta.yAxisID);
+        var barIndex = me.getBarIndex(datasetIndex);
+        var topTick = yScale.getPixelForValue(null, index, datasetIndex, me.chart.isCombo);
+        topTick -= me.chart.isCombo ? (ruler.tickHeight / 2) : 0;
+        var stackIndex = this.getMeta().stackIndex;
+
+     if (yScale.options.stacked) {
+            if(ruler.datasetCount>1) {
+                var spBar=ruler.categorySpacing/ruler.datasetCount;
+                var h=me.calculateBarHeight(ruler);
+
+                return topTick + (((ruler.categoryHeight - h) / 2)+ruler.categorySpacing-spBar/2)+(h+spBar)*stackIndex;
+            }
+            return topTick + (ruler.categoryHeight / 2) + ruler.categorySpacing;
+
+        }
+
+        return topTick +
+            (ruler.barHeight / 2) +
+            ruler.categorySpacing +
+            (ruler.barHeight * barIndex) +
+            (ruler.barSpacing / 2) +
+            (ruler.barSpacing * barIndex);
+    },
+    calculateBarHeight: function(ruler) {
+        var returned=0;
+        var me = this;
+        var yScale = me.getScaleForId(me.getMeta().yAxisID);
+        if (yScale.options.barThickness) {
+            returned = yScale.options.barThickness;
+        }
+        else {
+            returned= yScale.options.stacked ? ruler.categoryHeight : ruler.barHeight;
+        }
+        if(ruler.datasetCount>1) {
+            returned=returned/ruler.datasetCount;
+        }
+        return returned;
+    },
+    getBarCount: function () {
+        var stacks = [];
+
+        // put the stack index in the dataset meta
+        Chart.helpers.each(this.chart.data.datasets, function (dataset, datasetIndex) {
+            var meta = this.chart.getDatasetMeta(datasetIndex);
+            if (meta.bar && this.chart.isDatasetVisible(datasetIndex)) {
+                var stackIndex = stacks.indexOf(dataset.stack);
+                if (stackIndex === -1) {
+                    stackIndex = stacks.length;
+                    stacks.push(dataset.stack);
+                }
+                meta.stackIndex = stackIndex;
+            }
+        }, this);
+
+        this.getMeta().stacks = stacks;
+
+        return stacks.length;
+    }
+});
+
+
+
+
+var data = {
+  labels: [
+    "District 03, Corey Johnson",
+    "District 05, Ben Kallos",
+    "District 06, Helen Rosenthal",
+    "District 07, Mark Levine",
+    "District 08, Melissa Mark-Viverito",
+    "District 10, Ydanis Rodriguez",
+    "District 11, Andy Cohen",
+    "District 15, Ritchie Torres",
+    "District 16, Vanessa Gibson",
+    "District 17, Rafael Salamanca",
+    "District 19, Paul Vallone",
+    "District 21, Julissa Ferreras-Copeland",
+    "District 22, Costa Constantinides",
+    "District 23, Barry Grodenchik",
+    "District 26, Jimmy Van Bramer",
+    "District 27, I. Daneek Miller",
+    "District 29, Karen Koslowitz",
+    "District 30, Elizabeth Crowley",
+    "District 31, Donovan Richards",
+    "Distrcit 32, Eric Ulrich",
+    "District 33, Stephen Levin",
+    "District 34, Antonio Reynoso",
+    "District 35, Laurie Cumbo",
+    "District 36, Robert Cornegy",
+    "District 38, Carlos Menchaca",
+    "District 39, Brad Lander",
+    "District 39, Brad Lander- Programming ",
+    "District 40, Matthieu Eugene",
+    "District 44, David Greenfield",
+    "District 45, Jumaane Williams",
+    "District 47, Mark Treyger",
+    "District 49, Deborah Rose",
+          ],
+  datasets: [
+    {
+      label: '2016 Ballots (all paper)',
+      backgroundColor:"#BE4BDB",
+      borderColor: "#eeeeee",
+      borderWidth: 1,
+      hoverBackgroundColor: "#9E9E9E",
+      hoverBorderColor: "#eeeeee",
+      data: [2072,1996,2167,1870,4006,2274,1750,2919,0,0,4503,1873,1710,1112,3508,1722,1449,2486,3329,916,1554,5970,1660,684,6320,3100,2997,984,2363,1918,1475,0],
+      stack: 1,
+      xAxisID: 'x-axis-0',
+      yAxisID: 'y-axis-0'
+    },
+    {
+      label: '2017 Paper Ballots',
+      backgroundColor:"#1a1b8d",
+      borderColor: "#eeeeee",
+      borderWidth: 1,
+      hoverBackgroundColor: "#9E9E9E",
+      hoverBorderColor: "#eeeeee",
+      data: [1914,508,905,1084,3591,2722,1558,3812,1333,841,4654,2730,2133,1033,4048,1695,1484,2081,4407,0,1212,5772,1241,1648,7050,2505,2479,801,2,846,2922,482],
+      stack: 2,
+      xAxisID: 'x-axis-1',
+      yAxisID: 'y-axis-0'
+    },
+    {
+      label: '2017 Digtal Ballots',
+      backgroundColor:"#04d418",
+      borderColor: "#eeeeee",
+      borderWidth: 1,
+      hoverBackgroundColor: "#9E9E9E",
+      hoverBorderColor: "#eeeeee",
+      data: [1604,1913,2206,791,718,807,679,87,123,164,1560,110,1484,979,1077,177,1018,326,392,0,2577,804,1502,976,1071,4651,2408,1075,279,570,88,606],
+      stack: 2,
+      xAxisID: 'x-axis-1',
+      yAxisID: 'y-axis-0'
+
+    },
+    {
+      label: '2017 Invalid Ballots',
+      backgroundColor:"#fa60a1",
+      borderColor: "#eeeeee",
+      borderWidth: 1,
+      hoverBackgroundColor: "#9E9E9E",
+      hoverBorderColor: "#eeeeee",
+      data: [50,5,14,54,142,109,52,520,99,43,61,151,65,23,105,32,33,36,187,0,32,100,63,32,241,41,102,31,0,9,31,22],
+      stack: 2,
+      xAxisID: 'x-axis-1',
+      yAxisID: 'y-axis-0'
+    }
+  ]
+};
+
+var ctx = document.getElementById("stackedhorizontalbar").getContext("2d");
+new Chart(ctx, {
+  type: 'groupableHBar',
+  data: data,
+  options: {
+    scales: {
+      yAxes: [{
+        stacked: true,
+        type: 'category',
+        id: 'y-axis-0'
+      }],
+      xAxes: [{
+        stacked: true,
+        type: 'linear',
+        ticks: {
+          beginAtZero:true
+        },
+        gridLines: {
+          display: false,
+          drawTicks: true,
+        },
+        id: 'x-axis-0'
+      },
+      {
+        stacked: true,
+        position: 'top',
+        type: 'linear',
+        ticks: {
+          beginAtZero:true
+        },
+        id: 'x-axis-1',
+        gridLines: {
+          display: false,
+          drawTicks: true,
+        },
+        display: false
+      }]
+    }
+  }
+});
+</script>
+    </body>
+</html>

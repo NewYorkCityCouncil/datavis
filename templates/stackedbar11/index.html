@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Personal Spending and Other Than Personal Spending, FY 2016 - FY 2022</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
+
+    </head>
+    <body>
+
+<canvas id="stackedbar11" width="400" height="400"></canvas>
+<script>
+
+Chart.defaults.global.responsive = true
+Chart.defaults.global.tooltips.backgroundColor="grey"
+Chart.defaults.global.maintainAspectRatio = true
+
+
+var ctx = document.getElementById("stackedbar11");
+
+var myChart = new Chart(ctx, {
+    type: 'bar',
+
+    data: {
+        labels: [
+              "FY 2015",
+              "FY 2016",
+              "FY 2017",
+              "FY 2018 Adopted",
+              "FY 2019 (Plan)",
+              "FY 2020 (Plan)",
+              "FY 2021 (Plan)",
+              "FY 2022 (Plan)"
+            ],
+        datasets: [
+          {
+            label: 'Personal Services',
+            backgroundColor:"#228AE6",
+            borderColor: "#eeeeee",
+            borderWidth: 0,
+            hoverBackgroundColor: "#228AE6",
+            hoverBorderColor: "#eeeeee",
+            data: [44167,45038,46533,46835,49051,50714,52033,52558]
+          },
+          {
+            label: 'Other Than Personal Services',
+            backgroundColor: "#F59F00",
+            borderColor: "#eeeeee",
+            borderWidth: 0,
+            hoverBackgroundColor: "#F59F00",
+            hoverBorderColor: "#eeeeee",
+            data: [34815,36978,37462,37621,35617,35999,35842,36173]
+          }
+      ]
+    },
+ options: {
+   tooltips: {
+     callbacks: {
+       label: function(tooltipItem, data) {
+         return '$'+ data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ ' Million';
+       }
+     }
+   },
+
+        scales: {
+            yAxes: [{
+                stacked: true,
+                ticks: {
+                    beginAtZero:true,
+                    callback: function(value) {
+                      return '$'+value.toLocaleString('en-US')+ ' Million';
+                    }
+                }
+            }],
+            xAxes: [{
+                stacked: true
+            }]
+        }
+
+    }
+
+});
+</script>
+    </body>
+</html>

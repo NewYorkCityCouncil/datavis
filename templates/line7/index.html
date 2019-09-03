@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>New York City Unemployment</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
+
+    </head>
+    <body>
+
+
+<canvas id="line7" width=auto max-height="400"></canvas>
+<script>
+
+Chart.defaults.global.responsive = true
+Chart.defaults.global.tooltips.backgroundColor="grey"
+Chart.defaults.global.maintainAspectRatio = true
+Chart.defaults.global.legend = false
+
+var ctx = document.getElementById("line7");
+
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ["2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017"],
+        datasets: [{
+            label: 'New York City Unemployment',
+            fill: false,
+            lineTension: .5,
+            backgroundColor:"#BE4BDB",
+            borderColor: "#BE4BDB",
+            borderWidth: 3,
+            borderCapStyle: 'butt',
+            borderDash: [],
+            borderDashOffset: 0.0,
+            borderJoinStyle: 'miter',
+            pointBorderColor: "#23417D",
+            pointBackgroundColor: "#23417D",
+            pointBorderWidth: 5,
+            pointHoverRadius: 6,
+            pointHoverBackgroundColor: "#BE4BDB",
+            pointHoverBorderColor: "#BE4BDB",
+            pointHoverBorderWidth: 2,
+            pointRadius: 3,
+            pointHitRadius: 4,
+            hoverBackgroundColor: "#9E9E9E",
+            hoverBorderColor: "#eeeeee",
+            data: [5.1,5.7,9.4,9.5,9.1,9.3,8.7,7.2,5.7,5.2,4.2]
+        }]
+
+    },
+    options: {
+      tooltips: {
+        callbacks: {
+          label: function(tooltipItem, data) {
+            var datasetLabel = data.datasets[tooltipItem.datasetIndex].label || '';
+            return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ '%'  ;
+          }
+        }
+      },
+      scales: {
+        yAxes: [{
+          stacked: false,
+          ticks: {
+            beginAtZero:true,
+            callback: function(value) {
+              return value.toLocaleString('en-US')+'%' ;
+            }
+          }
+        }]
+      }
+
+    }
+
+});
+</script>
+    </body>
+</html>

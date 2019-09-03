@@ -1,0 +1,456 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Scatter Chart</title>
+    <script src="../zoomtest/node_modules/chart.js/dist/Chart.bundle.js"></script>
+    <script src="../zoomtest/node_modules/hammerjs/hammer.min.js"></script>
+    <script src="../zoomtest/Chart.Zoom.js"></script>
+    <style>
+    canvas {
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+    }
+    </style>
+</head>
+
+<body>
+    <div style="width:75%">
+        <div>
+            <canvas id="canvas"></canvas>
+        </div>
+    </div>
+    <script>
+        var randomScalingFactor = function() {
+            return (Math.random() > 0.5 ? 1.0 : -1.0) * Math.round(Math.random() * 100);
+        };
+        var randomColor = function(opacity) {
+            return 'rgba(' + Math.round(Math.random() * 255) + ',' + Math.round(Math.random() * 255) + ',' + Math.round(Math.random() * 255) + ',' + (opacity || '.3') + ')';
+        };
+
+        var scatterChartData = {
+          type: 'line',
+          data: {
+            labels: ["2002","2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017"], // Date Objects
+            datasets: [
+              {
+                label: "Education",
+                fill: false,
+                backgroundColor: "#228ae6",
+                borderColor: "#228ae6",
+                borderWidth: 1,
+                pointHoverBackgroundColor: "#228ae6",
+                pointHoverBorderColor: "#228ae6",
+                pointHoverBorderWidth: 1,
+                data: [11883255000,12780991000,13148112000,13871184000,14959318000,15884401000,16977034000,17903053000,18498505000,18938899000,19283256000,19232415000,20085287000,20999365000,22242644000,23189540000]
+              },
+              {
+                label: "Social Services & Children's Services",
+                fill: false,
+                backgroundColor: "#E07B3B",
+                borderColor: "#E07B3B",
+                borderWidth: 1,
+                pointHoverBackgroundColor: "#E07B3B",
+                pointHoverBorderColor: "#E07B3B",
+                pointHoverBorderWidth: 1,
+                data: [8347708000,8505253000,8904872000,9487708000,9262407000,10183828000,11536413000,11172015000,11359815000,10829556000,12245753000,12318806000,12316547000,12597884000,12349652000,12740847000]
+              },
+              {
+                label: "Miscellaneous",
+                fill: false,
+                backgroundColor: "#A07952",
+                borderColor: "#A07952",
+                borderWidth: 1,
+                pointHoverBackgroundColor: "#A07952",
+                pointHoverBorderColor: "#A07952",
+                pointHoverBorderWidth: 1,
+                data: [4186973000,4485430000,4578809000,6342446000,6270142000,7054203000,6034401000,6169380000,6237230000,6244642000,6137716000,6316892000,10522242000,9644715000,9123072000,9704495000]
+              },
+              {
+                label: "Pension Contributions",
+                fill: false,
+                backgroundColor: "#607D8B",
+                borderColor: "#607D8B",
+                borderWidth: 1,
+                pointHoverBackgroundColor: "#607D8B",
+                pointHoverBorderColor: "#607D8B",
+                pointHoverBorderWidth: 1,
+                data: [1491901000,1750586000,2444470000,3369832000,4014955000,4856280000,5740554000,6389179000,6755590000,6999833000,7954705000,8178550000,8265364000,8616325000,9285222000,9422235000]
+              },
+              {
+                label: "Debt Service",
+                fill: false,
+                backgroundColor: "#A07952",
+                borderColor: "#A07952",
+                borderWidth: 1,
+                pointHoverBackgroundColor: "#A07952",
+                pointHoverBorderColor: "#A07952",
+                pointHoverBorderWidth: 1,
+                data: [3816087000,3257842000,4151854000,4135979000,4325659000,4503878000,4800791000,4691385000,5004103000,4939842000,5436851000,5761198000,5572467000,5924555000,5913264000,6578997000]
+              },
+              {
+                label: "Public Safety",
+                fill: false,
+                backgroundColor: "#E07B3B",
+                borderColor: "#E07B3B",
+                borderWidth: 1,
+                pointHoverBackgroundColor: "#E07B3B",
+                pointHoverBorderColor: "#E07B3B",
+                pointHoverBorderWidth: 1,
+                data: [3988583000,3853833000,3846155000,4173395000,4072989000,4149954000,4458382000,4784816000,4995971000,5130602000,5196110000,5227566000,5246831000,5514901000,5913651000,5539623000]
+              },
+              {
+                label: "Fire and Criminal Justice Services",
+                fill: false,
+                backgroundColor: "#228ae6",
+                borderColor: "#228ae6",
+                borderWidth: 1,
+                pointHoverBackgroundColor: "#228ae6",
+                pointHoverBorderColor: "#228ae6",
+                pointHoverBorderWidth: 1,
+                data: [2242830000,2157539000,2103909000,2133988000,2404429000,2489873000,2586326000,2705000000,2792214000,2894430000,2939079000,3047454000,3100295000,3180752000,3523602000,3500777000]
+              },
+              {
+                label: "Housing and Buildings",
+                fill: false,
+                backgroundColor: "#E07B3B",
+                borderColor: "#E07B3B",
+                borderWidth: 1,
+                pointHoverBackgroundColor: "#E07B3B",
+                pointHoverBorderColor: "#E07B3B",
+                pointHoverBorderWidth: 1,
+                data: [1004767000,1080182000,1150299000,1260786000,1350142000,1395946000,1482937000,1663212000,1771424000,1823584000,1726926000,1762007000,1831933000,1996902000,2515456000,2741944000]
+              },
+              {
+                label: "Health",
+                fill: false,
+                backgroundColor: "#228ae6",
+                borderColor: "#228ae6",
+                borderWidth: 1,
+                pointHoverBackgroundColor: "#228ae6",
+                pointHoverBorderColor: "#228ae6",
+                pointHoverBorderWidth: 1,
+                data: [2621704000,2343470000,2417456000,2568893000,3100160000,2371993000,1843758000,1916778000,1881062000,1811308000,1777113000,2013196000,1760259000,1830688000,2457175000,2268331000]
+              },
+              {
+                label: "Sanitation and Solid Waste",
+                fill: false,
+                backgroundColor: "#E07B3B",
+                borderColor: "#E07B3B",
+                borderWidth: 1,
+                pointHoverBackgroundColor: "#E07B3B",
+                pointHoverBorderColor: "#E07B3B",
+                pointHoverBorderWidth: 1,
+                data: [1008091000,996124000,1002384000,1039762000,1099851000,1178586000,1250163000,1264487000,1308124000,1415234000,1288012000,1376763000,1421481000,1485477000,1541654000,1686026000]
+              },
+              {
+                label: "Governmental Operations",
+                fill: false,
+                backgroundColor: "#228ae6",
+                borderColor: "#228ae6",
+                borderWidth: 1,
+                pointHoverBackgroundColor: "#228ae6",
+                pointHoverBorderColor: "#228ae6",
+                pointHoverBorderWidth: 1,
+                data: [911387000,908072000,941320000,1012898000,1157879000,1223064000,1302929000,1410328000,1464475000,1509826000,1469506000,1560490000,1655180000,1575506000,1628171000,1685328000]
+              },
+              {
+                label: "Water and Sewers",
+                fill: false,
+                backgroundColor: "#E07B3B",
+                borderColor: "#E07B3B",
+                borderWidth: 1,
+                pointHoverBackgroundColor: "#E07B3B",
+                pointHoverBorderColor: "#E07B3B",
+                pointHoverBorderWidth: 1,
+                data: [668217000,701640000,709230000,755584000,804393000,868771000,919095000,1034095000,1470930000,1021577000,1059047000,1727259000,1192581000,1216054000,1418382000,1450101000]
+              },
+              {
+                label: "Higher Education",
+                fill: false,
+                backgroundColor: "#228ae6",
+                borderColor: "#228ae6",
+                borderWidth: 1,
+                pointHoverBackgroundColor: "#228ae6",
+                pointHoverBorderColor: "#228ae6",
+                pointHoverBorderWidth: 1,
+                data: [436923000,473180000,544671000,575585000,605277000,622693000,671292000,707115000,764705000,777117000,791320000,838710000,891857000,955125000,1072297000,1054957000]
+              },
+              {
+                label: "Transportation",
+                fill: false,
+                backgroundColor: "#E07B3B",
+                borderColor: "#E07B3B",
+                borderWidth: 1,
+                pointHoverBackgroundColor: "#E07B3B",
+                pointHoverBorderColor: "#E07B3B",
+                pointHoverBorderWidth: 1,
+                data: [538104000,522981000,524820000,578437000,649221000,644329000,725549000,816868000,830850000,895090000,871511000,870083000,907000000,937442000,1015997000,1016875000]
+              },
+              {
+                label: "Youth Services",
+                fill: false,
+                backgroundColor: "#228ae6",
+                borderColor: "#228ae6",
+                borderWidth: 1,
+                pointHoverBackgroundColor: "#228ae6",
+                pointHoverBorderColor: "#228ae6",
+                pointHoverBorderWidth: 1,
+                data: [153014000,157461000,244445000,246167000,303039000,310561000,384061000,382705000,405899000,350263000,325034000,345896000,404446000,581885000,691736000,727487000]
+              },
+              {
+                label: "Technology",
+                fill: false,
+                backgroundColor: "#E07B3B",
+                borderColor: "#E07B3B",
+                borderWidth: 1,
+                pointHoverBackgroundColor: "#E07B3B",
+                pointHoverBorderColor: "#E07B3B",
+                pointHoverBorderWidth: 1,
+                data: [170951000,190359000,201380000,223681000,237224000,255567000,308265000,370044000,368768000,415382000,452499000,431624000,467486000,491716000,673091000,626671000]
+              },
+              {
+                label: "Parks and Recreation",
+                fill: false,
+                backgroundColor: "#228ae6",
+                borderColor: "#228ae6",
+                borderWidth: 1,
+                pointHoverBackgroundColor: "#228ae6",
+                pointHoverBorderColor: "#228ae6",
+                pointHoverBorderWidth: 1,
+                data: [270834000,254169000,261616000,287086000,308203000,332561000,370648000,379595000,382715000,393740000,361329000,426328000,413278000,496268000,493512000,506376000]
+              },
+              {
+                label: "Design and Construction",
+                fill: false,
+                backgroundColor: "#E07B3B",
+                borderColor: "#E07B3B",
+                borderWidth: 1,
+                pointHoverBackgroundColor: "#E07B3B",
+                pointHoverBorderColor: "#228ae6",
+                pointHoverBorderWidth: 1,
+                data: [621330000,162386000,82566000,85061000,87866000,96247000,96541000,102107000,107463000,111878000,127276000,138142000,127267000,160279000,617324000,478731000]
+              },
+              {
+                label: "Finance",
+                fill: false,
+                backgroundColor: "#228ae6",
+                borderColor: "#228ae6",
+                borderWidth: 1,
+                pointHoverBackgroundColor: "#228ae6",
+                pointHoverBorderColor: "#228ae6",
+                pointHoverBorderWidth: 1,
+                data: [251376000,246475000,286418000,270028000,274440000,281742000,295197000,307498000,313371000,325170000,338720000,343370000,369555000,390764000,422173000,444942000]
+              },
+              {
+                label: "Libraries",
+                fill: false,
+                backgroundColor: "#E07B3B",
+                borderColor: "#E07B3B",
+                borderWidth: 1,
+                pointHoverBackgroundColor: "#E07B3B",
+                pointHoverBorderColor: "#E07B3B",
+                pointHoverBorderWidth: 1,
+                data: [255107000,230340000,236590000,250011000,261141000,281989000,314772000,326696000,310802000,296588000,302535000,304330000,306333000,326332000,364541000,365105000]
+              },
+              {
+                label: "Aging",
+                fill: false,
+                backgroundColor: "#228ae6",
+                borderColor: "#228ae6",
+                borderWidth: 1,
+                pointHoverBackgroundColor: "#228ae6",
+                pointHoverBorderColor: "#228ae6",
+                pointHoverBorderWidth: 1,
+                data: [231227000,229491000,228593000,231264000,268241000,271907000,290487000,290255000,281619000,263711000,257781000,262152000,263876000,285236000,321398000,330888000]
+              },
+              {
+                label: "Economic Development",
+                fill: false,
+                backgroundColor: "#E07B3B",
+                borderColor: "#E07B3B",
+                borderWidth: 1,
+                pointHoverBackgroundColor: "#E07B3B",
+                pointHoverBorderColor: "#E07B3B",
+                pointHoverBorderWidth: 1,
+                data: [233095000,173644000,114604000,108277000,125295000,122408000,136557000,153491000,159610000,148746000,137633000,150340000,202310000,273458000,354170000,236367000]
+              },
+              {
+                label: "Elected Officials",
+                fill: false,
+                backgroundColor: "#228ae6",
+                borderColor: "#228ae6",
+                borderWidth: 1,
+                pointHoverBackgroundColor: "#228ae6",
+                pointHoverBorderColor: "#228ae6",
+                pointHoverBorderWidth: 1,
+                data: [188932000,164059000,143701000,149022000,155338000,166206000,175916000,168185000,172918000,172265000,170477000,170140000,172825000,185480000,217305000,232352000]
+              },
+              {
+                label: "Cultural Affairs",
+                fill: false,
+                backgroundColor: "#E07B3B",
+                borderColor: "#E07B3B",
+                borderWidth: 1,
+                pointHoverBackgroundColor: "#E07B3B",
+                pointHoverBorderColor: "#E07B3B",
+                pointHoverBorderWidth: 1,
+                data: [124680000,120425000,118141000,122237000,136303000,149996000,161276000,151387000,142906000,144050000,147749000,146482000,156509000,163688000,167120000,181774000]
+              },
+              {
+                label: "Land Use",
+                fill: false,
+                backgroundColor: "#228ae6",
+                borderColor: "#228ae6",
+                borderWidth: 1,
+                pointHoverBackgroundColor: "#228ae6",
+                pointHoverBorderColor: "#228ae6",
+                pointHoverBorderWidth: 1,
+                data: [21924000,22236000,22573000,24298000,25754000,26274000,28804000,31494000,30839000,28141000,27105000,25380000,25299000,29499000,43382000,52586000]
+              },
+              {
+                label: "Oversight and Investigation",
+                fill: false,
+                backgroundColor: "#E07B3B",
+                borderColor: "#E07B3B",
+                borderWidth: 1,
+                pointHoverBackgroundColor: "#E07B3B",
+                pointHoverBorderColor: "#E07B3B",
+                pointHoverBorderWidth: 1,
+                data: [23138000,21360000,19589000,19753000,21131000,21861000,23480000,24208000,22720000,21737000,21288000,36371000,29030000,34983000,50527000,46706000]
+              },
+              {
+                label: "Consumer Affairs",
+                fill: false,
+                backgroundColor: "#228ae6",
+                borderColor: "#228ae6",
+                borderWidth: 1,
+                pointHoverBackgroundColor: "#228ae6",
+                pointHoverBorderColor: "#228ae6",
+                pointHoverBorderWidth: 1,
+                data: [14302000,13948000,14627000,15386000,15561000,17113000,20513000,21540000,22340000,21828000,26264000,27286000,32474000,37435000,40189000,40598000]
+              },
+              {
+                label: "Civil Rights",
+                fill: false,
+                backgroundColor: "#E07B3B",
+                borderColor: "#E07B3B",
+                borderWidth: 1,
+                pointHoverBackgroundColor: "#E07B3B",
+                pointHoverBorderColor: "#E07B3B",
+                pointHoverBorderWidth: 1,
+                data: [7805000,8231000,7721000,7218000,7255000,7458000,7543000,7896000,7650000,6862000,6660000,6552000,6046000,6496000,11994000,12575000]
+              },
+              {
+                label: "Veterans",
+                fill: false,
+                backgroundColor: "#228ae6",
+                borderColor: "#228ae6",
+                borderWidth: 1,
+                pointHoverBackgroundColor: "#228ae6",
+                pointHoverBorderColor: "#228ae6",
+                pointHoverBorderWidth: 1,
+                data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3843000]
+              },
+              {
+                label: "Civil Service and Labor",
+                fill: false,
+                backgroundColor: "#E07B3B",
+                borderColor: "#E07B3B",
+                borderWidth: 1,
+                pointHoverBackgroundColor: "#E07B3B",
+                pointHoverBorderColor: "#E07B3B",
+                pointHoverBorderWidth: 1,
+                data: [1953000,2025000,2013000,2094000,2167000,2349000,2444000,2489000,2584000,2504000,2764000,2873000,2900000,2489000,3436000,3507000]
+              },
+              {
+                label: "Standards and Ethics",
+                fill: false,
+                backgroundColor: "#228ae6",
+                borderColor: "#228ae6",
+                borderWidth: 1,
+                pointHoverBackgroundColor: "#228ae6",
+                pointHoverBorderColor: "#228ae6",
+                pointHoverBorderWidth: 1,
+                data: [1624000,1547000,1438000,1423000,1435000,1741000,1882000,1898000,1909000,1981000,1960000,2032000,2054000,2193000,2433000,2561000]
+              },
+              {
+                label: "Youth",
+                fill: false,
+                backgroundColor: "#E07B3B",
+                borderColor: "#E07B3B",
+                borderWidth: 1,
+                pointHoverBackgroundColor: "#E07B3B",
+                pointHoverBorderColor: "#E07B3B",
+                pointHoverBorderWidth: 1,
+                data: [108943000,108402000,93009000,95827000,104291000,127676000,130984000,134506000,138353000,203357000,0,0,0,0,0,0]
+              }
+            ]
+          },
+
+        scatterChartData.datasets.forEach(function(dataset) {
+            dataset.borderColor = randomColor(0.4);
+            dataset.backgroundColor = randomColor(0.1);
+            dataset.pointBorderColor = randomColor(0.7);
+            dataset.pointBackgroundColor = randomColor(0.5);
+            dataset.pointBorderWidth = 1;
+        });
+
+        window.onload = function() {
+            var ctx = document.getElementById("canvas").getContext("2d");
+            window.myScatter = Chart.Scatter(ctx, {
+                data: scatterChartData,
+                options: {
+                    title: {
+                        display: true,
+                        text: 'Chart.js Scatter Chart'
+                    },
+                    scales: {
+                        xAxes: [{
+                            position: 'top',
+                            gridLines: {
+                                zeroLineColor: "rgba(0,255,0,1)"
+                            },
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'x axis'
+                            },
+                            ticks: {
+                                maxRotation: 0,
+                                reverse: true
+                            }
+                        }],
+                        yAxes: [{
+                            position: 'right',
+                            gridLines: {
+                                zeroLineColor: "rgba(0,255,0,1)"
+                            },
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'y axis'
+                            },
+                            ticks: {
+                                reverse: true
+                            }
+                        }]
+                    },
+                    pan: {
+                        enabled: true,
+                        mode: 'xy'
+                    },
+                    zoom: {
+                        enabled: true,
+                        mode: 'xy',
+                        limits: {
+                            max: 10,
+                            min: 0.5
+                        }
+                    }
+                }
+            });
+        };
+    </script>
+</body>
+
+</html>

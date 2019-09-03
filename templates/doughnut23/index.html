@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Fiscal 2019 FT Headcount</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
+
+    </head>
+    <body>
+
+
+<canvas id="doughnut23" width=auto height="250"></canvas>
+<script>
+
+Chart.defaults.global.responsive = true
+Chart.defaults.global.maintainAspectRatio = true
+Chart.defaults.global.legend.display= true
+
+var ctx = document.getElementById("doughnut23");
+
+var myChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        labels: [
+          "Education: 139,404 Jobs",
+          "Public Safety: 82,192 Jobs",
+          "Administration & Operations (Other): 37,151 Jobs",
+          "Health & Human Services: 23,796 Jobs",
+          "Public Works: 16,484 Jobs",
+          "Cultural & Parks: 4,380 Jobs"
+          ],
+        datasets: [{
+            label: 'Fiscal 2019 FT Headcount',
+            backgroundColor:["#23417D","#666666","#E6E6E6","#2F56A6","#A07952","#CACACA"],
+            borderColor: "#eeeeee",
+            borderWidth: 1,
+            hoverBackgroundColor: "#9E9E9E",
+            hoverBorderColor: "#eeeeee",
+            data: [139404,82192,37151,23796,16484,4380]
+        }]
+    }
+    ,
+    options: {
+      tooltips: {
+          callbacks: {
+            label: function(tooltipItem, data) {
+              return data.labels[tooltipItem.index] /* + ': '+data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+' positions'*/;
+            },
+          }
+      }
+    }
+
+
+});
+</script>
+    </body>
+</html>

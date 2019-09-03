@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Stop, Question & Frisk Incidents Over Time</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
+
+    </head>
+    <body>
+
+
+<canvas id="linechart18" width=auto max-height="400"></canvas>
+<script>
+
+Chart.defaults.global.responsive = true
+Chart.defaults.global.tooltips.backgroundColor="grey"
+Chart.defaults.global.maintainAspectRatio = true
+// Chart.defaults.global.legend = false
+
+
+var ctx = document.getElementById("linechart18");
+
+var myChart = new Chart(ctx, {
+    type: 'line',
+    fill: false,
+    data: {
+        labels: ["2010", "2011","2012","2013","2014","2015","2016","2017","2018"],
+        datasets: [
+            {
+              label: "Stop, Question & Frisk Incidents Over Time",
+              fill: false,
+              backgroundColor: "#2ed7fd",
+              borderColor: "#2ed7fd",
+              borderWidth: 0,
+              hoverBackgroundColor: "#2ed7fd",
+              hoverBorderColor: "#eeeeee",
+              data: [601285, 685724, 532911, 191851, 45787,  22563,  12405, 11622, 11008 ]
+            }
+          ]
+        },
+        
+    options: {
+      tooltips: {
+        callbacks: {
+          label: function(tooltipItem, data) {
+            var datasetLabel = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US') || '';
+            return datasetLabel  + ' Incidents';
+          }
+        }
+      },
+      scales: {
+        yAxes: [{
+          stacked: false,
+          ticks: {
+            beginAtZero:true,
+            callback: function(value) {
+              if (value == 0) {
+                return (value).toLocaleString('en-US');
+              } else {
+                return (value).toLocaleString('en-US');
+              }
+            }
+          }
+        }]
+      }
+    }
+  });
+</script>
+    </body>
+</html>

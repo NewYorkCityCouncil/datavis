@@ -1,0 +1,2974 @@
+<!doctype html>
+<meta charset="utf-8">
+
+<script src="https://d3plus.org/js/d3.js"></script>
+<script src="http://d3plus.org/js/d3plus.js"></script>
+
+<div id="viz"></div>
+
+<script>
+
+  var sample_data = [
+                      {
+                        "name": "A Greener NYC",
+                        "size": 2002000
+                      },
+                      {
+                        "name": "Access Health",
+                        "size": 1070000
+                      },
+                      {
+                        "name": "Access to Critical Services for Seniors",
+                        "size": 1180000
+                      },
+                      {
+                        "name": "Access to Food and Nutritional Education",
+                        "size": 930000
+                      },
+                      {
+                        "name": "Adult Literacy Initiative",
+                        "size": 6000000
+                      },
+                      {
+                        "name": "Afterschool Enrichment Initiative",
+                        "size": 5425000
+                      },
+                      {
+                        "name": "Aging",
+                        "size": 5610000
+                      },
+                      {
+                        "name": "Alternatives to Incarceration (ATI's)",
+                        "size": 5632000
+                      },
+                      {
+                        "name": "Anti-Eviction and Housing Court Resources",
+                        "size": 5650000
+                      },
+                      {
+                        "name": "Anti-Gun Violence - Art a Catalyst for Change",
+                        "size": 720000
+                      },
+                      {
+                        "name": "Anti-Gun Violence - Youth Programs",
+                        "size": 250000
+                      },
+                      {
+                        "name": "Anti-Poverty",
+                        "size": 2800000
+                      },
+                      {
+                        "name": "Autism Awareness",
+                        "size": 3315386
+                      },
+                      {
+                        "name": "Bail Fund",
+                        "size": 1400000
+                      },
+                      {
+                        "name": "Beating Hearts",
+                        "size": 350000
+                      },
+                      {
+                        "name": "Big Brothers and Big Sisters of New York City",
+                        "size": 1200000
+                      },
+                      {
+                        "name": "Boro",
+                        "size": 2000000
+                      },
+                      {
+                        "name": "Borough Presidents' Discretionary Funding Restoration",
+                        "size": 1129774
+                      },
+                      {
+                        "name": "Bridge to Tomorrow",
+                        "size": 1150000
+                      },
+                      {
+                        "name": "Brooklyn Borough President PS Enhancment",
+                        "size": 100000
+                      },
+                      {
+                        "name": "Cancer Services",
+                        "size": 790500
+                      },
+                      {
+                        "name": "Center for Court Innovation",
+                        "size": 500000
+                      },
+                      {
+                        "name": "Child Care Vouchers",
+                        "size": 3000000
+                      },
+                      {
+                        "name": "Child Health and Wellness",
+                        "size": 646000
+                      },
+                      {
+                        "name": "Child Mind Institute",
+                        "size": 500000
+                      },
+                      {
+                        "name": "Children and Families in NYC Homeless System",
+                        "size": 1000000
+                      },
+                      {
+                        "name": "Children Under Five",
+                        "size": 1002000
+                      },
+                      {
+                        "name": "City Clerk PS Enhancement",
+                        "size": 150000
+                      },
+                      {
+                        "name": "City Council Merit-Based Scholarships",
+                        "size": 15375000
+                      },
+                      {
+                        "name": "City's First Readers",
+                        "size": 2792000
+                      },
+                      {
+                        "name": "Citywide Homeless Prevention Fund",
+                        "size": 820000
+                      },
+                      {
+                        "name": "Civic Education in New York City Schools",
+                        "size": 500000
+                      },
+                      {
+                        "name": "Coalition Theaters of Color",
+                        "size": 1965000
+                      },
+                      {
+                        "name": "Communities of Color Nonprofit Stabilization Fund",
+                        "size": 2500000
+                      },
+                      {
+                        "name": "Community Housing Preservation Strategies",
+                        "size": 3651000
+                      },
+                      {
+                        "name": "Community Schools",
+                        "size": 1225000
+                      },
+                      {
+                        "name": "COMPASS",
+                        "size": 8000000
+                      },
+                      {
+                        "name": "Contraceptive Fund",
+                        "size": 400000
+                      },
+                      {
+                        "name": "Court-Involved Youth Mental Health Initiative",
+                        "size": 1900000
+                      },
+                      {
+                        "name": "Create New Technology Incubators",
+                        "size": 1400000
+                      },
+                      {
+                        "name": "Creative Arts Team",
+                        "size": 400000
+                      },
+                      {
+                        "name": "Crisis Management System",
+                        "size": 11175534
+                      },
+                      {
+                        "name": "Cultural After-School Adventure (CASA)",
+                        "size": 11220000
+                      },
+                      {
+                        "name": "Cultural Immigrant Initiative",
+                        "size": 5010000
+                      },
+                      {
+                        "name": "CUNY Citizenship NOW! Program",
+                        "size": 2000000
+                      },
+                      {
+                        "name": "CUNY Research Institutes",
+                        "size": 2140000
+                      },
+                      {
+                        "name": "CUNY Technical Apprenticeship Program",
+                        "size": 50000
+                      },
+                      {
+                        "name": "Day Laborer Workforce Initiative",
+                        "size": 570000
+                      },
+                      {
+                        "name": "Developmental, Psychological and Behavioral Health Services",
+                        "size": 2139390
+                      },
+                      {
+                        "name": "DFTA Core Enhancement Services",
+                        "size": 660000
+                      },
+                      {
+                        "name": "Digital Inclusion and Literacy Initiative",
+                        "size": 2040000
+                      },
+                      {
+                        "name": "Discretionary Child Care",
+                        "size": 9355069
+                      },
+                      {
+                        "name": "Domestic Violence and Empowerment (DoVE) Initiative",
+                        "size": 6305000
+                      },
+                      {
+                        "name": "Dropout Prevention and Intervention Initiative",
+                        "size": 1585000
+                      },
+                      {
+                        "name": "Educational Programs for Students",
+                        "size": 2975000
+                      },
+                      {
+                        "name": "Elder Abuse Enhancement",
+                        "size": 335000
+                      },
+                      {
+                        "name": "Ending the Epidemic",
+                        "size": 5595000
+                      },
+                      {
+                        "name": "Financial Empowerment for NYC's Renters",
+                        "size": 450000
+                      },
+                      {
+                        "name": "Food Access and Benefits",
+                        "size": 725000
+                      },
+                      {
+                        "name": "Food Pantries",
+                        "size": 4000000
+                      },
+                      {
+                        "name": "Foreclosure Buyback Initiative",
+                        "size": 1000000
+                      },
+                      {
+                        "name": "Foster Youth Transitional Care",
+                        "size": 500000
+                      },
+                      {
+                        "name": "Gender Equity Liaisons",
+                        "size": 500000
+                      },
+                      {
+                        "name": "Geriatric Mental Health",
+                        "size": 1827000
+                      },
+                      {
+                        "name": "Ghetto Film School Accelerator Program Model",
+                        "size": 260000
+                      },
+                      {
+                        "name": "Green Jobs Corps Program",
+                        "size": 120000
+                      },
+                      {
+                        "name": "hackNY",
+                        "size": 100000
+                      },
+                      {
+                        "name": "Healthy Aging Initiative",
+                        "size": 1810000
+                      },
+                      {
+                        "name": "HIV/AIDS Faith Based Initiative",
+                        "size": 1560000
+                      },
+                      {
+                        "name": "Holocaust Survivors",
+                        "size": 2500000
+                      },
+                      {
+                        "name": "Homeless Prevention Services for Veterans",
+                        "size": 300000
+                      },
+                      {
+                        "name": "Housing Information Project",
+                        "size": 300000
+                      },
+                      {
+                        "name": "HPD Alternative Enforcement Program (AEP)",
+                        "size": 750000
+                      },
+                      {
+                        "name": "HPD Home Loan Program",
+                        "size": 1500000
+                      },
+                      {
+                        "name": "Immigrant Health Initiative",
+                        "size": 1500000
+                      },
+                      {
+                        "name": "Immigrant Opportunities Initiative",
+                        "size": 2600000
+                      },
+                      {
+                        "name": "Information and Referral Services",
+                        "size": 407811
+                      },
+                      {
+                        "name": "Initiative for Immigrant Survivors of Domestic Violence",
+                        "size": 250000
+                      },
+                      {
+                        "name": "Initiative to Combat Sexual Assault",
+                        "size": 1348000
+                      },
+                      {
+                        "name": "Jill Chaifetz Helpline",
+                        "size": 245000
+                      },
+                      {
+                        "name": "Job Placement for Veterans",
+                        "size": 150000
+                      },
+                      {
+                        "name": "Job Training and Placement Initiative",
+                        "size": 8106000
+                      },
+                      {
+                        "name": "Joseph S. Murphy Institute Center for Worker Education",
+                        "size": 300000
+                      },
+                      {
+                        "name": "Legal Information for Families (LIFT)",
+                        "size": 485000
+                      },
+                      {
+                        "name": "Legal Services for Low-Income New Yorkers",
+                        "size": 5000000
+                      },
+                      {
+                        "name": "Legal Services for the Working Poor",
+                        "size": 2405000
+                      },
+                      {
+                        "name": "Legal Services for Veterans",
+                        "size": 350000
+                      },
+                      {
+                        "name": "LGBT Inclusive Curriculum",
+                        "size": 165000
+                      },
+                      {
+                        "name": "LGBT Senior Services in Every Borough",
+                        "size": 1500000
+                      },
+                      {
+                        "name": "LGBTQ Youth Mental Health",
+                        "size": 1000000
+                      },
+                      {
+                        "name": "Local",
+                        "size": 36538500
+                      },
+                      {
+                        "name": "Made in NYC",
+                        "size": 750000
+                      },
+                      {
+                        "name": "Maternal and Child Health Services",
+                        "size": 1192818
+                      },
+                      {
+                        "name": "Medicaid Redesign Transition",
+                        "size": 500000
+                      },
+                      {
+                        "name": "Mental Health Services for Veterans",
+                        "size": 190000
+                      },
+                      {
+                        "name": "Mental Health Services for Vulnerbale Populations",
+                        "size": 1093000
+                      },
+                      {
+                        "name": "Mortgage Foreclosure Prevention Program",
+                        "size": 1000000
+                      },
+                      {
+                        "name": "MWBE Leadership Associations",
+                        "size": 600000
+                      },
+                      {
+                        "name": "Naturally Occurring Retirement Communities (NORCs)",
+                        "size": 3850000
+                      },
+                      {
+                        "name": "Neighborhood Development Grant Initiative",
+                        "size": 1275000
+                      },
+                      {
+                        "name": "New York Immigrant Family Unity Project",
+                        "size": 6230000
+                      },
+                      {
+                        "name": "New York Immigrant Population",
+                        "size": 700000
+                      },
+                      {
+                        "name": "Nurse Family Partnership",
+                        "size": 2000000
+                      },
+                      {
+                        "name": "NYC Cleanup",
+                        "size": 7800000
+                      },
+                      {
+                        "name": "Parks Equity Initiative",
+                        "size": 2540000
+                      },
+                      {
+                        "name": "Parks Maintenance",
+                        "size": 9553205
+                      },
+                      {
+                        "name": "Physical Education and Fitness",
+                        "size": 1925000
+                      },
+                      {
+                        "name": "Post-Arrest Diversion Program for Young Adults",
+                        "size": 250000
+                      },
+                      {
+                        "name": "Power Action Change Empowerment (PACE) Initiative for Young Adults",
+                        "size": 250000
+                      },
+                      {
+                        "name": "Prevent Sexual Assault (PSA) Initiative for Young Adults",
+                        "size": 250000
+                      },
+                      {
+                        "name": "Prisoners' Rights Project",
+                        "size": 750000
+                      },
+                      {
+                        "name": "Reproductive and Sexual Health Services",
+                        "size": 260000
+                      },
+                      {
+                        "name": "Restorative Justice Program",
+                        "size": 1300000
+                      },
+                      {
+                        "name": "Senior Centers for Immigrant Populations",
+                        "size": 1500000
+                      },
+                      {
+                        "name": "Senior Centers, Programs, and Enhancements",
+                        "size": 3578000
+                      },
+                      {
+                        "name": "Small Business Outreach and Assistance Program",
+                        "size": 1288855
+                      },
+                      {
+                        "name": "Social Adult Day Care Enhancement",
+                        "size": 950000
+                      },
+                      {
+                        "name": "Social Justice Postgraduate Fellowship Program",
+                        "size": 600000
+                      },
+                      {
+                        "name": "Speaker's Initiative",
+                        "size": 5380000
+                      },
+                      {
+                        "name": "Sports Training and Rolemodels for Success (STARS) Initiative",
+                        "size": 1200000
+                      },
+                      {
+                        "name": "Stabilizing NYC",
+                        "size": 2000000
+                      },
+                      {
+                        "name": "Step In and Stop It Initiative to Address Bystander Intervention",
+                        "size": 250000
+                      },
+                      {
+                        "name": "Student Voter Registration Day",
+                        "size": 400000
+                      },
+                      {
+                        "name": "SU-CASA",
+                        "size": 2020000
+                      },
+                      {
+                        "name": "Support for Educators",
+                        "size": 12744500
+                      },
+                      {
+                        "name": "Support for Victims of Human Trafficking",
+                        "size": 750000
+                      },
+                      {
+                        "name": "Support Our Seniors",
+                        "size": 2040000
+                      },
+                      {
+                        "name": "Supportive Alternatives to Violent Encounters (SAVE)",
+                        "size": 1950000
+                      },
+                      {
+                        "name": "Transgender Specific Healthcare Training",
+                        "size": 250000
+                      },
+                      {
+                        "name": "Unaccompanied Minors and Families",
+                        "size": 500000
+                      },
+                      {
+                        "name": "Urban Advantage",
+                        "size": 3500000
+                      },
+                      {
+                        "name": "Veterans Community Development",
+                        "size": 350000
+                      },
+                      {
+                        "name": "Viral Hepatitis Prevention",
+                        "size": 1423658
+                      },
+                      {
+                        "name": "Warrant Reduction Events",
+                        "size": 175000
+                      },
+                      {
+                        "name": "Work-Based Learning Internships",
+                        "size": 600000
+                      },
+                      {
+                        "name": "Worker Cooperative Business Development Initiative",
+                        "size": 2248000
+                      },
+                      {
+                        "name": "Year-Round Employment Program (Work, Learn, Grow)",
+                        "size": 11000000
+                      },
+                      {
+                        "name": "Young Women's Leadership Development",
+                        "size": 825000
+                      },
+                      {
+                        "name": "Youth",
+                        "size": 7650000
+                      },
+                      {
+                        "name": "Youth Health Initiative",
+                        "size": 500000
+                      },
+                      {
+                        "name": "YouthBuild Project Initiative",
+                        "size": 2100000
+                      },
+                      {
+                        "name": "Barron",
+                        "size": 1072490
+                      },
+                      {
+                        "name": "Borelli",
+                        "size": 1002490
+                      },
+                      {
+                        "name": "Bronx Delegation",
+                        "size": 340000
+                      },
+                      {
+                        "name": "Brooklyn Delegation",
+                        "size": 620000
+                      },
+                      {
+                        "name": "Cabrera",
+                        "size": 940000
+                      },
+                      {
+                        "name": "CD28",
+                        "size": 1047490
+                      },
+                      {
+                        "name": "Chin",
+                        "size": 1047490
+                      },
+                      {
+                        "name": "Cohen",
+                        "size": 890000
+                      },
+                      {
+                        "name": "Constantinides",
+                        "size": 972000
+                      },
+                      {
+                        "name": "Cornegy",
+                        "size": 975000
+                      },
+                      {
+                        "name": "Crowley",
+                        "size": 1022490
+                      },
+                      {
+                        "name": "Cumbo",
+                        "size": 1047490
+                      },
+                      {
+                        "name": "Deutsch",
+                        "size": 1027490
+                      },
+                      {
+                        "name": "Dickens",
+                        "size": 1017000
+                      },
+                      {
+                        "name": "Dromm",
+                        "size": 1047490
+                      },
+                      {
+                        "name": "Espinal",
+                        "size": 895000
+                      },
+                      {
+                        "name": "Eugene",
+                        "size": 912000
+                      },
+                      {
+                        "name": "Ferreras-Copeland",
+                        "size": 1067490
+                      },
+                      {
+                        "name": "Garodnick",
+                        "size": 705000
+                      },
+                      {
+                        "name": "Gentile",
+                        "size": 1047490
+                      },
+                      {
+                        "name": "Gibson",
+                        "size": 1000000
+                      },
+                      {
+                        "name": "Greenfield",
+                        "size": 937000
+                      },
+                      {
+                        "name": "Grodenchik",
+                        "size": 1042490
+                      },
+                      {
+                        "name": "Johnson",
+                        "size": 940490
+                      },
+                      {
+                        "name": "Kallos",
+                        "size": 962490
+                      },
+                      {
+                        "name": "King",
+                        "size": 970000
+                      },
+                      {
+                        "name": "Koo",
+                        "size": 1047490
+                      },
+                      {
+                        "name": "Koslowitz",
+                        "size": 1022490
+                      },
+                      {
+                        "name": "Lancman",
+                        "size": 1067490
+                      },
+                      {
+                        "name": "Lander",
+                        "size": 1025490
+                      },
+                      {
+                        "name": "Levin",
+                        "size": 1017000
+                      },
+                      {
+                        "name": "Levine",
+                        "size": 915000
+                      },
+                      {
+                        "name": "Maisel",
+                        "size": 887000
+                      },
+                      {
+                        "name": "Manhattan Delegation",
+                        "size": 380000
+                      },
+                      {
+                        "name": "Mark-Viverito",
+                        "size": 1027490
+                      },
+                      {
+                        "name": "Matteo",
+                        "size": 1022490
+                      },
+                      {
+                        "name": "Mealy",
+                        "size": 917000
+                      },
+                      {
+                        "name": "Menchaca",
+                        "size": 1072490
+                      },
+                      {
+                        "name": "Mendez",
+                        "size": 947490
+                      },
+                      {
+                        "name": "Miller",
+                        "size": 950000
+                      },
+                      {
+                        "name": "Palma",
+                        "size": 935000
+                      },
+                      {
+                        "name": "Queens Delegation",
+                        "size": 540000
+                      },
+                      {
+                        "name": "Reynoso",
+                        "size": 975000
+                      },
+                      {
+                        "name": "Richards",
+                        "size": 1047490
+                      },
+                      {
+                        "name": "Rodriguez",
+                        "size": 1092490
+                      },
+                      {
+                        "name": "Rose",
+                        "size": 1047490
+                      },
+                      {
+                        "name": "Rosenthal",
+                        "size": 960490
+                      },
+                      {
+                        "name": "Salamanca",
+                        "size": 1022000
+                      },
+                      {
+                        "name": "Speaker",
+                        "size": 21518500
+                      },
+                      {
+                        "name": "Staten Island Delegation",
+                        "size": 120000
+                      },
+                      {
+                        "name": "Torres",
+                        "size": 1072490
+                      },
+                      {
+                        "name": "Treyger",
+                        "size": 870000
+                      },
+                      {
+                        "name": "Treyger",
+                        "size": 22000
+                      },
+                      {
+                        "name": "Ulrich",
+                        "size": 802490
+                      },
+                      {
+                        "name": "Vacca",
+                        "size": 1067490
+                      },
+                      {
+                        "name": "Vallone",
+                        "size": 1022490
+                      },
+                      {
+                        "name": "Van Bramer",
+                        "size": 890000
+                      },
+                      {
+                        "name": "Williams",
+                        "size": 1047490
+                      },
+                      {
+                        "name": "Council Wide",
+                        "size": 278269800
+                      }
+                    ]
+
+  var connections = [
+                        {
+                          "source": "A Greener NYC",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Access Health",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Access to Critical Services for Seniors",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Access to Food and Nutritional Education",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Adult Literacy Initiative",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Afterschool Enrichment Initiative",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Aging",
+                          "target": "Barron"
+                        },
+                        {
+                          "source": "Aging",
+                          "target": "Borelli"
+                        },
+                        {
+                          "source": "Aging",
+                          "target": "Cabrera"
+                        },
+                        {
+                          "source": "Aging",
+                          "target": "CD28"
+                        },
+                        {
+                          "source": "Aging",
+                          "target": "Chin"
+                        },
+                        {
+                          "source": "Aging",
+                          "target": "Cohen"
+                        },
+                        {
+                          "source": "Aging",
+                          "target": "Constantinides"
+                        },
+                        {
+                          "source": "Aging",
+                          "target": "Cornegy"
+                        },
+                        {
+                          "source": "Aging",
+                          "target": "Crowley"
+                        },
+                        {
+                          "source": "Aging",
+                          "target": "Cumbo"
+                        },
+                        {
+                          "source": "Aging",
+                          "target": "Deutsch"
+                        },
+                        {
+                          "source": "Aging",
+                          "target": "Dickens"
+                        },
+                        {
+                          "source": "Aging",
+                          "target": "Dromm"
+                        },
+                        {
+                          "source": "Aging",
+                          "target": "Espinal"
+                        },
+                        {
+                          "source": "Aging",
+                          "target": "Eugene"
+                        },
+                        {
+                          "source": "Aging",
+                          "target": "Ferreras-Copeland"
+                        },
+                        {
+                          "source": "Aging",
+                          "target": "Garodnick"
+                        },
+                        {
+                          "source": "Aging",
+                          "target": "Gentile"
+                        },
+                        {
+                          "source": "Aging",
+                          "target": "Gibson"
+                        },
+                        {
+                          "source": "Aging",
+                          "target": "Greenfield"
+                        },
+                        {
+                          "source": "Aging",
+                          "target": "Grodenchik"
+                        },
+                        {
+                          "source": "Aging",
+                          "target": "Johnson"
+                        },
+                        {
+                          "source": "Aging",
+                          "target": "Kallos"
+                        },
+                        {
+                          "source": "Aging",
+                          "target": "King"
+                        },
+                        {
+                          "source": "Aging",
+                          "target": "Koo"
+                        },
+                        {
+                          "source": "Aging",
+                          "target": "Koslowitz"
+                        },
+                        {
+                          "source": "Aging",
+                          "target": "Lancman"
+                        },
+                        {
+                          "source": "Aging",
+                          "target": "Lander"
+                        },
+                        {
+                          "source": "Aging",
+                          "target": "Levin"
+                        },
+                        {
+                          "source": "Aging",
+                          "target": "Levine"
+                        },
+                        {
+                          "source": "Aging",
+                          "target": "Maisel"
+                        },
+                        {
+                          "source": "Aging",
+                          "target": "Mark-Viverito"
+                        },
+                        {
+                          "source": "Aging",
+                          "target": "Matteo"
+                        },
+                        {
+                          "source": "Aging",
+                          "target": "Mealy"
+                        },
+                        {
+                          "source": "Aging",
+                          "target": "Menchaca"
+                        },
+                        {
+                          "source": "Aging",
+                          "target": "Mendez"
+                        },
+                        {
+                          "source": "Aging",
+                          "target": "Miller"
+                        },
+                        {
+                          "source": "Aging",
+                          "target": "Palma"
+                        },
+                        {
+                          "source": "Aging",
+                          "target": "Reynoso"
+                        },
+                        {
+                          "source": "Aging",
+                          "target": "Richards"
+                        },
+                        {
+                          "source": "Aging",
+                          "target": "Rodriguez"
+                        },
+                        {
+                          "source": "Aging",
+                          "target": "Rose"
+                        },
+                        {
+                          "source": "Aging",
+                          "target": "Rosenthal"
+                        },
+                        {
+                          "source": "Aging",
+                          "target": "Salamanca"
+                        },
+                        {
+                          "source": "Aging",
+                          "target": "Torres"
+                        },
+                        {
+                          "source": "Aging",
+                          "target": "Treyger"
+                        },
+                        {
+                          "source": "Aging",
+                          "target": "Ulrich"
+                        },
+                        {
+                          "source": "Aging",
+                          "target": "Vacca"
+                        },
+                        {
+                          "source": "Aging",
+                          "target": "Vallone"
+                        },
+                        {
+                          "source": "Aging",
+                          "target": "Van Bramer"
+                        },
+                        {
+                          "source": "Aging",
+                          "target": "Williams"
+                        },
+                        {
+                          "source": "Alternatives to Incarceration (ATI's)",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Anti-Eviction and Housing Court Resources",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Anti-Gun Violence - Art a Catalyst for Change",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Anti-Gun Violence - Youth Programs",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Anti-Poverty",
+                          "target": "Barron"
+                        },
+                        {
+                          "source": "Anti-Poverty",
+                          "target": "Borelli"
+                        },
+                        {
+                          "source": "Anti-Poverty",
+                          "target": "Cabrera"
+                        },
+                        {
+                          "source": "Anti-Poverty",
+                          "target": "CD28"
+                        },
+                        {
+                          "source": "Anti-Poverty",
+                          "target": "Chin"
+                        },
+                        {
+                          "source": "Anti-Poverty",
+                          "target": "Cohen"
+                        },
+                        {
+                          "source": "Anti-Poverty",
+                          "target": "Constantinides"
+                        },
+                        {
+                          "source": "Anti-Poverty",
+                          "target": "Cornegy"
+                        },
+                        {
+                          "source": "Anti-Poverty",
+                          "target": "Crowley"
+                        },
+                        {
+                          "source": "Anti-Poverty",
+                          "target": "Cumbo"
+                        },
+                        {
+                          "source": "Anti-Poverty",
+                          "target": "Deutsch"
+                        },
+                        {
+                          "source": "Anti-Poverty",
+                          "target": "Dickens"
+                        },
+                        {
+                          "source": "Anti-Poverty",
+                          "target": "Dromm"
+                        },
+                        {
+                          "source": "Anti-Poverty",
+                          "target": "Espinal"
+                        },
+                        {
+                          "source": "Anti-Poverty",
+                          "target": "Eugene"
+                        },
+                        {
+                          "source": "Anti-Poverty",
+                          "target": "Ferreras-Copeland"
+                        },
+                        {
+                          "source": "Anti-Poverty",
+                          "target": "Garodnick"
+                        },
+                        {
+                          "source": "Anti-Poverty",
+                          "target": "Gentile"
+                        },
+                        {
+                          "source": "Anti-Poverty",
+                          "target": "Gibson"
+                        },
+                        {
+                          "source": "Anti-Poverty",
+                          "target": "Greenfield"
+                        },
+                        {
+                          "source": "Anti-Poverty",
+                          "target": "Grodenchik"
+                        },
+                        {
+                          "source": "Anti-Poverty",
+                          "target": "Johnson"
+                        },
+                        {
+                          "source": "Anti-Poverty",
+                          "target": "Kallos"
+                        },
+                        {
+                          "source": "Anti-Poverty",
+                          "target": "King"
+                        },
+                        {
+                          "source": "Anti-Poverty",
+                          "target": "Koo"
+                        },
+                        {
+                          "source": "Anti-Poverty",
+                          "target": "Koslowitz"
+                        },
+                        {
+                          "source": "Anti-Poverty",
+                          "target": "Lancman"
+                        },
+                        {
+                          "source": "Anti-Poverty",
+                          "target": "Lander"
+                        },
+                        {
+                          "source": "Anti-Poverty",
+                          "target": "Levin"
+                        },
+                        {
+                          "source": "Anti-Poverty",
+                          "target": "Levine"
+                        },
+                        {
+                          "source": "Anti-Poverty",
+                          "target": "Maisel"
+                        },
+                        {
+                          "source": "Anti-Poverty",
+                          "target": "Mark-Viverito"
+                        },
+                        {
+                          "source": "Anti-Poverty",
+                          "target": "Matteo"
+                        },
+                        {
+                          "source": "Anti-Poverty",
+                          "target": "Mealy"
+                        },
+                        {
+                          "source": "Anti-Poverty",
+                          "target": "Menchaca"
+                        },
+                        {
+                          "source": "Anti-Poverty",
+                          "target": "Mendez"
+                        },
+                        {
+                          "source": "Anti-Poverty",
+                          "target": "Miller"
+                        },
+                        {
+                          "source": "Anti-Poverty",
+                          "target": "Palma"
+                        },
+                        {
+                          "source": "Anti-Poverty",
+                          "target": "Reynoso"
+                        },
+                        {
+                          "source": "Anti-Poverty",
+                          "target": "Richards"
+                        },
+                        {
+                          "source": "Anti-Poverty",
+                          "target": "Rodriguez"
+                        },
+                        {
+                          "source": "Anti-Poverty",
+                          "target": "Rose"
+                        },
+                        {
+                          "source": "Anti-Poverty",
+                          "target": "Rosenthal"
+                        },
+                        {
+                          "source": "Anti-Poverty",
+                          "target": "Salamanca"
+                        },
+                        {
+                          "source": "Anti-Poverty",
+                          "target": "Torres"
+                        },
+                        {
+                          "source": "Anti-Poverty",
+                          "target": "Treyger"
+                        },
+                        {
+                          "source": "Anti-Poverty",
+                          "target": "Ulrich"
+                        },
+                        {
+                          "source": "Anti-Poverty",
+                          "target": "Vacca"
+                        },
+                        {
+                          "source": "Anti-Poverty",
+                          "target": "Vallone"
+                        },
+                        {
+                          "source": "Anti-Poverty",
+                          "target": "Van Bramer"
+                        },
+                        {
+                          "source": "Anti-Poverty",
+                          "target": "Williams"
+                        },
+                        {
+                          "source": "Autism Awareness",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Bail Fund",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Beating Hearts",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Big Brothers and Big Sisters of New York City",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Boro",
+                          "target": "Bronx Delegation"
+                        },
+                        {
+                          "source": "Boro",
+                          "target": "Brooklyn Delegation"
+                        },
+                        {
+                          "source": "Boro",
+                          "target": "Manhattan Delegation"
+                        },
+                        {
+                          "source": "Boro",
+                          "target": "Queens Delegation"
+                        },
+                        {
+                          "source": "Boro",
+                          "target": "Staten Island Delegation"
+                        },
+                        {
+                          "source": "Borough Presidents' Discretionary Funding Restoration",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Bridge to Tomorrow",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Brooklyn Borough President PS Enhancment",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Cancer Services",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Center for Court Innovation",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Child Care Vouchers",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Child Health and Wellness",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Child Mind Institute",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Children and Families in NYC Homeless System",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Children Under Five",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "City Clerk PS Enhancement",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "City Council Merit-Based Scholarships",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "City's First Readers",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Citywide Homeless Prevention Fund",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Civic Education in New York City Schools",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Coalition Theaters of Color",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Communities of Color Nonprofit Stabilization Fund",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Community Housing Preservation Strategies",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Community Schools",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "COMPASS",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Contraceptive Fund",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Court-Involved Youth Mental Health Initiative",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Create New Technology Incubators",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Creative Arts Team",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Crisis Management System",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Cultural After-School Adventure (CASA)",
+                          "target": "Barron"
+                        },
+                        {
+                          "source": "Cultural After-School Adventure (CASA)",
+                          "target": "Borelli"
+                        },
+                        {
+                          "source": "Cultural After-School Adventure (CASA)",
+                          "target": "Cabrera"
+                        },
+                        {
+                          "source": "Cultural After-School Adventure (CASA)",
+                          "target": "CD28"
+                        },
+                        {
+                          "source": "Cultural After-School Adventure (CASA)",
+                          "target": "Chin"
+                        },
+                        {
+                          "source": "Cultural After-School Adventure (CASA)",
+                          "target": "Cohen"
+                        },
+                        {
+                          "source": "Cultural After-School Adventure (CASA)",
+                          "target": "Constantinides"
+                        },
+                        {
+                          "source": "Cultural After-School Adventure (CASA)",
+                          "target": "Cornegy"
+                        },
+                        {
+                          "source": "Cultural After-School Adventure (CASA)",
+                          "target": "Crowley"
+                        },
+                        {
+                          "source": "Cultural After-School Adventure (CASA)",
+                          "target": "Cumbo"
+                        },
+                        {
+                          "source": "Cultural After-School Adventure (CASA)",
+                          "target": "Deutsch"
+                        },
+                        {
+                          "source": "Cultural After-School Adventure (CASA)",
+                          "target": "Dickens"
+                        },
+                        {
+                          "source": "Cultural After-School Adventure (CASA)",
+                          "target": "Dromm"
+                        },
+                        {
+                          "source": "Cultural After-School Adventure (CASA)",
+                          "target": "Espinal"
+                        },
+                        {
+                          "source": "Cultural After-School Adventure (CASA)",
+                          "target": "Eugene"
+                        },
+                        {
+                          "source": "Cultural After-School Adventure (CASA)",
+                          "target": "Ferreras-Copeland"
+                        },
+                        {
+                          "source": "Cultural After-School Adventure (CASA)",
+                          "target": "Gentile"
+                        },
+                        {
+                          "source": "Cultural After-School Adventure (CASA)",
+                          "target": "Gibson"
+                        },
+                        {
+                          "source": "Cultural After-School Adventure (CASA)",
+                          "target": "Greenfield"
+                        },
+                        {
+                          "source": "Cultural After-School Adventure (CASA)",
+                          "target": "Grodenchik"
+                        },
+                        {
+                          "source": "Cultural After-School Adventure (CASA)",
+                          "target": "Johnson"
+                        },
+                        {
+                          "source": "Cultural After-School Adventure (CASA)",
+                          "target": "Kallos"
+                        },
+                        {
+                          "source": "Cultural After-School Adventure (CASA)",
+                          "target": "King"
+                        },
+                        {
+                          "source": "Cultural After-School Adventure (CASA)",
+                          "target": "Koo"
+                        },
+                        {
+                          "source": "Cultural After-School Adventure (CASA)",
+                          "target": "Koslowitz"
+                        },
+                        {
+                          "source": "Cultural After-School Adventure (CASA)",
+                          "target": "Lancman"
+                        },
+                        {
+                          "source": "Cultural After-School Adventure (CASA)",
+                          "target": "Lander"
+                        },
+                        {
+                          "source": "Cultural After-School Adventure (CASA)",
+                          "target": "Levin"
+                        },
+                        {
+                          "source": "Cultural After-School Adventure (CASA)",
+                          "target": "Levine"
+                        },
+                        {
+                          "source": "Cultural After-School Adventure (CASA)",
+                          "target": "Maisel"
+                        },
+                        {
+                          "source": "Cultural After-School Adventure (CASA)",
+                          "target": "Mark-Viverito"
+                        },
+                        {
+                          "source": "Cultural After-School Adventure (CASA)",
+                          "target": "Matteo"
+                        },
+                        {
+                          "source": "Cultural After-School Adventure (CASA)",
+                          "target": "Mealy"
+                        },
+                        {
+                          "source": "Cultural After-School Adventure (CASA)",
+                          "target": "Menchaca"
+                        },
+                        {
+                          "source": "Cultural After-School Adventure (CASA)",
+                          "target": "Mendez"
+                        },
+                        {
+                          "source": "Cultural After-School Adventure (CASA)",
+                          "target": "Miller"
+                        },
+                        {
+                          "source": "Cultural After-School Adventure (CASA)",
+                          "target": "Palma"
+                        },
+                        {
+                          "source": "Cultural After-School Adventure (CASA)",
+                          "target": "Reynoso"
+                        },
+                        {
+                          "source": "Cultural After-School Adventure (CASA)",
+                          "target": "Richards"
+                        },
+                        {
+                          "source": "Cultural After-School Adventure (CASA)",
+                          "target": "Rodriguez"
+                        },
+                        {
+                          "source": "Cultural After-School Adventure (CASA)",
+                          "target": "Rose"
+                        },
+                        {
+                          "source": "Cultural After-School Adventure (CASA)",
+                          "target": "Rosenthal"
+                        },
+                        {
+                          "source": "Cultural After-School Adventure (CASA)",
+                          "target": "Salamanca"
+                        },
+                        {
+                          "source": "Cultural After-School Adventure (CASA)",
+                          "target": "Torres"
+                        },
+                        {
+                          "source": "Cultural After-School Adventure (CASA)",
+                          "target": "Treyger"
+                        },
+                        {
+                          "source": "Cultural After-School Adventure (CASA)",
+                          "target": "Vacca"
+                        },
+                        {
+                          "source": "Cultural After-School Adventure (CASA)",
+                          "target": "Vallone"
+                        },
+                        {
+                          "source": "Cultural After-School Adventure (CASA)",
+                          "target": "Van Bramer"
+                        },
+                        {
+                          "source": "Cultural After-School Adventure (CASA)",
+                          "target": "Williams"
+                        },
+                        {
+                          "source": "Cultural After-School Adventure (CASA)",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Cultural Immigrant Initiative",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "CUNY Citizenship NOW! Program",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "CUNY Research Institutes",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "CUNY Technical Apprenticeship Program",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Day Laborer Workforce Initiative",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Developmental, Psychological and Behavioral Health Services",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "DFTA Core Enhancement Services",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Digital Inclusion and Literacy Initiative",
+                          "target": "Barron"
+                        },
+                        {
+                          "source": "Digital Inclusion and Literacy Initiative",
+                          "target": "Cabrera"
+                        },
+                        {
+                          "source": "Digital Inclusion and Literacy Initiative",
+                          "target": "CD28"
+                        },
+                        {
+                          "source": "Digital Inclusion and Literacy Initiative",
+                          "target": "Chin"
+                        },
+                        {
+                          "source": "Digital Inclusion and Literacy Initiative",
+                          "target": "Cohen"
+                        },
+                        {
+                          "source": "Digital Inclusion and Literacy Initiative",
+                          "target": "Constantinides"
+                        },
+                        {
+                          "source": "Digital Inclusion and Literacy Initiative",
+                          "target": "Cornegy"
+                        },
+                        {
+                          "source": "Digital Inclusion and Literacy Initiative",
+                          "target": "Crowley"
+                        },
+                        {
+                          "source": "Digital Inclusion and Literacy Initiative",
+                          "target": "Cumbo"
+                        },
+                        {
+                          "source": "Digital Inclusion and Literacy Initiative",
+                          "target": "Dickens"
+                        },
+                        {
+                          "source": "Digital Inclusion and Literacy Initiative",
+                          "target": "Dromm"
+                        },
+                        {
+                          "source": "Digital Inclusion and Literacy Initiative",
+                          "target": "Eugene"
+                        },
+                        {
+                          "source": "Digital Inclusion and Literacy Initiative",
+                          "target": "Ferreras-Copeland"
+                        },
+                        {
+                          "source": "Digital Inclusion and Literacy Initiative",
+                          "target": "Garodnick"
+                        },
+                        {
+                          "source": "Digital Inclusion and Literacy Initiative",
+                          "target": "Gentile"
+                        },
+                        {
+                          "source": "Digital Inclusion and Literacy Initiative",
+                          "target": "Gibson"
+                        },
+                        {
+                          "source": "Digital Inclusion and Literacy Initiative",
+                          "target": "Greenfield"
+                        },
+                        {
+                          "source": "Digital Inclusion and Literacy Initiative",
+                          "target": "Grodenchik"
+                        },
+                        {
+                          "source": "Digital Inclusion and Literacy Initiative",
+                          "target": "Johnson"
+                        },
+                        {
+                          "source": "Digital Inclusion and Literacy Initiative",
+                          "target": "Kallos"
+                        },
+                        {
+                          "source": "Digital Inclusion and Literacy Initiative",
+                          "target": "King"
+                        },
+                        {
+                          "source": "Digital Inclusion and Literacy Initiative",
+                          "target": "Koo"
+                        },
+                        {
+                          "source": "Digital Inclusion and Literacy Initiative",
+                          "target": "Koslowitz"
+                        },
+                        {
+                          "source": "Digital Inclusion and Literacy Initiative",
+                          "target": "Lancman"
+                        },
+                        {
+                          "source": "Digital Inclusion and Literacy Initiative",
+                          "target": "Lander"
+                        },
+                        {
+                          "source": "Digital Inclusion and Literacy Initiative",
+                          "target": "Levin"
+                        },
+                        {
+                          "source": "Digital Inclusion and Literacy Initiative",
+                          "target": "Levine"
+                        },
+                        {
+                          "source": "Digital Inclusion and Literacy Initiative",
+                          "target": "Mark-Viverito"
+                        },
+                        {
+                          "source": "Digital Inclusion and Literacy Initiative",
+                          "target": "Matteo"
+                        },
+                        {
+                          "source": "Digital Inclusion and Literacy Initiative",
+                          "target": "Menchaca"
+                        },
+                        {
+                          "source": "Digital Inclusion and Literacy Initiative",
+                          "target": "Mendez"
+                        },
+                        {
+                          "source": "Digital Inclusion and Literacy Initiative",
+                          "target": "Miller"
+                        },
+                        {
+                          "source": "Digital Inclusion and Literacy Initiative",
+                          "target": "Palma"
+                        },
+                        {
+                          "source": "Digital Inclusion and Literacy Initiative",
+                          "target": "Reynoso"
+                        },
+                        {
+                          "source": "Digital Inclusion and Literacy Initiative",
+                          "target": "Richards"
+                        },
+                        {
+                          "source": "Digital Inclusion and Literacy Initiative",
+                          "target": "Rodriguez"
+                        },
+                        {
+                          "source": "Digital Inclusion and Literacy Initiative",
+                          "target": "Rose"
+                        },
+                        {
+                          "source": "Digital Inclusion and Literacy Initiative",
+                          "target": "Rosenthal"
+                        },
+                        {
+                          "source": "Digital Inclusion and Literacy Initiative",
+                          "target": "Salamanca"
+                        },
+                        {
+                          "source": "Digital Inclusion and Literacy Initiative",
+                          "target": "Torres"
+                        },
+                        {
+                          "source": "Digital Inclusion and Literacy Initiative",
+                          "target": "Treyger"
+                        },
+                        {
+                          "source": "Digital Inclusion and Literacy Initiative",
+                          "target": "Ulrich"
+                        },
+                        {
+                          "source": "Digital Inclusion and Literacy Initiative",
+                          "target": "Vacca"
+                        },
+                        {
+                          "source": "Digital Inclusion and Literacy Initiative",
+                          "target": "Vallone"
+                        },
+                        {
+                          "source": "Digital Inclusion and Literacy Initiative",
+                          "target": "Van Bramer"
+                        },
+                        {
+                          "source": "Digital Inclusion and Literacy Initiative",
+                          "target": "Williams"
+                        },
+                        {
+                          "source": "Digital Inclusion and Literacy Initiative",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Discretionary Child Care",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Domestic Violence and Empowerment (DoVE) Initiative",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Dropout Prevention and Intervention Initiative",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Educational Programs for Students",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Elder Abuse Enhancement",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Ending the Epidemic",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Financial Empowerment for NYC's Renters",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Food Access and Benefits",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Food Pantries",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Foreclosure Buyback Initiative",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Foster Youth Transitional Care",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Gender Equity Liaisons",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Geriatric Mental Health",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Ghetto Film School Accelerator Program Model",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Green Jobs Corps Program",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "hackNY",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Healthy Aging Initiative",
+                          "target": "Barron"
+                        },
+                        {
+                          "source": "Healthy Aging Initiative",
+                          "target": "Borelli"
+                        },
+                        {
+                          "source": "Healthy Aging Initiative",
+                          "target": "CD28"
+                        },
+                        {
+                          "source": "Healthy Aging Initiative",
+                          "target": "Chin"
+                        },
+                        {
+                          "source": "Healthy Aging Initiative",
+                          "target": "Crowley"
+                        },
+                        {
+                          "source": "Healthy Aging Initiative",
+                          "target": "Cumbo"
+                        },
+                        {
+                          "source": "Healthy Aging Initiative",
+                          "target": "Deutsch"
+                        },
+                        {
+                          "source": "Healthy Aging Initiative",
+                          "target": "Dromm"
+                        },
+                        {
+                          "source": "Healthy Aging Initiative",
+                          "target": "Ferreras-Copeland"
+                        },
+                        {
+                          "source": "Healthy Aging Initiative",
+                          "target": "Gentile"
+                        },
+                        {
+                          "source": "Healthy Aging Initiative",
+                          "target": "Grodenchik"
+                        },
+                        {
+                          "source": "Healthy Aging Initiative",
+                          "target": "Johnson"
+                        },
+                        {
+                          "source": "Healthy Aging Initiative",
+                          "target": "Kallos"
+                        },
+                        {
+                          "source": "Healthy Aging Initiative",
+                          "target": "Koo"
+                        },
+                        {
+                          "source": "Healthy Aging Initiative",
+                          "target": "Koslowitz"
+                        },
+                        {
+                          "source": "Healthy Aging Initiative",
+                          "target": "Lancman"
+                        },
+                        {
+                          "source": "Healthy Aging Initiative",
+                          "target": "Lander"
+                        },
+                        {
+                          "source": "Healthy Aging Initiative",
+                          "target": "Mark-Viverito"
+                        },
+                        {
+                          "source": "Healthy Aging Initiative",
+                          "target": "Matteo"
+                        },
+                        {
+                          "source": "Healthy Aging Initiative",
+                          "target": "Menchaca"
+                        },
+                        {
+                          "source": "Healthy Aging Initiative",
+                          "target": "Mendez"
+                        },
+                        {
+                          "source": "Healthy Aging Initiative",
+                          "target": "Richards"
+                        },
+                        {
+                          "source": "Healthy Aging Initiative",
+                          "target": "Rodriguez"
+                        },
+                        {
+                          "source": "Healthy Aging Initiative",
+                          "target": "Rose"
+                        },
+                        {
+                          "source": "Healthy Aging Initiative",
+                          "target": "Rosenthal"
+                        },
+                        {
+                          "source": "Healthy Aging Initiative",
+                          "target": "Torres"
+                        },
+                        {
+                          "source": "Healthy Aging Initiative",
+                          "target": "Ulrich"
+                        },
+                        {
+                          "source": "Healthy Aging Initiative",
+                          "target": "Vacca"
+                        },
+                        {
+                          "source": "Healthy Aging Initiative",
+                          "target": "Vallone"
+                        },
+                        {
+                          "source": "Healthy Aging Initiative",
+                          "target": "Williams"
+                        },
+                        {
+                          "source": "Healthy Aging Initiative",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "HIV/AIDS Faith Based Initiative",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Holocaust Survivors",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Homeless Prevention Services for Veterans",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Housing Information Project",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "HPD Alternative Enforcement Program (AEP)",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "HPD Home Loan Program",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Immigrant Health Initiative",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Immigrant Opportunities Initiative",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Information and Referral Services",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Initiative for Immigrant Survivors of Domestic Violence",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Initiative to Combat Sexual Assault",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Jill Chaifetz Helpline",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Job Placement for Veterans",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Job Training and Placement Initiative",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Joseph S. Murphy Institute Center for Worker Education",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Legal Information for Families (LIFT)",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Legal Services for Low-Income New Yorkers",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Legal Services for the Working Poor",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Legal Services for Veterans",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "LGBT Inclusive Curriculum",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "LGBT Senior Services in Every Borough",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "LGBTQ Youth Mental Health",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Local",
+                          "target": "Barron"
+                        },
+                        {
+                          "source": "Local",
+                          "target": "Borelli"
+                        },
+                        {
+                          "source": "Local",
+                          "target": "Cabrera"
+                        },
+                        {
+                          "source": "Local",
+                          "target": "CD28"
+                        },
+                        {
+                          "source": "Local",
+                          "target": "Chin"
+                        },
+                        {
+                          "source": "Local",
+                          "target": "Cohen"
+                        },
+                        {
+                          "source": "Local",
+                          "target": "Constantinides"
+                        },
+                        {
+                          "source": "Local",
+                          "target": "Cornegy"
+                        },
+                        {
+                          "source": "Local",
+                          "target": "Crowley"
+                        },
+                        {
+                          "source": "Local",
+                          "target": "Cumbo"
+                        },
+                        {
+                          "source": "Local",
+                          "target": "Deutsch"
+                        },
+                        {
+                          "source": "Local",
+                          "target": "Dickens"
+                        },
+                        {
+                          "source": "Local",
+                          "target": "Dromm"
+                        },
+                        {
+                          "source": "Local",
+                          "target": "Espinal"
+                        },
+                        {
+                          "source": "Local",
+                          "target": "Eugene"
+                        },
+                        {
+                          "source": "Local",
+                          "target": "Ferreras-Copeland"
+                        },
+                        {
+                          "source": "Local",
+                          "target": "Garodnick"
+                        },
+                        {
+                          "source": "Local",
+                          "target": "Gentile"
+                        },
+                        {
+                          "source": "Local",
+                          "target": "Gibson"
+                        },
+                        {
+                          "source": "Local",
+                          "target": "Greenfield"
+                        },
+                        {
+                          "source": "Local",
+                          "target": "Grodenchik"
+                        },
+                        {
+                          "source": "Local",
+                          "target": "Johnson"
+                        },
+                        {
+                          "source": "Local",
+                          "target": "Kallos"
+                        },
+                        {
+                          "source": "Local",
+                          "target": "King"
+                        },
+                        {
+                          "source": "Local",
+                          "target": "Koo"
+                        },
+                        {
+                          "source": "Local",
+                          "target": "Koslowitz"
+                        },
+                        {
+                          "source": "Local",
+                          "target": "Lancman"
+                        },
+                        {
+                          "source": "Local",
+                          "target": "Lander"
+                        },
+                        {
+                          "source": "Local",
+                          "target": "Levin"
+                        },
+                        {
+                          "source": "Local",
+                          "target": "Levine"
+                        },
+                        {
+                          "source": "Local",
+                          "target": "Maisel"
+                        },
+                        {
+                          "source": "Local",
+                          "target": "Mark-Viverito"
+                        },
+                        {
+                          "source": "Local",
+                          "target": "Matteo"
+                        },
+                        {
+                          "source": "Local",
+                          "target": "Mealy"
+                        },
+                        {
+                          "source": "Local",
+                          "target": "Menchaca"
+                        },
+                        {
+                          "source": "Local",
+                          "target": "Mendez"
+                        },
+                        {
+                          "source": "Local",
+                          "target": "Miller"
+                        },
+                        {
+                          "source": "Local",
+                          "target": "Palma"
+                        },
+                        {
+                          "source": "Local",
+                          "target": "Reynoso"
+                        },
+                        {
+                          "source": "Local",
+                          "target": "Richards"
+                        },
+                        {
+                          "source": "Local",
+                          "target": "Rodriguez"
+                        },
+                        {
+                          "source": "Local",
+                          "target": "Rose"
+                        },
+                        {
+                          "source": "Local",
+                          "target": "Rosenthal"
+                        },
+                        {
+                          "source": "Local",
+                          "target": "Salamanca"
+                        },
+                        {
+                          "source": "Local",
+                          "target": "Speaker"
+                        },
+                        {
+                          "source": "Local",
+                          "target": "Torres"
+                        },
+                        {
+                          "source": "Local",
+                          "target": "Treyger"
+                        },
+                        {
+                          "source": "Local",
+                          "target": "Ulrich"
+                        },
+                        {
+                          "source": "Local",
+                          "target": "Vacca"
+                        },
+                        {
+                          "source": "Local",
+                          "target": "Vallone"
+                        },
+                        {
+                          "source": "Local",
+                          "target": "Van Bramer"
+                        },
+                        {
+                          "source": "Local",
+                          "target": "Williams"
+                        },
+                        {
+                          "source": "Made in NYC",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Maternal and Child Health Services",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Medicaid Redesign Transition",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Mental Health Services for Veterans",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Mental Health Services for Vulnerbale Populations",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Mortgage Foreclosure Prevention Program",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "MWBE Leadership Associations",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Naturally Occurring Retirement Communities (NORCs)",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Neighborhood Development Grant Initiative",
+                          "target": "Barron"
+                        },
+                        {
+                          "source": "Neighborhood Development Grant Initiative",
+                          "target": "Borelli"
+                        },
+                        {
+                          "source": "Neighborhood Development Grant Initiative",
+                          "target": "CD28"
+                        },
+                        {
+                          "source": "Neighborhood Development Grant Initiative",
+                          "target": "Chin"
+                        },
+                        {
+                          "source": "Neighborhood Development Grant Initiative",
+                          "target": "Constantinides"
+                        },
+                        {
+                          "source": "Neighborhood Development Grant Initiative",
+                          "target": "Crowley"
+                        },
+                        {
+                          "source": "Neighborhood Development Grant Initiative",
+                          "target": "Cumbo"
+                        },
+                        {
+                          "source": "Neighborhood Development Grant Initiative",
+                          "target": "Deutsch"
+                        },
+                        {
+                          "source": "Neighborhood Development Grant Initiative",
+                          "target": "Dickens"
+                        },
+                        {
+                          "source": "Neighborhood Development Grant Initiative",
+                          "target": "Dromm"
+                        },
+                        {
+                          "source": "Neighborhood Development Grant Initiative",
+                          "target": "Eugene"
+                        },
+                        {
+                          "source": "Neighborhood Development Grant Initiative",
+                          "target": "Ferreras-Copeland"
+                        },
+                        {
+                          "source": "Neighborhood Development Grant Initiative",
+                          "target": "Gentile"
+                        },
+                        {
+                          "source": "Neighborhood Development Grant Initiative",
+                          "target": "Greenfield"
+                        },
+                        {
+                          "source": "Neighborhood Development Grant Initiative",
+                          "target": "Grodenchik"
+                        },
+                        {
+                          "source": "Neighborhood Development Grant Initiative",
+                          "target": "Kallos"
+                        },
+                        {
+                          "source": "Neighborhood Development Grant Initiative",
+                          "target": "Koo"
+                        },
+                        {
+                          "source": "Neighborhood Development Grant Initiative",
+                          "target": "Koslowitz"
+                        },
+                        {
+                          "source": "Neighborhood Development Grant Initiative",
+                          "target": "Lancman"
+                        },
+                        {
+                          "source": "Neighborhood Development Grant Initiative",
+                          "target": "Levin"
+                        },
+                        {
+                          "source": "Neighborhood Development Grant Initiative",
+                          "target": "Maisel"
+                        },
+                        {
+                          "source": "Neighborhood Development Grant Initiative",
+                          "target": "Mark-Viverito"
+                        },
+                        {
+                          "source": "Neighborhood Development Grant Initiative",
+                          "target": "Matteo"
+                        },
+                        {
+                          "source": "Neighborhood Development Grant Initiative",
+                          "target": "Mealy"
+                        },
+                        {
+                          "source": "Neighborhood Development Grant Initiative",
+                          "target": "Menchaca"
+                        },
+                        {
+                          "source": "Neighborhood Development Grant Initiative",
+                          "target": "Mendez"
+                        },
+                        {
+                          "source": "Neighborhood Development Grant Initiative",
+                          "target": "Richards"
+                        },
+                        {
+                          "source": "Neighborhood Development Grant Initiative",
+                          "target": "Rodriguez"
+                        },
+                        {
+                          "source": "Neighborhood Development Grant Initiative",
+                          "target": "Rose"
+                        },
+                        {
+                          "source": "Neighborhood Development Grant Initiative",
+                          "target": "Salamanca"
+                        },
+                        {
+                          "source": "Neighborhood Development Grant Initiative",
+                          "target": "Torres"
+                        },
+                        {
+                          "source": "Neighborhood Development Grant Initiative",
+                          "target": "Treyger"
+                        },
+                        {
+                          "source": "Neighborhood Development Grant Initiative",
+                          "target": "Ulrich"
+                        },
+                        {
+                          "source": "Neighborhood Development Grant Initiative",
+                          "target": "Vacca"
+                        },
+                        {
+                          "source": "Neighborhood Development Grant Initiative",
+                          "target": "Vallone"
+                        },
+                        {
+                          "source": "Neighborhood Development Grant Initiative",
+                          "target": "Williams"
+                        },
+                        {
+                          "source": "Neighborhood Development Grant Initiative",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "New York Immigrant Family Unity Project",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "New York Immigrant Population",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Nurse Family Partnership",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "NYC Cleanup",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Parks Equity Initiative",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Parks Maintenance",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Physical Education and Fitness",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Post-Arrest Diversion Program for Young Adults",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Power Action Change Empowerment (PACE) Initiative for Young Adults",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Prevent Sexual Assault (PSA) Initiative for Young Adults",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Prisoners' Rights Project",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Reproductive and Sexual Health Services",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Restorative Justice Program",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Senior Centers for Immigrant Populations",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Senior Centers, Programs, and Enhancements",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Small Business Outreach and Assistance Program",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Social Adult Day Care Enhancement",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Social Justice Postgraduate Fellowship Program",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Speaker's Initiative",
+                          "target": "Speaker"
+                        },
+                        {
+                          "source": "Sports Training and Rolemodels for Success (STARS) Initiative",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Stabilizing NYC",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Step In and Stop It Initiative to Address Bystander Intervention",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Student Voter Registration Day",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "SU-CASA",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Support for Educators",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Support for Victims of Human Trafficking",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Support Our Seniors",
+                          "target": "Barron"
+                        },
+                        {
+                          "source": "Support Our Seniors",
+                          "target": "Borelli"
+                        },
+                        {
+                          "source": "Support Our Seniors",
+                          "target": "CD28"
+                        },
+                        {
+                          "source": "Support Our Seniors",
+                          "target": "Chin"
+                        },
+                        {
+                          "source": "Support Our Seniors",
+                          "target": "Crowley"
+                        },
+                        {
+                          "source": "Support Our Seniors",
+                          "target": "Cumbo"
+                        },
+                        {
+                          "source": "Support Our Seniors",
+                          "target": "Deutsch"
+                        },
+                        {
+                          "source": "Support Our Seniors",
+                          "target": "Dromm"
+                        },
+                        {
+                          "source": "Support Our Seniors",
+                          "target": "Ferreras-Copeland"
+                        },
+                        {
+                          "source": "Support Our Seniors",
+                          "target": "Gentile"
+                        },
+                        {
+                          "source": "Support Our Seniors",
+                          "target": "Grodenchik"
+                        },
+                        {
+                          "source": "Support Our Seniors",
+                          "target": "Johnson"
+                        },
+                        {
+                          "source": "Support Our Seniors",
+                          "target": "Kallos"
+                        },
+                        {
+                          "source": "Support Our Seniors",
+                          "target": "Koo"
+                        },
+                        {
+                          "source": "Support Our Seniors",
+                          "target": "Koslowitz"
+                        },
+                        {
+                          "source": "Support Our Seniors",
+                          "target": "Lancman"
+                        },
+                        {
+                          "source": "Support Our Seniors",
+                          "target": "Lander"
+                        },
+                        {
+                          "source": "Support Our Seniors",
+                          "target": "Mark-Viverito"
+                        },
+                        {
+                          "source": "Support Our Seniors",
+                          "target": "Matteo"
+                        },
+                        {
+                          "source": "Support Our Seniors",
+                          "target": "Menchaca"
+                        },
+                        {
+                          "source": "Support Our Seniors",
+                          "target": "Mendez"
+                        },
+                        {
+                          "source": "Support Our Seniors",
+                          "target": "Richards"
+                        },
+                        {
+                          "source": "Support Our Seniors",
+                          "target": "Rodriguez"
+                        },
+                        {
+                          "source": "Support Our Seniors",
+                          "target": "Rose"
+                        },
+                        {
+                          "source": "Support Our Seniors",
+                          "target": "Rosenthal"
+                        },
+                        {
+                          "source": "Support Our Seniors",
+                          "target": "Torres"
+                        },
+                        {
+                          "source": "Support Our Seniors",
+                          "target": "Ulrich"
+                        },
+                        {
+                          "source": "Support Our Seniors",
+                          "target": "Vacca"
+                        },
+                        {
+                          "source": "Support Our Seniors",
+                          "target": "Vallone"
+                        },
+                        {
+                          "source": "Support Our Seniors",
+                          "target": "Williams"
+                        },
+                        {
+                          "source": "Support Our Seniors",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Supportive Alternatives to Violent Encounters (SAVE)",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Transgender Specific Healthcare Training",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Unaccompanied Minors and Families",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Urban Advantage",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Veterans Community Development",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Viral Hepatitis Prevention",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Warrant Reduction Events",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Work-Based Learning Internships",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Worker Cooperative Business Development Initiative",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Year-Round Employment Program (Work, Learn, Grow)",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Young Women's Leadership Development",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "Youth",
+                          "target": "Barron"
+                        },
+                        {
+                          "source": "Youth",
+                          "target": "Borelli"
+                        },
+                        {
+                          "source": "Youth",
+                          "target": "Cabrera"
+                        },
+                        {
+                          "source": "Youth",
+                          "target": "CD28"
+                        },
+                        {
+                          "source": "Youth",
+                          "target": "Chin"
+                        },
+                        {
+                          "source": "Youth",
+                          "target": "Cohen"
+                        },
+                        {
+                          "source": "Youth",
+                          "target": "Constantinides"
+                        },
+                        {
+                          "source": "Youth",
+                          "target": "Cornegy"
+                        },
+                        {
+                          "source": "Youth",
+                          "target": "Crowley"
+                        },
+                        {
+                          "source": "Youth",
+                          "target": "Cumbo"
+                        },
+                        {
+                          "source": "Youth",
+                          "target": "Deutsch"
+                        },
+                        {
+                          "source": "Youth",
+                          "target": "Dickens"
+                        },
+                        {
+                          "source": "Youth",
+                          "target": "Dromm"
+                        },
+                        {
+                          "source": "Youth",
+                          "target": "Espinal"
+                        },
+                        {
+                          "source": "Youth",
+                          "target": "Eugene"
+                        },
+                        {
+                          "source": "Youth",
+                          "target": "Ferreras-Copeland"
+                        },
+                        {
+                          "source": "Youth",
+                          "target": "Garodnick"
+                        },
+                        {
+                          "source": "Youth",
+                          "target": "Gentile"
+                        },
+                        {
+                          "source": "Youth",
+                          "target": "Gibson"
+                        },
+                        {
+                          "source": "Youth",
+                          "target": "Greenfield"
+                        },
+                        {
+                          "source": "Youth",
+                          "target": "Grodenchik"
+                        },
+                        {
+                          "source": "Youth",
+                          "target": "Johnson"
+                        },
+                        {
+                          "source": "Youth",
+                          "target": "Kallos"
+                        },
+                        {
+                          "source": "Youth",
+                          "target": "King"
+                        },
+                        {
+                          "source": "Youth",
+                          "target": "Koo"
+                        },
+                        {
+                          "source": "Youth",
+                          "target": "Koslowitz"
+                        },
+                        {
+                          "source": "Youth",
+                          "target": "Lancman"
+                        },
+                        {
+                          "source": "Youth",
+                          "target": "Lander"
+                        },
+                        {
+                          "source": "Youth",
+                          "target": "Levin"
+                        },
+                        {
+                          "source": "Youth",
+                          "target": "Levine"
+                        },
+                        {
+                          "source": "Youth",
+                          "target": "Maisel"
+                        },
+                        {
+                          "source": "Youth",
+                          "target": "Mark-Viverito"
+                        },
+                        {
+                          "source": "Youth",
+                          "target": "Matteo"
+                        },
+                        {
+                          "source": "Youth",
+                          "target": "Mealy"
+                        },
+                        {
+                          "source": "Youth",
+                          "target": "Menchaca"
+                        },
+                        {
+                          "source": "Youth",
+                          "target": "Mendez"
+                        },
+                        {
+                          "source": "Youth",
+                          "target": "Miller"
+                        },
+                        {
+                          "source": "Youth",
+                          "target": "Palma"
+                        },
+                        {
+                          "source": "Youth",
+                          "target": "Reynoso"
+                        },
+                        {
+                          "source": "Youth",
+                          "target": "Richards"
+                        },
+                        {
+                          "source": "Youth",
+                          "target": "Rodriguez"
+                        },
+                        {
+                          "source": "Youth",
+                          "target": "Rose"
+                        },
+                        {
+                          "source": "Youth",
+                          "target": "Rosenthal"
+                        },
+                        {
+                          "source": "Youth",
+                          "target": "Salamanca"
+                        },
+                        {
+                          "source": "Youth",
+                          "target": "Torres"
+                        },
+                        {
+                          "source": "Youth",
+                          "target": "Treyger"
+                        },
+                        {
+                          "source": "Youth",
+                          "target": "Ulrich"
+                        },
+                        {
+                          "source": "Youth",
+                          "target": "Vacca"
+                        },
+                        {
+                          "source": "Youth",
+                          "target": "Vallone"
+                        },
+                        {
+                          "source": "Youth",
+                          "target": "Van Bramer"
+                        },
+                        {
+                          "source": "Youth",
+                          "target": "Williams"
+                        },
+                        {
+                          "source": "Youth Health Initiative",
+                          "target": "Council Wide"
+                        },
+                        {
+                          "source": "YouthBuild Project Initiative",
+                          "target": "Council Wide"
+                        }
+                      ]
+
+  var visualization = d3plus.viz()
+    .container("#viz")
+    .type("network")
+    .data(sample_data)
+    .edges(connections)
+    .size("size")
+    .id("name")
+    .draw()
+
+</script>

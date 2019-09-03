@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Budget Funding Sources by Fiscal Year</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
+
+    </head>
+    <body>
+
+
+<canvas id="linechart12" width=auto max-height="400"></canvas>
+<script>
+
+Chart.defaults.global.responsive = true
+Chart.defaults.global.tooltips.backgroundColor="grey"
+Chart.defaults.global.maintainAspectRatio = true
+Chart.defaults.global.legend = false
+
+
+var ctx = document.getElementById("linechart12");
+
+var myChart = new Chart(ctx, {
+    type: 'line',
+    fill: false,
+    data: {
+        labels: ["1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017"],
+        datasets: [
+            {
+              label: "Federal",
+              fill: false,
+              backgroundColor: "#82C91E",
+              borderColor: "#82C91E",
+              borderWidth: 0,
+              hoverBackgroundColor: "#82C91E",
+              hoverBorderColor: "#eeeeee",
+              data: [3148,3422,3610,3960,4006,4194,4133,4292,4262,4417,4550,6097,5618,5415,6654,5243,5471,5692,5941,7700,7747,6998,8421,6767,6784,7195,7728]
+            },
+            {
+              label: "State",
+              fill: false,
+              backgroundColor: "#BE4BDB",
+              borderColor: "#BE4BDB",
+              borderWidth: 0,
+              hoverBackgroundColor: "#BE4BDB",
+              hoverBorderColor: "#eeeeee",
+              data: [5511,5435,5661,5903,6430,6079,6264,6372,6639,7062,7768,8031,8317,8454,8823,9586,10185,11421,12124,11646,11255,11114,11027,10916,12097,13002,13990]
+            },
+            {
+              label: "City Funded",
+              fill: false,
+              backgroundColor: "#2F56A6",
+              borderColor: "#2F56A6",
+              borderWidth: 0,
+              hoverBackgroundColor: "#EF9929",
+              hoverBorderColor: "#eeeeee",
+              data: [19034,20374,21094,21723,21382,22038,23584,24510,25207,26641,28194,27038,30705,33751,37659,39535,43471,45312,42577,44045,46874,52738,52114,55728,59701,60342,62378]
+            }
+          ]
+        },
+    options: {
+      tooltips: {
+        callbacks: {
+          label: function(tooltipItem, data) {
+            var datasetLabel = data.datasets[tooltipItem.datasetIndex].label || '';
+            return datasetLabel + ': ' + '$'+data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US') + ' Million';
+          }
+        }
+      },
+      scales: {
+        yAxes: [{
+          stacked: false,
+          ticks: {
+            beginAtZero:true,
+            callback: function(value) {
+              return '$' + value.toLocaleString('en-US') + ' Million';
+            }
+          }
+        }]
+      }
+
+    }
+  });
+</script>
+    </body>
+</html>

@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>NYC Budget Over Time</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
+
+    </head>
+    <body>
+
+
+<canvas id="stackedbar5" width=auto max-height="500"></canvas>
+<script>
+
+Chart.defaults.global.responsive = true
+Chart.defaults.global.tooltips.backgroundColor="grey"
+Chart.defaults.global.maintainAspectRatio = true
+Chart.defaults.global.borderWidth = 3
+
+var ctx = document.getElementById("stackedbar5");
+
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ["FY 2002 Actual","FY 2003 Actual",	" FY 2004 Actual ",	" FY 2005 Actual ",	" FY 2006 Actual ",	" FY 2007 Actual ",	" FY 2008 Actual ",	" FY 2009 Actual ",	" FY 2010 Actual ",	" FY 2011 Actual ",	" FY 2012 Actual ",	" FY 2013 Actual ",	" FY 2014 Actual ",	" FY 2015 Budget As Adopted ",	" FY 2016 Budget As Adopted "],
+        datasets: [
+          {
+            label: 'Department of Education',
+            backgroundColor:"#2196F3",
+            borderColor: "#eeeeee",
+            borderWidth: 0,
+            hoverBackgroundColor: "#2196F3",
+            hoverBorderColor: "#eeeeee",
+            data: [16.36,17.37,16.97,16.40,16.40,16.43,16.38,16.53,16.00,17.21,18.51,18.19,17.16,27.01,27.29]
+        },
+        {
+          label: 'Miscellaneous',
+          backgroundColor: "#FFEB3B",
+          borderColor: "#eeeeee",
+          borderWidth: 0,
+          hoverBackgroundColor: "#FFEB3B",
+          hoverBorderColor: "#eeeeee",
+          data: [13.32,13.67,12.62,13.85,15.02,15.80,11.98,11.77,11.13,11.03,10.26,9.91,16.33,12.60,13.85]
+      },
+      {
+        label: 'Department of Social Services',
+        backgroundColor:"#F44336",
+        borderColor: "#eeeeee",
+        borderWidth: 0,
+        hoverBackgroundColor: "#F44336",
+        hoverBorderColor: "#eeeeee",
+        data: [12.86,13.48,14.22,14.60,12.59,13.05,15.27,13.96,13.63,12.59,14.59,14.66,13.45,12.69,12.19]
+    },
+    {
+      label: 'Citywide Pension Contributions',
+      backgroundColor:"#4CAF50",
+      borderColor: "#eeeeee",
+      borderWidth: 0,
+      hoverBackgroundColor: "#4CAF50",
+      hoverBorderColor: "#eeeeee",
+      data: [4.56,5.22,7.03,9.03,9.98,11.36,13.04,14.16,14.76,15.21,15.90,16.07,14.58,11.19,10.90]
+  },
+  {
+    label: 'Police Department',
+    backgroundColor:"#E91E63",
+    borderColor: "#eeeeee",
+    borderWidth: 0,
+    hoverBackgroundColor: "#E91E63",
+    hoverBorderColor: "#eeeeee",
+    data: [10.60,10.75,9.99,9.79,8.85,8.39,8.74,9.24,9.41,9.48,8.84,8.58,7.86,6.26,6.31]
+},
+{
+  label: 'Admin. for Children Services',
+  backgroundColor:"#9C27B0",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#9C27B0",
+  hoverBorderColor: "#eeeeee",
+  data: [2.23,2.14,1.80,1.76,1.78,2.18,1.94,1.86,1.59,1.55,1.73,1.65,1.55,3.78,3.67]
+},
+{
+  label: 'Debt Service',
+  backgroundColor:"#FF9800",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#FF9800",
+  hoverBorderColor: "#eeeeee",
+  data: [11.33,10.24,11.24,11.16,10.46,10.37,10.98,10.51,11.05,10.60,10.15,10.81,9.63,5.92,3.65]
+},
+{
+  label: 'Fire Department',
+  backgroundColor:"#673AB7",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#673AB7",
+  hoverBorderColor: "#eeeeee",
+  data: [3.62,3.56,3.30,3.08,3.24,3.08,3.10,3.11,3.21,3.31,3.09,3.16,2.90,2.32,2.28]
+},
+{
+  label: 'Department of Sanitation',
+  backgroundColor:"#3F51B5",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#3F51B5",
+  hoverBorderColor: "#eeeeee",
+  data: [3.11,3.26,3.00,2.85,2.73,2.77,2.82,2.78,2.84,3.05,2.53,2.49,2.49,1.94,1.95]
+},
+{
+  label: 'Dept Health & Mental Hygiene',
+  backgroundColor:"#03A9F4",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#03A9F4",
+  hoverBorderColor: "#eeeeee",
+  data: [1.53,1.77,1.73,1.53,1.53,1.43,1.34,1.49,1.44,1.35,1.25,1.23,1.15,1.82,1.68]
+},
+{
+  label: 'Dept of Environmental Prot.',
+  backgroundColor:"#00BCD4",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#00BCD4",
+  hoverBorderColor: "#eeeeee",
+  data: [2.14,2.23,2.05,1.99,1.97,1.96,1.99,2.07,2.55,2.06,1.92,1.96,1.83,1.52,1.56]
+},
+{
+  label: 'Department of Correction',
+  backgroundColor:"#009688",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#009688",
+  hoverBorderColor: "#eeeeee",
+  data: [2.78,2.80,2.46,2.20,2.24,2.21,2.17,2.22,2.19,2.27,2.16,2.13,1.96,1.43,1.52]
+},
+{
+  label: 'Dept of Citywide Admin Srvces',
+  backgroundColor:"#8BC34A",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#8BC34A",
+  hoverBorderColor: "#eeeeee",
+  data: [0.55,0.49,0.43,0.43,0.40,0.43,0.46,0.49,0.49,0.47,0.41,0.40,0.40,1.50,1.47]
+},
+{
+  label: 'Dept. of Homeless Services',
+  backgroundColor:"#CDDC39",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#CDDC39",
+  hoverBorderColor: "#eeeeee",
+  data: [0.86,0.97,0.82,0.85,0.90,0.84,0.84,0.80,0.84,0.93,0.87,0.95,0.89,1.24,1.35]
+},
+{
+  label: 'City University',
+  backgroundColor:"#FFC107",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#FFC107",
+  hoverBorderColor: "#eeeeee",
+  data: [0.98,1.05,1.10,1.06,1.02,1.00,1.04,1.10,1.19,1.20,1.14,1.18,1.12,1.23,1.24]
+},
+{
+  label: 'Department of Transportation',
+  backgroundColor:"#FF5722",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#FF5722",
+  hoverBorderColor: "#eeeeee",
+  data: [0.93,0.87,0.87,0.85,0.88,0.87,0.99,1.04,0.97,0.94,0.85,0.83,0.82,1.08,1.10]
+},
+{
+  label: 'Housing Preservation & Dev.',
+  backgroundColor:"#795548",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#795548",
+  hoverBorderColor: "#eeeeee",
+  data: [0.22,0.19,0.17,0.15,0.18,0.18,0.18,0.17,0.15,0.13,0.07,0.09,0.11,0.72,0.94]
+},
+{
+  label: 'Youth & Community Development',
+  backgroundColor:"#607D8B",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#607D8B",
+  hoverBorderColor: "#eeeeee",
+  data: [0.32,0.31,0.36,0.36,0.47,0.51,0.61,0.58,0.49,0.50,0.44,0.48,0.53,0.75,0.82]
+},
+{
+  label: 'Dept. of Design & Construction',
+  backgroundColor:"#FF5252",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#FF5252",
+  hoverBorderColor: "#eeeeee",
+  data: [0.09,0.02,0.00,0.00,0.01,0.01,0.02,0.02,0.01,0.00,0.00,0.02,0.00,0.16,0.70]
+},
+{
+  label: 'D.O.I.T.T.',
+  backgroundColor:"#FF4081",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#FF4081",
+  hoverBorderColor: "#eeeeee",
+  data: [0.18,0.24,0.26,0.29,0.28,0.32,0.42,0.50,0.49,0.58,0.54,0.52,0.55,0.63,0.69]
+},
+{
+  label: 'Dept of Parks and Recreation',
+  backgroundColor:"#E040FB",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#E040FB",
+  hoverBorderColor: "#eeeeee",
+  data: [0.57,0.54,0.57,0.57,0.58,0.61,0.65,0.64,0.61,0.60,0.52,0.53,0.54,0.54,0.57]
+},
+{
+  label: 'Health and Hospitals Corp.',
+  backgroundColor:"#7C4DFF",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#7C4DFF",
+  hoverBorderColor: "#eeeeee",
+  data: [2.83,2.81,2.54,2.82,3.82,1.61,0.30,0.21,0.20,0.19,0.15,0.14,0.23,0.23,0.47]
+},
+{
+  label: 'Department for the Aging',
+  backgroundColor:"#536DFE",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#536DFE",
+  hoverBorderColor: "#eeeeee",
+  data: [0.57,0.40,0.27,0.28,0.35,0.32,0.33,0.38,0.35,0.31,0.29,0.28,0.27,0.37,0.39]
+},
+{
+  label: 'Department of Finance',
+  backgroundColor:"#448AFF",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#448AFF",
+  hoverBorderColor: "#eeeeee",
+  data: [0.61,0.60,0.63,0.56,0.51,0.49,0.49,0.50,0.50,0.48,0.44,0.44,0.42,0.32,0.33]
+},
+{
+  label: 'Dept. Small Business Services',
+  backgroundColor:"#40C4FF",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#40C4FF",
+  hoverBorderColor: "#eeeeee",
+  data: [0.30,0.06,0.11,0.09,0.10,0.13,0.18,0.17,0.12,0.13,0.15,0.09,0.12,0.19,0.33]
+},
+{
+  label: 'Law Department',
+  backgroundColor:"#18FFFF",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#18FFFF",
+  hoverBorderColor: "#eeeeee",
+  data: [0.31,0.33,0.32,0.32,0.30,0.29,0.28,0.28,0.29,0.28,0.26,0.27,0.27,0.22,0.23]
+},
+{
+  label: 'Department of Cultural Affairs',
+  backgroundColor:"#64FFDA",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#64FFDA",
+  hoverBorderColor: "#eeeeee",
+  data: [0.42,0.41,0.36,0.34,0.35,0.36,0.37,0.34,0.32,0.31,0.29,0.29,0.27,0.21,0.21]
+},
+{
+  label: 'Department of Buildings',
+  backgroundColor:"#69F0AE",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#69F0AE",
+  hoverBorderColor: "#eeeeee",
+  data: [0.19,0.20,0.18,0.18,0.21,0.21,0.23,0.25,0.23,0.22,0.19,0.20,0.18,0.14,0.19]
+},
+{
+  label: 'Board of Elections',
+  backgroundColor:"#B2FF59",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#B2FF59",
+  hoverBorderColor: "#eeeeee",
+  data: [0.23,0.16,0.21,0.17,0.16,0.17,0.19,0.18,0.21,0.23,0.22,0.20,0.21,0.14,0.17]
+},
+{
+  label: 'New York Public Library',
+  backgroundColor:"#EEFF41",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#EEFF41",
+  hoverBorderColor: "#eeeeee",
+  data: [0.33,0.30,0.28,0.27,0.25,0.26,0.27,0.28,0.26,0.25,0.23,0.22,0.20,0.15,0.16]
+},
+{
+  label: 'Mayoralty',
+  backgroundColor:"#FFFF00",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#FFFF00",
+  hoverBorderColor: "#eeeeee",
+  data: [0.23,0.17,0.17,0.16,0.15,0.15,0.15,0.15,0.15,0.14,0.12,0.12,0.12,0.13,0.15]
+},
+{
+  label: 'Financial Info. Serv. Agency',
+  backgroundColor:"#FFD740",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#FFD740",
+  hoverBorderColor: "#eeeeee",
+  data: [0.09,0.09,0.09,0.09,0.10,0.10,0.10,0.10,0.10,0.10,0.15,0.16,0.15,0.13,0.13]
+},
+{
+  label: 'Queens Borough Public Library',
+  backgroundColor:"#FFAB40",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#FFAB40",
+  hoverBorderColor: "#eeeeee",
+  data: [0.23,0.21,0.20,0.19,0.19,0.19,0.20,0.20,0.19,0.18,0.17,0.16,0.15,0.11,0.12]
+},
+{
+  label: 'Brooklyn Public Library',
+  backgroundColor:"#FF6E40",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#FF6E40",
+  hoverBorderColor: "#eeeeee",
+  data: [0.24,0.22,0.21,0.20,0.19,0.19,0.20,0.21,0.19,0.18,0.17,0.17,0.15,0.11,0.12]
+},
+{
+  label: 'District Attorney - N.Y.',
+  backgroundColor:"#B71C1C",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#B71C1C",
+  hoverBorderColor: "#eeeeee",
+  data: [0.23,0.22,0.21,0.18,0.18,0.17,0.17,0.17,0.19,0.17,0.16,0.17,0.15,0.12,0.12]
+},
+{
+  label: 'Department of Probation',
+  backgroundColor:"#880E4F",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#880E4F",
+  hoverBorderColor: "#eeeeee",
+  data: [0.20,0.19,0.18,0.17,0.16,0.15,0.15,0.14,0.14,0.14,0.12,0.12,0.11,0.12,0.12]
+},
+
+{
+  label: 'Office of the Comptroller',
+  backgroundColor:"#4A148C",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#4A148C",
+  hoverBorderColor: "#eeeeee",
+  data: [0.19,0.18,0.16,0.14,0.14,0.13,0.13,0.13,0.12,0.12,0.11,0.11,0.12,0.11,0.12]
+},
+{
+  label: 'District Attorney - Kings',
+  backgroundColor:"#311B92",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#311B92",
+  hoverBorderColor: "#eeeeee",
+  data: [0.25,0.21,0.19,0.19,0.18,0.17,0.17,0.17,0.17,0.17,0.15,0.16,0.15,0.11,0.12]
+},
+{
+  label: 'Taxi & Limousine Commission',
+  backgroundColor:"#1A237E",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#1A237E",
+  hoverBorderColor: "#eeeeee",
+  data: [0.08,0.07,0.07,0.07,0.07,0.06,0.06,0.07,0.07,0.07,0.06,0.07,0.08,0.10,0.09]
+},
+{
+  label: 'City Council',
+  backgroundColor:"#0D47A1",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#0D47A1",
+  hoverBorderColor: "#eeeeee",
+  data: [0.16,0.15,0.14,0.13,0.12,0.12,0.12,0.11,0.12,0.12,0.11,0.10,0.09,0.07,0.08]
+},
+{
+  label: 'District Attorney - Bronx',
+  backgroundColor:"#01579B",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#01579B",
+  hoverBorderColor: "#eeeeee",
+  data: [0.13,0.12,0.11,0.11,0.10,0.10,0.10,0.10,0.10,0.10,0.09,0.09,0.09,0.07,0.07]
+},
+{
+  label: 'District Attorney - Queens',
+  backgroundColor:"#006064",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#006064",
+  hoverBorderColor: "#eeeeee",
+  data: [0.12,0.11,0.11,0.10,0.09,0.09,0.09,0.09,0.10,0.09,0.09,0.09,0.08,0.07,0.07]
+},
+{
+  label: 'Department of Consumer Affairs',
+  backgroundColor:"#004D40",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#004D40",
+  hoverBorderColor: "#eeeeee",
+  data: [0.04,0.04,0.04,0.04,0.03,0.04,0.04,0.04,0.04,0.04,0.04,0.05,0.05,0.05,0.05]
+},
+{
+  label: 'Office of Administrative Trials and Hearings',
+  backgroundColor:"#1B5E20",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#1B5E20",
+  hoverBorderColor: "#eeeeee",
+  data: [0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.05,0.06,0.06,0.06,0.05,0.05]
+},
+{
+  label: 'Department of City Planning',
+  backgroundColor:"#33691E",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#33691E",
+  hoverBorderColor: "#eeeeee",
+  data: [0.02,0.03,0.01,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.01,0.01,0.04,0.05]
+},
+{
+  label: 'Department of Investigation',
+  backgroundColor:"#827717",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#827717",
+  hoverBorderColor: "#eeeeee",
+  data: [0.07,0.06,0.05,0.05,0.04,0.04,0.04,0.04,0.04,0.03,0.03,0.03,0.03,0.04,0.04]
+},
+{
+  label: 'NY Public Library - Research',
+  backgroundColor:"#F57F17",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#F57F17",
+  hoverBorderColor: "#eeeeee",
+  data: [0.06,0.06,0.05,0.05,0.05,0.05,0.06,0.06,0.06,0.05,0.04,0.04,0.04,0.03,0.03]
+},
+{
+  label: 'Off. of Prosec. & Spec. Narc.',
+  backgroundColor:"#FF6F00",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#FF6F00",
+  hoverBorderColor: "#eeeeee",
+  data: [0.05,0.04,0.04,0.04,0.04,0.04,0.04,0.04,0.04,0.04,0.03,0.03,0.03,0.02,0.03]
+},
+{
+  label: 'Office of Payroll Admin.',
+  backgroundColor:"#E65100",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#E65100",
+  hoverBorderColor: "#eeeeee",
+  data: [0.02,0.02,0.02,0.02,0.02,0.02,0.03,0.03,0.05,0.13,0.03,0.02,0.02,0.04,0.02]
+},
+{
+  label: 'Community Boards (All)',
+  backgroundColor:"#BF360C",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#BF360C",
+  hoverBorderColor: "#eeeeee",
+  data: [0.04,0.04,0.04,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.02,0.02]
+},{
+  label: 'Dept. of Emergency Management',
+  backgroundColor:"#9fcae7",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#E1F5FE",
+  hoverBorderColor: "#eeeeee",
+  data: [0.00,0.01,0.01,0.01,0.01,0.02,0.02,0.02,0.03,0.01,0.01,0.03,0.01,0.01,0.02]
+},{
+  label: 'Civilian Complaint Review Bd.',
+  backgroundColor:"#3E2723",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#3E2723",
+  hoverBorderColor: "#eeeeee",
+  data: [0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.02,0.02,0.02,0.02,0.02,0.02,0.02]
+},{
+  label: 'Campaign Finance Board',
+  backgroundColor:"#FF8A80",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#FF8A80",
+  hoverBorderColor: "#eeeeee",
+  data: [0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.00,0.00,0.00,0.00,0.01,0.01]
+},{
+  label: 'District Attorney - Richmond',
+  backgroundColor:"#FF8A80",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#FF8A80",
+  hoverBorderColor: "#eeeeee",
+  data: [0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.01,0.01]
+},{
+  label: 'Business Integrity Commission',
+  backgroundColor:"#EA80FC",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#EA80FC",
+  hoverBorderColor: "#eeeeee",
+  data: [0.01,0.02,0.01,0.01,0.01,0.01,0.01,0.01,0.02,0.02,0.01,0.01,0.01,0.01,0.01]
+},{
+  label: 'Office of the Actuary',
+  backgroundColor:"#B388FF",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#B388FF",
+  hoverBorderColor: "#eeeeee",
+  data: [0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01]
+},{
+  label: 'President,Borough of Brooklyn',
+  backgroundColor:"#8C9EFF",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#8C9EFF",
+  hoverBorderColor: "#eeeeee",
+  data: [0.02,0.02,0.01,0.01,0.01,0.01,0.02,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01]
+},{
+  label: 'Independent Budget Office',
+  backgroundColor:"#82B1FF",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#82B1FF",
+  hoverBorderColor: "#eeeeee",
+  data: [0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01]
+},{
+  label: 'Landmarks Preservation Comm.',
+  backgroundColor:"#80D8FF",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#80D8FF",
+  hoverBorderColor: "#eeeeee",
+  data: [0]
+},{
+  label: 'Taxi & Limousine Commission',
+  backgroundColor:"#84FFFF",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#84FFFF",
+  hoverBorderColor: "#eeeeee",
+  data: [0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01]
+},{
+  label: 'City Clerk',
+  backgroundColor:"#A7FFEB",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#A7FFEB",
+  hoverBorderColor: "#eeeeee",
+  data: [0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01]
+},
+{
+  label: 'President,Borough of the Bronx',
+  backgroundColor:"#B9F6CA",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#B9F6CA",
+  hoverBorderColor: "#eeeeee",
+  data: [0.02,0.02,0.02,0.01,0.01,0.01,0.02,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01]
+},
+{
+  label: 'President,Borough of Queens',
+  backgroundColor:"#CCFF90",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#CCFF90",
+  hoverBorderColor: "#eeeeee",
+  data: [0.02,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01]
+},
+{
+  label: 'Office of Administrative Tax Appeals',
+  backgroundColor:"#F4FF81",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#F4FF81",
+  hoverBorderColor: "#eeeeee",
+  data: [0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01]
+},
+{
+  label: 'President,Borough of S.I.',
+  backgroundColor:"#FFFF8D",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#FFFF8D",
+  hoverBorderColor: "#eeeeee",
+  data: [0.02,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01]
+},
+{
+  label: 'Public Advocate',
+  backgroundColor:"#FFE57F",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#FFE57F",
+  hoverBorderColor: "#eeeeee",
+  data: [0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.00,0.00,0.00,0.00,0.00,0.00]
+},
+{
+  label: 'Board of Correction',
+  backgroundColor:"#FFD180",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#FFD180",
+  hoverBorderColor: "#eeeeee",
+  data: [0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00]
+},
+{
+  label: 'Office of Collective Barg.',
+  backgroundColor:"#FF9E80",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#FF9E80",
+  hoverBorderColor: "#eeeeee",
+  data: [0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00]
+},
+{
+  label: 'Conflicts of Interest Board',
+  backgroundColor:"#BCAAA4",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#BCAAA4",
+  hoverBorderColor: "#eeeeee",
+  data: [0.01,0.01,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00]
+},
+{
+  label: 'Public Administrator - Queens',
+  backgroundColor:"#FFEBEE",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#FFEBEE",
+  hoverBorderColor: "#eeeeee",
+  data: [0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00]
+},
+{
+  label: 'Civil Service Commission',
+  backgroundColor:"#FCE4EC",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#FCE4EC",
+  hoverBorderColor: "#eeeeee",
+  data: [0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00]
+},
+{
+  label: 'Equal Employment Practices Com',
+  backgroundColor:"#F3E5F5",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#F3E5F5",
+  hoverBorderColor: "#eeeeee",
+  data: [0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00]
+},
+{
+  label: 'Public Administrator - N.Y.',
+  backgroundColor:"#EDE7F6",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#EDE7F6",
+  hoverBorderColor: "#eeeeee",
+  data: [0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00]
+},
+{
+  label: 'Public Administrator - Bronx',
+  backgroundColor:"#E8EAF6",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#E8EAF6",
+  hoverBorderColor: "#eeeeee",
+  data: [0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00]
+},
+{
+  label: 'Public Administrator- Brooklyn',
+  backgroundColor:"#E3F2FD",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#E3F2FD",
+  hoverBorderColor: "#eeeeee",
+  data: [0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00]
+},
+{
+  label: 'Public Administrator -Richmond',
+  backgroundColor:"#E1F5FE",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#E1F5FE",
+  hoverBorderColor: "#eeeeee",
+  data: [0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00]
+},
+{
+  label: 'Department of Employment',
+  backgroundColor:"#E0F7FA",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#E0F7FA",
+  hoverBorderColor: "#eeeeee",
+  data: [0.04,0.02,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00]
+},
+{
+  label: 'Department of Juvenile Justice',
+  backgroundColor:"#E0F2F1",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#E0F2F1",
+  hoverBorderColor: "#eeeeee",
+  data: [0.25,0.26,0.20,0.19,0.20,0.21,0.23,0.22,0.23,0.37,0.00,0.00,0.00,0.00,0.00]
+},
+{
+  label: 'Dept of Mental Health',
+  backgroundColor:"#E8F5E9",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#E8F5E9",
+  hoverBorderColor: "#eeeeee",
+  data: [0.29,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00]
+},
+{
+  label: 'Districting Commission',
+  backgroundColor:"#F1F8E9",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#F1F8E9",
+  hoverBorderColor: "#eeeeee",
+  data: [0.00,0.01,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00]
+},
+{
+  label: 'M.A.C. Debt Service',
+  backgroundColor:"#F9FBE7",
+  borderColor: "#eeeeee",
+  borderWidth: 0,
+  hoverBackgroundColor: "#F9FBE7",
+  hoverBorderColor: "#eeeeee",
+  data: [1.58,0.77,1.56,0.31,0.03,0.02,0.01,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00]
+}
+      ]
+
+    },
+ options: {
+   tooltips: {
+       callbacks: {
+         label: function(tooltipItem, data) {
+           return data.labels[tooltipItem.index] + ': ' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] + '%';
+         },
+       }
+   },
+        scales: {
+            yAxes: [{
+                stacked: true,
+                ticks: {
+                    beginAtZero:true
+                }
+            }],
+            xAxes: [{
+                stacked: true
+            }]
+        }
+
+    }
+
+});
+</script>
+    </body>
+</html>

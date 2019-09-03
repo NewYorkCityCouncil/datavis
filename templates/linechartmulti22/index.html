@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Hart Island: Location of Death Over Time</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
+
+    </head>
+    <body>
+
+
+<canvas id="linechart22" width=auto max-height="400"></canvas>
+<script>
+
+Chart.defaults.global.responsive = true
+Chart.defaults.global.tooltips.backgroundColor="grey"
+Chart.defaults.global.maintainAspectRatio = true
+//Chart.defaults.global.legend = false
+
+
+var ctx = document.getElementById("linechart22");
+
+var myChart = new Chart(ctx, {
+    type: 'line',
+    fill: false,
+    data: {
+        labels: ["1978","1980","1982","1984","1986","1988","1990","1992","1994","1996","1998","2000","2002","2004","2006","2008","2010","2012","2014","2016"],
+        datasets: [
+            {
+              label: "Nursing Facility",
+              lineTension: 0,
+              pointRadius: 4,
+              fill: false,
+              backgroundColor: "#12B886",
+              borderColor: "#12B886",
+              borderWidth: 0,
+              hoverBackgroundColor: "#000080",
+              hoverBorderColor: "#eeeeee",
+              data: [17,13,13,5,12,6,17,17,10,0,2,8,3,11,11,21,38,57,55,71]
+            },
+            {
+              label: "Public Hospital",
+              lineTension: 0,
+              pointRadius: 4,
+              fill: false,
+              backgroundColor: "#BE4BDB",
+              borderColor: "#BE4BDB",
+              borderWidth: 0,
+              hoverBackgroundColor: "#FF0000",
+              hoverBorderColor: "#eeeeee",
+              data: [120,186,203,246,249,276,268,172,152,138,106,100,120,80,66,75,75,47,72,52]
+            },
+            {
+              label: "Private Hospital",
+              lineTension: 0,
+              pointRadius: 4,
+              fill: false,
+              backgroundColor: "#FF0000",
+              borderColor: "#FF0000",
+              borderWidth: 0,
+              hoverBackgroundColor: "#FF0000",
+              hoverBorderColor: "#eeeeee",
+              data: [282,383,450,421,492,585,557,473,475,480,420,383,382,411,412,461,305,345,342,288]
+            },
+            {
+              label: "Residential/Other",
+              lineTension: 0,
+                pointRadius: 4,
+              fill: false,
+              backgroundColor: "#000080",
+              borderColor: "#000080",
+              borderWidth: 0,
+              hoverBackgroundColor: "#FF0000",
+              hoverBorderColor: "#eeeeee",
+              data: [446,543,539,508,411,462,427,385,377,330,307,265,287,303,328,299,236,233,264,330]
+            }
+          ]
+        },
+    options: {
+
+      tooltips: {
+        callbacks: {
+          label: function(tooltipItem, data) {
+            var datasetLabel = data.datasets[tooltipItem.datasetIndex].label || '';
+            return datasetLabel + ': '+'' +data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US') + ' Deaths';
+          }
+        }
+      },
+      scales: {
+        yAxes: [{
+          stacked: false,
+          ticks: {
+            beginAtZero:false,
+            callback: function(value) {
+              return '' + value.toLocaleString('en-US')+ ' Deaths';
+            }
+          }
+        }]
+      }
+    }
+  });
+</script>
+    </body>
+</html>

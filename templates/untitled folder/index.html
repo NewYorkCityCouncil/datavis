@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Delays Per Month Sept 2015 - Sept 2018</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.7/chartjs-plugin-annotation.min.js"></script>
+
+    </head>
+    <body>
+
+
+      <canvas id="line11" width=auto max-height="400"></canvas>
+      <script>
+
+      Chart.defaults.global.responsive = true
+      Chart.defaults.global.tooltips.backgroundColor="grey"
+      Chart.defaults.global.maintainAspectRatio = true
+      Chart.defaults.global.legend = false
+
+      var ctx = document.getElementById("line11");
+
+      var myChart = new Chart(ctx, {
+          type: 'line',
+          data: {
+              labels: ["Sep 2015","Oct 2015","Nov 2015","Dec 2015","Jan 2016","Feb 2016","Mar 2016","Apr 2016","May 2016","Jun 2016","Sep 2016","Oct 2016","Nov 2016","Dec 2016","Jan 2017","Feb 2017","Mar 2017","Apr 2017","May 2017","Jun 2017","Sep 2017","Oct 2017","Nov 2017","Dec 2017","Jan 2018","Feb 2018","Mar 2018","Apr 2018","May 2018","Jun 2018","Sep 2018"],
+              datasets: [{
+                  label: 'Delays Per Month Sept 2015 - Sept 2018',
+                  fill: false,
+                  lineTension: .5,
+                  backgroundColor:"#82C91E",
+                  borderColor: "#82C91E",
+                  borderWidth: 3,
+                  borderCapStyle: 'butt',
+                  borderDash: [],
+                  borderDashOffset: 0.0,
+                  borderJoinStyle: 'miter',
+                  pointBorderColor: "#82C91E",
+                  pointBackgroundColor: "#82C91E",
+                  pointBorderWidth: 5,
+                  pointHoverRadius: 6,
+                  pointHoverBackgroundColor: "#82C91E",
+                  pointHoverBorderColor: "#82C91E",
+                  pointHoverBorderWidth: 2,
+                  pointRadius: 3,
+                  pointHitRadius: 4,
+                  hoverBackgroundColor: "#82C91E",
+                  hoverBorderColor: "#82C91E",
+                  data: [438,384,352,343,458,371,301,334,360,333,489,384,398,440,440,434,475,512,476,385,482,516,452,469,509,491,468,530,512,418,606]
+              }]
+
+          },
+          options: {
+            tooltips: {
+              callbacks: {
+                label: function(tooltipItem, data) {
+                  var datasetLabel = data.datasets[tooltipItem.datasetIndex].label || '';
+                  return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+' delays' ;
+                }
+              }
+            },
+            scales: {
+              yAxes: [{
+                stacked: false,
+                ticks: {
+                  beginAtZero: true,
+                  callback: function(value) {
+                    return value.toLocaleString('en-US');
+                  }
+                }
+              }],
+            },
+            annotation: {
+               drawTime: "afterDraw",
+               events: ['dblclick'],
+               annotations: [{
+                 id: '2015-school',
+                 type: 'box',
+                 xScaleID: 'x-axis-1',
+                 yScaleID: 'y-axis-1',
+                 yMin: 0,
+                 yMax: 400,
+                 backgroundColor: 'rgba(255, 0, 0, 0.3)',
+                 //borderColor: 'rgb(255, 0, 0)',
+                 borderWidth: 1
+               },/*{
+                 id: 'hi-box',
+                 type: 'box',
+                 xScaleID: 'x-axis-1',
+                 yScaleID: 'y-axis-1',
+                 xMin: -100,
+                 xMax: 100,
+                 yMin: 100,
+                 yMax: 40,
+                 backgroundColor: 'rgba(255, 0, 0, 0.3)',
+                 //borderColor: 'rgb(255, 0, 0)',
+                 borderWidth: 1
+               }*/]
+          }
+        }
+
+      });
+</script>
+    </body>
+</html>

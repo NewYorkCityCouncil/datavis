@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Delays Per Month Sept 2015 - Sept 2018</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+
+    </head>
+    <body>
+
+
+<canvas id="myChart" width="1200" height="400"></canvas>
+<script>
+
+Chart.defaults.global.responsive = true
+Chart.defaults.global.maintainAspectRatio = true
+Chart.defaults.global.legend = false
+
+Chart.types.Line.extend({
+    name: "LineAlt",
+    initialize: function (data) {
+        Chart.types.Line.prototype.initialize.apply(this, arguments);
+
+        // keep a reference to the original clear
+        this.originalClear = this.clear;
+        this.clear = function () {
+
+            this.originalClear();
+
+            // 1 x scale unit
+            var unitX = this.datasets[0].points[1].x - this.datasets[0].points[0].x;
+
+            var yTop = this.scale.startPoint;
+            var yHeight = this.scale.endPoint - this.scale.startPoint;
+
+            // change your color here
+            this.chart.ctx.fillStyle = 'rgba(202,202,202,0.8)';
+
+            // we shift it by half a x scale unit to the left because the space between gridline is actually a shared space
+            this.chart.ctx.fillRect(this.datasets[0].points[5].x - 0.5 * unitX, yTop, unitX * 5, yHeight);
+            this.chart.ctx.fillRect(this.datasets[0].points[15].x - 0.5 * unitX, yTop, unitX * 5, yHeight);
+        }
+    }
+});
+
+
+var data = {
+    labels: ["Sep 2015","Oct 2015","Nov 2015","Dec 2015","Jan 2016","Feb 2016","Mar 2016","Apr 2016","May 2016","Jun 2016","Sep 2016","Oct 2016","Nov 2016","Dec 2016","Jan 2017","Feb 2017","Mar 2017","Apr 2017","May 2017","Jun 2017","Sep 2017","Oct 2017","Nov 2017","Dec 2017","Jan 2018","Feb 2018","Mar 2018","Apr 2018","May 2018","Jun 2018","Sep 2018"],
+    datasets: [{
+        label: "Delays Per Month Sept 2015 - Sept 2018",
+        fillColor: "rgba(255,255,255,0.2)",
+        lineTension: 0,
+        strokeColor: "#82C91E",
+          pointColor: "#82C91E",
+          pointStrokeColor: "#82C91E",
+          pointHighlightFill: "#fff",
+          pointHighlightStroke: "rgba(151,187,205,1)",
+        data: [438,384,352,343,458,371,301,334,360,333,489,384,398,440,440,434,475,512,476,385,482,516,452,469,509,491,468,530,512,418,606]
+    }]
+}
+
+
+
+
+var ctx = document.getElementById("myChart").getContext("2d");
+var myNewChart =  new Chart(ctx).LineAlt(data, {
+  options:
+  {
+    tooltips: {
+      callbacks: {
+        label: function(tooltipItem, data) {
+          var datasetLabel = data.datasets[tooltipItem.datasetIndex].label || '';
+          return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+' delays' ;
+        }
+      }
+    },
+    scales: {
+      yAxes: [{
+        stacked: false,
+        ticks: {
+          beginAtZero: true,
+          callback: function(value) {
+            return value.toLocaleString('en-US');
+          }
+        }
+      }]
+    }
+  }
+
+
+});
+</script>
+    </body>
+</html>

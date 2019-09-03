@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+
+<style>
+body {
+  font: 18px "Helvetica Neue";
+  font-weight:300;
+  text-rendering: optimizeLegibility;
+  margin-left: 20px;
+}
+
+
+
+ .axis text {
+  font:  18px "Helvetica Neue";;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+</style>
+
+
+<body>
+<script src="//d3js.org/d3.v3.min.js"></script>
+<script>
+
+var format = d3.time.format("%Y-%m-%d");
+var startDate = format.parse("2015-12-01");
+var endDate = format.parse("2016-06-01");
+
+var margin = {top: 100, right: 100, bottom: 100, left: 100},
+    width = 960 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+
+var x = d3.time.scale()
+    .domain([startDate, endDate])
+    .nice(d3.time.month)
+    .range([height, 0]);
+
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+svg.append("g")
+    .attr("class", "x axis")
+    .call(d3.svg.axis().scale(x).orient("left"));
+
+</script>

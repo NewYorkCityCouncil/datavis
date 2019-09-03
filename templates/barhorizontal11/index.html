@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>New Needs by Agency</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
+
+    </head>
+    <body>
+
+
+<canvas id="barhorizontal11" max-width="100" height="900"></canvas>
+<script>
+
+Chart.defaults.global.responsive = true
+Chart.defaults.global.legend.display= true
+Chart.defaults.global.maintainAspectRatio = false
+
+
+
+Chart.defaults.scale = {
+		display: true,
+		position: "left",
+
+		// grid line settings
+		gridLines: {
+			display: false,
+			color: "rgba(0, 0, 0, 0.1)",
+			lineWidth: 1,
+			drawBorder: true,
+			drawOnChartArea: true,
+			drawTicks: true,
+			tickMarkLength: 10,
+			zeroLineWidth: 1,
+			zeroLineColor: "rgba(0,0,0,0.25)",
+			offsetGridLines: false
+		},
+
+		// scale label
+		scaleLabel: {
+			// actual label
+			labelString: '',
+
+			// display property
+			display: false
+		},
+
+		// label settings
+		ticks: {
+			beginAtZero: true,
+      minRotation: 0,
+			maxRotation: 50,
+			mirror: false,
+			padding: 10,
+			reverse: false,
+			display: true,
+			autoSkip: false,
+			autoSkipPadding: 0,
+			labelOffset: 0,
+			callback: function(value) {
+				return '' + value;
+			}
+		}
+	};
+
+// Chart.defaults.global.defaultFontSize = 10
+
+var ctx = document.getElementById("barhorizontal11");
+
+var myChart = new Chart(ctx, {
+    type: 'horizontalBar',
+    data: {
+        labels: [
+          "Homeless Services",
+          "Department of Education",
+          "Campaign Finance Board",
+          "Board of Elections",
+          "Social Services",
+          "Citywide Administrative Services",
+          "Environmental Protection",
+          "Fire",
+          "Youth and Community Development",
+          "Sanitation",
+          "Administration for Children's Services",
+          "Miscellaneous",
+          "Police",
+          "Department of Buildings",
+          "Health and Mental Hygiene",
+          "Department of Info, Tech, and Telecomm",
+          "Department of Finance",
+          "City Council",
+          "Health and Hospitals",
+          "Housing Preservation and Development",
+          "Transportation",
+          "Small Business Services",
+          "Office of Administrative Trials and Hearings",
+          "Parks and Recreation",
+          "All Other"
+                ],
+        datasets: [{
+            label: 'FY 2017',
+            backgroundColor:"#82C91E",
+            borderColor: "#eeeeee",
+            borderWidth: 1,
+            hoverBackgroundColor: "#9E9E9E",
+            hoverBorderColor: "#eeeeee",
+            data: [59978346,45529559,0,0,1323802,4213912,-288119,15063714,0,8900450,0,41071859,18163551,0,1588125,7534248,596169,0,1838973,0,2063298,31591374,601851,3319644,956315]
+        },
+        {
+            label: 'FY 2018',
+            backgroundColor:"#228AE6",
+            borderColor: "#eeeeee",
+            borderWidth: 1,
+            hoverBackgroundColor: "#9E9E9E",
+            hoverBorderColor: "#eeeeee",
+            data: [167478609,103537588,42642070,42527625,38722605,33869298,31828386,31675846,26325623,25452949,25159131,21876303,19958018,14826500,11949389,10731578,10676265,9877634,9851343,9624675,9479526,7811701,5811297,4908807,20554673]
+        }]
+    },
+    options: {
+      scales:{
+        xAxes: [{
+          display: true,
+          ticks: {
+            beginAtZero: false,
+            callback: function(value, index, values) {
+              return '$'+value/1000000+'M';
+            }
+          }
+        }],
+        yAxes: [{
+          display: true,
+          ticks: {
+            beginAtZero: true,
+          }
+        }]
+      },
+      tooltips: {
+        callbacks: {
+/*
+          label: function(tooltipItem, data) {
+            return '$' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US');
+          },
+          */
+          title: function(tooltipItems, data) {
+					// Pick first xLabel for now
+					var title = '';
+
+					if (tooltipItems.length > 0) {
+						if (tooltipItems[0].yLabel) {
+							title = tooltipItems[0].yLabel;
+						} else if (data.labels.length > 0 && tooltipItems[0].index < data.labels.length) {
+							title = data.labels[tooltipItems[0].index];
+						}
+					}
+
+					return title;
+				},
+				label: function(tooltipItem, data) {
+					var datasetLabel = data.datasets[tooltipItem.datasetIndex].label || '';
+					return '$' + tooltipItem.xLabel.toLocaleString('en-US');
+				}
+        }
+      }
+    }
+
+});
+</script>
+    </body>
+</html>

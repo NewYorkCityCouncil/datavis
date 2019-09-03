@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>Line Chart</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+		<script src="../zoomtest/node_modules/chart.js/dist/Chart.js"></script>
+    <script src="../zoomtest/node_modules/hammerjs/hammer.min.js"></script>
+    <script src="../zoomtest/Chart.Zoom.js"></script>
+	<style>
+    canvas {
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+    }
+	</style>
+</head>
+
+<body>
+	<div style="width:75%;">
+		<button onclick="resetZoom()">Reset Zoom</button>
+		<canvas id="canvas"></canvas>
+	</div>
+	<script>
+		var timeFormat = 'YYYY';
+
+/*		function randomScalingFactor() {
+			return Math.round(Math.random() * 100 * (Math.random() > 0.5 ? -1 : 1));
+		}
+
+		function randomColorFactor() {
+			return Math.round(Math.random() * 255);
+		}
+
+		function randomColor(opacity) {
+			return 'rgba(' + randomColorFactor() + ',' + randomColorFactor() + ',' + randomColorFactor() + ',' + (opacity || '.3') + ')';
+		}
+
+		function newDate(days) {
+			return moment().add(days, 'd').toDate();
+		}
+
+		function newDateString(days) {
+			return moment().add(days, 'd').format(timeFormat);
+		}
+
+		function newTimestamp(days) {
+			return moment().add(days, 'd').unix();
+		}
+*/
+		function resetZoom() {
+			window.myLine.resetZoom()
+		}
+
+		var config = {
+			type: 'line',
+			data: {
+				labels: ["2002","2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016"], // Date Objects
+				datasets: [{
+					label: "Department of Education",
+					data: [11883255000,12780991000,13148112000,13871184000,14959318000,15884401000,16977034000,17903053000,18498505000,18938899000,19283256000,19232415000,20085287000,20999365000,22242644637],
+					fill: false,
+					backgroundColor: "#d05d4e",
+					borderColor: "#d05d4e",
+					borderWidth: 0,
+					hoverBackgroundColor: "#d05d4e",
+					borderDash: [5, 5],
+				}, {
+					label: "Department of Social Services",
+					data: [5972625000,6159736000,6647548000,7204062000,6935913000,7425152000,8681886000,8327785000,8482385000,8068753000,9391227000,9513785000,9531094000,9771190000,9383925143],
+					fill: false,
+					borderDash: [5, 5],
+				}, {
+					label: "Citywide Pension Contributions",
+					data: [1491901000,1750586000,2444470000,3369832000,4014955000,4856280000,5740554000,6389179000,6755590000,6999833000,7954705000,8178550000,8265364000,8616325000,9285221553],
+					fill: false
+				}]
+			},
+			options: {
+				responsive: true,
+                title:{
+                    display:false,
+                    text:"Chart.js Time Scale"
+                },
+				scales: {
+					xAxes: [{
+						type: "time",
+
+						time: {
+						format: timeFormat,
+						tooltipFormat: 'YYYY'
+						},
+
+						scaleLabel: {
+						//	display: true,
+							labelString: 'Year'
+						},
+						ticks: {
+							maxRotation: 0,
+						}
+
+					}],
+
+					yAxes: [{
+						scaleLabel: {
+							display: true,
+							labelString: 'value'
+						}
+					}]
+				},
+                zoom: {
+                    enabled: true,
+                    drag: true,
+                    mode: 'xy',
+                    limits: {
+                        max: 5,
+                        min: 0.5
+                    }
+                }
+			}
+		};
+/*
+		config.data.datasets.forEach(function(dataset) {
+			dataset.borderColor = randomColor(0.4);
+			dataset.backgroundColor = randomColor(0.5);
+			dataset.pointBorderColor = randomColor(0.7);
+			dataset.pointBackgroundColor = randomColor(0.5);
+			dataset.pointBorderWidth = 1;
+		});
+*/
+		window.onload = function() {
+			var ctx = document.getElementById("canvas").getContext("2d");
+			window.myLine = new Chart(ctx, config);
+
+		};
+	</script>
+</body>
+
+</html>

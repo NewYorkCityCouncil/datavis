@@ -1,0 +1,4566 @@
+<!doctype html>
+<meta charset="utf-8">
+
+<script src="https://d3plus.org/js/d3.js"></script>
+<script src="http://d3plus.org/js/d3plus.js"></script>
+
+<div id="viz"></div>
+
+<script>
+
+  var sample_data = [
+  {
+    "name": "Barron",
+    "size": 1072490
+  },
+  {
+    "name": "Aging : Barron",
+    "size": 110000
+  },
+  {
+    "name": "Anti-Poverty : Barron",
+    "size": 75000
+  },
+  {
+    "name": "Cultural After-School Adventure (CASA) : Barron",
+    "size": 220000
+  },
+  {
+    "name": "Digital Inclusion and Literacy Initiative : Barron",
+    "size": 20000
+  },
+  {
+    "name": "Healthy Aging Initiative : Barron",
+    "size": 35490
+  },
+  {
+    "name": "Local : Barron",
+    "size": 400000
+  },
+  {
+    "name": "Neighborhood Development Grant Initiative : Barron",
+    "size": 22000
+  },
+  {
+    "name": "Support Our Seniors : Barron",
+    "size": 40000
+  },
+  {
+    "name": "Youth : Barron",
+    "size": 150000
+  },
+  {
+    "name": "Borelli",
+    "size": 1002490
+  },
+  {
+    "name": "Aging : Borelli",
+    "size": 110000
+  },
+  {
+    "name": "Anti-Poverty : Borelli",
+    "size": 25000
+  },
+  {
+    "name": "Cultural After-School Adventure (CASA) : Borelli",
+    "size": 220000
+  },
+  {
+    "name": "Healthy Aging Initiative : Borelli",
+    "size": 35490
+  },
+  {
+    "name": "Local : Borelli",
+    "size": 400000
+  },
+  {
+    "name": "Neighborhood Development Grant Initiative : Borelli",
+    "size": 22000
+  },
+  {
+    "name": "Support Our Seniors : Borelli",
+    "size": 40000
+  },
+  {
+    "name": "Youth : Borelli",
+    "size": 150000
+  },
+  {
+    "name": "Bronx Delegation",
+    "size": 340000
+  },
+  {
+    "name": "Boro : Bronx Delegation",
+    "size": 340000
+  },
+  {
+    "name": "Brooklyn Delegation",
+    "size": 620000
+  },
+  {
+    "name": "Boro : Brooklyn Delegation",
+    "size": 620000
+  },
+  {
+    "name": "Cabrera",
+    "size": 940000
+  },
+  {
+    "name": "Aging : Cabrera",
+    "size": 110000
+  },
+  {
+    "name": "Anti-Poverty : Cabrera",
+    "size": 100000
+  },
+  {
+    "name": "Cultural After-School Adventure (CASA) : Cabrera",
+    "size": 160000
+  },
+  {
+    "name": "Digital Inclusion and Literacy Initiative : Cabrera",
+    "size": 20000
+  },
+  {
+    "name": "Local : Cabrera",
+    "size": 400000
+  },
+  {
+    "name": "Youth : Cabrera",
+    "size": 150000
+  },
+  {
+    "name": "CD28",
+    "size": 1047490
+  },
+  {
+    "name": "Aging : CD28",
+    "size": 110000
+  },
+  {
+    "name": "Anti-Poverty : CD28",
+    "size": 50000
+  },
+  {
+    "name": "Cultural After-School Adventure (CASA) : CD28",
+    "size": 220000
+  },
+  {
+    "name": "Digital Inclusion and Literacy Initiative : CD28",
+    "size": 20000
+  },
+  {
+    "name": "Healthy Aging Initiative : CD28",
+    "size": 35490
+  },
+  {
+    "name": "Local : CD28",
+    "size": 400000
+  },
+  {
+    "name": "Neighborhood Development Grant Initiative : CD28",
+    "size": 22000
+  },
+  {
+    "name": "Support Our Seniors : CD28",
+    "size": 40000
+  },
+  {
+    "name": "Youth : CD28",
+    "size": 150000
+  },
+  {
+    "name": "Chin",
+    "size": 1047490
+  },
+  {
+    "name": "Aging : Chin",
+    "size": 110000
+  },
+  {
+    "name": "Anti-Poverty : Chin",
+    "size": 50000
+  },
+  {
+    "name": "Cultural After-School Adventure (CASA) : Chin",
+    "size": 220000
+  },
+  {
+    "name": "Digital Inclusion and Literacy Initiative : Chin",
+    "size": 20000
+  },
+  {
+    "name": "Healthy Aging Initiative : Chin",
+    "size": 35490
+  },
+  {
+    "name": "Local : Chin",
+    "size": 400000
+  },
+  {
+    "name": "Neighborhood Development Grant Initiative : Chin",
+    "size": 22000
+  },
+  {
+    "name": "Support Our Seniors : Chin",
+    "size": 40000
+  },
+  {
+    "name": "Youth : Chin",
+    "size": 150000
+  },
+  {
+    "name": "Cohen",
+    "size": 890000
+  },
+  {
+    "name": "Aging : Cohen",
+    "size": 110000
+  },
+  {
+    "name": "Anti-Poverty : Cohen",
+    "size": 50000
+  },
+  {
+    "name": "Cultural After-School Adventure (CASA) : Cohen",
+    "size": 160000
+  },
+  {
+    "name": "Digital Inclusion and Literacy Initiative : Cohen",
+    "size": 20000
+  },
+  {
+    "name": "Local : Cohen",
+    "size": 400000
+  },
+  {
+    "name": "Youth : Cohen",
+    "size": 150000
+  },
+  {
+    "name": "Constantinides",
+    "size": 972000
+  },
+  {
+    "name": "Aging : Constantinides",
+    "size": 110000
+  },
+  {
+    "name": "Anti-Poverty : Constantinides",
+    "size": 50000
+  },
+  {
+    "name": "Cultural After-School Adventure (CASA) : Constantinides",
+    "size": 220000
+  },
+  {
+    "name": "Digital Inclusion and Literacy Initiative : Constantinides",
+    "size": 20000
+  },
+  {
+    "name": "Local : Constantinides",
+    "size": 400000
+  },
+  {
+    "name": "Neighborhood Development Grant Initiative : Constantinides",
+    "size": 22000
+  },
+  {
+    "name": "Youth : Constantinides",
+    "size": 150000
+  },
+  {
+    "name": "Cornegy",
+    "size": 975000
+  },
+  {
+    "name": "Aging : Cornegy",
+    "size": 110000
+  },
+  {
+    "name": "Anti-Poverty : Cornegy",
+    "size": 75000
+  },
+  {
+    "name": "Cultural After-School Adventure (CASA) : Cornegy",
+    "size": 220000
+  },
+  {
+    "name": "Digital Inclusion and Literacy Initiative : Cornegy",
+    "size": 20000
+  },
+  {
+    "name": "Local : Cornegy",
+    "size": 400000
+  },
+  {
+    "name": "Youth : Cornegy",
+    "size": 150000
+  },
+  {
+    "name": "Crowley",
+    "size": 1022490
+  },
+  {
+    "name": "Aging : Crowley",
+    "size": 110000
+  },
+  {
+    "name": "Anti-Poverty : Crowley",
+    "size": 25000
+  },
+  {
+    "name": "Cultural After-School Adventure (CASA) : Crowley",
+    "size": 220000
+  },
+  {
+    "name": "Digital Inclusion and Literacy Initiative : Crowley",
+    "size": 20000
+  },
+  {
+    "name": "Healthy Aging Initiative : Crowley",
+    "size": 35490
+  },
+  {
+    "name": "Local : Crowley",
+    "size": 400000
+  },
+  {
+    "name": "Neighborhood Development Grant Initiative : Crowley",
+    "size": 22000
+  },
+  {
+    "name": "Support Our Seniors : Crowley",
+    "size": 40000
+  },
+  {
+    "name": "Youth : Crowley",
+    "size": 150000
+  },
+  {
+    "name": "Cumbo",
+    "size": 1047490
+  },
+  {
+    "name": "Aging : Cumbo",
+    "size": 110000
+  },
+  {
+    "name": "Anti-Poverty : Cumbo",
+    "size": 50000
+  },
+  {
+    "name": "Cultural After-School Adventure (CASA) : Cumbo",
+    "size": 220000
+  },
+  {
+    "name": "Digital Inclusion and Literacy Initiative : Cumbo",
+    "size": 20000
+  },
+  {
+    "name": "Healthy Aging Initiative : Cumbo",
+    "size": 35490
+  },
+  {
+    "name": "Local : Cumbo",
+    "size": 400000
+  },
+  {
+    "name": "Neighborhood Development Grant Initiative : Cumbo",
+    "size": 22000
+  },
+  {
+    "name": "Support Our Seniors : Cumbo",
+    "size": 40000
+  },
+  {
+    "name": "Youth : Cumbo",
+    "size": 150000
+  },
+  {
+    "name": "Deutsch",
+    "size": 1027490
+  },
+  {
+    "name": "Aging : Deutsch",
+    "size": 110000
+  },
+  {
+    "name": "Anti-Poverty : Deutsch",
+    "size": 50000
+  },
+  {
+    "name": "Cultural After-School Adventure (CASA) : Deutsch",
+    "size": 220000
+  },
+  {
+    "name": "Healthy Aging Initiative : Deutsch",
+    "size": 35490
+  },
+  {
+    "name": "Local : Deutsch",
+    "size": 400000
+  },
+  {
+    "name": "Neighborhood Development Grant Initiative : Deutsch",
+    "size": 22000
+  },
+  {
+    "name": "Support Our Seniors : Deutsch",
+    "size": 40000
+  },
+  {
+    "name": "Youth : Deutsch",
+    "size": 150000
+  },
+  {
+    "name": "Dickens",
+    "size": 1017000
+  },
+  {
+    "name": "Aging : Dickens",
+    "size": 110000
+  },
+  {
+    "name": "Anti-Poverty : Dickens",
+    "size": 75000
+  },
+  {
+    "name": "Cultural After-School Adventure (CASA) : Dickens",
+    "size": 220000
+  },
+  {
+    "name": "Digital Inclusion and Literacy Initiative : Dickens",
+    "size": 40000
+  },
+  {
+    "name": "Local : Dickens",
+    "size": 400000
+  },
+  {
+    "name": "Youth : Dickens",
+    "size": 150000
+  },
+  {
+    "name": "Neighborhood Development Grant Initiative : Dickens",
+    "size": 22000
+  },
+  {
+    "name": "Dromm",
+    "size": 1047490
+  },
+  {
+    "name": "Aging : Dromm",
+    "size": 110000
+  },
+  {
+    "name": "Anti-Poverty : Dromm",
+    "size": 50000
+  },
+  {
+    "name": "Cultural After-School Adventure (CASA) : Dromm",
+    "size": 220000
+  },
+  {
+    "name": "Digital Inclusion and Literacy Initiative : Dromm",
+    "size": 20000
+  },
+  {
+    "name": "Healthy Aging Initiative : Dromm",
+    "size": 35490
+  },
+  {
+    "name": "Local : Dromm",
+    "size": 400000
+  },
+  {
+    "name": "Neighborhood Development Grant Initiative : Dromm",
+    "size": 22000
+  },
+  {
+    "name": "Support Our Seniors : Dromm",
+    "size": 40000
+  },
+  {
+    "name": "Youth : Dromm",
+    "size": 150000
+  },
+  {
+    "name": "Espinal",
+    "size": 895000
+  },
+  {
+    "name": "Aging : Espinal",
+    "size": 110000
+  },
+  {
+    "name": "Anti-Poverty : Espinal",
+    "size": 75000
+  },
+  {
+    "name": "Local : Espinal",
+    "size": 400000
+  },
+  {
+    "name": "Youth : Espinal",
+    "size": 150000
+  },
+  {
+    "name": "Cultural After-School Adventure (CASA) : Espinal",
+    "size": 160000
+  },
+  {
+    "name": "Eugene",
+    "size": 912000
+  },
+  {
+    "name": "Aging : Eugene",
+    "size": 110000
+  },
+  {
+    "name": "Anti-Poverty : Eugene",
+    "size": 50000
+  },
+  {
+    "name": "Cultural After-School Adventure (CASA) : Eugene",
+    "size": 160000
+  },
+  {
+    "name": "Digital Inclusion and Literacy Initiative : Eugene",
+    "size": 20000
+  },
+  {
+    "name": "Local : Eugene",
+    "size": 400000
+  },
+  {
+    "name": "Neighborhood Development Grant Initiative : Eugene",
+    "size": 22000
+  },
+  {
+    "name": "Youth : Eugene",
+    "size": 150000
+  },
+  {
+    "name": "Ferreras-Copeland",
+    "size": 1067490
+  },
+  {
+    "name": "Aging : Ferreras-Copeland",
+    "size": 110000
+  },
+  {
+    "name": "Anti-Poverty : Ferreras-Copeland",
+    "size": 50000
+  },
+  {
+    "name": "Cultural After-School Adventure (CASA) : Ferreras-Copeland",
+    "size": 220000
+  },
+  {
+    "name": "Digital Inclusion and Literacy Initiative : Ferreras-Copeland",
+    "size": 40000
+  },
+  {
+    "name": "Healthy Aging Initiative : Ferreras-Copeland",
+    "size": 35490
+  },
+  {
+    "name": "Local : Ferreras-Copeland",
+    "size": 400000
+  },
+  {
+    "name": "Neighborhood Development Grant Initiative : Ferreras-Copeland",
+    "size": 22000
+  },
+  {
+    "name": "Support Our Seniors : Ferreras-Copeland",
+    "size": 40000
+  },
+  {
+    "name": "Youth : Ferreras-Copeland",
+    "size": 150000
+  },
+  {
+    "name": "Garodnick",
+    "size": 705000
+  },
+  {
+    "name": "Aging : Garodnick",
+    "size": 110000
+  },
+  {
+    "name": "Anti-Poverty : Garodnick",
+    "size": 25000
+  },
+  {
+    "name": "Digital Inclusion and Literacy Initiative : Garodnick",
+    "size": 20000
+  },
+  {
+    "name": "Local : Garodnick",
+    "size": 400000
+  },
+  {
+    "name": "Youth : Garodnick",
+    "size": 150000
+  },
+  {
+    "name": "Gentile",
+    "size": 1047490
+  },
+  {
+    "name": "Aging : Gentile",
+    "size": 110000
+  },
+  {
+    "name": "Anti-Poverty : Gentile",
+    "size": 50000
+  },
+  {
+    "name": "Cultural After-School Adventure (CASA) : Gentile",
+    "size": 220000
+  },
+  {
+    "name": "Digital Inclusion and Literacy Initiative : Gentile",
+    "size": 20000
+  },
+  {
+    "name": "Healthy Aging Initiative : Gentile",
+    "size": 35490
+  },
+  {
+    "name": "Local : Gentile",
+    "size": 400000
+  },
+  {
+    "name": "Neighborhood Development Grant Initiative : Gentile",
+    "size": 22000
+  },
+  {
+    "name": "Support Our Seniors : Gentile",
+    "size": 40000
+  },
+  {
+    "name": "Youth : Gentile",
+    "size": 150000
+  },
+  {
+    "name": "Gibson",
+    "size": 1000000
+  },
+  {
+    "name": "Aging : Gibson",
+    "size": 110000
+  },
+  {
+    "name": "Anti-Poverty : Gibson",
+    "size": 100000
+  },
+  {
+    "name": "Cultural After-School Adventure (CASA) : Gibson",
+    "size": 220000
+  },
+  {
+    "name": "Digital Inclusion and Literacy Initiative : Gibson",
+    "size": 20000
+  },
+  {
+    "name": "Local : Gibson",
+    "size": 400000
+  },
+  {
+    "name": "Youth : Gibson",
+    "size": 150000
+  },
+  {
+    "name": "Greenfield",
+    "size": 937000
+  },
+  {
+    "name": "Aging : Greenfield",
+    "size": 110000
+  },
+  {
+    "name": "Anti-Poverty : Greenfield",
+    "size": 75000
+  },
+  {
+    "name": "Cultural After-School Adventure (CASA) : Greenfield",
+    "size": 160000
+  },
+  {
+    "name": "Digital Inclusion and Literacy Initiative : Greenfield",
+    "size": 20000
+  },
+  {
+    "name": "Local : Greenfield",
+    "size": 400000
+  },
+  {
+    "name": "Neighborhood Development Grant Initiative : Greenfield",
+    "size": 22000
+  },
+  {
+    "name": "Youth : Greenfield",
+    "size": 150000
+  },
+  {
+    "name": "Grodenchik",
+    "size": 1042490
+  },
+  {
+    "name": "Aging : Grodenchik",
+    "size": 110000
+  },
+  {
+    "name": "Anti-Poverty : Grodenchik",
+    "size": 25000
+  },
+  {
+    "name": "Cultural After-School Adventure (CASA) : Grodenchik",
+    "size": 220000
+  },
+  {
+    "name": "Digital Inclusion and Literacy Initiative : Grodenchik",
+    "size": 40000
+  },
+  {
+    "name": "Healthy Aging Initiative : Grodenchik",
+    "size": 35490
+  },
+  {
+    "name": "Local : Grodenchik",
+    "size": 400000
+  },
+  {
+    "name": "Neighborhood Development Grant Initiative : Grodenchik",
+    "size": 22000
+  },
+  {
+    "name": "Support Our Seniors : Grodenchik",
+    "size": 40000
+  },
+  {
+    "name": "Youth : Grodenchik",
+    "size": 150000
+  },
+  {
+    "name": "Johnson",
+    "size": 940490
+  },
+  {
+    "name": "Aging : Johnson",
+    "size": 110000
+  },
+  {
+    "name": "Anti-Poverty : Johnson",
+    "size": 25000
+  },
+  {
+    "name": "Cultural After-School Adventure (CASA) : Johnson",
+    "size": 160000
+  },
+  {
+    "name": "Digital Inclusion and Literacy Initiative : Johnson",
+    "size": 20000
+  },
+  {
+    "name": "Healthy Aging Initiative : Johnson",
+    "size": 35490
+  },
+  {
+    "name": "Local : Johnson",
+    "size": 400000
+  },
+  {
+    "name": "Support Our Seniors : Johnson",
+    "size": 40000
+  },
+  {
+    "name": "Youth : Johnson",
+    "size": 150000
+  },
+  {
+    "name": "Kallos",
+    "size": 962490
+  },
+  {
+    "name": "Aging : Kallos",
+    "size": 110000
+  },
+  {
+    "name": "Anti-Poverty : Kallos",
+    "size": 25000
+  },
+  {
+    "name": "Cultural After-School Adventure (CASA) : Kallos",
+    "size": 160000
+  },
+  {
+    "name": "Digital Inclusion and Literacy Initiative : Kallos",
+    "size": 20000
+  },
+  {
+    "name": "Healthy Aging Initiative : Kallos",
+    "size": 35490
+  },
+  {
+    "name": "Local : Kallos",
+    "size": 400000
+  },
+  {
+    "name": "Neighborhood Development Grant Initiative : Kallos",
+    "size": 22000
+  },
+  {
+    "name": "Support Our Seniors : Kallos",
+    "size": 40000
+  },
+  {
+    "name": "Youth : Kallos",
+    "size": 150000
+  },
+  {
+    "name": "King",
+    "size": 970000
+  },
+  {
+    "name": "Aging : King",
+    "size": 110000
+  },
+  {
+    "name": "Anti-Poverty : King",
+    "size": 50000
+  },
+  {
+    "name": "Cultural After-School Adventure (CASA) : King",
+    "size": 220000
+  },
+  {
+    "name": "Digital Inclusion and Literacy Initiative : King",
+    "size": 40000
+  },
+  {
+    "name": "Local : King",
+    "size": 400000
+  },
+  {
+    "name": "Youth : King",
+    "size": 150000
+  },
+  {
+    "name": "Koo",
+    "size": 1047490
+  },
+  {
+    "name": "Aging : Koo",
+    "size": 110000
+  },
+  {
+    "name": "Anti-Poverty : Koo",
+    "size": 50000
+  },
+  {
+    "name": "Cultural After-School Adventure (CASA) : Koo",
+    "size": 220000
+  },
+  {
+    "name": "Digital Inclusion and Literacy Initiative : Koo",
+    "size": 20000
+  },
+  {
+    "name": "Healthy Aging Initiative : Koo",
+    "size": 35490
+  },
+  {
+    "name": "Local : Koo",
+    "size": 400000
+  },
+  {
+    "name": "Neighborhood Development Grant Initiative : Koo",
+    "size": 22000
+  },
+  {
+    "name": "Support Our Seniors : Koo",
+    "size": 40000
+  },
+  {
+    "name": "Youth : Koo",
+    "size": 150000
+  },
+  {
+    "name": "Koslowitz",
+    "size": 1022490
+  },
+  {
+    "name": "Aging : Koslowitz",
+    "size": 110000
+  },
+  {
+    "name": "Anti-Poverty : Koslowitz",
+    "size": 25000
+  },
+  {
+    "name": "Cultural After-School Adventure (CASA) : Koslowitz",
+    "size": 220000
+  },
+  {
+    "name": "Digital Inclusion and Literacy Initiative : Koslowitz",
+    "size": 20000
+  },
+  {
+    "name": "Healthy Aging Initiative : Koslowitz",
+    "size": 35490
+  },
+  {
+    "name": "Local : Koslowitz",
+    "size": 400000
+  },
+  {
+    "name": "Neighborhood Development Grant Initiative : Koslowitz",
+    "size": 22000
+  },
+  {
+    "name": "Support Our Seniors : Koslowitz",
+    "size": 40000
+  },
+  {
+    "name": "Youth : Koslowitz",
+    "size": 150000
+  },
+  {
+    "name": "Lancman",
+    "size": 1067490
+  },
+  {
+    "name": "Aging : Lancman",
+    "size": 110000
+  },
+  {
+    "name": "Anti-Poverty : Lancman",
+    "size": 50000
+  },
+  {
+    "name": "Cultural After-School Adventure (CASA) : Lancman",
+    "size": 220000
+  },
+  {
+    "name": "Digital Inclusion and Literacy Initiative : Lancman",
+    "size": 40000
+  },
+  {
+    "name": "Healthy Aging Initiative : Lancman",
+    "size": 35490
+  },
+  {
+    "name": "Local : Lancman",
+    "size": 400000
+  },
+  {
+    "name": "Neighborhood Development Grant Initiative : Lancman",
+    "size": 22000
+  },
+  {
+    "name": "Support Our Seniors : Lancman",
+    "size": 40000
+  },
+  {
+    "name": "Youth : Lancman",
+    "size": 150000
+  },
+  {
+    "name": "Lander",
+    "size": 1025490
+  },
+  {
+    "name": "Aging : Lander",
+    "size": 110000
+  },
+  {
+    "name": "Anti-Poverty : Lander",
+    "size": 50000
+  },
+  {
+    "name": "Cultural After-School Adventure (CASA) : Lander",
+    "size": 220000
+  },
+  {
+    "name": "Digital Inclusion and Literacy Initiative : Lander",
+    "size": 20000
+  },
+  {
+    "name": "Healthy Aging Initiative : Lander",
+    "size": 35490
+  },
+  {
+    "name": "Local : Lander",
+    "size": 400000
+  },
+  {
+    "name": "Support Our Seniors : Lander",
+    "size": 40000
+  },
+  {
+    "name": "Youth : Lander",
+    "size": 150000
+  },
+  {
+    "name": "Levin",
+    "size": 1017000
+  },
+  {
+    "name": "Aging : Levin",
+    "size": 110000
+  },
+  {
+    "name": "Anti-Poverty : Levin",
+    "size": 75000
+  },
+  {
+    "name": "Cultural After-School Adventure (CASA) : Levin",
+    "size": 220000
+  },
+  {
+    "name": "Digital Inclusion and Literacy Initiative : Levin",
+    "size": 40000
+  },
+  {
+    "name": "Local : Levin",
+    "size": 400000
+  },
+  {
+    "name": "Neighborhood Development Grant Initiative : Levin",
+    "size": 22000
+  },
+  {
+    "name": "Youth : Levin",
+    "size": 150000
+  },
+  {
+    "name": "Levine",
+    "size": 915000
+  },
+  {
+    "name": "Aging : Levine",
+    "size": 110000
+  },
+  {
+    "name": "Anti-Poverty : Levine",
+    "size": 75000
+  },
+  {
+    "name": "Cultural After-School Adventure (CASA) : Levine",
+    "size": 160000
+  },
+  {
+    "name": "Digital Inclusion and Literacy Initiative : Levine",
+    "size": 20000
+  },
+  {
+    "name": "Local : Levine",
+    "size": 400000
+  },
+  {
+    "name": "Youth : Levine",
+    "size": 150000
+  },
+  {
+    "name": "Maisel",
+    "size": 887000
+  },
+  {
+    "name": "Aging : Maisel",
+    "size": 110000
+  },
+  {
+    "name": "Anti-Poverty : Maisel",
+    "size": 25000
+  },
+  {
+    "name": "Cultural After-School Adventure (CASA) : Maisel",
+    "size": 180000
+  },
+  {
+    "name": "Local : Maisel",
+    "size": 400000
+  },
+  {
+    "name": "Neighborhood Development Grant Initiative : Maisel",
+    "size": 22000
+  },
+  {
+    "name": "Youth : Maisel",
+    "size": 150000
+  },
+  {
+    "name": "Manhattan Delegation",
+    "size": 380000
+  },
+  {
+    "name": "Boro : Manhattan Delegation",
+    "size": 380000
+  },
+  {
+    "name": "Mark-Viverito",
+    "size": 1027490
+  },
+  {
+    "name": "Aging : Mark-Viverito",
+    "size": 110000
+  },
+  {
+    "name": "Anti-Poverty : Mark-Viverito",
+    "size": 100000
+  },
+  {
+    "name": "Cultural After-School Adventure (CASA) : Mark-Viverito",
+    "size": 160000
+  },
+  {
+    "name": "Digital Inclusion and Literacy Initiative : Mark-Viverito",
+    "size": 20000
+  },
+  {
+    "name": "Healthy Aging Initiative : Mark-Viverito",
+    "size": 35490
+  },
+  {
+    "name": "Local : Mark-Viverito",
+    "size": 400000
+  },
+  {
+    "name": "Neighborhood Development Grant Initiative : Mark-Viverito",
+    "size": 22000
+  },
+  {
+    "name": "Support Our Seniors : Mark-Viverito",
+    "size": 30000
+  },
+  {
+    "name": "Youth : Mark-Viverito",
+    "size": 150000
+  },
+  {
+    "name": "Matteo",
+    "size": 1022490
+  },
+  {
+    "name": "Aging : Matteo",
+    "size": 110000
+  },
+  {
+    "name": "Anti-Poverty : Matteo",
+    "size": 25000
+  },
+  {
+    "name": "Cultural After-School Adventure (CASA) : Matteo",
+    "size": 220000
+  },
+  {
+    "name": "Digital Inclusion and Literacy Initiative : Matteo",
+    "size": 20000
+  },
+  {
+    "name": "Healthy Aging Initiative : Matteo",
+    "size": 35490
+  },
+  {
+    "name": "Local : Matteo",
+    "size": 400000
+  },
+  {
+    "name": "Neighborhood Development Grant Initiative : Matteo",
+    "size": 22000
+  },
+  {
+    "name": "Support Our Seniors : Matteo",
+    "size": 40000
+  },
+  {
+    "name": "Youth : Matteo",
+    "size": 150000
+  },
+  {
+    "name": "Mealy",
+    "size": 917000
+  },
+  {
+    "name": "Aging : Mealy",
+    "size": 110000
+  },
+  {
+    "name": "Anti-Poverty : Mealy",
+    "size": 75000
+  },
+  {
+    "name": "Cultural After-School Adventure (CASA) : Mealy",
+    "size": 160000
+  },
+  {
+    "name": "Local : Mealy",
+    "size": 400000
+  },
+  {
+    "name": "Neighborhood Development Grant Initiative : Mealy",
+    "size": 22000
+  },
+  {
+    "name": "Youth : Mealy",
+    "size": 150000
+  },
+  {
+    "name": "Menchaca",
+    "size": 1072490
+  },
+  {
+    "name": "Aging : Menchaca",
+    "size": 110000
+  },
+  {
+    "name": "Anti-Poverty : Menchaca",
+    "size": 75000
+  },
+  {
+    "name": "Cultural After-School Adventure (CASA) : Menchaca",
+    "size": 220000
+  },
+  {
+    "name": "Digital Inclusion and Literacy Initiative : Menchaca",
+    "size": 20000
+  },
+  {
+    "name": "Healthy Aging Initiative : Menchaca",
+    "size": 35490
+  },
+  {
+    "name": "Local : Menchaca",
+    "size": 400000
+  },
+  {
+    "name": "Neighborhood Development Grant Initiative : Menchaca",
+    "size": 22000
+  },
+  {
+    "name": "Support Our Seniors : Menchaca",
+    "size": 40000
+  },
+  {
+    "name": "Youth : Menchaca",
+    "size": 150000
+  },
+  {
+    "name": "Mendez",
+    "size": 947490
+  },
+  {
+    "name": "Aging : Mendez",
+    "size": 110000
+  },
+  {
+    "name": "Anti-Poverty : Mendez",
+    "size": 50000
+  },
+  {
+    "name": "Cultural After-School Adventure (CASA) : Mendez",
+    "size": 120000
+  },
+  {
+    "name": "Digital Inclusion and Literacy Initiative : Mendez",
+    "size": 20000
+  },
+  {
+    "name": "Healthy Aging Initiative : Mendez",
+    "size": 35490
+  },
+  {
+    "name": "Local : Mendez",
+    "size": 400000
+  },
+  {
+    "name": "Neighborhood Development Grant Initiative : Mendez",
+    "size": 22000
+  },
+  {
+    "name": "Support Our Seniors : Mendez",
+    "size": 40000
+  },
+  {
+    "name": "Youth : Mendez",
+    "size": 150000
+  },
+  {
+    "name": "Miller",
+    "size": 950000
+  },
+  {
+    "name": "Aging : Miller",
+    "size": 110000
+  },
+  {
+    "name": "Anti-Poverty : Miller",
+    "size": 50000
+  },
+  {
+    "name": "Cultural After-School Adventure (CASA) : Miller",
+    "size": 220000
+  },
+  {
+    "name": "Digital Inclusion and Literacy Initiative : Miller",
+    "size": 20000
+  },
+  {
+    "name": "Local : Miller",
+    "size": 400000
+  },
+  {
+    "name": "Youth : Miller",
+    "size": 150000
+  },
+  {
+    "name": "Palma",
+    "size": 935000
+  },
+  {
+    "name": "Aging : Palma",
+    "size": 110000
+  },
+  {
+    "name": "Anti-Poverty : Palma",
+    "size": 75000
+  },
+  {
+    "name": "Cultural After-School Adventure (CASA) : Palma",
+    "size": 160000
+  },
+  {
+    "name": "Digital Inclusion and Literacy Initiative : Palma",
+    "size": 40000
+  },
+  {
+    "name": "Local : Palma",
+    "size": 400000
+  },
+  {
+    "name": "Youth : Palma",
+    "size": 150000
+  },
+  {
+    "name": "Queens Delegation",
+    "size": 540000
+  },
+  {
+    "name": "Boro : Queens Delegation",
+    "size": 540000
+  },
+  {
+    "name": "Reynoso",
+    "size": 975000
+  },
+  {
+    "name": "Aging : Reynoso",
+    "size": 110000
+  },
+  {
+    "name": "Anti-Poverty : Reynoso",
+    "size": 75000
+  },
+  {
+    "name": "Cultural After-School Adventure (CASA) : Reynoso",
+    "size": 220000
+  },
+  {
+    "name": "Digital Inclusion and Literacy Initiative : Reynoso",
+    "size": 20000
+  },
+  {
+    "name": "Local : Reynoso",
+    "size": 400000
+  },
+  {
+    "name": "Youth : Reynoso",
+    "size": 150000
+  },
+  {
+    "name": "Richards",
+    "size": 1047490
+  },
+  {
+    "name": "Aging : Richards",
+    "size": 110000
+  },
+  {
+    "name": "Anti-Poverty : Richards",
+    "size": 50000
+  },
+  {
+    "name": "Cultural After-School Adventure (CASA) : Richards",
+    "size": 220000
+  },
+  {
+    "name": "Digital Inclusion and Literacy Initiative : Richards",
+    "size": 20000
+  },
+  {
+    "name": "Healthy Aging Initiative : Richards",
+    "size": 35490
+  },
+  {
+    "name": "Local : Richards",
+    "size": 400000
+  },
+  {
+    "name": "Neighborhood Development Grant Initiative : Richards",
+    "size": 22000
+  },
+  {
+    "name": "Support Our Seniors : Richards",
+    "size": 40000
+  },
+  {
+    "name": "Youth : Richards",
+    "size": 150000
+  },
+  {
+    "name": "Rodriguez",
+    "size": 1092490
+  },
+  {
+    "name": "Aging : Rodriguez",
+    "size": 110000
+  },
+  {
+    "name": "Anti-Poverty : Rodriguez",
+    "size": 75000
+  },
+  {
+    "name": "Cultural After-School Adventure (CASA) : Rodriguez",
+    "size": 220000
+  },
+  {
+    "name": "Digital Inclusion and Literacy Initiative : Rodriguez",
+    "size": 40000
+  },
+  {
+    "name": "Healthy Aging Initiative : Rodriguez",
+    "size": 35490
+  },
+  {
+    "name": "Local : Rodriguez",
+    "size": 400000
+  },
+  {
+    "name": "Neighborhood Development Grant Initiative : Rodriguez",
+    "size": 22000
+  },
+  {
+    "name": "Support Our Seniors : Rodriguez",
+    "size": 40000
+  },
+  {
+    "name": "Youth : Rodriguez",
+    "size": 150000
+  },
+  {
+    "name": "Rose",
+    "size": 1047490
+  },
+  {
+    "name": "Aging : Rose",
+    "size": 110000
+  },
+  {
+    "name": "Anti-Poverty : Rose",
+    "size": 50000
+  },
+  {
+    "name": "Cultural After-School Adventure (CASA) : Rose",
+    "size": 220000
+  },
+  {
+    "name": "Digital Inclusion and Literacy Initiative : Rose",
+    "size": 20000
+  },
+  {
+    "name": "Healthy Aging Initiative : Rose",
+    "size": 35490
+  },
+  {
+    "name": "Local : Rose",
+    "size": 400000
+  },
+  {
+    "name": "Neighborhood Development Grant Initiative : Rose",
+    "size": 22000
+  },
+  {
+    "name": "Support Our Seniors : Rose",
+    "size": 40000
+  },
+  {
+    "name": "Youth : Rose",
+    "size": 150000
+  },
+  {
+    "name": "Rosenthal",
+    "size": 960490
+  },
+  {
+    "name": "Aging : Rosenthal",
+    "size": 110000
+  },
+  {
+    "name": "Anti-Poverty : Rosenthal",
+    "size": 25000
+  },
+  {
+    "name": "Cultural After-School Adventure (CASA) : Rosenthal",
+    "size": 180000
+  },
+  {
+    "name": "Digital Inclusion and Literacy Initiative : Rosenthal",
+    "size": 20000
+  },
+  {
+    "name": "Healthy Aging Initiative : Rosenthal",
+    "size": 35490
+  },
+  {
+    "name": "Local : Rosenthal",
+    "size": 400000
+  },
+  {
+    "name": "Support Our Seniors : Rosenthal",
+    "size": 40000
+  },
+  {
+    "name": "Youth : Rosenthal",
+    "size": 150000
+  },
+  {
+    "name": "Salamanca",
+    "size": 1022000
+  },
+  {
+    "name": "Aging : Salamanca",
+    "size": 110000
+  },
+  {
+    "name": "Anti-Poverty : Salamanca",
+    "size": 100000
+  },
+  {
+    "name": "Cultural After-School Adventure (CASA) : Salamanca",
+    "size": 220000
+  },
+  {
+    "name": "Digital Inclusion and Literacy Initiative : Salamanca",
+    "size": 20000
+  },
+  {
+    "name": "Local : Salamanca",
+    "size": 400000
+  },
+  {
+    "name": "Neighborhood Development Grant Initiative : Salamanca",
+    "size": 22000
+  },
+  {
+    "name": "Youth : Salamanca",
+    "size": 150000
+  },
+  {
+    "name": "Staten Island Delegation",
+    "size": 120000
+  },
+  {
+    "name": "Boro : Staten Island Delegation",
+    "size": 120000
+  },
+  {
+    "name": "Speaker",
+    "size": 21518500
+  },
+  {
+    "name": "Local : Speaker",
+    "size": 16138500
+  },
+  {
+    "name": "Speaker's Initiative : Speaker",
+    "size": 5380000
+  },
+  {
+    "name": "Torres",
+    "size": 1072490
+  },
+  {
+    "name": "Aging : Torres",
+    "size": 110000
+  },
+  {
+    "name": "Anti-Poverty : Torres",
+    "size": 100000
+  },
+  {
+    "name": "Cultural After-School Adventure (CASA) : Torres",
+    "size": 220000
+  },
+  {
+    "name": "Digital Inclusion and Literacy Initiative : Torres",
+    "size": 20000
+  },
+  {
+    "name": "Healthy Aging Initiative : Torres",
+    "size": 35490
+  },
+  {
+    "name": "Local : Torres",
+    "size": 400000
+  },
+  {
+    "name": "Neighborhood Development Grant Initiative : Torres",
+    "size": 22000
+  },
+  {
+    "name": "Support Our Seniors : Torres",
+    "size": 15000
+  },
+  {
+    "name": "Youth : Torres",
+    "size": 150000
+  },
+  {
+    "name": "Treyger",
+    "size": 892000
+  },
+  {
+    "name": "Aging : Treyger",
+    "size": 110000
+  },
+  {
+    "name": "Anti-Poverty : Treyger",
+    "size": 50000
+  },
+  {
+    "name": "Cultural After-School Adventure (CASA) : Treyger",
+    "size": 140000
+  },
+  {
+    "name": "Digital Inclusion and Literacy Initiative : Treyger",
+    "size": 20000
+  },
+  {
+    "name": "Local : Treyger",
+    "size": 400000
+  },
+  {
+    "name": "Youth : Treyger",
+    "size": 150000
+  },
+  {
+    "name": "Neighborhood Development Grant Initiative : Treyger",
+    "size": 22000
+  },
+  {
+    "name": "Ulrich",
+    "size": 802490
+  },
+  {
+    "name": "Aging : Ulrich",
+    "size": 110000
+  },
+  {
+    "name": "Anti-Poverty : Ulrich",
+    "size": 25000
+  },
+  {
+    "name": "Digital Inclusion and Literacy Initiative : Ulrich",
+    "size": 20000
+  },
+  {
+    "name": "Healthy Aging Initiative : Ulrich",
+    "size": 35490
+  },
+  {
+    "name": "Local : Ulrich",
+    "size": 400000
+  },
+  {
+    "name": "Neighborhood Development Grant Initiative : Ulrich",
+    "size": 22000
+  },
+  {
+    "name": "Support Our Seniors : Ulrich",
+    "size": 40000
+  },
+  {
+    "name": "Youth : Ulrich",
+    "size": 150000
+  },
+  {
+    "name": "Vacca",
+    "size": 1067490
+  },
+  {
+    "name": "Aging : Vacca",
+    "size": 110000
+  },
+  {
+    "name": "Anti-Poverty : Vacca",
+    "size": 50000
+  },
+  {
+    "name": "Cultural After-School Adventure (CASA) : Vacca",
+    "size": 220000
+  },
+  {
+    "name": "Digital Inclusion and Literacy Initiative : Vacca",
+    "size": 40000
+  },
+  {
+    "name": "Healthy Aging Initiative : Vacca",
+    "size": 35490
+  },
+  {
+    "name": "Local : Vacca",
+    "size": 400000
+  },
+  {
+    "name": "Neighborhood Development Grant Initiative : Vacca",
+    "size": 22000
+  },
+  {
+    "name": "Support Our Seniors : Vacca",
+    "size": 40000
+  },
+  {
+    "name": "Youth : Vacca",
+    "size": 150000
+  },
+  {
+    "name": "Vallone",
+    "size": 1022490
+  },
+  {
+    "name": "Aging : Vallone",
+    "size": 110000
+  },
+  {
+    "name": "Anti-Poverty : Vallone",
+    "size": 25000
+  },
+  {
+    "name": "Cultural After-School Adventure (CASA) : Vallone",
+    "size": 220000
+  },
+  {
+    "name": "Digital Inclusion and Literacy Initiative : Vallone",
+    "size": 20000
+  },
+  {
+    "name": "Healthy Aging Initiative : Vallone",
+    "size": 35490
+  },
+  {
+    "name": "Local : Vallone",
+    "size": 400000
+  },
+  {
+    "name": "Neighborhood Development Grant Initiative : Vallone",
+    "size": 22000
+  },
+  {
+    "name": "Support Our Seniors : Vallone",
+    "size": 40000
+  },
+  {
+    "name": "Youth : Vallone",
+    "size": 150000
+  },
+  {
+    "name": "Van Bramer",
+    "size": 890000
+  },
+  {
+    "name": "Aging : Van Bramer",
+    "size": 110000
+  },
+  {
+    "name": "Anti-Poverty : Van Bramer",
+    "size": 50000
+  },
+  {
+    "name": "Cultural After-School Adventure (CASA) : Van Bramer",
+    "size": 160000
+  },
+  {
+    "name": "Digital Inclusion and Literacy Initiative : Van Bramer",
+    "size": 20000
+  },
+  {
+    "name": "Local : Van Bramer",
+    "size": 400000
+  },
+  {
+    "name": "Youth : Van Bramer",
+    "size": 150000
+  },
+  {
+    "name": "Williams",
+    "size": 1047490
+  },
+  {
+    "name": "Aging : Williams",
+    "size": 110000
+  },
+  {
+    "name": "Anti-Poverty : Williams",
+    "size": 50000
+  },
+  {
+    "name": "Cultural After-School Adventure (CASA) : Williams",
+    "size": 220000
+  },
+  {
+    "name": "Digital Inclusion and Literacy Initiative : Williams",
+    "size": 20000
+  },
+  {
+    "name": "Healthy Aging Initiative : Williams",
+    "size": 35490
+  },
+  {
+    "name": "Local : Williams",
+    "size": 400000
+  },
+  {
+    "name": "Neighborhood Development Grant Initiative : Williams",
+    "size": 22000
+  },
+  {
+    "name": "Support Our Seniors : Williams",
+    "size": 40000
+  },
+  {
+    "name": "Youth : Williams",
+    "size": 150000
+  },
+  {
+    "name": "Council-Wide",
+    "size": 278269800
+  },
+  {
+    "name": "A Greener NYC : Council-Wide",
+    "size": 2002000
+  },
+  {
+    "name": "Access Health : Council-Wide",
+    "size": 1070000
+  },
+  {
+    "name": "Access to Critical Services for Seniors : Council-Wide",
+    "size": 1180000
+  },
+  {
+    "name": "Access to Food and Nutritional Education : Council-Wide",
+    "size": 930000
+  },
+  {
+    "name": "Adult Literacy Initiative : Council-Wide",
+    "size": 6000000
+  },
+  {
+    "name": "Afterschool Enrichment Initiative : Council-Wide",
+    "size": 5425000
+  },
+  {
+    "name": "Alternatives to Incarceration (ATI's) : Council-Wide",
+    "size": 5632000
+  },
+  {
+    "name": "Anti-Eviction and Housing Court Resources : Council-Wide",
+    "size": 5650000
+  },
+  {
+    "name": "Anti-Gun Violence - Art a Catalyst for Change : Council-Wide",
+    "size": 720000
+  },
+  {
+    "name": "Anti-Gun Violence - Youth Programs : Council-Wide",
+    "size": 250000
+  },
+  {
+    "name": "Autism Awareness : Council-Wide",
+    "size": 3315386
+  },
+  {
+    "name": "Bail Fund : Council-Wide",
+    "size": 1400000
+  },
+  {
+    "name": "Beating Hearts : Council-Wide",
+    "size": 350000
+  },
+  {
+    "name": "Big Brothers and Big Sisters of New York City : Council-Wide",
+    "size": 1200000
+  },
+  {
+    "name": "Borough Presidents' Discretionary Funding Restoration : Council-Wide",
+    "size": 1129774
+  },
+  {
+    "name": "Bridge to Tomorrow : Council-Wide",
+    "size": 1150000
+  },
+  {
+    "name": "Brooklyn Borough President PS Enhancment : Council-Wide",
+    "size": 100000
+  },
+  {
+    "name": "Cancer Services : Council-Wide",
+    "size": 790500
+  },
+  {
+    "name": "Center for Court Innovation : Council-Wide",
+    "size": 500000
+  },
+  {
+    "name": "Child Care Vouchers : Council-Wide",
+    "size": 3000000
+  },
+  {
+    "name": "Child Health and Wellness : Council-Wide",
+    "size": 646000
+  },
+  {
+    "name": "Child Mind Institute : Council-Wide",
+    "size": 500000
+  },
+  {
+    "name": "Children and Families in NYC Homeless System : Council-Wide",
+    "size": 1000000
+  },
+  {
+    "name": "Children Under Five : Council-Wide",
+    "size": 1002000
+  },
+  {
+    "name": "City Clerk PS Enhancement : Council-Wide",
+    "size": 150000
+  },
+  {
+    "name": "City Council Merit-Based Scholarships : Council-Wide",
+    "size": 15375000
+  },
+  {
+    "name": "City's First Readers : Council-Wide",
+    "size": 2792000
+  },
+  {
+    "name": "Citywide Homeless Prevention Fund : Council-Wide",
+    "size": 820000
+  },
+  {
+    "name": "Civic Education in New York City Schools : Council-Wide",
+    "size": 500000
+  },
+  {
+    "name": "Coalition Theaters of Color : Council-Wide",
+    "size": 1965000
+  },
+  {
+    "name": "Communities of Color Nonprofit Stabilization Fund : Council-Wide",
+    "size": 2500000
+  },
+  {
+    "name": "Community Housing Preservation Strategies : Council-Wide",
+    "size": 3651000
+  },
+  {
+    "name": "Community Schools : Council-Wide",
+    "size": 1225000
+  },
+  {
+    "name": "COMPASS : Council-Wide",
+    "size": 8000000
+  },
+  {
+    "name": "Contraceptive Fund : Council-Wide",
+    "size": 400000
+  },
+  {
+    "name": "Court-Involved Youth Mental Health Initiative : Council-Wide",
+    "size": 1900000
+  },
+  {
+    "name": "Create New Technology Incubators : Council-Wide",
+    "size": 1400000
+  },
+  {
+    "name": "Creative Arts Team : Council-Wide",
+    "size": 400000
+  },
+  {
+    "name": "Crisis Management System : Council-Wide",
+    "size": 11175534
+  },
+  {
+    "name": "Cultural After-School Adventure (CASA) : Council-Wide",
+    "size": 1420000
+  },
+  {
+    "name": "Cultural Immigrant Initiative : Council-Wide",
+    "size": 5010000
+  },
+  {
+    "name": "CUNY Citizenship NOW! Program : Council-Wide",
+    "size": 2000000
+  },
+  {
+    "name": "CUNY Research Institutes : Council-Wide",
+    "size": 2140000
+  },
+  {
+    "name": "CUNY Technical Apprenticeship Program : Council-Wide",
+    "size": 50000
+  },
+  {
+    "name": "Day Laborer Workforce Initiative : Council-Wide",
+    "size": 570000
+  },
+  {
+    "name": "Developmental, Psychological and Behavioral Health Services : Council-Wide",
+    "size": 2139390
+  },
+  {
+    "name": "DFTA Core Enhancement Services : Council-Wide",
+    "size": 660000
+  },
+  {
+    "name": "Digital Inclusion and Literacy Initiative : Council-Wide",
+    "size": 940000
+  },
+  {
+    "name": "Discretionary Child Care : Council-Wide",
+    "size": 9355069
+  },
+  {
+    "name": "Domestic Violence and Empowerment (DoVE) Initiative : Council-Wide",
+    "size": 6305000
+  },
+  {
+    "name": "Dropout Prevention and Intervention Initiative : Council-Wide",
+    "size": 1585000
+  },
+  {
+    "name": "Educational Programs for Students : Council-Wide",
+    "size": 2975000
+  },
+  {
+    "name": "Elder Abuse Enhancement : Council-Wide",
+    "size": 335000
+  },
+  {
+    "name": "Ending the Epidemic : Council-Wide",
+    "size": 5595000
+  },
+  {
+    "name": "Financial Empowerment for NYC's Renters : Council-Wide",
+    "size": 450000
+  },
+  {
+    "name": "Food Access and Benefits : Council-Wide",
+    "size": 725000
+  },
+  {
+    "name": "Food Pantries : Council-Wide",
+    "size": 4000000
+  },
+  {
+    "name": "Foreclosure Buyback Initiative : Council-Wide",
+    "size": 1000000
+  },
+  {
+    "name": "Foster Youth Transitional Care : Council-Wide",
+    "size": 500000
+  },
+  {
+    "name": "Gender Equity Liaisons : Council-Wide",
+    "size": 500000
+  },
+  {
+    "name": "Geriatric Mental Health : Council-Wide",
+    "size": 1827000
+  },
+  {
+    "name": "Ghetto Film School Accelerator Program Model : Council-Wide",
+    "size": 260000
+  },
+  {
+    "name": "Green Jobs Corps Program : Council-Wide",
+    "size": 120000
+  },
+  {
+    "name": "hackNY : Council-Wide",
+    "size": 100000
+  },
+  {
+    "name": "Healthy Aging Initiative : Council-Wide",
+    "size": 745300
+  },
+  {
+    "name": "HIV/AIDS Faith Based Initiative : Council-Wide",
+    "size": 1560000
+  },
+  {
+    "name": "Holocaust Survivors : Council-Wide",
+    "size": 2500000
+  },
+  {
+    "name": "Homeless Prevention Services for Veterans : Council-Wide",
+    "size": 300000
+  },
+  {
+    "name": "Housing Information Project : Council-Wide",
+    "size": 300000
+  },
+  {
+    "name": "HPD Alternative Enforcement Program (AEP) : Council-Wide",
+    "size": 750000
+  },
+  {
+    "name": "HPD Home Loan Program : Council-Wide",
+    "size": 1500000
+  },
+  {
+    "name": "Immigrant Health Initiative : Council-Wide",
+    "size": 1500000
+  },
+  {
+    "name": "Immigrant Opportunities Initiative : Council-Wide",
+    "size": 2600000
+  },
+  {
+    "name": "Information and Referral Services : Council-Wide",
+    "size": 407811
+  },
+  {
+    "name": "Initiative for Immigrant Survivors of Domestic Violence : Council-Wide",
+    "size": 250000
+  },
+  {
+    "name": "Initiative to Combat Sexual Assault : Council-Wide",
+    "size": 1348000
+  },
+  {
+    "name": "Jill Chaifetz Helpline : Council-Wide",
+    "size": 245000
+  },
+  {
+    "name": "Job Placement for Veterans : Council-Wide",
+    "size": 150000
+  },
+  {
+    "name": "Job Training and Placement Initiative : Council-Wide",
+    "size": 8106000
+  },
+  {
+    "name": "Joseph S. Murphy Institute Center for Worker Education : Council-Wide",
+    "size": 300000
+  },
+  {
+    "name": "Legal Information for Families (LIFT) : Council-Wide",
+    "size": 485000
+  },
+  {
+    "name": "Legal Services for Low-Income New Yorkers : Council-Wide",
+    "size": 5000000
+  },
+  {
+    "name": "Legal Services for the Working Poor : Council-Wide",
+    "size": 2405000
+  },
+  {
+    "name": "Legal Services for Veterans : Council-Wide",
+    "size": 350000
+  },
+  {
+    "name": "LGBT Inclusive Curriculum : Council-Wide",
+    "size": 165000
+  },
+  {
+    "name": "LGBT Senior Services in Every Borough : Council-Wide",
+    "size": 1500000
+  },
+  {
+    "name": "LGBTQ Youth Mental Health : Council-Wide",
+    "size": 1000000
+  },
+  {
+    "name": "Made in NYC : Council-Wide",
+    "size": 750000
+  },
+  {
+    "name": "Maternal and Child Health Services : Council-Wide",
+    "size": 1192818
+  },
+  {
+    "name": "Medicaid Redesign Transition : Council-Wide",
+    "size": 500000
+  },
+  {
+    "name": "Mental Health Services for Veterans : Council-Wide",
+    "size": 190000
+  },
+  {
+    "name": "Mental Health Services for Vulnerbale Populations : Council-Wide",
+    "size": 1093000
+  },
+  {
+    "name": "Mortgage Foreclosure Prevention Program : Council-Wide",
+    "size": 1000000
+  },
+  {
+    "name": "MWBE Leadership Associations : Council-Wide",
+    "size": 600000
+  },
+  {
+    "name": "Naturally Occurring Retirement Communities (NORCs) : Council-Wide",
+    "size": 3850000
+  },
+  {
+    "name": "Neighborhood Development Grant Initiative : Council-Wide",
+    "size": 483000
+  },
+  {
+    "name": "New York Immigrant Family Unity Project : Council-Wide",
+    "size": 6230000
+  },
+  {
+    "name": "New York Immigrant Population : Council-Wide",
+    "size": 700000
+  },
+  {
+    "name": "Nurse Family Partnership : Council-Wide",
+    "size": 2000000
+  },
+  {
+    "name": "NYC Cleanup : Council-Wide",
+    "size": 7800000
+  },
+  {
+    "name": "Parks Equity Initiative : Council-Wide",
+    "size": 2540000
+  },
+  {
+    "name": "Parks Maintenance : Council-Wide",
+    "size": 9553205
+  },
+  {
+    "name": "Physical Education and Fitness : Council-Wide",
+    "size": 1925000
+  },
+  {
+    "name": "Post-Arrest Diversion Program for Young Adults : Council-Wide",
+    "size": 250000
+  },
+  {
+    "name": "Power Action Change Empowerment (PACE) Initiative for Young Adults : Council-Wide",
+    "size": 250000
+  },
+  {
+    "name": "Prevent Sexual Assault (PSA) Initiative for Young Adults : Council-Wide",
+    "size": 250000
+  },
+  {
+    "name": "Prisoners' Rights Project : Council-Wide",
+    "size": 750000
+  },
+  {
+    "name": "Reproductive and Sexual Health Services : Council-Wide",
+    "size": 260000
+  },
+  {
+    "name": "Restorative Justice Program : Council-Wide",
+    "size": 1300000
+  },
+  {
+    "name": "Senior Centers for Immigrant Populations : Council-Wide",
+    "size": 1500000
+  },
+  {
+    "name": "Senior Centers, Programs, and Enhancements : Council-Wide",
+    "size": 3578000
+  },
+  {
+    "name": "Small Business Outreach and Assistance Program : Council-Wide",
+    "size": 1288855
+  },
+  {
+    "name": "Social Adult Day Care Enhancement : Council-Wide",
+    "size": 950000
+  },
+  {
+    "name": "Social Justice Postgraduate Fellowship Program : Council-Wide",
+    "size": 600000
+  },
+  {
+    "name": "Sports Training and Rolemodels for Success (STARS) Initiative : Council-Wide",
+    "size": 1200000
+  },
+  {
+    "name": "Stabilizing NYC : Council-Wide",
+    "size": 2000000
+  },
+  {
+    "name": "Step In and Stop It Initiative to Address Bystander Intervention : Council-Wide",
+    "size": 250000
+  },
+  {
+    "name": "Student Voter Registration Day : Council-Wide",
+    "size": 400000
+  },
+  {
+    "name": "SU-CASA : Council-Wide",
+    "size": 2020000
+  },
+  {
+    "name": "Support for Educators : Council-Wide",
+    "size": 12744500
+  },
+  {
+    "name": "Support for Victims of Human Trafficking : Council-Wide",
+    "size": 750000
+  },
+  {
+    "name": "Support Our Seniors : Council-Wide",
+    "size": 875000
+  },
+  {
+    "name": "Supportive Alternatives to Violent Encounters (SAVE) : Council-Wide",
+    "size": 1950000
+  },
+  {
+    "name": "Transgender Specific Healthcare Training : Council-Wide",
+    "size": 250000
+  },
+  {
+    "name": "Unaccompanied Minors and Families : Council-Wide",
+    "size": 500000
+  },
+  {
+    "name": "Urban Advantage : Council-Wide",
+    "size": 3500000
+  },
+  {
+    "name": "Veterans Community Development : Council-Wide",
+    "size": 350000
+  },
+  {
+    "name": "Viral Hepatitis Prevention : Council-Wide",
+    "size": 1423658
+  },
+  {
+    "name": "Warrant Reduction Events : Council-Wide",
+    "size": 175000
+  },
+  {
+    "name": "Work-Based Learning Internships : Council-Wide",
+    "size": 600000
+  },
+  {
+    "name": "Worker Cooperative Business Development Initiative : Council-Wide",
+    "size": 2248000
+  },
+  {
+    "name": "Year-Round Employment Program (Work, Learn, Grow) : Council-Wide",
+    "size": 11000000
+  },
+  {
+    "name": "Young Women's Leadership Development : Council-Wide",
+    "size": 825000
+  },
+  {
+    "name": "Youth Health Initiative : Council-Wide",
+    "size": 500000
+  },
+  {
+    "name": "YouthBuild Project Initiative : Council-Wide",
+    "size": 2100000
+  }
+]
+
+  var connections = [
+  {
+    "source": "Barron",
+    "target": "Aging : Barron"
+  },
+  {
+    "source": "Barron",
+    "target": "Anti-Poverty : Barron"
+  },
+  {
+    "source": "Barron",
+    "target": "Cultural After-School Adventure (CASA) : Barron"
+  },
+  {
+    "source": "Barron",
+    "target": "Digital Inclusion and Literacy Initiative : Barron"
+  },
+  {
+    "source": "Barron",
+    "target": "Healthy Aging Initiative : Barron"
+  },
+  {
+    "source": "Barron",
+    "target": "Local : Barron"
+  },
+  {
+    "source": "Barron",
+    "target": "Neighborhood Development Grant Initiative : Barron"
+  },
+  {
+    "source": "Barron",
+    "target": "Support Our Seniors : Barron"
+  },
+  {
+    "source": "Barron",
+    "target": "Youth : Barron"
+  },
+  {
+    "source": "Borelli",
+    "target": "Aging : Borelli"
+  },
+  {
+    "source": "Borelli",
+    "target": "Anti-Poverty : Borelli"
+  },
+  {
+    "source": "Borelli",
+    "target": "Cultural After-School Adventure (CASA) : Borelli"
+  },
+  {
+    "source": "Borelli",
+    "target": "Healthy Aging Initiative : Borelli"
+  },
+  {
+    "source": "Borelli",
+    "target": "Local : Borelli"
+  },
+  {
+    "source": "Borelli",
+    "target": "Neighborhood Development Grant Initiative : Borelli"
+  },
+  {
+    "source": "Borelli",
+    "target": "Support Our Seniors : Borelli"
+  },
+  {
+    "source": "Borelli",
+    "target": "Youth : Borelli"
+  },
+  {
+    "source": "Bronx Delegation",
+    "target": "Boro : Bronx Delegation"
+  },
+  {
+    "source": "Brooklyn Delegation",
+    "target": "Brooklyn Delegation"
+  },
+  {
+    "source": "Brooklyn Delegation",
+    "target": "Boro : Brooklyn Delegation"
+  },
+  {
+    "source": "Cabrera",
+    "target": "Aging : Cabrera"
+  },
+  {
+    "source": "Cabrera",
+    "target": "Anti-Poverty : Cabrera"
+  },
+  {
+    "source": "Cabrera",
+    "target": "Cultural After-School Adventure (CASA) : Cabrera"
+  },
+  {
+    "source": "Cabrera",
+    "target": "Digital Inclusion and Literacy Initiative : Cabrera"
+  },
+  {
+    "source": "Cabrera",
+    "target": "Local : Cabrera"
+  },
+  {
+    "source": "Cabrera",
+    "target": "Youth : Cabrera"
+  },
+  {
+    "source": "CD28",
+    "target": "Aging : CD28"
+  },
+  {
+    "source": "CD28",
+    "target": "Anti-Poverty : CD28"
+  },
+  {
+    "source": "CD28",
+    "target": "Cultural After-School Adventure (CASA) : CD28"
+  },
+  {
+    "source": "CD28",
+    "target": "Digital Inclusion and Literacy Initiative : CD28"
+  },
+  {
+    "source": "CD28",
+    "target": "Healthy Aging Initiative : CD28"
+  },
+  {
+    "source": "CD28",
+    "target": "Local : CD28"
+  },
+  {
+    "source": "CD28",
+    "target": "Neighborhood Development Grant Initiative : CD28"
+  },
+  {
+    "source": "CD28",
+    "target": "Support Our Seniors : CD28"
+  },
+  {
+    "source": "CD28",
+    "target": "Youth : CD28"
+  },
+  {
+    "source": "Chin",
+    "target": "Aging : Chin"
+  },
+  {
+    "source": "Chin",
+    "target": "Anti-Poverty : Chin"
+  },
+  {
+    "source": "Chin",
+    "target": "Cultural After-School Adventure (CASA) : Chin"
+  },
+  {
+    "source": "Chin",
+    "target": "Digital Inclusion and Literacy Initiative : Chin"
+  },
+  {
+    "source": "Chin",
+    "target": "Healthy Aging Initiative : Chin"
+  },
+  {
+    "source": "Chin",
+    "target": "Local : Chin"
+  },
+  {
+    "source": "Chin",
+    "target": "Neighborhood Development Grant Initiative : Chin"
+  },
+  {
+    "source": "Chin",
+    "target": "Support Our Seniors : Chin"
+  },
+  {
+    "source": "Chin",
+    "target": "Youth : Chin"
+  },
+  {
+    "source": "Cohen",
+    "target": "Aging : Cohen"
+  },
+  {
+    "source": "Cohen",
+    "target": "Anti-Poverty : Cohen"
+  },
+  {
+    "source": "Cohen",
+    "target": "Cultural After-School Adventure (CASA) : Cohen"
+  },
+  {
+    "source": "Cohen",
+    "target": "Digital Inclusion and Literacy Initiative : Cohen"
+  },
+  {
+    "source": "Cohen",
+    "target": "Local : Cohen"
+  },
+  {
+    "source": "Cohen",
+    "target": "Youth : Cohen"
+  },
+  {
+    "source": "Constantinides",
+    "target": "Aging : Constantinides"
+  },
+  {
+    "source": "Constantinides",
+    "target": "Anti-Poverty : Constantinides"
+  },
+  {
+    "source": "Constantinides",
+    "target": "Cultural After-School Adventure (CASA) : Constantinides"
+  },
+  {
+    "source": "Constantinides",
+    "target": "Digital Inclusion and Literacy Initiative : Constantinides"
+  },
+  {
+    "source": "Constantinides",
+    "target": "Local : Constantinides"
+  },
+  {
+    "source": "Constantinides",
+    "target": "Neighborhood Development Grant Initiative : Constantinides"
+  },
+  {
+    "source": "Constantinides",
+    "target": "Youth : Constantinides"
+  },
+  {
+    "source": "Cornegy",
+    "target": "Aging : Cornegy"
+  },
+  {
+    "source": "Cornegy",
+    "target": "Anti-Poverty : Cornegy"
+  },
+  {
+    "source": "Cornegy",
+    "target": "Cultural After-School Adventure (CASA) : Cornegy"
+  },
+  {
+    "source": "Cornegy",
+    "target": "Digital Inclusion and Literacy Initiative : Cornegy"
+  },
+  {
+    "source": "Cornegy",
+    "target": "Local : Cornegy"
+  },
+  {
+    "source": "Cornegy",
+    "target": "Youth : Cornegy"
+  },
+  {
+    "source": "Crowley",
+    "target": "Crowley"
+  },
+  {
+    "source": "Crowley",
+    "target": "Aging : Crowley"
+  },
+  {
+    "source": "Crowley",
+    "target": "Anti-Poverty : Crowley"
+  },
+  {
+    "source": "Crowley",
+    "target": "Cultural After-School Adventure (CASA) : Crowley"
+  },
+  {
+    "source": "Crowley",
+    "target": "Digital Inclusion and Literacy Initiative : Crowley"
+  },
+  {
+    "source": "Crowley",
+    "target": "Healthy Aging Initiative : Crowley"
+  },
+  {
+    "source": "Crowley",
+    "target": "Local : Crowley"
+  },
+  {
+    "source": "Crowley",
+    "target": "Neighborhood Development Grant Initiative : Crowley"
+  },
+  {
+    "source": "Crowley",
+    "target": "Support Our Seniors : Crowley"
+  },
+  {
+    "source": "Crowley",
+    "target": "Youth : Crowley"
+  },
+  {
+    "source": "Cumbo",
+    "target": "Aging : Cumbo"
+  },
+  {
+    "source": "Cumbo",
+    "target": "Anti-Poverty : Cumbo"
+  },
+  {
+    "source": "Cumbo",
+    "target": "Cultural After-School Adventure (CASA) : Cumbo"
+  },
+  {
+    "source": "Cumbo",
+    "target": "Digital Inclusion and Literacy Initiative : Cumbo"
+  },
+  {
+    "source": "Cumbo",
+    "target": "Healthy Aging Initiative : Cumbo"
+  },
+  {
+    "source": "Cumbo",
+    "target": "Local : Cumbo"
+  },
+  {
+    "source": "Cumbo",
+    "target": "Neighborhood Development Grant Initiative : Cumbo"
+  },
+  {
+    "source": "Cumbo",
+    "target": "Support Our Seniors : Cumbo"
+  },
+  {
+    "source": "Cumbo",
+    "target": "Youth : Cumbo"
+  },
+  {
+    "source": "Deutsch",
+    "target": "Aging : Deutsch"
+  },
+  {
+    "source": "Deutsch",
+    "target": "Anti-Poverty : Deutsch"
+  },
+  {
+    "source": "Deutsch",
+    "target": "Cultural After-School Adventure (CASA) : Deutsch"
+  },
+  {
+    "source": "Deutsch",
+    "target": "Healthy Aging Initiative : Deutsch"
+  },
+  {
+    "source": "Deutsch",
+    "target": "Local : Deutsch"
+  },
+  {
+    "source": "Deutsch",
+    "target": "Neighborhood Development Grant Initiative : Deutsch"
+  },
+  {
+    "source": "Deutsch",
+    "target": "Support Our Seniors : Deutsch"
+  },
+  {
+    "source": "Deutsch",
+    "target": "Youth : Deutsch"
+  },
+  {
+    "source": "Dickens",
+    "target": "Aging : Dickens"
+  },
+  {
+    "source": "Dickens",
+    "target": "Anti-Poverty : Dickens"
+  },
+  {
+    "source": "Dickens",
+    "target": "Cultural After-School Adventure (CASA) : Dickens"
+  },
+  {
+    "source": "Dickens",
+    "target": "Digital Inclusion and Literacy Initiative : Dickens"
+  },
+  {
+    "source": "Dickens",
+    "target": "Local : Dickens"
+  },
+  {
+    "source": "Dickens",
+    "target": "Youth : Dickens"
+  },
+  {
+    "source": "Dickens",
+    "target": "Neighborhood Development Grant Initiative : Dickens"
+  },
+  {
+    "source": "Dromm",
+    "target": "Aging : Dromm"
+  },
+  {
+    "source": "Dromm",
+    "target": "Anti-Poverty : Dromm"
+  },
+  {
+    "source": "Dromm",
+    "target": "Cultural After-School Adventure (CASA) : Dromm"
+  },
+  {
+    "source": "Dromm",
+    "target": "Digital Inclusion and Literacy Initiative : Dromm"
+  },
+  {
+    "source": "Dromm",
+    "target": "Healthy Aging Initiative : Dromm"
+  },
+  {
+    "source": "Dromm",
+    "target": "Local : Dromm"
+  },
+  {
+    "source": "Dromm",
+    "target": "Neighborhood Development Grant Initiative : Dromm"
+  },
+  {
+    "source": "Dromm",
+    "target": "Support Our Seniors : Dromm"
+  },
+  {
+    "source": "Dromm",
+    "target": "Youth : Dromm"
+  },
+  {
+    "source": "Espinal",
+    "target": "Aging : Espinal"
+  },
+  {
+    "source": "Espinal",
+    "target": "Anti-Poverty : Espinal"
+  },
+  {
+    "source": "Espinal",
+    "target": "Local : Espinal"
+  },
+  {
+    "source": "Espinal",
+    "target": "Youth : Espinal"
+  },
+  {
+    "source": "Espinal",
+    "target": "Cultural After-School Adventure (CASA) : Espinal"
+  },
+  {
+    "source": "Eugene",
+    "target": "Aging : Eugene"
+  },
+  {
+    "source": "Eugene",
+    "target": "Anti-Poverty : Eugene"
+  },
+  {
+    "source": "Eugene",
+    "target": "Cultural After-School Adventure (CASA) : Eugene"
+  },
+  {
+    "source": "Eugene",
+    "target": "Digital Inclusion and Literacy Initiative : Eugene"
+  },
+  {
+    "source": "Eugene",
+    "target": "Local : Eugene"
+  },
+  {
+    "source": "Eugene",
+    "target": "Neighborhood Development Grant Initiative : Eugene"
+  },
+  {
+    "source": "Eugene",
+    "target": "Youth : Eugene"
+  },
+  {
+    "source": "Ferreras-Copeland",
+    "target": "Aging : Ferreras-Copeland"
+  },
+  {
+    "source": "Ferreras-Copeland",
+    "target": "Anti-Poverty : Ferreras-Copeland"
+  },
+  {
+    "source": "Ferreras-Copeland",
+    "target": "Cultural After-School Adventure (CASA) : Ferreras-Copeland"
+  },
+  {
+    "source": "Ferreras-Copeland",
+    "target": "Digital Inclusion and Literacy Initiative : Ferreras-Copeland"
+  },
+  {
+    "source": "Ferreras-Copeland",
+    "target": "Healthy Aging Initiative : Ferreras-Copeland"
+  },
+  {
+    "source": "Ferreras-Copeland",
+    "target": "Local : Ferreras-Copeland"
+  },
+  {
+    "source": "Ferreras-Copeland",
+    "target": "Neighborhood Development Grant Initiative : Ferreras-Copeland"
+  },
+  {
+    "source": "Ferreras-Copeland",
+    "target": "Support Our Seniors : Ferreras-Copeland"
+  },
+  {
+    "source": "Ferreras-Copeland",
+    "target": "Youth : Ferreras-Copeland"
+  },
+  {
+    "source": "Garodnick",
+    "target": "Aging : Garodnick"
+  },
+  {
+    "source": "Garodnick",
+    "target": "Anti-Poverty : Garodnick"
+  },
+  {
+    "source": "Garodnick",
+    "target": "Digital Inclusion and Literacy Initiative : Garodnick"
+  },
+  {
+    "source": "Garodnick",
+    "target": "Local : Garodnick"
+  },
+  {
+    "source": "Garodnick",
+    "target": "Youth : Garodnick"
+  },
+  {
+    "source": "Gentile",
+    "target": "Aging : Gentile"
+  },
+  {
+    "source": "Gentile",
+    "target": "Anti-Poverty : Gentile"
+  },
+  {
+    "source": "Gentile",
+    "target": "Cultural After-School Adventure (CASA) : Gentile"
+  },
+  {
+    "source": "Gentile",
+    "target": "Digital Inclusion and Literacy Initiative : Gentile"
+  },
+  {
+    "source": "Gentile",
+    "target": "Healthy Aging Initiative : Gentile"
+  },
+  {
+    "source": "Gentile",
+    "target": "Local : Gentile"
+  },
+  {
+    "source": "Gentile",
+    "target": "Neighborhood Development Grant Initiative : Gentile"
+  },
+  {
+    "source": "Gentile",
+    "target": "Support Our Seniors : Gentile"
+  },
+  {
+    "source": "Gentile",
+    "target": "Youth : Gentile"
+  },
+  {
+    "source": "Gibson",
+    "target": "Aging : Gibson"
+  },
+  {
+    "source": "Gibson",
+    "target": "Anti-Poverty : Gibson"
+  },
+  {
+    "source": "Gibson",
+    "target": "Cultural After-School Adventure (CASA) : Gibson"
+  },
+  {
+    "source": "Gibson",
+    "target": "Digital Inclusion and Literacy Initiative : Gibson"
+  },
+  {
+    "source": "Gibson",
+    "target": "Local : Gibson"
+  },
+  {
+    "source": "Gibson",
+    "target": "Youth : Gibson"
+  },
+  {
+    "source": "Greenfield",
+    "target": "Aging : Greenfield"
+  },
+  {
+    "source": "Greenfield",
+    "target": "Anti-Poverty : Greenfield"
+  },
+  {
+    "source": "Greenfield",
+    "target": "Cultural After-School Adventure (CASA) : Greenfield"
+  },
+  {
+    "source": "Greenfield",
+    "target": "Digital Inclusion and Literacy Initiative : Greenfield"
+  },
+  {
+    "source": "Greenfield",
+    "target": "Local : Greenfield"
+  },
+  {
+    "source": "Greenfield",
+    "target": "Neighborhood Development Grant Initiative : Greenfield"
+  },
+  {
+    "source": "Greenfield",
+    "target": "Youth : Greenfield"
+  },
+  {
+    "source": "Grodenchik",
+    "target": "Aging : Grodenchik"
+  },
+  {
+    "source": "Grodenchik",
+    "target": "Anti-Poverty : Grodenchik"
+  },
+  {
+    "source": "Grodenchik",
+    "target": "Cultural After-School Adventure (CASA) : Grodenchik"
+  },
+  {
+    "source": "Grodenchik",
+    "target": "Digital Inclusion and Literacy Initiative : Grodenchik"
+  },
+  {
+    "source": "Grodenchik",
+    "target": "Healthy Aging Initiative : Grodenchik"
+  },
+  {
+    "source": "Grodenchik",
+    "target": "Local : Grodenchik"
+  },
+  {
+    "source": "Grodenchik",
+    "target": "Neighborhood Development Grant Initiative : Grodenchik"
+  },
+  {
+    "source": "Grodenchik",
+    "target": "Support Our Seniors : Grodenchik"
+  },
+  {
+    "source": "Grodenchik",
+    "target": "Youth : Grodenchik"
+  },
+  {
+    "source": "Johnson",
+    "target": "Aging : Johnson"
+  },
+  {
+    "source": "Johnson",
+    "target": "Anti-Poverty : Johnson"
+  },
+  {
+    "source": "Johnson",
+    "target": "Cultural After-School Adventure (CASA) : Johnson"
+  },
+  {
+    "source": "Johnson",
+    "target": "Digital Inclusion and Literacy Initiative : Johnson"
+  },
+  {
+    "source": "Johnson",
+    "target": "Healthy Aging Initiative : Johnson"
+  },
+  {
+    "source": "Johnson",
+    "target": "Local : Johnson"
+  },
+  {
+    "source": "Johnson",
+    "target": "Support Our Seniors : Johnson"
+  },
+  {
+    "source": "Johnson",
+    "target": "Youth : Johnson"
+  },
+  {
+    "source": "Kallos",
+    "target": "Aging : Kallos"
+  },
+  {
+    "source": "Kallos",
+    "target": "Anti-Poverty : Kallos"
+  },
+  {
+    "source": "Kallos",
+    "target": "Cultural After-School Adventure (CASA) : Kallos"
+  },
+  {
+    "source": "Kallos",
+    "target": "Digital Inclusion and Literacy Initiative : Kallos"
+  },
+  {
+    "source": "Kallos",
+    "target": "Healthy Aging Initiative : Kallos"
+  },
+  {
+    "source": "Kallos",
+    "target": "Local : Kallos"
+  },
+  {
+    "source": "Kallos",
+    "target": "Neighborhood Development Grant Initiative : Kallos"
+  },
+  {
+    "source": "Kallos",
+    "target": "Support Our Seniors : Kallos"
+  },
+  {
+    "source": "Kallos",
+    "target": "Youth : Kallos"
+  },
+  {
+    "source": "King",
+    "target": "Aging : King"
+  },
+  {
+    "source": "King",
+    "target": "Anti-Poverty : King"
+  },
+  {
+    "source": "King",
+    "target": "Cultural After-School Adventure (CASA) : King"
+  },
+  {
+    "source": "King",
+    "target": "Digital Inclusion and Literacy Initiative : King"
+  },
+  {
+    "source": "King",
+    "target": "Local : King"
+  },
+  {
+    "source": "King",
+    "target": "Youth : King"
+  },
+  {
+    "source": "Koo",
+    "target": "Aging : Koo"
+  },
+  {
+    "source": "Koo",
+    "target": "Anti-Poverty : Koo"
+  },
+  {
+    "source": "Koo",
+    "target": "Cultural After-School Adventure (CASA) : Koo"
+  },
+  {
+    "source": "Koo",
+    "target": "Digital Inclusion and Literacy Initiative : Koo"
+  },
+  {
+    "source": "Koo",
+    "target": "Healthy Aging Initiative : Koo"
+  },
+  {
+    "source": "Koo",
+    "target": "Local : Koo"
+  },
+  {
+    "source": "Koo",
+    "target": "Neighborhood Development Grant Initiative : Koo"
+  },
+  {
+    "source": "Koo",
+    "target": "Support Our Seniors : Koo"
+  },
+  {
+    "source": "Koo",
+    "target": "Youth : Koo"
+  },
+  {
+    "source": "Koslowitz",
+    "target": "Aging : Koslowitz"
+  },
+  {
+    "source": "Koslowitz",
+    "target": "Anti-Poverty : Koslowitz"
+  },
+  {
+    "source": "Koslowitz",
+    "target": "Cultural After-School Adventure (CASA) : Koslowitz"
+  },
+  {
+    "source": "Koslowitz",
+    "target": "Digital Inclusion and Literacy Initiative : Koslowitz"
+  },
+  {
+    "source": "Koslowitz",
+    "target": "Healthy Aging Initiative : Koslowitz"
+  },
+  {
+    "source": "Koslowitz",
+    "target": "Local : Koslowitz"
+  },
+  {
+    "source": "Koslowitz",
+    "target": "Neighborhood Development Grant Initiative : Koslowitz"
+  },
+  {
+    "source": "Koslowitz",
+    "target": "Support Our Seniors : Koslowitz"
+  },
+  {
+    "source": "Koslowitz",
+    "target": "Youth : Koslowitz"
+  },
+  {
+    "source": "Lancman",
+    "target": "Aging : Lancman"
+  },
+  {
+    "source": "Lancman",
+    "target": "Anti-Poverty : Lancman"
+  },
+  {
+    "source": "Lancman",
+    "target": "Cultural After-School Adventure (CASA) : Lancman"
+  },
+  {
+    "source": "Lancman",
+    "target": "Digital Inclusion and Literacy Initiative : Lancman"
+  },
+  {
+    "source": "Lancman",
+    "target": "Healthy Aging Initiative : Lancman"
+  },
+  {
+    "source": "Lancman",
+    "target": "Local : Lancman"
+  },
+  {
+    "source": "Lancman",
+    "target": "Neighborhood Development Grant Initiative : Lancman"
+  },
+  {
+    "source": "Lancman",
+    "target": "Support Our Seniors : Lancman"
+  },
+  {
+    "source": "Lancman",
+    "target": "Youth : Lancman"
+  },
+  {
+    "source": "Lander",
+    "target": "Aging : Lander"
+  },
+  {
+    "source": "Lander",
+    "target": "Anti-Poverty : Lander"
+  },
+  {
+    "source": "Lander",
+    "target": "Cultural After-School Adventure (CASA) : Lander"
+  },
+  {
+    "source": "Lander",
+    "target": "Digital Inclusion and Literacy Initiative : Lander"
+  },
+  {
+    "source": "Lander",
+    "target": "Healthy Aging Initiative : Lander"
+  },
+  {
+    "source": "Lander",
+    "target": "Local : Lander"
+  },
+  {
+    "source": "Lander",
+    "target": "Support Our Seniors : Lander"
+  },
+  {
+    "source": "Lander",
+    "target": "Youth : Lander"
+  },
+  {
+    "source": "Levin",
+    "target": "Aging : Levin"
+  },
+  {
+    "source": "Levin",
+    "target": "Anti-Poverty : Levin"
+  },
+  {
+    "source": "Levin",
+    "target": "Cultural After-School Adventure (CASA) : Levin"
+  },
+  {
+    "source": "Levin",
+    "target": "Digital Inclusion and Literacy Initiative : Levin"
+  },
+  {
+    "source": "Levin",
+    "target": "Local : Levin"
+  },
+  {
+    "source": "Levin",
+    "target": "Neighborhood Development Grant Initiative : Levin"
+  },
+  {
+    "source": "Levin",
+    "target": "Youth : Levin"
+  },
+  {
+    "source": "Levine",
+    "target": "Aging : Levine"
+  },
+  {
+    "source": "Levine",
+    "target": "Anti-Poverty : Levine"
+  },
+  {
+    "source": "Levine",
+    "target": "Cultural After-School Adventure (CASA) : Levine"
+  },
+  {
+    "source": "Levine",
+    "target": "Digital Inclusion and Literacy Initiative : Levine"
+  },
+  {
+    "source": "Levine",
+    "target": "Local : Levine"
+  },
+  {
+    "source": "Levine",
+    "target": "Youth : Levine"
+  },
+  {
+    "source": "Maisel",
+    "target": "Aging : Maisel"
+  },
+  {
+    "source": "Maisel",
+    "target": "Anti-Poverty : Maisel"
+  },
+  {
+    "source": "Maisel",
+    "target": "Cultural After-School Adventure (CASA) : Maisel"
+  },
+  {
+    "source": "Maisel",
+    "target": "Local : Maisel"
+  },
+  {
+    "source": "Maisel",
+    "target": "Neighborhood Development Grant Initiative : Maisel"
+  },
+  {
+    "source": "Maisel",
+    "target": "Youth : Maisel"
+  },
+  {
+    "source": "Manhattan Delegation",
+    "target": "Boro : Manhattan Delegation"
+  },
+  {
+    "source": "Mark-Viverito",
+    "target": "Mark-Viverito"
+  },
+  {
+    "source": "Mark-Viverito",
+    "target": "Aging : Mark-Viverito"
+  },
+  {
+    "source": "Mark-Viverito",
+    "target": "Anti-Poverty : Mark-Viverito"
+  },
+  {
+    "source": "Mark-Viverito",
+    "target": "Cultural After-School Adventure (CASA) : Mark-Viverito"
+  },
+  {
+    "source": "Mark-Viverito",
+    "target": "Digital Inclusion and Literacy Initiative : Mark-Viverito"
+  },
+  {
+    "source": "Mark-Viverito",
+    "target": "Healthy Aging Initiative : Mark-Viverito"
+  },
+  {
+    "source": "Mark-Viverito",
+    "target": "Local : Mark-Viverito"
+  },
+  {
+    "source": "Mark-Viverito",
+    "target": "Neighborhood Development Grant Initiative : Mark-Viverito"
+  },
+  {
+    "source": "Mark-Viverito",
+    "target": "Support Our Seniors : Mark-Viverito"
+  },
+  {
+    "source": "Mark-Viverito",
+    "target": "Youth : Mark-Viverito"
+  },
+  {
+    "source": "Matteo",
+    "target": "Aging : Matteo"
+  },
+  {
+    "source": "Matteo",
+    "target": "Anti-Poverty : Matteo"
+  },
+  {
+    "source": "Matteo",
+    "target": "Cultural After-School Adventure (CASA) : Matteo"
+  },
+  {
+    "source": "Matteo",
+    "target": "Digital Inclusion and Literacy Initiative : Matteo"
+  },
+  {
+    "source": "Matteo",
+    "target": "Healthy Aging Initiative : Matteo"
+  },
+  {
+    "source": "Matteo",
+    "target": "Local : Matteo"
+  },
+  {
+    "source": "Matteo",
+    "target": "Neighborhood Development Grant Initiative : Matteo"
+  },
+  {
+    "source": "Matteo",
+    "target": "Support Our Seniors : Matteo"
+  },
+  {
+    "source": "Matteo",
+    "target": "Youth : Matteo"
+  },
+  {
+    "source": "Mealy",
+    "target": "Aging : Mealy"
+  },
+  {
+    "source": "Mealy",
+    "target": "Anti-Poverty : Mealy"
+  },
+  {
+    "source": "Mealy",
+    "target": "Cultural After-School Adventure (CASA) : Mealy"
+  },
+  {
+    "source": "Mealy",
+    "target": "Local : Mealy"
+  },
+  {
+    "source": "Mealy",
+    "target": "Neighborhood Development Grant Initiative : Mealy"
+  },
+  {
+    "source": "Mealy",
+    "target": "Youth : Mealy"
+  },
+  {
+    "source": "Menchaca",
+    "target": "Aging : Menchaca"
+  },
+  {
+    "source": "Menchaca",
+    "target": "Anti-Poverty : Menchaca"
+  },
+  {
+    "source": "Menchaca",
+    "target": "Cultural After-School Adventure (CASA) : Menchaca"
+  },
+  {
+    "source": "Menchaca",
+    "target": "Digital Inclusion and Literacy Initiative : Menchaca"
+  },
+  {
+    "source": "Menchaca",
+    "target": "Healthy Aging Initiative : Menchaca"
+  },
+  {
+    "source": "Menchaca",
+    "target": "Local : Menchaca"
+  },
+  {
+    "source": "Menchaca",
+    "target": "Neighborhood Development Grant Initiative : Menchaca"
+  },
+  {
+    "source": "Menchaca",
+    "target": "Support Our Seniors : Menchaca"
+  },
+  {
+    "source": "Menchaca",
+    "target": "Youth : Menchaca"
+  },
+  {
+    "source": "Mendez",
+    "target": "Aging : Mendez"
+  },
+  {
+    "source": "Mendez",
+    "target": "Anti-Poverty : Mendez"
+  },
+  {
+    "source": "Mendez",
+    "target": "Cultural After-School Adventure (CASA) : Mendez"
+  },
+  {
+    "source": "Mendez",
+    "target": "Digital Inclusion and Literacy Initiative : Mendez"
+  },
+  {
+    "source": "Mendez",
+    "target": "Healthy Aging Initiative : Mendez"
+  },
+  {
+    "source": "Mendez",
+    "target": "Local : Mendez"
+  },
+  {
+    "source": "Mendez",
+    "target": "Neighborhood Development Grant Initiative : Mendez"
+  },
+  {
+    "source": "Mendez",
+    "target": "Support Our Seniors : Mendez"
+  },
+  {
+    "source": "Mendez",
+    "target": "Youth : Mendez"
+  },
+  {
+    "source": "Miller",
+    "target": "Aging : Miller"
+  },
+  {
+    "source": "Miller",
+    "target": "Anti-Poverty : Miller"
+  },
+  {
+    "source": "Miller",
+    "target": "Cultural After-School Adventure (CASA) : Miller"
+  },
+  {
+    "source": "Miller",
+    "target": "Digital Inclusion and Literacy Initiative : Miller"
+  },
+  {
+    "source": "Miller",
+    "target": "Local : Miller"
+  },
+  {
+    "source": "Miller",
+    "target": "Youth : Miller"
+  },
+  {
+    "source": "Palma",
+    "target": "Aging : Palma"
+  },
+  {
+    "source": "Palma",
+    "target": "Anti-Poverty : Palma"
+  },
+  {
+    "source": "Palma",
+    "target": "Cultural After-School Adventure (CASA) : Palma"
+  },
+  {
+    "source": "Palma",
+    "target": "Digital Inclusion and Literacy Initiative : Palma"
+  },
+  {
+    "source": "Palma",
+    "target": "Local : Palma"
+  },
+  {
+    "source": "Palma",
+    "target": "Youth : Palma"
+  },
+  {
+    "source": "Queens Delegation",
+    "target": "Boro : Queens Delegation"
+  },
+  {
+    "source": "Reynoso",
+    "target": "Aging : Reynoso"
+  },
+  {
+    "source": "Reynoso",
+    "target": "Anti-Poverty : Reynoso"
+  },
+  {
+    "source": "Reynoso",
+    "target": "Cultural After-School Adventure (CASA) : Reynoso"
+  },
+  {
+    "source": "Reynoso",
+    "target": "Digital Inclusion and Literacy Initiative : Reynoso"
+  },
+  {
+    "source": "Reynoso",
+    "target": "Local : Reynoso"
+  },
+  {
+    "source": "Reynoso",
+    "target": "Youth : Reynoso"
+  },
+  {
+    "source": "Richards",
+    "target": "Aging : Richards"
+  },
+  {
+    "source": "Richards",
+    "target": "Anti-Poverty : Richards"
+  },
+  {
+    "source": "Richards",
+    "target": "Cultural After-School Adventure (CASA) : Richards"
+  },
+  {
+    "source": "Richards",
+    "target": "Digital Inclusion and Literacy Initiative : Richards"
+  },
+  {
+    "source": "Richards",
+    "target": "Healthy Aging Initiative : Richards"
+  },
+  {
+    "source": "Richards",
+    "target": "Local : Richards"
+  },
+  {
+    "source": "Richards",
+    "target": "Neighborhood Development Grant Initiative : Richards"
+  },
+  {
+    "source": "Richards",
+    "target": "Support Our Seniors : Richards"
+  },
+  {
+    "source": "Richards",
+    "target": "Youth : Richards"
+  },
+  {
+    "source": "Rodriguez",
+    "target": "Aging : Rodriguez"
+  },
+  {
+    "source": "Rodriguez",
+    "target": "Anti-Poverty : Rodriguez"
+  },
+  {
+    "source": "Rodriguez",
+    "target": "Cultural After-School Adventure (CASA) : Rodriguez"
+  },
+  {
+    "source": "Rodriguez",
+    "target": "Digital Inclusion and Literacy Initiative : Rodriguez"
+  },
+  {
+    "source": "Rodriguez",
+    "target": "Healthy Aging Initiative : Rodriguez"
+  },
+  {
+    "source": "Rodriguez",
+    "target": "Local : Rodriguez"
+  },
+  {
+    "source": "Rodriguez",
+    "target": "Neighborhood Development Grant Initiative : Rodriguez"
+  },
+  {
+    "source": "Rodriguez",
+    "target": "Support Our Seniors : Rodriguez"
+  },
+  {
+    "source": "Rodriguez",
+    "target": "Youth : Rodriguez"
+  },
+  {
+    "source": "Rose",
+    "target": "Aging : Rose"
+  },
+  {
+    "source": "Rose",
+    "target": "Anti-Poverty : Rose"
+  },
+  {
+    "source": "Rose",
+    "target": "Cultural After-School Adventure (CASA) : Rose"
+  },
+  {
+    "source": "Rose",
+    "target": "Digital Inclusion and Literacy Initiative : Rose"
+  },
+  {
+    "source": "Rose",
+    "target": "Healthy Aging Initiative : Rose"
+  },
+  {
+    "source": "Rose",
+    "target": "Local : Rose"
+  },
+  {
+    "source": "Rose",
+    "target": "Neighborhood Development Grant Initiative : Rose"
+  },
+  {
+    "source": "Rose",
+    "target": "Support Our Seniors : Rose"
+  },
+  {
+    "source": "Rose",
+    "target": "Youth : Rose"
+  },
+  {
+    "source": "Rosenthal",
+    "target": "Aging : Rosenthal"
+  },
+  {
+    "source": "Rosenthal",
+    "target": "Anti-Poverty : Rosenthal"
+  },
+  {
+    "source": "Rosenthal",
+    "target": "Cultural After-School Adventure (CASA) : Rosenthal"
+  },
+  {
+    "source": "Rosenthal",
+    "target": "Digital Inclusion and Literacy Initiative : Rosenthal"
+  },
+  {
+    "source": "Rosenthal",
+    "target": "Healthy Aging Initiative : Rosenthal"
+  },
+  {
+    "source": "Rosenthal",
+    "target": "Local : Rosenthal"
+  },
+  {
+    "source": "Rosenthal",
+    "target": "Support Our Seniors : Rosenthal"
+  },
+  {
+    "source": "Rosenthal",
+    "target": "Youth : Rosenthal"
+  },
+  {
+    "source": "Salamanca",
+    "target": "Aging : Salamanca"
+  },
+  {
+    "source": "Salamanca",
+    "target": "Anti-Poverty : Salamanca"
+  },
+  {
+    "source": "Salamanca",
+    "target": "Cultural After-School Adventure (CASA) : Salamanca"
+  },
+  {
+    "source": "Salamanca",
+    "target": "Digital Inclusion and Literacy Initiative : Salamanca"
+  },
+  {
+    "source": "Salamanca",
+    "target": "Local : Salamanca"
+  },
+  {
+    "source": "Salamanca",
+    "target": "Neighborhood Development Grant Initiative : Salamanca"
+  },
+  {
+    "source": "Salamanca",
+    "target": "Youth : Salamanca"
+  },
+  {
+    "source": "Staten Island Delegation",
+    "target": "Boro : Staten Island Delegation"
+  },
+  {
+    "source": "Speaker",
+    "target": "Local : Speaker"
+  },
+  {
+    "source": "Speaker",
+    "target": "Speaker's Initiative : Speaker"
+  },
+  {
+    "source": "Torres",
+    "target": "Aging : Torres"
+  },
+  {
+    "source": "Torres",
+    "target": "Anti-Poverty : Torres"
+  },
+  {
+    "source": "Torres",
+    "target": "Cultural After-School Adventure (CASA) : Torres"
+  },
+  {
+    "source": "Torres",
+    "target": "Digital Inclusion and Literacy Initiative : Torres"
+  },
+  {
+    "source": "Torres",
+    "target": "Healthy Aging Initiative : Torres"
+  },
+  {
+    "source": "Torres",
+    "target": "Local : Torres"
+  },
+  {
+    "source": "Torres",
+    "target": "Neighborhood Development Grant Initiative : Torres"
+  },
+  {
+    "source": "Torres",
+    "target": "Support Our Seniors : Torres"
+  },
+  {
+    "source": "Torres",
+    "target": "Youth : Torres"
+  },
+  {
+    "source": "Treyger",
+    "target": "Aging : Treyger"
+  },
+  {
+    "source": "Treyger",
+    "target": "Anti-Poverty : Treyger"
+  },
+  {
+    "source": "Treyger",
+    "target": "Cultural After-School Adventure (CASA) : Treyger"
+  },
+  {
+    "source": "Treyger",
+    "target": "Digital Inclusion and Literacy Initiative : Treyger"
+  },
+  {
+    "source": "Treyger",
+    "target": "Local : Treyger"
+  },
+  {
+    "source": "Treyger",
+    "target": "Youth : Treyger"
+  },
+  {
+    "source": "Treyger",
+    "target": "Neighborhood Development Grant Initiative : Treyger"
+  },
+  {
+    "source": "Ulrich",
+    "target": "Aging : Ulrich"
+  },
+  {
+    "source": "Ulrich",
+    "target": "Anti-Poverty : Ulrich"
+  },
+  {
+    "source": "Ulrich",
+    "target": "Digital Inclusion and Literacy Initiative : Ulrich"
+  },
+  {
+    "source": "Ulrich",
+    "target": "Healthy Aging Initiative : Ulrich"
+  },
+  {
+    "source": "Ulrich",
+    "target": "Local : Ulrich"
+  },
+  {
+    "source": "Ulrich",
+    "target": "Neighborhood Development Grant Initiative : Ulrich"
+  },
+  {
+    "source": "Ulrich",
+    "target": "Support Our Seniors : Ulrich"
+  },
+  {
+    "source": "Ulrich",
+    "target": "Youth : Ulrich"
+  },
+  {
+    "source": "Vacca",
+    "target": "Aging : Vacca"
+  },
+  {
+    "source": "Vacca",
+    "target": "Anti-Poverty : Vacca"
+  },
+  {
+    "source": "Vacca",
+    "target": "Cultural After-School Adventure (CASA) : Vacca"
+  },
+  {
+    "source": "Vacca",
+    "target": "Digital Inclusion and Literacy Initiative : Vacca"
+  },
+  {
+    "source": "Vacca",
+    "target": "Healthy Aging Initiative : Vacca"
+  },
+  {
+    "source": "Vacca",
+    "target": "Local : Vacca"
+  },
+  {
+    "source": "Vacca",
+    "target": "Neighborhood Development Grant Initiative : Vacca"
+  },
+  {
+    "source": "Vacca",
+    "target": "Support Our Seniors : Vacca"
+  },
+  {
+    "source": "Vacca",
+    "target": "Youth : Vacca"
+  },
+  {
+    "source": "Vallone",
+    "target": "Aging : Vallone"
+  },
+  {
+    "source": "Vallone",
+    "target": "Anti-Poverty : Vallone"
+  },
+  {
+    "source": "Vallone",
+    "target": "Cultural After-School Adventure (CASA) : Vallone"
+  },
+  {
+    "source": "Vallone",
+    "target": "Digital Inclusion and Literacy Initiative : Vallone"
+  },
+  {
+    "source": "Vallone",
+    "target": "Healthy Aging Initiative : Vallone"
+  },
+  {
+    "source": "Vallone",
+    "target": "Local : Vallone"
+  },
+  {
+    "source": "Vallone",
+    "target": "Neighborhood Development Grant Initiative : Vallone"
+  },
+  {
+    "source": "Vallone",
+    "target": "Support Our Seniors : Vallone"
+  },
+  {
+    "source": "Vallone",
+    "target": "Youth : Vallone"
+  },
+  {
+    "source": "Van Bramer",
+    "target": "Aging : Van Bramer"
+  },
+  {
+    "source": "Van Bramer",
+    "target": "Anti-Poverty : Van Bramer"
+  },
+  {
+    "source": "Van Bramer",
+    "target": "Cultural After-School Adventure (CASA) : Van Bramer"
+  },
+  {
+    "source": "Van Bramer",
+    "target": "Digital Inclusion and Literacy Initiative : Van Bramer"
+  },
+  {
+    "source": "Van Bramer",
+    "target": "Local : Van Bramer"
+  },
+  {
+    "source": "Van Bramer",
+    "target": "Youth : Van Bramer"
+  },
+  {
+    "source": "Williams",
+    "target": "Aging : Williams"
+  },
+  {
+    "source": "Williams",
+    "target": "Anti-Poverty : Williams"
+  },
+  {
+    "source": "Williams",
+    "target": "Cultural After-School Adventure (CASA) : Williams"
+  },
+  {
+    "source": "Williams",
+    "target": "Digital Inclusion and Literacy Initiative : Williams"
+  },
+  {
+    "source": "Williams",
+    "target": "Healthy Aging Initiative : Williams"
+  },
+  {
+    "source": "Williams",
+    "target": "Local : Williams"
+  },
+  {
+    "source": "Williams",
+    "target": "Neighborhood Development Grant Initiative : Williams"
+  },
+  {
+    "source": "Williams",
+    "target": "Support Our Seniors : Williams"
+  },
+  {
+    "source": "Williams",
+    "target": "Youth : Williams"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "A Greener NYC : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Access Health : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Access to Critical Services for Seniors : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Access to Food and Nutritional Education : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Adult Literacy Initiative : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Afterschool Enrichment Initiative : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Alternatives to Incarceration (ATI's) : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Anti-Eviction and Housing Court Resources : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Anti-Gun Violence - Art a Catalyst for Change : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Anti-Gun Violence - Youth Programs : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Autism Awareness : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Bail Fund : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Beating Hearts : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Big Brothers and Big Sisters of New York City : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Borough Presidents' Discretionary Funding Restoration : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Bridge to Tomorrow : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Brooklyn Borough President PS Enhancment : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Cancer Services : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Center for Court Innovation : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Child Care Vouchers : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Child Health and Wellness : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Child Mind Institute : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Children and Families in NYC Homeless System : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Children Under Five : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "City Clerk PS Enhancement : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "City Council Merit-Based Scholarships : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "City's First Readers : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Citywide Homeless Prevention Fund : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Civic Education in New York City Schools : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Coalition Theaters of Color : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Communities of Color Nonprofit Stabilization Fund : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Community Housing Preservation Strategies : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Community Schools : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "COMPASS : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Contraceptive Fund : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Court-Involved Youth Mental Health Initiative : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Create New Technology Incubators : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Creative Arts Team : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Crisis Management System : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Cultural After-School Adventure (CASA) : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Cultural Immigrant Initiative : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "CUNY Citizenship NOW! Program : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "CUNY Research Institutes : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "CUNY Technical Apprenticeship Program : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Day Laborer Workforce Initiative : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Developmental, Psychological and Behavioral Health Services : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "DFTA Core Enhancement Services : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Digital Inclusion and Literacy Initiative : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Discretionary Child Care : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Domestic Violence and Empowerment (DoVE) Initiative : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Dropout Prevention and Intervention Initiative : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Educational Programs for Students : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Elder Abuse Enhancement : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Ending the Epidemic : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Financial Empowerment for NYC's Renters : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Food Access and Benefits : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Food Pantries : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Foreclosure Buyback Initiative : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Foster Youth Transitional Care : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Gender Equity Liaisons : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Geriatric Mental Health : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Ghetto Film School Accelerator Program Model : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Green Jobs Corps Program : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "hackNY : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Healthy Aging Initiative : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "HIV/AIDS Faith Based Initiative : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Holocaust Survivors : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Homeless Prevention Services for Veterans : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Housing Information Project : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "HPD Alternative Enforcement Program (AEP) : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "HPD Home Loan Program : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Immigrant Health Initiative : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Immigrant Opportunities Initiative : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Information and Referral Services : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Initiative for Immigrant Survivors of Domestic Violence : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Initiative to Combat Sexual Assault : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Jill Chaifetz Helpline : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Job Placement for Veterans : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Job Training and Placement Initiative : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Joseph S. Murphy Institute Center for Worker Education : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Legal Information for Families (LIFT) : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Legal Services for Low-Income New Yorkers : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Legal Services for the Working Poor : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Legal Services for Veterans : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "LGBT Inclusive Curriculum : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "LGBT Senior Services in Every Borough : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "LGBTQ Youth Mental Health : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Made in NYC : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Maternal and Child Health Services : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Medicaid Redesign Transition : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Mental Health Services for Veterans : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Mental Health Services for Vulnerbale Populations : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Mortgage Foreclosure Prevention Program : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "MWBE Leadership Associations : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Naturally Occurring Retirement Communities (NORCs) : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Neighborhood Development Grant Initiative : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "New York Immigrant Family Unity Project : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "New York Immigrant Population : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Nurse Family Partnership : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "NYC Cleanup : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Parks Equity Initiative : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Parks Maintenance : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Physical Education and Fitness : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Post-Arrest Diversion Program for Young Adults : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Power Action Change Empowerment (PACE) Initiative for Young Adults : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Prevent Sexual Assault (PSA) Initiative for Young Adults : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Prisoners' Rights Project : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Reproductive and Sexual Health Services : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Restorative Justice Program : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Senior Centers for Immigrant Populations : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Senior Centers, Programs, and Enhancements : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Small Business Outreach and Assistance Program : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Social Adult Day Care Enhancement : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Social Justice Postgraduate Fellowship Program : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Sports Training and Rolemodels for Success (STARS) Initiative : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Stabilizing NYC : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Step In and Stop It Initiative to Address Bystander Intervention : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Student Voter Registration Day : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "SU-CASA : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Support for Educators : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Support for Victims of Human Trafficking : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Support Our Seniors : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Supportive Alternatives to Violent Encounters (SAVE) : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Transgender Specific Healthcare Training : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Unaccompanied Minors and Families : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Urban Advantage : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Veterans Community Development : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Viral Hepatitis Prevention : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Warrant Reduction Events : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Work-Based Learning Internships : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Worker Cooperative Business Development Initiative : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Year-Round Employment Program (Work, Learn, Grow) : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Young Women's Leadership Development : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "Youth Health Initiative : Council-Wide"
+  },
+  {
+    "source": "Council-Wide",
+    "target": "YouthBuild Project Initiative : Council-Wide"
+  }
+]
+
+  var visualization = d3plus.viz()
+    .container("#viz")
+    .type("network")
+    .data(sample_data)
+    .edges(connections)
+    .size("size")
+    .id("name")
+    .draw()
+
+</script>

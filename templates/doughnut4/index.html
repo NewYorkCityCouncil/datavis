@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Adopted Budget FY 2016 - Expense</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
+
+    </head>
+    <body>
+
+
+<canvas id="doughnut4" width="400" height="400"></canvas>
+<script>
+
+Chart.defaults.global.responsive = true
+Chart.defaults.global.maintainAspectRatio = true
+Chart.defaults.global.legend.display = false
+Chart.defaults.global.tooltips.bodyFontSize = 12
+Chart.defaults.global.tooltips.fontFamily = 'open sans'
+
+
+
+
+
+var ctx = document.getElementById("doughnut4");
+
+var myChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        labels: [
+                  "Education",
+                  "General Welfare",
+                  "Miscellaneous",
+                  "Pension Contributions",
+                  "Public Safety",
+                  "Fire and Criminal Justice Services",
+                  "Debt Service",
+                  "Health",
+                  "Sanitation and Solid Waste",
+                  "Governmental Operations",
+                  "Housing and Buildings",
+                  "Water and Sewers",
+                  "Higher Education",
+                  "Transportation",
+                  "Youth Services",
+                  "Technology",
+                  "Parks and Recreation",
+                  "Design and Construction",
+                  "Finance",
+                  "Libraries",
+                  "Aging",
+                  "Economic Development",
+                  "Elected Officials",
+                  "Cultural Affairs",
+                  "Land Use",
+                  "Oversight and Investigation",
+                  "Consumer Affairs",
+                  "Courts and Legal Services",
+                  "Civil Rights",
+                  "Veterans",
+                  "Civil Service and Labor",
+                  "Standards and Ethics"
+
+                ],
+        datasets: [{
+            label: 'FY17 Adopted Budget',
+            backgroundColor:["#228AE6","#228AE6","#F59F00","#F8Bf55","#3896E8","#3896E8","#FBDFAA","#409AE9","#489eea","#4fa2eb","#57a6ec","#5eaaec","#66aeed","#6eb2ee","#75b6ef","#7dbaf0","#85bef1","#8cc2f2","#94c6f2","#9bcaf3","#a3cef4","#abd2f5","#b2d6f6","#badaf7","#c2def8","#c9e2f8","#D1e6f9","#d8eafa","#e0eefb","#e8f2fc","#eff6fd","#f7fafe"],
+            borderColor: "#eeeeee",
+            borderWidth: 1,
+            hoverBackgroundColor: "#9E9E9E",
+            hoverBorderColor: "#eeeeee",
+            data: [27.11,16.86,13.04,11.47,6.65,4.19,3.64,2.18,2.02,2.00,1.75,1.63,1.26,1.15,0.88,0.75,0.59,0.58,0.47,0.43,0.40,0.28,0.27,0.17,0.06,0.06,0.05,0.05,0.02,0.00,0.00,0.00]
+        }]
+    }
+        ,
+    options: {
+      tooltips: {
+          callbacks: {
+            label: function(tooltipItem, data) {
+              return data.labels[tooltipItem.index] + ': ' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] + '%';
+            },
+          }
+      }
+    }
+
+});
+</script>
+    </body>
+</html>

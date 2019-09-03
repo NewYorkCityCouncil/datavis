@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Bail Set for Felonies</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
+
+    </head>
+    <body>
+
+
+<canvas id="doughnut13" width=auto height="250"></canvas>
+<script>
+
+Chart.defaults.global.responsive = true
+Chart.defaults.global.maintainAspectRatio = true
+Chart.defaults.global.legend.display= true
+//Chart.defaults.global.legend.labels.fontColor = '#DFDBCF'
+
+var ctx = document.getElementById("doughnut13");
+
+var myChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        labels: ["Over $7,500 (34%)",
+                  "$2,501-$7,500 (30%)",
+                  "$1,001-$2,500 (22%)",
+                  "$501-$1,000 (10%)",
+                  "$500 or less (4%)"],
+        datasets: [{
+            label: 'Bail Set for Felonies in NYC 2015',
+            backgroundColor:["#23417D","#2F56A6","#666666","#E6E6E6","#F9F9F9","#CACACA"],
+            borderColor: "#eeeeee",
+            borderWidth: 1,
+            hoverBackgroundColor: "#9E9E9E",
+            hoverBorderColor: "#eeeeee",
+            data: [8587,7577,5556,2526,1010]
+        }]
+    }
+    ,
+    options: {
+      tooltips: {
+          callbacks: {
+            label: function(tooltipItem, data) {
+              return data.labels[tooltipItem.index] + ': '+ data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+' People' ;
+            },
+          }
+      }
+    }
+
+
+});
+</script>
+    </body>
+</html>

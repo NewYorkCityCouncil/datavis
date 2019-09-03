@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Open Space Capital Funded Project Types 2007-2018</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
+
+    </head>
+    <body>
+
+
+<canvas id="doughnut16" width=auto height="250"></canvas>
+<script>
+
+Chart.defaults.global.responsive = true
+Chart.defaults.global.maintainAspectRatio = true
+Chart.defaults.global.legend.display= false
+
+var ctx = document.getElementById("doughnut16");
+
+var myChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        labels: ["Playgrounds 72%","Walkways or Bridges 11%","Ballfields or Basketball 9%","Parks 7%","Community Gardens 2%"],
+        datasets: [{
+            label: 'Type of Projects Funded',
+            backgroundColor:["#82C91E","#2F56A6","#82C91E","#2F56A6","#82C91E","#2F56A6","#82C91E","#2F56A6",],
+            borderColor: "#eeeeee",
+            borderWidth: 1,
+            hoverBackgroundColor: "#9E9E9E",
+            hoverBorderColor: "#eeeeee",
+            data: [25633000,3760000,3175000,2415000,618000]
+        }]
+    }
+    ,
+    options: {
+      tooltips: {
+          callbacks: {
+            label: function(tooltipItem, data) {
+              return data.labels[tooltipItem.index] + ': '+ '$' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US');
+            },
+          }
+      }
+    }
+
+
+});
+</script>
+    </body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Awnings: 311 Calls and Violations</title>
+
+  <!--   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>-->
+           <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.5/chartjs-plugin-annotation.js'></script>
+        <script src='https://cdn.rawgit.com/chartjs/Chart.js/master/samples/utils.js'></script>
+    </head>
+    <body>
+
+
+<canvas id="linechart17" width=auto max-height=auto></canvas>
+<script>
+
+Chart.defaults.global.responsive = true,
+Chart.defaults.global.tooltips.backgroundColor="grey",
+Chart.defaults.global.maintainAspectRatio = true
+//Chart.defaults.global.legend = false
+
+
+var ctx = document.getElementById("linechart17");
+
+var myChart = new Chart(ctx, {
+    type: 'line',
+    fill: true,
+    data: {
+        labels: ["1/2010","2/2010","3/2010","4/2010","5/2010","6/2010","7/2010","8/2010","9/2010","10/2010","11/2010","12/2010","1/2011","2/2011","3/2011","4/2011","5/2011","6/2011","7/2011","8/2011","9/2011","10/2011","11/2011","12/2011","1/2012","2/2012","3/2012","4/2012","5/2012","6/2012","7/2012","8/2012","9/2012","10/2012","11/2012","12/2012","1/2013","2/2013","3/2013","4/2013","5/2013","6/2013","7/2013","8/2013","9/2013","10/2013","11/2013","12/2013","1/2014","2/2014","3/2014","4/2014","5/2014","6/2014","7/2014","8/2014","9/2014","10/2014","11/2014","12/2014","1/2015","2/2015","3/2015","4/2015","5/2015","6/2015","7/2015","8/2015","9/2015","10/2015","11/2015","12/2015","1/2016","2/2016","3/2016","4/2016","5/2016","6/2016","7/2016","8/2016","9/2016","10/2016","11/2016","12/2016","1/2017","2/2017","3/2017","4/2017","5/2017","6/2017","7/2017","8/2017","9/2017","10/2017","11/2017","12/2017","1/2018","2/2018","3/2018","4/2018","5/2018","6/2018","7/2018","8/2018","9/2018","10/2018","11/2018","12/2018"],
+        datasets: [
+            {
+              label: "Awning 311 Calls",
+              fill: false,
+            //  pointBackgroundColor: ['red', "#BE4BDB", "#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB",'red',"#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB",'red',"#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB",'red'],
+            //  pointBorderColor:['red', "#BE4BDB", "#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB",'red',"#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB",'red',"#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB","#BE4BDB",'red'],
+              pointRadius: 1,
+              backgroundColor: "#228AE6",
+              borderColor: "#228AE6",
+              borderWidth: 0,
+              hoverBackgroundColor: "#BE4BDB",
+              hoverBorderColor: "#eeeeee",
+              data: [108,123,79,90,52,54,57,71,89,67,56,34,24,30,56,49,68,67,52,51,37,92,68,100,65,77,61,66,74,68,61,62,85,57,45,67,94,83,66,104,58,50,88,140,179,81,84,96,138,92,132,48,58,56,51,47,62,39,53,53,55,33,33,55,68,41,71,72,59,63,52,62,115,69,71,114,169,78,42,86,50,61,69,66,62,63,63,68,67,67,53,71,91,95,86,66,87,122,83,182,123,208,155,238,181,144,392]
+            },
+            {
+              label: "Awning ECB Violations",
+              fill: false,
+              pointRadius: 1,
+              backgroundColor: "#D05D4E",
+              borderColor: "#D05D4E",
+              borderWidth: 0,
+              hoverBackgroundColor: "#DEA5ED",
+              hoverBorderColor: "#eeeeee",
+              //lineTension: 0,
+              data: [12,15,31,21,20,31,27,21,19,18,22,18,34,26,24,26,26,17,19,22,19,19,22,13,17,19,15,22,18,16,20,29,14,17,7,16,19,12,50,18,28,22,13,18,43,29,18,19,22,25,20,16,21,18,24,12,18,25,16,21,16,7,10,36,45,84,57,45,26,28,27,19,29,54,30,30,31,23,20,33,22,23,19,23,39,33,14,28,25,26,53,136,67,38,56,53,40,30,38,53,29,93,128,77,19,162,30]
+            }
+            /*,
+            {
+              label: "Expected Delay Times",
+              fill: false,
+              pointRadius: 1,
+              backgroundColor: "#DEA5ED",
+              borderColor: "#DEA5ED",
+              borderWidth: 0,
+              hoverBackgroundColor: "#DEA5ED",
+              hoverBorderColor: "#eeeeee",
+              borderDash: [10,5],
+              lineTension: 0,
+              data: [79,80,81,82,83,84,85,86,87,89,92,93,94,95,96,97,98,99,100,101,105,106,107,108,109,110,111,112,113,114,118]
+            },
+            {
+              label: "Expected Delay Times",
+              fill: false,
+              pointRadius: 1,
+              backgroundColor: "#DEA5ED",
+              borderColor: "#DEA5ED",
+              borderWidth: 0,
+              hoverBackgroundColor: "#DEA5ED",
+              hoverBorderColor: "#eeeeee",
+              borderDash: [10,5],
+              lineTension: 0,
+              data: [44,45,46,47,48,50,51,52,53,54,57,58,59,60,61,62,63,65,66,67,70,71,72,73,74,75,76,77,78,80,83]
+            }*/
+
+          ]
+        },
+    options: {
+      tooltips: {
+        callbacks: {
+          label: function(tooltipItem, data) {
+            var datasetLabel = data.datasets[tooltipItem.datasetIndex].label || '';
+            return datasetLabel + ': ' +data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US');
+          }
+        }
+      },
+      scales: {
+        yAxes: [{
+          stacked: false,
+          ticks: {
+            beginAtZero:true,
+            max: 400,
+            callback: function(value) {
+              return + value.toLocaleString('en-US');
+            }
+          }
+        }],
+        xAxes:[{
+          drawTicks: true,
+
+        }]
+      },
+     annotation: {
+        events: ["click"],
+        annotations: [
+          {
+            drawTime: "beforeDatasetsDraw",
+            type: "box",
+            xScaleID: "x-axis-0",
+            yScaleID: "y-axis-0",
+            xMin: "Sep 2015",
+            xMax: "Jun 2016",
+            yMin: 0,
+            yMax: 25,
+            backgroundColor: "rgba(230, 230, 230, 0.5)",
+            borderColor: "rgb(230, 230, 230)",
+            borderWidth: 1,
+            onClick: function(e) {
+              console.log("Box", e.type, this);
+            }
+          },
+          {
+            drawTime: "beforeDatasetsDraw",
+            type: "box",
+            xScaleID: "x-axis-0",
+            yScaleID: "y-axis-0",
+            xMin: "Sep 2016",
+            xMax: "Jun 2017",
+            yMin: 0,
+            yMax: 25,
+            backgroundColor: "rgba(230, 230, 230, 0.5)",
+            borderColor: "rgb(230, 230, 230)",
+            borderWidth: 1,
+            onClick: function(e) {
+              console.log("Box", e.type, this);
+            }
+          },
+          {
+            drawTime: "beforeDatasetsDraw",
+            type: "box",
+            xScaleID: "x-axis-0",
+            yScaleID: "y-axis-0",
+            xMin: "Sep 2017",
+            xMax: "Jun 2018",
+            yMin: 0,
+            yMax: 25,
+            backgroundColor: "rgba(230, 230, 230, 0.5)",
+            borderColor: "rgb(230, 230, 230)",
+            borderWidth: 1,
+            onClick: function(e) {
+              console.log("Box", e.type, this);
+            }
+          },
+          {
+            drawTime: "beforeDatasetsDraw",
+            type: "box",
+            xScaleID: "x-axis-0",
+            yScaleID: "y-axis-0",
+            xMin: "Sep 2018",
+            xMax: "Oct 2018",
+            yMin: 0,
+            yMax: 25,
+            backgroundColor: "rgba(230, 230, 230, 0.5)",
+            borderColor: "rgb(230, 230, 230)",
+            borderWidth: 1,
+            onClick: function(e) {
+              console.log("Box", e.type, this);
+            }
+          },
+
+        ]
+      }
+
+    }
+  });
+</script>
+    </body>
+</html>

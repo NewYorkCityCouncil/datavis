@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>2017 Participatory Budgeting Projects Types</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
+
+    </head>
+    <body>
+
+
+<canvas id="stackedhorizontalbar2" width=100 max-height=400></canvas>
+<script>
+
+Chart.defaults.global.responsive = true
+Chart.defaults.global.tooltips.backgroundColor="grey"
+Chart.defaults.global.maintainAspectRatio = true
+Chart.defaults.global.legend = false
+
+
+
+var ctx = document.getElementById("stackedhorizontalbar2");
+
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ["2017 Funded Projects by Type"],
+        datasets: [
+          {
+            label: 'Education',
+            backgroundColor:"#228AE6",
+            borderColor: "#E6E6E6",
+            borderWidth: 1,
+            hoverBackgroundColor: "#228AE6",
+            hoverBorderColor: "#ffffff",
+            data: [59.7]
+        },
+        {
+          label: 'Arts, Culture & Community Facilities',
+          backgroundColor: "#F59F00",
+          borderColor: "#E6E6E6",
+          borderWidth: 1,
+          hoverBackgroundColor: "#F59F00",
+          hoverBorderColor: "#ffffff",
+          data: [9]
+      },
+        {
+          label: 'Parks & Recreation',
+          backgroundColor:"#BE4BDB",
+          borderColor: "#E6E6E6",
+          borderWidth: 1,
+          hoverBackgroundColor: "#BE4BDB",
+          hoverBorderColor: "#ffffff",
+          data: [8.2]
+        },
+        {
+        label: 'Transit',
+        backgroundColor: "#12B886",
+        borderColor: "#E6E6E6",
+        borderWidth: 1,
+        hoverBackgroundColor: "#12B886",
+        hoverBorderColor: "#ffffff",
+        data: [6.7]
+        },
+        {
+          label: 'Housing',
+          backgroundColor:"#A07952",
+          borderColor: "#E6E6E6",
+          borderWidth: 1,
+          hoverBackgroundColor: "#A07952",
+          hoverBorderColor: "#ffffff",
+          data: [6]
+      },
+      {
+        label: 'Public Safety',
+        backgroundColor: "#82C91E",
+        borderColor: "#E6E6E6",
+        borderWidth: 1,
+        hoverBackgroundColor: "#82C91E",
+        hoverBorderColor: "#ffffff",
+        data: [5.2]
+    },
+        {
+        label: 'Streets',
+        backgroundColor: "#D05D4E",
+        borderColor: "#E6E6E6",
+        borderWidth: 1,
+        hoverBackgroundColor: "#D05D4E",
+        hoverBorderColor: "#ffffff",
+        data: [2.2]
+        },
+        {
+          label: 'Environment',
+          backgroundColor:"#228AE6",
+          borderColor: "#E6E6E6",
+          borderWidth: 1,
+          hoverBackgroundColor: "#228AE6",
+          hoverBorderColor: "#ffffff",
+          data: [1.5]
+      },
+      {
+        label: 'Youth',
+        backgroundColor: "#F59F00",
+        borderColor: "#E6E6E6",
+        borderWidth: 1,
+        hoverBackgroundColor: "#F59F00",
+        hoverBorderColor: "#ffffff",
+        data: [1.5]
+    },
+
+
+
+            ]
+
+    },
+    options: {
+      tooltips: {
+        callbacks: {
+          label: function(tooltipItem, data) {
+            var datasetLabel = data.datasets[tooltipItem.datasetIndex].label || '';
+          return datasetLabel + ': ' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] + '%';
+         }
+       }
+     },
+
+           scales: {
+               yAxes: [{
+                   gridLines: false,
+                   stacked: true,
+                   ticks: {
+                       beginAtZero:true,
+                       max:100,
+                       callback: function(value) {
+                                return value.toLocaleString('en-US')+'%';
+                        }
+                  }
+              }],
+              xAxes: [{
+                   stacked: true
+              }]
+           }
+
+       }
+  });
+</script>
+    </body>
+</html>
