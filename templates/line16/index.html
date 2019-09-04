@@ -63,7 +63,7 @@ var myChart = new Chart(ctx, {
         yAxes: [{
           stacked: false,
           ticks: {
-            beginAtZero: true,
+            beginAtZero: false,
             callback: function(value) {
               return value.toLocaleString('en-US')+' People' ;
             }
