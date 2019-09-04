@@ -90,10 +90,14 @@ var myChart = new Chart(ctx, {
       scales: {
         yAxes: [{
           stacked: false,
+          scaleLabel:{
+            display: true,
+            labelString: 'People'
+          },
           ticks: {
             beginAtZero:false,
             callback: function(value) {
-              return '' + value.toLocaleString('en-US')+ ' People';
+              return '' + value.toLocaleString('en-US');
             }
           }
         }]
