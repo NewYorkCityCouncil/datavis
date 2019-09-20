@@ -27,15 +27,15 @@ var ctx = document.getElementById("doughnut40");
 var myChart = new Chart(ctx, {
     type: 'doughnut',
     data: {
-        labels: ["Full Accessibility","Partial Accessibility","Construction in Progress","No ADA - No Funding Plans","No ADA - Under Consideration"],
+        labels: ["Full Accessibility","Partial Accessibility","Partial: Funding for Full ADA Access","Construction in Progress","No ADA - Funding Committed","No ADA - No Funding Plans"],
         datasets: [{
             label: 'ADA Accessibility Status of Station Platforms, 2019',
-            backgroundColor:["#228AE6","#82C91E","#BE4BDB","#666666","#D05D4E"],
+            backgroundColor:["#228AE6","#82C91E","#BE4BDB","#3B2483","#D05D4E","#666666"],
             borderColor: "#eeeeee",
             borderWidth: 1,
             hoverBackgroundColor: "#9E9E9E",
             hoverBorderColor: "#eeeeee",
-            data: [23.1,1.4,4.8,48.4,22.3]
+            data: [22.9,0.8,0.6,4.8,9.3,61.6]
         }]
     }
     ,
