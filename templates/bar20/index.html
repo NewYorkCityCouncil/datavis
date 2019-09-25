@@ -97,13 +97,13 @@ var myChart = new Chart(ctx, {
         },
         */
           {
-            label: 'Film Permits by Month, 2018',
+            label: 'Hours of Permitted Filming 2018',
             backgroundColor:"#007534",
             borderColor: "#eeeeee",
             borderWidth: 0,
             hoverBackgroundColor: "#9E9E9E",
             hoverBorderColor: "#eeeeee",
-            data: [750,1172,1509,1320,1049,1036,955,1069,925,1059,896,826]
+            data: [12265.0, 11905.0, 14475.0, 11542.0, 14301.0, 12535.0, 12343.0, 16508.0, 14767.0, 21982.0, 19564.0, 12184.0]
           }],
       labels: [
             "January","February","March","April","May","June","July","August","September","October","November","December"
@@ -123,7 +123,7 @@ var myChart = new Chart(ctx, {
           ticks: {
             beginAtZero: true,
             callback: function(value) {
-              return ''+value.toLocaleString('en-US')+' Permits';
+              return ''+value.toLocaleString('en-US')+' Hours';
             }
           }
         }]
@@ -131,7 +131,7 @@ var myChart = new Chart(ctx, {
       tooltips: {
         callbacks: {
           label: function(tooltipItem, data) {
-            return ''+ data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ ' Permits';
+            return ''+ data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ ' Hours';
           },
         }
       }
