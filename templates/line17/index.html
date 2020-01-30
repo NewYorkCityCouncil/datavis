@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <title>Total Donations Per Year</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  <!--Source of Rounded Chart: https://github.com/jedtrow/Chart.js-Rounded-Bar-Charts-->
+    <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.js"></script>
+  <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.min.js"></script>
+
+</head>
+<body>
+  <canvas id ="chart" width="800" height="400"></canvas>
+  <script>
+  //CHART JS
+  Chart.defaults.global.legend.display = false,
+  Chart.defaults.global.defaultFontFamily = 'open sans'
+
+
+  chartIt();
+
+  async function chartIt() {
+    const data = await getData();
+    const ctx = document.getElementById('chart').getContext('2d');
+    const myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: data.xs,
+        datasets: [{
+          label: 'Donations Per Year',
+          data: data.ys,
+          fill: false,
+          backgroundColor: '#fcb846',
+          borderColor: '#fcb846',
+          borderWidth: 1,
+          lineTension: 4,
+          hoverBackgroundColor: '#fa5047',
+          barPercentage: .8
+        }]
+      },
+      options: {
+        cornerRadius: 20,
+        scales: {
+          yAxes: [{
+            ticks: {
+              //max: 5,
+              //min: 200000,
+              //stepSize: 200000,
+              callback: function(value, index, values) {
+                return '$' + (value< 1000000) ? '$' + value/1000 + 'K' : '$'+ value/1000000 + 'M';
+              },
+              beginAtZero: true,
+            },
+            gridLines: {
+              display: false
+            },
+            scaleLabel: {
+              display: true,
+              labelString: 'Donations'
+            }
+          }],
+          xAxes: [{
+            ticks: {
+              callback: function(value, index, values) {
+                return value;
+              },
+              fontStyle: 'strong'
+            },
+            gridLines: {
+              display: false
+            }
+          }]
+        },
+        tooltips: {
+          callbacks: {
+            label: function(tooltipItem, data) {
+              return '$'+ data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ '';
+            },
+          },
+          backgroundColor: '#434343',
+          borderColor: '#f5f5f5',
+          borderWidth: 1,
+          displayColors: false
+        }
+      }
+    });
+  }
+  //SPLITTING AND BRINGING IN CSV DATA
+  async function getData() {
+    const xs = [];
+    const ys = [];
+
+    const response = await fetch('average_hours.csv');
+    const data = await response.text();
+
+    const table = data.split('\n').slice(1);
+    table.forEach(row => {
+      const columns = row.split(',');
+      const date = columns[0];
+      xs.push(date);
+      const hours = columns[1];
+      ys.push(parseFloat(hours)); //make data from string to number and added mean payers of 14 degrees
+      console.log(date, hours);
+    });
+    return { xs, ys };
+  }
+
+
+  </script>
+</body>
+</html>
