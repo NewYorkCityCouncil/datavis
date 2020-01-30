@@ -25,11 +25,11 @@
     const data = await getData();
     const ctx = document.getElementById('chart').getContext('2d');
     const myChart = new Chart(ctx, {
-      type: 'bar',
+      type: 'line',
       data: {
         labels: data.xs,
         datasets: [{
-          label: 'Donations Per Year',
+          label: 'Average Hours',
           data: data.ys,
           fill: false,
           backgroundColor: '#fcb846',
@@ -76,7 +76,7 @@
         tooltips: {
           callbacks: {
             label: function(tooltipItem, data) {
-              return '$'+ data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ '';
+              return ''+ data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ 'Average Hours';
             },
           },
           backgroundColor: '#434343',
