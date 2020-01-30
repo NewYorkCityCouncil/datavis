@@ -29,7 +29,7 @@
       data: {
         labels: data.xs,
         datasets: [{
-          label: 'Average Revenue',
+          label: 'Average Monthy Revenue',
           data: data.ys,
           fill: false,
           lineTension: 0.5,
@@ -62,7 +62,7 @@
               //min: 200000,
               //stepSize: 200000,
               callback: function(value, index, values) {
-                return '' + value.toLocaleString('en-US')+'';
+                return '$' + value.toLocaleString('en-US')+'';
               },
               beginAtZero: true,
             },
@@ -89,7 +89,7 @@
         tooltips: {
           callbacks: {
             label: function(tooltipItem, data) {
-              return ''+ data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ ' Average Revenue';
+              return '$'+ data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ ' Average Revenue';
             },
           },
         //  backgroundColor: '#434343',
