@@ -4,41 +4,49 @@
         <meta charset="utf-8" />
         <title>Delays Per Month Sept 2015 - Sept 2018</title>
 
+
         <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js'></script>
      <script src='https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.5/chartjs-plugin-annotation.js'></script>
      <script src='https://cdn.rawgit.com/chartjs/Chart.js/master/samples/utils.js'></script>
+
 
     </head>
     <body>
 
 
+
+
 <canvas id="line11" width=auto max-height="400"></canvas>
 <script>
+
 
 Chart.defaults.global.responsive = true
 Chart.defaults.global.tooltips.backgroundColor="grey"
 Chart.defaults.global.maintainAspectRatio = true
 Chart.defaults.global.legend = false
 
+
 var ctx = document.getElementById("line11");
+
 
 var myChart = new Chart(ctx, {
     type: 'line',
     data: {
-  labels: ["Sep 2015","Oct 2015","Nov 2015","Dec 2015","Jan 2016","Feb 2016","Mar 2016","Apr 2016","May 2016","Jun 2016","Sep 2016","Oct 2016","Nov 2016","Dec 2016","Jan 2017","Feb 2017","Mar 2017","Apr 2017","May 2017","Jun 2017","Sep 2017","Oct 2017","Nov 2017","Dec 2017","Jan 2018","Feb 2018","Mar 2018","Apr 2018","May 2018","Jun 2018","Sep 2018"],
+  labels: ["Sep 2015","Oct 2015","Nov 2015","Dec 2015","Jan 2016","Feb 2016","Mar 2016","Apr 2016","May 2016","Jun 2016","Sep 2016","Oct 2016","Nov 2016","Dec 2016","Jan 2017","Feb 2017","Mar 2017","Apr 2017","May 2017","Jun 2017","Sep 2017","Oct 2017","Nov 2017","Dec 2017","Jan 2018","Feb 2018","Mar 2018","Apr 2018","May 2018","Jun 2018","Sep 2018","Oct 2018","Nov 2018","Dec 2018","Jan 2019",","Feb 2019","Mar 2019","Apr 2019","May 2019","Jun 2019","Sep 2019","Oct 2019","Nov 2019","Dec 2019","Jan 2020"],
         datasets: [{
-            label: 'Delays Per Month Sept 2015 - Sept 2018',
-            pointBackgroundColor: ['red', "#82C91E", "#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E",'red',"#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E",'red',"#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E",'red'],
-            pointBorderColor:['red', "#82C91E", "#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E",'red',"#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E",'red',"#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E",'red'],
+            label: 'Delays Per Month Sept 2015 – Jan 2020',
+            pointBackgroundColor: ['red', "#82C91E", "#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E",'red',"#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E",'red',"#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E",'red',"#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E",'red',"#82C91E","#82C91E","#82C91E","#82C91E"],
+            pointBorderColor:['red', "#82C91E", "#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E",'red',"#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E",'red',"#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E",'red',"#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E",'red',"#82C91E","#82C91E","#82C91E","#82C91E"],
             fill: false,
             backgroundColor: "#82C91E",
             borderColor: "#82C91E",
             borderWidth: 0,
             hoverBackgroundColor: "#82C91E",
             hoverBorderColor: "#eeeeee",
-        //   data: [{x:0,y:438},{x:30,y:384},{x:61,y:352},{x:91,y:343},{x:122,y:458},{x:153,y:371},{x:182,y:301},{x:213,y:334},{x:243,y:360},{x:274,y:333},{x:366,y:489},{x:396,y:384},{x:427,y:398},{x:457,y:440},{x:488,y:440},{x:519,y:434},{x:547,y:475},{x:578,y:512},{x:608,y:476},{x:639,y:385},{x:731,y:482},{x:761,y:516},{x:792,y:452},{x:822,y:469},{x:853,y:509},{x:884,y:491},{x:912,y:468},{x:943,y:530},{x:973,y:512},{x:1004,y:418},{x:1096,y:623}]
-           data: [438,384,352,343,458,371,301,334,360,333,489,384,398,440,440,434,475,512,476,385,482,516,452,469,509,491,468,530,512,418,623]
+        //   data: [{x:0,y:438},{x:30,y:384},{x:61,y:352},{x:91,y:343},{x:122,y:458},{x:153,y:371},{x:182,y:301},{x:213,y:334},{x:243,y:360},{x:274,y:333},{x:366,y:489},{x:396,y:384},{x:427,y:398},{x:457,y:440},{x:488,y:440},{x:519,y:434},{x:547,y:475},{x:578,y:512},{x:608,y:476},{x:639,y:385},{x:731,y:482},{x:761,y:516},{x:792,y:452},{x:822,y:469},{x:853,y:509},{x:884,y:491},{x:912,y:468},{x:943,y:530},{x:973,y:512},{x:1004,y:418},{x:1096,y:623},{x:1126,y:621},{x:1157,y:669},{x:1187,y:658},{x:1218,y:624},{x:1249,y:693},{x:1277,y:631},{x:1308,y:545},{x:1338,y:558},{x:1369,y:493},{x:1461,y:631},{x:1491,y:662},{x:1522,y:630},{x:1552,y:601},{x:1583,y:477}]
+           data: [438,384,352,343,458,371,301,334,360,333,489,384,398,440,440,434,475,512,476,385,482,516,452,469,509,491,468,530,512,418,623,621,669,658,624,693,631,545,558,493,631,662,630,601,477]
         }]
+
 
     },
     options: {
@@ -97,6 +105,20 @@ var myChart = new Chart(ctx, {
               else if (value === 973) return 'May 2018';
               else if (value === 1004) return 'Jun 2018';
               else if (value === 1096) return 'Sep 2018';
+              else if (value === 1126) return 'Oct 2018';
+              else if (value === 1157) return 'Nov 2018';
+              else if (value === 1187) return 'Dec 2018';
+              else if (value === 1218) return 'Jan 2019';
+              else if (value === 1249) return 'Feb 2019';
+              else if (value === 1277) return 'Mar 2019';
+              else if (value === 1308) return 'Apr 2019';
+              else if (value === 1338) return 'May 2019';
+              else if (value === 1369) return 'Jun 2019';
+              else if (value === 1461) return 'Sep 2019';
+              else if (value === 1491) return 'Oct 2019';
+              else if (value === 1522) return 'Noc 2019';
+              else if (value === 1552) return 'Dec 2019';
+              else if (value === 1583) return 'Jan 2020';
               else
                 return '';
             }*/
@@ -153,23 +175,23 @@ var myChart = new Chart(ctx, {
              onClick: function(e) {
                console.log("Box", e.type, this);
              }
-           }
-           /*{
+           {
              drawTime: "beforeDatasetsDraw",
              type: "box",
              xScaleID: "x-axis-0",
              yScaleID: "y-axis-0",
              xMin: "Sep 2018",
-             xMax: "Oct 2018",
+             xMax: "Jun 2019",
              yMin: 0,
-             yMax: 450,
+             yMax: 700,
              backgroundColor: "rgba(230, 230, 230, 0.5)",
              borderColor: "rgb(230, 230, 230)",
              borderWidth: 1,
              onClick: function(e) {
                console.log("Box", e.type, this);
              }
-           }*/
+           }
+
            ]
          }
        }
