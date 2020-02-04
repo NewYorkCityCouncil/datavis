@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Delays Per Month Sept 2015 - Sept 2018</title>
+        <title>Delays Per Month Sept 2015 - Jan 2020</title>
 
 
         <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js'></script>
@@ -183,6 +183,22 @@ var myChart = new Chart(ctx, {
              yScaleID: "y-axis-0",
              xMin: "Sep 2018",
              xMax: "Jun 2019",
+             yMin: 0,
+             yMax: 700,
+             backgroundColor: "rgba(230, 230, 230, 0.5)",
+             borderColor: "rgb(230, 230, 230)",
+             borderWidth: 1,
+             onClick: function(e) {
+               console.log("Box", e.type, this);
+             }
+           },
+           {
+             drawTime: "beforeDatasetsDraw",
+             type: "box",
+             xScaleID: "x-axis-0",
+             yScaleID: "y-axis-0",
+             xMin: "Jun 2019",
+             xMax: "Jan 2020",
              yMin: 0,
              yMax: 700,
              backgroundColor: "rgba(230, 230, 230, 0.5)",
