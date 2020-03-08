@@ -10,7 +10,7 @@
     <body>
 
 
-<canvas id="doughnut68" width=auto height="260"></canvas>
+<canvas id="doughnut68" width=auto height="250"></canvas>
 <script>
 
 Chart.defaults.global.responsive = true
