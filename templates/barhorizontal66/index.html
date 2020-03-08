@@ -72,7 +72,7 @@ var myChart = new Chart(ctx, {
         labels: ["Lack of experience, training, or technical skills", "Insufficient non-technical skills", "Insufficient qualifications (certifications or education)", "Competition/small applicant pool", "Cannot provide competitive wages", "Cannot pass employment screening", "Other"],
         datasets: [{
             label: 'Reasons for Hirining Difficulty in the Green Sector, 2017',
-            backgroundColor:["#F44336", "#E91E63", "#9C27B0", "#673AB7", "#3F51B5", "#BE4BDB","#228AE6"],
+            backgroundColor:["#D05D4E","#F59F00","#228AE6","#12B886","#23417D","#A07952","#82C91E"],
             borderColor: "#eeeeee",
             borderWidth: 1,
             hoverBackgroundColor: "#9E9E9E",
@@ -91,7 +91,7 @@ var myChart = new Chart(ctx, {
           ticks: {
             beginAtZero: true,
             callback: function(value) {
-              return '$' + value.toLocaleString('en-US');
+              return '' + value.toLocaleString('en-US');
             }
           }
         }]
@@ -99,7 +99,7 @@ var myChart = new Chart(ctx, {
       tooltips: {
         callbacks: {
           label: function(tooltipItem, data) {
-            return '$' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US');
+            return '' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US');
           },
         }
       }
