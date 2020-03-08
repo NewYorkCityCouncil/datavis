@@ -57,7 +57,7 @@ Chart.defaults.scale = {
 			autoSkipPadding: 0,
 			labelOffset: 0,
 			callback: function(value) {
-				return '%' + value;
+				return '' + value;
 			}
 		}
 	};
@@ -91,7 +91,7 @@ var myChart = new Chart(ctx, {
           ticks: {
             beginAtZero: true,
             callback: function(value) {
-              return '%' + value.toLocaleString('en-US');
+              return '' + value.toLocaleString('en-US');
             }
           }
         }]
@@ -99,7 +99,7 @@ var myChart = new Chart(ctx, {
       tooltips: {
         callbacks: {
           label: function(tooltipItem, data) {
-            return '%' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US');
+            return '' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US');
           },
         }
       }
