@@ -10,7 +10,7 @@
     <body>
 
 
-<canvas id="doughnut68" width=auto height="250"></canvas>
+<canvas id="doughnut68" width=auto height="260"></canvas>
 <script>
 
 Chart.defaults.global.responsive = true
@@ -29,7 +29,7 @@ Chart.pluginService.register({
         ctx.restore();
         var fontSize = (height / 150).toFixed(2);
         ctx.font = fontSize + "em sans-serif";
-        ctx.textBaseline = "bottom";
+        ctx.textBaseline = "top";
         var text = chart.config.options.elements.center.text,
             textX = Math.round((width - ctx.measureText(text).width) / 2),
             textY = height / 1.55;
@@ -71,7 +71,7 @@ var promisedDeliveryChart = new Chart(document.getElementById('doughnut68'), {
             onClick: null,
             labels: {
               boxWidth: 25,
-              fontSize: 18
+              fontSize: 14
           }
         },
       tooltips: {
