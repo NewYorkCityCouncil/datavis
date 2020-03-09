@@ -2,24 +2,23 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>NYC Energy Source</title>
+        <title>Energy By Source</title>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     </head>
     <body>
 
 
-<canvas id="doughnut69" width=auto height="250"></canvas>
+ <canvas id="myChart2" width="250" height="250"></canvas>
+
+
 <script>
 
 Chart.defaults.global.responsive = true
 Chart.defaults.global.maintainAspectRatio = true
-Chart.defaults.global.legend.display= false
-Chart.defaults.global.responsive = true
 Chart.defaults.global.defaultFontFamily = 'sans-serif'
 Chart.defaults.global.defaultFontSize = 14
-
+Chart.defaults.global.legend.display = false;
 
 Chart.pluginService.register({
     beforeDraw: function (chart) {
@@ -27,16 +26,17 @@ Chart.pluginService.register({
             height = chart.chart.height,
             ctx = chart.chart.ctx;
         ctx.restore();
-        var fontSize = (height / 150).toFixed(2);
+        var fontSize = (height / 114).toFixed(2);
         ctx.font = fontSize + "em sans-serif";
         ctx.textBaseline = "middle";
         var text = chart.config.options.elements.center.text,
             textX = Math.round((width - ctx.measureText(text).width) / 2),
-            textY = height / 1.75;
+            textY = height / 2;
         ctx.fillText(text, textX, textY);
         ctx.save();
     }
 });
+
 
 // chart2
 var data = {
@@ -57,11 +57,7 @@ var data = {
  
 };
 
-Chart.Legend.prototype.afterFit = function() {
-    this.height = this.height + 60;
-};
-
-var promisedDeliveryChart = new Chart(document.getElementById('doughnut69'), {
+var promisedDeliveryChart = new Chart(document.getElementById('myChart2'), {
     type: 'doughnut',
     data: data,
     options: {
@@ -72,24 +68,19 @@ var promisedDeliveryChart = new Chart(document.getElementById('doughnut69'), {
         },
         cutoutPercentage: 55,
         legend: {
-            display: false,
-            onClick: null,
-            labels: {
-              boxWidth: 25,
-              fontSize: 18
-          }
+            display: false
         },
       tooltips: {
       displayColors: false,
           callbacks: {
             label: function(tooltipItem, data) {
               return data.labels[tooltipItem.index]  + ': '+data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+'%';
-            }
+            },
           }
       }
     }
-});
 
+});
 </script>
     </body>
 </html>
