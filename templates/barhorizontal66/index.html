@@ -94,6 +94,8 @@ var myChart = new Chart(ctx, {
         }],
         yAxes: [{
           display: true,
+	gridLines: {
+                drawOnChartArea: false},
           ticks: {
             beginAtZero: true,
             callback: function(value) {
