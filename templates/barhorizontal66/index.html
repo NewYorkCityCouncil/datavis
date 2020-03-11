@@ -83,24 +83,50 @@ var myChart = new Chart(ctx, {
     },
     options: {
       scales:{
-        xAxes: [{
-          display: true
+          xAxes: [{
+          display: true,
+          ticks: {
+            beginAtZero: true,
+            callback: function(value) {
+              return value.toLocaleString('en-US')+'%';
+            }
+          }
         }],
         yAxes: [{
           display: true,
           ticks: {
             beginAtZero: true,
             callback: function(value) {
-              return '' + value.toLocaleString('en-US');
+              return value.toLocaleString('en-US');
             }
           }
         }]
       },
       tooltips: {
-        callbacks: {
+              callbacks: {
+/*
           label: function(tooltipItem, data) {
-            return '' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US');
+            return '$' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US');
           },
+          */
+          title: function(tooltipItems, data) {
+					// Pick first xLabel for now
+					var title = 'Average Minutes Delay';
+
+					if (tooltipItems.length > 0) {
+						if (tooltipItems[0].yLabel) {
+							title = tooltipItems[0].yLabel;
+						} else if (data.labels.length > 0 && tooltipItems[0].index < data.labels.length) {
+							title = data.labels[tooltipItems[0].index];
+						}
+					}
+
+					return title;
+				},
+				label: function(tooltipItem, data) {
+					var datasetLabel = data.datasets[tooltipItem.datasetIndex].label || '';
+					return tooltipItem.xLabel.toLocaleString('en-US')+' %';
+				}
         }
       }
     }
