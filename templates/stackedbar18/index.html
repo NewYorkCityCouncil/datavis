@@ -30,7 +30,7 @@
         labels: data.xs,
         datasets: [
           {
-            label: 'El Salvador',
+            label: 'France',
             data: data.ys,
             fill: false,
             backgroundColor: '#FA5047',
@@ -41,7 +41,7 @@
             barPercentage: .8
           },
           {
-            label: 'Guatemala',
+            label: 'Germany',
             data: data.y2,
             fill: false,
             backgroundColor: '#434343',
@@ -52,7 +52,7 @@
             barPercentage: .8
           },
           {
-            label: 'Mexico',
+            label: 'Italy',
             data: data.y3,
             fill: false,
             backgroundColor: '#68c2ef',
@@ -63,7 +63,7 @@
             barPercentage: .8
           },
           {
-            label: 'US',
+            label: 'Spain',
             data: data.y4,
             fill: false,
             backgroundColor: '#FCB846',
@@ -72,7 +72,18 @@
             lineTension: 4,
             hoverBackgroundColor: '#f5f5f5',
             barPercentage: .8
-          }
+          },
+          {
+            label: 'US',
+            data: data.y5,
+            fill: false,
+            backgroundColor: '#FA5047',
+            borderColor: '#FA5047',
+            borderWidth: 1,
+            lineTension: 4,
+            hoverBackgroundColor: '#f5f5f5',
+            barPercentage: .8
+          },
         ]
       },
       options: {
@@ -91,7 +102,7 @@
             },
             scaleLabel: {
               display: true,
-              labelString: 'Donations'
+              labelString: 'Transmission Rate'
             }
           }],
           xAxes: [{
@@ -115,7 +126,7 @@
           callbacks: {
             label: function(tooltipItem, data) {
               var datasetLabel = data.datasets[tooltipItem.datasetIndex].label || '';
-            return datasetLabel + ': ' + '$' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US') ;
+            return datasetLabel + ': ' + '' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US') ;
             },
           },
           backgroundColor: '#434343',
@@ -142,17 +153,19 @@
       const columns = row.split(',');
       const time = columns[0];
       xs.push(time);
-      const elsalvador = columns[1];
-      ys.push(parseFloat(elsalvador)); //make data from string to number and added mean payers of 14 degrees
-      const guatemala = columns[2];
-      y2.push(parseFloat(guatemala));
-      const mexico = columns[3];
-      y3.push(parseFloat(mexico));
-      const us = columns[4];
-      y4.push(parseFloat(us));
-      console.log(time, elsalvador, guatemala, mexico, us);
+      const france = columns[1];
+      ys.push(parseFloat(france)); //make data from string to number and added mean payers of 14 degrees
+      const germany = columns[2];
+      y2.push(parseFloat(germany));
+      const italy = columns[3];
+      y3.push(parseFloat(italy));
+      const spain = columns[4];
+      y4.push(parseFloat(spain));
+      const us = columns[5];
+      y5.push(parseFloat(us));
+      console.log(time, france, germany, italy, spain, us);
     });
-    return { xs, ys, y2, y3, y4 };
+    return { xs, ys, y2, y3, y4, y5 };
   }
 
 
