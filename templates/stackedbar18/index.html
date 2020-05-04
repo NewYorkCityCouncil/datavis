@@ -146,7 +146,10 @@
     const y4 = [];
     const y5 = [];
 
-    const urls = 'https://raw.githubusercontent.com/NewYorkCityCouncil/Covid_Transmission_data/master/China_Transmission_Rates.csv?token=ADINN6U5MBONE454Q2R7O5S6XGOHM';
+    const urls = [
+      'https://raw.githubusercontent.com/NewYorkCityCouncil/Covid_Transmission_data/master/Euro_US_Transmission_Rates.csv?token=ADINN6QG63RYAKZA4SD6GTK6XGO2O',
+      'https://raw.githubusercontent.com/NewYorkCityCouncil/Covid_Transmission_data/master/China_Transmission_Rates.csv?token=ADINN6U5MBONE454Q2R7O5S6XGOHM'
+    ];
     const response = await fetch(urls);
     const data = await response.text();
 
