@@ -21,79 +21,32 @@
 
   var ctx = document.getElementById("linechart23");
 
-  var myChart = new Chart(ctx, {
+  var scatterChart = new Chart(ctx, {
     type: 'scatter',
-    fill: false,
     data: {
-      datasets: [{
-        label: "Detained",
-        fill: false,
-        lineTension: 0.5,
-        backgroundColor:"#F59F00",
-        borderColor: "#F59F00",
-        borderWidth: 3,
-        borderCapStyle: 'butt',
-        borderDash: [],
-        borderDashOffset: 0.0,
-        borderJoinStyle: 'miter',
-        pointBorderColor: "#F59F00",
-        pointBackgroundColor: "#F59F00",
-        pointBorderWidth: 1,
-        pointHoverRadius: 6,
-        pointHoverBackgroundColor: "#F59F00",
-        pointHoverBorderColor: "#F59F00",
-        pointHoverBorderWidth: 2,
-        pointRadius: 1,
-        pointHitRadius: 4,
-        hoverBackgroundColor: "#F59F00",
-        hoverBorderColor: "#F59F00",
-        data: [
-          {
-            x: 88104.30845,
-            y: 101.85
-          },
-          {
-            x: 35859,
-            y: 204.55
-          },
-          {
-            x:112131,
-            y: 63.2
-          }]
-        }
-      ]
+        datasets: [{
+            label: 'Scatter Dataset',
+            data: [{
+                x: -10,
+                y: 0
+            }, {
+                x: 0,
+                y: 10
+            }, {
+                x: 10,
+                y: 5
+            }]
+        }]
     },
     options: {
-
-      tooltips: {
-        callbacks: {
-          label: function(tooltipItem, data) {
-            var datasetLabel = data.datasets[tooltipItem.datasetIndex].label || '';
-            return datasetLabel + ': '+'' +data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US') + ' People';
-          }
-        }
-      },
-      scales: {
-        yAxes: [{
-          stacked: false,
-          scaleLabel:{
-            display: true,
-            labelString: 'People'
-          },
-          ticks: {
-            beginAtZero:false,
-            callback: function(value) {
-              return '' + value.toLocaleString('en-US');
+        scales: {
+            x: {
+                type: 'linear',
+                position: 'bottom'
             }
-          }
-        }],
-        xAxes:[{
-          type: 'linear',
-          position: 'bottom'
-        }]
-      }
+        }
     }
-  });
+});
 </script>
 </body>
 </html>
