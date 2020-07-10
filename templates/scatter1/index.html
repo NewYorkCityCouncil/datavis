@@ -44,6 +44,7 @@
   }
 });
 }
+console.log(data.xs,data.ys);
 //SPLITTING AND BRINGING IN CSV DATA
 async function getData() {
   const xs = [];
@@ -59,7 +60,7 @@ async function getData() {
     xs.push(income);
     const covid_death = columns[10];
     ys.push(parseFloat(covid_death)); //make data from string to number and added mean payers of 14 degrees
-    console.log(income, covid_death);
+  //  console.log(income, covid_death);
   });
   return { xs, ys };
 }
