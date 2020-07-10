@@ -9,7 +9,7 @@
 <body>
 
 
-  <canvas id="myChart"></canvas>
+<canvas id="chart" width=auto max-height="400"></canvas>
   <script>
 
   //Chart.defaults.global.responsive = true
@@ -18,9 +18,12 @@
   //Chart.defaults.global.legend = false
 
 
-var ctx = document.getElementById('myChart').getContext('2d');
+  chartIt();
 
-var scatterChart = new Chart(ctx, {
+  async function chartIt() {
+    const data = await getData();
+    const ctx = document.getElementById('chart').getContext('2d');
+    const myChart = new Chart(ctx, {
   type: 'scatter',
   data: {
       datasets: [{
