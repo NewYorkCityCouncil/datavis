@@ -28,7 +28,7 @@
       data: {
         datasets: [{
           label: 'Scatter Dataset',
-          data: data.xy[0]
+          data: xy[0]
         }]
       },
       options: {
@@ -59,9 +59,9 @@
       const covid_death = columns[10];
       ys.push(parseFloat(covid_death)); //make data from string to number
       //console.log(income, covid_death);
-      const xsys = {x: parseFloat(income), y: parseFloat(covid_death)};
+      const xsys = x: parseFloat(income), y: parseFloat(covid_death);
       xy.push(xsys);
-      console.log(xy[0]);
+      console.log(xy);
       //console.log(covid_death);
     });
     return { xs, ys };
