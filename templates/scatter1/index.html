@@ -97,9 +97,9 @@
     const table = data.split('\n').slice(1);
     table.forEach(row => {
       const columns = row.split(',');
-      const project = columns[0];
+      const project = columns[2];
       xs.push(project);
-      const donations = columns[1];
+      const donations = columns[9];
       ys.push(parseFloat(donations)); //make data from string to number and added mean payers of 14 degrees
       console.log(project, donations);
     });
