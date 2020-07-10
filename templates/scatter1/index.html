@@ -16,7 +16,7 @@
   <script>
   //CHART JS
   Chart.defaults.global.legend.display = false,
-//  Chart.defaults.global.defaultFontFamily = 'open sans'
+  //  Chart.defaults.global.defaultFontFamily = 'open sans'
 
 
   chartIt();
@@ -30,34 +30,35 @@
         labels: data.xs,
         datasets: [{
           label: 'Median Income',
-          data: [{
-            x: data.xs,
-            y: data.ys
+          data: data.xs
+        },{
+          label: 'covid_death',
+          data: data.ys
           }],
-    //      fill: false,
-    //      lineTension: 0.5,
-    //      backgroundColor:"#222222",
-    //      borderColor: "#222222",
-    //      borderWidth: 3,
-      //    borderCapStyle: 'butt',
-        //  borderDash: [],
+          //fill: false,
+          //lineTension: 0.5,
+          //backgroundColor:"#222222",
+          //borderColor: "#222222",
+          //borderWidth: 3,
+          //borderCapStyle: 'butt',
+          //borderDash: [],
           //borderDashOffset: 0.0,
-          //    borderJoinStyle: 'miter',
-      //    pointBorderColor: "#222222",
-      //    pointBackgroundColor: "#222222",
-        //  pointBorderWidth: 1,
-      //    pointHoverRadius: 6,
-        //  pointHoverBackgroundColor: "#E6E6E6",
+          //borderJoinStyle: 'miter',
+          //pointBorderColor: "#222222",
+          //pointBackgroundColor: "#222222",
+          //pointBorderWidth: 1,
+          //pointHoverRadius: 6,
+          //pointHoverBackgroundColor: "#E6E6E6",
           //pointHoverBorderColor: "#E6E6E6",
-      //    pointHoverBorderWidth: 2,
-        //  pointRadius: 1,
-        //  pointHitRadius: 4,
-        //  hoverBackgroundColor: "#E6E6E6",
-        //  hoverBorderColor: "#E6E6E6",
-        }]
+          //pointHoverBorderWidth: 2,
+          //pointRadius: 1,
+          //pointHitRadius: 4,
+          //hoverBackgroundColor: "#E6E6E6",
+          //hoverBorderColor: "#E6E6E6",
+        }
       },
       options: {
-  //    cornerRadius: 20,
+        //    cornerRadius: 20,
         scales: {
           yAxes: [{
             ticks: {
@@ -95,10 +96,10 @@
               return '$'+ data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ ' Average Revenue';
             },
           },
-        //  backgroundColor: '#434343',
-        //  borderColor: '#f5f5f5',
-        //  borderWidth: 1,
-//          displayColors: false
+          //  backgroundColor: '#434343',
+          //  borderColor: '#f5f5f5',
+          //  borderWidth: 1,
+          //  displayColors: false
         }
       }
     });
@@ -114,11 +115,11 @@
     const table = data.split('\n').slice(1);
     table.forEach(row => {
       const columns = row.split(',');
-      const date = columns[4];
-      xs.push(date);
-      const revenue = columns[10];
-      ys.push(parseFloat(revenue)); //make data from string to number and added mean payers of 14 degrees
-      console.log(date, revenue);
+      const income = columns[4];
+      xs.push(income);
+      const covid_death = columns[10];
+      ys.push(parseFloat(covid_death)); //make data from string to number and added mean payers of 14 degrees
+      console.log(income, covid_death);
     });
     return { xs, ys };
   }
