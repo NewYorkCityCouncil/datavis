@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-  <title>Top 10 Projects</title>
+  <title>Median Income and Covid19 Death Rate</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
   <!--Source of Rounded Chart: https://github.com/jedtrow/Chart.js-Rounded-Bar-Charts-->
     <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.js"></script>
@@ -25,11 +25,11 @@
     const data = await getData();
     const ctx = document.getElementById('chart').getContext('2d');
     const myChart = new Chart(ctx, {
-      type: 'horizontalBar',
+      type: 'scatter',
       data: {
         labels: data.xs,
         datasets: [{
-          label: 'Top 10 Projects',
+          label: 'Median Income and COVID19 Death Rate',
           data: data.ys,
           fill: false,
           backgroundColor: '#fcb846',
@@ -56,7 +56,11 @@
             },
             scaleLabel: {
               display: true,
-              labelString: 'Donations'
+              labelString: 'Median Income'
+            },
+            {
+              type: 'linear',
+              position: 'bottom'
             }
           }],
           yAxes: [{
@@ -97,11 +101,11 @@
     const table = data.split('\n').slice(1);
     table.forEach(row => {
       const columns = row.split(',');
-      const project = columns[2];
-      xs.push(project);
-      const donations = columns[9];
-      ys.push(parseFloat(donations)); //make data from string to number and added mean payers of 14 degrees
-      console.log(project, donations);
+      const income = columns[4];
+      xs.push(income);
+      const covid_death = columns[10];
+      ys.push(parseFloat(covid_death)); //make data from string to number and added mean payers of 14 degrees
+      console.log(income, covid_death);
     });
     return { xs, ys };
   }
