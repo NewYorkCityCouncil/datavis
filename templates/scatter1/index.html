@@ -56,9 +56,9 @@ async function getData() {
     const income = columns[4];
     xs.push(income);
     const covid_death = columns[10];
-    ys.push(parseFloat(covid_death)); //make data from string to number and added mean payers of 14 degrees
+    ys.push(parseFloat(covid_death)); //make data from string to number
     //console.log(income, covid_death);
-    const xsys = {x: columns[4], y: columns[10]};
+    const xsys = {x: income, y: covid_death};
     xy.push(xsys);
     console.log(xsys);
 //  console.log(income);
