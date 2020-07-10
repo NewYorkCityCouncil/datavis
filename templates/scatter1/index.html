@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <title>People in Custody at Dept. of Correction Facilities: Detained or Sentenced</title>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
 
-<canvas id="chart" width=auto max-height="400"></canvas>
+  <canvas id="chart" width=auto max-height="400"></canvas>
   <script>
 
   //Chart.defaults.global.responsive = true
@@ -24,49 +24,49 @@
     const data = await getData();
     const ctx = document.getElementById('chart').getContext('2d');
     const myChart = new Chart(ctx, {
-  type: 'scatter',
-  data: {
-      datasets: [{
+      type: 'scatter',
+      data: {
+        datasets: [{
           label: 'Scatter Dataset',
           data: xy
-      }]
-  },
-  options: {
-      scales: {
+        }]
+      },
+      options: {
+        scales: {
           x: {
-              type: 'linear',
-              position: 'bottom'
+            type: 'linear',
+            position: 'bottom'
           }
+        }
       }
+    });
+  }
 
-});
-}
+  //SPLITTING AND BRINGING IN CSV DATA
+  async function getData() {
+    const xs = [];
+    const ys = [];
+    const xy = [];
 
-//SPLITTING AND BRINGING IN CSV DATA
-async function getData() {
-  const xs = [];
-  const ys = [];
-  const xy = [];
+    const response = await fetch('Covid_All.csv');
+    const data = await response.text();
 
-  const response = await fetch('Covid_All.csv');
-  const data = await response.text();
-
-  const table = data.split('\n').slice(1);
-  table.forEach(row => {
-    const columns = row.split(',');
-    const income = columns[4];
-    xs.push(income);
-    const covid_death = columns[10];
-    ys.push(parseFloat(covid_death)); //make data from string to number
-    //console.log(income, covid_death);
-    const xsys = {x: parseFloat(income), y: parseFloat(covid_death)};
-    xy.push(xsys);
-    console.log(xy);
-  //console.log(covid_death);
-  });
-  return { xs, ys };
-  return {xy};
-}
-</script>
+    const table = data.split('\n').slice(1);
+    table.forEach(row => {
+      const columns = row.split(',');
+      const income = columns[4];
+      xs.push(income);
+      const covid_death = columns[10];
+      ys.push(parseFloat(covid_death)); //make data from string to number
+      //console.log(income, covid_death);
+      const xsys = {x: parseFloat(income), y: parseFloat(covid_death)};
+      xy.push(xsys);
+      console.log(xy);
+      //console.log(covid_death);
+    });
+    return { xs, ys };
+    return {xy};
+  }
+  </script>
 </body>
 </html>
