@@ -28,7 +28,7 @@
       data: {
         datasets: [{
           label: 'Scatter Dataset',
-          data: xy[0]
+          data: data.xy[0]
         }]
       },
       options: {
@@ -61,7 +61,7 @@
       //console.log(income, covid_death);
       const xsys = {x: parseFloat(income), y: parseFloat(covid_death)};
       xy.push(xsys);
-      console.log(xy);
+      console.log(xy[0]);
       //console.log(covid_death);
     });
     return { xs, ys };
