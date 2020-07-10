@@ -46,6 +46,26 @@ var scatterChart = new Chart(ctx, {
       }
   }
 });
+
+//SPLITTING AND BRINGING IN CSV DATA
+async function getData() {
+  const xs = [];
+  const ys = [];
+
+  const response = await fetch('Covid_All.csv');
+  const data = await response.text();
+
+  const table = data.split('\n').slice(1);
+  table.forEach(row => {
+    const columns = row.split(',');
+    const income = columns[4];
+    xs.push(income);
+    const covid_death = columns[10];
+    ys.push(parseFloat(covid_death)); //make data from string to number and added mean payers of 14 degrees
+    console.log(income, covid_death);
+  });
+  return { xs, ys };
+}
 </script>
 </body>
 </html>
