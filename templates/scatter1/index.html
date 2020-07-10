@@ -16,7 +16,7 @@
   <script>
   //CHART JS
   Chart.defaults.global.legend.display = false,
-  Chart.defaults.global.defaultFontFamily = 'open sans'
+//  Chart.defaults.global.defaultFontFamily = 'open sans'
 
 
   chartIt();
@@ -25,12 +25,15 @@
     const data = await getData();
     const ctx = document.getElementById('chart').getContext('2d');
     const myChart = new Chart(ctx, {
-      type: 'line',
+      type: 'scatter',
       data: {
         labels: data.xs,
         datasets: [{
           label: 'Average Monthy Revenue',
-          data: data.ys,
+          data: {
+            data.xs,
+            data.ys
+          },
           fill: false,
           lineTension: 0.5,
           backgroundColor:"#222222",
