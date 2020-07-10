@@ -19,13 +19,16 @@ Chart.defaults.global.maintainAspectRatio = true
 Chart.defaults.global.legend = false
 
 
-var ctx = document.getElementById("linechart23");
+chartIt();
 
-var myChart = new Chart(ctx, {
+async function chartIt() {
+  const data = await getData();
+  const ctx = document.getElementById('chart').getContext('2d');
+  const myChart = new Chart(ctx, {
     type: 'line',
     fill: false,
     data: {
-        labels: [data.xs],
+        labels: data.xs,
         datasets: [
             {
               label: "Median Income",
