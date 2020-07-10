@@ -44,11 +44,11 @@
   }
 });
 }
-console.log(data.xs,data.ys);
 //SPLITTING AND BRINGING IN CSV DATA
 async function getData() {
   const xs = [];
   const ys = [];
+  const xy = [];
 
   const response = await fetch('Covid_All.csv');
   const data = await response.text();
@@ -61,6 +61,10 @@ async function getData() {
     const covid_death = columns[10];
     ys.push(parseFloat(covid_death)); //make data from string to number and added mean payers of 14 degrees
   //  console.log(income, covid_death);
+    const xsys = {x: income y: covid_death};
+    xy.push(xsys);
+    console.log(xsys);
+
   });
   return { xs, ys };
 }
