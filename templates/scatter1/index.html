@@ -12,13 +12,21 @@
   <canvas id="chart" width=auto max-height="400"></canvas>
   <script>
 
-  //Chart.defaults.global.responsive = true
-  //Chart.defaults.global.tooltips.backgroundColor="grey"
-  //Chart.defaults.global.maintainAspectRatio = true
-  //Chart.defaults.global.legend = false
+  Chart.defaults.global.responsive = true
+  Chart.defaults.global.maintainAspectRatio = true
+  Chart.defaults.global.legend = false
 
 
-  chartIt();
+  chartIt()
+  .then(response => {
+    console.log('yay chart');
+  })
+  .catch(error =>{
+    console.log('error!');
+    console.error(error);
+  });
+
+  const xy = []; // X,Y points needed for Scatter
 
   async function chartIt() {
     const data = await getData();
@@ -26,52 +34,87 @@
     const myChart = new Chart(ctx, {
       type: 'scatter',
       data: {
+        labels: data.zs,
         datasets: [{
           label: 'Scatter Dataset',
-          data: data.xy[1]
+          data: xy,
+          backgroundColor:"#2F56A6",
+          hoverBackgroundColor: "#CACACA"
         }]
       },
       options: {
+        tooltips: {
+          callbacks: {
+            label: function(tooltipItem, data) {
+           var label = data.labels[tooltipItem.index];
+              return  'Median Income: ' + '$'+ Math.round(tooltipItem.xLabel).toLocaleString('en-US') +' COVID19 Death Rate: '+ Math.round(tooltipItem.yLabel) ;
+            }
+          },
+          displayColors: false
+        },
         scales: {
-          xAxes: {
+          xAxes: [{
             type: 'linear',
             position: 'bottom',
             display: true,
+            ticks: {
+              callback: function(value, index, values) {
+                return '$' + value.toLocaleString('en-US')+'';
+                ;
+              }
+            },
+            gridLines: {
+              display: false
+            },
             scaleLabel: {
-              display: true, // mandatory
-              labelString: 'Your label' // optional
+              display: true,
+              labelString: 'Median Income Per Zip Code'
             }
-          }
+          }],
+          yAxes:[{
+            ticks:{
+              callback: function(value, index, values) {
+                return '' + value.toLocaleString('en-US')+'';
+              }
+            },
+            gridLines: {
+              display: false
+            },
+            scaleLabel: {
+              display: true,
+              labelString: 'COVID19 Deaths Per 100,000'
+            }
+          }]
         }
       }
     });
   }
 
+
   //SPLITTING AND BRINGING IN CSV DATA
   async function getData() {
     const xs = [];
     const ys = [];
-    const xy = [];
+    const zs = [];
 
     const response = await fetch('Covid_All.csv');
     const data = await response.text();
 
-    const table = data.split('\n').slice(1);
+    const table = data.split('\n').slice(1); // register new line and remove first row of data
     table.forEach(row => {
       const columns = row.split(',');
       const income = columns[4];
       xs.push(income);
       const covid_death = columns[10];
       ys.push(parseFloat(covid_death)); //make data from string to number
-      //console.log(income, covid_death);
+      const neighborhood = columns[2];
+      zs.push(neighborhood);
       const xsys = {x: parseFloat(income), y: parseFloat(covid_death)};
       xy.push(xsys);
       console.log(xy);
-      console.log(ys);
-      //console.log(covid_death);
     });
     return { xs, ys };
-    return {xy};å
+    return { xy };
   }
   </script>
 </body>
