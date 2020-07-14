@@ -27,6 +27,7 @@
   });
 
   const xy = []; // X,Y points needed for Scatter
+  const zs = []; // neighborhood names
 
   async function chartIt() {
     const data = await getData();
@@ -34,9 +35,9 @@
     const myChart = new Chart(ctx, {
       type: 'scatter',
       data: {
-        labels: data.zs,
+        //  labels: zs,
         datasets: [{
-          label: 'Scatter Dataset',
+          label: xy,
           data: xy,
           backgroundColor:"#2F56A6",
           hoverBackgroundColor: "#CACACA"
@@ -46,76 +47,78 @@
         tooltips: {
           callbacks: {
             label: function(tooltipItem, data) {
-           var label = data.labels[tooltipItem.index];
-              return  'Median Income: ' + '$'+ Math.round(tooltipItem.xLabel).toLocaleString('en-US') +' COVID19 Death Rate: '+ Math.round(tooltipItem.yLabel) ;
+              var labels = data.labels[tooltipItem.index];
+              var nbhd = data.datasets[tooltipItem.datasetIndex].label;
+              return nbhd + 'Median Income: ' + '$'+ Math.round(tooltipItem.xLabel).toLocaleString('en-US') +' COVID19 Death Rate: '+ Math.round(tooltipItem.yLabel);
             }
           },
-          displayColors: false
+            displayColors: false
         },
-        scales: {
-          xAxes: [{
-            type: 'linear',
-            position: 'bottom',
-            display: true,
-            ticks: {
-              callback: function(value, index, values) {
-                return '$' + value.toLocaleString('en-US')+'';
-                ;
-              }
-            },
-            gridLines: {
-              display: false
-            },
-            scaleLabel: {
+          scales: {
+            xAxes: [{
+              type: 'linear',
+              position: 'bottom',
               display: true,
-              labelString: 'Median Income Per Zip Code'
-            }
-          }],
-          yAxes:[{
-            ticks:{
-              callback: function(value, index, values) {
-                return '' + value.toLocaleString('en-US')+'';
+              ticks: {
+                callback: function(value, index, values) {
+                  return '$' + value.toLocaleString('en-US')+'';
+                  ;
+                }
+              },
+              gridLines: {
+                display: false
+              },
+              scaleLabel: {
+                display: true,
+                labelString: 'Median Income Per Zip Code'
               }
-            },
-            gridLines: {
-              display: false
-            },
-            scaleLabel: {
-              display: true,
-              labelString: 'COVID19 Deaths Per 100,000'
-            }
-          }]
+            }],
+            yAxes:[{
+              ticks:{
+                callback: function(value, index, values) {
+                  return '' + value.toLocaleString('en-US')+'';
+                }
+              },
+              gridLines: {
+                display: false
+              },
+              scaleLabel: {
+                display: true,
+                labelString: 'COVID19 Deaths Per 100,000'
+              }
+            }]
+          }
         }
-      }
-    });
-  }
+      });
+    }
 
 
-  //SPLITTING AND BRINGING IN CSV DATA
-  async function getData() {
-    const xs = [];
-    const ys = [];
-    const zs = [];
+    //SPLITTING AND BRINGING IN CSV DATA
+    async function getData() {
+      const xs = [];
+      const ys = [];
+      //  const zs = [];
 
-    const response = await fetch('Covid_All.csv');
-    const data = await response.text();
+      const response = await fetch('Covid_All.csv');
+      const data = await response.text();
 
-    const table = data.split('\n').slice(1); // register new line and remove first row of data
-    table.forEach(row => {
-      const columns = row.split(',');
-      const income = columns[4];
-      xs.push(income);
-      const covid_death = columns[10];
-      ys.push(parseFloat(covid_death)); //make data from string to number
-      const neighborhood = columns[2];
-      zs.push(neighborhood);
-      const xsys = {x: parseFloat(income), y: parseFloat(covid_death)};
-      xy.push(xsys);
-      console.log(xy);
-    });
-    return { xs, ys };
-    return { xy };
-  }
-  </script>
-</body>
-</html>
+      const table = data.split('\n').slice(1); // register new line and remove first row of data
+      table.forEach(row => {
+        const columns = row.split(',');
+        const income = columns[4];
+        xs.push(income);
+        const covid_death = columns[10];
+        ys.push(parseFloat(covid_death)); //make data from string to number
+        const neighborhood = columns[2];
+        zs.push(neighborhood);
+        const xsys = {x: parseFloat(income), y: parseFloat(covid_death), label: neighborhood};
+        xy.push(xsys);
+        console.log(xsys);
+      });
+      return { xs, ys, zs };
+      return { xy };
+//      return { zs };
+    }
+    </script>
+    </body>
+    </html>
