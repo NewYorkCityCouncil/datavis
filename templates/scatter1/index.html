@@ -93,10 +93,10 @@
       }
     });
     for (i = 0; i < myChart.data.datasets[0].data.length; i++) {
-      if (myChart.data.datasets[0].data[i].xy > 5000000) {
-        pointBackgroundColors.push("#90cd8a");
+      if (myChart.data.datasets[0].data[i].y > 485) { //Color COVID Death rate + 485 Red
+        pointBackgroundColors.push("#B63F26");
       } else {
-        pointBackgroundColors.push("#f58368");
+        pointBackgroundColors.push("#2F56A6");
       }
     }
 
