@@ -35,7 +35,7 @@
     const myChart = new Chart(ctx, {
       type: 'scatter',
       data: {
-        //  labels: zs,
+        labels: data.zs,
         datasets: [{
           label: xy,
           data: xy,
@@ -48,8 +48,8 @@
           callbacks: {
             label: function(tooltipItem, data) {
               var labels = data.labels[tooltipItem.index];
-              var nbhd = data.datasets[tooltipItem.datasetIndex].label;
-              return nbhd + 'Median Income: ' + '$'+ Math.round(tooltipItem.xLabel).toLocaleString('en-US') +' COVID19 Death Rate: '+ Math.round(tooltipItem.yLabel);
+              return [labels, 'Median Income: ' + '$'+ Math.round(tooltipItem.xLabel).toLocaleString('en-US'), 'COVID19 Death Rate: '+ Math.round(tooltipItem.yLabel)+ 'per 100,000 people'];
+
             }
           },
             displayColors: false
