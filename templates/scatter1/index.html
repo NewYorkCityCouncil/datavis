@@ -27,9 +27,9 @@
   });
 
   const xy = []; // X,Y points needed for Scatter
-  const zs = []; // neighborhood names
   const as = [];
   const pointBackgroundColors = [];
+  const za = [];
 
   async function chartIt() {
     const data = await getData();
@@ -37,7 +37,7 @@
     const myChart = new Chart(ctx, {
       type: 'scatter',
       data: {
-        labels: data.zs,
+        labels: data.za,
         datasets: [{
           label: xy,
           data: xy,
@@ -92,8 +92,9 @@
         }
       }
     });
+    //Color COVID Death rate + 485 Red
     for (i = 0; i < myChart.data.datasets[0].data.length; i++) {
-      if (myChart.data.datasets[0].data[i].y > 485) { //Color COVID Death rate + 485 Red
+      if (myChart.data.datasets[0].data[i].y > 485) {
         pointBackgroundColors.push("#B63F26");
       } else {
         pointBackgroundColors.push("#2F56A6");
@@ -108,6 +109,7 @@
   async function getData() {
     const xs = [];
     const ys = [];
+    const zs = []; // neighborhood names
 
     const response = await fetch('Covid_All.csv');
     const data = await response.text();
@@ -121,13 +123,16 @@
       ys.push(parseFloat(covid_death)); //make data from string to number
       const neighborhood = columns[2];
       zs.push(neighborhood);
-      const zips = columns[2];
+      const zips = columns[1];
       as.push(zips);
+      const zips_nbhd = [neighborhood, zips];
+      za.push(zips_nbhd);
       const xsys = {x: parseFloat(income), y: parseFloat(covid_death), label: neighborhood};
       xy.push(xsys);
-      console.log(xsys);
+  //    console.log(xsys);
+      console.log(zips_nbhd);
     });
-    return { xs, ys, zs, as};
+    return { xs, ys, zs, as, za};
     return { xy };
   }
   </script>
