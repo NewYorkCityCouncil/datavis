@@ -15,6 +15,7 @@
   Chart.defaults.global.responsive = true
   Chart.defaults.global.maintainAspectRatio = true
   Chart.defaults.global.legend = false
+  Chart.defaults.global.defaultFontFamily = 'Roboto'
 
 
   chartIt()
@@ -125,7 +126,7 @@
       zs.push(neighborhood);
       const zips = columns[1];
       as.push(zips);
-      const zips_nbhd = [neighborhood, zips];
+      const zips_nbhd = [neighborhood+ ' ('+zips+')'];
       za.push(zips_nbhd);
       const xsys = {x: parseFloat(income), y: parseFloat(covid_death), label: neighborhood};
       xy.push(xsys);
