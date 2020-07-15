@@ -28,6 +28,7 @@
 
   const xy = []; // X,Y points needed for Scatter
   const zs = []; // neighborhood names
+  const as = [];
 
   async function chartIt() {
     const data = await getData();
@@ -48,7 +49,7 @@
           callbacks: {
             label: function(tooltipItem, data) {
               var labels = data.labels[tooltipItem.index];
-              return [labels, 'Median Income: ' + '$'+ Math.round(tooltipItem.xLabel).toLocaleString('en-US'), 'COVID19 Death Rate: '+ Math.round(tooltipItem.yLabel)+ 'per 100,000 people'];
+              return [labels, 'Median Income: ' + '$'+ Math.round(tooltipItem.xLabel).toLocaleString('en-US'), 'COVID19 Death Rate: '+ Math.round(tooltipItem.yLabel)+ ' per 100,000 people'];
 
             }
           },
@@ -97,7 +98,6 @@
     async function getData() {
       const xs = [];
       const ys = [];
-      //  const zs = [];
 
       const response = await fetch('Covid_All.csv');
       const data = await response.text();
@@ -111,13 +111,14 @@
         ys.push(parseFloat(covid_death)); //make data from string to number
         const neighborhood = columns[2];
         zs.push(neighborhood);
+        const zips = columns[2];
+        as.push(zips);
         const xsys = {x: parseFloat(income), y: parseFloat(covid_death), label: neighborhood};
         xy.push(xsys);
         console.log(xsys);
       });
-      return { xs, ys, zs };
+      return { xs, ys, zs, as};
       return { xy };
-//      return { zs };
     }
     </script>
     </body>
