@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Household Crowding and COVID19 Death Rate</title>
+  <title>Health Insurance and COVID19 Death Rate</title>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -49,7 +49,7 @@
           callbacks: {
             label: function(tooltipItem, data) {
               var labels = data.labels[tooltipItem.index];
-              return [labels, 'People Per Housing Unit: ' + Math.round(tooltipItem.xLabel).toLocaleString('en-US'), 'COVID19 Death Rate: '+ Math.round(tooltipItem.yLabel)+ ' per 100,000 people'];
+              return [labels, 'No Health Insurance: ' + Math.round(tooltipItem.xLabel).toLocaleString('en-US')+'%', 'COVID19 Death Rate: '+ Math.round(tooltipItem.yLabel)+ ' per 100,000 people'];
 
             }
           },
@@ -62,7 +62,7 @@
             display: true,
             ticks: {
               callback: function(value, index, values) {
-                return value.toLocaleString('en-US')+'';
+                return value.toLocaleString('en-US')+'%';
                 ;
               }
             },
@@ -71,7 +71,7 @@
             },
             scaleLabel: {
               display: true,
-              labelString: 'People per Housing Unit (Per Zip Code)',
+              labelString: 'No Health Insurance (Per Zip Code)',
               fontStyle: 'bold'
             }
           }],
@@ -118,8 +118,8 @@
     const table = data.split('\n').slice(1); // register new line and remove first row of data
     table.forEach(row => {
       const columns = row.split(',');
-      const housing = columns[8];
-      xs.push(housing);
+      const insurance = columns[9];
+      xs.push(insurance);
       const covid_death = columns[10];
       ys.push(parseFloat(covid_death)); //make data from string to number
       const neighborhood = columns[2];
@@ -128,7 +128,7 @@
       as.push(zips);
       const zips_nbhd = [neighborhood+ ' ('+zips+')'];
       za.push(zips_nbhd);
-      const xsys = {x: parseFloat(housing), y: parseFloat(covid_death), label: neighborhood};
+      const xsys = {x: parseFloat(insurance), y: parseFloat(covid_death), label: neighborhood};
       xy.push(xsys);
   //    console.log(xsys);
       console.log(zips_nbhd);
