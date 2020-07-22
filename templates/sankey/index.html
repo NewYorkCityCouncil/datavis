@@ -1,0 +1,83 @@
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Make Google Charts Responsive</title>
+
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script src='https://www.google.com/jsapi'></script>
+
+
+
+</head>
+<body>
+ <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<div id="sankey_multiple" ></div>
+
+<script type="text/javascript">
+  google.charts.load("current", {packages:["sankey"]});
+  google.charts.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Action');
+    data.addColumn('string', 'Penalty');
+    data.addColumn('number', 'Cases');
+    data.addColumn({type: 'string', role: 'tooltip'});
+    data.addRows([
+
+      [ 'Minor', 'Forfeiture', 2550, '2550 Cases (51%)'],
+      [ 'Minor', 'Dismissal suspended', 984 , '984 Cases (20%)'],
+      [ 'Severe', 'Forfeiture', 417, '417 Cases (8%)' ],
+      [ 'Minor', 'Unknown', 311 , '50%'],
+      [ 'Minor', 'Dismissal', 269 , '50%'],
+      [ 'Minor', 'Other', 124 , '50%'],
+      [ 'Severe', 'Dismissal suspended', 93 , '50%'],
+      [ 'Severe', 'Unknown', 59 , '50%'],
+      [ 'Severe', 'Dismissal', 46 , '50%'],
+      [ 'Minor', 'Not Guilty', 46 , '50%'],
+      [ 'Severe', 'Other', 36 , '50%'],
+      [ 'Severe', 'Not Guilty', 33 , '50%'],
+      [ 'Minor', 'Resigned', 28 , '50%']
+    ]);
+
+    //Node and Link colors
+    var colors = ['#2F56A6','#D05D4E'];
+
+    // Set chart options
+    var options = {
+      height: 900,
+      title: 'sankey',
+      sankey: {
+        node: { label: { fontName: 'Open Sans',
+                  fontSize: 22,
+                  color: '#222222',
+                  bold:true},
+                colors: '#000000'},
+        link:{
+          colorMode: 'source',
+          colors: ['#2F56A6','#D05D4E'],
+          color: {stroke: '#E6E6E6'}
+        }
+      },
+      tooltip: {
+        textStyle: {fontName: 'Open Sans',
+                    fontsize: 22,
+                  }
+      }
+
+    };
+
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+
+   //Make Chart responsive
+   $(window).resize(function(){
+     drawChart();
+   });
+</script>
+</body>
+</html>
