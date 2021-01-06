@@ -54,7 +54,7 @@
         },
         {
           label: 'Average Monthy Revenue',
-          data: data.ys,
+          data: data.ys2,
           fill: false,
           lineTension: 0.5,
           backgroundColor:"#222222",
@@ -76,8 +76,6 @@
           hoverBackgroundColor: "#E6E6E6",
           hoverBorderColor: "#E6E6E6",
         }
-
-
       ]
       },
       options: {
@@ -98,7 +96,7 @@
             },
             scaleLabel: {
               display: true,
-              labelString: 'Average Monthly Revenue'
+              labelString: 'Artists Employed in NYC'
             }
           }],
           xAxes: [{
@@ -144,7 +142,7 @@
       const twenty19 = columns[1];
       ys.push(parseFloat(twenty19)); //make data from string to number and added mean payers of 14 degrees
       const twenty20 = columns[1];
-      ys.push(parseFloat(twenty20)); //make data from string to number and added mean payers of 14 degrees
+      ys2.push(parseFloat(twenty20)); //make data from string to number and added mean payers of 14 degrees
       console.log(month, twenty19, twenty20);
     });
     return { xs, ys };
