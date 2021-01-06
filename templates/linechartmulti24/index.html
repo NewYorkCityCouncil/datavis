@@ -15,7 +15,7 @@
   <canvas id ="chart" width="800" height="400"></canvas>
   <script>
   //CHART JS
-  Chart.defaults.global.legend.display = false,
+  Chart.defaults.global.legend.display = true,
 //  Chart.defaults.global.defaultFontFamily = 'open sans'
 
 
@@ -29,23 +29,23 @@
       data: {
         labels: data.xs,
         datasets: [{
-          label: 'Artist Employment 2019',
+          label: '2020: Artists Employed',
           data: data.ys,
           fill: false,
           lineTension: 0.5,
-          backgroundColor:"#222222",
-          borderColor: "#222222",
+          backgroundColor:"#800000",
+          borderColor: "#800000",
           borderWidth: 3,
           borderCapStyle: 'butt',
           borderDash: [],
           borderDashOffset: 0.0,
           //    borderJoinStyle: 'miter',
-          pointBorderColor: "#222222",
-          pointBackgroundColor: "#222222",
-          pointBorderWidth: 1,
+          pointBorderColor: "#800000",
+          pointBackgroundColor: "#800000",
+          pointBorderWidth: 4,
           pointHoverRadius: 6,
-          pointHoverBackgroundColor: "#E6E6E6",
-          pointHoverBorderColor: "#E6E6E6",
+          pointHoverBackgroundColor: "#800000",
+          pointHoverBorderColor: "#800000",
           pointHoverBorderWidth: 2,
           pointRadius: 1,
           pointHitRadius: 4,
@@ -53,23 +53,23 @@
           hoverBorderColor: "#E6E6E6",
         },
         {
-          label: 'Artist Employment 2020',
+          label: '2019: Artists Employed',
           data: data.ys2,
           fill: false,
           lineTension: 0.5,
-          backgroundColor:"#222222",
-          borderColor: "#222222",
+          backgroundColor:"#666666",
+          borderColor: "#666666",
           borderWidth: 3,
           borderCapStyle: 'butt',
           borderDash: [],
           borderDashOffset: 0.0,
           //    borderJoinStyle: 'miter',
-          pointBorderColor: "#222222",
-          pointBackgroundColor: "#222222",
-          pointBorderWidth: 1,
+          pointBorderColor: "#666666",
+          pointBackgroundColor: "#666666",
+          pointBorderWidth: 4,
           pointHoverRadius: 6,
-          pointHoverBackgroundColor: "#E6E6E6",
-          pointHoverBorderColor: "#E6E6E6",
+          pointHoverBackgroundColor: "#666666",
+          pointHoverBorderColor: "#666666",
           pointHoverBorderWidth: 2,
           pointRadius: 1,
           pointHitRadius: 4,
@@ -88,7 +88,7 @@
               //min: 200000,
               //stepSize: 200000,
               callback: function(value, index, values) {
-                return value.toLocaleString('en-US')+'People';
+                return value.toLocaleString('en-US')+'';
               },
               beginAtZero: true,
             },
