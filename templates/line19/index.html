@@ -29,7 +29,7 @@
       data: {
         labels: data.xs,
         datasets: [{
-          label: 'Artist Employment 2019',
+          label: 'Average Monthy Revenue',
           data: data.ys,
           fill: false,
           lineTension: 0.5,
@@ -51,44 +51,18 @@
           pointHitRadius: 4,
           hoverBackgroundColor: "#E6E6E6",
           hoverBorderColor: "#E6E6E6",
-        },
-        {
-          label: 'Artist Employment 2020',
-          data: data.ys2,
-          fill: false,
-          lineTension: 0.5,
-          backgroundColor:"#222222",
-          borderColor: "#222222",
-          borderWidth: 3,
-          borderCapStyle: 'butt',
-          borderDash: [],
-          borderDashOffset: 0.0,
-          //    borderJoinStyle: 'miter',
-          pointBorderColor: "#222222",
-          pointBackgroundColor: "#222222",
-          pointBorderWidth: 1,
-          pointHoverRadius: 6,
-          pointHoverBackgroundColor: "#E6E6E6",
-          pointHoverBorderColor: "#E6E6E6",
-          pointHoverBorderWidth: 2,
-          pointRadius: 1,
-          pointHitRadius: 4,
-          hoverBackgroundColor: "#E6E6E6",
-          hoverBorderColor: "#E6E6E6",
-        }
-      ]
+        }]
       },
       options: {
         cornerRadius: 20,
         scales: {
           yAxes: [{
-            stacked: false,
             ticks: {
               //max: 5,
               //min: 200000,
               //stepSize: 200000,
               callback: function(value, index, values) {
-                return value.toLocaleString('en-US')+'People';
+                return '$' + value.toLocaleString('en-US')+'';
               },
               beginAtZero: true,
             },
@@ -97,7 +71,7 @@
             },
             scaleLabel: {
               display: true,
-              labelString: 'Artists Employed in NYC'
+              labelString: 'Average Monthly Revenue'
             }
           }],
           xAxes: [{
@@ -115,7 +89,7 @@
         tooltips: {
           callbacks: {
             label: function(tooltipItem, data) {
-              return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ ' Artists Employed';
+              return '$'+ data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ ' Average Revenue';
             },
           },
         //  backgroundColor: '#434343',
@@ -130,7 +104,6 @@
   async function getData() {
     const xs = [];
     const ys = [];
-    const ys2 = [];
 
     const response = await fetch('artists_employment_nyc_2019_2020.csv');
     const data = await response.text();
@@ -140,13 +113,11 @@
       const columns = row.split(',');
       const month = columns[0];
       xs.push(month);
-      const twenty20 = columns[1];
-      ys.push(parseFloat(twenty20)); //make data from string to number and added mean payers of 14 degrees
-      const twenty19 = columns[2];
-      ys2.push(parseFloat(twenty19)); //make data from string to number and added mean payers of 14 degrees
-      console.log(month, twenty20, twenty19);
+      const 2019 = columns[1];
+      ys.push(parseFloat(2019)); //make data from string to number and added mean payers of 14 degrees
+      console.log(month, 2019);
     });
-    return { xs, ys, ys2 };
+    return { xs, ys };
   }
 
 
