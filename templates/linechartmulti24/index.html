@@ -51,7 +51,34 @@
           pointHitRadius: 4,
           hoverBackgroundColor: "#E6E6E6",
           hoverBorderColor: "#E6E6E6",
-        }]
+        },
+        {
+          label: 'Average Monthy Revenue',
+          data: data.ys,
+          fill: false,
+          lineTension: 0.5,
+          backgroundColor:"#222222",
+          borderColor: "#222222",
+          borderWidth: 3,
+          borderCapStyle: 'butt',
+          borderDash: [],
+          borderDashOffset: 0.0,
+          //    borderJoinStyle: 'miter',
+          pointBorderColor: "#222222",
+          pointBackgroundColor: "#222222",
+          pointBorderWidth: 1,
+          pointHoverRadius: 6,
+          pointHoverBackgroundColor: "#E6E6E6",
+          pointHoverBorderColor: "#E6E6E6",
+          pointHoverBorderWidth: 2,
+          pointRadius: 1,
+          pointHitRadius: 4,
+          hoverBackgroundColor: "#E6E6E6",
+          hoverBorderColor: "#E6E6E6",
+        }
+
+
+      ]
       },
       options: {
         cornerRadius: 20,
@@ -104,6 +131,7 @@
   async function getData() {
     const xs = [];
     const ys = [];
+    const ys2 = [];
 
     const response = await fetch('artists_employment_nyc_2019_2020.csv');
     const data = await response.text();
@@ -113,9 +141,11 @@
       const columns = row.split(',');
       const month = columns[0];
       xs.push(month);
-      const 2019 = columns[1];
-      ys.push(parseFloat(2019)); //make data from string to number and added mean payers of 14 degrees
-      console.log(month, 2019);
+      const twenty19 = columns[1];
+      ys.push(parseFloat(twenty19)); //make data from string to number and added mean payers of 14 degrees
+      const twenty20 = columns[1];
+      ys.push(parseFloat(twenty20)); //make data from string to number and added mean payers of 14 degrees
+      console.log(month, twenty19, twenty20);
     });
     return { xs, ys };
   }
