@@ -88,7 +88,7 @@
               //min: 200000,
               //stepSize: 200000,
               callback: function(value, index, values) {
-                return '$' + value.toLocaleString('en-US')+'';
+                return value.toLocaleString('en-US')+'People';
               },
               beginAtZero: true,
             },
@@ -115,7 +115,7 @@
         tooltips: {
           callbacks: {
             label: function(tooltipItem, data) {
-              return '$'+ data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ ' Average Revenue';
+              return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ ' Artists Employed';
             },
           },
         //  backgroundColor: '#434343',
