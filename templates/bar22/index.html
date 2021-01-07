@@ -17,6 +17,7 @@
   //CHART JS
   Chart.defaults.global.responsive = true,
   Chart.defaults.global.legend.display = false,
+  Chart.defaults.global.title.display= true
 //  Chart.defaults.global.defaultFontFamily = 'open sans'
 
 
@@ -30,7 +31,7 @@
       data: {
         labels: data.xs,
         datasets: [{
-          label: 'Percent Change in Unemployment Claims 2019 vs 2020',
+          label: '% Change in NYS Unemployment Claims 2019 vs 2020',
           data: data.ys,
           fill: false,
           backgroundColor: ['#CACACA','#800000'],
@@ -43,6 +44,10 @@
       },
       options: {
         cornerRadius: 20,
+        title:{
+          display: true,
+          text: '% Change in NYS Unemployment Claims 2019 vs 2020'
+        },
         scales: {
           yAxes: [{
             ticks: {
@@ -56,7 +61,7 @@
             },
             scaleLabel: {
               display: true,
-              labelString: 'Percent Change in Unemployment Claims 2019 vs 2020'
+              labelString: '% Change in NYS Unemployment Claims 2019 vs 2020'
             }
           }],
           xAxes: [{
