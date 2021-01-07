@@ -17,7 +17,7 @@
   //CHART JS
   Chart.defaults.global.legend.display = true,
   //Chart.defaults.global.defaultFontFamily = 'open sans'
-
+Chart.defaults.global.title.display = true
 
   chartIt();
 
@@ -80,6 +80,10 @@
     },
     options: {
       cornerRadius: 20,
+      title:{
+        display: true,
+        text: 'Artists Employed in NYC (2019 vs 2020)'
+      },
       scales: {
         yAxes: [{
           stacked: false,
@@ -111,7 +115,7 @@
             display: true
           },
           scaleLabel: {
-              display: true,
+              display: false,
               labelString: 'Artists Employed in NYC (2019 vs 2020)'
             }
         }]
