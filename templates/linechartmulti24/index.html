@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-  <title>Artists Employed in NYC 2019 and 2020</title>
+  <title>Number of Jobs in Arts Sector in NYC(2019 vs 2020)</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
   <!--Source of Rounded Chart: https://github.com/jedtrow/Chart.js-Rounded-Bar-Charts-->
   <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.js"></script>
@@ -29,7 +29,7 @@ Chart.defaults.global.title.display = true
       data: {
         labels: data.xs,
         datasets: [{
-          label: '2020: Artists Employed',
+          label: '2020: Jobs in the Arts',
           data: data.ys,
           fill: false,
           lineTension: 0.5,
@@ -53,7 +53,7 @@ Chart.defaults.global.title.display = true
           hoverBorderColor: "#E6E6E6",
         },
         {
-          label: '2019: Artists Employed',
+          label: '2019: Jobs in the Arts',
           data: data.ys2,
           fill: false,
           lineTension: 0.5,
@@ -82,7 +82,7 @@ Chart.defaults.global.title.display = true
       cornerRadius: 20,
       title:{
         display: false,
-        text: 'Number of Jobs in Arts Sector in NYC(2019 vs 2020)'
+        text: 'Number of Jobs in Arts Sector in NYC (2019 vs 2020)'
       },
       scales: {
         yAxes: [{
