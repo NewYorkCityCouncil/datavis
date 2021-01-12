@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-  <title>Monthly Marshall Evictions</title>
+  <title>Monthly Residential Marshall Evictions Jan 2019 - March 2020 </title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
   <!--Source of Rounded Chart: https://github.com/jedtrow/Chart.js-Rounded-Bar-Charts-->
   <!--  <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.js"></script>-->
@@ -17,6 +17,7 @@
   //CHART JS
   Chart.defaults.global.legend.display = false,
 //  Chart.defaults.global.defaultFontFamily = 'open sans'
+
 
 
   chartIt();
@@ -55,6 +56,10 @@
       },
       options: {
         cornerRadius: 20,
+        title:{
+        display: false,
+        text: 'Monthly Residential Marshall Evictions, Jan 2019 - March 2020'
+      },
         scales: {
           yAxes: [{
             ticks: {
@@ -75,11 +80,15 @@
             }
           }],
           xAxes: [{
+            scaleLabel:{
+              display: true,
+              labelString: 'Monthly Residential Marshall Evictions in NYC (Jan 2019 - March 2020)'
+            },
             ticks: {
               callback: function(value, index, values) {
                 return value;
               },
-              fontStyle: 'strong'
+            //  fontStyle: 'strong'
             },
             gridLines: {
               display: true
