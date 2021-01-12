@@ -174,14 +174,14 @@ async function getData() {
     const date = columns[0];
     xs.push(date);
     const adult = columns[1];
-    ys.push(parseFloat(adult)); //make data from string to number and added mean payers of 14 degrees
+    ys.push(parseFloat(adult)); //make data from string to number
     const family = columns[2];
-    ys2.push(parseFloat(twenty19)); //make data from string to number and added mean payers of 14 degrees
+    ys2.push(parseFloat(family)); //make data from string to number
     const familyChildren = columns[3];
-    ys3.push(parseFloat(familyChildren)); //make data from string to number and added mean payers of 14 degrees
-    console.log(date, adult, family,familyChildren);
+    ys3.push(parseFloat(familyChildren)); //make data from string to number
+    console.log(date, adult, family, familyChildren);
   });
-  return { xs, ys, ys2 };
+  return { xs, ys, ys2, ys3 };
 }
 
 
