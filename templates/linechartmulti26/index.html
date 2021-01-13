@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-  <title>Number of Jobs in Arts Sector in NYC (2019 vs 2020)</title>
+  <title>Unemployment Rate in NYC 2019 vs 2020</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
   <!--Source of Rounded Chart: https://github.com/jedtrow/Chart.js-Rounded-Bar-Charts-->
   <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.js"></script>
@@ -29,23 +29,23 @@ Chart.defaults.global.title.display = true
       data: {
         labels: data.xs,
         datasets: [{
-          label: '2020: Jobs in the Arts',
+          label: '2020: Unemployment Rate',
           data: data.ys,
           fill: false,
           lineTension: 0.5,
-          backgroundColor:"#800000",
-          borderColor: "#800000",
+          backgroundColor:"#2F56A6",
+          borderColor: "#2F56A6",
           borderWidth: 3,
           borderCapStyle: 'butt',
           borderDash: [],
           borderDashOffset: 0.0,
           //    borderJoinStyle: 'miter',
-          pointBorderColor: "#800000",
-          pointBackgroundColor: "#800000",
+          pointBorderColor: "#2F56A6",
+          pointBackgroundColor: "#2F56A6",
           pointBorderWidth: 4,
           pointHoverRadius: 6,
-          pointHoverBackgroundColor: "#800000",
-          pointHoverBorderColor: "#800000",
+          pointHoverBackgroundColor: "#2F56A6",
+          pointHoverBorderColor: "#2F56A6",
           pointHoverBorderWidth: 2,
           pointRadius: 1,
           pointHitRadius: 4,
@@ -53,7 +53,7 @@ Chart.defaults.global.title.display = true
           hoverBorderColor: "#E6E6E6",
         },
         {
-          label: '2019: Jobs in the Arts',
+          label: '2019: Unemployment Rate',
           data: data.ys2,
           fill: false,
           lineTension: 0.5,
@@ -82,7 +82,7 @@ Chart.defaults.global.title.display = true
       cornerRadius: 20,
       title:{
         display: false,
-        text: 'Number of Jobs in Arts Sector in NYC (2019 vs 2020)'
+        text: 'Unemployment Rate in NYC, 2019 vs 2020'
       },
       scales: {
         yAxes: [{
@@ -92,7 +92,7 @@ Chart.defaults.global.title.display = true
             //min: 200000,
             //stepSize: 200000,
             callback: function(value, index, values) {
-              return value.toLocaleString('en-US')+'';
+              return value.toLocaleString('en-US')+'%';
             },
             beginAtZero: true,
           },
@@ -100,8 +100,8 @@ Chart.defaults.global.title.display = true
             display: true
           },
           scaleLabel: {
-            display: true,
-            labelString: 'Number of Jobs in Arts Sector in NYC'
+            display: false,
+            labelString: 'Unemployment Rate in NYC, 2019 vs 2020'
           }
         }],
         xAxes: [{
@@ -116,14 +116,14 @@ Chart.defaults.global.title.display = true
           },
           scaleLabel: {
               display: true,
-              labelString: 'Number of Jobs in Arts Sector in NYC (2019 vs 2020)'
+              labelString: 'Unemployment Rate in NYC, 2019 vs 2020'
             }
         }]
       },
       tooltips: {
         callbacks: {
           label: function(tooltipItem, data) {
-            return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ ' Artists Employed';
+            return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ '% Unemployment Rate';
           },
         },
         //  backgroundColor: '#434343',
@@ -140,7 +140,7 @@ async function getData() {
   const ys = [];
   const ys2 = [];
 
-  const response = await fetch('artists_employment_nyc_2019_2020.csv');
+  const response = await fetch('nyc_monthly_unemployment_rate.csv');
   const data = await response.text();
 
   const table = data.split('\n').slice(1);
