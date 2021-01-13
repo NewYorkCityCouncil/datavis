@@ -12,7 +12,7 @@
 
 </head>
 <body>
-  <canvas id ="chart" width="300" height="400"></canvas>
+  <canvas id ="chart" width="250" height="400"></canvas>
   <script>
   //CHART JS
   Chart.defaults.global.legend.display = true,
@@ -173,7 +173,7 @@ Chart.defaults.global.title.display = true
           },
           scaleLabel: {
             display: true,
-            labelString: 'Single Adults, by Age'
+            labelString: 'Individuals in Shelter, by Age'
           }
         }],
         xAxes: [{
@@ -199,7 +199,7 @@ Chart.defaults.global.title.display = true
       tooltips: {
         callbacks: {
           label: function(tooltipItem, data) {
-            return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+' Single Adults';
+            return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+' Individuals in Shelter';
           },
         },
         //  backgroundColor: '#434343',
