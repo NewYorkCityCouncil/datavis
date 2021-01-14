@@ -20,6 +20,7 @@
 
 
 
+
   chartIt();
 
   async function chartIt() {
@@ -42,7 +43,7 @@
           borderDashOffset: 0.0,
           //    borderJoinStyle: 'miter',
           pointBorderColor: "#2F56A6",
-          pointBackgroundColor: "#2F56A6",
+        pointBackgroundColor: "#2F56A6",
           pointBorderWidth: 1,
           pointHoverRadius: 6,
           pointHoverBackgroundColor: "#E6E6E6",
@@ -108,7 +109,22 @@
         }
       }
     });
-  }
+
+    const ys = [];
+
+    let bigEviction = []
+
+    for (i = 0; i < myChart.data.datasets[0].data.length; i++) {
+        if (myChart.data.datasets[0].data[i]> 10) {
+            bigEviction.push(myChart.data.datasets[0].data[i]);
+            ys.push(bigEviction);
+        }
+    }
+    console.log(ys);
+
+myChart.update();
+}
+
   //SPLITTING AND BRINGING IN CSV DATA
   async function getData() {
     const xs = [];
@@ -121,12 +137,18 @@
     table.forEach(row => {
       const columns = row.split(',');
       const date = columns[0];
-      xs.push(date.replace(/['"]+/g, ''));
+      xs.push(date.replace(/['"]+/g, '')); //remove double quotes from string ""
       const evictions = columns[1];
-      ys.push(parseFloat(evictions)); //make data from string to number and added mean payers of 14 degrees
-      console.log(date, evictions);
+      ys.push(parseFloat(evictions));
+      //make data from string to number and added mean payers of 14 degrees
+
+
+
+  console.log(date, evictions);  //  console.log(date, evictions);
+
     });
     return { xs, ys };
+
   }
 
 
