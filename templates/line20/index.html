@@ -114,14 +114,14 @@
     const xs = [];
     const ys = [];
 
-    const response = await fetch('residential_evictions_monthly.csv');
+    const response = await fetch('https://raw.githubusercontent.com/NewYorkCityCouncil/dss_eviction_moratorium/master/data/evictions_monthly_trend.csv?token=ADINN6SGKH6SIRYUZKQ76LLABHRCY');
     const data = await response.text();
 
     const table = data.split('\n').slice(1);
     table.forEach(row => {
       const columns = row.split(',');
       const date = columns[0];
-      xs.push(date);
+      xs.push(date.replace(/['"]+/g, ''));
       const evictions = columns[1];
       ys.push(parseFloat(evictions)); //make data from string to number and added mean payers of 14 degrees
       console.log(date, evictions);
