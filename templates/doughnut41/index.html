@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <title>Residential Eviction by Borough 2019</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  <!--Source of Rounded Chart: https://github.com/jedtrow/Chart.js-Rounded-Bar-Charts-->
+    <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.js"></script>
+  <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.min.js"></script>
+
+</head>
+<body>
+  <canvas id ="chart" width="800" height="400"></canvas>
+  <script>
+  //CHART JS
+  Chart.defaults.global.responsive = true,
+  Chart.defaults.global.legend.display = false,
+  Chart.defaults.global.title.display= true
+//  Chart.defaults.global.defaultFontFamily = 'open sans'
+
+
+  chartIt();
+
+  async function chartIt() {
+    const data = await getData();
+    const ctx = document.getElementById('chart').getContext('2d');
+    const myChart = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: data.xs,
+        datasets: [{
+          label: 'Residential Eviction by Borough, 2019',
+          data: data.ys,
+          fill: false,
+          backgroundColor: ['#23417D','#222222','#B63F26','#666666','#846126'],
+          borderColor: '#eeeeee',
+          borderWidth: 1,
+          hoverBackgroundColor: "#9E9E9E",
+          hoverBorderColor: "#eeeeee",
+        }]
+      },
+      options: {
+        tooltips: {
+            callbacks: {
+              label: function(tooltipItem, data) {
+                return data.labels[tooltipItem.index] + ': '+data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+' Evictions';
+              },
+            }
+        }
+
+      }
+    });
+  }
+  //SPLITTING AND BRINGING IN CSV DATA
+  async function getData() {
+    const xs = [];
+    const ys = [];
+
+    const response = await fetch('evictions_boro.csv');
+    const data = await response.text();
+
+    const table = data.split('\n').slice(1);
+    table.forEach(row => {
+      const columns = row.split(',');
+      const borough = columns[0];
+      xs.push(borough);
+      const evictions = columns[1];
+      ys.push(parseFloat(evictions)); //make data from string to number and added mean payers of 14 degrees
+      console.log(borough, evictions);
+    });
+    return { xs, ys };
+  }
+
+
+  </script>
+</body>
+</html>
