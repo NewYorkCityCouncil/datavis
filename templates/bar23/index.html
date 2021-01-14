@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <title>Unemployment Claims by Sector, New York State, 2019 vs 2020</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  <!--Source of Rounded Chart: https://github.com/jedtrow/Chart.js-Rounded-Bar-Charts
+    <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.js"></script>
+  <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.min.js"></script>-->
+
+</head>
+<body>
+  <canvas id ="chart"width="600" height="400"></canvas>
+  <script>
+  //CHART JS
+  Chart.defaults.global.responsive = true,
+  Chart.defaults.global.legend.display = false,
+  Chart.defaults.global.maintainAspectRatio = false
+
+
+  chartIt();
+
+  async function chartIt() {
+    const data = await getData();
+    const ctx = document.getElementById('chart').getContext('2d');
+    const myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: data.xs,
+        datasets: [{
+          label: 'Residential Evictions 2019',
+          data: data.ys,
+          backgroundColor: ['#23417D','#222222','#B63F26','#666666','#846126'],
+          borderColor: '#eeeeee',
+          borderWidth: 0,
+          hoverBackgroundColor: "#9E9E9E",
+          hoverBorderColor: "#eeeeee",
+        }]
+      },
+      options: {
+        scales:{
+          xAxes: [{
+            display: true,
+
+            //ticks:{
+            //minRotation: 90,
+      	    //maxRotation: 90
+
+          }],
+          yAxes: [{
+            display: true,
+            ticks: {
+              min: 0.0,
+              callback: function(value) {
+                return + parseFloat(Math.round(value * 100) / 100).toFixed(2) + ' %';
+              }
+            }
+          }]
+        },
+        tooltips: {
+          callbacks: {
+            label: function(tooltipItem, data) {
+              return + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ ' %';
+            },
+          }
+        }
+  }
+    });
+  }
+  //SPLITTING AND BRINGING IN CSV DATA
+  async function getData() {
+    const xs = [];
+    const ys = [];
+
+    const response = await fetch('evictions_boro_rate.csv');
+    const data = await response.text();
+
+    const table = data.split('\n').slice(1);
+    table.forEach(row => {
+      const columns = row.split(',');
+      const sector = columns[0];
+      xs.push(sector);
+      const claims = columns[1];
+      ys.push(parseFloat(claims)); //make data from string to number and added mean payers of 14 degrees
+      console.log(sector, claims);
+    });
+    return { xs, ys };
+  }
+
+
+  </script>
+</body>
+</html>
