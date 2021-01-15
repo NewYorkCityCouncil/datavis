@@ -219,27 +219,28 @@ async function getData() {
   const ys4 = [];
   const ys5 = [];
 
-  const response = await fetch('dhs_age_adult_families.csv');
+  const response = await fetch('https://newyorkcitycouncil.github.io/dss_eviction_moratorium/data/dhs_age_af.csv');
   const data = await response.text();
 
   const table = data.split('\n').slice(1);
   table.forEach(row => {
     const columns = row.split(',');
     const month = columns[0];
-    xs.push(month);
+    xs.push(month.replace(/['"]+/g, ''));
     const age1 = columns[1];
     ys.push(parseFloat(age1)); //make data from string to number
     const age2 = columns[2];
     ys2.push(parseFloat(age2)); //make data from string to number
-    const age3 = columns[3];
+    const age3 = columns[4];
     ys3.push(parseFloat(age3)); //make data from string to number
-    const age4 = columns[4];
+    const age4 = columns[5];
     ys4.push(parseFloat(age4)); //make data from string to number
-    const age5 = columns[5];
+    const age5 = columns[6];
     ys5.push(parseFloat(age5)); //make data from string to number
+
     console.log(month, age1, age2, age3, age4, age5);
   });
-  return { xs, ys, ys2, ys3, ys4, ys5 };
+  return { xs, ys, ys2, ys3, ys4, ys5};
 }
 
 
