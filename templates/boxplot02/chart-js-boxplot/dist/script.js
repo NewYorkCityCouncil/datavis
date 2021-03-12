@@ -49,8 +49,16 @@ window.onload = () => {
         display: true,
         text: 'Age (Years)',
         position: 'bottom',
-      }
+      },
+      scales: {
+        xAxes: [{
+          ticks: {
+            min: 10,
+            max: 90,
+          }
+        }]
     }
-  });
+  }
+});
 
 };
