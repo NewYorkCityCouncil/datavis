@@ -7,11 +7,11 @@ function randomBoxPlot(min, max) {
   const values = randomValues(5, min, max).sort((a, b) => a - b);
 
   return {
-    min: 18,
-    q1: 34,
-    median: 42,
-    q3: 52,
-    max: 92
+    Min: 18,
+    Q1: 34,
+    Median: 42,
+    Q3: 52,
+    Max: 92
   };
 }
 
