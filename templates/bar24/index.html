@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-  <title>Unemployment Claims by Sector, New York State, 2019 vs 2020</title>
+  <title>Number of Employees by Age Group</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
   <!--Source of Rounded Chart: https://github.com/jedtrow/Chart.js-Rounded-Bar-Charts
     <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.js"></script>
@@ -30,9 +30,9 @@
       data: {
         labels: data.xs,
         datasets: [{
-          label: 'Residential Evictions 2019',
+          label: 'Workers by Age Group',
           data: data.ys,
-          backgroundColor: '['#23417D','#222222','#B63F26','#666666','#846126']',
+          backgroundColor: '#2F56A6',
           borderColor: '#eeeeee',
           borderWidth: 0,
           hoverBackgroundColor: "#9E9E9E",
@@ -42,29 +42,46 @@
       options: {
         scales:{
           xAxes: [{
-            display: true,
-
-            //ticks:{
-            //minRotation: 90,
-      	    //maxRotation: 90
-
+            ticks: {
+              callback: function(value, index, values) {
+                return value;
+              },
+            //  fontStyle: 'strong'
+            },
+            gridLines: {
+              display: false
+            },
+            scaleLabel: {
+              display: true,
+              labelString: 'Age (Years)'
+            }
           }],
           yAxes: [{
-            display: true,
             ticks: {
-              min: 0.0,
-              callback: function(value) {
-                return + parseFloat(Math.round(value * 100) / 100).toFixed(2) + ' %';
-              }
+              callback: function(value, index, values) {
+                return value.toLocaleString('en-US');
+              },
+              beginAtZero: true,
+            },
+            gridLines: {
+              display: false
+            },
+            scaleLabel: {
+              display: true,
+              labelString: 'Workers'
             }
           }]
         },
         tooltips: {
           callbacks: {
             label: function(tooltipItem, data) {
-              return + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ ' %';
+              return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ ' Workers';
             },
-          }
+          },
+          backgroundColor: '#434343',
+          borderColor: '#f5f5f5',
+          borderWidth: 1,
+          displayColors: false
         }
   }
     });
@@ -74,7 +91,7 @@
     const xs = [];
     const ys = [];
 
-    const response = await fetch('evictions_boro_rate.csv');
+    const response = await fetch('Number_of_Employees_by_Age_Group.csv');
     const data = await response.text();
 
     const table = data.split('\n').slice(1);
