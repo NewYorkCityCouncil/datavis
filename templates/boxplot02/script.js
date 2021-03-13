@@ -7,11 +7,11 @@ function randomBoxPlot(min, max) {
   const values = randomValues(5, min, max).sort((a, b) => a - b);
 
   return {
-    Min: 18,
-    Q1: 34,
-    Median: 42,
-    Q3: 52,
-    Max: 92
+    min: 18,
+    q1: 34,
+    median: 42,
+    q3: 52,
+    max: 92
   };
 }
 
@@ -20,7 +20,7 @@ const boxplotData = {
   // define label tree
   labels: ['Workers'],
   datasets: [{
-    label: 'Dataset 1',
+    label: 'Workers',
     backgroundColor: '#2F56A6',
     borderColor: '#23417D',
     borderWidth: 1,
