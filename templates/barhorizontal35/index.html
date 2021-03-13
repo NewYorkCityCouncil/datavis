@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-  <title>Employment Change by Sector July 2019 vs July 2020</title>
+  <title>Median Age By Agency And Relative Size</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
   <!--Source of Rounded Chart: https://github.com/jedtrow/Chart.js-Rounded-Bar-Charts-->
     <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.js"></script>
@@ -12,7 +12,7 @@
 
 </head>
 <body>
-  <canvas id ="chart" width="800" height="400"></canvas>
+  <canvas id ="chart" width="800" height="500"></canvas>
   <script>
   //CHART JS
   Chart.defaults.global.legend.display = false,
@@ -25,11 +25,11 @@
     const data = await getData();
     const ctx = document.getElementById('chart').getContext('2d');
     const myChart = new Chart(ctx, {
-      type: 'horizontalBar',
+      type: 'bar',
       data: {
         labels: data.xs,
         datasets: [{
-          label: 'Employment Change by Sector %',
+          label: 'Median Age',
           data: data.ys,
           fill: false,
           backgroundColor: '#2F56A6',
@@ -38,13 +38,25 @@
           lineTension: 4,
           hoverBackgroundColor: '#E6E6E6',
           barPercentage: .8
-        }]
+
+        },
+        {
+          label:'Line',
+          data: [42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,],
+          type: 'line',
+          fill: false,
+          borderColor: '#666666',
+          pointRadius: 1,
+
+
+        }
+      ]
       },
       options: {
         cornerRadius: 20,
         title:{
           display: false,
-          text: 'Employment Change by Sector (July 2019 vs July 2020)'
+          text: 'NYC Agencies'
         },
         scales: {
           xAxes: [{
@@ -56,11 +68,11 @@
               //max: 7000,
             },
             gridLines: {
-              display: true
+              display: false
             },
             scaleLabel: {
               display: true,
-              labelString: 'Median Age (Years)'
+              labelString: 'NYC Agencies'
             }
           }],
           yAxes: [{
@@ -72,14 +84,18 @@
               //fontSize: 9,
             },
             gridLines: {
-              display: false
+              display: true,
+            },
+            scaleLabel: {
+              display: true,
+              labelString: 'Median Age (Years)'
             }
           }]
         },
         tooltips: {
           callbacks: {
             label: function(tooltipItem, data) {
-              return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ '%';
+              return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ ' Years';
             },
           },
           backgroundColor: '#434343',
@@ -90,6 +106,7 @@
       }
     });
   }
+
   //SPLITTING AND BRINGING IN CSV DATA
   async function getData() {
     const xs = [];
@@ -101,11 +118,11 @@
     const table = data.split('\n').slice(1);
     table.forEach(row => {
       const columns = row.split(',');
-      const sector = columns[0];
-      xs.push(sector);
-      const employmentChange = columns[1];
-      ys.push(parseFloat(employmentChange)); //make data from string to number and added mean payers of 14 degrees
-      console.log(sector, employmentChange);
+      const one = columns[0];
+      xs.push(one);
+      const two = columns[1];
+      ys.push(parseFloat(two)); //make data from string to number and added mean payers of 14 degrees
+      console.log(one, two);
     });
     return { xs, ys };
   }
