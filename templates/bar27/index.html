@@ -29,7 +29,7 @@
       data: {
         labels: data.xs,
         datasets: [{
-          label: '% of NYPD Workers',
+          label: '% of Citywide Workers',
           data: data.ys,
           fill: false,
           backgroundColor: '#666666',
@@ -46,7 +46,7 @@
         cornerRadius: 20,
         title:{
           display: false,
-          text: 'NYPD'
+          text: 'Citywide'
         },
         scales: {
           xAxes: [{
@@ -70,6 +70,7 @@
               callback: function(value, index, values) {
                 return value +'%';
               },
+              max:20,
               //fontStyle: 'strong'
               //fontSize: 9,
             },
@@ -78,7 +79,7 @@
             },
             scaleLabel: {
               display: true,
-              labelString: '% of NYPD'
+              labelString: '% of Citywide'
             }
           }]
         },
