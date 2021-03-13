@@ -12,7 +12,7 @@
 
 </head>
 <body>
-  <canvas id ="chart" width="800" height="400"></canvas>
+  <canvas id ="chart" width="800" height="500"></canvas>
   <script>
   //CHART JS
   Chart.defaults.global.legend.display = false,
@@ -29,7 +29,7 @@
       data: {
         labels: data.xs,
         datasets: [{
-          label: '% of NYPD Workers',
+          label: 'Median Age',
           data: data.ys,
           fill: false,
           backgroundColor: '#2F56A6',
@@ -39,6 +39,16 @@
           hoverBackgroundColor: '#E6E6E6',
           barPercentage: .8
 
+        },
+        {
+          label:'Line',
+          data: [42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,],
+          type: 'line',
+          fill: false,
+          borderColor: '#666666',
+          pointRadius: 1,
+
+
         }
       ]
       },
@@ -46,7 +56,7 @@
         cornerRadius: 20,
         title:{
           display: false,
-          text: 'NYPD'
+          text: 'NYC Agencies'
         },
         scales: {
           xAxes: [{
@@ -62,13 +72,13 @@
             },
             scaleLabel: {
               display: true,
-              labelString: 'Median Age (Years)'
+              labelString: 'NYC Agencies'
             }
           }],
           yAxes: [{
             ticks: {
               callback: function(value, index, values) {
-                return value +'%';
+                return value;
               },
               //fontStyle: 'strong'
               //fontSize: 9,
@@ -78,14 +88,14 @@
             },
             scaleLabel: {
               display: true,
-              labelString: '% of NYPD'
+              labelString: 'Median Age (Years)'
             }
           }]
         },
         tooltips: {
           callbacks: {
             label: function(tooltipItem, data) {
-              return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ ' %';
+              return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ ' Years';
             },
           },
           backgroundColor: '#434343',
@@ -102,7 +112,7 @@
     const xs = [];
     const ys = [];
 
-    const response = await fetch('Police_Depart_Vs_Citywide_Age_Density.csv');
+    const response = await fetch('Median_Age_By_Agency_And_Relative_Size.csv');
     const data = await response.text();
 
     const table = data.split('\n').slice(1);
@@ -110,7 +120,7 @@
       const columns = row.split(',');
       const one = columns[0];
       xs.push(one);
-      const two = columns[2];
+      const two = columns[1];
       ys.push(parseFloat(two)); //make data from string to number and added mean payers of 14 degrees
       console.log(one, two);
     });
