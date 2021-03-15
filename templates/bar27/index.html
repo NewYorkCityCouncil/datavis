@@ -7,7 +7,7 @@
   <title>Median Age By Agency And Relative Size</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
   <!--Source of Rounded Chart: https://github.com/jedtrow/Chart.js-Rounded-Bar-Charts-->
-    <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.js"></script>
+  <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.js"></script>
   <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.min.js"></script>
 
 </head>
@@ -41,84 +41,82 @@
 
         }
       ]
+    },
+    options: {
+      cornerRadius: 20,
+      title:{
+        display: false,
+        text: 'Citywide'
       },
-      options: {
-        cornerRadius: 20,
-        title:{
-          display: false,
-          text: 'Citywide'
-        },
-        scales: {
-          xAxes: [{
-            ticks: {
-              callback: function(value, index, values) {
-                return value.toLocaleString('en-US');
-              },
-              beginAtZero: true,
-              //max: 7000,
+      scales: {
+        xAxes: [{
+          ticks: {
+            callback: function(value, index, values) {
+              return value.toLocaleString('en-US');
             },
-            gridLines: {
-              display: false
-            },
-            scaleLabel: {
-              display: true,
-              labelString: 'Median Age (Years)'
-            }
-          }],
-          yAxes: [{
-            ticks: {
-              callback: function(value, index, values) {
-                return value +'%';
-              },
-              max:20,
-              //fontStyle: 'strong'
-              //fontSize: 9,
-            },
-            gridLines: {
-              display: true,
-            },
-            scaleLabel: {
-              display: true,
-              labelString: '% of Citywide'
-            }
-          }]
-        },
-        tooltips: {
-          callbacks: {
-            label: function(tooltipItem, data) {
-              return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ ' %';
-            },
+            beginAtZero: true,
+            //max: 7000,
           },
-          backgroundColor: '#434343',
-          borderColor: '#f5f5f5',
-          borderWidth: 1,
-          displayColors: false
-        }
+          gridLines: {
+            display: false
+          },
+          scaleLabel: {
+            display: true,
+            labelString: 'Median Age (Years)'
+          }
+        }],
+        yAxes: [{
+          ticks: {
+            callback: function(value, index, values) {
+              return value +'%';
+            },
+            max:20,
+          },
+          gridLines: {
+            display: true,
+          },
+          scaleLabel: {
+            display: true,
+            labelString: '% of Citywide'
+          }
+        }]
+      },
+      tooltips: {
+        callbacks: {
+          label: function(tooltipItem, data) {
+            return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ ' %';
+          },
+        },
+        backgroundColor: '#434343',
+        borderColor: '#f5f5f5',
+        borderWidth: 1,
+        displayColors: false
       }
-    });
-  }
+    }
+  });
+}
 
-  //SPLITTING AND BRINGING IN CSV DATA
-  async function getData() {
-    const xs = [];
-    const ys = [];
+//SPLITTING AND BRINGING IN CSV DATA
+async function getData() {
+  const xs = [];
+  const ys = [];
 
-    const response = await fetch('Police_Depart_Vs_Citywide_Age_Density_Citywide.csv');
-    const data = await response.text();
+  const response = await fetch('Police_Depart_Vs_Citywide_Age_Density_Citywide.csv');
+  const data = await response.text();
 
-    const table = data.split('\n').slice(1);
-    table.forEach(row => {
-      const columns = row.split(',');
-      const one = columns[0];
-      xs.push(one);
-      const two = columns[2];
-      ys.push(parseFloat(two)); //make data from string to number
-      console.log(one, two);
-    });
-    return { xs, ys };
-  }
+  const table = data.split('\n').slice(1);
+  table.forEach(row => {
+    const columns = row.split(',');
+    const one = columns[0];
+    xs.push(one);
+    const two = columns[2];
+    ys.push(parseFloat(two)); //make data from string to number
+    console.log(one, two);
+  });
+  return { xs, ys };
+}
 
 
-  </script>
+</script>
 </body>
 </html>
