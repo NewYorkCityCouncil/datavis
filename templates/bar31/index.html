@@ -42,7 +42,7 @@
         },
         {
           label:'Line',
-          data: [42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,],
+          data: [11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11],
           type: 'line',
           fill: false,
           borderColor: '#666666',
@@ -88,7 +88,7 @@
             },
             scaleLabel: {
               display: true,
-              labelString: 'Median Age (Years)'
+              labelString: 'Median Length of Service (Years)'
             }
           }]
         },
@@ -112,7 +112,7 @@
     const xs = [];
     const ys = [];
 
-    const response = await fetch('Median_Age_By_Agency_And_Relative_Size.csv');
+    const response = await fetch('Median_Years_on_Job_By_Agency_And_Relative_Size.csv');
     const data = await response.text();
 
     const table = data.split('\n').slice(1);
