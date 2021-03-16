@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-  <title>Median Age By Agency (DFTA) And Relative Size</title>
+  <title>Employees and Length of Service</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
   <!--Source of Rounded Chart: https://github.com/jedtrow/Chart.js-Rounded-Bar-Charts-->
     <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.js"></script>
@@ -29,10 +29,10 @@
       data: {
         labels: data.xs,
         datasets: [{
-          label: '% of DFTA Workers',
+          label: 'Employees by Length of Servic',
           data: data.ys,
           fill: false,
-          backgroundColor: '#4B404A',
+          backgroundColor: '#2F56A6',
           borderColor: '#CACACA',
           borderWidth: 1,
           lineTension: 4,
@@ -46,7 +46,7 @@
         cornerRadius: 20,
         title:{
           display: false,
-          text: 'DFTA'
+          text: 'Employees'
         },
         scales: {
           xAxes: [{
@@ -62,13 +62,13 @@
             },
             scaleLabel: {
               display: true,
-              labelString: 'Median Age (Years)'
+              labelString: 'Length of Service (Years)'
             }
           }],
           yAxes: [{
             ticks: {
               callback: function(value, index, values) {
-                return value +'%';
+                return value.toLocaleString('en-US');
               },
               //fontStyle: 'strong'
               //fontSize: 9,
@@ -78,14 +78,14 @@
             },
             scaleLabel: {
               display: true,
-              labelString: '% of DFTA'
+              labelString: 'Employees'
             }
           }]
         },
         tooltips: {
           callbacks: {
             label: function(tooltipItem, data) {
-              return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ ' %';
+              return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ ' Employees';
             },
           },
           backgroundColor: '#434343',
@@ -102,7 +102,7 @@
     const xs = [];
     const ys = [];
 
-    const response = await fetch('Department_of_Aging_vs_Citywide_Age_Density.csv');
+    const response = await fetch('Number_of_Employees_by_Years_on_Job_Group.csv');
     const data = await response.text();
 
     const table = data.split('\n').slice(1);
@@ -110,7 +110,7 @@
       const columns = row.split(',');
       const one = columns[0];
       xs.push(one);
-      const two = columns[2];
+      const two = columns[1];
       ys.push(parseFloat(two)); //make data from string to number and added mean payers of 14 degrees
       console.log(one, two);
     });
