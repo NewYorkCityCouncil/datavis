@@ -3,35 +3,37 @@ function randomValues(count, min, max) {
   return Array.from({length: count}).map(() => delta + min);
 }
 
-function randomBoxPlot(min, max) {
+function randomBoxPlot1(min, max) {
   const values = randomValues(5, min, max).sort((a, b) => a - b);
 
   return {
-    min: 18,
-    q1: 34,
-    median: 42,
-    q3: 52,
-    max: 92
+    min: 0,
+    q1: 4,
+    median: 11,
+    q3: 18,
+    max: 65
   };
 }
 
 
+
 const boxplotData = {
   // define label tree
-  labels: ['Employees'],
+  //labels: ['Years of Service'],
   datasets: [{
-    label: 'Employees',
-    backgroundColor: '#2F56A6',
-    borderColor: '#23417D',
+    label: ['Years of Service'],
+    backgroundColor: ['#2F56A6'],
+    borderColor: ['#23417D'],
     borderWidth: 1,
-    outlierColor: '#999999',
     padding: 10,
-    itemRadius: 0,
+    itemRadius: 1,
     outlierColor: '#999999',
     data: [
-      randomBoxPlot(0, 100)
+      randomBoxPlot1(0,50),
+
     ]
-  }]
+  }
+]
 }
 
 window.onload = () => {
@@ -40,6 +42,7 @@ window.onload = () => {
     type: 'horizontalBoxplot',
     data: boxplotData,
     options: {
+      cornerRadius: 20,
       responsive: true,
       legend: {
         display: false,
@@ -47,18 +50,30 @@ window.onload = () => {
       },
       title: {
         display: true,
-        text: 'Age (Years)',
+        text: 'Years of Service',
         position: 'bottom',
       },
       scales: {
-        xAxes: [{
-          ticks: {
-            min: 10,
-            max: 90,
+        yAxes:[{
+      /*    ticks:{
+          //  max: 160000,
+            callback: function(value, index, values) {
+              return '$'+value.toLocaleString('en-US');
+            },
+          },*/
+          scaleLabel: {
+            display: true,
+            labelString: 'Employees'
+          }
+        }],
+        xAxes:[{
+          ticks:{
+            max:40
           }
         }]
+      }
+
     }
-  }
-});
+  });
 
 };
