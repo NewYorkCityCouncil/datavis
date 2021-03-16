@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-  <title>Employees and Length of Service</title>
+  <title>Salary and Length of Service</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
   <!--Source of Rounded Chart: https://github.com/jedtrow/Chart.js-Rounded-Bar-Charts-->
     <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.js"></script>
@@ -29,7 +29,7 @@
       data: {
         labels: data.xs,
         datasets: [{
-          label: 'Employees by Length of Servic',
+          label: 'Salary by Years of Service',
           data: data.ys,
           fill: false,
           backgroundColor: '#2F56A6',
@@ -46,7 +46,7 @@
         cornerRadius: 20,
         title:{
           display: false,
-          text: 'Employees'
+          text: 'Salary'
         },
         scales: {
           xAxes: [{
@@ -68,8 +68,9 @@
           yAxes: [{
             ticks: {
               callback: function(value, index, values) {
-                return value.toLocaleString('en-US');
+                return '$'+ value.toLocaleString('en-US');
               },
+                  beginAtZero: true,
               //fontStyle: 'strong'
               //fontSize: 9,
             },
@@ -78,7 +79,7 @@
             },
             scaleLabel: {
               display: true,
-              labelString: 'Employees'
+              labelString: 'Salary'
             }
           }]
         },
