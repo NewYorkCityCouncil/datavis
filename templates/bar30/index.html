@@ -29,7 +29,7 @@
       data: {
         labels: data.xs,
         datasets: [{
-          label: 'Salary by Years of Service',
+          label: 'Number of Employees by Tenure Group',
           data: data.ys,
           fill: false,
           backgroundColor: '#2F56A6',
@@ -68,25 +68,22 @@
           yAxes: [{
             ticks: {
               callback: function(value, index, values) {
-                return '$'+ value.toLocaleString('en-US');
-              },
-                  beginAtZero: true,
-              //fontStyle: 'strong'
-              //fontSize: 9,
+                return value.toLocaleString('en-US');
+              }
             },
             gridLines: {
-              display: true,
+              display: true
             },
             scaleLabel: {
               display: true,
-              labelString: 'Median Salary'
+              labelString: 'Employees'
             }
           }]
         },
         tooltips: {
           callbacks: {
             label: function(tooltipItem, data) {
-              return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ ' Employees';
+              return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ ' Workers';
             },
           },
           backgroundColor: '#434343',
@@ -111,7 +108,7 @@
       const columns = row.split(',');
       const one = columns[0];
       xs.push(one);
-      const two = columns[1];
+      const two = columns[2];
       ys.push(parseFloat(two)); //make data from string to number and added mean payers of 14 degrees
       console.log(one, two);
     });
