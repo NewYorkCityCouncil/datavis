@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-  <title>Median Length of Service (Years) By Agency</title>
+  <title>Average Salary for Employees in Civil Service Title Codes with More or Less Non-White Women</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
   <!--Source of Rounded Chart: https://github.com/jedtrow/Chart.js-Rounded-Bar-Charts-->
     <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.js"></script>
@@ -29,7 +29,7 @@
       data: {
         labels: data.xs,
         datasets: [{
-          label: 'Median Age',
+          label: 'Average Salary',
           data: data.ys,
           fill: false,
           backgroundColor: '#2F56A6',
@@ -41,12 +41,6 @@
 
         },
         {
-          label:'Line',
-          data: [11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11],
-          type: 'line',
-          fill: false,
-          borderColor: '#666666',
-          pointRadius: 1,
 
 
         }
@@ -56,7 +50,7 @@
         cornerRadius: 20,
         title:{
           display: false,
-          text: 'NYC Agencies'
+          text: 'Proportion of Non-White Women'
         },
         scales: {
           xAxes: [{
@@ -72,7 +66,7 @@
             },
             scaleLabel: {
               display: true,
-              labelString: 'NYC Agencies'
+              labelString: 'Proportion of Non-White Women'
             }
           }],
           yAxes: [{
@@ -80,6 +74,7 @@
               callback: function(value, index, values) {
                 return value;
               },
+              beginAtZero: true,
               //fontStyle: 'strong'
               //fontSize: 9,
             },
@@ -88,14 +83,14 @@
             },
             scaleLabel: {
               display: true,
-              labelString: 'Median Length of Service (Years)'
+              labelString: 'Average Salary for Employees in Group'
             }
           }]
         },
         tooltips: {
           callbacks: {
             label: function(tooltipItem, data) {
-              return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ ' Years';
+              return '$' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US');
             },
           },
           backgroundColor: '#434343',
@@ -112,7 +107,7 @@
     const xs = [];
     const ys = [];
 
-    const response = await fetch('Median_Years_on_Job_By_Agency_And_Relative_Size.csv');
+    const response = await fetch('CSV_ Job Salaries by Proportion of Non-White Women Workers.csv');
     const data = await response.text();
 
     const table = data.split('\n').slice(1);
