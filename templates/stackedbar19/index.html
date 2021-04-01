@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-  <title>Average Donation Per Year</title>
+  <title>Employee Racial Breakdown by Age </title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
   <!--Source of Rounded Chart: https://github.com/jedtrow/Chart.js-Rounded-Bar-Charts-->
   <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.js"></script>
@@ -15,8 +15,8 @@
   <canvas id ="chart" width="800" height="400"></canvas>
   <script>
   //CHART JS
-  //Chart.defaults.global.legend.labels.usePointStyle = true;
-//  Chart.defaults.global.defaultFontFamily = 'open sans'
+  Chart.defaults.global.legend.labels.usePointStyle = true;
+  //Chart.defaults.global.defaultFontFamily = 'open sans'
 
 
   chartIt();
@@ -30,60 +30,71 @@
         labels: data.xs,
         datasets: [
           {
-            label: 'France',
+            label: 'White',
             data: data.ys,
             fill: false,
-            backgroundColor: '#FA5047',
-            borderColor: '#FA5047',
+            backgroundColor: '#803181',
+            //borderColor: '#803181',
             borderWidth: 1,
             lineTension: 4,
             hoverBackgroundColor: '#f5f5f5',
             barPercentage: .8
           },
           {
-            label: 'Germany',
+            label: 'Black or African American',
             data: data.y2,
             fill: false,
-            backgroundColor: '#434343',
-            borderColor: '#434343',
+            backgroundColor: '#0C4635',
+          //  borderColor: '#434343',
             borderWidth: 1,
             lineTension: 4,
             hoverBackgroundColor: '#f5f5f5',
             barPercentage: .8
           },
           {
-            label: 'Italy',
+            label: 'Hispanic or Latinx',
             data: data.y3,
             fill: false,
-            backgroundColor: '#68c2ef',
-            borderColor: '#68c2ef',
+            backgroundColor: '#105B65',
+          //  borderColor: '#68c2ef',
             borderWidth: 1,
             lineTension: 4,
             hoverBackgroundColor: '#f5f5f5',
             barPercentage: .8
           },
           {
-            label: 'Spain',
+            label: 'Asian',
             data: data.y4,
             fill: false,
-            backgroundColor: '#FCB846',
-            borderColor: '#FCB846',
+            backgroundColor: '#66443D',
+          //  borderColor: '#FCB846',
             borderWidth: 1,
             lineTension: 4,
             hoverBackgroundColor: '#f5f5f5',
             barPercentage: .8
           },
           {
-            label: 'US',
+            label: 'Unknown',
             data: data.y5,
             fill: false,
-            backgroundColor: '#FA5047',
-            borderColor: '#FA5047',
+            backgroundColor: '#6C6347',
+          //  borderColor: '#FCB846',
             borderWidth: 1,
             lineTension: 4,
             hoverBackgroundColor: '#f5f5f5',
             barPercentage: .8
           },
+          {
+            label: 'Other',
+            data: data.y6,
+            fill: false,
+            backgroundColor: '#4B5C00',
+          //  borderColor: '#FCB846',
+            borderWidth: 1,
+            lineTension: 4,
+            hoverBackgroundColor: '#f5f5f5',
+            barPercentage: .8
+          }
         ]
       },
       options: {
@@ -93,7 +104,7 @@
             stacked: true,
             ticks: {
               callback: function(value, index, values) {
-                return ''+ value.toLocaleString('en-US')/* + ' People'*/;
+                return value.toLocaleString('en-US')+'%';
               },
               beginAtZero: true,
             },
@@ -101,8 +112,8 @@
               display: false
             },
             scaleLabel: {
-              display: true,
-              labelString: 'Transmission Rate'
+              display: false,
+              labelString: 'Employees'
             }
           }],
           xAxes: [{
@@ -118,7 +129,7 @@
             },
             scaleLabel: {
               display: true,
-              labelString: 'Days Since Peak Transmission'
+              labelString: '2014 - 2019'
             }
           }]
         },
@@ -126,7 +137,7 @@
           callbacks: {
             label: function(tooltipItem, data) {
               var datasetLabel = data.datasets[tooltipItem.datasetIndex].label || '';
-            return datasetLabel + ': ' + '' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US') ;
+            return datasetLabel + ': '+ data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+'%' ;
             },
           },
           backgroundColor: '#434343',
@@ -145,32 +156,31 @@
     const y3 = [];
     const y4 = [];
     const y5 = [];
+    const y6 = [];
 
-    const urls = [
-      'https://raw.githubusercontent.com/NewYorkCityCouncil/Covid_Transmission_data/master/Euro_US_Transmission_Rates.csv?token=ADINN6QG63RYAKZA4SD6GTK6XGO2O',
-      'https://raw.githubusercontent.com/NewYorkCityCouncil/Covid_Transmission_data/master/China_Transmission_Rates.csv?token=ADINN6U5MBONE454Q2R7O5S6XGOHM'
-    ];
-    const response = await fetch(urls);
+    const response = await fetch('Race_Breakdown_for_Employees_Aged_Less_than_30_60_and_Over_Compared_to_All_Ages.csv');
     const data = await response.text();
 
     const table = data.split('\n').slice(1);
     table.forEach(row => {
       const columns = row.split(',');
-      const time = columns[0];
-      xs.push(time);
-      const france = columns[1];
-      ys.push(parseFloat(france)); //make data from string to number and added mean payers of 14 degrees
-      const germany = columns[2];
-      y2.push(parseFloat(germany));
-      const italy = columns[3];
-      y3.push(parseFloat(italy));
-      const spain = columns[4];
-      y4.push(parseFloat(spain));
-      const us = columns[5];
-      y5.push(parseFloat(us));
-      console.log(time, france, germany, italy, spain, us);
+      const one = columns[0];
+      xs.push(one);
+      const two = columns[1];
+      ys.push(parseFloat(two)); //make data from string to number and added mean payers of 14 degrees
+      const three = columns[2];
+      y2.push(parseFloat(three));
+      const four = columns[3];
+      y3.push(parseFloat(four));
+      const five = columns[4];
+      y4.push(parseFloat(five));
+      const six = columns[5];
+      y5.push(parseFloat(six));
+      const seven = columns[6];
+      y6.push(parseFloat(seven));
+      console.log(one, two, three, four, five, six, seven);
     });
-    return { xs, ys, y2, y3, y4, y5 };
+    return { xs, ys, y2, y3, y4, y5, y6 };
   }
 
 
