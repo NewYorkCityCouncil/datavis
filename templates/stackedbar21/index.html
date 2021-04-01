@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <title>Female Employee Racial Breakdown by Age and Gender</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  <!--Source of Rounded Chart: https://github.com/jedtrow/Chart.js-Rounded-Bar-Charts-->
+  <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.js"></script>
+  <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.min.js"></script>
+
+</head>
+<body>
+  <canvas id ="chart" width="500" height="650"></canvas>
+  <script>
+  //CHART JS
+  Chart.defaults.global.legend.labels.usePointStyle = true;
+  //Chart.defaults.global.defaultFontFamily = 'open sans'
+
+
+  chartIt();
+
+  async function chartIt() {
+    const data = await getData();
+    const ctx = document.getElementById('chart').getContext('2d');
+    const myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: data.xs,
+        datasets: [
+          {
+            label: 'White',
+            data: data.ys,
+            fill: false,
+            backgroundColor: '#803181',
+            //borderColor: '#803181',
+            borderWidth: 1,
+            lineTension: 4,
+            hoverBackgroundColor: '#f5f5f5',
+            barPercentage: .8
+          },
+          {
+            label: 'Black or African American',
+            data: data.y2,
+            fill: false,
+            backgroundColor: '#0C4635',
+          //  borderColor: '#434343',
+            borderWidth: 1,
+            lineTension: 4,
+            hoverBackgroundColor: '#f5f5f5',
+            barPercentage: .8
+          },
+          {
+            label: 'Hispanic or Latinx',
+            data: data.y3,
+            fill: false,
+            backgroundColor: '#105B65',
+          //  borderColor: '#68c2ef',
+            borderWidth: 1,
+            lineTension: 4,
+            hoverBackgroundColor: '#f5f5f5',
+            barPercentage: .8
+          },
+          {
+            label: 'Asian',
+            data: data.y4,
+            fill: false,
+            backgroundColor: '#66443D',
+          //  borderColor: '#FCB846',
+            borderWidth: 1,
+            lineTension: 4,
+            hoverBackgroundColor: '#f5f5f5',
+            barPercentage: .8
+          },
+          {
+            label: 'Unknown',
+            data: data.y5,
+            fill: false,
+            backgroundColor: '#6C6347',
+          //  borderColor: '#FCB846',
+            borderWidth: 1,
+            lineTension: 4,
+            hoverBackgroundColor: '#f5f5f5',
+            barPercentage: .8
+          },
+          {
+            label: 'Other',
+            data: data.y6,
+            fill: false,
+            backgroundColor: '#4B5C00',
+          //  borderColor: '#FCB846',
+            borderWidth: 1,
+            lineTension: 4,
+            hoverBackgroundColor: '#f5f5f5',
+            barPercentage: .8
+          }
+        ]
+      },
+      options: {
+        cornerRadius: 20,
+        scales: {
+          yAxes: [{
+            stacked: true,
+            ticks: {
+              callback: function(value, index, values) {
+                return value.toLocaleString('en-US')+'%';
+              },
+              beginAtZero: true,
+            },
+            gridLines: {
+              display: false
+            },
+            scaleLabel: {
+              display: false,
+              labelString: 'Employees'
+            }
+          }],
+          xAxes: [{
+            stacked: true,
+            ticks: {
+              callback: function(value, index, values) {
+                return value;
+              },
+              fontStyle: 'strong'
+            },
+            gridLines: {
+              display: false
+            },
+            scaleLabel: {
+              display: true,
+              labelString: 'Male Employees'
+            }
+          }]
+        },
+        tooltips: {
+          callbacks: {
+            label: function(tooltipItem, data) {
+              var datasetLabel = data.datasets[tooltipItem.datasetIndex].label || '';
+            return datasetLabel + ': '+ data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+'%' ;
+            },
+          },
+          backgroundColor: '#434343',
+          borderColor: '#f5f5f5',
+          borderWidth: 2,
+          displayColors: false
+        }
+      }
+    });
+  }
+  //SPLITTING AND BRINGING IN CSV DATA
+  async function getData() {
+    const xs = [];
+    const ys = [];
+    const y2 = [];
+    const y3 = [];
+    const y4 = [];
+    const y5 = [];
+    const y6 = [];
+
+    const response = await fetch('Employee_Racial_Breakdown_by_Age_and_Gender_Male.csv');
+    const data = await response.text();
+
+    const table = data.split('\n').slice(1);
+    table.forEach(row => {
+      const columns = row.split(',');
+      const one = columns[0];
+      xs.push(one);
+      const two = columns[1];
+      ys.push(parseFloat(two)); //make data from string to number and added mean payers of 14 degrees
+      const three = columns[2];
+      y2.push(parseFloat(three));
+      const four = columns[3];
+      y3.push(parseFloat(four));
+      const five = columns[4];
+      y4.push(parseFloat(five));
+      const six = columns[5];
+      y5.push(parseFloat(six));
+      const seven = columns[6];
+      y6.push(parseFloat(seven));
+      console.log(one, two, three, four, five, six, seven);
+    });
+    return { xs, ys, y2, y3, y4, y5, y6 };
+  }
+
+
+  </script>
+</body>
+</html>
