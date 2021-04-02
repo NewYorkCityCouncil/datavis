@@ -119,7 +119,7 @@ window.onload = () => {
       },
       title: {
         display: true,
-        text: 'Employees',
+        text: 'Age (Years)',
         position: 'bottom',
       },
       scales: {
