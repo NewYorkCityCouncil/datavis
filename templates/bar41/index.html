@@ -21,6 +21,10 @@
 
   chartIt();
 
+  const xs = [];
+  const ys = [];
+  const pointBackgroundColors = [];
+
   async function chartIt() {
     const data = await getData();
     const ctx = document.getElementById('chart').getContext('2d');
@@ -29,7 +33,7 @@
       data: {
         labels: data.xs,
         datasets: [{
-          label: 'Number of Employees by Tenure Group',
+          label: 'Median Pay Difference for Men and Women',
           data: data.ys,
           fill: false,
           backgroundColor: '#2F56A6',
@@ -39,15 +43,14 @@
           hoverBackgroundColor: '#E6E6E6',
           barPercentage: .8
 
-        }
-      ]
+        }]
       },
       options: {
         cornerRadius: 20,
         title:{
           display: true,
           position: 'bottom',
-          text: 'Pay Difference'
+          text: 'Pay Difference: Men Paid More than Women'
         },
         scales: {
           xAxes: [{
@@ -62,8 +65,8 @@
               display: false
             },
             scaleLabel: {
-              display: true,
-              labelString: 'Positive Value: Men paid more than women // Negative Value: Women Paid more than men'
+              display: false,
+              labelString: 'Men Paid More than Women'
             }
           }],
           yAxes: [{
@@ -85,25 +88,27 @@
         tooltips: {
           callbacks: {
             title: function(tooltipItems, data) {
-            return 'Proportion of Female Employees: '+ tooltipItems[0].xLabel.toLocaleString('en-US');
+            return 'Pay Difference: $'+ tooltipItems[0].xLabel.toLocaleString('en-US');
           },
             label: function(tooltipItem, data) {
-              return '$'+ data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US');
+              return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+'%';
             },
           },
-          backgroundColor: '#434343',
+          backgroundColor: '#CACACA',
           borderColor: '#f5f5f5',
           borderWidth: 1,
           displayColors: false
         }
       }
     });
-  }
+
+
+}
+
 
   //SPLITTING AND BRINGING IN CSV DATA
   async function getData() {
-    const xs = [];
-    const ys = [];
+
 
     const response = await fetch('Median_Pay_Difference_by_Civil_Service_Title_Code_Level_and_Suffix.csv');
     const data = await response.text();
