@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <title>Male Employee Racial Breakdown by Age and Gender</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  <!--Source of Rounded Chart: https://github.com/jedtrow/Chart.js-Rounded-Bar-Charts-->
+  <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.js"></script>
+  <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.min.js"></script>
+
+</head>
+<body>
+  <canvas id ="chart" max-width="400" max="400"></canvas>
+  <script>
+  //CHART JS
+  Chart.defaults.global.legend.labels.usePointStyle = true;
+  //Chart.defaults.global.defaultFontFamily = 'open sans'
+
+
+  chartIt();
+
+  async function chartIt() {
+    const data = await getData();
+    const ctx = document.getElementById('chart').getContext('2d');
+    const myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: data.xs,
+        datasets: [
+          {
+            label: 'Women',
+            data: data.ys,
+            fill: false,
+            backgroundColor: '#803181',
+            //borderColor: '#803181',
+            borderWidth: 1,
+            lineTension: 4,
+            hoverBackgroundColor: '#f5f5f5',
+            barPercentage: .8
+          },
+          {
+            label: 'Men',
+            data: data.y2,
+            fill: false,
+            backgroundColor: '#0C4635',
+          //  borderColor: '#434343',
+            borderWidth: 1,
+            lineTension: 4,
+            hoverBackgroundColor: '#f5f5f5',
+            barPercentage: .8
+          }
+        ]
+      },
+      options: {
+        cornerRadius: 20,
+        scales: {
+          yAxes: [{
+            stacked: true,
+            ticks: {
+              callback: function(value, index, values) {
+                return '$'+value.toLocaleString('en-US');
+              },
+              beginAtZero: true,
+            },
+            gridLines: {
+              display: false
+            },
+            scaleLabel: {
+              display: false,
+              labelString: 'Employees'
+            }
+          }],
+          xAxes: [{
+            stacked: true,
+            ticks: {
+              callback: function(value, index, values) {
+                return value;
+              },
+              fontStyle: 'strong'
+            },
+            gridLines: {
+              display: false
+            },
+            scaleLabel: {
+              display: true,
+              labelString: 'Male Employees'
+            }
+          }]
+        },
+        tooltips: {
+          callbacks: {
+            label: function(tooltipItem, data) {
+              var datasetLabel = data.datasets[tooltipItem.datasetIndex].label || '';
+            return datasetLabel + ': '+ data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+'%' ;
+            },
+          },
+          backgroundColor: '#434343',
+          borderColor: '#f5f5f5',
+          borderWidth: 2,
+          displayColors: false
+        }
+      }
+    });
+  }
+  //SPLITTING AND BRINGING IN CSV DATA
+  async function getData() {
+    const xs = [];
+    const ys = [];
+    const y2 = [];
+
+
+    const response = await fetch('fdny_case_study_data.csv');
+    const data = await response.text();
+
+    const table = data.split('\n').slice(1);
+    table.forEach(row => {
+      const columns = row.split(',');
+      const one = columns[0];
+      xs.push(one);
+      const two = columns[1];
+      ys.push(parseFloat(two)); //make data from string to number and added mean payers of 14 degrees
+      const three = columns[2];
+      y2.push(parseFloat(three));
+      console.log(one, two, three);
+    });
+    return { xs, ys, y2};
+  }
+
+
+  </script>
+</body>
+</html>
