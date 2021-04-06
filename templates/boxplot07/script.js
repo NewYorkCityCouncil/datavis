@@ -127,7 +127,7 @@ window.onload = () => {
           ticks:{
             max: 160000,
             callback: function(value, index, values) {
-              return '$' + value;
+              return '$'+value.toLocaleString('en-US');
             },
           },
           scaleLabel: {
