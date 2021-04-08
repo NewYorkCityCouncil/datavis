@@ -126,7 +126,7 @@ Chart.defaults.global.title.display = true
             return 'Length of Service (Years): '+ tooltipItems[0].xLabel;
           },
           label: function(tooltipItem, data) {
-            return '$'+data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US');
+            return 'Median Salary: $'+data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US');
           },
         },
         //  backgroundColor: '#434343',
