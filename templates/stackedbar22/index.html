@@ -45,7 +45,7 @@
             data: data.y2,
             fill: false,
             backgroundColor: '#23417D',
-          //  borderColor: '#434343',
+            //  borderColor: '#434343',
             borderWidth: 1,
             lineTension: 4,
             hoverBackgroundColor: '#f5f5f5',
@@ -78,7 +78,9 @@
               callback: function(value, index, values) {
                 return value;
               },
-              fontStyle: 'strong'
+              //    fontStyle: 'strong',
+              autoSkip: true,
+              maxTicksLimit: 12
             },
             gridLines: {
               display: false
@@ -93,7 +95,7 @@
           callbacks: {
             label: function(tooltipItem, data) {
               var datasetLabel = data.datasets[tooltipItem.datasetIndex].label || '';
-          //  return datasetLabel + ': '+ data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+'%' ;
+              //  return datasetLabel + ': '+ data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+'%' ;
             },
           },
           backgroundColor: '#434343',
