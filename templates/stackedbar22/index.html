@@ -55,6 +55,11 @@
       },
       options: {
         cornerRadius: 20,
+        title: {
+          display: false,
+          text: 'FDNY Job Titles by Median Salary',
+          position: 'bottom'
+        },
         scales: {
           yAxes: [{
             stacked: true,
@@ -74,13 +79,16 @@
           }],
           xAxes: [{
             stacked: true,
-            ticks: {
+            ticks:{
+                display: false,
               callback: function(value, index, values) {
                 return value;
               },
               //    fontStyle: 'strong',
-              autoSkip: true,
-              maxTicksLimit: 12
+            //  autoSkip: true,
+              //  maxTicksLimit: 1,
+              // maxRotation: 90,
+              //minRotation: 90
             },
             gridLines: {
               display: false
