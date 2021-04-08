@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-  <title>Male Employee Racial Breakdown by Age and Gender</title>
+  <title>FDNY Salaries by Gender Composition </title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
   <!--Source of Rounded Chart: https://github.com/jedtrow/Chart.js-Rounded-Bar-Charts-->
   <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.js"></script>
@@ -65,7 +65,7 @@
               beginAtZero: true,
             },
             gridLines: {
-              display: false
+              display: true
             },
             scaleLabel: {
               display: false,
@@ -93,7 +93,7 @@
           callbacks: {
             label: function(tooltipItem, data) {
               var datasetLabel = data.datasets[tooltipItem.datasetIndex].label || '';
-            return datasetLabel + ': '+ data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+'%' ;
+          //  return datasetLabel + ': '+ data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+'%' ;
             },
           },
           backgroundColor: '#434343',
