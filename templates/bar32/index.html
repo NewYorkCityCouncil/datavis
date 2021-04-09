@@ -66,7 +66,7 @@
           yAxes: [{
             ticks: {
               callback: function(value, index, values) {
-                return value;
+                return '$'+value.toLocaleString('en-US');
               },
               beginAtZero: true,
               //fontStyle: 'strong'
