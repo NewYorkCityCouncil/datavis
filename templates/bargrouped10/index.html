@@ -65,7 +65,8 @@
               callback: function(value, index, values) {
                 return value.toLocaleString('en-US');
               },
-              beginAtZero: true,
+              //beginAtZero: false,
+              min: .50
             },
             gridLines: {
               display: true
@@ -80,6 +81,7 @@
               callback: function(value, index, values) {
                 return '$'+value.toLocaleString('en-US');
               },
+              min: .50
             //  fontStyle: 'strong'
             },
             gridLines: {
@@ -120,9 +122,9 @@
       const columns = row.split(',');
       const one = columns[0];
       xs.push(one);
-      const two = columns[3];
+      const two = columns[5];
       ys.push(parseFloat(two)); //make data from string to number
-      const three = columns[4];
+      const three = columns[6];
       ys2.push(parseFloat(three)); //make data from string to number
       console.log(one, two, three);
     });
