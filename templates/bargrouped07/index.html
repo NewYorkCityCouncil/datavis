@@ -109,11 +109,9 @@
   async function getData() {
     const xs = [];
     const ys = [];
-    const ys2 = [];
     const ys3 = [];
     const ys4 = [];
     const ys5 = [];
-    const ys6 = [];
 
     const response = await fetch('DOP_vs_Citywide_LOS_Density.csv');
     const data = await response.text();
@@ -125,19 +123,15 @@
       xs.push(one);
       const two = columns[1];
       ys.push(parseFloat(two)); //make data from string to number
-      const three = columns[2];
-      ys2.push(parseFloat(three)); //make data from string to number
-      const four = columns[3];
+      const four = columns[2];
       ys3.push(parseFloat(four)); //make data from string to number
-      const five = columns[4];
+      const five = columns[3];
       ys4.push(parseFloat(five)); //make data from string to number
-      const six = columns[5];
+      const six = columns[4];
       ys5.push(parseFloat(six)); //make data from string to number
-      const seven = columns[6];
-      ys6.push(parseFloat(seven)); //make data from string to number
-      console.log(one, two, three, four, five, six, seven);
+      console.log(one, two, four, five, six);
     });
-    return { xs, ys, ys2, ys3, ys4, ys5, ys6};
+    return { xs, ys, ys3, ys4, ys5};
   }
 
 
