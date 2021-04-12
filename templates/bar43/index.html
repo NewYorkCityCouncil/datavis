@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-  <title>Median Pay Difference for Men and Women</title>
+  <title>Part-Time Employees by Agency</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
   <!--Source of Rounded Chart: https://github.com/jedtrow/Chart.js-Rounded-Bar-Charts-->
     <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.js"></script>
@@ -33,7 +33,7 @@
       data: {
         labels: data.xs,
         datasets: [{
-          label: 'Median Pay Difference for Men and Women',
+          label: 'Part-Time Employees by Agency',
           data: data.ys,
           fill: false,
           backgroundColor: '#2F56A6',
@@ -48,7 +48,7 @@
       options: {
         cornerRadius: 20,
         title:{
-          display: true,
+          display: false,
           position: 'bottom',
           text: 'Pay Difference: Men Paid More than Women'
         },
@@ -56,9 +56,9 @@
           xAxes: [{
             ticks: {
               callback: function(value, index, values) {
-                return '$'+value.toLocaleString('en-US');
+                return value;
               },
-              beginAtZero: true,
+            //  beginAtZero: true,
               //max: 7000,
             },
             gridLines: {
@@ -66,7 +66,7 @@
             },
             scaleLabel: {
               display: false,
-              labelString: 'Men Paid More than Women'
+              labelString: 'Agencies'
             }
           }],
           yAxes: [{
@@ -80,15 +80,15 @@
               display: true
             },
             scaleLabel: {
-              display: false,
-              labelString: 'Percent of Employees'
+              display: true,
+              labelString: 'Share of Part-Time Employees'
             }
           }]
         },
         tooltips: {
           callbacks: {
             title: function(tooltipItems, data) {
-            return 'Pay Difference: $'+ tooltipItems[0].xLabel.toLocaleString('en-US');
+            return 'Pay Difference: $'+ tooltipItems[0].xLabel;
           },
             label: function(tooltipItem, data) {
               return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+'%';
@@ -110,14 +110,14 @@
   async function getData() {
 
 
-    const response = await fetch('Median_Pay_Difference_by_Civil_Service_Title_Code_Level_and_Suffix.csv');
+    const response = await fetch('PT_Agencies.csv');
     const data = await response.text();
 
     const table = data.split('\n').slice(1);
     table.forEach(row => {
       const columns = row.split(',');
       const one = columns[0];
-      xs.push(parseFloat(one));
+      xs.push(one);
       const two = columns[1];
       ys.push(parseFloat(two)); //make data from string to number and added mean payers of 14 degrees
       console.log(one, two);
