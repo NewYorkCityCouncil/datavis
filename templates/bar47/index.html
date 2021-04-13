@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-  <title>Lowest Paying Titles by Median Hourly Pay</title>
+  <title>Highest Paying Titles by Median Hourly Pay</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
   <!--Source of Rounded Chart: https://github.com/jedtrow/Chart.js-Rounded-Bar-Charts-->
     <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.js"></script>
@@ -33,7 +33,7 @@
       data: {
         labels: data.xs,
         datasets: [{
-          label: 'Lowest Paying Titles by Median Hourly Pay  ',
+          label: 'Highest Paying Titles by Median Hourly Pay  ',
           data: data.ys,
           fill: false,
           backgroundColor: '#2F56A6',
@@ -50,7 +50,7 @@
         title:{
           display: false,
           position: 'bottom',
-          text: 'Lowest Paying Titles by Median Hourly Pay'
+          text: 'Highest Paying Titles by Median Hourly Pay'
         },
         scales: {
           xAxes: [{
@@ -66,7 +66,7 @@
             },
             scaleLabel: {
               display: false,
-              labelString: 'Lowest Paying Titles'
+              labelString: 'Highest Paying Titles'
             }
           }],
           yAxes: [{
