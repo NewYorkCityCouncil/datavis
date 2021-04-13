@@ -4,7 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+<<<<<<< HEAD
   <title>Uniformed vs Non-Uniformed Employees by Race/Ethnicity</title>
+=======
+  <title>Gender Breakdown for Top 5 Lowest Paying Agencies</title>
+>>>>>>> 25c3ca466bbc4f61f981b9bcd28c988420177a87
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
   <!--Source of Rounded Chart: https://github.com/jedtrow/Chart.js-Rounded-Bar-Charts-->
     <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.js"></script>
@@ -30,10 +34,17 @@
       data: {
         labels: data.xs,
         datasets: [{
+<<<<<<< HEAD
           label: 'White',
           data: data.ys,
           fill: false,
           backgroundColor: '#803181',
+=======
+          label: 'Women',
+          data: data.ys,
+          fill: false,
+          backgroundColor: '#A83226',
+>>>>>>> 25c3ca466bbc4f61f981b9bcd28c988420177a87
           borderColor: '#E6E6E6',
           borderWidth: 1,
           lineTension: 4,
@@ -41,6 +52,7 @@
           barPercentage: .8
         },
         {
+<<<<<<< HEAD
           label: 'Black or African American',
           data: data.ys2,
           fill: false,
@@ -56,11 +68,18 @@
           data: data.ys3,
           fill: false,
           backgroundColor: '#105B65',
+=======
+          label: 'Men',
+          data: data.ys3,
+          fill: false,
+          backgroundColor: '#23417D',
+>>>>>>> 25c3ca466bbc4f61f981b9bcd28c988420177a87
           borderColor: '#E6E6E6',
           borderWidth: 1,
           lineTension: 4,
           hoverBackgroundColor: '#E6E6E6',
           barPercentage: .8
+<<<<<<< HEAD
         },
         {
           label: 'Unknown',
@@ -95,10 +114,20 @@
           lineTension: 4,
           hoverBackgroundColor: '#E6E6E6',
           barPercentage: .8 }
+=======
+        }
+>>>>>>> 25c3ca466bbc4f61f981b9bcd28c988420177a87
       ]
       },
       options: {
         cornerRadius: 20,
+<<<<<<< HEAD
+=======
+        title:{
+          display: false,
+          text: 'Gender Breakdown for Top 5 Lowest Paying Agencies'
+        },
+>>>>>>> 25c3ca466bbc4f61f981b9bcd28c988420177a87
         scales: {
           yAxes: [{
             ticks: {
@@ -111,8 +140,13 @@
               display: true
             },
             scaleLabel: {
+<<<<<<< HEAD
               display: false,
               labelString: 'Employees'
+=======
+              display: true,
+              labelString: 'Share of Employee Status'
+>>>>>>> 25c3ca466bbc4f61f981b9bcd28c988420177a87
             }
           }],
           xAxes: [{
@@ -123,18 +157,34 @@
             //  fontStyle: 'strong'
             },
             gridLines: {
+<<<<<<< HEAD
               display: false
             },
             scaleLabel: {
               display: true,
               labelString: 'Uniformed vs Non-Uniformed Employees by Race/Ethnicity'
+=======
+              display: true
+            },
+            scaleLabel: {
+              display: true,
+              labelString: 'Gender Breakdown for Top 5 Lowest Paying Agencies (Part-Time Employees)'
+>>>>>>> 25c3ca466bbc4f61f981b9bcd28c988420177a87
             }
           }]
         },
         tooltips: {
           callbacks: {
+<<<<<<< HEAD
             label: function(tooltipItem, data) {
               return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+'%';
+=======
+            title: function(tooltipItems, data) {
+            return tooltipItems[0].xLabel;
+          },
+            label: function(tooltipItem, data) {
+              return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+'% of Part-Time Employees';
+>>>>>>> 25c3ca466bbc4f61f981b9bcd28c988420177a87
             },
           },
           backgroundColor: '#434343',
@@ -149,6 +199,7 @@
   async function getData() {
     const xs = [];
     const ys = [];
+<<<<<<< HEAD
     const ys2 = [];
     const ys3 = [];
     const ys4 = [];
@@ -156,6 +207,13 @@
     const ys6 = [];
 
     const response = await fetch('uniformed_race.csv');
+=======
+    const ys3 = [];
+    const ys4 = [];
+    const ys5 = [];
+
+    const response = await fetch('PT_Lowest_Agencies_Gender.csv');
+>>>>>>> 25c3ca466bbc4f61f981b9bcd28c988420177a87
     const data = await response.text();
 
     const table = data.split('\n').slice(1);
@@ -165,6 +223,7 @@
       xs.push(one);
       const two = columns[1];
       ys.push(parseFloat(two)); //make data from string to number
+<<<<<<< HEAD
       const three = columns[2];
       ys2.push(parseFloat(three)); //make data from string to number
       const four = columns[3];
@@ -178,6 +237,17 @@
       console.log(one, two, three, four, five, six, seven);
     });
     return { xs, ys, ys2, ys3, ys4, ys5, ys6};
+=======
+      const four = columns[2];
+      ys3.push(parseFloat(four)); //make data from string to number
+      const five = columns[3];
+      ys4.push(parseFloat(five)); //make data from string to number
+      const six = columns[4];
+      ys5.push(parseFloat(six)); //make data from string to number
+      console.log(one, two, four, five, six);
+    });
+    return { xs, ys, ys3, ys4, ys5};
+>>>>>>> 25c3ca466bbc4f61f981b9bcd28c988420177a87
   }
 
 
