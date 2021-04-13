@@ -65,8 +65,8 @@
               display: false
             },
             scaleLabel: {
-              display: false,
-              labelString: 'Agencies'
+              display: true,
+              labelString: 'Agencies Part-Time Employees'
             }
           }],
           yAxes: [{
@@ -89,10 +89,10 @@
         tooltips: {
           callbacks: {
             title: function(tooltipItems, data) {
-            return 'Median Hourly Pay: $'+ tooltipItems[0].xLabel;
+            return tooltipItems[0].xLabel;
           },
             label: function(tooltipItem, data) {
-              return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US');
+              return 'Median Hourly Pay: $'+data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US');
             },
           },
           backgroundColor: '#CACACA',
