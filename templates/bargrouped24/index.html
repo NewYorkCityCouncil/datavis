@@ -113,8 +113,8 @@
               display: true
             },
             scaleLabel: {
-              display: false,
-              labelString: 'Employees'
+              display: true,
+              labelString: 'Share of Title'
             }
           }],
           xAxes: [{
@@ -128,15 +128,15 @@
               display: false
             },
             scaleLabel: {
-              display: true,
-              labelString: 'Race/Ethnicity Breakdown for Top 5 Highest Paying Agencies'
+              display: false,
+              labelString: 'Race/Ethnicity Breakdown for Lowest Paying Civil Service Titles'
             }
           }]
         },
         tooltips: {
           callbacks: {
             label: function(tooltipItem, data) {
-              return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+'% of Agency Part-Time Employees';
+              return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+'% of Civil Service Title';
             },
           },
           backgroundColor: '#434343',
