@@ -1,3 +1,28 @@
+const options: {
+  legend: {
+    display: false,
+  },
+  title: {
+    display: true,
+    text: 'Employees',
+    position: 'bottom',
+  },
+scales: {
+  yAxes:[{
+    ticks:{
+      //  maxStats: 'whiskerMax';
+      callback: function(value, index, values) {
+        return '$'+value.toLocaleString('en-US');
+      },
+    },
+    scaleLabel: {
+      display: true,
+      labelString: 'Base Salary'
+    }
+  }]
+}
+}
+
 function randomValues(count, min, max) {
   const delta = max - min;
   return Array.from({length: count}).map(() => delta + min);
@@ -59,46 +84,37 @@ function randomBoxPlot5(min, max) {
   };
 }
 
-
 const boxplotData = {
   // define label tree
   labels: ['DOC','DSNY','FDNY','NYPD','Non-Uniformed'
 ],
-  datasets: [{
-    label: ['City Agencies'],
-    backgroundColor: ['#2F56A6','#2F56A6','#2F56A6','#2F56A6','#666666'],
-    borderColor: '#222222',
-    borderWidth: 1,
-    padding: 10,
-    itemRadius: 1,
-    outlierColor: '#999999',
-    data: [
-      randomBoxPlot1(0,50),
-      randomBoxPlot2(0,50),
-      randomBoxPlot3(0,50),
-      randomBoxPlot4(0,50),
-      randomBoxPlot5(0,50)
-    ]
-  }
+datasets: [{
+  label: ['City Agencies'],
+  backgroundColor: ['#2F56A6','#2F56A6','#2F56A6','#2F56A6','#666666'],
+  borderColor: '#222222',
+  borderWidth: 1,
+  padding: 10,
+  itemRadius: 1,
+  outlierColor: '#999999',
+  data: [
+    randomBoxPlot1(0,50),
+    randomBoxPlot2(0,50),
+    randomBoxPlot3(0,50),
+    randomBoxPlot4(0,50),
+    randomBoxPlot5(0,50)
+  ]
+}
 ]
 }
+
 window.onload = () => {
   const ctx = document.getElementById("canvas").getContext("2d");
   window.myBar = new Chart(ctx, {
     type: 'boxplot',
     data: boxplotData,
-    options: {
-      responsive: true,
-      legend: {
-        display: true,
-        position: 'top',
-      },
-      title: {
-        display: true,
-        text: 'Employees',
-        position: 'bottom',
-      }
-    }
+    options: options
   });
+
+  );
 
 };
