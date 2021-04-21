@@ -8,10 +8,10 @@
   <link rel="stylesheet" href="./style.css">
   <script src='https://unpkg.com/chart.js@3'></script>
 <script src='https://unpkg.com/@sgratzl/chartjs-chart-boxplot@3'></script><script  src="./script.js"></script>
-
+<!--Plugins Help: https://www.chartjs.org/docs/latest/configuration/legend.html-->
 </head>
 <body>
-  <canvas id ="chart" width="800" height="400"></canvas>
+  <canvas id ="chart" width="800" height="500"></canvas>
   <script>
 
 
@@ -99,10 +99,6 @@
 
 const options = {
         responsive: true,
-        legend: {
-          display: false,
-          position: 'bottom',
-        },
         title: {
           display: true,
           text: 'Chart.js Box Plot Chart',
@@ -115,13 +111,17 @@ const options = {
               callback: function(value, index, values) {
                 return '$'+value.toLocaleString('en-US');
               },
-            },
-            scaleLabel: {
-              display: true,
-              labelString: 'Base Salary'
             }
           }
-        }
+        },
+        plugins: {
+            legend: {
+                display: false,
+                labels: {
+                    color: 'rgb(255, 99, 132)'
+                }
+            }
+          }
       };
 
       window.onload = () => {
