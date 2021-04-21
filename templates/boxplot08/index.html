@@ -78,10 +78,9 @@
 
   const boxplotData = {
     // define label tree
-    labels: ['DOC','DSNY','FDNY','NYPD','Non-Uniformed'
-  ],
+    labels: ['DOC','DSNY','FDNY','NYPD','Non-Uniformed'],
   datasets: [{
-    label: ['City Agencies'],
+    label: 'City Agencies',
     backgroundColor: ['#2F56A6','#2F56A6','#2F56A6','#2F56A6','#666666'],
     borderColor: '#222222',
     borderWidth: 1,
@@ -101,6 +100,7 @@
 const options = {
         responsive: true,
         legend: {
+          display: false,
           position: 'bottom',
         },
         title: {
@@ -109,6 +109,19 @@ const options = {
         },
         minStats: 'min',
         maxStats: 'whiskerMax',
+        scales: {
+          y:{
+            ticks:{
+              callback: function(value, index, values) {
+                return '$'+value.toLocaleString('en-US');
+              },
+            },
+            scaleLabel: {
+              display: true,
+              labelString: 'Base Salary'
+            }
+          }
+        }
       };
 
       window.onload = () => {
@@ -119,7 +132,7 @@ const options = {
           options: options,
         });
 
-        document.getElementById('limitMinMax').onclick = () => {
+        /*   document.getElementById('limitMinMax').onclick = () => {
           options.boxplot.datasets.minStats = 'min';
           options.boxplot.datasets.maxStats = 'max';
           myBar.destroy();
@@ -129,7 +142,7 @@ const options = {
             options: options,
           });
         };
-        document.getElementById('limitWhiskers').onclick = () => {
+     document.getElementById('limitWhiskers').onclick = () => {
           options.boxplot.datasets.minStats = 'whiskerMin';
           options.boxplot.datasets.maxStats = 'whiskerMax';
           myBar.destroy();
@@ -138,7 +151,7 @@ const options = {
             data: boxplotData,
             options: options,
           });
-        };
+        };*/
       };
 
 </script>
