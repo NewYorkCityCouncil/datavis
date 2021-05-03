@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <title>Average Salary of White and Non-White Employees by Education Level</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  <!--Source of Rounded Chart: https://github.com/jedtrow/Chart.js-Rounded-Bar-Charts-->
+    <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.js"></script>
+  <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.min.js"></script>
+
+</head>
+<body>
+  <canvas id ="chart" width="800" height="500"></canvas>
+  <script>
+  //CHART JS
+  Chart.defaults.global.responsive = true,
+  Chart.defaults.global.legend.display = true
+  //  Chart.defaults.global.defaultFontFamily = 'open sans'
+
+
+  chartIt();
+
+  async function chartIt() {
+    const data = await getData();
+    const ctx = document.getElementById('chart').getContext('2d');
+    const myChart = new Chart(ctx, {
+      type: 'horizontalBar',
+      data: {
+        labels: data.xs,
+        datasets: [{
+          label: 'Male',
+          data: data.ys,
+          fill: false,
+          backgroundColor: '#23417D',
+          borderColor: '#E6E6E6',
+          borderWidth: 1,
+          lineTension: 4,
+          hoverBackgroundColor: '#E6E6E6',
+          barPercentage: .8
+        },
+        {
+          label: 'Female',
+          data: data.ys2,
+          fill: false,
+          backgroundColor: '#A83226',
+          borderColor: '#E6E6E6',
+          borderWidth: 1,
+          lineTension: 4,
+          hoverBackgroundColor: '#E6E6E6',
+          barPercentage: .8
+        }
+      ]
+      },
+      options: {
+        cornerRadius: 20,
+        title:{
+          display: false,
+          text: 'Average Salary of White and Non-White Employees by Education Level'
+        },
+        scales: {
+          yAxes: [{
+            ticks: {
+              callback: function(value, index, values) {
+                return value.toLocaleString('en-US');
+              },
+              beginAtZero: true,
+            },
+            gridLines: {
+              display: true
+            },
+            scaleLabel: {
+              display: false,
+              labelString: 'Education'
+            }
+          }],
+          xAxes: [{
+            ticks: {
+              callback: function(value, index, values) {
+                return '$'+value.toLocaleString('en-US');
+              },
+            //  fontStyle: 'strong'
+            },
+            gridLines: {
+              display: true
+            },
+            scaleLabel: {
+              display: true,
+              labelString: 'Average Base Salary'
+            }
+          }]
+        },
+        tooltips: {
+          callbacks: {
+            label: function(tooltipItem, data) {
+              return '$'+data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US');
+            },
+          },
+          backgroundColor: '#434343',
+          borderColor: '#f5f5f5',
+          borderWidth: 1,
+          displayColors: false
+        }
+      }
+    });
+  }
+  //SPLITTING AND BRINGING IN CSV DATA
+  async function getData() {
+    const xs = [];
+    const ys = [];
+    const ys2 = [];
+
+
+    const response = await fetch('Salaries_Women_Men_Workers_by_Education.csv');
+    const data = await response.text();
+
+    const table = data.split('\n').slice(1);
+    table.forEach(row => {
+      const columns = row.split(',');
+      const one = columns[0];
+      xs.push(one);
+      const two = columns[1];
+      ys.push(parseFloat(two)); //make data from string to number
+      const three = columns[2];
+      ys2.push(parseFloat(three)); //make data from string to number
+      console.log(one, two, three);
+    });
+    return { xs, ys, ys2};
+  }
+
+
+  </script>
+</body>
+</html>
