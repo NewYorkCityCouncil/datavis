@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-  <title>Race/Ethnicity Breakdown for Highest Paying Civil Service Titles</title>
+  <title>Agency Breakdown by Race DOC vs DOP</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
   <!--Source of Rounded Chart: https://github.com/jedtrow/Chart.js-Rounded-Bar-Charts-->
     <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.js"></script>
@@ -114,7 +114,7 @@
             },
             scaleLabel: {
               display: true,
-              labelString: 'Share of Title'
+              labelString: 'Share of Agency'
             }
           }],
           xAxes: [{
@@ -129,14 +129,14 @@
             },
             scaleLabel: {
               display: false,
-              labelString: 'Race/Ethnicity Breakdown for Highest Paying Civil Service Titles'
+              labelString: 'Agency Breakdown by Race DOC vs DOP'
             }
           }]
         },
         tooltips: {
           callbacks: {
             label: function(tooltipItem, data) {
-              return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+'% of Civil Service Title';
+              return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+'% of Employees at Agency';
             },
           },
           backgroundColor: '#434343',
@@ -157,7 +157,7 @@
     const ys5 = [];
     const ys6 = [];
 
-    const response = await fetch('PT_Highest_Titles_Eth.csv');
+    const response = await fetch('Agency_Breakdown_by_Race_DOC_vs_DOP.csv');
     const data = await response.text();
 
     const table = data.split('\n').slice(1);
