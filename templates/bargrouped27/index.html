@@ -34,7 +34,7 @@
           data: data.ys,
           fill: false,
           backgroundColor: '#666666',
-          borderColor: '#E6E6E6',
+          borderColor: '#666666',
           borderWidth: 1,
           lineTension: 4,
           hoverBackgroundColor: '#E6E6E6',
@@ -45,7 +45,7 @@
           data: data.ys2,
           fill: false,
           backgroundColor: '#2F56A6',
-          borderColor: '#E6E6E6',
+          borderColor: '#2F56A6',
           borderWidth: 1,
           lineTension: 4,
           hoverBackgroundColor: '#E6E6E6',
@@ -68,7 +68,7 @@
               beginAtZero: true,
             },
             gridLines: {
-              display: true
+              display: false
             },
             scaleLabel: {
               display: true,
@@ -87,7 +87,7 @@
             },
             scaleLabel: {
               display: true,
-              labelString: 'Salary ($000s)'
+              labelString: 'Age (Years)'
             }
           }]
         },
@@ -111,7 +111,7 @@
     const ys = [];
     const ys2 = [];
 
-    const response = await fetch('uniformed_non_salary_distribution.csv');
+    const response = await fetch('uniform_age.csv');
     const data = await response.text();
 
     const table = data.split('\n').slice(1);
