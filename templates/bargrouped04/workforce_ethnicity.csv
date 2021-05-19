@@ -1,7 +1,7 @@
-race eth,Percent of Employees ,Percent of Residents
-White,32.2,32
-Black or African American,29.1,22
-Hispanic or Latinx,18.1,29
+race eth,Percent of Employees,Percent of Residents
+White,32.2,35
+Black or African American,29.1,18
+Hispanic or Latino,18.1,21
 Unknown,11.4,0
-Asian,8.1,14
-Other,1.2,3
+Asian,8.1,11
+Other,1.2,14
