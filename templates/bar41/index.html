@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-  <title>Median Pay Difference for Men and Women</title>
+  <title>Median Pay Difference for Males and Females</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
   <!--Source of Rounded Chart: https://github.com/jedtrow/Chart.js-Rounded-Bar-Charts-->
     <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.js"></script>
@@ -33,7 +33,7 @@
       data: {
         labels: data.xs,
         datasets: [{
-          label: 'Median Pay Difference for Men and Women',
+          label: 'Median Pay Difference for Males and Females',
           data: data.ys,
           fill: false,
           backgroundColor: '#2F56A6',
@@ -50,7 +50,7 @@
         title:{
           display: true,
           position: 'bottom',
-          text: 'Pay Difference: Men Paid More than Women'
+          text: 'Pay Difference: Males Paid More than Females'
         },
         scales: {
           xAxes: [{
@@ -66,7 +66,7 @@
             },
             scaleLabel: {
               display: false,
-              labelString: 'Men Paid More than Women'
+              labelString: 'Males Paid More than Females'
             }
           }],
           yAxes: [{
