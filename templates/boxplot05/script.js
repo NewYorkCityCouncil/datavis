@@ -75,7 +75,7 @@ const boxplotData = {
   // define label tree
   labels: ['Under 30 Years','Over 60 Years','Citywide'],
   datasets: [{
-    label: ['Women'],
+    label: ['Female'],
     backgroundColor: '#A83226',
     borderColor: '#222222',
     borderWidth: 1,
@@ -89,7 +89,7 @@ const boxplotData = {
     ]
   },
   {
-    label: ['Men'],
+    label: ['Male'],
     backgroundColor: '#23417D',
     borderColor: '#222222',
     borderWidth: 1,
