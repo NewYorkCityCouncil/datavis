@@ -29,7 +29,7 @@ Chart.defaults.global.title.display = true
       data: {
         labels: data.xs,
         datasets: [{
-          label: 'Women',
+          label: 'Female',
           data: data.ys,
           fill: false,
           lineTension: 0.5,
@@ -53,7 +53,7 @@ Chart.defaults.global.title.display = true
           hoverBorderColor: "#E6E6E6",
         },
         {
-          label: 'Men',
+          label: 'Male',
           data: data.ys2,
           fill: false,
           lineTension: 0.5,
@@ -123,7 +123,7 @@ Chart.defaults.global.title.display = true
       tooltips: {
         callbacks: {
           title: function(tooltipItems, data) {
-            return 'Age(Years): '+ tooltipItems[0].xLabel;
+            return 'Length of Service (Years): '+ tooltipItems[0].xLabel;
           },
           label: function(tooltipItem, data) {
             return '$'+data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US');
