@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-  <title>Average Salary for Employees in Civil Service Title Codes with More or Less Non-White Female Employees</title>
+  <title>Median Salary for Civil Service Title Codes by Share of Non-White Female Employees per Title</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
   <!--Source of Rounded Chart: https://github.com/jedtrow/Chart.js-Rounded-Bar-Charts-->
     <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.js"></script>
@@ -29,7 +29,7 @@
       data: {
         labels: data.xs,
         datasets: [{
-          label: 'Average Salary',
+          label: 'Median Salary',
           data: data.ys,
           fill: false,
           backgroundColor: '#2F56A6',
@@ -77,7 +77,7 @@
             },
             scaleLabel: {
               display: true,
-              labelString: 'Average Salary for Employees in Group'
+              labelString: 'Median Salary for Employees in Group'
             }
           }]
         },
