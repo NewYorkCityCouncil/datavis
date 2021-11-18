@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <title>Title Rank by Race for the Sanitation Service Occupation Group</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  <!--Source of Rounded Chart: https://github.com/jedtrow/Chart.js-Rounded-Bar-Charts-->
+    <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.js"></script>
+  <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.min.js"></script>
+
+</head>
+<body>
+  <canvas id ="chart" width="800" height="400"></canvas>
+  <script>
+  //CHART JS
+  Chart.defaults.global.responsive = true,
+  Chart.defaults.global.legend.display = true
+  //  Chart.defaults.global.defaultFontFamily = 'open sans'
+
+
+  chartIt();
+
+  async function chartIt() {
+    const data = await getData();
+    const ctx = document.getElementById('chart').getContext('2d');
+    const myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: data.xs,
+        datasets: [
+          {
+            label: 'Black or African American',
+            data: data.ys,
+            fill: false,
+            backgroundColor: '#0C4635',
+            borderColor: '#E6E6E6',
+            borderWidth: 1,
+            lineTension: 4,
+            hoverBackgroundColor: '#E6E6E6',
+            barPercentage: .8
+          },
+
+          {
+            label: 'Hispanic or Latino',
+            data: data.ys2,
+            fill: false,
+            backgroundColor: '#105B65',
+            borderColor: '#E6E6E6',
+            borderWidth: 1,
+            lineTension: 4,
+            hoverBackgroundColor: '#E6E6E6',
+            barPercentage: .8
+          },
+          {
+          label: 'White',
+          data: data.ys3,
+          fill: false,
+          backgroundColor: '#803181',
+          borderColor: '#E6E6E6',
+          borderWidth: 1,
+          lineTension: 4,
+          hoverBackgroundColor: '#E6E6E6',
+          barPercentage: .8
+        },
+        {
+          label: 'Asian',
+          data: data.ys4,
+          fill: false,
+          backgroundColor: '#66443D',
+          borderColor: '#E6E6E6',
+          borderWidth: 1,
+          lineTension: 4,
+          hoverBackgroundColor: '#E6E6E6',
+          barPercentage: .8
+        },
+        {
+          label: 'Other',
+          data: data.ys5,
+          fill: false,
+          backgroundColor: '#4B404A',
+          borderColor: '#E6E6E6',
+          borderWidth: 1,
+          lineTension: 4,
+          hoverBackgroundColor: '#E6E6E6',
+          barPercentage: .8 },
+        {
+          label: 'Unknown',
+          data: data.ys6,
+          fill: false,
+          backgroundColor: '#6C6347',
+          borderColor: '#E6E6E6',
+          borderWidth: 1,
+          lineTension: 4,
+          hoverBackgroundColor: '#E6E6E6',
+          barPercentage: .8
+        },
+
+      ]
+      },
+      options: {
+        cornerRadius: 20,
+        scales: {
+          yAxes: [{
+            ticks: {
+              callback: function(value, index, values) {
+                return value.toLocaleString('en-US')+'%';
+              },
+              beginAtZero: true,
+            },
+            gridLines: {
+              display: false
+            },
+            scaleLabel: {
+              display: true,
+              labelString: 'Share of Title'
+            }
+          }],
+          xAxes: [{
+            ticks: {
+              callback: function(value, index, values) {
+                return value.toLocaleString('en-US');
+              },
+            //  fontStyle: 'strong'
+            },
+            gridLines: {
+              display: true
+            },
+            scaleLabel: {
+              display: false,
+              labelString: 'Title Rank by Race for the Sanitation Service Occupation Group'
+            }
+          }]
+        },
+        tooltips: {
+          callbacks: {
+            label: function(tooltipItem, data) {
+              return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+'% of Title';
+            },
+          },
+          backgroundColor: '#434343',
+          borderColor: '#f5f5f5',
+          borderWidth: 1,
+          displayColors: false
+        }
+      }
+    });
+  }
+  //SPLITTING AND BRINGING IN CSV DATA
+  async function getData() {
+    const xs = [];
+    const ys = [];
+    const ys2 = [];
+    const ys3 = [];
+    const ys4 = [];
+    const ys5 = [];
+    const ys6 = [];
+
+    const response = await fetch('TR_by_Race_for_Sanitation_OG.csv');
+    const data = await response.text();
+
+    const table = data.split('\n').slice(1);
+    table.forEach(row => {
+      const columns = row.split(',');
+      const one = columns[0];
+      xs.push(one);
+      const two = columns[1];
+      ys.push(parseFloat(two)); //make data from string to number
+      const three = columns[2];
+      ys2.push(parseFloat(three)); //make data from string to number
+      const four = columns[3];
+      ys3.push(parseFloat(four)); //make data from string to number
+      const five = columns[4];
+      ys4.push(parseFloat(five)); //make data from string to number
+      const six = columns[5];
+      ys5.push(parseFloat(six)); //make data from string to number
+      const seven = columns[6];
+      ys6.push(parseFloat(seven)); //make data from string to number
+      console.log(one, two, three, four, five, six, seven);
+    });
+    return { xs, ys, ys2, ys3, ys4, ys5, ys6};
+  }
+
+
+  </script>
+</body>
+</html>

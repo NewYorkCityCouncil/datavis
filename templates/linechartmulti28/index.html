@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <title>Homeless Shelter Population, by Age, Single Adults, Department of Homeless Services</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  <!--Source of Rounded Chart: https://github.com/jedtrow/Chart.js-Rounded-Bar-Charts-->
+  <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.js"></script>
+  <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.min.js"></script>
+
+</head>
+<body>
+  <canvas id ="chart" width="250" height="400"></canvas>
+  <script>
+  //CHART JS
+  Chart.defaults.global.legend.display = true,
+  //Chart.defaults.global.defaultFontFamily = 'open sans'
+Chart.defaults.global.title.display = true
+
+  chartIt();
+
+  async function chartIt() {
+    const data = await getData();
+    const ctx = document.getElementById('chart').getContext('2d');
+    const myChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: data.xs,
+        datasets: [{
+          label: 'Age 0-17',
+          data: data.ys,
+          fill: false,
+          lineTension: 0.5,
+          backgroundColor:"#23417D",
+          borderColor: "#23417D",
+          borderWidth: 3,
+          borderCapStyle: 'butt',
+          borderDash: [],
+          borderDashOffset: 0.0,
+          //    borderJoinStyle: 'miter',
+          pointBorderColor: "#23417D",
+          pointBackgroundColor: "#23417D",
+          pointBorderWidth: 4,
+          pointHoverRadius: 6,
+          pointHoverBackgroundColor: "#23417D",
+          pointHoverBorderColor: "#23417D",
+          pointHoverBorderWidth: 2,
+          pointRadius: 1,
+          pointHitRadius: 4,
+          hoverBackgroundColor: "#E6E6E6",
+          hoverBorderColor: "#E6E6E6",
+        },
+        {
+          label: 'Age 18-29',
+          data: data.ys2,
+          fill: false,
+          lineTension: 0.5,
+          backgroundColor:"#222222",
+          borderColor: "#222222",
+          borderWidth: 3,
+          borderCapStyle: 'butt',
+          borderDash: [],
+          borderDashOffset: 0.0,
+          //    borderJoinStyle: 'miter',
+          pointBorderColor: "#222222",
+          pointBackgroundColor: "#222222",
+          pointBorderWidth: 4,
+          pointHoverRadius: 6,
+          pointHoverBackgroundColor: "#222222",
+          pointHoverBorderColor: "#222222",
+          pointHoverBorderWidth: 2,
+          pointRadius: 1,
+          pointHitRadius: 4,
+          hoverBackgroundColor: "#E6E6E6",
+          hoverBorderColor: "#E6E6E6",
+        },
+        {
+          label: 'Age 30-44',
+          data: data.ys3,
+          fill: false,
+          lineTension: 0.5,
+          backgroundColor:"#B63F26",
+          borderColor: "#B63F26",
+          borderWidth: 3,
+          borderCapStyle: 'butt',
+          borderDash: [],
+          borderDashOffset: 0.0,
+          //    borderJoinStyle: 'miter',
+          pointBorderColor: "#B63F26",
+          pointBackgroundColor: "#B63F26",
+          pointBorderWidth: 4,
+          pointHoverRadius: 6,
+          pointHoverBackgroundColor: "#B63F26",
+          pointHoverBorderColor: "#B63F26",
+          pointHoverBorderWidth: 2,
+          pointRadius: 1,
+          pointHitRadius: 4,
+          hoverBackgroundColor: "#E6E6E6",
+          hoverBorderColor: "#E6E6E6",
+        },
+        {
+          label: 'Age 45-64',
+          data: data.ys4,
+          fill: false,
+          lineTension: 0.5,
+          backgroundColor:"#666666",
+          borderColor: "#666666",
+          borderWidth: 3,
+          borderCapStyle: 'butt',
+          borderDash: [],
+          borderDashOffset: 0.0,
+          //    borderJoinStyle: 'miter',
+          pointBorderColor: "#666666",
+          pointBackgroundColor: "#666666",
+          pointBorderWidth: 4,
+          pointHoverRadius: 6,
+          pointHoverBackgroundColor: "#666666",
+          pointHoverBorderColor: "#666666",
+          pointHoverBorderWidth: 2,
+          pointRadius: 1,
+          pointHitRadius: 4,
+          hoverBackgroundColor: "#E6E6E6",
+          hoverBorderColor: "#E6E6E6",
+        },
+        {
+          label: 'Age 65+',
+          data: data.ys5,
+          fill: false,
+          lineTension: 0.5,
+          backgroundColor:"#846126",
+          borderColor: "#846126",
+          borderWidth: 3,
+          borderCapStyle: 'butt',
+          borderDash: [],
+          borderDashOffset: 0.0,
+          //    borderJoinStyle: 'miter',
+          pointBorderColor: "#846126",
+          pointBackgroundColor: "#846126",
+          pointBorderWidth: 4,
+          pointHoverRadius: 6,
+          pointHoverBackgroundColor: "#846126",
+          pointHoverBorderColor: "#846126",
+          pointHoverBorderWidth: 2,
+          pointRadius: 1,
+          pointHitRadius: 4,
+          hoverBackgroundColor: "#E6E6E6",
+          hoverBorderColor: "#E6E6E6",
+        }
+      ]
+    },
+    options: {
+      cornerRadius: 20,
+      title:{
+        display: false,
+        text: 'Single Adults, by Age'
+      },
+      scales: {
+        yAxes: [{
+          stacked: false,
+          ticks: {
+            max: 25000,
+            //min: 200000,
+            //stepSize: 200000,
+            callback: function(value, index, values) {
+              return value.toLocaleString('en-US');
+            },
+            beginAtZero: true,
+          },
+          gridLines: {
+            display: true
+          },
+          scaleLabel: {
+            display: true,
+            labelString: 'Individuals in Shelter, by Age'
+          }
+        }],
+        xAxes: [{
+          ticks: {
+            callback: function(value, index, values) {
+              return value;
+            },
+            //fontStyle: 'strong'
+          },
+          gridLines: {
+            display: true
+          },
+          scaleLabel: {
+              display: true,
+              labelString: 'Single Adults, by Age'
+            },
+            ticks: {
+              autoSkip: true,
+              maxTicksLimit: 10
+    }
+        }]
+      },
+      tooltips: {
+        callbacks: {
+          label: function(tooltipItem, data) {
+            return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+' Individuals in Shelter';
+          },
+        },
+        //  backgroundColor: '#434343',
+        //  borderColor: '#f5f5f5',
+        //  borderWidth: 1,
+        displayColors: false
+      }
+    }
+  });
+}
+//SPLITTING AND BRINGING IN CSV DATA
+async function getData() {
+  const xs = [];
+  const ys = [];
+  const ys2 = [];
+  const ys3 = [];
+  const ys4 = [];
+  const ys5 = [];
+
+  const response = await fetch('https://newyorkcitycouncil.github.io/dss_eviction_moratorium/data/dhs_age_sa.csv');
+  const data = await response.text();
+
+  const table = data.split('\n').slice(1);
+  table.forEach(row => {
+    const columns = row.split(',');
+    const month = columns[0];
+    xs.push(month.replace(/['"]+/g, ''));
+    const age1 = columns[1];
+    ys.push(parseFloat(age1)); //make data from string to number
+    const age2 = columns[2];
+    ys2.push(parseFloat(age2)); //make data from string to number
+    const age3 = columns[4];
+    ys3.push(parseFloat(age3)); //make data from string to number
+    const age4 = columns[5];
+    ys4.push(parseFloat(age4)); //make data from string to number
+    const age5 = columns[6];
+    ys5.push(parseFloat(age5)); //make data from string to number
+    console.log(month, age1, age2, age3, age4, age5);
+  });
+  return { xs, ys, ys2, ys3, ys4, ys5 };
+}
+
+
+</script>
+</body>
+</html>

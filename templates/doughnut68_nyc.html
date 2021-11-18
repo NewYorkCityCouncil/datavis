@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Energy By Source</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    </head>
+    <body>
+
+<canvas id="myChart1" width="250" height="250"></canvas>
+        
+
+<script>
+
+Chart.defaults.global.responsive = true
+Chart.defaults.global.maintainAspectRatio = true
+Chart.defaults.global.legend.display = false;
+Chart.defaults.global.defaultFontFamily = 'sans-serif'
+Chart.defaults.global.defaultFontSize = 14
+
+Chart.pluginService.register({
+    beforeDraw: function (chart) {
+        var width = chart.chart.width,
+            height = chart.chart.height,
+            ctx = chart.chart.ctx;
+        ctx.restore();
+        var fontSize = (height / 170).toFixed(2);
+        ctx.font = fontSize + "em sans-serif";
+        ctx.textBaseline = "middle";
+        var text = chart.config.options.elements.center.text,
+            textX = Math.round((width - ctx.measureText(text).width) / 2),
+            textY = height / 2;
+        ctx.fillText(text, textX, textY);
+        ctx.save();
+    }
+});
+
+
+// chart1
+var data = {
+    labels: ["Renewables","Other","Hydropower","Nuclear","Fossil Fuels"],
+    datasets: [{
+        label: 'Energy By Source',
+            backgroundColor:["#D05D4E","#F59F00","#228AE6","#12B886","#23417D"],
+            borderColor: "#eeeeee",
+            borderWidth: 1,
+            hoverBackgroundColor: "#9E9E9E",
+            hoverBorderColor: "#eeeeee",
+            data: [2, 3, 5, 25, 65]
+    }]
+};
+
+var promisedDeliveryChart = new Chart(document.getElementById('myChart1'), {
+    type: 'doughnut',
+    data: data,
+    options: {
+        elements: {
+            center: {
+                text: 'NYC'  //set as you wish
+            }
+        },
+        cutoutPercentage: 55,
+        legend: {
+            display: false
+        },
+      tooltips: {
+      displayColors: false,
+          callbacks: {
+            label: function(tooltipItem, data) {
+              return data.labels[tooltipItem.index]  + ': '+data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+'%';
+            },
+          }
+      }
+    }
+});
+
+</script>
+    </body>
+</html>

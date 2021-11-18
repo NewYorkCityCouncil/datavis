@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <title>Number of Employees by Age Group</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  <!--Source of Rounded Chart: https://github.com/jedtrow/Chart.js-Rounded-Bar-Charts-->
+    <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.js"></script>
+  <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.min.js"></script>
+
+</head>
+<body>
+  <canvas id ="chart" width="800" height="400"></canvas>
+  <script>
+  //CHART JS
+//  Chart.defaults.global.responsive = true,
+  Chart.defaults.global.legend.display = false
+//  Chart.defaults.global.maintainAspectRatio = false
+
+
+  chartIt();
+
+  async function chartIt() {
+    const data = await getData();
+    const ctx = document.getElementById('chart').getContext('2d');
+    const myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: data.xs,
+        datasets: [{
+          label: 'Employees by Age Group',
+          data: data.ys,
+          backgroundColor: '#2F56A6',
+          borderColor: '#eeeeee',
+          borderWidth: 1,
+          lineTension: 4,
+          hoverBackgroundColor: "#9E9E9E",
+          hoverBorderColor: "#eeeeee",
+          barPercentage: .8
+        }]
+      },
+      options: {
+        cornerRadius: 20,
+        scales:{
+          xAxes: [{
+            ticks: {
+              callback: function(value, index, values) {
+                return value;
+              },
+            //  fontStyle: 'strong'
+            },
+            gridLines: {
+              display: false
+            },
+            scaleLabel: {
+              display: true,
+              labelString: 'Age (Years)'
+            }
+          }],
+          yAxes: [{
+            ticks: {
+              callback: function(value, index, values) {
+                return value.toLocaleString('en-US');
+              }
+            },
+            gridLines: {
+              display: true
+            },
+            scaleLabel: {
+              display: true,
+              labelString: 'Employees'
+            }
+          }]
+        },
+        tooltips: {
+          callbacks: {
+            label: function(tooltipItem, data) {
+              return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ ' Workers';
+            },
+          },
+          backgroundColor: '#434343',
+          borderColor: '#f5f5f5',
+          borderWidth: 1,
+          displayColors: false
+        }
+  }
+    });
+  }
+  //SPLITTING AND BRINGING IN CSV DATA
+  async function getData() {
+    const xs = [];
+    const ys = [];
+
+    const response = await fetch('Number_of_Employees_by_Age_Group.csv');
+    const data = await response.text();
+
+    const table = data.split('\n').slice(1);
+    table.forEach(row => {
+      const columns = row.split(',');
+      const sector = columns[0];
+      xs.push(sector);
+      const claims = columns[1];
+      ys.push(parseFloat(claims)); //make data from string to number and added mean payers of 14 degrees
+      console.log(sector, claims);
+    });
+    return { xs, ys };
+  }
+
+
+  </script>
+</body>
+</html>

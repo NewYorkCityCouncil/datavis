@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <title>Daily Homeless Population, NYC Department of Homeless Services, 2019 - 2020</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  <!--Source of Rounded Chart: https://github.com/jedtrow/Chart.js-Rounded-Bar-Charts-->
+  <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.js"></script>
+  <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.min.js"></script>
+
+</head>
+<body>
+  <canvas id ="chart" width="800" height="400"></canvas>
+  <script>
+  //CHART JS
+  Chart.defaults.global.legend.display = true,
+  //Chart.defaults.global.defaultFontFamily = 'open sans'
+  Chart.defaults.global.title.display = true
+
+  const xs = [];
+  const ys = [];
+  const ys2 = [];
+  const ys3 = [];
+  const pointBorderColors = [];
+
+  chartIt();
+
+  async function chartIt() {
+    const data = await getData();
+    const ctx = document.getElementById('chart').getContext('2d');
+    const myChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: data.xs,
+        datasets: [
+          {
+            label: 'Families with Children',
+            data: data.ys3,
+            fill: false,
+            lineTension: 0.5,
+            backgroundColor:"#23417D",
+            borderColor: "#23417D",
+            borderWidth: 3,
+            borderCapStyle: 'butt',
+            borderDash: [],
+            borderDashOffset: 0.0,
+            //    borderJoinStyle: 'miter',
+            pointBorderColor: "#23417D",
+            //  pointBorderColor: pointBorderColors,
+            pointBackgroundColor: "#23417D",
+            pointBorderWidth: 4,
+            pointHoverRadius: 6,
+            pointHoverBackgroundColor: "#23417D",
+            pointHoverBorderColor: "#23417D",
+            pointHoverBorderWidth: 2,
+            pointRadius: 1,
+            pointHitRadius: 4,
+            hoverBackgroundColor: "#E6E6E6",
+            hoverBorderColor: "#E6E6E6",
+          },
+          {
+          label: 'Single Adults',
+          data: data.ys,
+          fill: false,
+          lineTension: 0.5,
+          backgroundColor:"#222222",
+          borderColor: "#222222",
+          borderWidth: 3,
+          borderCapStyle: 'butt',
+          borderDash: [],
+          borderDashOffset: 0.0,
+          //    borderJoinStyle: 'miter',
+          pointBorderColor: "#222222",
+          //pointBorderColor: pointBorderColors,
+          pointBackgroundColor: "#222222",
+          pointBorderWidth: 4,
+          pointHoverRadius: 6,
+          pointHoverBackgroundColor: "#222222",
+          pointHoverBorderColor: "#222222",
+          pointHoverBorderWidth: 2,
+          pointRadius: 1,
+          pointHitRadius: 4,
+          hoverBackgroundColor: "#E6E6E6",
+          hoverBorderColor: "#E6E6E6",
+        },
+        {
+          label: 'Adult Families',
+          data: data.ys2,
+          fill: false,
+          lineTension: 0.5,
+          backgroundColor:"#B63F26",
+          borderColor: "#B63F26",
+          borderWidth: 3,
+          borderCapStyle: 'butt',
+          borderDash: [],
+          borderDashOffset: 0.0,
+          //    borderJoinStyle: 'miter',
+          pointBorderColor: "#B63F26",
+          //pointBorderColor: pointBorderColors,
+          pointBackgroundColor: "#B63F26",
+
+          pointBorderWidth: 4,
+          pointHoverRadius: 6,
+          pointHoverBackgroundColor: "#B63F26",
+          pointHoverBorderColor: "#B63F26",
+          pointHoverBorderWidth: 2,
+          pointRadius: 1,
+          pointHitRadius: 4,
+          hoverBackgroundColor: "#B63F26",
+          hoverBorderColor: "#B63F26",
+        },
+
+      ]
+    },
+    options: {
+      cornerRadius: 20,
+      title:{
+        display: false,
+        text: 'Daily Homeless Population, NYC Department of Homeless Services'
+      },
+      scales: {
+        yAxes: [{
+          stacked: false,
+          ticks: {
+            callback: function(value, index, values) {
+              return value.toLocaleString('en-US')+'';
+            },
+            beginAtZero: true,
+          },
+          gridLines: {
+            display: true
+          },
+          scaleLabel: {
+            display: true,
+            labelString: 'Daily Homeless Population'
+          }
+        }],
+        xAxes: [{
+          ticks: {
+            callback: function(value, index, values) {
+              return value;
+            },
+            //fontStyle: 'strong'
+          },
+          gridLines: {
+            display: true
+          },
+          scaleLabel: {
+            display: false,
+            labelString: 'Daily Homeless Population, NYC Department of Homeless Services'
+          },
+          ticks: {
+            autoSkip: true,
+            maxTicksLimit: 15
+  }
+        }]
+      },
+      tooltips: {
+        callbacks: {
+          label: function(tooltipItem, data) {
+            return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ ' Homeless';
+          },
+        },
+        //  backgroundColor: '#434343',
+        //  borderColor: '#f5f5f5',
+        //  borderWidth: 1,
+        displayColors: false
+      }
+      /*,
+      annotation: {
+        events: ["click"],
+        annotations: [
+          {
+            drawTime: "beforeDatasetsDraw",
+            type: "box",
+            xScaleID: "x-axis-0",
+            yScaleID: "y-axis-0",
+            xMin: "3/22/2020",
+            xMax: "1/9/2021",
+            yMin: 0,
+            yMax: 40000,
+            backgroundColor: "#B63F26",
+            borderColor: "#B63F26",
+            borderWidth: 1,
+            onClick: function(e) {
+              console.log("Box", e.type, this);
+            }
+          }]
+        } */
+      }
+      });
+      //Color COVID lockdown date
+      for (i = 0; i < myChart.data.datasets[0].data.length; i++) {
+        if (myChart.data.datasets[0].data[i].y == "3/22/2020") {
+          pointBorderColors.push("#B63F26");
+        } else {
+          pointBorderColors.push("#2F56A6");
+        }
+      }
+
+      myChart.update();
+    }
+
+
+
+    //SPLITTING AND BRINGING IN CSV DATA
+    async function getData() {
+
+
+      const response = await fetch('daily_dhs_pop.csv');
+      const data = await response.text();
+
+      const table = data.split('\n').slice(1);
+      table.forEach(row => {
+        const columns = row.split(',');
+        const date = columns[0];
+        xs.push(date);
+        const adult = columns[1];
+        ys.push(parseFloat(adult)); //make data from string to number
+        const family = columns[2];
+        ys2.push(parseFloat(family)); //make data from string to number
+        const familyChildren = columns[3];
+        ys3.push(parseFloat(familyChildren)); //make data from string to number
+        console.log(date, adult, family, familyChildren);
+      });
+      return { xs, ys, ys2, ys3 };
+    }
+
+
+    </script>
+    </body>
+    </html>

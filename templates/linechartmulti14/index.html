@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Traffic Delays Sept 2015-Sept 20218</title>
+        <title>Traffic Delays Sept 2015-Jan 2020</title>
 
   <!--   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>-->
            <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js'></script>
@@ -27,20 +27,20 @@ var myChart = new Chart(ctx, {
     type: 'line',
     fill: true,
     data: {
-        labels: ["Sep 2015","Oct 2015","Nov 2015","Dec 2015","Jan 2016","Feb 2016","Mar 2016","Apr 2016","May 2016","Jun 2016","Sep 2016","Oct 2016","Nov 2016","Dec 2016","Jan 2017","Feb 2017","Mar 2017","Apr 2017","May 2017","Jun 2017","Sep 2017","Oct 2017","Nov 2017","Dec 2017","Jan 2018","Feb 2018","Mar 2018","Apr 2018","May 2018","Jun 2018","Sep 2018"],
+        labels: ["Sep 2015","Oct 2015","Nov 2015","Dec 2015","Jan 2016","Feb 2016","Mar 2016","Apr 2016","May 2016","Jun 2016","Sep 2016","Oct 2016","Nov 2016","Dec 2016","Jan 2017","Feb 2017","Mar 2017","Apr 2017","May 2017","Jun 2017","Sep 2017","Oct 2017","Nov 2017","Dec 2017","Jan 2018","Feb 2018","Mar 2018","Apr 2018","May 2018","Jun 2018","Sep 2018","Oct 2018","Nov 2018","Dec 2018","Jan 2019","Feb 2019","Mar 2019","Apr 2019","May 2019","Jun 2019","Sep 2019","Oct 2019","Nov 2019","Dec 2019","Jan 2020"],
         datasets: [
             {
               label: "Heavy Traffic",
-              pointBackgroundColor: ['red', "#82C91E", "#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E",'red',"#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E",'red',"#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E",'red'],
-              pointBorderColor:['red', "#82C91E", "#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E",'red',"#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E",'red',"#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E",'red'],
+              pointBackgroundColor: ['red', "#82C91E", "#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E",'red',"#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E",'red',"#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E",'red',"#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E",'red',"#82C91E","#82C91E","#82C91E","#82C91E"],
+              pointBorderColor:['red', "#82C91E", "#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E",'red',"#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E",'red',"#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E",'red',"#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E","#82C91E",'red',"#82C91E","#82C91E","#82C91E","#82C91E"],
               fill: false,
               backgroundColor: "#82C91E",
               borderColor: "#82C91E",
             //  borderWidth: 0,
               hoverBackgroundColor: "#82C91E",
               hoverBorderColor: "#eeeeee",
-              data: [298,229,214,215,233,185,177,195,200,273,341,236,244,285,271,240,281,343,300,265,353,356,310,297,285,297,293,328,310,274,439]
-            },
+              data: [298,229,214,215,233,185,177,195,200,273,341,236,244,285,271,240,281,343,300,265,353,356,310,297,285,297,293,328,310,274,439,422,459,440,412,487,442,349,350,316,446,468,426,367,315]
+            },/*
             {
               label: "Heavy Traffic Trend",
               fill: false,
@@ -52,7 +52,7 @@ var myChart = new Chart(ctx, {
               hoverBorderColor: "#eeeeee",
               lineTension: 0,
               data: [211,214,218,222,226,230,234,238,242,246,257,261,265,269,273,277,280,284,288,292,304,308,312,315,319,323,327,331,335,339,350]
-            }
+            }*/
 /*
             ,
           {
@@ -118,7 +118,7 @@ var myChart = new Chart(ctx, {
             xMin: "Sep 2015",
             xMax: "Jun 2016",
             yMin: 0,
-            yMax: 450,
+            yMax: 550,
             backgroundColor: "rgba(230, 230, 230, 0.5)",
             borderColor: "rgb(230, 230, 230)",
             borderWidth: 1,
@@ -134,7 +134,7 @@ var myChart = new Chart(ctx, {
             xMin: "Sep 2016",
             xMax: "Jun 2017",
             yMin: 0,
-            yMax: 450,
+            yMax: 550,
             backgroundColor: "rgba(230, 230, 230, 0.5)",
             borderColor: "rgb(230, 230, 230)",
             borderWidth: 1,
@@ -150,7 +150,7 @@ var myChart = new Chart(ctx, {
             xMin: "Sep 2017",
             xMax: "Jun 2018",
             yMin: 0,
-            yMax: 450,
+            yMax: 550,
             backgroundColor: "rgba(230, 230, 230, 0.5)",
             borderColor: "rgb(230, 230, 230)",
             borderWidth: 1,
@@ -164,9 +164,9 @@ var myChart = new Chart(ctx, {
             xScaleID: "x-axis-0",
             yScaleID: "y-axis-0",
             xMin: "Sep 2018",
-            xMax: "Oct 2018",
+            xMax: "Jun 2019",
             yMin: 0,
-            yMax: 450,
+            yMax: 550,
             backgroundColor: "rgba(230, 230, 230, 0.5)",
             borderColor: "rgb(230, 230, 230)",
             borderWidth: 1,
@@ -174,10 +174,24 @@ var myChart = new Chart(ctx, {
               console.log("Box", e.type, this);
             }
           },
-
+            {
+            drawTime: "beforeDatasetsDraw",
+            type: "box",
+            xScaleID: "x-axis-0",
+            yScaleID: "y-axis-0",
+            xMin: "Sep 2019",
+            xMax: "Jan 2020",
+            yMin: 0,
+            yMax: 550,
+            backgroundColor: "rgba(230, 230, 230, 0.5)",
+            borderColor: "rgb(230, 230, 230)",
+            borderWidth: 1,
+            onClick: function(e) {
+              console.log("Box", e.type, this);
+            }
+          },
         ]
       }
-
     }
   });
 </script>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <title>Tenure and Median Salary by Size of Tenure Group </title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  <!--Source of Rounded Chart: https://github.com/jedtrow/Chart.js-Rounded-Bar-Charts-->
+  <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.js"></script>
+  <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.min.js"></script>
+
+</head>
+<body>
+  <canvas id ="chart" width="800" height="400"></canvas>
+  <script>
+  //CHART JS
+  Chart.defaults.global.legend.display = false,
+  //Chart.defaults.global.defaultFontFamily = 'open sans'
+  //Chart.defaults.global.defaultFontColor = "#ffffff"
+
+  chartIt();
+
+  async function chartIt() {
+    const data = await getData();
+    const ctx = document.getElementById('chart').getContext('2d');
+    const myChart = new Chart(ctx, {
+      type: 'bubble',
+      data: {
+
+        datasets: [
+          {
+            label: 'Less than 5',
+              backgroundColor:"#2F56A6",
+              borderColor: "#23417D",
+            data: [{
+              x: 3,
+              y: 50173,
+              r: 28
+            }]
+          },
+          {
+            label: '5-9',
+            backgroundColor:"#2F56A6",
+            borderColor: "#23417D",
+            data: [{
+              x: 7,
+              y: 65226,
+              r: 16
+            }]
+          },
+          {
+            label: '10-14',
+            backgroundColor:"#2F56A6",
+            borderColor: "#23417D",
+            data: [{
+              x: 12,
+              y: 85292,
+              r: 19
+            }]
+          },
+          {
+            label: '15-19',
+            backgroundColor:"#2F56A6",
+            borderColor: "#23417D",
+            data: [{
+              x: 17,
+              y: 85292,
+              r: 15
+            }]
+          },
+          {
+            label: '20-24',
+            backgroundColor:"#2F56A6",
+            borderColor: "#23417D",
+            data: [{
+              x: 22,
+              y: 85292,
+              r: 8
+            }]
+          },
+          {
+            label: '25-29',
+            backgroundColor:"#2F56A6",
+            borderColor: "#23417D",
+            data: [{
+              x: 27,
+              y: 84141,
+              r: 6
+            }]
+          },
+          {
+            label: '30-34',
+            backgroundColor:"#2F56A6",
+            borderColor: "#23417D",
+            data: [{
+              x: 32,
+              y: 75866,
+              r: 5
+            }]
+          },
+          {
+            label: '35-39',
+            backgroundColor:"#2F56A6",
+            borderColor: "#23417D",
+            data: [{
+              x: 36,
+              y: 74846,
+              r: 2
+            }]
+          },
+          {
+            label: '40 & Over',
+            backgroundColor:"#2F56A6",
+            borderColor: "#23417D",
+            data: [{
+              x: 45,
+              y: 67922,
+              r: 0.01
+            }]
+          }
+        ]
+      },
+      options: {
+        cornerRadius: 20,
+        title:{
+          display: false,
+          text: 'Salary and Age'
+        },
+        scales: {
+          xAxes: [{
+            ticks: {
+              callback: function(value, index, values) {
+                return value.toLocaleString('en-US');
+              },
+              beginAtZero: true,
+              //max: 7000,
+            },
+            gridLines: {
+              display: false
+            },
+            scaleLabel: {
+              display: true,
+              labelString: 'Tenure (Years)'
+            }
+          }],
+          yAxes: [{
+            ticks: {
+              callback: function(value, index, values) {
+                return '$'+value.toLocaleString('en-US');
+              },
+              beginAtZero: true,
+              //fontStyle: 'strong'
+              //fontSize: 9,
+            },
+            gridLines: {
+              display: true,
+            },
+            scaleLabel: {
+              display: true,
+              labelString: 'Median Salary ($)'
+            }
+          }]
+        }
+        /*   ,
+        tooltips: {
+        callbacks: {
+        label: function(tooltipItem, data) {
+        return ['Age Group: '+tooltipItem.xLabel.toLocaleString()+', Median Salary: $'+tooltipItem.yLabel.toLocaleString()+', Employees in Age / Salary Group: '+ r.toLocaleString()
+        //  return all.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ ' %';
+      ]},
+    },
+    backgroundColor: '#434343',
+    borderColor: '#f5f5f5',
+    borderWidth: 1,
+    displayColors: false
+  }*/
+}
+});
+}
+
+//SPLITTING AND BRINGING IN CSV DATA
+
+async function getData() {
+  const xs = [];
+  const ys = [];
+
+  const response = await fetch('Number_of_Employees_by_Age_Group.csv');
+  const data = await response.text();
+
+  const table = data.split('\n').slice(1);
+  table.forEach(row => {
+    const columns = row.split(',');
+    const one = columns[0];
+    xs.push(one);
+    const two = columns[2];
+    ys.push(parseFloat(two)); //make data from string to number and added mean payers of 14 degrees
+    console.log(one, two);
+  });
+  return { xs, ys };
+}
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Inspections and Sediment </title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
+
+    </head>
+    <body>
+
+
+<canvas id="stackedbar15" max-width="400" max="400"></canvas>
+<script>
+
+Chart.defaults.global.responsive = true
+Chart.defaults.global.legend.display = true
+Chart.defaults.global.legend.labels.padding = 20
+Chart.defaults.global.maintainAspectRatio = true
+/*
+Chart.defaults.scale = {
+		display: true,
+		position: "left",
+
+		// grid line settings
+		gridLines: {
+			display: true,
+			color: "rgba(0, 0, 0, 0.1)",
+			lineWidth: 1,
+			drawBorder: true,
+			drawOnChartArea: true,
+			drawTicks: true,
+			tickMarkLength: 10,
+			zeroLineWidth: 1,
+			zeroLineColor: "rgba(0,0,0,0.25)",
+			offsetGridLines: false
+		},
+
+		// scale label
+		scaleLabel: {
+			// actual label
+			labelString: '',
+
+			// display property
+			display: false
+		},
+
+		// label settings
+		ticks: {
+      minRotation: 0,
+		  maxRotation: 90,
+			mirror: false,
+			padding: 10,
+			reverse: false,
+			display: true,
+			autoSkip: false,
+			autoSkipPadding: 0,
+			labelOffset: 0,
+			callback: function(value) {
+				return '' + value;
+			}
+
+		}
+	};
+
+*/
+var ctx = document.getElementById("stackedbar15");
+
+var myChart = new Chart(ctx, {
+    type: 'bar',
+
+    data: {
+        labels: [
+                "Rosenwach","Isseks Brothers","American Pipe & Tank Co.","Culligan ","United Wood Tank/JMZ Maintenance","Atlantic Tank","Nalco","Tower Water Management"
+              ],
+        datasets: [
+          {
+            label: 'Tanks without Sediment',
+            backgroundColor:"#228AE6",
+            borderColor: "#eeeeee",
+            borderWidth: 0,
+            hoverBackgroundColor: "#666666",
+            hoverBorderColor: "#eeeeee",
+            data: [5946,4792,1291,52,154,114,86,12]
+          },
+          {
+            label: 'Tanks with Sediment',
+            backgroundColor: "#82C91E",
+            borderColor: "#eeeeee",
+            borderWidth: 0,
+            hoverBackgroundColor: "#CACACA",
+            hoverBorderColor: "#eeeeee",
+            data: [4,1,5,185,2,3,21,1]
+          }
+      ]
+
+    },
+ options: {
+   tooltips: {
+     callbacks: {
+       label: function(tooltipItem, data) {
+					var datasetLabel = data.datasets[tooltipItem.datasetIndex].label || '';
+				return datasetLabel + ': ' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US') ;
+      }
+    }
+  },
+
+        scales: {
+            yAxes: [{
+                stacked: true,
+                ticks: {
+                        function(value) {
+                          return + value.toLocaleString('en-US')+ " Tanks";
+                        }
+                    }
+
+            }],
+            xAxes: [{
+                stacked: true
+            }]
+        }
+
+    }
+
+});
+</script>
+    </body>
+</html>

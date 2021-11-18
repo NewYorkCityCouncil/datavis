@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <title>Unemployment Rate in NYC 2019 vs 2020</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  <!--Source of Rounded Chart: https://github.com/jedtrow/Chart.js-Rounded-Bar-Charts-->
+  <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.js"></script>
+  <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.min.js"></script>
+
+</head>
+<body>
+  <canvas id ="chart" width="800" height="400"></canvas>
+  <script>
+  //CHART JS
+  Chart.defaults.global.legend.display = true,
+  //Chart.defaults.global.defaultFontFamily = 'open sans'
+Chart.defaults.global.title.display = true
+
+  chartIt();
+
+  async function chartIt() {
+    const data = await getData();
+    const ctx = document.getElementById('chart').getContext('2d');
+    const myChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: data.xs,
+        datasets: [{
+          label: '2020: Unemployment Rate',
+          data: data.ys,
+          fill: false,
+          lineTension: 0.5,
+          backgroundColor:"#2F56A6",
+          borderColor: "#2F56A6",
+          borderWidth: 3,
+          borderCapStyle: 'butt',
+          borderDash: [],
+          borderDashOffset: 0.0,
+          //    borderJoinStyle: 'miter',
+          pointBorderColor: "#2F56A6",
+          pointBackgroundColor: "#2F56A6",
+          pointBorderWidth: 4,
+          pointHoverRadius: 6,
+          pointHoverBackgroundColor: "#2F56A6",
+          pointHoverBorderColor: "#2F56A6",
+          pointHoverBorderWidth: 2,
+          pointRadius: 1,
+          pointHitRadius: 4,
+          hoverBackgroundColor: "#E6E6E6",
+          hoverBorderColor: "#E6E6E6",
+        },
+        {
+          label: '2019: Unemployment Rate',
+          data: data.ys2,
+          fill: false,
+          lineTension: 0.5,
+          backgroundColor:"#CACACA",
+          borderColor: "#CACACA",
+          borderWidth: 3,
+          borderCapStyle: 'butt',
+          borderDash: [],
+          borderDashOffset: 0.0,
+          //    borderJoinStyle: 'miter',
+          pointBorderColor: "#CACACA",
+          pointBackgroundColor: "#CACACA",
+          pointBorderWidth: 4,
+          pointHoverRadius: 6,
+          pointHoverBackgroundColor: "#CACACA",
+          pointHoverBorderColor: "#CACACA",
+          pointHoverBorderWidth: 2,
+          pointRadius: 1,
+          pointHitRadius: 4,
+          hoverBackgroundColor: "#E6E6E6",
+          hoverBorderColor: "#E6E6E6",
+        }
+      ]
+    },
+    options: {
+      cornerRadius: 20,
+      title:{
+        display: false,
+        text: 'Unemployment Rate in NYC, 2019 vs 2020'
+      },
+      scales: {
+        yAxes: [{
+          stacked: false,
+          ticks: {
+            //max: 5,
+            //min: 200000,
+            //stepSize: 200000,
+            callback: function(value, index, values) {
+              return value.toLocaleString('en-US')+'%';
+            },
+            beginAtZero: true,
+          },
+          gridLines: {
+            display: true
+          },
+          scaleLabel: {
+            display: false,
+            labelString: 'Unemployment Rate in NYC, 2019 vs 2020'
+          }
+        }],
+        xAxes: [{
+          ticks: {
+            callback: function(value, index, values) {
+              return value;
+            },
+            //fontStyle: 'strong'
+          },
+          gridLines: {
+            display: true
+          },
+          scaleLabel: {
+              display: false,
+              labelString: 'Unemployment Rate in NYC, 2019 vs 2020'
+            }
+        }]
+      },
+      tooltips: {
+        callbacks: {
+          label: function(tooltipItem, data) {
+            return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ '% Unemployment Rate';
+          },
+        },
+        //  backgroundColor: '#434343',
+        //  borderColor: '#f5f5f5',
+        //  borderWidth: 1,
+        displayColors: false
+      }
+    }
+  });
+}
+//SPLITTING AND BRINGING IN CSV DATA
+async function getData() {
+  const xs = [];
+  const ys = [];
+  const ys2 = [];
+
+  const response = await fetch('nyc_monthly_unemployment_rate.csv');
+  const data = await response.text();
+
+  const table = data.split('\n').slice(1);
+  table.forEach(row => {
+    const columns = row.split(',');
+    const month = columns[0];
+    xs.push(month);
+    const twenty20 = columns[1];
+    ys.push(parseFloat(twenty20)); //make data from string to number and added mean payers of 14 degrees
+    const twenty19 = columns[2];
+    ys2.push(parseFloat(twenty19)); //make data from string to number and added mean payers of 14 degrees
+    console.log(month, twenty20, twenty19);
+  });
+  return { xs, ys, ys2 };
+}
+
+
+</script>
+</body>
+</html>

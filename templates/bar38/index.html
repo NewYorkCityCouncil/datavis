@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <title>Employee Pay by Gender: Female</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  <!--Source of Rounded Chart: https://github.com/jedtrow/Chart.js-Rounded-Bar-Charts-->
+    <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.js"></script>
+  <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.min.js"></script>
+
+</head>
+<body>
+  <canvas id ="chart" width="800" height="300"></canvas>
+  <script>
+  //CHART JS
+  Chart.defaults.global.legend.display = false,
+  //Chart.defaults.global.defaultFontFamily = 'open sans'
+  //Chart.defaults.global.defaultFontColor = "#ffffff"
+
+  chartIt();
+
+  async function chartIt() {
+    const data = await getData();
+    const ctx = document.getElementById('chart').getContext('2d');
+    const myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: data.xs,
+        datasets: [{
+          label: '% of Employees',
+          data: data.ys,
+          fill: false,
+          backgroundColor: '#A83226',
+      //    borderColor: '#CACACA',
+          borderWidth: 1,
+          lineTension: 4,
+          hoverBackgroundColor: '#E6E6E6',
+          barPercentage: .8
+
+        }
+      ]
+      },
+      options: {
+        cornerRadius: 20,
+        title:{
+          display: false,
+          text: 'Employee Pay by Gender: Female'
+        },
+        scales: {
+          xAxes: [{
+            ticks: {
+              callback: function(value, index, values) {
+                return '$'+value.toLocaleString('en-US');
+              },
+              beginAtZero: true,
+              //max: 7000,
+            },
+            gridLines: {
+              display: false
+            },
+            scaleLabel: {
+              display: true,
+              labelString: 'Female: Base Salary ($)'
+            }
+          }],
+          yAxes: [{
+            ticks: {
+              callback: function(value, index, values) {
+                return value.toLocaleString('en-US')+'%';
+              },
+                beginAtZero: true,
+              //fontStyle: 'strong'
+              //fontSize: 9,
+            },
+            gridLines: {
+              display: true,
+            },
+            scaleLabel: {
+              display: false,
+              labelString: 'Percent of Total Employees that are Female'
+            }
+          }]
+        },
+        tooltips: {
+          callbacks: {
+            title: function(tooltipItems, data) {
+            return 'Base Salary: $'+ tooltipItems[0].xLabel.toLocaleString('en-US');
+          },
+            label: function(tooltipItem, data) {
+              return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+'%';
+            },
+          },
+          backgroundColor: '#434343',
+          borderColor: '#f5f5f5',
+          borderWidth: 1,
+          displayColors: false
+        }
+      }
+    });
+  }
+
+  //SPLITTING AND BRINGING IN CSV DATA
+  async function getData() {
+    const xs = [];
+    const ys = [];
+
+    const response = await fetch('gender_pay_histogram_women.csv');
+    const data = await response.text();
+
+    const table = data.split('\n').slice(1);
+    table.forEach(row => {
+      const columns = row.split(',');
+      const one = columns[0];
+      xs.push(parseFloat(one));
+      const two = columns[1];
+      ys.push(parseFloat(two)); //make data from string to number and added mean payers of 14 degrees
+      console.log(one, two);
+    });
+    return { xs, ys };
+  }
+
+
+  </script>
+</body>
+</html>

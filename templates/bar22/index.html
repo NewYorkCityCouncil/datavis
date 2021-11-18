@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <title>Unemployment Claims by Sector, New York State, 2019 vs 2020</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  <!--Source of Rounded Chart: https://github.com/jedtrow/Chart.js-Rounded-Bar-Charts-->
+    <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.js"></script>
+  <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.min.js"></script>
+
+</head>
+<body>
+  <canvas id ="chart" width="800" height="400"></canvas>
+  <script>
+  //CHART JS
+  Chart.defaults.global.responsive = true,
+  Chart.defaults.global.legend.display = false,
+  Chart.defaults.global.title.display= true
+//  Chart.defaults.global.defaultFontFamily = 'open sans'
+
+
+  chartIt();
+
+  async function chartIt() {
+    const data = await getData();
+    const ctx = document.getElementById('chart').getContext('2d');
+    const myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: data.xs,
+        datasets: [{
+          label: '% Change in NYS Unemployment Claims 2019 vs 2020',
+          data: data.ys,
+          fill: false,
+          backgroundColor: ['#CACACA','#800000'],
+          borderColor: ['#E6E6E6','#E6E6E6'],
+          borderWidth: 1,
+          lineTension: 4,
+          hoverBackgroundColor: '#E6E6E6',
+          barPercentage: .8
+        }]
+      },
+      options: {
+        cornerRadius: 20,
+        title:{
+          display: true,
+          text: '% Change in NYS Unemployment Claims 2019 vs 2020'
+        },
+        scales: {
+          yAxes: [{
+            ticks: {
+              callback: function(value, index, values) {
+                return value.toLocaleString('en-US') + '%';
+              },
+              beginAtZero: true,
+            },
+            gridLines: {
+              display: false
+            },
+            scaleLabel: {
+              display: true,
+              labelString: '% Change in NYS Unemployment Claims 2019 vs 2020'
+            }
+          }],
+          xAxes: [{
+            ticks: {
+              callback: function(value, index, values) {
+                return value;
+              },
+            //  fontStyle: 'strong'
+            },
+            gridLines: {
+              display: false
+            }
+          }]
+        },
+        tooltips: {
+          callbacks: {
+            label: function(tooltipItem, data) {
+              return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ '% Change in Unemployment Claims 2019 vs 2020';
+            },
+          },
+          backgroundColor: '#434343',
+          borderColor: '#f5f5f5',
+          borderWidth: 1,
+          displayColors: false
+        }
+      }
+    });
+  }
+  //SPLITTING AND BRINGING IN CSV DATA
+  async function getData() {
+    const xs = [];
+    const ys = [];
+
+    const response = await fetch('arts_unemployment.csv');
+    const data = await response.text();
+
+    const table = data.split('\n').slice(1);
+    table.forEach(row => {
+      const columns = row.split(',');
+      const sector = columns[0];
+      xs.push(sector);
+      const claims = columns[1];
+      ys.push(parseFloat(claims)); //make data from string to number and added mean payers of 14 degrees
+      console.log(sector, claims);
+    });
+    return { xs, ys };
+  }
+
+
+  </script>
+</body>
+</html>

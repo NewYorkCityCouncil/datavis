@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Senior % of Population (Age 65+) and COVID19 Death Rate</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+
+  <canvas id="chart" width=auto max-height="400"></canvas>
+  <script>
+
+  /*Chart.defaults.global.responsive = true
+  Chart.defaults.global.maintainAspectRatio = true
+  Chart.defaults.global.legend = false*/
+
+  chartIt()
+  .then(response => {
+    console.log('yay chart');
+  })
+  .catch(error =>{
+    console.log('error!');
+    console.error(error);
+  });
+
+  const xy = []; // X,Y points needed for Scatter
+  const as = [];
+  const pointBackgroundColors = [];
+  const za = [];
+
+  async function chartIt() {
+    const data = await getData();
+    const ctx = document.getElementById('chart').getContext('2d');
+    const myChart = new Chart(ctx, {
+      type: 'scatter',
+      data: {
+        labels: data.za,
+        datasets: [{
+          label: xy,
+          data: xy,
+          pointBackgroundColor: pointBackgroundColors,
+          hoverBackgroundColor: "#CACACA"
+        }]
+      },
+      options: {
+        tooltips: {
+          callbacks: {
+            label: function(tooltipItem, data) {
+              var labels = data.labels[tooltipItem.index];
+              return [labels, 'Age 65+: ' + Math.round(tooltipItem.xLabel).toLocaleString('en-US')+'%', 'COVID19 Death Rate: '+ Math.round(tooltipItem.yLabel)+ ' per 100,000 people'];
+
+            }
+          },
+          displayColors: false
+        },
+        scales: {
+          xAxes: [{
+            type: 'linear',
+            position: 'bottom',
+            display: true,
+            ticks: {
+              callback: function(value, index, values) {
+                return value.toLocaleString('en-US')+'%';
+                ;
+              }
+            },
+            gridLines: {
+              display: false
+            },
+            scaleLabel: {
+              display: true,
+              labelString: 'Age 65+ % (Per Zip Code)',
+              fontStyle: 'bold'
+            }
+          }],
+          yAxes:[{
+            ticks:{
+              callback: function(value, index, values) {
+                return '' + value.toLocaleString('en-US')+'';
+              }
+            },
+            gridLines: {
+              display: false
+            },
+            scaleLabel: {
+              display: true,
+              labelString: 'COVID19 Deaths Per 100,000',
+              fontStyle: 'bold'
+            }
+          }]
+        }
+      }
+    });
+    //Color COVID Death rate + 485 Red
+    for (i = 0; i < myChart.data.datasets[0].data.length; i++) {
+      if (myChart.data.datasets[0].data[i].y > 485) {
+        pointBackgroundColors.push("#B63F26");
+      } else {
+        pointBackgroundColors.push("#2F56A6");
+      }
+    }
+
+    myChart.update();
+  }
+
+
+  //SPLITTING AND BRINGING IN CSV DATA
+  async function getData() {
+    const xs = [];
+    const ys = [];
+    const zs = []; // neighborhood names
+
+    const response = await fetch('Covid_All.csv');
+    const data = await response.text();
+
+    const table = data.split('\n').slice(1); // register new line and remove first row of data
+    table.forEach(row => {
+      const columns = row.split(',');
+      const age = columns[5];
+      xs.push(age);
+      const covid_death = columns[10];
+      ys.push(parseFloat(covid_death)); //make data from string to number
+      const neighborhood = columns[2];
+      zs.push(neighborhood);
+      const zips = columns[1];
+      as.push(zips);
+      const zips_nbhd = [neighborhood+ ' ('+zips+')'];
+      za.push(zips_nbhd);
+      const xsys = {x: parseFloat(age), y: parseFloat(covid_death), label: neighborhood};
+      xy.push(xsys);
+  //    console.log(xsys);
+      console.log(zips_nbhd);
+    });
+    return { xs, ys, zs, as, za};
+    return { xy };
+  }
+  </script>
+</body>
+</html>

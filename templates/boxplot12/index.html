@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <title>Base Salary for Youngest and Oldest Cohorts Compared Citywide by Gender</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src='https://unpkg.com/chart.js@3'></script>
+<script src='https://unpkg.com/@sgratzl/chartjs-chart-boxplot@3'></script><script  src="./script.js"></script>
+<!--Plugins Help: https://www.chartjs.org/docs/latest/configuration/legend.html-->
+</head>
+<body>
+  <canvas id ="chart" width=auto max-height="500"></canvas>
+  <script>
+
+
+  function randomValues(count, min, max) {
+    const delta = max - min;
+    return Array.from({length: count}).map(() => delta + min);
+  }
+
+  function randomBoxPlot1(min, max) {
+    const values = randomValues(5, min, max).sort((a, b) => a - b);
+
+    return {
+      min: 27446,
+      q1: 42124,
+      median: 48666,
+      q3: 58405,
+      max: 153375
+    };
+  }
+  function randomBoxPlot2(min, max) {
+    const values = randomValues(5, min, max).sort((a, b) => a - b);
+
+    return {
+      min: 28506,
+      q1: 46608,
+      median: 57133,
+      q3: 72712,
+      max: 234096
+    };
+  }
+  function randomBoxPlot3(min, max) {
+    const values = randomValues(5, min, max).sort((a, b) => a - b);
+
+    return {
+      min: 27446,
+      q1: 46737,
+      median: 57387,
+      q3: 78763,
+      max: 236750
+    };
+  }
+  function randomBoxPlot4(min, max) {
+    const values = randomValues(5, min, max).sort((a, b) => a - b);
+
+    return {
+      min: 27186,
+      q1: 42500,
+      median: 48666,
+      q3: 55192,
+      max: 236750
+    };
+  }
+  function randomBoxPlot5(min, max) {
+    const values = randomValues(5, min, max).sort((a, b) => a - b);
+
+    return {
+      min: 30954,
+      q1: 57064,
+      median: 76582,
+      q3: 96447,
+      max: 236750
+    };
+  }
+  function randomBoxPlot6(min, max) {
+    const values = randomValues(5, min, max).sort((a, b) => a - b);
+
+    return {
+      min: 27186,
+      q1: 53519,
+      median: 78999,
+      q3: 90373,
+      max: 236750
+    };
+  }
+  const boxplotData = {
+    // define label tree
+    labels: ['Under 30 Years','Over 60 Years','Citywide'],
+  datasets: [{
+    label: 'Female',
+    backgroundColor: '#A83226',
+    borderColor: '#222222',
+    borderWidth: 1,
+    padding: 10,
+    itemRadius: 1,
+    outlierColor: '#999999',
+    data: [
+      randomBoxPlot1(0,50),
+      randomBoxPlot2(0,50),
+      randomBoxPlot3(0,50)
+    ]
+  },
+  {
+    label: 'Male',
+    backgroundColor:'#23417D',
+    borderColor: '#222222',
+    borderWidth: 1,
+    padding: 10,
+    itemRadius: 1,
+    outlierColor: '#999999',
+    data: [
+      randomBoxPlot4(0,50),
+      randomBoxPlot5(0,50),
+      randomBoxPlot6(0,50)
+    ]
+  }]
+};
+
+const options = {
+        responsive: true,
+        title: {
+          display: true,
+          text: 'Chart.js Box Plot Chart',
+        },
+        minStats: 'min',
+        maxStats: 'whiskerMax',
+        scales: {
+          y:{
+            ticks:{
+              callback: function(value, index, values) {
+                return '$'+value.toLocaleString('en-US');
+              },
+            }
+          }
+        },
+        plugins: {
+            legend: {
+                display: true,
+              /*  labels: {
+                    color: 'rgb(255, 99, 132)'
+                }*/
+            }
+          }
+      };
+
+      window.onload = () => {
+        const ctx = document.getElementById('chart').getContext('2d');
+        let myBar = new Chart(ctx, {
+          type: 'boxplot',
+          data: boxplotData,
+          options: options,
+        });
+
+        /*   document.getElementById('limitMinMax').onclick = () => {
+          options.boxplot.datasets.minStats = 'min';
+          options.boxplot.datasets.maxStats = 'max';
+          myBar.destroy();
+          myBar = new Chart(ctx, {
+            type: 'boxplot',
+            data: boxplotData,
+            options: options,
+          });
+        };
+     document.getElementById('limitWhiskers').onclick = () => {
+          options.boxplot.datasets.minStats = 'whiskerMin';
+          options.boxplot.datasets.maxStats = 'whiskerMax';
+          myBar.destroy();
+          myBar = new Chart(ctx, {
+            type: 'boxplot',
+            data: boxplotData,
+            options: options,
+          });
+        };*/
+      };
+
+</script>
+</body>
+</html>
