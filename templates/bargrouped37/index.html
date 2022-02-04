@@ -58,7 +58,7 @@
         cornerRadius: 20,
         title:{
           display: false,
-          text: 'Students who were provided internet or decive by their family or place of residence'
+          text: 'Students Provided internet or Decive by their family or place of residence'
         },
         scales: {
           yAxes: [{
@@ -88,14 +88,14 @@
             },
             scaleLabel: {
               display: true,
-              labelString: 'Students who were provided internet or decive by their family or place of residence'
+              labelString: 'Students Provided Internet and Decive by Family or Place of Residence'
             }
           }]
         },
         tooltips: {
           callbacks: {
             label: function(tooltipItem, data) {
-              return '$'+data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US');
+              return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+'%';
             },
           },
           backgroundColor: '#434343',
