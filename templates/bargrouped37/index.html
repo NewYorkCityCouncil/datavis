@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-  <title>NYC Public School Internet and Device Home Access 2020-21 school year</title>
+  <title>NYC Public School Students Not Provided Internet/Decive by Family or Place of Residence 2020-21 school year</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
   <!--Source of Rounded Chart: https://github.com/jedtrow/Chart.js-Rounded-Bar-Charts-->
   <!--Data source: https://github.com/new-york-civil-liberties-union/NYSED-Remote-Learning-Survey-->
@@ -31,7 +31,7 @@
       data: {
         labels: data.xs,
         datasets: [{
-          label: 'Home Internet',
+          label: 'No Home Internet',
           data: data.ys,
           fill: false,
           backgroundColor: '#23417D',
@@ -42,7 +42,7 @@
           barPercentage: .8
         },
         {
-          label: 'Home Device',
+          label: 'No Home Device',
           data: data.ys2,
           fill: false,
           backgroundColor: '#A83226',
@@ -58,7 +58,7 @@
         cornerRadius: 20,
         title:{
           display: false,
-          text: 'Students Provided internet or Decive by their family or place of residence'
+          text: 'Students Not Provided Internet/Decive by Family or Place of Residence'
         },
         scales: {
           yAxes: [{
@@ -88,7 +88,7 @@
             },
             scaleLabel: {
               display: true,
-              labelString: 'Students Provided Internet and Decive by Family or Place of Residence'
+              labelString: 'Students Not Provided Internet/Decive by Family or Place of Residence'
             }
           }]
         },
@@ -113,7 +113,7 @@
     const ys2 = [];
 
 
-    const response = await fetch('borough-home-internet-device.csv');
+    const response = await fetch('no-borough-home-internet-device.csv');
     const data = await response.text();
 
     const table = data.split('\n').slice(1);

@@ -31,7 +31,7 @@
       data: {
         labels: data.xs,
         datasets: [{
-          label: 'Access Internet',
+          label: 'No Internet',
           data: data.ys,
           fill: false,
           backgroundColor: '#23417D',
@@ -42,7 +42,7 @@
           barPercentage: .8
         },
         {
-          label: 'Access Device',
+          label: 'No Device',
           data: data.ys2,
           fill: false,
           backgroundColor: '#A83226',
@@ -82,6 +82,7 @@
                 return value.toLocaleString('en-US')+'%';
               },
             //  fontStyle: 'strong'
+            max: 66
             },
             gridLines: {
               display: true
