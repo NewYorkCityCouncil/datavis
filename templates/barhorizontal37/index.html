@@ -97,7 +97,7 @@
     const xs = [];
     const ys = [];
 
-    const response = await fetch('Children-no-internet-borough-2019.csv');
+    const response = await fetch('children-no-internet-borough-2019.csv');
     const data = await response.text();
 
     const table = data.split('\n').slice(1);
