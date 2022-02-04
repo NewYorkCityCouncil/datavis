@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-  <title>Salary and Proportion of Non-White Employees per Civil Service Title Code</title>
+  <title>Share of City Workforce by Agency</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
   <!--Source of Rounded Chart: https://github.com/jedtrow/Chart.js-Rounded-Bar-Charts-->
     <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.js"></script>
@@ -12,7 +12,7 @@
 
 </head>
 <body>
-  <canvas id ="chart" width="800" height="400"></canvas>
+  <canvas id ="chart" width="800" height="600"></canvas>
   <script>
   //CHART JS
   Chart.defaults.global.legend.display = false,
@@ -25,71 +25,62 @@
     const data = await getData();
     const ctx = document.getElementById('chart').getContext('2d');
     const myChart = new Chart(ctx, {
-      type: 'bar',
+      type: 'horizontalBar',
       data: {
         labels: data.xs,
         datasets: [{
-          label: 'Number of Employees by Base Salary',
+          label: 'Employees per Agency',
           data: data.ys,
           fill: false,
           backgroundColor: '#2F56A6',
-          borderColor: '#CACACA',
+        //  borderColor: '#CACACA',
           borderWidth: 1,
           lineTension: 4,
           hoverBackgroundColor: '#E6E6E6',
           barPercentage: .8
-
-        }
-      ]
+        }]
       },
       options: {
         cornerRadius: 20,
         title:{
           display: false,
-          text: 'Salary'
+          text: 'Share of City Workforce by Agency '
         },
         scales: {
           xAxes: [{
             ticks: {
-            /*  callback: function(value, index, values) {
-                return '$'+value.toLocaleString('en-US');
-              },*/
-              callback : function(value,index,array) {
-                return (value < 1000000) ? '$'+value/1000 + 'k' : value/1000000 + 'M'; },
-              beginAtZero: true,
-              //max: 7000,
-            },
-            gridLines: {
-              display: false
-            },
-            scaleLabel: {
-              display: true,
-              labelString: 'Base Salary'
-            }
-          }],
-          yAxes: [{
-            ticks: {
               callback: function(value, index, values) {
                 return value.toLocaleString('en-US');
               },
-                beginAtZero: true,
+              autoSkip: false,
+              beginAtZero: true,
+              max: 55000,
             },
             gridLines: {
               display: true
             },
             scaleLabel: {
               display: true,
-              labelString: 'Employees'
+              labelString: 'Employees Per Agency'
+            }
+          }],
+          yAxes: [{
+            ticks: {
+              callback: function(value, index, values) {
+                return value;
+              },
+              //fontStyle: 'strong'
+              //fontSize: 9,
+            },
+            gridLines: {
+              display: false
             }
           }]
         },
         tooltips: {
           callbacks: {
-            title: function(tooltipItems, data) {
-            return '$'+tooltipItems[0].xLabel.toLocaleString('en-US')+ ' Base Salary';
-          },
             label: function(tooltipItem, data) {
-              return  data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+' Employees';
+              return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ 'Employees';
             },
           },
           backgroundColor: '#434343',
@@ -100,7 +91,6 @@
       }
     });
   }
-
   //SPLITTING AND BRINGING IN CSV DATA
   async function getData() {
     const xs = [];
@@ -112,11 +102,11 @@
     const table = data.split('\n').slice(1);
     table.forEach(row => {
       const columns = row.split(',');
-      const one = columns[0];
-      xs.push(parseFloat(one));
-      const two = columns[1];
-      ys.push(parseFloat(two)); //make data from string to number and added mean payers of 14 degrees
-      console.log(one, two);
+      const sector = columns[0];
+      xs.push(sector);
+      const employmentChange = columns[1];
+      ys.push(parseFloat(employmentChange)); //make data from string to number and added mean payers of 14 degrees
+      console.log(sector, employmentChange);
     });
     return { xs, ys };
   }
