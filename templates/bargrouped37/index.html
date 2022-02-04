@@ -4,9 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-  <title>Median Salary of Male and Female Employees by Education Level</title>
+  <title>NYC Public School Internet and Device Home Access 2020-21 school year</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
   <!--Source of Rounded Chart: https://github.com/jedtrow/Chart.js-Rounded-Bar-Charts-->
+  <!--Data source: https://github.com/new-york-civil-liberties-union/NYSED-Remote-Learning-Survey-->
     <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.js"></script>
   <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.min.js"></script>
 
@@ -30,7 +31,7 @@
       data: {
         labels: data.xs,
         datasets: [{
-          label: 'Male',
+          label: 'Home Internet',
           data: data.ys,
           fill: false,
           backgroundColor: '#23417D',
@@ -41,7 +42,7 @@
           barPercentage: .8
         },
         {
-          label: 'Female',
+          label: 'Home Device',
           data: data.ys2,
           fill: false,
           backgroundColor: '#A83226',
@@ -57,7 +58,7 @@
         cornerRadius: 20,
         title:{
           display: false,
-          text: 'Median Salary of White and Non-White Employees by Education Level'
+          text: 'Students who were provided internet or decive by their family or place of residence'
         },
         scales: {
           yAxes: [{
@@ -72,13 +73,13 @@
             },
             scaleLabel: {
               display: false,
-              labelString: 'Education'
+              labelString: 'Borough'
             }
           }],
           xAxes: [{
             ticks: {
               callback: function(value, index, values) {
-                return '$'+value.toLocaleString('en-US');
+                return value.toLocaleString('en-US')+'%';
               },
             //  fontStyle: 'strong'
             },
@@ -87,7 +88,7 @@
             },
             scaleLabel: {
               display: true,
-              labelString: 'Median Base Salary'
+              labelString: 'Students who were provided internet or decive by their family or place of residence'
             }
           }]
         },
