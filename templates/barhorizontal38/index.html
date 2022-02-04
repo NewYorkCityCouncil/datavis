@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-  <title>Children without internet access in nyc 2019</title>
+  <title>Households without internet access in nyc 2019</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
   <!--Data source: https://data.cccnewyork.org/data/table/1325/household-internet-access#1325/1547/62/a/a-->
     <!--Source of Rounded Chart: https://github.com/jedtrow/Chart.js-Rounded-Bar-Charts-->
@@ -30,7 +30,7 @@
       data: {
         labels: data.xs,
         datasets: [{
-          label: 'Children without internet access in nyc',
+          label: 'Households without internet access in nyc',
           data: data.ys,
           fill: false,
           backgroundColor: '#2F56A6',
@@ -45,7 +45,7 @@
         cornerRadius: 20,
         title:{
           display: false,
-          text: 'Children without Internet Access '
+          text: 'Households without Internet Access '
         },
         scales: {
           xAxes: [{
@@ -62,7 +62,7 @@
             },
             scaleLabel: {
               display: true,
-              labelString: 'Children without Internet Access'
+              labelString: 'Households without Internet Access'
             }
           }],
           yAxes: [{
@@ -81,7 +81,7 @@
         tooltips: {
           callbacks: {
             label: function(tooltipItem, data) {
-              return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+'%'+' Children without Internet Access';
+              return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+'%'+' Households without Internet Access';
             },
           },
           backgroundColor: '#434343',
@@ -97,7 +97,7 @@
     const xs = [];
     const ys = [];
 
-    const response = await fetch('Children-no-internet-borough-2019.csv');
+    const response = await fetch('households-no-internet-borough-2019.csv');
     const data = await response.text();
 
     const table = data.split('\n').slice(1);
