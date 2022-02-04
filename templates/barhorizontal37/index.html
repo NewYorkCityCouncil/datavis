@@ -45,7 +45,7 @@
         cornerRadius: 20,
         title:{
           display: false,
-          text: 'Share of City Workforce by Agency '
+          text: 'Households without Internet Access '
         },
         scales: {
           xAxes: [{
@@ -62,7 +62,7 @@
             },
             scaleLabel: {
               display: true,
-              labelString: 'Employees Per Agency'
+              labelString: 'Households without Internet Access'
             }
           }],
           yAxes: [{
@@ -81,7 +81,7 @@
         tooltips: {
           callbacks: {
             label: function(tooltipItem, data) {
-              return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ 'Employees';
+              return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ 'Households without Internet Access';
             },
           },
           backgroundColor: '#434343',
