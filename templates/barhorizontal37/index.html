@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
   <title>Households without internet access in nyc 2019</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
-  <!--Data source:source: ,https://data.cccnewyork.org/data/table/1325/household-internet-access#1325/1547/62/a/a-->
+  <!--Data source: https://data.cccnewyork.org/data/table/1325/household-internet-access#1325/1547/62/a/a-->
     <!--Source of Rounded Chart: https://github.com/jedtrow/Chart.js-Rounded-Bar-Charts-->
     <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.js"></script>
   <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.min.js"></script>
@@ -81,7 +81,7 @@
         tooltips: {
           callbacks: {
             label: function(tooltipItem, data) {
-              return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ 'Households without Internet Access';
+              return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ ' Households without Internet Access';
             },
           },
           backgroundColor: '#434343',
