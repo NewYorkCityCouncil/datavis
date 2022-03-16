@@ -220,7 +220,7 @@ async function getData() {
   const ys5 = [];
 
 
-  const response = await fetch('vacancy_analysis.csv');
+  const response = await fetch('Vacancy_Analysis.csv');
   const data = await response.text();
 
   const table = data.split('\n').slice(1);
