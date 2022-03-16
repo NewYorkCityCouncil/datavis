@@ -82,7 +82,7 @@ Chart.defaults.global.title.display = true
       cornerRadius: 20,
       title:{
         display: false,
-        text: 'DOC & DOP Officer Median Salary and Length of Service'
+        text: 'Vacant Storefront Rate 2019 - 2021'
       },
       scales: {
         yAxes: [{
@@ -101,7 +101,7 @@ Chart.defaults.global.title.display = true
           },
           scaleLabel: {
             display: true,
-            labelString: 'Salary ($)'
+            labelString: 'Vacancy Rate'
           }
         }],
         xAxes: [{
@@ -117,17 +117,17 @@ Chart.defaults.global.title.display = true
           },
           scaleLabel: {
               display: true,
-              labelString: 'Length of Service (Years)'
+              labelString: 'Vacancy Rate'
             }
         }]
       },
       tooltips: {
         callbacks: {
           title: function(tooltipItems, data) {
-            return 'Length of Service (Years): '+ tooltipItems[0].xLabel;
+            return 'Vacancy Rate: '+ tooltipItems[0].xLabel;
           },
           label: function(tooltipItem, data) {
-            return 'Median Salary: $'+data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US');
+            return 'Vacancy Rate: '+data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+'%';
           },
         },
         //  backgroundColor: '#434343',
@@ -151,7 +151,7 @@ async function getData() {
   table.forEach(row => {
     const columns = row.split(',');
     const one = columns[0];
-    xs.push(parseFloat(one));
+    xs.push(one);
     const two = columns[1];
     ys.push(parseFloat(two)); //make data from string to number and added mean payers of 14 degrees
     const three = columns[2];
