@@ -112,15 +112,15 @@
     const ys = [];
     const zs = []; // neighborhood names
 
-    const response = await fetch('Covid_All.csv');
+    const response = await fetch('prop_vac_med_inc.csv');
     const data = await response.text();
 
     const table = data.split('\n').slice(1); // register new line and remove first row of data
     table.forEach(row => {
       const columns = row.split(',');
-      const comorb = columns[7];
+      const comorb = columns[3];
       xs.push(comorb);
-      const covid_death = columns[10];
+      const covid_death = columns[1];
       ys.push(parseFloat(covid_death)); //make data from string to number
       const neighborhood = columns[2];
       zs.push(neighborhood);
