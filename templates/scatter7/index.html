@@ -14,7 +14,7 @@
 
   //Chart.defaults.global.responsive = true
   //Chart.defaults.global.maintainAspectRatio = true
-//  Chart.defaults.global.legend = false
+  //  Chart.defaults.global.legend = false
 
   chartIt()
   .then(response => {
@@ -36,7 +36,7 @@
     const myChart = new Chart(ctx, {
       type: 'scatter',
       data: {
-        labels: data.za,
+        //labels: data.za,
         datasets: [{
           label: xy,
           data: xy,
@@ -45,8 +45,21 @@
         }]
       },
       options: {
+        title:{
+          display: true,
+          text: "Vacant Storefront Data",
+          fontSize: 14,
+        },
+        legend:{
+          display: true,
+        },
         tooltips: {
           callbacks: {
+            title: function(tooltipItem, all){
+              return[
+                all.datasets[tooltipItem[0].datasetIndex].data[tooltipItem[0].index].name,
+              ]
+            },
             label: function(tooltipItem, data) {
               var labels = data.labels[tooltipItem.index];
               return [labels, 'Comorbidity Severity Index: ' + Math.round(tooltipItem.xLabel).toLocaleString('en-US'), 'COVID19 Death Rate: '+ Math.round(tooltipItem.yLabel)+ ' per 100,000 people'];
@@ -62,7 +75,7 @@
             display: true,
             ticks: {
               callback: function(value, index, values) {
-                return value.toLocaleString('en-US');
+                return '$'+value.toLocaleString('en-US');
                 ;
               }
             },
@@ -94,7 +107,7 @@
       }
     });
     //Color COVID Death rate + 485 Red
-
+/*
     for (i = 0; i < myChart.data.datasets[0].data.length; i++) {
       if (myChart.data.datasets[0].data[i].y > 485) {
         pointBackgroundColors.push("#B63F26");
@@ -102,7 +115,7 @@
         pointBackgroundColors.push("#2F56A6");
       }
     }
-
+*/
     myChart.update();
   }
 
@@ -125,15 +138,15 @@
       ys.push(parseFloat(covid_death)); //make data from string to number
       const neighborhood = columns[2];
       zs.push(neighborhood);
-/*    const zips = columns[4];
+      const zips = columns[4];
       as.push(zips);
       const zips_nbhd = [neighborhood+ ' ('+zips+')'];
       za.push(zips_nbhd);
-      */
+
       const xsys = {x: parseFloat(comorb), y: parseFloat(covid_death), label: neighborhood};
       xy.push(xsys);
 
-//      console.log(zips_nbhd);
+      //      console.log(zips_nbhd);
       console.log(xy);
     });
     return { xs, ys, zs, as, za};
