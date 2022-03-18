@@ -94,6 +94,7 @@
       }
     });
     //Color COVID Death rate + 485 Red
+
     for (i = 0; i < myChart.data.datasets[0].data.length; i++) {
       if (myChart.data.datasets[0].data[i].y > 485) {
         pointBackgroundColors.push("#B63F26");
@@ -119,19 +120,21 @@
     table.forEach(row => {
       const columns = row.split(',');
       const comorb = columns[3];
-      xs.push(comorb);
+      xs.push(parseFloat(comorb));
       const covid_death = columns[1];
       ys.push(parseFloat(covid_death)); //make data from string to number
       const neighborhood = columns[2];
       zs.push(neighborhood);
-      const zips = columns[4];
+/*    const zips = columns[4];
       as.push(zips);
       const zips_nbhd = [neighborhood+ ' ('+zips+')'];
       za.push(zips_nbhd);
+      */
       const xsys = {x: parseFloat(comorb), y: parseFloat(covid_death), label: neighborhood};
       xy.push(xsys);
-  //    console.log(xsys);
-      console.log(zips_nbhd);
+
+//      console.log(zips_nbhd);
+      console.log(xy);
     });
     return { xs, ys, zs, as, za};
     return { xy };
