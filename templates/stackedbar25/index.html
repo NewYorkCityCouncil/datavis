@@ -121,7 +121,7 @@
     const y2 = [];
 
 
-    const response = await fetch('nypd_case_study_data.csv');
+    const response = await fetch('nypd_salaries_by_gender_2020.csv');
     const data = await response.text();
 
     const table = data.split('\n').slice(1);
