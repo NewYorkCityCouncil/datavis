@@ -10,3 +10,4 @@ mapping/corpcounselopinionpoint.geojson
 mapping/corpcounselopinionpoint.dbf
 
 *.geojson
+.DS_Store
