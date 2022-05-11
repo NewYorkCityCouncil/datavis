@@ -62,7 +62,7 @@
             },
             scaleLabel: {
               display: true,
-              labelString: 'Proportion of Female Employees Per Title Code'
+              labelString: 'Proportion of Non-White Female Employees Per Title Code'
             }
           }],
           yAxes: [{
@@ -84,7 +84,7 @@
         tooltips: {
           callbacks: {
             title: function(tooltipItems, data) {
-            return 'Proportion of Female Employees: '+ tooltipItems[0].xLabel.toLocaleString('en-US');
+            return 'Proportion of Non-White Female Employees: '+ tooltipItems[0].xLabel.toLocaleString('en-US');
           },
             label: function(tooltipItem, data) {
               return '$'+ data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US');
@@ -104,7 +104,7 @@
     const xs = [];
     const ys = [];
 
-    const response = await fetch('Job_Salaries_by_Proportion_of_Women_Workers.csv');
+    const response = await fetch('Job_Salaries_by_Proportion_of_NW_Women_Workers_2019');
     const data = await response.text();
 
     const table = data.split('\n').slice(1);

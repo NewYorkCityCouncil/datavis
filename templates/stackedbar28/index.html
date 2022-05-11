@@ -57,7 +57,7 @@
         cornerRadius: 20,
         title: {
           display: false,
-          text: 'DOITT Job Titles by Median Salary',
+          text: 'FDNY Job Titles by Median Salary',
           position: 'bottom'
         },
         scales: {
@@ -95,7 +95,7 @@
             },
             scaleLabel: {
               display: true,
-              labelString: 'DOITT Job Titles by Median Salary'
+              labelString: 'FDNY Job Titles by Median Salary'
             }
           }]
         },
@@ -121,7 +121,7 @@
     const y2 = [];
 
 
-    const response = await fetch('doitt_salaries_by_gender_2019.csv');
+    const response = await fetch('fdny_salaries_by_gender_2019_edit.csv');
     const data = await response.text();
 
     const table = data.split('\n').slice(1);
