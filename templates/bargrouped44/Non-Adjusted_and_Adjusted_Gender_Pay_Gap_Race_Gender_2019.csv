@@ -1,7 +1,7 @@
 "Gender, Race/Eth",Median Salary Women,Median Salary Men,Cents Women,Cents Men
-White,85292,75591,0.886,1
-Hispanic or Latino,79058,58782,0.689,0.927
-Asian,76212,70007.5,0.821,0.894
-Black or African American,67565.5,58879,0.69,0.792
-Other,70288,59973,0.703,0.824
-Unknown,60837,54226,0.636,0.713
+White,75591,85292,0.886,1
+Hispanic or Latino,58782,79058,0.689,0.927
+Asian,70007.5,76212,0.821,0.894
+Black or African American,58879,67565.5,0.69,0.792
+Other,59973,70288,0.703,0.824
+Unknown,54226,60837,0.636,0.713
