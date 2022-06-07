@@ -9,19 +9,15 @@
   <!--Source of Rounded Chart: https://github.com/jedtrow/Chart.js-Rounded-Bar-Charts-->
   <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.js"></script>
   <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.min.js"></script>
-
 </head>
 <body>
   <canvas id ="chart" width="800" height="400"></canvas>
   <script>
   //CHART JS
   Chart.defaults.global.legend.display = true,
-  Chart.defaults.global.legend.labels.usePointStyle = true;
   //Chart.defaults.global.defaultFontFamily = 'open sans'
 Chart.defaults.global.title.display = true
-
   chartIt();
-
   async function chartIt() {
     const data = await getData();
     const ctx = document.getElementById('chart').getContext('2d');
@@ -32,7 +28,6 @@ Chart.defaults.global.title.display = true
         datasets: [{
           label: 'Manhattan',
           data: data.ys,
-        pointStyle: 'line',
           fill: false,
           lineTension: 0.5,
         //  backgroundColor:"#222222",
@@ -42,22 +37,21 @@ Chart.defaults.global.title.display = true
           borderDash: [],
           borderDashOffset: 0.0,
           //    borderJoinStyle: 'miter',
-       //   pointBorderColor: "#CACACA",
-       //   pointBackgroundColor: "#800000",
-       //   pointBorderWidth: 4,
-        //  pointHoverRadius: 6,
+          pointBorderColor: "#CACACA",
+          pointBackgroundColor: "#800000",
+          pointBorderWidth: 4,
+          pointHoverRadius: 6,
           pointHoverBackgroundColor: "#CACACA",
           pointHoverBorderColor: "#CACACA",
           pointHoverBorderWidth: 2,
-       //   pointRadius: 4,
-       //   pointHitRadius: 4,
-       //   hoverBackgroundColor: "#E6E6E6",
-       //   hoverBorderColor: "#E6E6E6",
+          pointRadius: 4,
+          pointHitRadius: 4,
+          hoverBackgroundColor: "#E6E6E6",
+          hoverBorderColor: "#E6E6E6",
         },
         {
           label: 'Brooklyn',
           data: data.ys2,
-          pointStyle: 'line',
           fill: false,
           lineTension: 0.5,
         //  backgroundColor:"#23417D",
@@ -67,22 +61,21 @@ Chart.defaults.global.title.display = true
           borderDash: [3,8],
           borderDashOffset: 0.0,
           // borderJoinStyle: 'miter',
-        //  pointBorderColor: "#CACACA",
-        //  pointBackgroundColor: "#007534",
-        //  pointBorderWidth: 4,
-        //  pointHoverRadius: 6,
+          pointBorderColor: "#CACACA",
+          pointBackgroundColor: "#007534",
+          pointBorderWidth: 4,
+          pointHoverRadius: 6,
           pointHoverBackgroundColor: "#CACACA",
           pointHoverBorderColor: "#CACACA",
           pointHoverBorderWidth: 2,
-       //   pointRadius: 4,
-       //   pointHitRadius: 4,
-       //   hoverBackgroundColor: "#E6E6E6",
-       //   hoverBorderColor: "#E6E6E6",
+          pointRadius: 4,
+          pointHitRadius: 4,
+          hoverBackgroundColor: "#E6E6E6",
+          hoverBorderColor: "#E6E6E6",
         },
         {
           label: 'Staten Island',
           data: data.ys3,
-          pointStyle: 'line',
           fill: false,
           lineTension: 0.5,
         //  backgroundColor:"#23417D",
@@ -92,22 +85,21 @@ Chart.defaults.global.title.display = true
           borderDash: [5,5],
           borderDashOffset: 0.0,
           // borderJoinStyle: 'miter',
-         //   pointBorderColor: "#CACACA",
-         //   pointBackgroundColor: "#B63F26",
-        //    pointBorderWidth: 4,
-        //    pointHoverRadius: 6,
-         //   pointHoverBackgroundColor: "#CACACA",
-        //    pointHoverBorderColor: "#CACACA",
-        //    pointHoverBorderWidth: 2,
-         //   pointRadius: 4,
-          //  pointHitRadius: 4,
-          //  hoverBackgroundColor: "#E6E6E6",
-         //   hoverBorderColor: "#E6E6E6",
+          pointBorderColor: "#CACACA",
+          pointBackgroundColor: "#B63F26",
+          pointBorderWidth: 4,
+          pointHoverRadius: 6,
+          pointHoverBackgroundColor: "#CACACA",
+          pointHoverBorderColor: "#CACACA",
+          pointHoverBorderWidth: 2,
+          pointRadius: 4,
+          pointHitRadius: 4,
+          hoverBackgroundColor: "#E6E6E6",
+          hoverBorderColor: "#E6E6E6",
         },
         {
           label: 'Queens',
           data: data.ys4,
-        pointStyle: 'line',
           fill: false,
           lineTension: 0.5,
         //  backgroundColor:"#23417D",
@@ -117,22 +109,21 @@ Chart.defaults.global.title.display = true
           borderDash: [10,5],
           borderDashOffset: 0.0,
           // borderJoinStyle: 'miter',
-         //   pointBorderColor: "#CACACA",
-        //    pointBackgroundColor: "#8744BC",
-        //    pointBorderWidth: 4,
-       //     pointHoverRadius: 6,
-       //     pointHoverBackgroundColor: "#CACACA",
-       //     pointHoverBorderColor: "#CACACA",
-       //     pointHoverBorderWidth: 2,
-        //    pointRadius: 4,
-        //    pointHitRadius: 4,
-        //    hoverBackgroundColor: "#E6E6E6",
-        //    hoverBorderColor: "#E6E6E6",
+          pointBorderColor: "#CACACA",
+          pointBackgroundColor: "#8744BC",
+          pointBorderWidth: 4,
+          pointHoverRadius: 6,
+          pointHoverBackgroundColor: "#CACACA",
+          pointHoverBorderColor: "#CACACA",
+          pointHoverBorderWidth: 2,
+          pointRadius: 4,
+          pointHitRadius: 4,
+          hoverBackgroundColor: "#E6E6E6",
+          hoverBorderColor: "#E6E6E6",
         },
         {
           label: 'Bronx',
           data: data.ys5,
-         pointStyle: 'line',
           fill: false,
           lineTension: 0.5,
         //  backgroundColor:"#23417D",
@@ -142,27 +133,21 @@ Chart.defaults.global.title.display = true
           borderDash: [20,10],
           borderDashOffset: 0.0,
           // borderJoinStyle: 'miter',
-        //    pointBorderColor: "#CACACA",
-        //    pointBackgroundColor: "#1D5FD6",
-        //    pointBorderWidth: 4,
-        //    pointHoverRadius: 6,
-        //    pointHoverBackgroundColor: "#CACACA",
-        //    pointHoverBorderColor: "#CACACA",
-         //   pointHoverBorderWidth: 2,
-        //    pointRadius: 4,
-         //   pointHitRadius: 4,
-        //    hoverBackgroundColor: "#E6E6E6",
-        //    hoverBorderColor: "#E6E6E6",
+          pointBorderColor: "#CACACA",
+          pointBackgroundColor: "#1D5FD6",
+          pointBorderWidth: 4,
+          pointHoverRadius: 6,
+          pointHoverBackgroundColor: "#CACACA",
+          pointHoverBorderColor: "#CACACA",
+          pointHoverBorderWidth: 2,
+          pointRadius: 4,
+          pointHitRadius: 4,
+          hoverBackgroundColor: "#E6E6E6",
+          hoverBorderColor: "#E6E6E6",
         }
       ]
     },
     options: {
-      legend: {
-      position: 'right',
-      labels: {
-         usePointStyle: true
-      }
-   },
       cornerRadius: 20,
       title:{
         display: false,
@@ -230,11 +215,8 @@ async function getData() {
   const ys3 = [];
   const ys4 = [];
   const ys5 = [];
-
-
   const response = await fetch('Vacancy_Analysis.csv');
   const data = await response.text();
-
   const table = data.split('\n').slice(1);
   table.forEach(row => {
     const columns = row.split(',');
@@ -254,8 +236,6 @@ async function getData() {
   });
   return { xs, ys, ys2, ys3, ys4, ys5 };
 }
-
-
 </script>
 </body>
 </html>
