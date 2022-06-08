@@ -14,16 +14,17 @@
 
   //Chart.defaults.global.responsive = true
   //Chart.defaults.global.maintainAspectRatio = true
-  //  Chart.defaults.global.legend = false
+    Chart.defaults.global.legend.display = false
 
   chartIt()
-  .then(response => {
+ /* .then(response => {
     console.log('yay chart');
   })
   .catch(error =>{
    // console.log('error!');
     console.error(error);
   });
+  */
 
   const xy = []; // X,Y points needed for Scatter
   const as = [];
@@ -45,15 +46,23 @@
         }]
       },
       options: {
+        tooltips: {
+         callbacks: {
+            label: function(tooltipItem, data) {
+               var label = data.labels[tooltipItem.index];
+               return label + ': (' + tooltipItem.xLabel + ', ' + tooltipItem.yLabel + ')';
+            }
+         }
+      },
         title:{
-          display: true,
+          display: false,
           text: "Vacant Storefront Data",
           fontSize: 14,
         },
         legend:{
-          display: true,
+          display: false,
         },
-        tooltips: {
+      /*  tooltips: {
           callbacks: {
             title: function(tooltipItem, all){
               return[
@@ -65,7 +74,7 @@
               return [labels, 'Comorbidity Severity Index: ' + Math.round(tooltipItem.xLabel).toLocaleString('en-US'), 'COVID19 Death Rate: '+ Math.round(tooltipItem.yLabel)+ ' per 100,000 people'];
 
             }
-          },
+          }, */
           displayColors: false
         },
         scales: {
@@ -74,9 +83,10 @@
             position: 'bottom',
             display: true,
             ticks: {
-              callback: function(value, index, values) {
-                return '$'+value.toLocaleString('en-US');
-                ;
+             // callback: function(value, index, values) {
+            //    return '$'+ value.toLocaleString('en-US');
+                callback: function(value) {
+              return '$' + value.toLocaleString('en-US');
               }
             },
             gridLines: {
@@ -84,14 +94,14 @@
             },
             scaleLabel: {
               display: true,
-              labelString: 'Comorbidity Severity Index (Per Zip Code)',
+              labelString: 'Median Salary ($)',
               fontStyle: 'bold'
             }
           }],
           yAxes:[{
             ticks:{
-              callback: function(value, index, values) {
-                return '' + value.toLocaleString('en-US')+'';
+              callback: function(value) {
+                return '' + value.toLocaleString('en-US')+'%';
               }
             },
             gridLines: {
@@ -99,7 +109,7 @@
             },
             scaleLabel: {
               display: true,
-              labelString: 'COVID19 Deaths Per 100,000',
+              labelString: 'Vacancy Rate',
               fontStyle: 'bold'
             }
           }]
@@ -107,15 +117,15 @@
       }
     });
     //Color COVID Death rate + 485 Red
-/*
+
     for (i = 0; i < myChart.data.datasets[0].data.length; i++) {
-      if (myChart.data.datasets[0].data[i].y > 485) {
+      if (myChart.data.datasets[0].data[i].x <= 40000) {
         pointBackgroundColors.push("#B63F26");
       } else {
-        pointBackgroundColors.push("#2F56A6");
+        pointBackgroundColors.push("#666666");
       }
     }
-*/
+
     myChart.update();
   }
 
