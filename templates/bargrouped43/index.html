@@ -16,7 +16,8 @@
   <script>
   //CHART JS
   Chart.defaults.global.responsive = true,
-  Chart.defaults.global.legend.display = true
+  Chart.defaults.global.legend.display = true,
+  Chart.defaults.global.defaultFontColor = "#444444";
   //  Chart.defaults.global.defaultFontFamily = 'open sans'
 
 
@@ -44,7 +45,7 @@
           label: 'Female',
           data: data.ys2,
           fill: false,
-          backgroundColor: '#8DDDE0',
+          backgroundColor: '#6DD3D7',
           borderColor: '#E6E6E6',
           borderWidth: 1,
           lineTension: 4,
@@ -62,6 +63,7 @@
         scales: {
           yAxes: [{
             ticks: {
+              fontSize: 20;
               callback: function(value, index, values) {
                 return value.toLocaleString('en-US');
               },
@@ -78,6 +80,7 @@
           }],
           xAxes: [{
             ticks: {
+              fontSize: 20;
               callback: function(value, index, values) {
                 return '$'+value.toLocaleString('en-US');
               },
