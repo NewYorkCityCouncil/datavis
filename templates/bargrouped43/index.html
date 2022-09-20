@@ -16,8 +16,8 @@
   <script>
   //CHART JS
   Chart.defaults.global.responsive = true,
-  Chart.defaults.global.legend.display = true,
-  <!-- Chart.defaults.global.defaultFontColor = "#444444"; -->
+  Chart.defaults.global.legend.display = true
+  // Chart.defaults.global.defaultFontColor = "#444444";
   //  Chart.defaults.global.defaultFontFamily = 'open sans'
 
 
@@ -63,7 +63,7 @@
         scales: {
           yAxes: [{
             ticks: {
-              fontSize: 10;
+              //fontSize: 10;
               callback: function(value, index, values) {
                 return value.toLocaleString('en-US');
               },
@@ -81,12 +81,12 @@
           xAxes: [{
             ticks: {
               fontColor :"#444444",
-                  fontSize: 10,
+                  //fontSize: 10,
               callback: function(value, index, values) {
                 return '$'+value.toLocaleString('en-US');
               },
               min: .50
-            //  fontStyle: 'strong'
+              fontStyle: 'strong'
             },
             gridLines: {
               display: true
