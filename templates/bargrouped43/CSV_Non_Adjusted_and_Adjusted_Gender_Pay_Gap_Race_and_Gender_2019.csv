@@ -2,6 +2,6 @@ Race/Eth,men_med,women_med,men_cents,women_cents,men_adj_cents,women_adj_cents
 White,85292,75591,1,0.886,1,0.999
 Hispanic or Latino,79058,58782,0.927,0.689,0.992,0.987
 Asian,76212,70007.5,0.894,0.821,0.991,0.994
-Black or African American,67565.5,58879,0.792,0.69,0.991,0.986
+Black or \nAfrican American,67565.5,58879,0.792,0.69,0.991,0.986
 Other,70288,59973,0.824,0.703,0.986,0.986
 Unknown,60837,54226,0.713,0.636,0.995,0.988
