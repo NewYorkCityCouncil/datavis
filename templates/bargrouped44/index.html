@@ -61,15 +61,17 @@
         },
         scales: {
           yAxes: [{
-            ticks: {
-              fontColor :"#444444",
-              fontStyle: 'strong',
-              fontSize: '10',
-              callback: function(value, index, values) {
-                return value.toLocaleString('en-US');
-              },
-              beginAtZero: true,
-            },
+           labels:["White", [' Hispanic or','Latino'], "Asian", ['Black or','African','American'], "Other", "Unknown"],
+           ticks: {
+             fontColor :"#444444",
+             fontStyle: 'strong',
+             fontSize: '10',
+             // callback: function(value, index, values) {
+             //  return value.toLocaleString('en-US');
+             //},
+             //beginAtZero: false,
+             min: .50
+           },
             gridLines: {
               display: true
             },
