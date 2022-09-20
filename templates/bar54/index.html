@@ -30,9 +30,12 @@
         labels: data.xs,
         datasets: [{
           label: 'Number of Employees by Tenure Group',
+          fontColor :"#444444",
+             fontStyle: 'strong',
+             fontSize: '10',
           data: data.ys,
           fill: false,
-          backgroundColor: '#2F56A6',
+          backgroundColor: '#73C96A',
           borderColor: '#CACACA',
           borderWidth: 1,
           lineTension: 4,
@@ -51,6 +54,9 @@
         scales: {
           xAxes: [{
             ticks: {
+              fontColor :"#444444",
+             fontStyle: 'strong',
+             fontSize: '10',
               callback: function(value, index, values) {
                 return value.toLocaleString('en-US');
               },
@@ -67,6 +73,9 @@
           }],
           yAxes: [{
             ticks: {
+              fontColor :"#444444",
+             fontStyle: 'strong',
+             fontSize: '10',
               callback: function(value, index, values) {
                 return '$'+value.toLocaleString('en-US');
               },
