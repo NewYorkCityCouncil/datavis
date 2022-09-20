@@ -63,7 +63,8 @@
         scales: {
           yAxes: [{
             ticks: {
-              //fontSize: 10;
+              fontStyle: 'strong',
+              fontSize: '10',
               callback: function(value, index, values) {
                 return value.toLocaleString('en-US');
               },
@@ -82,7 +83,7 @@
             ticks: {
               fontColor :"#444444",
               fontStyle: 'strong',
-                  //fontSize: 10,
+              fontSize: '10',
               callback: function(value, index, values) {
                 return '$'+value.toLocaleString('en-US');
               },
