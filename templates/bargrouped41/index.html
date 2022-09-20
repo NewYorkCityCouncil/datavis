@@ -33,9 +33,12 @@
           label: 'Female',
           data: data.ys,
           fill: false,
-          backgroundColor: '#A83226',
+          backgroundColor: '#6DD3D7',
           borderColor: '#E6E6E6',
           borderWidth: 1,
+          fontColor :"#444444",
+             fontStyle: 'strong',
+             fontSize: '10',
           lineTension: 4,
           hoverBackgroundColor: '#E6E6E6',
           barPercentage: .8
@@ -44,9 +47,12 @@
           label: 'Male',
           data: data.ys3,
           fill: false,
-          backgroundColor: '#23417D',
+          backgroundColor: '#419b58',
           borderColor: '#E6E6E6',
           borderWidth: 1,
+          fontColor :"#444444",
+             fontStyle: 'strong',
+             fontSize: '10',
           lineTension: 4,
           hoverBackgroundColor: '#E6E6E6',
           barPercentage: .8
@@ -62,6 +68,9 @@
         scales: {
           yAxes: [{
             ticks: {
+              fontColor :"#444444",
+             fontStyle: 'strong',
+             fontSize: '10',
               callback: function(value, index, values) {
                 return value.toLocaleString('en-US')+'%';
               },
@@ -77,6 +86,9 @@
           }],
           xAxes: [{
             ticks: {
+              fontColor :"#444444",
+             fontStyle: 'strong',
+             fontSize: '10',
               callback: function(value, index, values) {
                 return value.toLocaleString('en-US');
               },
