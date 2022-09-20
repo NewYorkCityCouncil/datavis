@@ -32,6 +32,7 @@
         labels: data.xs,
         datasets: [{
           label: 'Male',
+          fontColor :"#444444",
           data: data.ys,
           fill: false,
           backgroundColor: '#419B58',
@@ -43,6 +44,7 @@
         },
         {
           label: 'Female',
+          fontColor :"#444444",
           data: data.ys2,
           fill: false,
           backgroundColor: '#6DD3D7',
@@ -63,6 +65,7 @@
         scales: {
           yAxes: [{
             ticks: {
+              fontColor :"#444444",
               fontStyle: 'strong',
               fontSize: '10',
               callback: function(value, index, values) {
@@ -94,7 +97,8 @@
             },
             scaleLabel: {
               display: true,
-              labelString: 'Adjusted Cents on the Dollar Earned'
+              labelString: 'Adjusted Cents on the Dollar Earned',
+              fontColor :"#444444"
             }
           }]
         },
