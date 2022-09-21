@@ -17,6 +17,7 @@
   //CHART JS
   Chart.defaults.global.responsive = true,
   Chart.defaults.global.legend.display = true
+  Chart.defaults.global.Color = "#444444"
   //  Chart.defaults.global.defaultFontFamily = 'open sans'
 
 
@@ -32,6 +33,7 @@
         datasets: [
           {
             label: 'Black or African American',
+            fontColor :"#444444",
             data: data.ys,
             fill: false,
             backgroundColor: '#419b58',
@@ -44,6 +46,7 @@
 
           {
             label: 'Hispanic or Latino',
+            fontColor :"#444444",
             data: data.ys2,
             fill: false,
             backgroundColor: '#105B65',
@@ -55,6 +58,7 @@
           },
           {
           label: 'White',
+          fontColor :"#444444",
           data: data.ys3,
           fill: false,
           backgroundColor: '#803181',
@@ -66,6 +70,7 @@
         },
         {
           label: 'Asian',
+          fontColor :"#444444",
           data: data.ys4,
           fill: false,
           backgroundColor: '#0C4635',
@@ -77,6 +82,7 @@
         },
         {
           label: 'Other',
+          fontColor :"#444444",
           data: data.ys5,
           fill: false,
           backgroundColor: '#4B404A',
@@ -87,6 +93,7 @@
           barPercentage: .8 },
         {
           label: 'Unknown',
+          fontColor :"#444444",
           data: data.ys6,
           fill: false,
           backgroundColor: '#6DD3D7',
@@ -104,6 +111,9 @@
         scales: {
           yAxes: [{
             ticks: {
+             fontColor :"#444444",
+             fontStyle: 'strong',
+             fontSize: '10',
               callback: function(value, index, values) {
                 return value.toLocaleString('en-US')+'%';
               },
@@ -119,6 +129,9 @@
           }],
           xAxes: [{
             ticks: {
+             fontColor :"#444444",
+             fontStyle: 'strong',
+             fontSize: '10',
               callback: function(value, index, values) {
                 return value.toLocaleString('en-US');
               },
