@@ -16,6 +16,7 @@
   <script>
   //CHART JS
   Chart.defaults.global.legend.display = false,
+  Chart.defaults.global.Color = "#444444"
   //Chart.defaults.global.defaultFontFamily = 'open sans'
   //Chart.defaults.global.defaultFontColor = "#ffffff"
 
@@ -32,7 +33,7 @@
           label: '% of Employees',
           data: data.ys,
           fill: false,
-          backgroundColor: ['#803181','#66443D','#105B65','#4B404A','#0C4635','#6C6347'],
+          backgroundColor: ['#803181','#0C4635','#105B65','#4B404A','#419b58','#6DD3D7'],
           borderColor: '#CACACA',
           borderWidth: 1,
           lineTension: 4,
@@ -103,7 +104,7 @@
     const xs = [];
     const ys = [];
 
-    const response = await fetch('workforce_ethnicity.csv');
+    const response = await fetch('workforce_ethnicity_2019.csv');
     const data = await response.text();
 
     const table = data.split('\n').slice(1);
