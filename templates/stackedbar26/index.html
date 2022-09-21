@@ -16,6 +16,7 @@
   <script>
   //CHART JS
   Chart.defaults.global.legend.labels.usePointStyle = true;
+     Chart.defaults.global.Color = "#444444"
   //Chart.defaults.global.defaultFontFamily = 'open sans'
 
 
@@ -31,9 +32,10 @@
         datasets: [
           {
             label: 'Female',
+            fontColor :"#444444",
             data: data.ys,
             fill: false,
-            backgroundColor: '#A83226',
+            backgroundColor: '#6DD3D7',
             //borderColor: '#803181',
             borderWidth: 1,
             lineTension: 4,
@@ -42,9 +44,10 @@
           },
           {
             label: 'Male',
+            fontColor :"#444444",
             data: data.y2,
             fill: false,
-            backgroundColor: '#23417D',
+            backgroundColor: '#419B58',
             //  borderColor: '#434343',
             borderWidth: 1,
             lineTension: 4,
@@ -64,6 +67,9 @@
           yAxes: [{
             stacked: true,
             ticks: {
+             fontColor :"#444444",
+             fontStyle: 'strong',
+             fontSize: '10',
               callback: function(value, index, values) {
                 return '$'+value.toLocaleString('en-US');
               },
@@ -80,6 +86,9 @@
           xAxes: [{
             stacked: true,
             ticks:{
+             fontColor :"#444444",
+             fontStyle: 'strong',
+             fontSize: '10',
                 display: false,
               callback: function(value, index, values) {
                 return value;
