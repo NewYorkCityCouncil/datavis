@@ -1,7 +1,7 @@
-race eth,Med_salary
-White,85292
-Asian,72501
-Hispanic or Latino,63982
-Other,63452
-Black or African American,60327
-Unknown,58883
+race eth,Med_salary,Percent of Population
+White,85292,32.2
+Asian,72501,8.1
+Hispanic or Latino,63982,18.1
+Other,63452,1.2
+Black or African American,60327,29.1
+Unknown,58883,11.4
