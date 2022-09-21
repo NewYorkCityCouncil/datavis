@@ -15,9 +15,7 @@
   <canvas id ="chart" width="800" height="400"></canvas>
   <script>
   //CHART JS
-  Chart.defaults.global.responsive = true,
-  Chart.defaults.global.legend.display = true,
-  Chart.defaults.global.Color = "#444444"
+  Chart.defaults.global.legend.display = false,
 
   chartIt();
 
@@ -30,9 +28,12 @@
         labels: data.xs,
         datasets: [{
           label: 'Number of Employees by Tenure Group',
+          fontColor :"#444444",
+             fontStyle: 'strong',
+             fontSize: '10',
           data: data.ys,
           fill: false,
-          backgroundColor: '#419B58',
+          backgroundColor: '#73C96A',
           borderColor: '#CACACA',
           borderWidth: 1,
           lineTension: 4,
