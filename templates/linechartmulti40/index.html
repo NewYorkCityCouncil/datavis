@@ -140,10 +140,10 @@ Chart.defaults.global.title.display = true
           stacked: false,
           ticks: {
             //max: 5,
-            min: 100,
+            //min: 100,
             //stepSize: 200000,
             callback: function(value, index, values) {
-              return value.toLocaleString('en-US');
+              return value.toLocaleString('en-US')+'%';
             },
             beginAtZero: true,
           },
@@ -152,7 +152,7 @@ Chart.defaults.global.title.display = true
           },
           scaleLabel: {
             display: true,
-            labelString: 'Days'
+            labelString: 'Vacancy Rate (%)'
           }
         }],
         xAxes: [{
@@ -177,7 +177,7 @@ Chart.defaults.global.title.display = true
             return tooltipItems[0].xLabel;
           },
           label: function(tooltipItem, data) {
-            return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ ' Days';
+            return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ '%';
           },
         },
         //  backgroundColor: '#434343',
