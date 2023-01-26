@@ -3,6 +3,7 @@ Datavis is where the data visualizations like charts and maps for the Council's 
 
 # templates
 Templates for all the charts and graphs on the Council's website like charts on the Data Team page - https://council.nyc.gov/data/
+https://newyorkcitycouncil.github.io/datavis/templates/
 
 # budget
 Visualizations for the Agency Funding Conditions page - https://council.nyc.gov/budget/agency-funding-conditions/
