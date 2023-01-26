@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <title>NYCHA Non-Occupied Apartments</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  <!--Source of Rounded Chart: https://github.com/jedtrow/Chart.js-Rounded-Bar-Charts-->
+  <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.js"></script>
+  <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.min.js"></script>
+
+</head>
+<body>
+  <canvas id ="chart" width="800" height="400"></canvas>
+  <script>
+  //CHART JS
+  Chart.defaults.global.legend.display = true,
+  //Chart.defaults.global.defaultFontFamily = 'open sans'
+Chart.defaults.global.title.display = true
+
+  chartIt();
+
+  async function chartIt() {
+    const data = await getData();
+    const ctx = document.getElementById('chart').getContext('2d');
+    const myChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: data.xs,
+        datasets: [{
+          label: 'Move-In/Selected',
+          data: data.ys,
+          backgroundColor:"#1D5FD640",
+          borderColor: "#1D5FD6",
+          pointRadius: 0,
+          hoverBackgroundColor: "#E6E6E6",
+          hoverBorderColor: "#E6E6E6",
+        },
+        {
+          label: 'Non Dwelling',
+          data: data.ys2,
+          backgroundColor:"#D6593F40",
+          borderColor: "#D6593F",
+          pointRadius: 0,
+          hoverBackgroundColor: "#E6E6E6",
+          hoverBorderColor: "#E6E6E6",
+        },
+        {
+          label: 'Vacancies',
+          data: data.ys3,
+          backgroundColor:"#002E1440",
+          borderColor: "#002E14",
+          pointRadius: 0,
+          hoverBackgroundColor: "#E6E6E6",
+          hoverBorderColor: "#E6E6E6",
+        }
+      ]
+    },
+    options: {
+      cornerRadius: 20,
+      title:{
+        display: false,
+        text: 'NYCHA Non-Occupied Apartments'
+      },
+      scales: {
+        yAxes: [{
+          stacked: false,
+          ticks: {
+            //max: 5,
+            //min: 200000,
+            //stepSize: 200000,
+            callback: function(value, index, values) {
+              return value.toLocaleString('en-US');
+            },
+            beginAtZero: true,
+          },
+          gridLines: {
+            display: true
+          },
+          scaleLabel: {
+            display: true,
+            labelString: 'Apartments'
+          }
+        }],
+        xAxes: [{
+          ticks: {
+            callback: function(value, index, values) {
+              return value;
+            },
+            //fontStyle: 'strong'
+          },
+          gridLines: {
+            display: true
+          },
+          scaleLabel: {
+              display: false,
+              labelString: 'Date'
+            }
+        }]
+      },
+      tooltips: {
+        callbacks: {
+          title: function(tooltipItems, data) {
+            return tooltipItems[0].xLabel;
+          },
+          label: function(tooltipItem, data) {
+            return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+' Apts';
+          },
+        },
+        //  backgroundColor: '#434343',
+        //  borderColor: '#f5f5f5',
+        //  borderWidth: 1,
+        displayColors: false
+      }
+    }
+  });
+}
+//SPLITTING AND BRINGING IN CSV DATA
+async function getData() {
+  const xs = [];
+  const ys = [];
+  const ys2 = [];
+  const ys3= [];
+
+  const response = await fetch('NYCHA_Vacancies_1-19-2023_Non_Occupied.csv');
+  const data = await response.text();
+
+  const table = data.split('\n').slice(1);
+  table.forEach(row => {
+    const columns = row.split(',');
+    const one = columns[0];
+    xs.push(one);
+    const two = columns[1];
+    ys.push(parseFloat(two)); //make data from string to number and added mean payers of 14 degrees
+    const three = columns[2];
+    ys2.push(parseFloat(three)); //make data from string to number and added mean payers of 14 degrees
+    const four = columns[3];
+    ys3.push(parseFloat(four)); //make data from string to number and added mean payers of 14 degrees
+    console.log(one, two, three, four);
+  });
+  return { xs, ys, ys2, ys3 };
+}
+
+
+</script>
+</body>
+</html>
