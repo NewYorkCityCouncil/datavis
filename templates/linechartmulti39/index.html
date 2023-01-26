@@ -29,49 +29,100 @@ Chart.defaults.global.title.display = true
       data: {
         labels: data.xs,
         datasets: [{
-          label: 'Non-Uniformed',
+          label: 'All',
           data: data.ys,
           fill: false,
           lineTension: 0.5,
           backgroundColor:"#2F56A6",
-          borderColor: "#666666",
-          borderWidth: 3,
-          borderCapStyle: 'butt',
-          borderDash: [],
-          borderDashOffset: 0.0,
-          //    borderJoinStyle: 'miter',
-          pointBorderColor: "#2F56A6",
-          pointBackgroundColor: "#2F56A6",
-          pointBorderWidth: 4,
+          borderColor: "#2F56A6",
+          //pointBorderWidth: 4,
           pointHoverRadius: 6,
           pointHoverBackgroundColor: "#2F56A6",
           pointHoverBorderColor: "#2F56A6",
           pointHoverBorderWidth: 2,
-          pointRadius: 0,
+          pointRadius: 3,
           pointHitRadius: 4,
           hoverBackgroundColor: "#E6E6E6",
           hoverBorderColor: "#E6E6E6",
         },
         {
-          label: 'Uniformed',
+          label: 'Bronx',
           data: data.ys2,
           fill: false,
           lineTension: 0.5,
-        //  backgroundColor:"#23417D",
-          borderColor: "#23417D",
-      //    borderWidth: 3,
-          borderCapStyle: 'butt',
-          borderDash: [],
-          borderDashOffset: 0.0,
-          // borderJoinStyle: 'miter',
-          pointBorderColor: "#CACACA",
-          pointBackgroundColor: "#CACACA",
-          pointBorderWidth: 4,
+          backgroundColor:"#979797",
+          borderColor: "#979797",
+          //pointBorderWidth: 4,
           pointHoverRadius: 6,
-          pointHoverBackgroundColor: "#CACACA",
-          pointHoverBorderColor: "#CACACA",
+          pointHoverBackgroundColor: "#2F56A6",
+          pointHoverBorderColor: "#2F56A6",
           pointHoverBorderWidth: 2,
-          pointRadius: 0,
+          pointRadius: 3,
+          pointHitRadius: 4,
+          hoverBackgroundColor: "#E6E6E6",
+          hoverBorderColor: "#E6E6E6",
+        },
+        {
+          label: 'Brooklyn',
+          data: data.ys3,
+          fill: false,
+          lineTension: 0.5,
+          backgroundColor:"#211183",
+          borderColor: "#211183",
+          //pointBorderWidth: 4,
+          pointHoverRadius: 6,
+          pointHoverBackgroundColor: "#2F56A6",
+          pointHoverBorderColor: "#2F56A6",
+          pointHoverBorderWidth: 2,
+          pointRadius: 3,
+          pointHitRadius: 4,
+          hoverBackgroundColor: "#E6E6E6",
+          hoverBorderColor: "#E6E6E6",
+        },{
+          label: 'Manhattan',
+          data: data.ys4,
+          fill: false,
+          lineTension: 0.5,
+          //backgroundColor:"#D6593F",
+          borderColor: "#D6593F",
+          //pointBorderWidth: 4,
+          pointHoverRadius: 6,
+          pointHoverBackgroundColor: "#2F56A6",
+          pointHoverBorderColor: "#2F56A6",
+          pointHoverBorderWidth: 2,
+          pointRadius: 3,
+          pointHitRadius: 4,
+          hoverBackgroundColor: "#E6E6E6",
+          hoverBorderColor: "#E6E6E6",
+        },{
+          label: 'Queens',
+          data: data.ys5,
+          fill: false,
+          lineTension: 0.5,
+          backgroundColor:"#002E14",
+          borderColor: "#002E14",
+          //pointBorderWidth: 4,
+          pointHoverRadius: 6,
+          pointHoverBackgroundColor: "#2F56A6",
+          pointHoverBorderColor: "#2F56A6",
+          pointHoverBorderWidth: 2,
+          pointRadius: 3,
+          pointHitRadius: 4,
+          hoverBackgroundColor: "#E6E6E6",
+          hoverBorderColor: "#E6E6E6",
+        },{
+          label: 'Staten Island',
+          data: data.ys6,
+          fill: false,
+          lineTension: 0.5,
+          backgroundColor:"#9D9DFF",
+          borderColor: "#9D9DFF",
+          //pointBorderWidth: 4,
+          pointHoverRadius: 6,
+          pointHoverBackgroundColor: "#2F56A6",
+          pointHoverBorderColor: "#2F56A6",
+          pointHoverBorderWidth: 2,
+          pointRadius: 3,
           pointHitRadius: 4,
           hoverBackgroundColor: "#E6E6E6",
           hoverBorderColor: "#E6E6E6",
@@ -89,10 +140,10 @@ Chart.defaults.global.title.display = true
           stacked: false,
           ticks: {
             //max: 5,
-            //min: 200000,
+            min: 100,
             //stepSize: 200000,
             callback: function(value, index, values) {
-              return '$'+ value.toLocaleString('en-US');
+              return value.toLocaleString('en-US');
             },
             beginAtZero: true,
           },
@@ -101,7 +152,7 @@ Chart.defaults.global.title.display = true
           },
           scaleLabel: {
             display: true,
-            labelString: 'Salary ($)'
+            labelString: 'Days'
           }
         }],
         xAxes: [{
@@ -115,18 +166,18 @@ Chart.defaults.global.title.display = true
             display: true
           },
           scaleLabel: {
-              display: true,
-              labelString: 'Length of Service (Years)'
+              display: false,
+              labelString: 'Date'
             }
         }]
       },
       tooltips: {
         callbacks: {
           title: function(tooltipItems, data) {
-            return 'Length of Service (Years): '+ tooltipItems[0].xLabel;
+            return tooltipItems[0].xLabel;
           },
           label: function(tooltipItem, data) {
-            return 'Median Salary: $'+data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US');
+            return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ ' Days';
           },
         },
         //  backgroundColor: '#434343',
@@ -142,6 +193,10 @@ async function getData() {
   const xs = [];
   const ys = [];
   const ys2 = [];
+  const ys3 = [];
+  const ys4 = [];
+  const ys5 = [];
+  const ys6 = [];
 
   const response = await fetch('NYCHA_Vacancies_1-19-2023_turnaround_days.csv');
   const data = await response.text();
@@ -155,9 +210,18 @@ async function getData() {
     ys.push(parseFloat(two)); //make data from string to number and added mean payers of 14 degrees
     const three = columns[2];
     ys2.push(parseFloat(three)); //make data from string to number and added mean payers of 14 degrees
-    console.log(one, two, three);
+    const four = columns[3];
+    ys3.push(parseFloat(four)); //make data from string to number
+    const five = columns[4];
+    ys4.push(parseFloat(five)); //make data from string to number
+    const six = columns[5];
+    ys5.push(parseFloat(six)); //make data from string to number
+    const seven = columns[6];
+    ys6.push(parseFloat(seven)); //make data from string to number
+
+    console.log(one, two, three, four, five, six, seven);
   });
-  return { xs, ys, ys2 };
+  return { xs, ys, ys2, ys3, ys4, ys5, ys6 };
 }
 
 
