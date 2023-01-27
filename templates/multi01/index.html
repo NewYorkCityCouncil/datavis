@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-  <title>NYCHA: Vacancy Rate by Borough</title>
+  <title>NYCHA Vacancy Rate by PACT Type</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
   <!--Source of Rounded Chart: https://github.com/jedtrow/Chart.js-Rounded-Bar-Charts-->
   <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.js"></script>
@@ -25,28 +25,12 @@ Chart.defaults.global.title.display = true
     const data = await getData();
     const ctx = document.getElementById('chart').getContext('2d');
     const myChart = new Chart(ctx, {
-      type: 'line',
       data: {
         labels: data.xs,
-        datasets: [{
-          label: 'All',
-          data: data.ys,
-          fill: false,
-          lineTension: 0.5,
-          backgroundColor:"#2F56A6",
-          borderColor: "#2F56A6",
-          //pointBorderWidth: 4,
-          pointHoverRadius: 6,
-          pointHoverBackgroundColor: "#2F56A6",
-          pointHoverBorderColor: "#2F56A6",
-          pointHoverBorderWidth: 2,
-          pointRadius: 3,
-          pointHitRadius: 4,
-          hoverBackgroundColor: "#E6E6E6",
-          hoverBorderColor: "#E6E6E6",
-        },
+        datasets: [
         {
-          label: 'Bronx',
+          type: 'line',
+          label: 'PACT',
           data: data.ys2,
           fill: false,
           lineTension: 0.5,
@@ -63,7 +47,8 @@ Chart.defaults.global.title.display = true
           hoverBorderColor: "#E6E6E6",
         },
         {
-          label: 'Brooklyn',
+          type: 'line',
+          label: 'Non-PACT',
           data: data.ys3,
           fill: false,
           lineTension: 0.5,
@@ -78,13 +63,32 @@ Chart.defaults.global.title.display = true
           pointHitRadius: 4,
           hoverBackgroundColor: "#E6E6E6",
           hoverBorderColor: "#E6E6E6",
+        },
+        {
+          type: 'bar',
+          label: 'All',
+          data: data.ys,
+          fill: false,
+          lineTension: 0.5,
+          backgroundColor:"#2F56A6",
+          borderColor: "#2F56A6",
+          //pointBorderWidth: 4,
+          pointHoverRadius: 6,
+          pointHoverBackgroundColor: "#2F56A6",
+          pointHoverBorderColor: "#2F56A6",
+          pointHoverBorderWidth: 2,
+          pointRadius: 3,
+          pointHitRadius: 4,
+          hoverBackgroundColor: "#E6E6E6",
+          hoverBorderColor: "#E6E6E6",
+        },
       ]
     },
     options: {
       cornerRadius: 20,
       title:{
         display: false,
-        text: 'NYCHA: Vacancy Rate by Borough'
+        text: 'NYCHA Vacancy Rate by PACT Type'
       },
       scales: {
         yAxes: [{
