@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-  <title>NYS Total Under Custody Count</title>
+  <title>NYS Total Under Custody Percent</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
   <!--Source of Rounded Chart: https://github.com/jedtrow/Chart.js-Rounded-Bar-Charts-->
   <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.js"></script>
@@ -129,7 +129,7 @@ Chart.defaults.global.title.display = true
             //min: 100,
             //stepSize: 200000,
             callback: function(value, index, values) {
-              return value.toLocaleString('en-US');
+              return value.toLocaleString('en-US')+'%';
             },
             beginAtZero: true,
           },
@@ -163,7 +163,7 @@ Chart.defaults.global.title.display = true
             return tooltipItems[0].xLabel;
           },
           label: function(tooltipItem, data) {
-            return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ ' People';
+            return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ '%';
           },
         },
         //  backgroundColor: '#434343',
@@ -184,7 +184,7 @@ async function getData() {
   const ys5 = [];
   const ys6 = [];
 
-  const response = await fetch('total_under_custody_count_NYS.csv');
+  const response = await fetch('total_under_custody_perc_NYS.csv');
   const data = await response.text();
 
   const table = data.split('\n').slice(1);
@@ -193,9 +193,9 @@ async function getData() {
     const one = columns[0];
     xs.push(one);
     const two = columns[1];
-    ys.push(parseFloat(two)); //make data from string to number and added mean payers of 14 degrees
+    ys.push(parseFloat(two)); //make data from string to number 
     const three = columns[2];
-    ys2.push(parseFloat(three)); //make data from string to number and added mean payers of 14 degrees
+    ys2.push(parseFloat(three)); //make data from string to number 
     const four = columns[3];
     ys3.push(parseFloat(four)); //make data from string to number
     const five = columns[4];
