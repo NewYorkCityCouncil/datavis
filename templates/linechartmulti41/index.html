@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-  <title>NYCHA: Vacancy Rate by Borough</title>
+  <title>NYS Total Under Custody Count</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
   <!--Source of Rounded Chart: https://github.com/jedtrow/Chart.js-Rounded-Bar-Charts-->
   <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.js"></script>
@@ -29,7 +29,7 @@ Chart.defaults.global.title.display = true
       data: {
         labels: data.xs,
         datasets: [{
-          label: 'All',
+          label: 'Age 16-20',
           data: data.ys,
           fill: false,
           lineTension: 0.5,
@@ -46,7 +46,7 @@ Chart.defaults.global.title.display = true
           hoverBorderColor: "#E6E6E6",
         },
         {
-          label: 'Bronx',
+          label: 'Age 21-29',
           data: data.ys2,
           fill: false,
           lineTension: 0.5,
@@ -63,7 +63,7 @@ Chart.defaults.global.title.display = true
           hoverBorderColor: "#E6E6E6",
         },
         {
-          label: 'Brooklyn',
+          label: 'Age 30-39',
           data: data.ys3,
           fill: false,
           lineTension: 0.5,
@@ -79,7 +79,7 @@ Chart.defaults.global.title.display = true
           hoverBackgroundColor: "#E6E6E6",
           hoverBorderColor: "#E6E6E6",
         },{
-          label: 'Manhattan',
+          label: 'Age 40-49',
           data: data.ys4,
           fill: false,
           lineTension: 0.5,
@@ -95,7 +95,7 @@ Chart.defaults.global.title.display = true
           hoverBackgroundColor: "#E6E6E6",
           hoverBorderColor: "#E6E6E6",
         },{
-          label: 'Queens',
+          label: 'Age 50-59',
           data: data.ys5,
           fill: false,
           lineTension: 0.5,
@@ -111,9 +111,11 @@ Chart.defaults.global.title.display = true
           hoverBackgroundColor: "#E6E6E6",
           hoverBorderColor: "#E6E6E6",
         },{
-          label: 'Staten Island',
+          label: 'Age 60+',
           data: data.ys6,
           fill: false,
+          borderDash: [20,10],
+          borderDashOffset: 0.0,
           lineTension: 0.5,
           backgroundColor:"#9D9DFF",
           borderColor: "#9D9DFF",
@@ -133,7 +135,7 @@ Chart.defaults.global.title.display = true
       cornerRadius: 20,
       title:{
         display: false,
-        text: 'NYCHA: Vacancy Rate by Borough'
+        text: 'NYS Total Under Custody Count'
       },
       scales: {
         yAxes: [{
@@ -143,7 +145,7 @@ Chart.defaults.global.title.display = true
             //min: 100,
             //stepSize: 200000,
             callback: function(value, index, values) {
-              return value.toLocaleString('en-US')+'%';
+              return value.toLocaleString('en-US');
             },
             beginAtZero: true,
           },
@@ -152,7 +154,7 @@ Chart.defaults.global.title.display = true
           },
           scaleLabel: {
             display: true,
-            labelString: 'Vacancy Rate (%)'
+            labelString: 'Total in NYS DOCCS Custody'
           }
         }],
         xAxes: [{
@@ -177,7 +179,7 @@ Chart.defaults.global.title.display = true
             return tooltipItems[0].xLabel;
           },
           label: function(tooltipItem, data) {
-            return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ '%';
+            return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ ' People';
           },
         },
         //  backgroundColor: '#434343',
@@ -198,7 +200,7 @@ async function getData() {
   const ys5 = [];
   const ys6 = [];
 
-  const response = await fetch('NYCHA_Vacancies_1-19-2023_vacancy_rate_boro.csv');
+  const response = await fetch('total_under_custody_count_NYS.csv');
   const data = await response.text();
 
   const table = data.split('\n').slice(1);
