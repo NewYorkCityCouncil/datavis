@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-  <title>HPD Lead Litigation Cases, August 2006 - March 2023</title>
+  <title>SNAP Recipients in NYC, 2012 - March 2023</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
   <!--Source of Rounded Chart: https://github.com/jedtrow/Chart.js-Rounded-Bar-Charts-->
   <!--  <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.js"></script>-->
@@ -24,6 +24,38 @@
   chartIt();
 
   async function chartIt() {
+    const verticalLinePlugin = { 
+  getLinePosition: function (chart, pointIndex) {
+      const meta = chart.getDatasetMeta(0); // first dataset is used to discover X coordinate of a point
+      const data = meta.data;
+      return data[pointIndex]._model.x;
+  },
+  renderVerticalLine: function (chartInstance, pointIndex) {
+      const lineLeftOffset = this.getLinePosition(chartInstance, pointIndex);
+      const scale = chartInstance.scales['y-axis-0'];
+      const context = chartInstance.chart.ctx;
+
+      // render vertical line
+      context.beginPath();
+      context.strokeStyle = '#666666';
+      context.moveTo(lineLeftOffset, scale.top);
+      context.lineTo(lineLeftOffset, scale.bottom);
+      context.stroke();
+
+      // write label
+      context.fillStyle = "#666666";
+      context.textAlign = 'center';
+      context.fillText('COVID-19 Pandemic', lineLeftOffset, (scale.bottom - scale.top) / 2 + scale.top);
+  },
+
+  afterDatasetsDraw: function (chart, easing) {
+      if (chart.config.lineAtIndex) {
+          chart.config.lineAtIndex.forEach(pointIndex => this.renderVerticalLine(chart, pointIndex));
+      }
+  }
+  };
+
+  Chart.plugins.register(verticalLinePlugin);
     const data = await getData();
     const ctx = document.getElementById('chart').getContext('2d');
     const myChart = new Chart(ctx, {
@@ -31,7 +63,7 @@
       data: {
         labels: data.xs,
         datasets: [{
-          label: 'HPD Lead Litigation Cases',
+          label: 'SNAP Recipients in NYC, 2012 - March 2023',
           data: data.ys,
           fill: false,
           lineTension: 0.5,
@@ -49,7 +81,7 @@
           pointHoverBackgroundColor: "#E6E6E6",
           pointHoverBorderColor: "#E6E6E6",
           pointHoverBorderWidth: 2,
-          pointRadius: 5,
+          pointRadius: 1,
           pointHitRadius: 4,
           hoverBackgroundColor: "#E6E6E6",
           hoverBorderColor: "#E6E6E6",
@@ -59,13 +91,13 @@
         cornerRadius: 20,
         title:{
         display: false,
-        text: 'HPD Lead Litigation Cases'
+        text: 'SNAP Recipients in NYC, 2012 - March 2023'
       },
         scales: {
           yAxes: [{
             ticks: {
               //max: 5,
-              //min: 200000,
+              min: 1200000,
               //stepSize: 200000,
               callback: function(value, index, values) {
                 return value.toLocaleString('en-US')+'';
@@ -73,17 +105,17 @@
               beginAtZero: true,
             },
             gridLines: {
-              display: true
+              display: false
             },
             scaleLabel: {
               display: true,
-              labelString: 'HPD Lead Litigation Casess'
+              labelString: 'SNAP Recipients in NYC'
             }
           }],
           xAxes: [{
             scaleLabel:{
               display: false,
-              labelString: 'August 2006 - March 2023'
+              labelString: '2012 - March 2023'
             },
             ticks: {
               callback: function(value, index, values) {
@@ -92,14 +124,14 @@
             //  fontStyle: 'strong'
             },
             gridLines: {
-              display: true
+              display: false
             }
           }]
         },
         tooltips: {
           callbacks: {
             label: function(tooltipItem, data) {
-              return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ ' Lead Cases';
+              return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ ' SNAP Recipients';
             },
           },
         //  backgroundColor: '#434343',
@@ -107,7 +139,8 @@
         //  borderWidth: 1,
           displayColors: false
         }
-      }
+      },
+      lineAtIndex: [98] // vertical line at one point, use commas to add more than one line [3,4,5]
     });
 
     const ys = [];
@@ -130,7 +163,7 @@ myChart.update();
     const xs = [];
     const ys = [];
 
-    const response = await fetch('https://newyorkcitycouncil.github.io/lead_hearing/data/litigations_over_time.csv');
+    const response = await fetch('https://newyorkcitycouncil.github.io/food_insecurity/visuals/line26/SNAP-Recipients_4-10-23.csv');
     const data = await response.text();
 
     const table = data.split('\n').slice(1);
