@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <title>Cure Violence 2019 Precincts - Shootings per 100,000 People</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.5/chartjs-plugin-annotation.js'></script>
+  <!--Source of Rounded Chart: https://github.com/jedtrow/Chart.js-Rounded-Bar-Charts-->
+  <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.js"></script>
+  <script type="text/javascript" charset="utf-8" src="Chart.roundedBarCharts.min.js"></script>
+
+</head>
+<body>
+  <canvas id ="chart" width="800" height="600"></canvas>
+  <script>
+  //CHART JS
+  Chart.defaults.global.legend.display = true,
+  //Chart.defaults.global.defaultFontFamily = 'open sans'
+Chart.defaults.global.title.display = true
+
+  chartIt();
+
+  async function chartIt() {
+    const data = await getData();
+    const ctx = document.getElementById('chart').getContext('2d');
+    const myChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: data.xs,
+        datasets: [{
+          label: 'Precinct 25 (Mn)',
+          data: data.ys,
+          fill: false,
+          lineTension: 0.5,
+          backgroundColor:"#2F56A6",
+          borderColor: "#2F56A6",
+          //pointBorderWidth: 4,
+          pointHoverRadius: 6,
+          pointHoverBackgroundColor: "#2F56A6",
+          pointHoverBorderColor: "#2F56A6",
+          pointHoverBorderWidth: 2,
+          pointRadius: 3,
+          pointHitRadius: 4,
+          hoverBackgroundColor: "#E6E6E6",
+          hoverBorderColor: "#E6E6E6",
+        },
+        {
+          label: 'Precinct 48 (Bx)',
+          data: data.ys2,
+          fill: false,
+          lineTension: 0.5,
+          backgroundColor:"#979797",
+          borderColor: "#979797",
+          //pointBorderWidth: 4,
+          pointHoverRadius: 6,
+          pointHoverBackgroundColor: "#2F56A6",
+          pointHoverBorderColor: "#2F56A6",
+          pointHoverBorderWidth: 2,
+          pointRadius: 3,
+          pointHitRadius: 4,
+          hoverBackgroundColor: "#E6E6E6",
+          hoverBorderColor: "#E6E6E6",
+        },
+        {
+          label: 'Precinct 52 (Bx)',
+          data: data.ys3,
+          fill: false,
+          lineTension: 0.5,
+          backgroundColor:"#211183",
+          borderColor: "#211183",
+          //pointBorderWidth: 4,
+          pointHoverRadius: 6,
+          pointHoverBackgroundColor: "#2F56A6",
+          pointHoverBorderColor: "#2F56A6",
+          pointHoverBorderWidth: 2,
+          pointRadius: 3,
+          pointHitRadius: 4,
+          hoverBackgroundColor: "#E6E6E6",
+          hoverBorderColor: "#E6E6E6",
+        },
+        {
+          label: 'Precinct 88 (Bk)',
+          data: data.ys4,
+          fill: false,
+          lineTension: 0.5,
+          backgroundColor:"#D6593F",
+          borderColor: "#D6593F",
+          //pointBorderWidth: 4,
+          pointHoverRadius: 6,
+          pointHoverBackgroundColor: "#2F56A6",
+          pointHoverBorderColor: "#2F56A6",
+          pointHoverBorderWidth: 2,
+          pointRadius: 3,
+          pointHitRadius: 4,
+          hoverBackgroundColor: "#E6E6E6",
+          hoverBorderColor: "#E6E6E6",
+        }
+      ]
+    },
+    options: {
+      cornerRadius: 20,
+      title:{
+        display: false,
+        text: 'Shootings per 100,000 People'
+      },
+      scales: {
+        yAxes: [{
+          stacked: false,
+          ticks: {
+            //max: 5,
+            //min: 100,
+            //stepSize: 200000,
+            callback: function(value, index, values) {
+              return value.toLocaleString('en-US');
+            },
+            
+            beginAtZero: true,
+          },
+          gridLines: {
+            display: true
+          },
+          scaleLabel: {
+            display: true,
+            labelString: 'Shootings per 100,000 People'
+          }
+        }],
+        xAxes: [{
+          ticks: {
+            callback: function(value, index, values) {
+              return value;
+            },
+            //fontStyle: 'strong'
+          },
+          gridLines: {
+            display: true
+          },
+          scaleLabel: {
+              display: true,
+              labelString: '2019 Cohort: Cure Volence Precincts'
+            }
+        }]
+      },
+      annotation: {
+	        events: ["click"],
+	        annotations: [
+	          {
+	            drawTime: "beforeDatasetsDraw",
+	            type: "box",
+	            xScaleID: "x-axis-0",
+	            yScaleID: "y-axis-0",
+	            xMin: "2019",
+	            xMax: "2020",
+	            yMin: 0,
+	            yMax: 120,
+	            backgroundColor: "rgba(230, 230, 230, 0.5)",
+	            borderColor: "rgb(230, 230, 230)",
+	            borderWidth: 1,
+	            onClick: function(e) {
+	              console.log("Box", e.type, this);
+	            }
+	          },
+	        ]
+	      },
+      tooltips: {
+        callbacks: {
+          title: function(tooltipItems, data) {
+            return tooltipItems[0].xLabel;
+          },
+          label: function(tooltipItem, data) {
+            return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString('en-US')+ ' Shootings per 100,000 People';
+          },
+        },
+        //  backgroundColor: '#434343',
+        //  borderColor: '#f5f5f5',
+        //  borderWidth: 1,
+        displayColors: false
+      }
+    }
+  });
+}
+//SPLITTING AND BRINGING IN CSV DATA
+async function getData() {
+  const xs = [];
+  const ys = [];
+  const ys2 = [];
+  const ys3 = [];
+  const ys4 = [];
+  const ys5 = [];
+  const ys6 = [];
+
+  const response = await fetch('2019_cohort_shootings_per_person_2012-2019.csv');
+  const data = await response.text();
+
+  const table = data.split('\n').slice(1);
+  table.forEach(row => {
+    const columns = row.split(',');
+    const one = columns[0];
+    xs.push(one);
+    const two = columns[1];
+    ys.push(parseFloat(two)); //make data from string to number and added mean payers of 14 degrees
+    const three = columns[2];
+    ys2.push(parseFloat(three)); //make data from string to number and added mean payers of 14 degrees
+    const four = columns[3];
+    ys3.push(parseFloat(four)); //make data from string to number
+    const five = columns[4];
+    ys4.push(parseFloat(five)); //make data from string to number
+    const six = columns[5];
+    ys5.push(parseFloat(six)); //make data from string to number
+    const seven = columns[6];
+    ys6.push(parseFloat(seven)); //make data from string to number
+
+    console.log(one, two, three, four, five, six, seven);
+  });
+  return { xs, ys, ys2, ys3, ys4, ys5, ys6 };
+}
+
+
+</script>
+</body>
+</html>
