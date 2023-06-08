@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-  <title>Cure Violence 2016 Precincts - Shootings per 100,000 People</title>
+  <title>Cure Violence 2015 Precincts - Shootings per 100,000 People</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.5/chartjs-plugin-annotation.js'></script>
   <!--Source of Rounded Chart: https://github.com/jedtrow/Chart.js-Rounded-Bar-Charts-->
@@ -30,7 +30,7 @@ Chart.defaults.global.title.display = true
       data: {
         labels: data.xs,
         datasets: [{
-          label: 'Precinct 23 (Mn)',
+          label: 'Precinct 42 (Bx)',
           data: data.ys,
           fill: false,
           lineTension: 0.5,
@@ -47,7 +47,7 @@ Chart.defaults.global.title.display = true
           hoverBorderColor: "#E6E6E6",
         },
         {
-          label: 'Precinct 32 (Mn)',
+          label: 'Precinct 46 (Bx)',
           data: data.ys2,
           fill: false,
           lineTension: 0.5,
@@ -64,7 +64,7 @@ Chart.defaults.global.title.display = true
           hoverBorderColor: "#E6E6E6",
         },
         {
-          label: 'Precinct 44 (Bx)',
+          label: 'Precinct 67 (Bk)',
           data: data.ys3,
           fill: false,
           lineTension: 0.5,
@@ -80,7 +80,7 @@ Chart.defaults.global.title.display = true
           hoverBackgroundColor: "#E6E6E6",
           hoverBorderColor: "#E6E6E6",
         },{
-          label: 'Precinct 47 (Bx)',
+          label: 'Precinct 73 (Bk)',
           data: data.ys4,
           fill: false,
           lineTension: 0.5,
@@ -96,7 +96,7 @@ Chart.defaults.global.title.display = true
           hoverBackgroundColor: "#E6E6E6",
           hoverBorderColor: "#E6E6E6",
         },{
-          label: 'Precinct 60 (Bk)',
+          label: 'Precinct 79 (Bk)',
           data: data.ys5,
           fill: false,
           lineTension: 0.5,
@@ -112,7 +112,7 @@ Chart.defaults.global.title.display = true
           hoverBackgroundColor: "#E6E6E6",
           hoverBorderColor: "#E6E6E6",
         },{
-          label: 'Precinct 114 (Qn)',
+          label: 'Precinct 101 (Qn)',
           data: data.ys6,
           fill: false,
           lineTension: 0.5,
@@ -134,7 +134,7 @@ Chart.defaults.global.title.display = true
       cornerRadius: 20,
       title:{
         display: false,
-        text: 'Shootings per 100,000 People'
+        text: '2015 Cohort: Cure Volence Precincts'
       },
       scales: {
         yAxes: [{
@@ -169,7 +169,7 @@ Chart.defaults.global.title.display = true
           },
           scaleLabel: {
               display: true,
-              labelString: '2016 Cohort: Cure Volence Precincts'
+              labelString: '2015 Cohort: Cure Volence Precincts'
             }
         }]
       },
@@ -181,10 +181,10 @@ Chart.defaults.global.title.display = true
 	            type: "box",
 	            xScaleID: "x-axis-0",
 	            yScaleID: "y-axis-0",
-	            xMin: "2016",
+	            xMin: "2015",
 	            xMax: "2019",
 	            yMin: 0,
-	            yMax: 90,
+	            yMax: 160,
 	            backgroundColor: "rgba(230, 230, 230, 0.5)",
 	            borderColor: "rgb(230, 230, 230)",
 	            borderWidth: 1,
@@ -221,7 +221,7 @@ async function getData() {
   const ys5 = [];
   const ys6 = [];
 
-  const response = await fetch('2016_cohort_shootings_per_person_2012-2019.csv');
+  const response = await fetch('2015_cohort_shootings_per_person_2012-2019.csv');
   const data = await response.text();
 
   const table = data.split('\n').slice(1);
