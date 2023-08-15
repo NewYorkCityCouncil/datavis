@@ -157,9 +157,7 @@ Chart.defaults.global.title.display = true
         yAxes: [{
           stacked: false,
           ticks: {
-            //max: 5,
-            min: 6,
-            //stepSize: 200000,
+            min: 5,
             callback: function(value, index, values) {
               return  value.toLocaleString('en-US')+'%';
             },
@@ -175,7 +173,7 @@ Chart.defaults.global.title.display = true
         }],
         xAxes: [{
           ticks: {
-            max: 42,
+            max: "2021",
             callback: function(value, index, values) {
               return value;
             },
@@ -215,22 +213,22 @@ async function getData() {
   const ys3 = [];
   const ys4 = [];
   const ys5 = [];
-  const response = await fetch('Vacancy_Analysis.csv');
+  const response = await fetch('https://raw.githubusercontent.com/NewYorkCityCouncil/vacant_storefronts/d9772d531d292960e6f9ebe8b9e55a726c955652/data/Vacancy_Analysis_21.csv');
   const data = await response.text();
   const table = data.split('\n').slice(1);
   table.forEach(row => {
     const columns = row.split(',');
-    const one = columns[0];
+    const one = columns[1];
     xs.push(one);
-    const two = columns[1];
+    const two = columns[2];
     ys.push(parseFloat(two)); //make data from string to number and added mean payers of 14 degrees
-    const three = columns[2];
+    const three = columns[3];
     ys2.push(parseFloat(three)); //make data from string to number and added mean payers of 14 degrees
-    const four = columns[3];
+    const four = columns[4];
     ys3.push(parseFloat(four)); //make data from string to number and added mean payers of 14 degrees
-    const five = columns[4];
+    const five = columns[5];
     ys4.push(parseFloat(five)); //make data from string to number and added mean payers of 14 degrees
-    const six = columns[5];
+    const six = columns[6];
     ys5.push(parseFloat(six)); //make data from string to number and added mean payers of 14 degrees
     console.log(one, two, three, four, five, six);
   });
